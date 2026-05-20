@@ -1,0 +1,364 @@
+---
+import Base from '../../layouts/Base.astro';
+import { vuzixComparisonRows, vuzixSmartGlasses } from '../../data/vuzix-smart-glasses';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Vuzix Akıllı Gözlükler — Altis Teknoloji",
+  "description": "Vuzix M400, M4000 ve LX1 akıllı gözlükler. Depo, üretim ve saha operasyonlarında eller serbest çalışma için resmi distribütör desteği.",
+  "url": "https://www.altis.com.tr/urunler/akilli-gozluk/"
+};
+
+const featuredModel = vuzixSmartGlasses.find(model => model.slug === 'vuzix-lx1') ?? vuzixSmartGlasses[0];
+---
+
+<Base
+  title="Vuzix Akıllı Gözlükler — Türkiye Distribütörü | Altis Teknoloji"
+  description="Vuzix M400, M4000 ve LX1 akıllı gözlükler. Depo, üretim ve saha operasyonlarında eller serbest çalışma için resmi distribütör desteği."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/products/smart-glasses/"
+>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/">Ana Sayfa</a>
+      <span aria-hidden="true">›</span>
+      <a href="/urunler/">Ürünler</a>
+      <span aria-hidden="true">›</span>
+      <span>Vuzix Akıllı Gözlükler</span>
+    </div>
+  </nav>
+
+  <section class="vuzix-hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Vuzix Türkiye Resmi Distribütörü</p>
+        <h1>Saha ekipleri için premium eller serbest çalışma.</h1>
+        <p class="hero-lead">Vuzix M400, M4000 ve yeni LX1 modelleri; depo, üretim, bakım, sağlık ve saha servis ekiplerinin iş talimatı, görüntülü destek ve doğrulama süreçlerini göz hizasına taşır.</p>
+        <div class="hero-actions">
+          <a href="/iletisim/" class="btn btn-primary btn-lg">Demo Talep Et</a>
+          <a href="#karsilastir" class="btn btn-secondary btn-lg">Karşılaştır</a>
+        </div>
+      </div>
+      <div class="hero-product">
+        <span class="hero-badge">Yeni model</span>
+        <img src={featuredModel.image} alt={featuredModel.name} width="720" height="520" loading="eager" />
+        <div class="hero-product-caption">
+          <strong>{featuredModel.name}</strong>
+          <span>{featuredModel.positioning}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="model-strip" id="modeller">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Ürün Ailesi</p>
+        <h2>Üç model, üç farklı saha önceliği.</h2>
+        <p>M400 esnek saha kullanımı, M4000 gerçek AR katmanı, LX1 ise depo ve lojistikte tam vardiya operasyon için konumlanır.</p>
+      </div>
+
+      <div class="model-grid">
+        {vuzixSmartGlasses.map(model => (
+          <article class="model-card">
+            <a href={model.route} class="model-media" aria-label={`${model.name} detay sayfası`}>
+              <img src={model.image} alt={model.name} width="520" height="360" loading="lazy" />
+            </a>
+            <div class="model-body">
+              <span class="model-badge">{model.badge}</span>
+              <h3>{model.name}</h3>
+              <p>{model.shortDesc}</p>
+              <div class="model-stats">
+                {model.heroStats.slice(0, 3).map(stat => (
+                  <div>
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+              <a href={model.route} class="model-link">Modeli İncele</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-band">
+    <div class="container premium-grid">
+      <div class="premium-copy">
+        <p class="eyebrow">Operasyon Akışı</p>
+        <h2>Göz hizasında talimat, eller serbest doğrulama.</h2>
+        <p>Vuzix gözlükler; pick listesi, bakım adımı, barkod doğrulama, canlı uzman desteği ve kalite kayıtlarını operatörün işini bölmeden sunar. Altis Teknoloji bu cihazları yalnızca donanım olarak değil, WMS, ERP, MDM ve saha eğitimleriyle çalışan bir çözüm olarak devreye alır.</p>
+      </div>
+      <div class="premium-image">
+        <img src="/images/vuzix/vuzix-workflow.webp" alt="Vuzix akıllı gözlük saha operasyonu" width="960" height="540" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-section" id="karsilastir">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Karşılaştır</p>
+        <h2>Hangi Vuzix modeli size uygun?</h2>
+      </div>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Özellik</th>
+              {vuzixSmartGlasses.map(model => (
+                <th><a href={model.route}>{model.shortName}</a></th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {vuzixComparisonRows.map(row => (
+              <tr>
+                <th>{row.label}</th>
+                {row.values.map(value => <td>{value}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="altis-value">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Neden Altis Teknoloji</p>
+        <h2>Donanım değil, sahada çalışan çözüm.</h2>
+      </div>
+      <div class="value-grid">
+        <article>
+          <h3>Resmi distribütör desteği</h3>
+          <p>Orijinal ürün, garanti, aksesuar, servis ve model seçimi süreçleri Altis ekibiyle tek elden yönetilir.</p>
+        </article>
+        <article>
+          <h3>Entegrasyon uzmanlığı</h3>
+          <p>RFID, barkod, WMS, ERP, MDM ve saha uygulamalarını aynı operasyon akışı içinde konumlandırırız.</p>
+        </article>
+        <article>
+          <h3>Pilot ve eğitim</h3>
+          <p>Doğru model seçimi, kullanıcı eğitimi, pilot senaryo ve canlıya geçiş adımları birlikte planlanır.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow">Demo ve Teklif</p>
+        <h2>Vuzix modelini saha senaryonuza göre birlikte seçelim.</h2>
+      </div>
+      <a href="/iletisim/" class="btn btn-primary btn-lg">Fiyat Teklifi Al</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-bar { background: #fff; }
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.breadcrumb-inner a:hover { color: var(--primary); }
+.breadcrumb-inner span:last-child { color: var(--primary); font-weight: 600; }
+
+.vuzix-hero {
+  background: #fff;
+  padding: 88px 0 72px;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 72px;
+  align-items: center;
+}
+.hero-copy h1 {
+  font-size: clamp(42px, 5.4vw, 76px);
+  max-width: 720px;
+  margin: 18px 0 22px;
+}
+.hero-lead {
+  max-width: 620px;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.hero-product {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: #fff;
+  border-radius: 28px;
+  padding: 48px;
+}
+.hero-product img {
+  width: min(100%, 620px);
+  max-height: 430px;
+  object-fit: contain;
+}
+.hero-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  color: var(--primary);
+  background: #fff;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hero-product-caption {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  padding-top: 18px;
+}
+.hero-product-caption strong { color: var(--primary); font-size: 18px; }
+.hero-product-caption span { color: var(--text-muted); font-size: 13px; text-align: right; max-width: 280px; }
+
+.model-strip { background: var(--bg-soft); }
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.model-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.model-media {
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  padding: 34px;
+  background: #fff;
+}
+.model-media img { width: 100%; height: 230px; object-fit: contain; transition: transform .25s; }
+.model-card:hover .model-media img { transform: scale(1.035); }
+.model-body { padding: 28px; }
+.model-badge {
+  display: inline-flex;
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.model-body h3 { font-size: 28px; margin-bottom: 12px; }
+.model-body p { font-size: 14.5px; line-height: 1.75; }
+.model-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 24px 0;
+  padding-top: 20px;
+}
+.model-stats strong { display: block; color: var(--primary); font-size: 15px; }
+.model-stats span { display: block; color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.model-link { color: var(--primary); font-weight: 800; font-size: 14px; }
+.model-link:hover { color: var(--cyan); }
+
+.premium-band { background: #fff; }
+.premium-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+.premium-copy h2 { margin: 18px 0; }
+.premium-copy p:not(.eyebrow) { font-size: 17px; line-height: 1.85; }
+.premium-image {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.premium-image img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+
+.compare-section { background: var(--bg-soft); }
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  background: #fff;
+}
+.compare-table { width: 100%; min-width: 760px; border-collapse: collapse; }
+.compare-table th,
+.compare-table td {
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14px;
+}
+.compare-table tr:last-child th,
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table thead th { color: var(--primary); font-size: 15px; background: #fff; }
+.compare-table tbody th { color: var(--text-muted); font-weight: 700; width: 220px; background: #fafbfe; }
+.compare-table td { color: var(--text); }
+
+.altis-value { background: #fff; }
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.value-grid article {
+  border-radius: 16px;
+  padding: 28px;
+  background: #fff;
+}
+.value-grid h3 { font-size: 19px; margin-bottom: 12px; }
+.value-grid p { font-size: 14.5px; line-height: 1.75; }
+
+.cta-section {
+  background: var(--primary);
+  padding: 76px 0;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.cta-inner .eyebrow { color: var(--cyan); }
+.cta-inner h2 { color: #fff; max-width: 760px; margin-top: 14px; }
+
+@media (max-width: 980px) {
+  .hero-inner,
+  .premium-grid { grid-template-columns: 1fr; }
+  .model-grid,
+  .value-grid { grid-template-columns: 1fr; }
+  .hero-product { min-height: 420px; }
+}
+@media (max-width: 620px) {
+  .vuzix-hero { padding-top: 64px; }
+  .hero-product { padding: 28px; border-radius: 20px; }
+  .hero-product-caption { position: static; margin-top: 18px; align-items: start; flex-direction: column; }
+  .hero-product-caption span { text-align: left; }
+  .model-stats { grid-template-columns: 1fr; }
+  .cta-inner { align-items: flex-start; flex-direction: column; }
+}
+</style>

@@ -1,0 +1,415 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getVuzixModel, vuzixSmartGlasses } from '../../../data/vuzix-smart-glasses';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return vuzixSmartGlasses.map(model => ({
+    params: { slug: model.slug },
+    props: { model },
+  }));
+};
+
+const { model } = Astro.props;
+const related = vuzixSmartGlasses.filter(item => item.slug !== model.slug);
+const contactHref = `/iletisim/?urun=${encodeURIComponent(model.name)}`;
+const selectedModel = getVuzixModel(model.slug) ?? model;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": selectedModel.name,
+  "description": selectedModel.shortDesc,
+  "brand": { "@type": "Brand", "name": "Vuzix" },
+  "image": selectedModel.image,
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "Altis Teknoloji" }
+  }
+};
+---
+
+<Base
+  title={`${selectedModel.name} — Akıllı Gözlük | Altis Teknoloji`}
+  description={selectedModel.shortDesc}
+  {schema}
+  lang="tr"
+  alternateUrl={`https://www.altis.com.tr/en/products/smart-glasses/${selectedModel.slug}/`}
+>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/urunler/">Ürünler</a>
+      <span aria-hidden="true">›</span>
+      <a href="/urunler/akilli-gozluk/">Vuzix Akıllı Gözlükler</a>
+      <span aria-hidden="true">›</span>
+      <span>{selectedModel.name}</span>
+    </div>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{selectedModel.badge}</p>
+        <h1>{selectedModel.headline}</h1>
+        <p class="hero-lead">{selectedModel.description}</p>
+        <div class="hero-actions">
+          <a href={contactHref} class="btn btn-primary btn-lg">Fiyat Teklifi Al</a>
+          <a href="#teknik-ozellikler" class="btn btn-secondary btn-lg">Teknik Özellikler</a>
+        </div>
+      </div>
+      <div class="product-stage">
+        <img src={selectedModel.image} alt={selectedModel.name} width="760" height="520" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container stats-grid">
+      {selectedModel.heroStats.map(stat => (
+        <div class="stat-item">
+          <strong>{stat.value}</strong>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Öne Çıkan Özellikler</p>
+        <h2>{selectedModel.positioning}</h2>
+      </div>
+      <div class="feature-grid">
+        {selectedModel.highlights.map(feature => (
+          <article>
+            <h3>{feature.title}</h3>
+            <p>{feature.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container gallery-grid">
+      {selectedModel.gallery.map((image, index) => (
+        <figure class:list={['gallery-card', { 'gallery-card--wide': index === 2 }]}>
+          <img src={image} alt={`${selectedModel.name} görsel ${index + 1}`} width="720" height="480" loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="usecase-section">
+    <div class="container usecase-layout">
+      <div class="usecase-copy">
+        <p class="eyebrow">Kullanım Alanları</p>
+        <h2>Sahadaki iş akışına göre konumlandırılır.</h2>
+      </div>
+      <div class="usecase-list">
+        {selectedModel.useCases.map(useCase => (
+          <article>
+            <h3>{useCase.title}</h3>
+            <p>{useCase.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="spec-section" id="teknik-ozellikler">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Teknik Özellikler</p>
+        <h2>{selectedModel.name} teknik detayları</h2>
+      </div>
+      <div class="spec-grid">
+        {selectedModel.specGroups.map(group => (
+          <article class="spec-card">
+            <h3>{group.title}</h3>
+            <table>
+              <tbody>
+                {group.specs.map(spec => (
+                  <tr>
+                    <th>{spec.label}</th>
+                    <td>{spec.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="package-section">
+    <div class="container package-grid">
+      <div>
+        <p class="eyebrow">Paket ve Dayanıklılık</p>
+        <h2>Kurumsal kullanım için yapılandırılır.</h2>
+      </div>
+      <div class="package-cards">
+        {selectedModel.packageNotes.map(note => (
+          <article>
+            <h3>{note.title}</h3>
+            <p>{note.text}</p>
+          </article>
+        ))}
+        <article>
+          <h3>Sertifikalar</h3>
+          <div class="cert-list">
+            {selectedModel.certifications.map(cert => <span>{cert}</span>)}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Diğer Vuzix Modelleri</p>
+        <h2>Alternatif modelleri karşılaştırın.</h2>
+      </div>
+      <div class="related-grid">
+        {related.map(item => (
+          <a href={item.route} class="related-card">
+            <img src={item.image} alt={item.name} width="420" height="280" loading="lazy" />
+            <span>{item.badge}</span>
+            <strong>{item.name}</strong>
+            <p>{item.positioning}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <div class="container bottom-cta-inner">
+      <div>
+        <p class="eyebrow">Altis Teknoloji</p>
+        <h2>{selectedModel.name} için demo ve teklif alın.</h2>
+        <p>Model seçimi, pilot kapsamı, entegrasyon ve saha eğitimi için ekibimizle görüşün.</p>
+      </div>
+      <div class="bottom-actions">
+        <a href={contactHref} class="btn btn-primary btn-lg">Fiyat Teklifi Al</a>
+        <a href="/urunler/akilli-gozluk/" class="btn btn-secondary btn-lg">Tüm Modeller</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-bar { background: #fff; }
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a:hover { color: var(--primary); }
+.breadcrumb-inner span:last-child { color: var(--primary); font-weight: 700; }
+
+.detail-hero { background: #fff; padding: 86px 0 68px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 72px;
+  align-items: center;
+}
+.hero-copy h1 {
+  font-size: clamp(40px, 5.2vw, 72px);
+  margin: 18px 0 22px;
+}
+.hero-lead {
+  max-width: 650px;
+  font-size: 17px;
+  line-height: 1.85;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.product-stage {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  border-radius: 30px;
+  background: #fff;
+  padding: 54px;
+}
+.product-stage img {
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+}
+
+.stats-band { background: #fff; padding: 0 0 86px; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item { padding: 28px 24px; }
+.stat-item strong { display: block; color: var(--primary); font-size: clamp(24px, 3vw, 34px); line-height: 1; }
+.stat-item span { display: block; margin-top: 8px; color: var(--text-faint); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+
+.feature-section,
+.usecase-section,
+.related-section { background: var(--bg-soft); }
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.feature-grid article,
+.usecase-list article,
+.package-cards article,
+.related-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px;
+}
+.feature-grid h3,
+.usecase-list h3,
+.package-cards h3 { font-size: 18px; margin-bottom: 12px; }
+.feature-grid p,
+.usecase-list p,
+.package-cards p { font-size: 14px; line-height: 1.75; }
+
+.gallery-section { background: #fff; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.gallery-card {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+  border-radius: 24px;
+  background: #fff;
+  overflow: hidden;
+  padding: 32px;
+}
+.gallery-card--wide { grid-column: 1 / -1; padding: 0; }
+.gallery-card img { width: 100%; height: 100%; object-fit: contain; }
+.gallery-card--wide img { aspect-ratio: 16/7; object-fit: cover; }
+
+.usecase-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 56px;
+}
+.usecase-copy h2 { margin-top: 18px; }
+.usecase-list { display: grid; gap: 16px; }
+
+.spec-section { background: #fff; }
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  gap: 18px;
+}
+.spec-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.spec-card h3 { padding: 22px 24px; font-size: 19px; }
+.spec-card table { width: 100%; border-collapse: collapse; height: 100%; }
+.spec-card tbody { display: table-row-group; }
+.spec-card th,
+.spec-card td {
+  padding: 14px 20px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 13px;
+}
+.spec-card tr { height: 1px; }
+.spec-card tr:last-child th,
+.spec-card tr:last-child td { border-bottom: none; }
+.spec-card th { width: 38%; color: var(--text-muted); font-weight: 700; background: #fafbfe; }
+.spec-card td { color: var(--primary); font-weight: 600; }
+
+.package-section { background: #fff; padding-top: 0; }
+.package-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 52px;
+}
+.package-grid h2 { margin-top: 18px; }
+.package-cards { display: grid; gap: 16px; }
+.cert-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.cert-list span {
+  color: var(--primary);
+  background: var(--bg-blue);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.related-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 20px;
+  transition: transform .2s, box-shadow .2s;
+}
+.related-card:hover { transform: translateY(-3px); box-shadow: 0 18px 46px -34px rgba(0,18,92,.38); }
+.related-card img {
+  grid-row: span 3;
+  width: 180px;
+  height: 130px;
+  object-fit: contain;
+}
+.related-card span { color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.related-card strong { color: var(--primary); font-size: 22px; }
+.related-card p { font-size: 14px; line-height: 1.6; }
+
+.bottom-cta { background: #fff; padding-top: 0; }
+.bottom-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-radius: 24px;
+  padding: 42px;
+  background: #fff;
+}
+.bottom-cta h2 { margin: 12px 0; }
+.bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 1080px) {
+  .hero-grid,
+  .usecase-layout,
+  .package-grid { grid-template-columns: 1fr; }
+  .feature-grid,
+  .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .product-stage { min-height: 360px; padding: 28px; border-radius: 22px; }
+  .feature-grid,
+  .spec-grid,
+  .gallery-grid,
+  .related-grid { grid-template-columns: 1fr; }
+  .gallery-card--wide { grid-column: auto; }
+  .related-card { grid-template-columns: 1fr; }
+  .related-card img { grid-row: auto; width: 100%; }
+  .bottom-cta-inner { align-items: flex-start; flex-direction: column; padding: 28px; }
+}
+</style>
