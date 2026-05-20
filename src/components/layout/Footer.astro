@@ -1,0 +1,202 @@
+---
+interface Props {
+  lang?: 'tr' | 'en';
+}
+const { lang = 'tr' } = Astro.props;
+const base = lang === 'en' ? '/en' : '';
+---
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+
+      <!-- Brand -->
+      <div class="foot-brand">
+        <img src="/assets/altis-logo.png" alt="Altis Teknoloji" width="120" height="28" />
+        <p>
+          {lang === 'tr'
+            ? 'Altis Teknoloji ve Yazılım, 2003\'ten bu yana üretim süreçlerini dijitalleştiren bir Endüstri 4.0, IIoT, RFID ve otomasyon çözümleri firmasıdır.'
+            : 'Altis Technology has been digitalizing industrial operations since 2003 with Industry 4.0, IIoT, RFID, and automation solutions.'
+          }
+        </p>
+      </div>
+
+      <!-- Ürünler / Products -->
+      <div class="foot-col">
+        <h5>{lang === 'tr' ? 'Ürünler' : 'Products'}</h5>
+        <ul>
+          <li><a href={`${base}/platformlar/tag-trace/`}>Tag&amp;Trace</a></li>
+          <li><a href={`${base}/platformlar/predictivo/`}>Predictivo</a></li>
+          <li><a href={`${base}/cozumler/pick-to-light/`}>Pick-to-Light</a></li>
+          <li><a href={`${base}/cozumler/asset-yonetimi/`}>Asset Tag &amp; Trace</a></li>
+          <li><a href="https://roxcard.com.tr" target="_blank" rel="noopener">Rox Card ↗</a></li>
+        </ul>
+      </div>
+
+      <!-- Çözümler / Solutions -->
+      <div class="foot-col">
+        <h5>{lang === 'tr' ? 'Çözümler' : 'Solutions'}</h5>
+        <ul>
+          <li><a href={`${base}/cozumler/`}>{lang === 'tr' ? 'RFID ve Auto-ID' : 'RFID & Auto-ID'}</a></li>
+          <li><a href={`${base}/cozumler/`}>{lang === 'tr' ? 'IoT ve Sensör' : 'IoT & Sensors'}</a></li>
+          <li><a href={`${base}/cozumler/`}>{lang === 'tr' ? 'RTLS / Konum' : 'RTLS / Location'}</a></li>
+          <li><a href={`${base}/sektorler/depo-lojistik/`}>{lang === 'tr' ? 'Depo & Lojistik' : 'Warehouse & Logistics'}</a></li>
+          <li><a href={`${base}/sektorler/uretim/`}>{lang === 'tr' ? 'Üretim & Bakım' : 'Manufacturing & Maintenance'}</a></li>
+          <li><a href={`${base}/cozumler/asset-yonetimi/`}>{lang === 'tr' ? 'Varlık Yönetimi' : 'Asset Management'}</a></li>
+        </ul>
+      </div>
+
+      <!-- Şirket / Company -->
+      <div class="foot-col">
+        <h5>{lang === 'tr' ? 'Şirket' : 'Company'}</h5>
+        <ul>
+          <li><a href={`${base}/hakkimizda/`}>{lang === 'tr' ? 'Hakkımızda' : 'About Us'}</a></li>
+          <li><a href={`${base}/blog/`}>Blog</a></li>
+          <li><a href={`${base}/hakkimizda/`}>{lang === 'tr' ? 'Referanslar' : 'References'}</a></li>
+          <li><a href={`${base}/iletisim/`}>{lang === 'tr' ? 'İletişim' : 'Contact'}</a></li>
+        </ul>
+      </div>
+
+      <!-- İletişim / Contact -->
+      <div class="foot-col">
+        <h5>{lang === 'tr' ? 'İletişim' : 'Contact'}</h5>
+        <ul>
+          <li><a href="mailto:info@altis.com.tr">info@altis.com.tr</a></li>
+          <li><a href="tel:+908508850950">0 (850) 885 09 50</a></li>
+          <li>
+            <a
+              href="https://maps.google.com/?q=Kartal+Plaza+%C3%9Cmraniye"
+              target="_blank"
+              rel="noopener"
+            >
+              Kartal Plaza, Esenkent Mh.<br />
+              İlkyaz Sk. No:1 D:1<br />
+              Ümraniye / İstanbul
+            </a>
+          </li>
+        </ul>
+        <div class="foot-social">
+          <a href="https://linkedin.com/company/altis-technologies" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.78 1.78 0 0 1 6.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93s-1.62.59-1.62 2v4.67h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/altisteknoloji" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://www.altis.com.tr" target="_blank" rel="noopener" aria-label="Web sitesi">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NAP structured data (hidden, for schema) -->
+    <div
+      itemscope
+      itemtype="https://schema.org/LocalBusiness"
+      style="display:none"
+      aria-hidden="true"
+    >
+      <span itemprop="name">Altis Teknoloji ve Yazılım</span>
+      <span itemprop="telephone">+90 850 885 09 50</span>
+      <span itemprop="email">info@altis.com.tr</span>
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Natoyolu Cad. İlkyaz Sok. Kartal Plaza No:24-28 Kat:1 D:1</span>
+        <span itemprop="addressLocality">Ümraniye</span>
+        <span itemprop="addressRegion">İstanbul</span>
+        <span itemprop="postalCode">34776</span>
+        <span itemprop="addressCountry">TR</span>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div>© 2003–2026 Altis Teknoloji ve Yazılım. {lang === 'tr' ? 'Tüm hakları saklıdır.' : 'All rights reserved.'}</div>
+      <div>{lang === 'tr' ? 'Dijital Dönüşümde Güvenilir Partneriniz' : 'Your Trusted Partner in Digital Transformation'}</div>
+    </div>
+  </div>
+</footer>
+
+<!-- GTM noscript fallback -->
+<!--
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+-->
+
+<style>
+footer {
+  background: #0A1438;
+  color: rgba(255, 255, 255, .7);
+  padding: 80px 0 32px;
+  font-size: 14px;
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+.foot-brand img {
+  height: 28px;
+  filter: brightness(0) invert(1);
+  margin-bottom: 18px;
+  opacity: .95;
+}
+.foot-brand p {
+  color: rgba(255, 255, 255, .6);
+  font-size: 13.5px;
+  max-width: 280px;
+  line-height: 1.6;
+}
+.foot-col h5 {
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+.foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.foot-col a { color: rgba(255, 255, 255, .65); font-size: 13.5px; transition: color .2s; }
+.foot-col a:hover { color: var(--cyan); }
+.foot-social { display: flex; gap: 10px; margin-top: 18px; }
+.foot-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, .7);
+  transition: background .2s, color .2s;
+}
+.foot-social a:hover { background: var(--cyan); color: var(--navy-900); }
+.foot-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, .45);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  .foot-bottom { flex-direction: column; text-align: center; }
+}
+</style>

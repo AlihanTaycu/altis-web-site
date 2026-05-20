@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Altis Sektörler",
+  "description": "Altis Teknoloji sektör çözümleri"
+};
+---
+
+<Base
+  title="Sektörler | Altis Teknoloji"
+  description="Depo & lojistik, perakende & tekstil ve üretim için RFID, IoT ve operasyonel zekâ çözümleri."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/sectors/"
+>
+  <section class="hub-hero">
+    <div class="container">
+      <div class="eyebrow">Sektörler</div>
+      <h1>Her sektör için aynı teknoloji değil, doğru operasyon modeli.</h1>
+      <p>Altis, RFID ve IoT altyapısını sektöre göre kurgular: depoda sevkiyat doğrulama, mağazada stok görünürlüğü, fabrikada OEE ve bakım zekâsı.</p>
+    </div>
+  </section>
+
+  <section class="hub-list">
+    <div class="container grid">
+      <a class="hub-card" href="/sektorler/depo-lojistik/">
+        <span class="tag">Depo &amp; Lojistik</span>
+        <h2>Depo &amp; Lojistik</h2>
+        <p>RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryoları.</p>
+      </a>
+      <a class="hub-card" href="/sektorler/perakende-tekstil/">
+        <span class="tag">Perakende &amp; Tekstil</span>
+        <h2>Perakende &amp; Tekstil</h2>
+        <p>Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu.</p>
+      </a>
+      <a class="hub-card" href="/sektorler/uretim/">
+        <span class="tag">Üretim</span>
+        <h2>Üretim</h2>
+        <p>OEE, kestirimci bakım, enerji izleme, üretim izlenebilirliği ve SCADA/MES/ERP entegrasyonu.</p>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.hub-hero { padding: 96px 0 52px; background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%); }
+.hub-hero h1 { max-width: 900px; margin-top: 18px; font-size: clamp(38px, 5vw, 62px); }
+.hub-hero p { max-width: 760px; margin-top: 20px; font-size: 19px; }
+.hub-list { padding: 40px 0 100px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.hub-card { display: grid; gap: 14px; min-height: 280px; padding: 30px; border: 1px solid var(--border); border-radius: 8px; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.hub-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--primary); }
+.hub-card h2 { font-size: 28px; }
+.hub-card p { font-size: 16px; }
+.tag { width: fit-content; color: var(--primary); background: var(--bg-blue); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 700; }
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } .hub-card { min-height: auto; } }
+</style>

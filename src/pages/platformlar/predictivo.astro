@@ -1,0 +1,1073 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Predictivo",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "IoT ve operasyon verilerini karar destek sistemine dönüştüren endüstriyel IoT platformu",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
+};
+---
+
+<Base
+  title="Predictivo - Industrial IoT ve Operational Intelligence Platformu | Altis Teknoloji"
+  description="Predictivo; sensör, makine, sayaç, beacon, SCADA ve operasyon verilerini dashboard, alarm, rapor ve kural motoruyla karar destek sistemine dönüştürür."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/platforms/predictivo/"
+>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Ana Sayfa</a>
+      <span class="sep">/</span>
+      <a href="/platformlar/predictivo/">Platformlar</a>
+      <span class="sep">/</span>
+      <span style="color:var(--predicto);font-weight:600">Predictivo</span>
+    </div>
+    <div class="hero-inner" style="margin-top:32px">
+      <div>
+        <div class="platform-pill">
+          <span class="pill-tag">Platform</span>
+          <span>Industrial IoT · Dashboard · Rule Engine · Reports</span>
+        </div>
+        <div class="product-name">Predictivo</div>
+        <h1 class="product-tag">Operasyonel verilerinizi karar destek sistemine dönüştürün.</h1>
+        <p class="hero-sub">Sensör, makine, sayaç, beacon, SCADA ve operasyon verilerini tek merkezde toplayan endüstriyel IoT platformu. Dashboard, alarm, rapor ve görsel kural motoruyla veriyi anlamlı aksiyonlara dönüştürün.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/iletisim/">Demo Talep Et
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#capabilities">Yetenekleri İncele</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="v">12+</div><div class="l">protokol desteği</div></div>
+          <div class="hero-stat"><div class="v">∞</div><div class="l">sensör ölçeklenmesi</div></div>
+          <div class="hero-stat"><div class="v">RT</div><div class="l">canlı dashboard</div></div>
+        </div>
+      </div>
+
+      <!-- Live dashboard mockup -->
+      <div class="dash">
+        <div class="dash-head">
+          <div class="tabs">
+            <span class="tab active">Operasyon</span>
+          </div>
+          <div class="ctrl">
+            <span class="live-dot"></span>
+            <span>canlı · son 24s</span>
+          </div>
+        </div>
+        <div class="dash-body">
+          <!-- KPIs -->
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="l">OEE</div>
+              <div class="v">82.4<span class="u">%</span></div>
+              <div class="trend up">↑ 3.2 dün</div>
+            </div>
+            <div class="kpi">
+              <div class="l">Enerji</div>
+              <div class="v">142<span class="u">kWh</span></div>
+              <div class="trend dn">↓ -8% hedef</div>
+            </div>
+            <div class="kpi">
+              <div class="l">Aktif Alarm</div>
+              <div class="v" style="color:var(--warn)">3</div>
+              <div class="trend up" style="color:var(--text-faint)">2 kritik · 1 uyarı</div>
+            </div>
+            <div class="kpi">
+              <div class="l">Cihaz</div>
+              <div class="v">248<span class="u">/250</span></div>
+              <div class="trend up">99.2% online</div>
+            </div>
+          </div>
+
+          <!-- Energy chart -->
+          <div class="dash-card">
+            <div class="ttl"><h5>Enerji Tüketimi · Hat 2</h5><span class="meta">kWh · son 12s</span></div>
+            <div class="chart">
+              <svg viewBox="0 0 300 96" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0F8FA8" stop-opacity=".35"/>
+                    <stop offset="100%" stop-color="#0F8FA8" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="grid">
+                  <line x1="0" y1="24" x2="300" y2="24"/>
+                  <line x1="0" y1="48" x2="300" y2="48"/>
+                  <line x1="0" y1="72" x2="300" y2="72"/>
+                </g>
+                <path class="area" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24 L300,96 L0,96 Z"/>
+                <path class="line" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24"/>
+                <circle class="point" cx="300" cy="24" r="3.5"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Machine health gauges -->
+          <div class="dash-card">
+            <div class="ttl"><h5>Makine Sağlığı</h5><span class="meta">4/5 sağlıklı</span></div>
+            <div class="gauges">
+              <div class="gauge">
+                <div class="ring">
+                  <svg viewBox="0 0 60 60">
+                    <circle class="bg" cx="30" cy="30" r="24"/>
+                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--ok)" stroke-dasharray="150.8" stroke-dashoffset="22.6"/>
+                  </svg>
+                  <div class="v">85<small>SAĞLIK</small></div>
+                </div>
+                <div class="lbl">CNC-01</div>
+              </div>
+              <div class="gauge">
+                <div class="ring">
+                  <svg viewBox="0 0 60 60">
+                    <circle class="bg" cx="30" cy="30" r="24"/>
+                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--warn)" stroke-dasharray="150.8" stroke-dashoffset="75.4"/>
+                  </svg>
+                  <div class="v">50<small>SAĞLIK</small></div>
+                </div>
+                <div class="lbl">CNC-02</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alarms -->
+          <div class="dash-card">
+            <div class="ttl"><h5>Aktif Alarmlar</h5><span class="meta">3</span></div>
+            <div class="alarm-list">
+              <div class="alarm crit">
+                <div class="sev"></div>
+                <div class="body">Titreşim eşik aşımı<span class="sub">CNC-02 · X axis · 4.8mm/s</span></div>
+                <div class="t">14:22</div>
+              </div>
+              <div class="alarm warn">
+                <div class="sev"></div>
+                <div class="body">Enerji hedefi aşıldı<span class="sub">Hat 2 · +12% trend</span></div>
+                <div class="t">13:50</div>
+              </div>
+              <div class="alarm info">
+                <div class="sev"></div>
+                <div class="body">Sensör kalibrasyon önerisi<span class="sub">TEMP-12 · sapma yakın</span></div>
+                <div class="t">12:08</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini RTLS map -->
+          <div class="dash-card">
+            <div class="ttl"><h5>RTLS · Depo Konumları</h5><span class="meta">42 etiket</span></div>
+            <div class="map-mini">
+              <div class="map-zone" style="left:8%;top:14%;width:32%;height:28%"></div>
+              <div class="map-zone" style="left:52%;top:14%;width:40%;height:28%"></div>
+              <div class="map-zone" style="left:8%;top:54%;width:60%;height:34%"></div>
+              <div class="map-zone" style="left:74%;top:54%;width:18%;height:34%"></div>
+              <span class="map-label" style="left:10%;top:6%">Zone A</span>
+              <span class="map-label" style="left:54%;top:6%">Zone B</span>
+              <span class="map-label" style="left:10%;top:46%">Üretim</span>
+              <span class="map-label" style="left:76%;top:46%">Sevkiyat</span>
+              <div class="map-pin" style="left:18%;top:28%"></div>
+              <div class="map-pin" style="left:30%;top:32%"></div>
+              <div class="map-pin b" style="left:62%;top:26%"></div>
+              <div class="map-pin" style="left:78%;top:34%"></div>
+              <div class="map-pin" style="left:24%;top:70%"></div>
+              <div class="map-pin c" style="left:42%;top:64%"></div>
+              <div class="map-pin" style="left:55%;top:74%"></div>
+              <div class="map-pin" style="left:80%;top:70%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trusted by -->
+<div class="logos-strip">
+  <div class="container">
+    <div class="lbl">— Sahada test edilmiş, kurumsal sistemlerle entegre çalışan —</div>
+    <div class="logos-row">
+      <div class="logo-box">PARTNER · 01</div>
+      <div class="logo-box">PARTNER · 02</div>
+      <div class="logo-box">PARTNER · 03</div>
+      <div class="logo-box">PARTNER · 04</div>
+      <div class="logo-box">PARTNER · 05</div>
+      <div class="logo-box">PARTNER · 06</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5-step flow -->
+<section class="flow5" id="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Beş Adımda Veri Aksiyona Dönüşür</div>
+      <h2>Bağlan · İşle · Görselleştir · Harekete Geç · Raporla</h2>
+      <p>Predictivo'nun beş temel yeteneği, sahadan gelen ham veriyi yönetilebilir operasyona dönüştüren tutarlı bir veri yaşam döngüsü oluşturur.</p>
+    </div>
+    <div class="flow5-steps">
+      <div class="flow5-step">
+        <div class="num">01 · CONNECT</div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg></div>
+        <h4>Bağlan</h4>
+        <p>Sensör, makine, sayaç, beacon, SCADA, gateway ve üçüncü parti sistemlerden veri alın.</p>
+        <div class="ex">MQTT · HTTP · OPC UA · Modbus · LoRaWAN</div>
+      </div>
+      <div class="flow5-step">
+        <div class="num">02 · PROCESS</div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51"/></svg></div>
+        <h4>İşle</h4>
+        <p>Gelen veriyi filtreleyin, eşik değerleri tanımlayın, kural motoru ile iş akışları kurun.</p>
+        <div class="ex">filter · aggregate · threshold · derive</div>
+      </div>
+      <div class="flow5-step">
+        <div class="num">03 · VISUALIZE</div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>
+        <h4>Görselleştir</h4>
+        <p>Dashboard'lar, grafikler, sayaçlar, haritalar ve operasyon panelleriyle veriyi anlamlı hale getirin.</p>
+        <div class="ex">widgets · drag &amp; drop · responsive</div>
+      </div>
+      <div class="flow5-step">
+        <div class="num">04 · ACT</div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h4>Harekete Geç</h4>
+        <p>Alarm, bildirim, cihaz tetikleme ve operasyon aksiyonlarıyla veriyi iş sonucuna dönüştürün.</p>
+        <div class="ex">alert · email · webhook · device</div>
+      </div>
+      <div class="flow5-step">
+        <div class="num">05 · REPORT</div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+        <h4>Raporla</h4>
+        <p>Periyodik PDF raporlarla performans, trend ve riskleri yönetim ve operasyon ekipleriyle paylaşın.</p>
+        <div class="ex">günlük · haftalık · aylık · PDF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature deep dives -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Yetenekler · Derinlemesine</div>
+      <h2>Predictivo neler yapar?</h2>
+    </div>
+
+    <!-- Feature 1: Dashboard builder -->
+    <div class="feature-block">
+      <div class="copy">
+        <span class="badge">Dashboard Builder</span>
+        <h3>Kod yazmadan, operasyona özel paneller</h3>
+        <p>Sürükle-bırak widget'larla operasyonunuza özel canlı dashboard'lar tasarlayın. Yönetim için OEE ve enerji KPI'ları, bakım ekibi için makine sağlık skorları, depo için RTLS haritası — aynı veri, farklı bakış açıları.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>20+ widget tipi</strong><span>Grafik, gauge, sayaç, harita, tablo, alarm listesi ve daha fazlası.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Rol bazlı görünüm</strong><span>Yönetim, operasyon, bakım için ayrı dashboard'lar; tek veri kaynağı.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Tam ekran mod</strong><span>Fabrika monitörlerinde, kontrol odasında veya mobilde aynı kalite.</span></div></li>
+        </ul>
+      </div>
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Dashboard editörü — Operasyon Müdürü görünümü</span>
+          <span class="right">drag &amp; drop</span>
+        </div>
+        <div class="builder">
+          <div class="builder-side">
+            <h6>Widgets</h6>
+            <div class="widget-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+              Line chart
+            </div>
+            <div class="widget-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              Gauge
+            </div>
+            <div class="widget-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              Big number
+            </div>
+            <div class="widget-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Map
+            </div>
+            <div class="widget-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+              Table
+            </div>
+            <h6 style="margin-top:14px">Datasources</h6>
+            <div class="widget-chip" style="font-size:10.5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span>MQTT · enerji</div>
+            <div class="widget-chip" style="font-size:10.5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span>OPC UA · MES</div>
+            <div class="widget-chip" style="font-size:10.5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span>Modbus · PLC</div>
+          </div>
+          <div class="builder-canvas">
+            <div class="bcell big-num">
+              <div class="t">OEE</div>
+              <div class="num">82.4%</div>
+            </div>
+            <div class="bcell">
+              <div class="t">Enerji Trendi</div>
+              <svg viewBox="0 0 120 50" preserveAspectRatio="none" style="width:100%;height:50px">
+                <path d="M0,40 L20,30 L40,32 L60,18 L80,22 L100,12 L120,18" fill="none" stroke="var(--predicto)" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="bcell spark">
+              <div class="t" style="width:100%;position:absolute;top:8px;left:10px">Üretim · 7g</div>
+              <div class="bar" style="height:55%"></div>
+              <div class="bar" style="height:72%"></div>
+              <div class="bar" style="height:48%"></div>
+              <div class="bar" style="height:85%"></div>
+              <div class="bar" style="height:62%"></div>
+              <div class="bar" style="height:78%"></div>
+              <div class="bar" style="height:90%"></div>
+            </div>
+            <div class="bcell">
+              <div class="t">Alarm Sayısı</div>
+              <div style="display:flex;align-items:end;justify-content:space-between;height:50px">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--warn)">3</div>
+                <div style="font-size:10px;color:var(--text-faint)">2 kritik · 1 uyarı</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Rule engine for alarms -->
+    <div class="feature-block flip">
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Kural · Kestirimci Bakım Uyarısı</span>
+          <span class="right">v2 · aktif</span>
+        </div>
+        <div class="surface-body">
+          <div class="rule-flow">
+            <!-- Trigger -->
+            <div class="rnode trig" style="left:10px;top:30px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div>
+              <div class="body">Trigger<span class="meta">CNC-02 · vibration</span></div>
+            </div>
+            <div class="rnode trig" style="left:10px;top:140px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg></div>
+              <div class="body">Trigger<span class="meta">CNC-02 · temp</span></div>
+            </div>
+
+            <!-- Condition -->
+            <div class="rnode cond" style="left:200px;top:90px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 22h20z"/></svg></div>
+              <div class="body">If &gt; 4mm/s &amp; &gt;72°C<span class="meta">15 dk pencere</span></div>
+            </div>
+
+            <!-- Actions -->
+            <div class="rnode act" style="left:380px;top:30px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg></div>
+              <div class="body">Alarm: Kritik<span class="meta">bakim@altis</span></div>
+            </div>
+            <div class="rnode act" style="left:380px;top:140px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+              <div class="body">İş emri oluştur<span class="meta">CMMS webhook</span></div>
+            </div>
+            <div class="rnode act" style="left:380px;top:250px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h12l3 3h3v11H3z"/></svg></div>
+              <div class="body">SMS · Mühendis<span class="meta">+90 5xx ...</span></div>
+            </div>
+
+            <svg class="rflow-edge" viewBox="0 0 520 320" preserveAspectRatio="none">
+              <path d="M150,46 C180,46 180,106 200,106"/>
+              <path d="M150,156 C180,156 180,116 200,116"/>
+              <path d="M340,106 C360,106 360,46 380,46"/>
+              <path d="M340,106 C360,106 360,156 380,156"/>
+              <path d="M340,106 C360,106 360,266 380,266"/>
+            </svg>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint)">
+            <span>son 30 gün: 12 tetiklenme · 2 gerçek arıza önlendi</span>
+            <span style="color:var(--ok)">● aktif</span>
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <span class="badge">Görsel Kural Motoru</span>
+        <h3>Veri → Eşik → Aksiyon, kod yazmadan</h3>
+        <p>Hangi sensör değeri, hangi koşulda, hangi aksiyonu tetikleyecek? Bu mantık görsel bir akış editöründe kurulur. Operasyon ekibi yeni kural tanımlamak için yazılım ekibini beklemez; eşikleri, koşulları ve aksiyonları kendisi yönetir.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Trigger · Condition · Action</strong><span>Sade üç katmanlı model; karmaşık senaryolar bileşik kurallarla.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Çok-kanallı aksiyon</strong><span>E-posta, SMS, webhook, cihaz tetikleme, dashboard alarm — biri veya hepsi.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Geçmiş ve etki</strong><span>Hangi kural ne zaman çalıştı, hangi sonuca yol açtı — tam izlenebilir.</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 3: Reports -->
+    <div class="feature-block">
+      <div class="copy">
+        <span class="badge">Otomatik Raporlar</span>
+        <h3>Yönetim için aylık, operasyon için günlük PDF'ler</h3>
+        <p>Predictivo'da hazırlanan dashboard'lar otomatik olarak PDF rapor şablonlarına dönüştürülür. Belirlenen periyotlarda — günlük, haftalık, aylık — ilgili kişilere e-posta ile gönderilir. KPI özetleri, trend analizleri, alarm istatistikleri, makine performansı tek belgede toplanır.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Şablon bazlı</strong><span>Yönetim, operasyon, bakım, enerji — farklı raporlar, farklı alıcılar.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Otomatik dağıtım</strong><span>Cron benzeri planlı gönderim; e-posta veya dosya hedefi.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg><div><strong>Markalı çıktı</strong><span>Kurumsal şablon, logo ve renk paleti raporlara işlenir.</span></div></li>
+        </ul>
+      </div>
+      <div class="report">
+        <div class="report-head">
+          <div>
+            <div class="t">Operasyon Aylık Raporu</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.8;margin-top:2px">Tesis · İstanbul Hadımköy</div>
+          </div>
+          <div class="d">Mart 2026 · sayfa 1/8</div>
+        </div>
+        <div class="report-body">
+          <div>
+            <div class="rep-kpi">
+              <div class="l">Ortalama OEE</div>
+              <div class="v">82.4%</div>
+            </div>
+            <div class="rep-kpi">
+              <div class="l">Toplam Enerji</div>
+              <div class="v">4,182 kWh</div>
+            </div>
+            <div class="rep-kpi">
+              <div class="l">Önlenen Arıza</div>
+              <div class="v">7</div>
+            </div>
+            <div class="rep-kpi">
+              <div class="l">Kritik Alarm</div>
+              <div class="v" style="color:var(--crit)">14</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:8px">Üretim · Günlük</div>
+            <div class="rep-chart">
+              <div class="bar" style="height:55%"></div>
+              <div class="bar" style="height:62%"></div>
+              <div class="bar" style="height:48%"></div>
+              <div class="bar" style="height:78%"></div>
+              <div class="bar" style="height:65%"></div>
+              <div class="bar" style="height:88%"></div>
+              <div class="bar" style="height:72%"></div>
+              <div class="bar" style="height:81%"></div>
+              <div class="bar" style="height:67%"></div>
+              <div class="bar" style="height:92%"></div>
+              <div class="bar" style="height:74%"></div>
+              <div class="bar" style="height:83%"></div>
+              <div class="bar" style="height:79%"></div>
+              <div class="bar" style="height:95%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rep-foot">
+          <span>Predictivo · Altis Teknoloji</span>
+          <span>3 alıcı · oto-gönderim</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Architecture -->
+<section class="arch">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Mimari</div>
+      <h2>Sahadan kullanıcıya, dört katmanlı IoT mimarisi</h2>
+      <p>Predictivo; cihaz, gateway, platform ve kullanıcı katmanlarında ölçeklenebilir ve güvenli bir IoT veri yaşam döngüsü kurar. Her katman bağımsız, her sınırda standart.</p>
+    </div>
+    <div class="arch-diagram">
+      <div class="arch-cols">
+        <div class="arch-col">
+          <div class="lyr">L1 · DEVICE</div>
+          <h4>Saha Veri Kaynakları</h4>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg>Sensörler · ölçüm</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>PLC / Makine</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Sayaçlar · enerji</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/></svg>Beacon / RTLS</div>
+        </div>
+        <div class="arch-col">
+          <div class="lyr">L2 · EDGE / GATEWAY</div>
+          <h4>Veri Toplama Katmanı</h4>
+          <div class="arch-node core">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            Predictivo Gateway
+          </div>
+          <div class="arch-node">Protokol çevirme</div>
+          <div class="arch-node">Local buffering</div>
+          <div class="arch-node">Pre-aggregation</div>
+        </div>
+        <div class="arch-col">
+          <div class="lyr">L3 · PLATFORM</div>
+          <h4>Operational Intelligence</h4>
+          <div class="arch-node core">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+            Predictivo Core
+          </div>
+          <div class="arch-node">Time-series storage</div>
+          <div class="arch-node">Rule engine</div>
+          <div class="arch-node">Dashboards · reports</div>
+        </div>
+        <div class="arch-col">
+          <div class="lyr">L4 · USER &amp; SYSTEM</div>
+          <h4>Tüketici Katmanı</h4>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Web · Tablet</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/></svg>Mobil App</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>PDF Raporlar</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg>ERP / SCADA</div>
+        </div>
+      </div>
+      <div class="arch-flow">
+        <span class="ln"></span>
+        <span>Saha</span>
+        <span class="ln"></span>
+        <span>Gateway</span>
+        <span class="ln"></span>
+        <span style="color:var(--cyan)">Platform</span>
+        <span class="ln"></span>
+        <span>Kullanıcı</span>
+        <span class="ln"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sensor / protocol matrix -->
+<section class="matrix">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Veri Kaynakları</div>
+      <h2>Yaygın endüstri protokolleriyle uyumlu</h2>
+      <p>Predictivo, IoT ve endüstriyel dünyada yaygın olarak kullanılan protokol ve cihaz kategorileriyle uyumludur. Mevcut sensörler, sayaçlar ve sistemler değiştirilmeden platforma bağlanır.</p>
+    </div>
+    <div class="matrix-grid">
+      <div class="matrix-card">
+        <h5>Endüstriyel Protokoller</h5>
+        <div class="items">
+          <span class="chip">MQTT</span>
+          <span class="chip">OPC UA</span>
+          <span class="chip">Modbus TCP/RTU</span>
+          <span class="chip">HTTP/S</span>
+          <span class="chip">CoAP</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>IoT &amp; Kablosuz</h5>
+        <div class="items">
+          <span class="chip">LoRaWAN</span>
+          <span class="chip">NB-IoT</span>
+          <span class="chip">BLE Beacons</span>
+          <span class="chip">Zigbee</span>
+          <span class="chip">Wi-Fi</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Enerji &amp; Sayaç</h5>
+        <div class="items">
+          <span class="chip">Elektrik sayacı</span>
+          <span class="chip">Su / gaz</span>
+          <span class="chip">Kalorimetre</span>
+          <span class="chip">Inverter</span>
+          <span class="chip">UPS</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Ortam Sensörü</h5>
+        <div class="items">
+          <span class="chip">Sıcaklık</span>
+          <span class="chip">Nem</span>
+          <span class="chip">CO₂</span>
+          <span class="chip">Basınç</span>
+          <span class="chip">Hava kalitesi</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Makine &amp; Bakım</h5>
+        <div class="items">
+          <span class="chip">Titreşim</span>
+          <span class="chip">Akustik</span>
+          <span class="chip">Akım</span>
+          <span class="chip">Yağ kalitesi</span>
+          <span class="chip">Yataklama ısısı</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Konum &amp; RTLS</h5>
+        <div class="items">
+          <span class="chip">BLE</span>
+          <span class="chip">UWB</span>
+          <span class="chip">RFID</span>
+          <span class="chip">GPS</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>SCADA &amp; Otomasyon</h5>
+        <div class="items">
+          <span class="chip">Siemens WinCC</span>
+          <span class="chip">Wonderware</span>
+          <span class="chip">Ignition</span>
+          <span class="chip">Custom SCADA</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>3rd-party / Bulut</h5>
+        <div class="items">
+          <span class="chip">AWS IoT</span>
+          <span class="chip">Azure IoT</span>
+          <span class="chip">Webhook</span>
+          <span class="chip">REST API</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use cases -->
+<section class="usecase-deep">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Kullanım Senaryoları</div>
+      <h2>Predictivo nerede kullanılır?</h2>
+      <p>IoT verisinin yönetilebilir operasyona dönüştüğü her yerde Predictivo bir bağlantı katmanı, bir analiz motoru ve bir karar destek panosu olarak konumlanır.</p>
+    </div>
+    <div class="uc-grid">
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>
+        <h3>Kestirimci Bakım</h3>
+        <p>Titreşim, sıcaklık, akım ve çalışma verileri analiz edilerek arıza riski erken tespit edilir. Beklenmeyen duruşlar planlı bakıma dönüşür.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">↓ Duruş</div><div class="l">arıza riski</div></div>
+          <div class="uc-m"><div class="v">Auto</div><div class="l">iş emri</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3>Enerji İzleme &amp; Verimlilik</h3>
+        <p>Elektrik, gaz, su ve buhar tüketimi gerçek zamanlı izlenir. Hat, vardiya ve ürün başına maliyetler şeffaflaşır; hedefler kural motoruyla otomatik takip edilir.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">↓ %15</div><div class="l">tipik kazanç</div></div>
+          <div class="uc-m"><div class="v">RT</div><div class="l">canlı izleme</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>OEE &amp; Üretim Performansı</h3>
+        <p>Makinelerin çalışma süresi, kalite ve performans verileri tek skor üzerinde birleşir. Vardiya, hat ve ürün bazlı OEE şeffaflaşır.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">OEE</div><div class="l">canlı skor</div></div>
+          <div class="uc-m"><div class="v">Vardiya</div><div class="l">karşılaştırma</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>RTLS &amp; Konum Takibi</h3>
+        <p>Beacon, UWB veya RFID tabanlı konumlama ile ekipman, personel veya varlıkların lokasyonu gerçek zamanlı izlenir; bölge ihlali, varlık kaybı, çalışma süresi takibi otomatik aksiyona dönüşür.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">RT</div><div class="l">canlı konum</div></div>
+          <div class="uc-m"><div class="v">Geo-fence</div><div class="l">bölge alarmı</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM4 12h16M12 4v16"/></svg></div>
+        <h3>Soğuk Zincir &amp; Ortam İzleme</h3>
+        <p>Sıcaklık, nem, basınç ve hava kalitesi sürekli izlenir; eşik aşımı durumunda anlık alarm ve regülasyona uygun kayıt tutulur.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">7×24</div><div class="l">sürekli kayıt</div></div>
+          <div class="uc-m"><div class="v">Audit</div><div class="l">izlenebilir log</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <h3>Operasyon Dashboard'ları</h3>
+        <p>Yönetim, üretim, bakım, enerji ve depo ekipleri için rol bazlı dashboard'lar. Aynı veri, farklı bakış açıları; karar süresi kısalır.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">×N</div><div class="l">rol bazlı</div></div>
+          <div class="uc-m"><div class="v">Live</div><div class="l">canlı yayın</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Tag&Trace cross-link -->
+<section class="crosslink">
+  <div class="container">
+    <div class="crosslink-card">
+      <div>
+        <div class="lbl">Birlikte Kullanım</div>
+        <h3>Tag&amp;Trace ile birleşince ne olur?</h3>
+        <p>Tag&amp;Trace sahadaki RFID, etiket ve cihaz orkestrasyonunu yönetir; Predictivo bu cihazlardan ve sensörlerden gelen veriyi dashboard, alarm ve raporlara dönüştürür. İkisi bir arada, Auto-ID ve IoT'yi aynı operasyon zekâsı çatısı altında birleştirir.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="/platformlar/tag-trace/">Tag&amp;Trace'i İncele
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="eyebrow">Demo &amp; Keşif</div>
+    <h2>Predictivo'yu kendi operasyonunuzda görelim</h2>
+    <p>Ekibimizle bir keşif görüşmesi planlayın. Hangi verileri topladığınızı, hangi karar süreçlerini iyileştirmek istediğinizi birlikte değerlendirelim — uygulanabilir bir yol haritası ve canlı dashboard demosu ile dönelim.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="/iletisim/">Demo Talep Et
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/platformlar/tag-trace/">Tag&amp;Trace'e Geç</a>
+    </div>
+  </div>
+</section>
+</Base>
+
+<style>
+:root{
+  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;--navy-600:#1E2F8C;
+  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
+  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
+  --border:#E3E8F2;--border-soft:#EEF1F7;
+  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
+  --steel:#8B95A5;--slate:#334155;
+  --primary:var(--navy-800);--accent:var(--cyan);
+  /* Predictivo gets a deeper teal-cyan accent palette */
+  --predicto:#0F8FA8;
+  --ok:#15a06b;--warn:#c47700;--crit:#d64545;
+  --radius:14px;--radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
+  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
+  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
+  --container:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+.mono{font-family:"JetBrains Mono",monospace}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
+h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(40px,5vw,68px);font-weight:700}
+h2{font-size:clamp(30px,3.2vw,44px);font-weight:700;letter-spacing:-.025em}
+h3{font-size:20px;font-weight:600}
+h4{font-size:16px;font-weight:600}
+p{margin:0;color:var(--text-muted);text-wrap:pretty}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:14.5px;color:var(--text);font-weight:500}
+.nav-links a:hover{color:var(--primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--bg-soft)}
+.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
+
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:64px 0 120px;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 80% -100px, rgba(15,143,168,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.platform-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.platform-pill .pill-tag{background:var(--predicto);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.product-name{
+  font-size:clamp(56px,7vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#0F8FA8 60%,#18B7D6 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:24px 0 14px;
+}
+.hero h1.product-tag{font-size:clamp(28px,2.6vw,38px);font-weight:700;line-height:1.2;color:var(--navy-800)}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:520px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);max-width:520px}
+.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:24px;font-weight:700;color:var(--navy-800)}
+.hero-stat .l{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+/* Hero visual — live dashboard */
+.dash{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);padding:0;overflow:hidden;position:relative;
+}
+.dash-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid var(--border-soft);background:#FCFCFE;
+}
+.dash-head .tabs{display:flex;gap:6px}
+.dash-head .tab{font-size:11.5px;padding:5px 10px;border-radius:6px;color:var(--text-muted);font-weight:600}
+.dash-head .tab.active{background:var(--cyan-soft);color:var(--predicto)}
+.dash-head .ctrl{display:flex;gap:10px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(21,160,107,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(21,160,107,.5)}70%{box-shadow:0 0 0 8px rgba(21,160,107,0)}100%{box-shadow:0 0 0 0 rgba(21,160,107,0)}}
+.dash-body{padding:18px;display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:14px;background:#FAFBFE}
+
+.kpi-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:12px 14px}
+.kpi .l{font-size:10.5px;color:var(--text-faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.kpi .v{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:700;color:var(--navy-800);margin-top:4px;display:flex;align-items:baseline;gap:6px}
+.kpi .u{font-size:10px;color:var(--text-faint);font-weight:600}
+.kpi .trend{font-size:10.5px;font-weight:600;margin-top:2px;display:inline-flex;gap:3px;align-items:center}
+.kpi .trend.up{color:var(--ok)}
+.kpi .trend.dn{color:var(--crit)}
+
+.dash-card{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:14px;display:flex;flex-direction:column}
+.dash-card .ttl{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.dash-card .ttl h5{font-size:12px;color:var(--slate);font-weight:600;margin:0}
+.dash-card .ttl .meta{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint)}
+
+/* Energy chart */
+.chart{height:96px;position:relative}
+.chart svg{width:100%;height:100%;display:block}
+.chart .grid line{stroke:var(--border-soft);stroke-width:1}
+.chart .area{fill:url(#area-grad)}
+.chart .line{fill:none;stroke:var(--predicto);stroke-width:2}
+.chart .point{fill:#fff;stroke:var(--predicto);stroke-width:2}
+
+/* Alarms */
+.alarm-list{display:flex;flex-direction:column;gap:8px}
+.alarm{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;background:#FAFBFE;border-radius:8px;font-size:12px}
+.alarm .sev{width:7px;height:24px;border-radius:3px}
+.alarm.crit .sev{background:var(--crit)}
+.alarm.warn .sev{background:var(--warn)}
+.alarm.info .sev{background:var(--predicto)}
+.alarm .body{color:var(--slate);font-weight:500}
+.alarm .body .sub{font-family:"JetBrains Mono",monospace;color:var(--text-faint);font-size:10px;display:block;margin-top:1px}
+.alarm .t{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint)}
+
+/* Health gauge */
+.gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;align-items:center}
+.gauge{display:flex;flex-direction:column;align-items:center;gap:4px}
+.gauge .ring{position:relative;width:78px;height:78px}
+.gauge .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.gauge .ring .bg{fill:none;stroke:var(--border-soft);stroke-width:8}
+.gauge .ring .fg{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .6s}
+.gauge .v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-weight:700;color:var(--navy-800);font-size:16px;line-height:1}
+.gauge .v small{font-size:8px;color:var(--text-faint);font-weight:600;margin-top:2px}
+.gauge .lbl{font-size:11px;color:var(--text-muted);font-weight:500;text-align:center}
+
+/* Map */
+.map-mini{position:relative;height:160px;background:#F1F4FA;border-radius:8px;overflow:hidden}
+.map-mini::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,18,92,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,18,92,.06) 1px,transparent 1px);
+  background-size:18px 18px;
+}
+.map-zone{position:absolute;border:1px dashed rgba(15,143,168,.4);border-radius:6px}
+.map-pin{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--predicto);box-shadow:0 0 0 4px rgba(15,143,168,.2)}
+.map-pin.b{background:var(--warn);box-shadow:0 0 0 4px rgba(196,119,0,.2)}
+.map-pin.c{background:var(--crit);box-shadow:0 0 0 4px rgba(214,69,69,.2)}
+.map-label{position:absolute;font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--slate);background:rgba(255,255,255,.85);padding:1px 5px;border-radius:3px;font-weight:600}
+
+/* Section base */
+section{padding:110px 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+/* Logos strip */
+.logos-strip{padding:48px 0;background:#fff;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)}
+.logos-strip .lbl{text-align:center;font-size:12px;color:var(--text-faint);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+.logos-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.logo-box{height:56px;border:1px dashed var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);background:#FAFBFE}
+
+/* Five-step flow (Connect → Process → Visualize → Act → Report) */
+.flow5{background:var(--bg-soft);padding:120px 0}
+.flow5-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:48px;position:relative}
+.flow5-step{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:24px 22px;position:relative;display:flex;flex-direction:column;gap:12px;transition:transform .25s,box-shadow .25s}
+.flow5-step:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.flow5-step .num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--predicto);font-weight:600;letter-spacing:.1em}
+.flow5-step .ic{width:42px;height:42px;border-radius:11px;background:var(--cyan-soft);color:var(--predicto);display:flex;align-items:center;justify-content:center}
+.flow5-step h4{font-size:18px;color:var(--navy-800);margin:0}
+.flow5-step p{font-size:13px;line-height:1.55;color:var(--text-muted)}
+.flow5-step .ex{font-size:11px;color:var(--text-faint);font-family:"JetBrains Mono",monospace;border-top:1px dashed var(--border-soft);padding-top:10px;margin-top:auto;letter-spacing:.02em}
+
+/* Feature deep blocks */
+.feature-block{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;margin-bottom:130px}
+.feature-block:last-child{margin-bottom:0}
+.feature-block.flip{grid-template-columns:1.1fr 1fr}
+.feature-block.flip .copy{order:2}
+.feature-block .badge{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--predicto);padding:5px 10px;background:var(--cyan-soft);border-radius:6px}
+.feature-block h3{font-size:32px;margin-top:18px;margin-bottom:18px}
+.feature-block .copy > p{font-size:16.5px;line-height:1.65;margin-bottom:20px}
+.feature-block ul.kv{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+.feature-block ul.kv li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px}
+.feature-block ul.kv li svg{color:var(--predicto);flex-shrink:0;margin-top:3px}
+.feature-block ul.kv strong{color:var(--text);font-weight:600;display:block;margin-bottom:2px}
+.feature-block ul.kv span{color:var(--text-muted)}
+
+/* Surfaces */
+.surface{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+.surface-head{padding:14px 18px;border-bottom:1px solid var(--border-soft);background:#FCFCFE;display:flex;align-items:center;justify-content:space-between}
+.surface-head .ttl{font-size:13px;font-weight:600;color:var(--navy-800)}
+.surface-head .right{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint)}
+.surface-body{padding:20px}
+
+/* Builder mock (dashboard editor) */
+.builder{display:grid;grid-template-columns:170px 1fr;height:380px}
+.builder-side{border-right:1px solid var(--border-soft);padding:12px;background:#FAFBFE;overflow:hidden}
+.builder-side h6{font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin:8px 0 6px}
+.widget-chip{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border:1px solid var(--border-soft);border-radius:6px;font-size:11.5px;color:var(--slate);font-weight:500;margin-bottom:6px;cursor:grab}
+.widget-chip svg{color:var(--predicto);flex-shrink:0}
+.builder-canvas{padding:16px;background:repeating-linear-gradient(0deg,transparent,transparent 22px,rgba(0,18,92,.04) 22px,rgba(0,18,92,.04) 23px),repeating-linear-gradient(90deg,transparent,transparent 22px,rgba(0,18,92,.04) 22px,rgba(0,18,92,.04) 23px);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px}
+.bcell{background:#fff;border:1.5px solid var(--predicto);border-radius:8px;padding:10px;font-size:11px;color:var(--slate);position:relative}
+.bcell::before{content:"";position:absolute;top:-4px;left:-4px;width:8px;height:8px;border:2px solid var(--predicto);border-radius:50%;background:#fff}
+.bcell .t{font-weight:600;font-size:11px;color:var(--navy-800);margin-bottom:6px}
+.bcell.spark{display:flex;align-items:end;gap:2px;padding-bottom:14px}
+.bcell.spark .bar{flex:1;background:linear-gradient(180deg,var(--predicto),var(--cyan));border-radius:2px 2px 0 0}
+.bcell.big-num{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.bcell.big-num .num{font-family:"JetBrains Mono",monospace;font-size:28px;font-weight:700;color:var(--navy-800);line-height:1}
+
+/* Rule engine block */
+.rule-flow{padding:24px;background:repeating-radial-gradient(circle at center,rgba(0,18,92,.05) 1px,transparent 1px) 0 0 / 18px 18px,#FAFBFE;border-radius:10px;position:relative;height:340px}
+.rnode{position:absolute;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;font-size:11.5px;font-weight:600;color:var(--slate);display:flex;align-items:center;gap:8px;min-width:130px;box-shadow:0 4px 12px -4px rgba(0,18,92,.12)}
+.rnode .meta{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--text-faint);font-weight:500;display:block;margin-top:1px}
+.rnode.trig{border-color:var(--predicto)}
+.rnode.cond{border-color:var(--warn)}
+.rnode.act{border-color:var(--ok)}
+.rnode .ic{width:22px;height:22px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rnode.trig .ic{background:var(--cyan-soft);color:var(--predicto)}
+.rnode.cond .ic{background:#FEF6E7;color:var(--warn)}
+.rnode.act .ic{background:#E6F7EE;color:var(--ok)}
+.rnode .body{display:flex;flex-direction:column;line-height:1.2}
+.rflow-edge{position:absolute;inset:0;pointer-events:none}
+.rflow-edge path{stroke:var(--predicto);stroke-width:2;fill:none;stroke-dasharray:5 4;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-18}}
+
+/* PDF report mock */
+.report{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.report-head{background:linear-gradient(135deg,var(--navy-800),var(--predicto));color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.report-head .t{font-weight:700;font-size:15px}
+.report-head .d{font-family:"JetBrains Mono",monospace;font-size:11px;opacity:.8}
+.report-body{padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rep-kpi{padding:10px 0;border-bottom:1px solid var(--border-soft)}
+.rep-kpi:last-child{border-bottom:none}
+.rep-kpi .l{font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.rep-kpi .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--navy-800);margin-top:2px}
+.rep-chart{height:100%;min-height:130px;display:flex;align-items:end;gap:3px}
+.rep-chart .bar{flex:1;background:linear-gradient(180deg,var(--predicto),var(--cyan));border-radius:2px 2px 0 0}
+.rep-foot{padding:10px 20px;background:#FAFBFE;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint);display:flex;justify-content:space-between;border-top:1px solid var(--border-soft)}
+
+/* Architecture */
+.arch{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
+.arch::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+.arch .container{position:relative}
+.arch h2{color:#fff}
+.arch .section-head p{color:rgba(255,255,255,.7)}
+.arch .eyebrow{color:var(--cyan)}
+.arch .eyebrow::before{background:var(--cyan)}
+.arch-diagram{margin-top:48px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:48px}
+.arch-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;align-items:stretch}
+.arch-col{display:flex;flex-direction:column;gap:10px}
+.arch-col .lyr{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--cyan);letter-spacing:.1em;font-weight:600;margin-bottom:8px}
+.arch-col h4{color:#fff;font-size:17px;margin-bottom:14px}
+.arch-node{padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;font-size:13px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:10px}
+.arch-node svg{color:var(--cyan);flex-shrink:0}
+.arch-node.core{background:linear-gradient(135deg,rgba(24,183,214,.2),rgba(0,18,92,.4));border-color:var(--cyan);font-weight:600;color:#fff;padding:18px;font-size:14px}
+.arch-flow{display:flex;align-items:center;justify-content:center;margin-top:32px;font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(255,255,255,.5);gap:14px;letter-spacing:.12em;text-transform:uppercase}
+.arch-flow .ln{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+
+/* Sensor matrix */
+.matrix{padding:110px 0}
+.matrix-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.matrix-card{border:1px solid var(--border-soft);border-radius:var(--radius);padding:22px;background:#fff;transition:all .25s}
+.matrix-card:hover{border-color:var(--predicto);box-shadow:var(--shadow)}
+.matrix-card h5{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin:0 0 14px}
+.matrix-card .items{display:flex;flex-wrap:wrap;gap:6px}
+.matrix-card .chip{font-size:11.5px;padding:4px 9px;background:var(--bg-soft);border-radius:5px;color:var(--slate);font-family:"JetBrains Mono",monospace;font-weight:500}
+
+/* Use cases */
+.usecase-deep{background:var(--bg-soft)}
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.uc-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
+.uc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.uc-card .ic{width:44px;height:44px;border-radius:11px;background:var(--cyan-soft);color:var(--predicto);display:flex;align-items:center;justify-content:center}
+.uc-card h3{font-size:18px}
+.uc-card p{font-size:14px;line-height:1.55}
+.uc-metrics{display:flex;gap:18px;margin-top:auto;padding-top:18px;border-top:1px dashed var(--border-soft)}
+.uc-m .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--predicto)}
+.uc-m .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px}
+
+/* Tag&Trace cross-link */
+.crosslink{padding:90px 0}
+.crosslink-card{background:linear-gradient(135deg,#FFF,#F6F8FC);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;box-shadow:var(--shadow-sm)}
+.crosslink-card .lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint)}
+.crosslink-card h3{font-size:26px;margin-top:10px;margin-bottom:10px}
+.crosslink-card p{font-size:15px;max-width:600px}
+
+/* CTA */
+.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.cta-section::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 400px at 80% 50%, rgba(24,183,214,.15), transparent 60%);
+}
+.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.cta-inner .eyebrow{color:var(--cyan)}
+.cta-inner .eyebrow::before{background:var(--cyan)}
+.cta-inner h2{color:#fff;margin-top:18px}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
+.cta-inner .hero-cta{justify-content:center;margin-top:36px}
+.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25);background:transparent}
+.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+/* Footer */
+footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.foot-inner img{height:24px;filter:brightness(0) invert(1);opacity:.85}
+.foot-links{display:flex;gap:24px}
+.foot-links a:hover{color:var(--cyan)}
+
+@media (max-width:1100px){
+  .hero-inner,.feature-block,.feature-block.flip,.crosslink-card{grid-template-columns:1fr;gap:48px}
+  .feature-block.flip .copy{order:0}
+  .flow5-steps{grid-template-columns:repeat(2,1fr)}
+  .arch-cols,.matrix-grid,.uc-grid{grid-template-columns:repeat(2,1fr)}
+
+  .dash-body{grid-template-columns:1fr}
+  .kpi-row{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+  section{padding:72px 0}
+  .flow5-steps,.arch-cols,.matrix-grid,.uc-grid{grid-template-columns:1fr}
+  .logos-row{grid-template-columns:repeat(3,1fr)}
+  .hero-stats{grid-template-columns:repeat(2,auto)}
+  .builder{grid-template-columns:1fr;height:auto}
+  .builder-side{border-right:none;border-bottom:1px solid var(--border-soft)}
+}
+</style>

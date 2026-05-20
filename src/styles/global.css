@@ -1,0 +1,192 @@
+/* ============================================================
+   Altis Teknoloji — Global Design System
+   Brand: Navy #00125C, Cyan #18B7D6
+   Font: Inter + JetBrains Mono
+   ============================================================ */
+
+:root {
+  /* Navy palette */
+  --navy-900: #000A3A;
+  --navy-800: #00125C;
+  --navy-700: #0A1E75;
+  --navy-600: #1E2F8C;
+
+  /* Backgrounds */
+  --bg: #FFFFFF;
+  --bg-soft: #F6F8FC;
+  --bg-blue: #EEF3FF;
+
+  /* Text */
+  --text: #111827;
+  --text-muted: #5F6675;
+  --text-faint: #8A93A5;
+
+  /* Borders */
+  --border: #E3E8F2;
+  --border-soft: #EEF1F7;
+
+  /* Accent */
+  --cyan: #18B7D6;
+  --cyan-soft: #E8FAFD;
+  --steel: #8B95A5;
+  --slate: #334155;
+
+  /* Semantic aliases */
+  --primary: var(--navy-800);
+  --accent: var(--cyan);
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 18, 92, .04), 0 1px 1px rgba(0, 18, 92, .03);
+  --shadow: 0 8px 28px -12px rgba(0, 18, 92, .18), 0 2px 6px rgba(0, 18, 92, .05);
+  --shadow-lg: 0 30px 60px -25px rgba(0, 18, 92, .28), 0 8px 20px -8px rgba(0, 18, 92, .12);
+
+  /* Spacing */
+  --section-y: 120px;
+  --container: 1240px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* ---- Base ---- */
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  line-height: 1.55;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ---- Layout ---- */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+section { padding: var(--section-y) 0; }
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 {
+  font-family: inherit;
+  color: var(--navy-800);
+  margin: 0;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(40px, 5vw, 68px); font-weight: 700; }
+h2 { font-size: clamp(32px, 3.4vw, 48px); font-weight: 700; letter-spacing: -.025em; }
+h3 { font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
+h4 { font-size: 16px; font-weight: 600; }
+p { margin: 0; color: var(--text-muted); text-wrap: pretty; }
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-weight: 600;
+  font-size: 14.5px;
+  border-radius: 10px;
+  transition: transform .2s, box-shadow .2s, background .2s, color .2s;
+  white-space: nowrap;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 20px -10px rgba(0, 18, 92, .6);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -10px rgba(0, 18, 92, .55);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { background: var(--bg-soft); border-color: #cbd4e8; }
+.btn-ghost { background: transparent; color: var(--text); padding: 8px 14px; }
+.btn-ghost:hover { background: var(--bg-soft); }
+.btn-lg { padding: 16px 28px; font-size: 15.5px; border-radius: 12px; }
+
+/* ---- Section header ---- */
+.section-head { max-width: 780px; margin: 0 auto 64px; text-align: center; }
+.section-head.left { margin-left: 0; text-align: left; }
+.section-head h2 { margin-top: 18px; }
+.section-head p { font-size: 18px; margin-top: 18px; }
+
+/* ---- Common card ---- */
+.card {
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border); }
+
+/* ---- Status colors ---- */
+.ok   { color: #15a06b; }
+.warn { color: #c47700; }
+.err  { color: #d64545; }
+
+/* ---- Animations ---- */
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(24, 183, 214, .6); }
+  70%  { box-shadow: 0 0 0 10px rgba(24, 183, 214, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(24, 183, 214, 0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: .6; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .15; }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  :root { --section-y: 96px; }
+}
+@media (max-width: 720px) {
+  :root { --section-y: 72px; }
+  .container { padding: 0 20px; }
+}

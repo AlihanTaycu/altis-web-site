@@ -1,0 +1,2555 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Altis Teknoloji ve Yazılım",
+    "alternateName": "Altis Teknoloji",
+    "url": "https://www.altis.com.tr",
+    "logo": "https://www.altis.com.tr/assets/altis-logo.png",
+    "foundingDate": "2003",
+    "description": "Altis Teknoloji; RFID, Auto-ID, IoT, RTLS ve endüstriyel otomasyon çözümleriyle saha operasyonlarını dijitalleştiren teknoloji ve proje firmasıdır.",
+    "telephone": "+90-216-415-82-55",
+    "email": "info@altis.com.tr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Natoyolu Cad. İlkyaz Sok. Kartal Plaza No:24-28 Kat:1 D:1",
+      "addressLocality": "Ümraniye",
+      "addressRegion": "İstanbul",
+      "postalCode": "34776",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.0158",
+      "longitude": "29.1155"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/altis-technologies",
+      "https://twitter.com/altisteknoloji",
+      "https://www.facebook.com/altisteknoloji",
+      "https://www.instagram.com/altisteknoloji",
+      "https://www.youtube.com/user/AltisTeknoloji"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Altis Teknoloji",
+    "url": "https://www.altis.com.tr",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.altis.com.tr/blog/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
+---
+
+<Base
+  title="Altis Teknoloji - Saha Verisini Akilli Operasyonlara Donusturuyoruz"
+  description="Altis Teknoloji; RFID, Auto-ID, IoT, RTLS ve endustriyel yazilim cozumleriyle depo, uretim, lojistik ve varlik yonetimi sureclerinizi dijitallestirir. Tag&Trace ve Predictivo platformlari ile fark yaratin."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/"
+>
+<!-- ============== Hero ============== -->
+<section class="hero">
+  <div class="hero-grid" id="hero-grid"></div>
+  <div class="container hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="pill">Industrial</span>
+        <span>RFID · IoT · RTLS · Automation · Software</span>
+      </div>
+      <h1>Saha Verisini Akıllı Operasyonlara Dönüştürüyoruz</h1>
+      <p class="hero-sub">
+        Altis Teknoloji; RFID, Auto-ID, IoT, RTLS ve endüstriyel yazılım çözümleriyle depo, üretim, lojistik ve varlık yönetimi süreçlerinizi dijitalleştirir. <strong style="color:var(--text);font-weight:600">Tag&amp;Trace</strong>, <strong style="color:var(--text);font-weight:600">Predictivo</strong> ve <strong style="color:var(--text);font-weight:600">Pick-to-Light</strong> ürünlerimizle sahadaki cihazları, verileri ve iş akışlarını tek merkezden yönetilebilir hale getiriyoruz.
+      </p>
+      <div class="hero-cta">
+        <a href="/iletisim/" class="btn btn-primary btn-lg">Demo Talep Et
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="/platformlar/tag-trace/" class="btn btn-secondary btn-lg">Platformları İncele</a>
+      </div>
+      <div class="hero-trust">
+        <span class="dot"></span>
+        Donanım, yazılım ve saha entegrasyonunu tek çatı altında sunan deneyimli teknoloji ekibi.
+      </div>
+    </div>
+
+    <!-- Hero visual: dashboard mockup -->
+    <div class="hero-visual">
+      <div class="dash-card dash-main">
+        <div class="dash-head">
+          <div class="dash-tabs">
+            <span class="dash-tab active">Tag&amp;Trace</span>
+            <span class="dash-tab">Predictivo</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#15a06b;font-weight:600">
+            <span class="dot-pulse"></span> Canlı
+          </div>
+        </div>
+        <div class="dash-body">
+          <div>
+            <div class="kpi-row">
+              <div class="kpi"><div class="lbl">Aktif Cihaz</div><div class="val">182</div><div class="delta">▲ 12 bugün</div></div>
+              <div class="kpi"><div class="lbl">Okuma / dk</div><div class="val">4.2K</div><div class="delta">▲ 8%</div></div>
+              <div class="kpi"><div class="lbl">Alarm</div><div class="val">3</div><div class="delta warn">▲ 2 saat</div></div>
+            </div>
+            <div class="chart">
+              <div class="chart-title"><span>Okuma yoğunluğu · 24s</span><span style="font-family:'JetBrains Mono',monospace">UTC+3</span></div>
+              <svg viewBox="0 0 320 120" width="100%" height="118" preserveAspectRatio="none" style="margin-top:4px">
+                <defs>
+                  <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#18B7D6" stop-opacity=".35"/>
+                    <stop offset="1" stop-color="#18B7D6" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,90 L20,72 L40,80 L60,55 L80,62 L100,40 L120,52 L140,30 L160,42 L180,28 L200,48 L220,32 L240,50 L260,38 L280,58 L300,44 L320,52 L320,120 L0,120 Z" fill="url(#g1)"/>
+                <path d="M0,90 L20,72 L40,80 L60,55 L80,62 L100,40 L120,52 L140,30 L160,42 L180,28 L200,48 L220,32 L240,50 L260,38 L280,58 L300,44 L320,52" stroke="#18B7D6" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <g fill="#00125C">
+                  <circle cx="180" cy="28" r="3.5"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="list-card">
+            <h5>Son olaylar</h5>
+            <div class="list-item">
+              <span class="tag">RDR-01</span>
+              <span class="name">Sevkiyat doğrulandı</span>
+              <span class="tag ok">OK</span>
+            </div>
+            <div class="list-item">
+              <span class="tag">PRN-03</span>
+              <span class="name">142 etiket basıldı</span>
+              <span class="tag ok">OK</span>
+            </div>
+            <div class="list-item">
+              <span class="tag">SNS-12</span>
+              <span class="name">Sıcaklık eşiği</span>
+              <span class="tag warn">!</span>
+            </div>
+            <div class="list-item">
+              <span class="tag">RDR-07</span>
+              <span class="name">Anten gücü güncellendi</span>
+              <span class="tag ok">OK</span>
+            </div>
+            <div class="list-item">
+              <span class="tag">ERP</span>
+              <span class="name">SAP sync tamamlandı</span>
+              <span class="tag ok">OK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="side-card">
+          <div class="side-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          </div>
+          <div>
+            <div class="meta">RFID okuma</div>
+            <div class="val">4 247 / dk</div>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 18v3M17 18v3M7 6V3M17 6V3"/></svg>
+          </div>
+          <div>
+            <div class="meta">Aktif IoT cihazı</div>
+            <div class="val">1 832 nokta</div>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+          </div>
+          <div>
+            <div class="meta">Veri akışı</div>
+            <div class="val">99.97% uptime</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Problem ============== -->
+<section class="problem">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Operasyonel Gerçek</div>
+      <h2>Sahadaki veriler hâlâ dağınık, gecikmeli ve yönetilemez mi?</h2>
+      <p>Modern operasyonlarda cihazlar, sensörler, makineler, yazıcılar, okuyucular ve kurumsal sistemler çoğu zaman birbirinden kopuk çalışır. Bu durum görünmeyen risklere, hatalı stoklara, manuel iş yüküne ve verimsiz operasyonlara yol açar.</p>
+    </div>
+    <div class="card-grid">
+      <div class="problem-card">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Dağınık Cihazlar</h3>
+        <p>RFID okuyucular, yazıcılar, barkod sistemleri, sensörler ve PLC'ler farklı protokollerle çalışır; her marka kendi arayüzünü dayatır.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12M8 12h12M8 17h12"/><circle cx="4" cy="7" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="17" r="1.5"/></svg>
+        </div>
+        <h3>Kopuk Sistemler</h3>
+        <p>ERP, WMS, SAP, SCADA ve saha cihazları arasında gerçek zamanlı ve güvenilir veri akışı kurulamaz; entegrasyon çoğu zaman zayıf kalır.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+        </div>
+        <h3>Görünmeyen Operasyonlar</h3>
+        <p>Stok, varlık, makine, enerji, lokasyon ve süreç verileri anlık izlenemez; problemler ancak rapor saatinde fark edilir.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Manuel İş Yükü</h3>
+        <p>Raporlama, veri kontrolü, etiketleme, sayım ve operasyon takibi insan hatasına açık şekilde yürür; ölçekleme zorlaşır.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Approach ============== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Altis Yaklaşımı</div>
+      <h2>Teknolojiyi değil, çalışan operasyon sistemleri kuruyoruz.</h2>
+      <p>Saha ihtiyaçlarını analiz eder, doğru donanımı seçer, yazılımı geliştirir, sistemleri entegre eder ve operasyonun sürdürülebilir şekilde çalışmasını sağlarız. Yalnızca bir ürün tedarikçisi değil; analizden devreye almaya kadar yer alan bir proje ve teknoloji ortağıyız.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-line"></div>
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Analiz</h3>
+        <p>Operasyon, saha koşulları, cihazlar, kullanıcı rolleri, veri akışı ve entegrasyon ihtiyacı incelenir.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Tasarım</h3>
+        <p>RFID, IoT, RTLS, yazılım, edge mimari, veri modeli ve iş akışları projeye özel tasarlanır.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Entegrasyon</h3>
+        <p>ERP, WMS, SAP, SCADA, PLC, sensör, okuyucu, yazıcı ve mobil cihazlar tek yapı içinde konuşturulur.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Operasyon</h3>
+        <p>Dashboard, alarm, rapor, rule engine ve kullanıcı yönetimiyle sistem sürdürülebilir hale getirilir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Platforms ============== -->
+<section class="platforms" id="platforms">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">İki Amiral Gemisi Platform</div>
+      <h2>İki güçlü platform, tek hedef: görünür, izlenebilir, yönetilebilir operasyonlar</h2>
+      <p>Tag&amp;Trace ve Predictivo, Altis Teknoloji'nin saha verisini yöneten iki ana platformudur. Biri Auto-ID ve RFID operasyonlarını, diğeri IoT ve operasyonel verileri merkezileştirir.</p>
+    </div>
+
+    <div class="platform-grid">
+      <!-- Tag&Trace -->
+      <article class="platform-card tag">
+        <div class="platform-tag">RFID &amp; Auto-ID Orchestration</div>
+        <h2>Tag&amp;Trace</h2>
+        <div class="platform-tagline">RFID ve Auto-ID operasyonlarınızı tek merkezden yönetin.</div>
+        <p class="desc">RFID okuyucular, RFID yazıcılar, barkod sistemleri, PLC'ler, sensörler ve kurumsal sistemler arasında çalışan güçlü bir orkestrasyon ve edge framework platformu.</p>
+        <ul class="feature-list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Merkezi cihaz yönetimi · marka bağımsız</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Görsel kural motoru ve etiket şablonlama</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>REST API · MQTT · TCP Socket · OPC UA · HTTP/S</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Edge processing · lokal veri işleme</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>ERP / WMS / SAP entegrasyonu</li>
+        </ul>
+        <div class="platform-mock">
+          <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em">
+            <span>Cihaz havuzu</span><span style="font-family:'JetBrains Mono',monospace">182 / 200</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:12px">
+            <span style="height:24px;border-radius:5px;background:var(--primary)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--primary)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--primary)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--navy-700)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--navy-700)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--navy-700)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--cyan)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--cyan)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+            <span style="height:24px;border-radius:5px;background:var(--bg-blue)"></span>
+          </div>
+          <div style="display:flex;gap:14px;margin-top:10px;font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace">
+            <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;background:var(--primary);border-radius:2px"></span>Reader</span>
+            <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;background:var(--navy-700);border-radius:2px"></span>Printer</span>
+            <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;background:var(--cyan);border-radius:2px"></span>Sensor</span>
+          </div>
+        </div>
+        <a href="/platformlar/tag-trace/" class="btn btn-primary" style="margin-top:28px;align-self:flex-start">Tag&amp;Trace'i İncele
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- Predictivo -->
+      <article class="platform-card pred">
+        <div class="platform-tag">Industrial IoT &amp; Operational Intelligence</div>
+        <h2>Predictivo</h2>
+        <div class="platform-tagline">IoT ve operasyon verilerinizi karar destek sistemine dönüştürün.</div>
+        <p class="desc">Sensör, makine, sayaç, beacon, SCADA ve operasyon verilerini tek merkezde toplayan; dashboard, alarm, rapor ve kural motoru ile aksiyona dönüştüren endüstriyel IoT platformu.</p>
+        <ul class="feature-list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>IoT veri toplama · MQTT · LoRaWAN · NB-IoT</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Canlı dashboard ve görsel rule engine</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Alarm, bildirim ve eşik yönetimi</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Periyodik PDF rapor üretimi</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Enerji · bakım · RTLS · operasyon analitiği</li>
+        </ul>
+        <div class="platform-mock">
+          <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em">
+            <span>Enerji tüketimi · son 12 saat</span><span style="font-family:'JetBrains Mono',monospace;color:#15a06b">▼ 7%</span>
+          </div>
+          <svg viewBox="0 0 320 90" width="100%" height="80" preserveAspectRatio="none" style="margin-top:10px">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1A5DC8" stop-opacity=".25"/>
+                <stop offset="1" stop-color="#1A5DC8" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#EEF1F7" stroke-width="1">
+              <line x1="0" y1="22" x2="320" y2="22"/>
+              <line x1="0" y1="45" x2="320" y2="45"/>
+              <line x1="0" y1="68" x2="320" y2="68"/>
+            </g>
+            <path d="M0,60 L26,52 L52,55 L78,40 L104,48 L130,30 L156,38 L182,22 L208,32 L234,18 L260,30 L286,24 L320,32 L320,90 L0,90 Z" fill="url(#g2)"/>
+            <path d="M0,60 L26,52 L52,55 L78,40 L104,48 L130,30 L156,38 L182,22 L208,32 L234,18 L260,30 L286,24 L320,32" stroke="#1A5DC8" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M0,72 L26,68 L52,70 L78,62 L104,66 L130,58 L156,64 L182,52 L208,58 L234,48 L260,56 L286,52 L320,58" stroke="#18B7D6" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+          </svg>
+          <div style="display:flex;gap:14px;margin-top:6px;font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace">
+            <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:2px;background:#1A5DC8"></span>kWh aktüel</span>
+            <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:2px;background:#18B7D6;background-image:linear-gradient(90deg,#18B7D6 50%,transparent 50%);background-size:4px 2px"></span>tahmin</span>
+          </div>
+        </div>
+        <a href="/platformlar/predictivo/" class="btn btn-primary" style="margin-top:28px;align-self:flex-start;background:linear-gradient(135deg,#1A5DC8,var(--navy-700))">Predictivo'yu İncele
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+    <div class="flow-strip">
+      <span class="ln"></span>
+      <span>Saha</span>
+      <span class="ln" style="width:24px"></span>
+      <span style="color:var(--cyan)">Veri</span>
+      <span class="ln" style="width:24px"></span>
+      <span>Aksiyon</span>
+      <span class="ln"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Pick-to-Light Standalone ============== -->
+<style>
+.ptl-section{
+  position:relative;padding:120px 0;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 85% 30%, rgba(232,163,23,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.ptl-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.ptl-section .container{position:relative}
+.ptl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.ptl-section .eyebrow{color:#B8800F}
+.ptl-section .eyebrow::before{background:#E8A317}
+.ptl-section .product-name{
+  font-size:clamp(48px,5.5vw,76px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#B8800F 60%,#E8A317 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;
+}
+.ptl-section h3.ptl-tagline{font-size:clamp(22px,2.2vw,30px);font-weight:700;line-height:1.25;color:var(--navy-800);margin:0 0 22px;letter-spacing:-.01em}
+.ptl-section > .container > .ptl-grid > div > p{font-size:16.5px;line-height:1.65;max-width:520px}
+.ptl-feat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.ptl-feat{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate)}
+.ptl-feat svg{color:#E8A317;flex-shrink:0;margin-top:3px}
+.ptl-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn-amber{background:linear-gradient(135deg,#B8800F,#E8A317);color:#1a1200;box-shadow:0 6px 20px -10px rgba(232,163,23,.6)}
+.btn-amber:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(232,163,23,.6)}
+.ptl-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:36px;padding-top:28px;border-top:1px solid var(--border-soft);max-width:520px}
+.ptl-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.ptl-stat .l{font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+/* Rack scene (reused style adapted from PtL page) */
+.ptl-rack-scene{
+  background:#0F0F14;border-radius:22px;
+  box-shadow:0 30px 60px -25px rgba(0,18,92,.28),0 0 50px rgba(232,163,23,.12);
+  overflow:hidden;position:relative;padding:28px;
+}
+.ptl-rack-scene::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 300px at 30% 20%, rgba(232,163,23,.12), transparent 60%),
+    repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 21px),
+    repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 21px);
+}
+.ptl-rack-head{position:relative;display:flex;justify-content:space-between;align-items:center;color:#fff;margin-bottom:20px;font-size:12px}
+.ptl-rack-head .ttl{font-weight:600;letter-spacing:-.01em}
+.ptl-rack-head .meta{font-family:"JetBrains Mono",monospace;color:rgba(255,255,255,.5);font-size:11px;display:flex;gap:12px;align-items:center}
+.ptl-rack-head .live{display:inline-flex;align-items:center;gap:5px;color:#E8A317;font-weight:600}
+.ptl-rack-head .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#E8A317;box-shadow:0 0 8px #E8A317;animation:ptlblink 1.4s infinite}
+@keyframes ptlblink{0%,100%{opacity:1}50%{opacity:.4}}
+.ptl-rack{position:relative;background:#1a1a22;border-radius:10px;padding:14px;display:grid;grid-template-rows:repeat(3,1fr);gap:10px;min-height:340px}
+.ptl-shelf{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:10px 8px;background:linear-gradient(180deg,#222230,#1a1a22);border-radius:6px;border-top:1px solid rgba(255,255,255,.05)}
+.ptl-bin{position:relative;height:56px;background:linear-gradient(180deg,#2a2a35,#1f1f28);border:1px solid rgba(255,255,255,.04);border-radius:4px;display:flex;flex-direction:column;justify-content:flex-end;padding:4px}
+.ptl-bin .code{position:absolute;top:4px;left:5px;font-family:"JetBrains Mono",monospace;font-size:8.5px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.04em}
+.ptl-lmod{position:relative;background:linear-gradient(180deg,#15151c,#0a0a0e);border:1px solid rgba(255,255,255,.06);border-radius:3px;height:20px;display:flex;align-items:center;justify-content:space-between;padding:0 7px;margin-top:6px}
+.ptl-lmod .led{width:6px;height:6px;border-radius:50%;background:#2a2a35;flex-shrink:0;transition:all .3s}
+.ptl-lmod .lcd{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:#3a3a45;font-weight:700;letter-spacing:.04em}
+.ptl-lmod .btiny{width:12px;height:7px;background:#2a2a35;border-radius:2px}
+.ptl-bin.active .ptl-lmod .led{background:#E8A317;box-shadow:0 0 8px #E8A317,0 0 14px rgba(232,163,23,.4);animation:ptlblink 1s infinite}
+.ptl-bin.active .ptl-lmod .lcd{color:#E8A317;text-shadow:0 0 6px rgba(232,163,23,.5)}
+.ptl-bin.active{box-shadow:inset 0 0 0 1px #E8A317,0 0 18px rgba(232,163,23,.35)}
+.ptl-bin.active .code{color:#E8A317;opacity:.8}
+.ptl-bin.done .ptl-lmod .led{background:#15a06b;box-shadow:0 0 4px rgba(21,160,107,.6)}
+.ptl-bin.done .ptl-lmod .lcd{color:#15a06b}
+.ptl-rack-foot{position:relative;margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ptl-rfoot{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:9px 12px}
+.ptl-rfoot .l{font-size:9.5px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.ptl-rfoot .v{font-family:"JetBrains Mono",monospace;font-size:16px;font-weight:700;color:#fff;margin-top:3px}
+.ptl-rfoot .v.amb{color:#E8A317}
+.ptl-rfoot .v.ok{color:#7ED957}
+
+@media (max-width:1100px){
+  .ptl-grid{grid-template-columns:1fr;gap:48px}
+  .ptl-section{padding:80px 0}
+}
+@media (max-width:720px){
+  .ptl-feat-row{grid-template-columns:1fr}
+  .ptl-stats{grid-template-columns:repeat(2,auto);gap:24px}
+}
+</style>
+<section class="ptl-section" id="pick-to-light">
+  <div class="container">
+    <div class="ptl-grid">
+      <div>
+        <div class="eyebrow">Üçüncü Ürün · Light-Directed Picking</div>
+        <div class="product-name">Pick-to-Light</div>
+        <h3 class="ptl-tagline">Işık yanar — operatör doğru bölmeye, doğru miktara saniyeler içinde gider.</h3>
+        <p>Raf üzerine yerleştirilen ışıklı modüller; sipariş bazlı toplama operasyonunu yönlendirir. Operatörün eli kâğıtta veya ekranda değildir; gözü sadece yanan ışığa, eli sadece doğru bölmededir. E-ticaret, perakende dağıtım, ilaç ve yedek parça depolarında toplama hızını ve doğruluğunu radikal şekilde artırır.</p>
+
+        <div class="ptl-feat-row">
+          <div class="ptl-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Pick-to-Light · Put-to-Light · Cluster
+          </div>
+          <div class="ptl-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            WMS / ERP entegrasyonu
+          </div>
+          <div class="ptl-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Mobil RFID terminal ile hybrid mod
+          </div>
+          <div class="ptl-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Performans &amp; verimlilik raporlama
+          </div>
+        </div>
+
+        <div class="ptl-cta">
+          <a class="btn btn-amber btn-lg" href="/cozumler/pick-to-light/">Pick-to-Light'ı İncele
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="/iletisim/">Demo Talep Et</a>
+        </div>
+
+        <div class="ptl-stats">
+          <div class="ptl-stat"><div class="v">×2-3</div><div class="l">toplama hızı</div></div>
+          <div class="ptl-stat"><div class="v">%99.9</div><div class="l">toplama doğruluğu</div></div>
+          <div class="ptl-stat"><div class="v">~3sa</div><div class="l">eğitim süresi</div></div>
+        </div>
+      </div>
+
+      <div class="ptl-rack-scene">
+        <div class="ptl-rack-head">
+          <div class="ttl">Aktif Sipariş · ORDER-78912</div>
+          <div class="meta">
+            <span>4/12 kalem</span>
+            <span class="live">canlı</span>
+          </div>
+        </div>
+        <div class="ptl-rack">
+          <div class="ptl-shelf">
+            <div class="ptl-bin"><span class="code">A1-01</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin done"><span class="code">A1-02</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">OK</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A1-03</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin active"><span class="code">A1-04</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">×3</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A1-05</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A1-06</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+          </div>
+          <div class="ptl-shelf">
+            <div class="ptl-bin done"><span class="code">A2-01</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">OK</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A2-02</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin active"><span class="code">A2-03</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">×1</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A2-04</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A2-05</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin done"><span class="code">A2-06</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">OK</span><span class="btiny"></span></div></div>
+          </div>
+          <div class="ptl-shelf">
+            <div class="ptl-bin"><span class="code">A3-01</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin active"><span class="code">A3-02</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">×2</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A3-03</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A3-04</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin done"><span class="code">A3-05</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">OK</span><span class="btiny"></span></div></div>
+            <div class="ptl-bin"><span class="code">A3-06</span><div class="ptl-lmod"><span class="led"></span><span class="lcd">000</span><span class="btiny"></span></div></div>
+          </div>
+        </div>
+        <div class="ptl-rack-foot">
+          <div class="ptl-rfoot"><div class="l">Aktif Bin</div><div class="v amb">3</div></div>
+          <div class="ptl-rfoot"><div class="l">Toplanan</div><div class="v">4 / 12</div></div>
+          <div class="ptl-rfoot"><div class="l">Süre</div><div class="v">02:14</div></div>
+          <div class="ptl-rfoot"><div class="l">Doğruluk</div><div class="v ok">100%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Asset Tag & Trace ============== -->
+<style>
+.att-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#F4FAF7 0%,#fff 100%)}
+.att-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(800px 500px at 85% 30%, rgba(16,169,104,.10), transparent 60%);
+}
+.att-section .container{position:relative}
+.att-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.att-section .eyebrow{color:#0B7C4D}
+.att-section .eyebrow::before{background:#10A968}
+.att-name{
+  font-size:clamp(44px,5vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#0B7C4D 55%,#10A968 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;
+}
+.att-name .amp{
+  font-weight:400;opacity:.75;font-size:.72em;
+  background:linear-gradient(135deg,#00125C 0%,#0B7C4D 55%,#10A968 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.att-section h3.att-tagline{font-size:clamp(20px,2vw,28px);font-weight:700;line-height:1.25;color:var(--navy-800);margin:0 0 22px;letter-spacing:-.01em}
+.att-section .att-grid > div > p{font-size:16.5px;line-height:1.65;max-width:520px}
+.att-feat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.att-feat{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate)}
+.att-feat svg{color:#10A968;flex-shrink:0;margin-top:3px}
+.att-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;align-items:center}
+.btn-emerald{background:#10A968;color:#fff;box-shadow:0 6px 20px -10px rgba(16,169,104,.5)}
+.btn-emerald:hover{transform:translateY(-1px);background:#0B7C4D;box-shadow:0 10px 26px -10px rgba(16,169,104,.5)}
+.att-app-badges{display:flex;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid var(--border-soft);max-width:520px;flex-wrap:wrap;align-items:center}
+.att-app-badges .lbl{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-right:6px}
+.att-app-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 11px;
+  background:#000;color:#fff;border-radius:9px;font-size:11.5px;font-weight:500;
+  transition:transform .2s;
+}
+.att-app-badge:hover{transform:translateY(-1px)}
+.att-app-badge .top{font-size:8.5px;opacity:.7;text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.att-app-badge .bot{font-size:12px;font-weight:600;line-height:1;margin-top:2px}
+
+/* Visual: dashboard + phone */
+.att-visual{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}
+.att-dash{
+  position:relative;width:100%;max-width:480px;background:#fff;border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);
+}
+.att-dash-head{
+  display:flex;justify-content:space-between;align-items:center;padding:12px 16px;
+  border-bottom:1px solid var(--border-soft);background:#FAFBFE;
+}
+.att-dash-head .tabs{display:flex;gap:4px}
+.att-dash-head .tab{font-size:10.5px;padding:4px 9px;border-radius:5px;color:var(--text-muted);font-weight:600}
+.att-dash-head .tab.active{background:#E3F7EC;color:#0B7C4D}
+.att-dash-head .ctrl{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint)}
+.att-dash-body{padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;background:#FAFBFE}
+.att-mini-kpi{background:#fff;border:1px solid var(--border-soft);border-radius:8px;padding:10px 12px}
+.att-mini-kpi .l{font-size:9.5px;color:var(--text-faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.att-mini-kpi .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--navy-800);margin-top:3px}
+.att-mini-kpi .v.green{color:#0B7C4D}
+.att-mini-kpi .meta{font-size:10px;color:var(--text-muted);margin-top:2px}
+.att-mini-table{grid-column:1/-1;background:#fff;border:1px solid var(--border-soft);border-radius:8px;overflow:hidden}
+.att-mini-table h6{padding:8px 14px;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin:0;border-bottom:1px solid var(--border-soft);background:#FAFBFE}
+.att-mini-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;padding:8px 14px;align-items:center;font-size:11.5px;border-bottom:1px dashed var(--border-soft)}
+.att-mini-row:last-child{border-bottom:none}
+.att-mini-row .id{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--navy-800);font-weight:700}
+.att-mini-row .nm{color:var(--slate);font-weight:500}
+.att-mini-row .st{font-size:9.5px;padding:2px 7px;border-radius:5px;font-weight:700;font-family:"JetBrains Mono",monospace}
+.att-mini-row .st.ok{background:#E3F7EC;color:#0B7C4D}
+.att-mini-row .st.warn{background:#FEF6E7;color:#8a5500}
+.att-mini-row .st.move{background:#EEF3FF;color:var(--primary)}
+
+.att-phone-mini{
+  position:absolute;right:-18px;bottom:-28px;width:140px;height:280px;
+  background:#1a1a22;border-radius:24px;padding:6px;
+  box-shadow:0 24px 40px -16px rgba(0,0,0,.35),0 0 30px rgba(16,169,104,.2);
+  transform:rotate(6deg);
+}
+.att-phone-mini::before{
+  content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);
+  width:42px;height:13px;background:#000;border-radius:9px;z-index:3;
+}
+.att-phone-screen{
+  width:100%;height:100%;background:linear-gradient(160deg,#fff,#F4FAF7);
+  border-radius:18px;overflow:hidden;padding:36px 10px 10px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.att-phone-scan{
+  position:relative;width:90px;height:90px;border-radius:10px;border:2px solid #10A968;
+  display:flex;align-items:center;justify-content:center;color:#0B7C4D;background:#E3F7EC;
+}
+.att-phone-scan::before,.att-phone-scan::after{
+  content:"";position:absolute;width:14px;height:14px;
+  border:2.5px solid #10A968;
+}
+.att-phone-scan::before{top:-2px;left:-2px;border-right:none;border-bottom:none;border-radius:6px 0 0 0}
+.att-phone-scan::after{bottom:-2px;right:-2px;border-left:none;border-top:none;border-radius:0 0 6px 0}
+.att-scan-line{
+  position:absolute;left:8%;right:8%;height:2px;background:#10A968;
+  box-shadow:0 0 8px #10A968;animation:attscan 2s ease-in-out infinite;
+}
+@keyframes attscan{0%,100%{top:15%}50%{top:75%}}
+.att-phone-id{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--navy-800);font-weight:700;letter-spacing:.04em}
+.att-phone-techs{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.att-phone-techs span{font-size:8px;font-weight:600;color:#0B7C4D;background:#E3F7EC;padding:2px 5px;border-radius:3px;font-family:"JetBrains Mono",monospace}
+.att-phone-btn{margin-top:auto;background:#10A968;color:#fff;padding:7px;border-radius:7px;font-size:10px;font-weight:700;text-align:center;width:100%}
+
+.att-stats{display:flex;gap:32px;margin-top:24px;align-items:center}
+.att-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.att-stat .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:2px}
+.att-stat-divider{width:1px;height:32px;background:var(--border)}
+
+@media (max-width:1100px){
+  .att-grid{grid-template-columns:1fr;gap:48px}
+  .att-section{padding:80px 0}
+  .att-phone-mini{right:0}
+}
+@media (max-width:720px){
+  .att-feat-row{grid-template-columns:1fr}
+  .att-phone-mini{display:none}
+}
+</style>
+<section class="att-section" id="asset-tag-and-trace">
+  <div class="container">
+    <div class="att-grid">
+      <div>
+        <div class="eyebrow">Beşinci Ürün · Demirbaş Yönetimi</div>
+        <div class="att-name">Asset Tag <span class="amp">&amp;</span> Trace</div>
+        <h3 class="att-tagline">Demirbaş yönetimi — el terminali değil, telefon yeter.</h3>
+        <p>Bulut tabanlı demirbaş yönetim sistemi. <strong style="color:var(--text);font-weight:600">Barkod, QR, NFC ve RFID</strong> teknolojilerinin dördüyle birden çalışır; telefon, tablet veya web üzerinden envantere %80'e kadar verimlilik artışıyla bakım, arıza ve transfer süreçlerini yönetin. Çoklu lokasyon, sayım emirleri ve akıllı raporlama dahil.</p>
+
+        <div class="att-feat-row">
+          <div class="att-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Bakım · Arıza · Hareket modülleri
+          </div>
+          <div class="att-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Çoklu lokasyon &amp; kampüs yönetimi
+          </div>
+          <div class="att-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Excel ile toplu kayıt &amp; rapor
+          </div>
+          <div class="att-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            iOS · Android · Web · bulut sync
+          </div>
+        </div>
+
+        <div class="att-cta">
+          <a class="btn btn-emerald btn-lg" href="/cozumler/asset-yonetimi/">Detay &amp; Paketler
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="/cozumler/asset-yonetimi/#pricing">15 Gün Ücretsiz</a>
+        </div>
+
+        <div class="att-app-badges">
+          <span class="lbl">İndir:</span>
+          <a class="att-app-badge" href="https://apps.apple.com/tr/app/tagandtrace-asset/id6737413510" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/></svg>
+            <div><div class="top">App Store</div><div class="bot">iOS</div></div>
+          </a>
+          <a class="att-app-badge" href="https://play.google.com/store/apps/details?id=com.tagandtrace.inventory.web.tagandtraceinventorymobile" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.62c-.39.4-.6.99-.6 1.73v17.3c0 .74.21 1.33.6 1.73l.07.07L13.4 12.07v-.13L3.67 1.55l-.07.07m12.81 12.71-3.27-3.27v-.13l3.27-3.27.07.04L20.4 9.5c1.13.64 1.13 1.69 0 2.33l-3.92 2.43-.07.07m-3.27-3.27-9.54 9.54c.37.4.97.45 1.66.04l11.27-6.4-3.39-3.18m3.39-9.79L5.26 4.16c-.69-.4-1.29-.35-1.66.04l9.54 9.54 3.39-3.18-.04.04"/></svg>
+            <div><div class="top">Google Play</div><div class="bot">Android</div></div>
+          </a>
+        </div>
+
+        <div class="att-stats">
+          <div class="att-stat"><div class="v">%80</div><div class="l">verimlilik</div></div>
+          <div class="att-stat-divider"></div>
+          <div class="att-stat"><div class="v">4</div><div class="l">teknoloji</div></div>
+          <div class="att-stat-divider"></div>
+          <div class="att-stat"><div class="v">$49<span style="font-size:14px;color:var(--text-muted)">/yıl</span></div><div class="l">başlangıç</div></div>
+        </div>
+      </div>
+
+      <div class="att-visual">
+        <div class="att-dash">
+          <div class="att-dash-head">
+            <div class="tabs">
+              <span class="tab active">Envanter</span>
+              <span class="tab">Bakım</span>
+              <span class="tab">Hareket</span>
+            </div>
+            <div class="ctrl">1 487 varlık</div>
+          </div>
+          <div class="att-dash-body">
+            <div class="att-mini-kpi">
+              <div class="l">Toplam</div>
+              <div class="v">1 487</div>
+              <div class="meta" style="color:#0B7C4D">▲ 24</div>
+            </div>
+            <div class="att-mini-kpi">
+              <div class="l">Bakım</div>
+              <div class="v" style="color:#c47700">8</div>
+              <div class="meta">3 yaklaşıyor</div>
+            </div>
+            <div class="att-mini-kpi">
+              <div class="l">Doğruluk</div>
+              <div class="v green">%99.4</div>
+              <div class="meta">bugün</div>
+            </div>
+            <div class="att-mini-table">
+              <h6>Son hareketler</h6>
+              <div class="att-mini-row">
+                <span class="id">AST-04812</span>
+                <span class="nm">Dell Latitude 7430</span>
+                <span class="st ok">AKTİF</span>
+              </div>
+              <div class="att-mini-row">
+                <span class="id">AST-04821</span>
+                <span class="nm">Forklift Linde H30</span>
+                <span class="st warn">BAKIM</span>
+              </div>
+              <div class="att-mini-row">
+                <span class="id">AST-04832</span>
+                <span class="nm">RFID Reader Impinj</span>
+                <span class="st move">TRANSFER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="att-phone-mini">
+          <div class="att-phone-screen">
+            <div class="att-phone-scan">
+              <div class="att-scan-line"></div>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM21 14h-3M14 21h3v-3"/></svg>
+            </div>
+            <div class="att-phone-id">AST-04832</div>
+            <div class="att-phone-techs">
+              <span>NFC</span><span>RFID</span><span>QR</span>
+            </div>
+            <div class="att-phone-btn">Onayla</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Rox Card ============== -->
+<style>
+.rox-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#FAFBFE 0%,#F1EEFA 100%)}
+.rox-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(800px 500px at 15% 30%, rgba(124,58,237,.10), transparent 60%);
+}
+.rox-section .container{position:relative}
+.rox-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.rox-section .eyebrow{color:#7C3AED}
+.rox-section .eyebrow::before{background:#A78BFA}
+.rox-name{
+  font-size:clamp(48px,5.5vw,76px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#5B21B6 55%,#A78BFA 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;
+}
+.rox-section h3.rox-tagline{font-size:clamp(20px,2vw,28px);font-weight:700;line-height:1.25;color:var(--navy-800);margin:0 0 22px;letter-spacing:-.01em}
+.rox-section .rox-grid > div > p{font-size:16.5px;line-height:1.65;max-width:520px}
+.rox-feat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.rox-feat{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate)}
+.rox-feat svg{color:#7C3AED;flex-shrink:0;margin-top:3px}
+.rox-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn-violet{background:linear-gradient(135deg,#5B21B6,#7C3AED);color:#fff;box-shadow:0 6px 20px -10px rgba(124,58,237,.5)}
+.btn-violet:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(124,58,237,.6)}
+
+/* Rox visual: phone + NFC tap */
+.rox-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:480px}
+.rox-phone{
+  position:relative;width:240px;height:480px;background:linear-gradient(180deg,#0A0F2A,#000);
+  border-radius:38px;padding:10px;box-shadow:0 30px 60px -25px rgba(0,18,92,.4),0 0 50px rgba(124,58,237,.18);
+}
+.rox-phone::before{
+  content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  width:80px;height:22px;background:#000;border-radius:14px;z-index:3;
+}
+.rox-screen{
+  position:relative;width:100%;height:100%;background:linear-gradient(160deg,#1a1146,#0A0F2A);
+  border-radius:30px;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:60px 22px 22px;
+}
+.rox-screen::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(400px 200px at 50% 0%, rgba(167,139,250,.25), transparent 60%);
+  pointer-events:none;
+}
+.rox-avatar{
+  width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#A78BFA);
+  display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:30px;
+  font-weight:700;color:#fff;letter-spacing:-.02em;position:relative;z-index:2;
+  box-shadow:0 8px 16px rgba(124,58,237,.4);
+}
+.rox-name-line{position:relative;z-index:2;color:#fff;font-weight:700;font-size:18px;margin-top:18px;letter-spacing:-.01em}
+.rox-title-line{position:relative;z-index:2;color:rgba(255,255,255,.6);font-size:11.5px;margin-top:2px;font-weight:500}
+.rox-co{position:relative;z-index:2;color:#A78BFA;font-size:11px;margin-top:4px;font-family:"JetBrains Mono",monospace;font-weight:600;letter-spacing:.05em}
+.rox-actions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px;width:100%}
+.rox-action{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:10px;
+  padding:10px;text-align:center;color:#fff;font-size:11px;font-weight:600;
+}
+.rox-action svg{display:block;margin:0 auto 4px;color:#A78BFA;width:16px;height:16px}
+.rox-save{
+  position:relative;z-index:2;margin-top:auto;width:100%;background:#7C3AED;color:#fff;
+  padding:12px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;letter-spacing:-.01em;
+  box-shadow:0 4px 12px rgba(124,58,237,.4);
+}
+
+/* NFC tap indicator on the side of the phone */
+.nfc-tap{
+  position:absolute;top:50%;right:-8px;transform:translateY(-50%);
+  width:80px;height:80px;border-radius:50%;border:2px solid #A78BFA;
+  display:flex;align-items:center;justify-content:center;
+  animation:nfc-pulse 2s ease-out infinite;
+}
+.nfc-tap::after{
+  content:"";position:absolute;inset:14px;border-radius:50%;border:2px solid rgba(167,139,250,.5);
+  animation:nfc-pulse 2s ease-out infinite .5s;
+}
+.nfc-tap .nfc-icon{
+  width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:#A78BFA;
+}
+@keyframes nfc-pulse{
+  0%{box-shadow:0 0 0 0 rgba(167,139,250,.6);opacity:1}
+  100%{box-shadow:0 0 0 16px rgba(167,139,250,0);opacity:.4}
+}
+
+/* QR floating */
+.rox-qr{
+  position:absolute;left:0;bottom:40px;background:#fff;border-radius:14px;padding:14px;
+  box-shadow:0 20px 40px -15px rgba(0,18,92,.3),0 0 30px rgba(124,58,237,.15);
+  display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid rgba(124,58,237,.15);
+}
+.rox-qr-grid{
+  width:64px;height:64px;background:#000;
+  display:grid;grid-template-columns:repeat(7,1fr);gap:1px;padding:3px;
+}
+.rox-qr-grid span{background:#fff}
+.rox-qr-grid span:nth-child(2n){background:#000}
+.rox-qr-grid span:nth-child(7){background:#fff}
+.rox-qr-grid span:nth-child(13){background:#fff}
+.rox-qr-grid span:nth-child(20){background:#000}
+.rox-qr-grid span:nth-child(26){background:#fff}
+.rox-qr-grid span:nth-child(33){background:#000}
+.rox-qr label{font-size:9px;font-family:"JetBrains Mono",monospace;color:var(--text-faint);font-weight:600;letter-spacing:.04em}
+
+/* Stats */
+.rox-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:36px;padding-top:28px;border-top:1px solid var(--border-soft);max-width:520px}
+.rox-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.rox-stat .l{font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+@media (max-width:1100px){
+  .rox-grid{grid-template-columns:1fr;gap:48px}
+  .rox-section{padding:80px 0}
+}
+@media (max-width:720px){
+  .rox-feat-row{grid-template-columns:1fr}
+  .rox-stats{grid-template-columns:repeat(2,auto);gap:24px}
+  .rox-phone{width:220px;height:440px}
+}
+</style>
+<section class="rox-section" id="rox-card">
+  <div class="container">
+    <div class="rox-grid">
+      <div class="rox-visual">
+        <div class="rox-qr">
+          <div class="rox-qr-grid">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <label>QR · Tara &amp; Aç</label>
+        </div>
+        <div class="rox-phone">
+          <div class="rox-screen">
+            <div class="rox-avatar">AT</div>
+            <div class="rox-name-line">Ahmet Tekin</div>
+            <div class="rox-title-line">Operasyon Müdürü</div>
+            <div class="rox-co">ALTIS TEKNOLOJİ</div>
+            <div class="rox-actions">
+              <div class="rox-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 5 9 8 9-8"/><rect x="3" y="5" width="18" height="14"/></svg>
+                E-posta
+              </div>
+              <div class="rox-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Telefon
+              </div>
+              <div class="rox-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                Web
+              </div>
+              <div class="rox-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+                Sosyal
+              </div>
+            </div>
+            <div class="rox-save">Kişilerime Kaydet</div>
+          </div>
+        </div>
+        <div class="nfc-tap">
+          <div class="nfc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a14 14 0 0 1 20 0M5 11.5a9 9 0 0 1 14 0M8 15a4 4 0 0 1 8 0"/><circle cx="12" cy="19" r="1.5"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Dördüncü Ürün · Dijital Kimlik</div>
+        <div class="rox-name">Rox Card</div>
+        <h3 class="rox-tagline">Yeni nesil dijital kartvizit — NFC ile dokun, QR ile tara.</h3>
+        <p>Kağıt kartvizitin yerini alan, NFC ve QR kod teknolojilerini kullanan dijital kartvizit platformu. İletişim bilgileri, sosyal medya hesapları ve kurumsal dokümanlar tek dokunuşla paylaşılır; kart değiştirmeden panel üzerinden anlık güncellenir. Çevreci, kurumsal kontrollü, modern profesyoneller için.</p>
+
+        <div class="rox-feat-row">
+          <div class="rox-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            NFC dokunma + QR tarama
+          </div>
+          <div class="rox-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Anlık güncelleme · panelden
+          </div>
+          <div class="rox-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Kurumsal yönetim &amp; analiz
+          </div>
+          <div class="rox-feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+            Sürdürülebilir · kâğıtsız
+          </div>
+        </div>
+
+        <div class="rox-cta">
+          <a class="btn btn-violet btn-lg" href="https://roxcard.com.tr" target="_blank" rel="noopener">Rox Card'a Git
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="/iletisim/">Demo Talep Et</a>
+        </div>
+
+        <div class="rox-stats">
+          <div class="rox-stat"><div class="v">NFC</div><div class="l">+ QR teknoloji</div></div>
+          <div class="rox-stat"><div class="v">Tek</div><div class="l">dokunuşla paylaşım</div></div>
+          <div class="rox-stat"><div class="v">Cloud</div><div class="l">kurumsal yönetim</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Comparison ============== -->
+<section class="compare">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Platform Karşılaştırma</div>
+      <h2>Hangi platform hangi ihtiyaca cevap verir?</h2>
+      <p>Tag&amp;Trace, RFID ve Auto-ID operasyonlarının orkestrasyonu için idealdir. Predictivo, IoT, sensör, enerji, makine ve operasyon verilerinin izlenmesi ve aksiyona dönüştürülmesi için tasarlanmıştır.</p>
+    </div>
+    <div class="compare-table">
+      <div class="compare-row head">
+        <div>İhtiyaç</div>
+        <div class="col-tag">Tag&amp;Trace</div>
+        <div class="col-pred">Predictivo</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">RFID okuyucu yönetimi</div>
+        <div class="col yes"><span class="check solid">✓</span>Var · ana odak</div>
+        <div class="col partial"><span class="check muted">∼</span>Entegrasyon odaklı</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">RFID yazıcı ve etiket yönetimi</div>
+        <div class="col yes"><span class="check solid">✓</span>Var</div>
+        <div class="col partial"><span class="check muted">∼</span>Entegrasyon ile</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">Barkod / Auto-ID operasyonları</div>
+        <div class="col yes"><span class="check solid">✓</span>Var</div>
+        <div class="col partial"><span class="check muted">∼</span>Sınırlı</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">Edge framework</div>
+        <div class="col yes"><span class="check solid">✓</span>Var</div>
+        <div class="col focus"><span class="check cyan">✓</span>Var</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">IoT sensör verisi</div>
+        <div class="col partial"><span class="check muted">∼</span>Entegrasyon ile</div>
+        <div class="col focus"><span class="check cyan">✓</span>Ana odak</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">Makine ve enerji verisi</div>
+        <div class="col partial"><span class="check muted">∼</span>Entegrasyon ile</div>
+        <div class="col focus"><span class="check cyan">✓</span>Ana odak</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">Dashboard</div>
+        <div class="col yes"><span class="check solid">✓</span>Var</div>
+        <div class="col focus"><span class="check cyan">✓</span>Gelişmiş</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">Kural motoru</div>
+        <div class="col yes"><span class="check solid">✓</span>Var</div>
+        <div class="col focus"><span class="check cyan">✓</span>Var</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">Alarm ve raporlama</div>
+        <div class="col yes"><span class="check solid">✓</span>Var</div>
+        <div class="col focus"><span class="check cyan">✓</span>Gelişmiş</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">ERP / WMS / SAP entegrasyonu</div>
+        <div class="col yes"><span class="check solid">✓</span>Ana odak</div>
+        <div class="col focus"><span class="check cyan">✓</span>Var</div>
+      </div>
+      <div class="compare-row">
+        <div class="need">RTLS / konum senaryoları</div>
+        <div class="col yes"><span class="check solid">✓</span>Auto-ID tabanlı</div>
+        <div class="col focus"><span class="check cyan">✓</span>IoT / beacon tabanlı</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Tag&Trace Detail ============== -->
+<section class="detail tag-detail" id="tagtrace">
+  <div class="container">
+    <div class="section-head left" style="max-width:780px">
+      <div class="eyebrow">Tag&amp;Trace · Derinlemesine</div>
+      <h2>RFID ve Auto-ID kaosunu orkestrasyona dönüştürün</h2>
+      <p>RFID projelerinde farklı marka ve model okuyucular, yazıcılar, sensörler, PLC'ler ve kurumsal sistemler çoğu zaman karmaşık bir yapı oluşturur. Tag&amp;Trace bu yapıyı soyutlayarak tüm cihazları standart bir arayüzden yönetmenizi ve veriyi anlamlı iş akışlarına dönüştürmenizi sağlar.</p>
+    </div>
+
+    <div class="detail-grid">
+      <div>
+        <div class="diagram">
+          <div style="font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:20px;text-align:center">Kaotik çizgiler · Düzenli akışa</div>
+          <div class="diagram-flow">
+            <div class="diagram-col">
+              <div class="lbl">Saha</div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                RFID Reader
+              </div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg>
+                RFID Printer
+              </div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2v16H3zM7 4h1v16H7zM10 4h2v16h-2zM14 4h1v16h-1zM17 4h2v16h-2zM21 4h0v16"/></svg>
+                Barkod
+              </div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                PLC / Sensor
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+              <div class="arrow"></div>
+              <div class="diagram-center">
+                <div class="nm">Tag&amp;Trace</div>
+                <div class="sm">Orchestration Core</div>
+              </div>
+              <div class="arrow"></div>
+            </div>
+            <div class="diagram-col">
+              <div class="lbl">Kurumsal</div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+                ERP / SAP
+              </div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                WMS
+              </div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></svg>
+                REST API
+              </div>
+              <div class="node">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
+                MQTT Bus
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="detail-features">
+          <div class="detail-feat">
+            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <div>
+              <h4>Merkezi Cihaz Yönetimi</h4>
+              <p>Tüm RFID okuyucularınızı, yazıcılarınızı ve saha cihazlarınızı marka ve modelden bağımsız şekilde tek merkezden kaydedin, yapılandırın ve izleyin.</p>
+            </div>
+          </div>
+          <div class="detail-feat">
+            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></div>
+            <div>
+              <h4>Gelişmiş RFID Okuyucu Kontrolü</h4>
+              <p>Anten gücü, okuma modu, session, frekans, tetikleme modu ve bağlantı parametrelerini merkezi olarak yönetin; saha koşullarına göre profil tanımlayın.</p>
+            </div>
+          </div>
+          <div class="detail-feat">
+            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg></div>
+            <div>
+              <h4>RFID Yazıcı ve Şablon Yönetimi</h4>
+              <p>ZPL gibi endüstri standartlarını destekleyen etiket şablonları tasarlayın, ERP'den gelen verilerle dinamik etiketler üretin ve baskıyı merkezden yönlendirin.</p>
+            </div>
+          </div>
+          <div class="detail-feat">
+            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="M6 8v8M18 8v8M8 6h8M8 18h8"/></svg></div>
+            <div>
+              <h4>Görsel Kural Motoru</h4>
+              <p>RFID Reader In, Printer In, HTTP In, MQTT In giriş nodlarını işleyerek HTTP Request, Printer Out, MQTT Out gibi aksiyonlara dönüştürün — kod yazmadan.</p>
+            </div>
+          </div>
+          <div class="detail-feat">
+            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+            <div>
+              <h4>Edge Framework</h4>
+              <p>Veriyi kaynağında işleyin, gecikmeyi azaltın, ağ kesintilerinde operasyonel sürekliliği koruyun. Edge node'larınızı merkezden güncelleyin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Predictivo Detail ============== -->
+<section class="detail pred" id="predictivo" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-head left" style="max-width:780px">
+      <div class="eyebrow" style="color:#0c7d94">Predictivo · Derinlemesine</div>
+      <h2>Operasyonel verilerinizi karar destek sistemine dönüştürün</h2>
+      <p>Predictivo; sensörlerden, makinelerden, sayaçlardan, beacon'lardan, SCADA sistemlerinden ve üçüncü parti platformlardan gelen verileri tek merkezde birleştirir. Bu verileri dashboard'lar, alarmlar, raporlar ve kural motoru ile operasyonel aksiyonlara dönüştürür.</p>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-features" style="margin-top:0">
+        <div class="detail-feat">
+          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <div>
+            <h4>Bağlan</h4>
+            <p>Sensör, makine, enerji sayacı, beacon, SCADA, gateway ve üçüncü parti sistemlerden veri alın — MQTT, HTTP, CoAP, LoRaWAN, NB-IoT.</p>
+          </div>
+        </div>
+        <div class="detail-feat">
+          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.36.39.83.61 1.51.61H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <div>
+            <h4>İşle</h4>
+            <p>Gelen veriyi anlamlandırın, filtreleyin, eşik değerleri tanımlayın ve görsel kural motoru ile iş akışları oluşturun.</p>
+          </div>
+        </div>
+        <div class="detail-feat">
+          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+          <div>
+            <h4>Görselleştir</h4>
+            <p>Dashboard'lar, grafikler, haritalar, sayaçlar ve operasyon panelleriyle veriyi rol bazlı, anlaşılır hale getirin.</p>
+          </div>
+        </div>
+        <div class="detail-feat">
+          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div>
+            <h4>Harekete Geç</h4>
+            <p>Alarm, bildirim, rapor, cihaz tetikleme ve operasyon aksiyonları ile veriyi iş sonucuna dönüştürün.</p>
+          </div>
+        </div>
+        <div class="detail-feat">
+          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+          <div>
+            <h4>Raporla</h4>
+            <p>Günlük, haftalık ve aylık periyotlarda PDF raporlar oluşturun; performans, trend ve riskleri analiz edin.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="pred-dash">
+          <div class="pred-dash-head">
+            <div class="ttl">Operasyon Paneli · Tesis A</div>
+            <div class="live"><span class="dot-pulse"></span>Canlı</div>
+          </div>
+          <div class="pred-dash-grid">
+            <div class="pd-kpi">
+              <div class="lbl">Enerji</div>
+              <div class="val">128.4 <span style="font-size:14px;color:var(--text-muted);font-family:Inter">kWh</span></div>
+              <div class="meta" style="color:#15a06b">▼ 7% · hedef altı</div>
+            </div>
+            <div class="pd-kpi">
+              <div class="lbl">Makine Sağlığı</div>
+              <div class="val">94<span style="font-size:14px;color:var(--text-muted);font-family:Inter"> / 100</span></div>
+              <div class="meta">3 makine bakım planında</div>
+            </div>
+            <div class="pd-chart">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                <span style="font-size:12px;font-weight:600;color:var(--slate)">Hat verimliliği · 7 gün</span>
+                <span style="font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--text-faint)">OEE</span>
+              </div>
+              <svg viewBox="0 0 360 80" width="100%" height="76" preserveAspectRatio="none">
+                <g stroke="#EEF1F7" stroke-width="1">
+                  <line x1="0" y1="20" x2="360" y2="20"/>
+                  <line x1="0" y1="40" x2="360" y2="40"/>
+                  <line x1="0" y1="60" x2="360" y2="60"/>
+                </g>
+                <g>
+                  <rect x="12" y="32" width="34" height="40" rx="3" fill="#00125C"/>
+                  <rect x="62" y="22" width="34" height="50" rx="3" fill="#00125C"/>
+                  <rect x="112" y="28" width="34" height="44" rx="3" fill="#1A5DC8"/>
+                  <rect x="162" y="18" width="34" height="54" rx="3" fill="#1A5DC8"/>
+                  <rect x="212" y="14" width="34" height="58" rx="3" fill="#1A5DC8"/>
+                  <rect x="262" y="22" width="34" height="50" rx="3" fill="#18B7D6"/>
+                  <rect x="312" y="10" width="34" height="62" rx="3" fill="#18B7D6"/>
+                </g>
+              </svg>
+            </div>
+            <div class="pd-alarm">
+              <span class="pill">Uyarı</span>
+              <span class="txt">Hat-2 vibrasyon eşik üstü — bakım önerisi tetiklendi</span>
+              <span style="font-size:11px;color:var(--text-faint);font-family:'JetBrains Mono',monospace">2dk önce</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Use cases ============== -->
+<section class="usecases" id="solutions">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Kullanım Senaryoları</div>
+      <h2>Saha, depo ve üretim operasyonları için uygulanabilir çözümler</h2>
+      <p>Altis Teknoloji, platformlarını farklı sektör ve operasyon ihtiyaçlarına göre uyarlayarak ölçülebilir iş sonuçları üretir.</p>
+    </div>
+    <div class="use-grid">
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05M12 22.08V12"/></svg></div>
+        <h3>Varlık ve Demirbaş Takibi</h3>
+        <p>RFID, NFC veya barkod ile kurumsal varlıkları sayın, zimmetleyin, lokasyon bazlı izleyin ve bakım süreçlerine bağlayın.</p>
+        <div class="use-tags"><span class="use-tag tt">Tag&amp;Trace</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9 5 4h14l2 5M9 13h6"/></svg></div>
+        <h3>RFID Depo ve Sevkiyat Doğrulama</h3>
+        <p>Ürün, koli, palet veya çanta bazlı RFID okumalarıyla sevkiyat, giriş-çıkış ve stok doğrulama süreçlerini hızlandırın.</p>
+        <div class="use-tags"><span class="use-tag tt">Tag&amp;Trace</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg></div>
+        <h3>Akıllı Etiketleme ve Baskı</h3>
+        <p>ERP veya WMS'den gelen verilerle RFID / barkod etiketlerini otomatik oluşturun ve yazıcılara yönlendirin.</p>
+        <div class="use-tags"><span class="use-tag tt">Tag&amp;Trace</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10v0"/><circle cx="18" cy="20" r="2"/></svg></div>
+        <h3>Üretim İzlenebilirliği</h3>
+        <p>Ürünlerin üretim hattındaki hareketini RFID, barkod veya sensör verileriyle izleyin; kalite ve süreç kontrolünü güçlendirin.</p>
+        <div class="use-tags"><span class="use-tag tt">Tag&amp;Trace</span><span class="use-tag pr">Predictivo</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2 4 14h6l-1 8 10-12h-6l1-8z"/></svg></div>
+        <h3>Kestirimci Bakım</h3>
+        <p>Makine titreşim, sıcaklık ve çalışma verilerini analiz ederek arıza risklerini erken tespit edin.</p>
+        <div class="use-tags"><span class="use-tag pr">Predictivo</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <h3>Enerji İzleme</h3>
+        <p>Enerji tüketimi, sayaç verileri ve performans trendlerini takip ederek verimlilik ve maliyet optimizasyonu sağlayın.</p>
+        <div class="use-tags"><span class="use-tag pr">Predictivo</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>RTLS ve Konum Takibi</h3>
+        <p>Beacon, RFID veya diğer konum teknolojileriyle ekipman, personel veya varlıkların lokasyonunu takip edin.</p>
+        <div class="use-tags"><span class="use-tag pr">Predictivo</span><span class="use-tag tt">Tag&amp;Trace</span></div>
+      </article>
+      <article class="use-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+        <h3>Operasyon Dashboard'ları</h3>
+        <p>Sahadan gelen verileri canlı yönetim panellerine dönüştürerek karar alma süreçlerini hızlandırın.</p>
+        <div class="use-tags"><span class="use-tag pr">Predictivo</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Industries ============== -->
+<section class="industries" id="industries">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Sektörel Çözümler</div>
+      <h2>Farklı sektörlere uyarlanabilen esnek teknoloji altyapısı</h2>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9 5 4h14l2 5"/></svg></div>
+        <h4>Depo &amp; Lojistik</h4>
+        <p>Stok doğruluğu, sevkiyat kontrolü, RFID kapı geçişleri, ürün toplama ve depo içi operasyon görünürlüğü.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><path d="M3 4h2l2.4 11.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 7H6"/></svg></div>
+        <h4>E-Ticaret Depoları</h4>
+        <p>Hızlı ürün ayrıştırma, paketleme doğrulama, hata azaltma ve barkod / RFID destekli operasyon takibi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="m6 11 6-7 6 7M9 21v-5h6v5"/></svg></div>
+        <h4>Üretim</h4>
+        <p>Üretim izlenebilirliği, makine verisi, kalite kontrol, kestirimci bakım ve operasyon performansı.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1 0 5.4l-7 7a4 4 0 1 1-5.4-5.4l7-7a4 4 0 0 1 5.4 0M21 12l-7 7M16 7l5 5"/></svg></div>
+        <h4>Bakım &amp; Teknik Operasyon</h4>
+        <p>Makine sağlığı, alarm, raporlama, periyodik bakım ve arıza risklerinin izlenmesi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4>Kamu &amp; Varlık Yönetimi</h4>
+        <p>Demirbaş, ekipman, zimmet, sayım, bakım ve lokasyon takibi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg></div>
+        <h4>Perakende &amp; Tekstil</h4>
+        <p>Ürün, etiket, mağaza, depo ve sevkiyat süreçlerinde RFID tabanlı izlenebilirlik.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h4>Enerji &amp; Tesis Yönetimi</h4>
+        <p>Enerji tüketimi, sayaç okuma, ortam koşulları, bina sistemleri ve verimlilik takibi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v10H3z"/><path d="M7 7V5h10v2M12 12h.01M8 12h.01M16 12h.01"/></svg></div>
+        <h4>Otomasyon Projeleri</h4>
+        <p>PLC, SCADA ve saha cihazlarının kurumsal sistemlerle entegrasyonu; uçtan uca otomasyon projeleri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Tech architecture ============== -->
+<section class="tech" id="technology">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Teknoloji &amp; Mimari</div>
+      <h2>Endüstri standartlarıyla uyumlu, güvenli ve ölçeklenebilir altyapı</h2>
+      <p>Altis platformları, farklı cihaz ve sistemlerin aynı operasyon yapısında güvenilir şekilde çalışmasını sağlayacak modern teknolojiler üzerine inşa edilir.</p>
+    </div>
+
+    <div class="tech-stack">
+      <div class="tech-layer">
+        <div class="num">L1 · DEVICE</div>
+        <h4>Saha Cihazları</h4>
+        <ul>
+          <li>RFID Readers</li>
+          <li>RFID Printers</li>
+          <li>Barcode</li>
+          <li>Sensors / PLC</li>
+          <li>SCADA</li>
+          <li>Beacons</li>
+        </ul>
+      </div>
+      <div class="tech-layer">
+        <div class="num">L2 · EDGE</div>
+        <h4>Edge Framework</h4>
+        <ul>
+          <li>Local processing</li>
+          <li>Buffering</li>
+          <li>Offline-first</li>
+          <li>Rule pre-eval</li>
+          <li>Device profiles</li>
+          <li>Health checks</li>
+        </ul>
+      </div>
+      <div class="tech-layer">
+        <div class="num">L3 · PLATFORM</div>
+        <h4>Tag&amp;Trace · Predictivo · Pick-to-Light</h4>
+        <ul>
+          <li>.NET Core backend</li>
+          <li>Modern JS frontend</li>
+          <li>Rule engine</li>
+          <li>Token / RBAC</li>
+          <li>Multi-tenant</li>
+          <li>Dashboards</li>
+        </ul>
+      </div>
+      <div class="tech-layer">
+        <div class="num">L4 · ENTERPRISE</div>
+        <h4>Kurumsal Sistemler</h4>
+        <ul>
+          <li>ERP / SAP</li>
+          <li>WMS</li>
+          <li>CRM</li>
+          <li>Veritabanları</li>
+          <li>Bulut servisleri</li>
+          <li>Üçüncü parti API</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tech-arch">
+      <div class="tech-arch-card">
+        <h5>Protokoller</h5>
+        <p>REST API · MQTT · HTTP/S · TCP Socket · Modbus · OPC UA · CoAP · LoRaWAN · NB-IoT</p>
+      </div>
+      <div class="tech-arch-card">
+        <h5>Güvenlik</h5>
+        <p>Token tabanlı kimlik doğrulama · Role-based access control · Audit log · TLS · Multi-tenant izolasyon</p>
+      </div>
+      <div class="tech-arch-card">
+        <h5>Ölçeklenebilirlik</h5>
+        <p>Edge processing · esnek veritabanı desteği · yatay ölçekleme · iş yükü bazlı dağıtım</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Project approach ============== -->
+<section class="project">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Proje Yaklaşımı</div>
+      <h2>Fikirden çalışan sisteme: uçtan uca proje teslimatı</h2>
+      <p>Altis Teknoloji, projeyi yalnızca yazılım veya donanım teslimatı olarak görmez. Her projede saha gerçekleri, kullanıcı alışkanlıkları, veri akışı, entegrasyon gereksinimleri ve sürdürülebilir operasyon birlikte ele alınır.</p>
+    </div>
+    <div class="proj-list">
+      <div class="proj-step">
+        <div class="n">01</div>
+        <h4>Keşif &amp; Analiz</h4>
+        <p>Mevcut süreç, saha koşulları, ekipman, veri kaynakları ve hedeflenen iş sonuçları analiz edilir.</p>
+      </div>
+      <div class="proj-step">
+        <div class="n">02</div>
+        <h4>Çözüm Tasarımı</h4>
+        <p>Doğru teknoloji, donanım, mimari, yazılım modülleri ve entegrasyon noktaları belirlenir.</p>
+      </div>
+      <div class="proj-step">
+        <div class="n">03</div>
+        <h4>Pilot &amp; Doğrulama</h4>
+        <p>Gerçek saha koşullarında okuma performansı, veri akışı ve iş akışları test edilir.</p>
+      </div>
+      <div class="proj-step">
+        <div class="n">04</div>
+        <h4>Entegrasyon &amp; Devreye Alma</h4>
+        <p>Platform, saha cihazları ve kurumsal sistemler entegre edilerek canlı kullanıma alınır.</p>
+      </div>
+      <div class="proj-step">
+        <div class="n">05</div>
+        <h4>Eğitim &amp; İyileştirme</h4>
+        <p>Kullanıcılar eğitilir, performans izlenir ve operasyon verilerine göre iyileştirmeler yapılır.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Trust ============== -->
+<section class="trust" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Deneyim &amp; Güven</div>
+      <h2>Sahada deneyimli, yazılımda güçlü, entegrasyonda esnek</h2>
+      <p>Altis Teknoloji ve Yazılım, 2003'ten bu yana sanayi tesislerinin üretim süreçlerini dijitalleştirmektedir. Endüstri 4.0, IIoT, RFID, BLE, UWB ve Auto-ID teknolojilerini kendi geliştirdiğimiz platformlarla birleştirerek sahadan kurumsal sisteme kesintisiz veri akışı kuruyoruz.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="ph">Yıllık Deneyim</div>
+        <div class="big">23+</div>
+        <div class="lbl">yıl saha &amp; yazılım · 2003'ten bu yana</div>
+      </div>
+      <div class="trust-card">
+        <div class="ph">Kendi Ürünü</div>
+        <div class="big">5</div>
+        <div class="lbl">Predictivo · Tag&amp;Trace · P2Cloud · Asset T&amp;T · Rox Card</div>
+      </div>
+      <div class="trust-card">
+        <div class="ph">Teknoloji Kapsamı</div>
+        <div class="big">IIoT</div>
+        <div class="lbl">RFID · BLE · UWB · Barkod · PLC · SCADA</div>
+      </div>
+      <div class="trust-card">
+        <div class="ph">Resmi Partner</div>
+        <div class="big" style="font-size:22px;line-height:1.2">Stanley Healthcare</div>
+        <div class="lbl">Türkiye çözüm ortağı · RTLS &amp; bebek koruma</div>
+      </div>
+    </div>
+    <p style="margin-top:48px;font-size:14px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.1em">— Referanslar &amp; Çözüm Ortakları —</p>
+    <div class="trust-logos">
+      <div class="trust-logo">LOGO · 01</div>
+      <div class="trust-logo">LOGO · 02</div>
+      <div class="trust-logo">LOGO · 03</div>
+      <div class="trust-logo">LOGO · 04</div>
+      <div class="trust-logo">LOGO · 05</div>
+      <div class="trust-logo">LOGO · 06</div>
+    </div>
+    <p style="margin-top:32px;font-size:13.5px;max-width:640px;margin-left:auto;margin-right:auto">Farklı sektörlerde yürüttüğümüz projelerden elde ettiğimiz saha deneyimini, ölçeklenebilir yazılım platformlarımızla birleştiriyoruz.</p>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section class="cta-section" id="contact">
+  <div class="container cta-grid">
+    <div>
+      <div class="eyebrow">Demo &amp; Keşif</div>
+      <h2 style="margin-top:18px">Operasyonunuzu birlikte dijitalleştirelim</h2>
+      <p>RFID, Auto-ID, IoT, RTLS veya saha veri toplama projeniz için Altis Teknoloji ekibiyle bir keşif görüşmesi planlayın. İhtiyacınızı birlikte analiz edelim, doğru mimariyi ve uygulanabilir çözüm yolunu birlikte belirleyelim.</p>
+      <ul class="cta-bullets">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>1 iş günü içinde uzman dönüşü</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Saha bazlı keşif görüşmesi</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Uygulanabilir çözüm önerisi &amp; mimari taslak</li>
+      </ul>
+    </div>
+    <form class="cta-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Teşekkürler — sizinle iletişime geçeceğiz';">
+      <h3>Demo Talep Et</h3>
+      <p class="sub">Ekibimiz proje ihtiyacınızı analiz ederek size en uygun çözüm yaklaşımıyla dönüş sağlar.</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="ad">Ad Soyad</label>
+          <input id="ad" type="text" placeholder="Adınız Soyadınız" />
+        </div>
+        <div class="field">
+          <label for="firma">Firma</label>
+          <input id="firma" type="text" placeholder="Şirket adı" />
+        </div>
+        <div class="field">
+          <label for="mail">E-posta</label>
+          <input id="mail" type="email" placeholder="isim@firma.com" />
+        </div>
+        <div class="field">
+          <label for="tel">Telefon</label>
+          <input id="tel" type="tel" placeholder="+90" />
+        </div>
+        <div class="field full">
+          <label for="ilgi">İlgi Alanı</label>
+          <select id="ilgi">
+            <option>Tag&amp;Trace</option>
+            <option>Predictivo</option>
+            <option>Pick-to-Light</option>
+            <option>Asset Tag &amp; Trace</option>
+            <option>Rox Card</option>
+            <option>RFID Projesi</option>
+            <option>IoT / Sensör Projesi</option>
+            <option>RTLS / Konum Takibi</option>
+            <option>Depo / Lojistik</option>
+            <option>Üretim / Bakım</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="msg">Proje açıklaması</label>
+          <textarea id="msg" placeholder="Operasyonunuzu, mevcut sistemlerinizi ve hedefinizi kısaca anlatın..."></textarea>
+        </div>
+      </div>
+      <div class="form-foot">
+        <span class="note">Verileriniz yalnızca proje değerlendirmesi için kullanılır.</span>
+        <button class="btn btn-primary btn-lg" type="submit">Talebi Gönder
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+</Base>
+
+<style>
+:root{
+  --navy-900:#000A3A;
+  --navy-800:#00125C;
+  --navy-700:#0A1E75;
+  --navy-600:#1E2F8C;
+  --bg:#FFFFFF;
+  --bg-soft:#F6F8FC;
+  --bg-blue:#EEF3FF;
+  --text:#111827;
+  --text-muted:#5F6675;
+  --text-faint:#8A93A5;
+  --border:#E3E8F2;
+  --border-soft:#EEF1F7;
+  --cyan:#18B7D6;
+  --cyan-soft:#E8FAFD;
+  --steel:#8B95A5;
+  --slate:#334155;
+  --primary:var(--navy-800);
+  --accent:var(--cyan);
+  --radius-sm:8px;
+  --radius:14px;
+  --radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(0,18,92,.04), 0 1px 1px rgba(0,18,92,.03);
+  --shadow:0 8px 28px -12px rgba(0,18,92,.18), 0 2px 6px rgba(0,18,92,.05);
+  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28), 0 8px 20px -8px rgba(0,18,92,.12);
+  --section-y:120px;
+  --container:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"cv11","ss01","ss03";
+  line-height:1.55;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+.eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--primary);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{
+  content:"";width:24px;height:1px;background:var(--accent);
+}
+h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(40px,5vw,68px);font-weight:700}
+h2{font-size:clamp(32px,3.4vw,48px);font-weight:700;letter-spacing:-.025em}
+h3{font-size:22px;font-weight:600;letter-spacing:-.01em}
+h4{font-size:16px;font-weight:600}
+p{margin:0;color:var(--text-muted);text-wrap:pretty}
+
+/* ----------- Header ----------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.78);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:76px;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:32px;width:auto}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:14.5px;color:var(--text);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;
+  transition:transform .2s,box-shadow .2s,background .2s,color .2s;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px -10px rgba(0,18,92,.55)}
+.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--bg-soft);border-color:#cbd4e8}
+.btn-ghost{background:transparent;color:var(--text);padding:8px 14px}
+.btn-ghost:hover{background:var(--bg-soft)}
+.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
+
+/* ----------- Hero ----------- */
+.hero{
+  position:relative;padding:80px 0 110px;overflow:hidden;
+  background:
+    radial-gradient(1100px 600px at 80% -200px, rgba(24,183,214,.10), transparent 60%),
+    radial-gradient(900px 500px at 10% 100%, rgba(0,18,92,.06), transparent 70%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-inner{
+  position:relative;
+  display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:7px 14px 7px 8px;border-radius:999px;
+  background:#fff;border:1px solid var(--border);
+  font-size:12.5px;font-weight:600;color:var(--slate);
+  box-shadow:var(--shadow-sm);
+}
+.hero-badge .pill{
+  background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;
+  padding:3px 9px;border-radius:999px;text-transform:uppercase;
+}
+.hero h1{margin-top:24px}
+.hero-sub{font-size:19px;line-height:1.55;color:var(--text-muted);max-width:540px;margin-top:24px}
+.hero-cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.hero-trust{
+  display:flex;align-items:center;gap:14px;margin-top:32px;color:var(--text-muted);font-size:13.5px;
+  padding-top:28px;border-top:1px solid var(--border-soft);max-width:540px;
+}
+.hero-trust .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+
+/* Hero visual */
+.hero-visual{
+  position:relative;height:560px;
+}
+.dash-card{
+  position:absolute;background:#fff;border-radius:var(--radius-lg);
+  border:1px solid var(--border);box-shadow:var(--shadow-lg);
+  overflow:hidden;
+}
+.dash-main{
+  inset:24px 0 24px 24px;width:calc(100% - 24px);
+  display:grid;grid-template-rows:auto 1fr;
+}
+.dash-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 22px;border-bottom:1px solid var(--border-soft);
+}
+.dash-tabs{display:flex;gap:6px}
+.dash-tab{
+  padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;color:var(--text-muted);
+}
+.dash-tab.active{background:var(--bg-blue);color:var(--primary)}
+.dash-body{
+  padding:22px;display:grid;grid-template-columns:1.4fr 1fr;gap:18px;
+}
+.kpi-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
+.kpi{
+  border:1px solid var(--border-soft);border-radius:12px;padding:12px;background:#FCFCFE;
+}
+.kpi .lbl{font-size:10.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.kpi .val{font-size:20px;font-weight:700;color:var(--navy-800);margin-top:4px}
+.kpi .delta{font-size:11px;color:#15a06b;font-weight:600;margin-top:2px}
+.kpi .delta.warn{color:#c47700}
+.chart{
+  height:160px;border:1px solid var(--border-soft);border-radius:12px;padding:12px 8px 6px;
+  background:linear-gradient(180deg,#FCFCFE,#fff);position:relative;
+}
+.chart-title{font-size:11px;color:var(--text-muted);font-weight:600;padding:0 6px;display:flex;justify-content:space-between}
+.list-card{
+  border:1px solid var(--border-soft);border-radius:12px;padding:14px;background:#fff;
+}
+.list-card h5{margin:0 0 12px;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.list-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border-soft);font-size:12.5px}
+.list-item:last-child{border-bottom:none}
+.list-item .tag{font-size:10px;background:var(--cyan-soft);color:#0c7d94;padding:2px 7px;border-radius:6px;font-weight:600;font-family:"JetBrains Mono",monospace}
+.list-item .tag.warn{background:#FFF4E0;color:#8a5500}
+.list-item .tag.ok{background:#E6F7EE;color:#0c6b3f}
+.list-item .name{flex:1;color:var(--slate);font-weight:500}
+.dot-pulse{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(24,183,214,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(24,183,214,.6)}70%{box-shadow:0 0 0 10px rgba(24,183,214,0)}100%{box-shadow:0 0 0 0 rgba(24,183,214,0)}}
+
+.hero-side{
+  position:absolute;right:0;top:80px;width:240px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.side-card{
+  background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 16px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;
+  animation:float 6s ease-in-out infinite;
+}
+.side-card:nth-child(2){animation-delay:-2s}
+.side-card:nth-child(3){animation-delay:-4s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.side-icon{
+  width:36px;height:36px;border-radius:10px;background:var(--bg-blue);
+  display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0;
+}
+.side-card .meta{font-size:11px;color:var(--text-faint);font-weight:500}
+.side-card .val{font-size:13px;color:var(--text);font-weight:600;margin-top:1px}
+
+/* ----------- Sections ----------- */
+section{padding:var(--section-y) 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+/* Problem grid */
+.problem{background:var(--bg-soft)}
+.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.problem-card{
+  background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:32px 28px;transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.problem-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--border)}
+.problem-card .icon-box{
+  width:48px;height:48px;border-radius:12px;background:var(--bg-blue);
+  display:flex;align-items:center;justify-content:center;color:var(--primary);margin-bottom:22px;
+}
+.problem-card h3{font-size:18px;margin-bottom:10px}
+.problem-card p{font-size:14.5px;line-height:1.6}
+
+/* Approach timeline */
+.approach-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;
+}
+.approach-line{
+  position:absolute;left:6%;right:6%;top:48px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--cyan),transparent);
+  opacity:.5;
+}
+.step{padding:0 24px;text-align:center;position:relative}
+.step:first-child{padding-left:0}
+.step:last-child{padding-right:0}
+.step-num{
+  width:96px;height:96px;border-radius:50%;background:#fff;border:2px solid var(--bg-blue);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 24px;
+  font-size:34px;font-weight:700;color:var(--primary);
+  font-family:"JetBrains Mono",monospace;position:relative;z-index:2;
+  box-shadow:var(--shadow-sm);
+}
+.step h3{margin-bottom:10px}
+.step p{font-size:14.5px}
+
+/* Platforms */
+.platforms{background:linear-gradient(180deg,#fff 0%,#FAFBFE 100%)}
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.platform-card{
+  position:relative;background:#fff;border:1px solid var(--border);
+  border-radius:24px;padding:40px;overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .3s,box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.platform-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.platform-card.tag::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--primary),var(--navy-700));
+}
+.platform-card.pred::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,#1A5DC8,var(--cyan));
+}
+.platform-card.ptl::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,#B8800F,#E8A317);
+}
+.platform-tag{
+  display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--primary);
+  padding:6px 12px;background:var(--bg-blue);border-radius:6px;margin-bottom:20px;
+}
+.platform-card.pred .platform-tag{background:var(--cyan-soft);color:#0c7d94}
+.platform-card h2{font-size:42px;margin-bottom:12px;font-weight:800}
+.platform-tagline{font-size:17px;color:var(--text);margin-bottom:18px;font-weight:500}
+.platform-card .desc{font-size:14.5px;margin-bottom:24px;line-height:1.65}
+.feature-list{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px}
+.feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--slate)}
+.feature-list svg{flex-shrink:0;margin-top:3px;color:var(--accent)}
+.platform-mock{
+  margin-top:auto;border:1px solid var(--border-soft);border-radius:14px;
+  padding:18px;background:linear-gradient(180deg,#FCFDFF,#F6F8FC);
+}
+
+/* Comparison */
+.compare{background:var(--bg-soft)}
+.compare-table{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.compare-row{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;align-items:center;
+  border-bottom:1px solid var(--border-soft);
+}
+.compare-row:last-child{border-bottom:none}
+.compare-row > div{padding:20px 28px;font-size:14.5px}
+.compare-row .need{font-weight:500;color:var(--text)}
+.compare-row.head{background:var(--navy-800);color:#fff}
+.compare-row.head > div{padding:22px 28px;font-weight:700;font-size:15px}
+.compare-row.head .col-tag{color:#fff}
+.compare-row.head .col-pred{color:#fff}
+.compare-row .col{display:flex;align-items:center;gap:10px;font-size:14px}
+.compare-row .yes{color:var(--primary);font-weight:600}
+.compare-row .partial{color:var(--text-muted)}
+.compare-row .focus{color:#0c7d94;font-weight:600}
+.check{
+  width:18px;height:18px;border-radius:50%;background:var(--bg-blue);
+  display:inline-flex;align-items:center;justify-content:center;color:var(--primary);
+  font-size:11px;font-weight:700;flex-shrink:0;
+}
+.check.solid{background:var(--primary);color:#fff}
+.check.cyan{background:var(--cyan);color:#fff}
+.check.muted{background:var(--border);color:var(--text-faint)}
+
+/* Detail sections */
+.detail{padding:var(--section-y) 0}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.detail-grid.flip{grid-template-columns:1fr 1fr}
+.detail-features{display:grid;gap:24px;margin-top:36px}
+.detail-feat{display:flex;gap:18px;align-items:flex-start}
+.feat-icon{
+  width:44px;height:44px;border-radius:11px;background:var(--bg-blue);
+  display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0;
+}
+.detail.pred .feat-icon{background:var(--cyan-soft);color:#0c7d94}
+.detail-feat h4{font-size:16px;color:var(--navy-800);margin-bottom:6px}
+.detail-feat p{font-size:14.5px;line-height:1.6}
+
+/* Diagram */
+.diagram{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:36px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.diagram-flow{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center;
+}
+.diagram-col{display:flex;flex-direction:column;gap:10px}
+.diagram-col .lbl{
+  font-size:10.5px;color:var(--text-faint);text-transform:uppercase;
+  letter-spacing:.1em;font-weight:600;margin-bottom:6px;text-align:center;
+}
+.node{
+  display:flex;align-items:center;gap:10px;padding:12px 14px;
+  background:#fff;border:1px solid var(--border-soft);border-radius:10px;
+  font-size:13px;font-weight:500;color:var(--slate);
+}
+.node svg{color:var(--primary);flex-shrink:0}
+.diagram-center{
+  background:var(--navy-800);color:#fff;border-radius:14px;padding:22px;
+  text-align:center;min-width:160px;position:relative;
+}
+.diagram-center .nm{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.diagram-center .sm{font-size:11px;opacity:.7;margin-top:4px}
+.arrow{
+  width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  position:relative;
+}
+.arrow::after{
+  content:"";position:absolute;right:0;top:-3px;width:0;height:0;
+  border-left:6px solid var(--cyan);border-top:3px solid transparent;border-bottom:3px solid transparent;
+}
+
+/* Predictivo dashboard */
+.pred-dash{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:24px;box-shadow:var(--shadow);
+}
+.pred-dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.pred-dash-head .ttl{font-weight:700;color:var(--navy-800);font-size:15px}
+.pred-dash-head .live{display:flex;align-items:center;gap:6px;font-size:11px;color:#15a06b;font-weight:600}
+.pred-dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pd-kpi{
+  border:1px solid var(--border-soft);border-radius:12px;padding:14px;background:#FCFDFF;
+}
+.pd-kpi .lbl{font-size:10.5px;color:var(--text-faint);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.pd-kpi .val{font-size:26px;font-weight:700;color:var(--navy-800);margin-top:6px;font-family:"JetBrains Mono",monospace}
+.pd-kpi .meta{font-size:11px;color:var(--text-muted);margin-top:4px}
+.pd-chart{
+  grid-column:span 2;border:1px solid var(--border-soft);border-radius:12px;padding:16px;background:#fff;
+}
+.pd-alarm{
+  grid-column:span 2;border:1px solid #FFE4D6;background:#FFF7F0;border-radius:12px;
+  padding:12px 14px;display:flex;align-items:center;gap:12px;font-size:13px;
+}
+.pd-alarm .pill{font-size:10px;background:#FFB377;color:#7d3a00;padding:3px 8px;border-radius:5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.pd-alarm .txt{flex:1;color:var(--slate);font-weight:500}
+
+/* Use cases */
+.usecases{background:var(--bg-soft)}
+.use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.use-card{
+  background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);
+  padding:26px;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column;gap:14px;
+}
+.use-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--border)}
+.use-card .ic{
+  width:42px;height:42px;border-radius:10px;background:var(--bg-blue);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+}
+.use-card h3{font-size:16.5px}
+.use-card p{font-size:13.5px;line-height:1.55}
+.use-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.use-tag{
+  font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:4px 8px;border-radius:5px;
+}
+.use-tag.tt{background:var(--bg-blue);color:var(--primary)}
+.use-tag.pr{background:var(--cyan-soft);color:#0c7d94}
+
+/* Industries */
+.industries{background:#fff}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ind-card{
+  border:1px solid var(--border-soft);border-radius:var(--radius);
+  padding:24px;transition:all .25s;background:#fff;
+}
+.ind-card:hover{border-color:var(--primary);background:linear-gradient(180deg,#fff,#FAFBFE)}
+.ind-card .ic{
+  width:36px;height:36px;border-radius:9px;background:var(--bg-soft);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.ind-card h4{font-size:16px;margin-bottom:8px}
+.ind-card p{font-size:13.5px}
+
+/* Tech architecture */
+.tech{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
+.tech::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+.tech .container{position:relative}
+.tech h2{color:#fff}
+.tech .section-head p{color:rgba(255,255,255,.7)}
+.tech .eyebrow{color:var(--cyan)}
+.tech .eyebrow::before{background:var(--cyan)}
+.tech-stack{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;
+}
+.tech-layer{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08);position:relative}
+.tech-layer:last-child{border-right:none}
+.tech-layer .num{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--cyan);
+  letter-spacing:.1em;margin-bottom:14px;font-weight:600;
+}
+.tech-layer h4{color:#fff;font-size:18px;margin-bottom:14px}
+.tech-layer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.tech-layer li{font-size:13.5px;color:rgba(255,255,255,.75);font-family:"JetBrains Mono",monospace}
+.tech-arch{
+  margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.tech-arch-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:24px;
+}
+.tech-arch-card h5{font-size:13px;color:var(--cyan);margin-bottom:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.tech-arch-card p{color:rgba(255,255,255,.75);font-size:14px}
+
+/* Project approach */
+.project{background:var(--bg-soft)}
+.proj-list{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:18px;
+}
+.proj-step{
+  background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);
+  padding:26px;position:relative;
+}
+.proj-step .n{
+  font-family:"JetBrains Mono",monospace;font-size:36px;font-weight:700;
+  color:var(--bg-blue);line-height:1;margin-bottom:14px;
+}
+.proj-step h4{font-size:15px;margin-bottom:8px}
+.proj-step p{font-size:13.5px}
+
+/* Trust */
+.trust .container{text-align:center}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px;
+}
+.trust-card{
+  border:1px dashed var(--border);border-radius:var(--radius);
+  padding:36px 24px;text-align:center;background:#FAFBFE;
+}
+.trust-card .ph{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;
+}
+.trust-card .big{font-size:36px;font-weight:700;color:var(--navy-800);font-family:"JetBrains Mono",monospace}
+.trust-card .lbl{font-size:13px;color:var(--text-muted);margin-top:6px}
+.trust-logos{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:48px;
+}
+.trust-logo{
+  height:64px;border:1px dashed var(--border);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint);
+  background:#FAFBFE;
+}
+
+/* CTA */
+.cta-section{
+  background:var(--navy-800);color:#fff;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(700px 400px at 80% 50%, rgba(24,183,214,.15), transparent 60%),
+    radial-gradient(500px 300px at 10% 100%, rgba(24,183,214,.08), transparent 70%);
+}
+.cta-grid{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.cta-grid .eyebrow{color:var(--cyan)}
+.cta-grid .eyebrow::before{background:var(--cyan)}
+.cta-grid h2{color:#fff}
+.cta-grid p{color:rgba(255,255,255,.75);font-size:18px;margin-top:20px}
+.cta-bullets{margin-top:28px;display:grid;gap:12px}
+.cta-bullets li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:14.5px;list-style:none}
+.cta-bullets svg{color:var(--cyan)}
+.cta-form{
+  background:#fff;color:var(--text);border-radius:var(--radius-lg);
+  padding:36px;box-shadow:0 30px 60px -20px rgba(0,0,0,.4);
+}
+.cta-form h3{font-size:22px;margin-bottom:8px}
+.cta-form .sub{color:var(--text-muted);font-size:14px;margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:span 2}
+.field label{font-size:12px;font-weight:600;color:var(--slate)}
+.field input,.field select,.field textarea{
+  font-family:inherit;font-size:14px;padding:11px 14px;
+  border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--text);
+  transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,18,92,.08);
+}
+.field textarea{resize:vertical;min-height:92px}
+.form-foot{
+  margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.form-foot .note{font-size:12px;color:var(--text-muted);max-width:280px}
+
+/* Footer */
+footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-size:14px}
+.foot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;
+}
+.foot-brand img{height:28px;filter:brightness(0) invert(1);margin-bottom:18px;opacity:.95}
+.foot-brand p{color:rgba(255,255,255,.6);font-size:13.5px;max-width:280px;line-height:1.6}
+.foot-col h5{
+  color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.1em;
+  font-weight:600;margin:0 0 18px;
+}
+.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.foot-col a{color:rgba(255,255,255,.65);font-size:13.5px;transition:color .2s}
+.foot-col a:hover{color:var(--cyan)}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:rgba(255,255,255,.45);
+}
+.foot-social{display:flex;gap:12px}
+.foot-social a{
+  width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);
+}
+.foot-social a:hover{background:var(--cyan);color:var(--navy-800)}
+
+/* Section connector lines (Saha → Veri → Aksiyon) */
+.flow-strip{
+  display:flex;align-items:center;justify-content:center;gap:14px;margin:48px 0 0;
+  font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.18em;font-weight:600;
+}
+.flow-strip .ln{width:60px;height:1px;background:var(--border)}
+
+/* Responsive */
+@media (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:60px}
+  .hero-visual{height:auto;min-height:420px}
+  .detail-grid{grid-template-columns:1fr;gap:48px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .use-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .approach-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+  .approach-line{display:none}
+  .tech-stack{grid-template-columns:repeat(2,1fr)}
+  .tech-layer{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .platform-grid{grid-template-columns:1fr;gap:24px}
+  .proj-list{grid-template-columns:repeat(2,1fr)}
+  .cta-grid{grid-template-columns:1fr;gap:48px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .trust-logos{grid-template-columns:repeat(3,1fr)}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+  :root{--section-y:80px}
+  .card-grid,.use-grid,.ind-grid,.tech-stack,.proj-list,.approach-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:span 1}
+  .compare-row{grid-template-columns:1fr;gap:0}
+  .compare-row > div{padding:12px 18px}
+  .foot-grid{grid-template-columns:1fr}
+}
+
+/* Density */
+.density-compact{--section-y:80px}
+.density-compact h1{font-size:clamp(36px,4.4vw,56px)}
+.density-compact .hero{padding:60px 0 80px}
+</style>
+
+<style>
+.ptl-section{
+  position:relative;padding:120px 0;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 85% 30%, rgba(232,163,23,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.ptl-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.ptl-section .container{position:relative}
+.ptl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.ptl-section .eyebrow{color:#B8800F}
+.ptl-section .eyebrow::before{background:#E8A317}
+.ptl-section .product-name{
+  font-size:clamp(48px,5.5vw,76px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#B8800F 60%,#E8A317 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;
+}
+.ptl-section h3.ptl-tagline{font-size:clamp(22px,2.2vw,30px);font-weight:700;line-height:1.25;color:var(--navy-800);margin:0 0 22px;letter-spacing:-.01em}
+.ptl-section > .container > .ptl-grid > div > p{font-size:16.5px;line-height:1.65;max-width:520px}
+.ptl-feat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.ptl-feat{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate)}
+.ptl-feat svg{color:#E8A317;flex-shrink:0;margin-top:3px}
+.ptl-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn-amber{background:linear-gradient(135deg,#B8800F,#E8A317);color:#1a1200;box-shadow:0 6px 20px -10px rgba(232,163,23,.6)}
+.btn-amber:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(232,163,23,.6)}
+.ptl-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:36px;padding-top:28px;border-top:1px solid var(--border-soft);max-width:520px}
+.ptl-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.ptl-stat .l{font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+/* Rack scene (reused style adapted from PtL page) */
+.ptl-rack-scene{
+  background:#0F0F14;border-radius:22px;
+  box-shadow:0 30px 60px -25px rgba(0,18,92,.28),0 0 50px rgba(232,163,23,.12);
+  overflow:hidden;position:relative;padding:28px;
+}
+.ptl-rack-scene::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 300px at 30% 20%, rgba(232,163,23,.12), transparent 60%),
+    repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 21px),
+    repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 21px);
+}
+.ptl-rack-head{position:relative;display:flex;justify-content:space-between;align-items:center;color:#fff;margin-bottom:20px;font-size:12px}
+.ptl-rack-head .ttl{font-weight:600;letter-spacing:-.01em}
+.ptl-rack-head .meta{font-family:"JetBrains Mono",monospace;color:rgba(255,255,255,.5);font-size:11px;display:flex;gap:12px;align-items:center}
+.ptl-rack-head .live{display:inline-flex;align-items:center;gap:5px;color:#E8A317;font-weight:600}
+.ptl-rack-head .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#E8A317;box-shadow:0 0 8px #E8A317;animation:ptlblink 1.4s infinite}
+@keyframes ptlblink{0%,100%{opacity:1}50%{opacity:.4}}
+.ptl-rack{position:relative;background:#1a1a22;border-radius:10px;padding:14px;display:grid;grid-template-rows:repeat(3,1fr);gap:10px;min-height:340px}
+.ptl-shelf{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:10px 8px;background:linear-gradient(180deg,#222230,#1a1a22);border-radius:6px;border-top:1px solid rgba(255,255,255,.05)}
+.ptl-bin{position:relative;height:56px;background:linear-gradient(180deg,#2a2a35,#1f1f28);border:1px solid rgba(255,255,255,.04);border-radius:4px;display:flex;flex-direction:column;justify-content:flex-end;padding:4px}
+.ptl-bin .code{position:absolute;top:4px;left:5px;font-family:"JetBrains Mono",monospace;font-size:8.5px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.04em}
+.ptl-lmod{position:relative;background:linear-gradient(180deg,#15151c,#0a0a0e);border:1px solid rgba(255,255,255,.06);border-radius:3px;height:20px;display:flex;align-items:center;justify-content:space-between;padding:0 7px;margin-top:6px}
+.ptl-lmod .led{width:6px;height:6px;border-radius:50%;background:#2a2a35;flex-shrink:0;transition:all .3s}
+.ptl-lmod .lcd{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:#3a3a45;font-weight:700;letter-spacing:.04em}
+.ptl-lmod .btiny{width:12px;height:7px;background:#2a2a35;border-radius:2px}
+.ptl-bin.active .ptl-lmod .led{background:#E8A317;box-shadow:0 0 8px #E8A317,0 0 14px rgba(232,163,23,.4);animation:ptlblink 1s infinite}
+.ptl-bin.active .ptl-lmod .lcd{color:#E8A317;text-shadow:0 0 6px rgba(232,163,23,.5)}
+.ptl-bin.active{box-shadow:inset 0 0 0 1px #E8A317,0 0 18px rgba(232,163,23,.35)}
+.ptl-bin.active .code{color:#E8A317;opacity:.8}
+.ptl-bin.done .ptl-lmod .led{background:#15a06b;box-shadow:0 0 4px rgba(21,160,107,.6)}
+.ptl-bin.done .ptl-lmod .lcd{color:#15a06b}
+.ptl-rack-foot{position:relative;margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ptl-rfoot{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:9px 12px}
+.ptl-rfoot .l{font-size:9.5px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.ptl-rfoot .v{font-family:"JetBrains Mono",monospace;font-size:16px;font-weight:700;color:#fff;margin-top:3px}
+.ptl-rfoot .v.amb{color:#E8A317}
+.ptl-rfoot .v.ok{color:#7ED957}
+
+@media (max-width:1100px){
+  .ptl-grid{grid-template-columns:1fr;gap:48px}
+  .ptl-section{padding:80px 0}
+}
+@media (max-width:720px){
+  .ptl-feat-row{grid-template-columns:1fr}
+  .ptl-stats{grid-template-columns:repeat(2,auto);gap:24px}
+}
+</style>
+
+<style>
+.att-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#F4FAF7 0%,#fff 100%)}
+.att-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(800px 500px at 85% 30%, rgba(16,169,104,.10), transparent 60%);
+}
+.att-section .container{position:relative}
+.att-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.att-section .eyebrow{color:#0B7C4D}
+.att-section .eyebrow::before{background:#10A968}
+.att-name{
+  font-size:clamp(44px,5vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#0B7C4D 55%,#10A968 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;
+}
+.att-name .amp{
+  font-weight:400;opacity:.75;font-size:.72em;
+  background:linear-gradient(135deg,#00125C 0%,#0B7C4D 55%,#10A968 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.att-section h3.att-tagline{font-size:clamp(20px,2vw,28px);font-weight:700;line-height:1.25;color:var(--navy-800);margin:0 0 22px;letter-spacing:-.01em}
+.att-section .att-grid > div > p{font-size:16.5px;line-height:1.65;max-width:520px}
+.att-feat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.att-feat{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate)}
+.att-feat svg{color:#10A968;flex-shrink:0;margin-top:3px}
+.att-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;align-items:center}
+.btn-emerald{background:#10A968;color:#fff;box-shadow:0 6px 20px -10px rgba(16,169,104,.5)}
+.btn-emerald:hover{transform:translateY(-1px);background:#0B7C4D;box-shadow:0 10px 26px -10px rgba(16,169,104,.5)}
+.att-app-badges{display:flex;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid var(--border-soft);max-width:520px;flex-wrap:wrap;align-items:center}
+.att-app-badges .lbl{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-right:6px}
+.att-app-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 11px;
+  background:#000;color:#fff;border-radius:9px;font-size:11.5px;font-weight:500;
+  transition:transform .2s;
+}
+.att-app-badge:hover{transform:translateY(-1px)}
+.att-app-badge .top{font-size:8.5px;opacity:.7;text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.att-app-badge .bot{font-size:12px;font-weight:600;line-height:1;margin-top:2px}
+
+/* Visual: dashboard + phone */
+.att-visual{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}
+.att-dash{
+  position:relative;width:100%;max-width:480px;background:#fff;border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);
+}
+.att-dash-head{
+  display:flex;justify-content:space-between;align-items:center;padding:12px 16px;
+  border-bottom:1px solid var(--border-soft);background:#FAFBFE;
+}
+.att-dash-head .tabs{display:flex;gap:4px}
+.att-dash-head .tab{font-size:10.5px;padding:4px 9px;border-radius:5px;color:var(--text-muted);font-weight:600}
+.att-dash-head .tab.active{background:#E3F7EC;color:#0B7C4D}
+.att-dash-head .ctrl{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint)}
+.att-dash-body{padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;background:#FAFBFE}
+.att-mini-kpi{background:#fff;border:1px solid var(--border-soft);border-radius:8px;padding:10px 12px}
+.att-mini-kpi .l{font-size:9.5px;color:var(--text-faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.att-mini-kpi .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--navy-800);margin-top:3px}
+.att-mini-kpi .v.green{color:#0B7C4D}
+.att-mini-kpi .meta{font-size:10px;color:var(--text-muted);margin-top:2px}
+.att-mini-table{grid-column:1/-1;background:#fff;border:1px solid var(--border-soft);border-radius:8px;overflow:hidden}
+.att-mini-table h6{padding:8px 14px;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin:0;border-bottom:1px solid var(--border-soft);background:#FAFBFE}
+.att-mini-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;padding:8px 14px;align-items:center;font-size:11.5px;border-bottom:1px dashed var(--border-soft)}
+.att-mini-row:last-child{border-bottom:none}
+.att-mini-row .id{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--navy-800);font-weight:700}
+.att-mini-row .nm{color:var(--slate);font-weight:500}
+.att-mini-row .st{font-size:9.5px;padding:2px 7px;border-radius:5px;font-weight:700;font-family:"JetBrains Mono",monospace}
+.att-mini-row .st.ok{background:#E3F7EC;color:#0B7C4D}
+.att-mini-row .st.warn{background:#FEF6E7;color:#8a5500}
+.att-mini-row .st.move{background:#EEF3FF;color:var(--primary)}
+
+.att-phone-mini{
+  position:absolute;right:-18px;bottom:-28px;width:140px;height:280px;
+  background:#1a1a22;border-radius:24px;padding:6px;
+  box-shadow:0 24px 40px -16px rgba(0,0,0,.35),0 0 30px rgba(16,169,104,.2);
+  transform:rotate(6deg);
+}
+.att-phone-mini::before{
+  content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);
+  width:42px;height:13px;background:#000;border-radius:9px;z-index:3;
+}
+.att-phone-screen{
+  width:100%;height:100%;background:linear-gradient(160deg,#fff,#F4FAF7);
+  border-radius:18px;overflow:hidden;padding:36px 10px 10px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.att-phone-scan{
+  position:relative;width:90px;height:90px;border-radius:10px;border:2px solid #10A968;
+  display:flex;align-items:center;justify-content:center;color:#0B7C4D;background:#E3F7EC;
+}
+.att-phone-scan::before,.att-phone-scan::after{
+  content:"";position:absolute;width:14px;height:14px;
+  border:2.5px solid #10A968;
+}
+.att-phone-scan::before{top:-2px;left:-2px;border-right:none;border-bottom:none;border-radius:6px 0 0 0}
+.att-phone-scan::after{bottom:-2px;right:-2px;border-left:none;border-top:none;border-radius:0 0 6px 0}
+.att-scan-line{
+  position:absolute;left:8%;right:8%;height:2px;background:#10A968;
+  box-shadow:0 0 8px #10A968;animation:attscan 2s ease-in-out infinite;
+}
+@keyframes attscan{0%,100%{top:15%}50%{top:75%}}
+.att-phone-id{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--navy-800);font-weight:700;letter-spacing:.04em}
+.att-phone-techs{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.att-phone-techs span{font-size:8px;font-weight:600;color:#0B7C4D;background:#E3F7EC;padding:2px 5px;border-radius:3px;font-family:"JetBrains Mono",monospace}
+.att-phone-btn{margin-top:auto;background:#10A968;color:#fff;padding:7px;border-radius:7px;font-size:10px;font-weight:700;text-align:center;width:100%}
+
+.att-stats{display:flex;gap:32px;margin-top:24px;align-items:center}
+.att-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.att-stat .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:2px}
+.att-stat-divider{width:1px;height:32px;background:var(--border)}
+
+@media (max-width:1100px){
+  .att-grid{grid-template-columns:1fr;gap:48px}
+  .att-section{padding:80px 0}
+  .att-phone-mini{right:0}
+}
+@media (max-width:720px){
+  .att-feat-row{grid-template-columns:1fr}
+  .att-phone-mini{display:none}
+}
+</style>
+
+<style>
+.rox-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#FAFBFE 0%,#F1EEFA 100%)}
+.rox-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(800px 500px at 15% 30%, rgba(124,58,237,.10), transparent 60%);
+}
+.rox-section .container{position:relative}
+.rox-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.rox-section .eyebrow{color:#7C3AED}
+.rox-section .eyebrow::before{background:#A78BFA}
+.rox-name{
+  font-size:clamp(48px,5.5vw,76px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#5B21B6 55%,#A78BFA 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;
+}
+.rox-section h3.rox-tagline{font-size:clamp(20px,2vw,28px);font-weight:700;line-height:1.25;color:var(--navy-800);margin:0 0 22px;letter-spacing:-.01em}
+.rox-section .rox-grid > div > p{font-size:16.5px;line-height:1.65;max-width:520px}
+.rox-feat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.rox-feat{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate)}
+.rox-feat svg{color:#7C3AED;flex-shrink:0;margin-top:3px}
+.rox-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn-violet{background:linear-gradient(135deg,#5B21B6,#7C3AED);color:#fff;box-shadow:0 6px 20px -10px rgba(124,58,237,.5)}
+.btn-violet:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(124,58,237,.6)}
+
+/* Rox visual: phone + NFC tap */
+.rox-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:480px}
+.rox-phone{
+  position:relative;width:240px;height:480px;background:linear-gradient(180deg,#0A0F2A,#000);
+  border-radius:38px;padding:10px;box-shadow:0 30px 60px -25px rgba(0,18,92,.4),0 0 50px rgba(124,58,237,.18);
+}
+.rox-phone::before{
+  content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  width:80px;height:22px;background:#000;border-radius:14px;z-index:3;
+}
+.rox-screen{
+  position:relative;width:100%;height:100%;background:linear-gradient(160deg,#1a1146,#0A0F2A);
+  border-radius:30px;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:60px 22px 22px;
+}
+.rox-screen::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(400px 200px at 50% 0%, rgba(167,139,250,.25), transparent 60%);
+  pointer-events:none;
+}
+.rox-avatar{
+  width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#A78BFA);
+  display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:30px;
+  font-weight:700;color:#fff;letter-spacing:-.02em;position:relative;z-index:2;
+  box-shadow:0 8px 16px rgba(124,58,237,.4);
+}
+.rox-name-line{position:relative;z-index:2;color:#fff;font-weight:700;font-size:18px;margin-top:18px;letter-spacing:-.01em}
+.rox-title-line{position:relative;z-index:2;color:rgba(255,255,255,.6);font-size:11.5px;margin-top:2px;font-weight:500}
+.rox-co{position:relative;z-index:2;color:#A78BFA;font-size:11px;margin-top:4px;font-family:"JetBrains Mono",monospace;font-weight:600;letter-spacing:.05em}
+.rox-actions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px;width:100%}
+.rox-action{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:10px;
+  padding:10px;text-align:center;color:#fff;font-size:11px;font-weight:600;
+}
+.rox-action svg{display:block;margin:0 auto 4px;color:#A78BFA;width:16px;height:16px}
+.rox-save{
+  position:relative;z-index:2;margin-top:auto;width:100%;background:#7C3AED;color:#fff;
+  padding:12px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;letter-spacing:-.01em;
+  box-shadow:0 4px 12px rgba(124,58,237,.4);
+}
+
+/* NFC tap indicator on the side of the phone */
+.nfc-tap{
+  position:absolute;top:50%;right:-8px;transform:translateY(-50%);
+  width:80px;height:80px;border-radius:50%;border:2px solid #A78BFA;
+  display:flex;align-items:center;justify-content:center;
+  animation:nfc-pulse 2s ease-out infinite;
+}
+.nfc-tap::after{
+  content:"";position:absolute;inset:14px;border-radius:50%;border:2px solid rgba(167,139,250,.5);
+  animation:nfc-pulse 2s ease-out infinite .5s;
+}
+.nfc-tap .nfc-icon{
+  width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:#A78BFA;
+}
+@keyframes nfc-pulse{
+  0%{box-shadow:0 0 0 0 rgba(167,139,250,.6);opacity:1}
+  100%{box-shadow:0 0 0 16px rgba(167,139,250,0);opacity:.4}
+}
+
+/* QR floating */
+.rox-qr{
+  position:absolute;left:0;bottom:40px;background:#fff;border-radius:14px;padding:14px;
+  box-shadow:0 20px 40px -15px rgba(0,18,92,.3),0 0 30px rgba(124,58,237,.15);
+  display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid rgba(124,58,237,.15);
+}
+.rox-qr-grid{
+  width:64px;height:64px;background:#000;
+  display:grid;grid-template-columns:repeat(7,1fr);gap:1px;padding:3px;
+}
+.rox-qr-grid span{background:#fff}
+.rox-qr-grid span:nth-child(2n){background:#000}
+.rox-qr-grid span:nth-child(7){background:#fff}
+.rox-qr-grid span:nth-child(13){background:#fff}
+.rox-qr-grid span:nth-child(20){background:#000}
+.rox-qr-grid span:nth-child(26){background:#fff}
+.rox-qr-grid span:nth-child(33){background:#000}
+.rox-qr label{font-size:9px;font-family:"JetBrains Mono",monospace;color:var(--text-faint);font-weight:600;letter-spacing:.04em}
+
+/* Stats */
+.rox-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:36px;padding-top:28px;border-top:1px solid var(--border-soft);max-width:520px}
+.rox-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.rox-stat .l{font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+@media (max-width:1100px){
+  .rox-grid{grid-template-columns:1fr;gap:48px}
+  .rox-section{padding:80px 0}
+}
+@media (max-width:720px){
+  .rox-feat-row{grid-template-columns:1fr}
+  .rox-stats{grid-template-columns:repeat(2,auto);gap:24px}
+  .rox-phone{width:220px;height:440px}
+}
+</style>

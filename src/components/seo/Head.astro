@@ -1,0 +1,95 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+  schema?: object | object[];
+  lang?: 'tr' | 'en';
+  /** Alternate URL for the other language version */
+  alternateUrl?: string;
+}
+
+const {
+  title,
+  description,
+  image = '/assets/og/altis-default.jpg',
+  canonical,
+  noindex = false,
+  schema,
+  lang = 'tr',
+  alternateUrl,
+} = Astro.props;
+
+const site = 'https://www.altis.com.tr';
+const canonicalUrl = canonical ?? `${site}${Astro.url.pathname}`;
+const ogImage = image.startsWith('http') ? image : `${site}${image}`;
+const fullTitle = title.includes('Altis') ? title : `${title} | Altis Teknoloji`;
+
+const trUrl = lang === 'tr' ? canonicalUrl : (alternateUrl ?? site);
+const enUrl = lang === 'en' ? canonicalUrl : (alternateUrl ?? `${site}/en/`);
+
+const schemas = schema
+  ? (Array.isArray(schema) ? schema : [schema])
+  : [];
+---
+
+<!-- Charset & viewport -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Title & description -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Canonical & hreflang -->
+<link rel="canonical" href={canonicalUrl} />
+<link rel="alternate" hreflang="tr" href={trUrl} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+<link rel="alternate" hreflang="x-default" href={site + '/'} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Altis Teknoloji" />
+<meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:site" content="@altisteknoloji" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/altis-logo.png" />
+
+<!-- Google Tag Manager -->
+<!-- GTM-XXXXXXX — replace with real container ID when available -->
+<!--
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');
+</script>
+-->
+
+<!-- JSON-LD Structured Data -->
+{schemas.map(s => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

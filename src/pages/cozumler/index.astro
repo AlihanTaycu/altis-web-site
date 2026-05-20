@@ -1,0 +1,69 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Altis Çözümler",
+  "description": "Altis Teknoloji çözümleri: Pick-to-Light, Asset Yönetimi ve Endüstriyel Görüntü İşleme"
+};
+---
+
+<Base
+  title="Çözümler | Altis Teknoloji"
+  description="Depo, saha ve varlık operasyonları için Altis Teknoloji çözümleri: Pick-to-Light ve Asset Yönetimi."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/solutions/"
+>
+  <section class="hub-hero">
+    <div class="container">
+      <div class="eyebrow">Çözümler</div>
+      <h1>Sahadaki işi hızlandıran, doğrulayan ve kayda alan uygulamalar.</h1>
+      <p>Altis çözümleri belirli operasyon problemlerine odaklanır: toplama hatasını azaltmak, varlıkları izlemek ve saha ekiplerine net iş akışı vermek.</p>
+    </div>
+  </section>
+
+  <section class="hub-list">
+    <div class="container grid">
+      <a class="hub-card" href="/cozumler/pick-to-light/">
+        <span class="tag">Depo operasyonu</span>
+        <h2>Pick-to-Light</h2>
+        <p>Işıklı yönlendirme ile toplama, ayrıştırma ve hat besleme süreçlerinde hız ve doğruluk kazandıran sistem.</p>
+      </a>
+      <a class="hub-card" href="/cozumler/asset-yonetimi/">
+        <span class="tag">Varlik takibi</span>
+        <h2>Asset Yönetimi</h2>
+        <p>NFC, QR ve mobil uygulama ile ekipman, zimmet, servis ve lokasyon kayıtlarını sahadan yöneten çözüm.</p>
+      </a>
+      <a class="hub-card" href="/cozumler/goruntu-isleme/">
+        <span class="tag">Görüntü işleme</span>
+        <h2>TrueScan</h2>
+        <p>Mevcut kameralara entegre AI okuma motoru ile metal parlama, kirli etiket ve düşük kontrast koşullarında %99.5 doğrulukla barkod ve 2D/QR okuma.</p>
+      </a>
+      <a class="hub-card rox-card" href="https://roxcard.com.tr" target="_blank" rel="noopener">
+        <span class="tag rox-tag">Dijital Kimlik</span>
+        <h2>Rox Card</h2>
+        <p>NFC ve QR teknolojisiyle çalışan yeni nesil dijital kartvizit platformu. Tek dokunuşla paylaş, panelden anlık güncelle, kurumsal olarak yönet.</p>
+        <span class="ext-hint">roxcard.com.tr ↗</span>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.hub-hero { padding: 96px 0 52px; background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%); }
+.hub-hero h1 { max-width: 900px; margin-top: 18px; font-size: clamp(38px, 5vw, 62px); }
+.hub-hero p { max-width: 760px; margin-top: 20px; font-size: 19px; }
+.hub-list { padding: 40px 0 100px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.hub-card { display: grid; gap: 14px; min-height: 280px; padding: 34px; border: 1px solid var(--border); border-radius: 8px; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.hub-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--primary); }
+.hub-card h2 { font-size: 32px; }
+.hub-card p { font-size: 16.5px; }
+.tag { width: fit-content; color: var(--primary); background: var(--bg-blue); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 700; }
+.rox-tag { color: #7C3AED; background: #F5F3FF; border-color: #DDD6FE; }
+.rox-card:hover { border-color: #7C3AED; }
+.ext-hint { font-family: "JetBrains Mono", monospace; font-size: 11px; color: #7C3AED; font-weight: 600; margin-top: auto; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .hub-card { min-height: auto; } }
+</style>

@@ -1,0 +1,345 @@
+---
+interface Props {
+  lang?: 'tr' | 'en';
+  /** Current page path to highlight active link */
+  currentPath?: string;
+}
+
+const { lang = 'tr', currentPath = '' } = Astro.props;
+
+const base = lang === 'en' ? '/en' : '';
+const altLang = lang === 'tr' ? 'en' : 'tr';
+const altBase = altLang === 'en' ? '/en' : '';
+
+const navLinks = lang === 'tr'
+  ? [
+      { href: `${base}/`, label: 'Ana Sayfa' },
+      {
+        href: `${base}/platformlar/`,
+        label: 'Platformlar',
+        children: [
+          { href: `${base}/platformlar/tag-trace/`, label: 'Tag&Trace', description: 'RFID ve Auto-ID orkestrasyonu' },
+          { href: `${base}/platformlar/predictivo/`, label: 'Predictivo', description: 'Industrial IoT ve operasyonel zekâ' },
+        ],
+      },
+      {
+        href: `${base}/cozumler/`,
+        label: 'Çözümler',
+        children: [
+          { href: `${base}/cozumler/pick-to-light/`, label: 'Pick-to-Light', description: 'Depo toplama ve yönlendirme' },
+          { href: `${base}/cozumler/asset-yonetimi/`, label: 'Asset Yönetimi', description: 'NFC ve QR tabanlı varlık takibi' },
+          { href: `${base}/cozumler/goruntu-isleme/`, label: 'TrueScan', description: 'AI ile zorlu saha koşullarında okuma' },
+          { href: 'https://roxcard.com.tr', label: 'Rox Card', description: 'NFC & QR dijital kartvizit platformu' },
+        ],
+      },
+      {
+        href: `${base}/sektorler/`,
+        label: 'Sektörler',
+        children: [
+          { href: `${base}/sektorler/depo-lojistik/`, label: 'Depo & Lojistik', description: 'Sayım, sevkiyat ve WMS görünürlüğü' },
+          { href: `${base}/sektorler/perakende-tekstil/`, label: 'Perakende & Tekstil', description: 'Mağaza ve konfeksiyon RFID zinciri' },
+          { href: `${base}/sektorler/uretim/`, label: 'Üretim', description: 'OEE, bakım ve enerji izleme' },
+        ],
+      },
+      { href: `${base}/hakkimizda/`, label: 'Hakkımızda' },
+      { href: `${base}/iletisim/`, label: 'İletişim' },
+    ]
+  : [
+      { href: `${base}/`, label: 'Home' },
+      {
+        href: `${base}/platforms/`,
+        label: 'Platforms',
+        children: [
+          { href: `${base}/platforms/tag-trace/`, label: 'Tag&Trace', description: 'RFID and Auto-ID orchestration' },
+          { href: `${base}/platforms/predictivo/`, label: 'Predictivo', description: 'Industrial IoT and operational intelligence' },
+        ],
+      },
+      {
+        href: `${base}/solutions/`,
+        label: 'Solutions',
+        children: [
+          { href: `${base}/solutions/pick-to-light/`, label: 'Pick-to-Light', description: 'Warehouse picking guidance' },
+          { href: `${base}/solutions/asset-management/`, label: 'Asset Management', description: 'NFC and QR asset tracking' },
+          { href: `${base}/solutions/image-processing/`, label: 'TrueScan', description: 'AI-powered reading in tough conditions' },
+          { href: 'https://roxcard.com.tr', label: 'Rox Card', description: 'NFC & QR digital business card platform' },
+        ],
+      },
+      {
+        href: `${base}/sectors/`,
+        label: 'Sectors',
+        children: [
+          { href: `${base}/sectors/warehouse-logistics/`, label: 'Warehouse & Logistics', description: 'Inventory, shipping, and WMS visibility' },
+          { href: `${base}/sectors/retail-textile/`, label: 'Retail & Textile', description: 'Store and apparel RFID chain' },
+          { href: `${base}/sectors/manufacturing/`, label: 'Manufacturing', description: 'OEE, maintenance, and energy monitoring' },
+        ],
+      },
+      { href: `${base}/about/`, label: 'About' },
+      { href: `${base}/contact/`, label: 'Contact' },
+    ];
+
+const ctaLabel = lang === 'tr' ? 'Demo Talep Et' : 'Request Demo';
+const ctaHref = lang === 'tr' ? `${base}/iletisim/` : `${base}/contact/`;
+const menuLabel = lang === 'tr' ? 'Ana menü' : 'Main menu';
+const mobileMenuLabel = lang === 'tr' ? 'Mobil menü' : 'Mobile menu';
+const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
+---
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href={`${base}/`} aria-label="Altis Teknoloji">
+      <img src="/assets/altis-logo.png" alt="Altis Teknoloji" width="120" height="32" />
+    </a>
+
+    <nav class="nav-links" aria-label={menuLabel}>
+      {navLinks.map(link => (
+        <div class:list={['nav-item', { 'has-dropdown': link.children }]}>
+          <a
+            href={link.href}
+            class:list={['nav-link', { active: currentPath.startsWith(link.href) && link.href !== `${base}/` }]}
+            aria-haspopup={link.children ? 'true' : undefined}
+          >
+            {link.label}
+            {link.children && (
+              <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            )}
+          </a>
+          {link.children && (
+            <div class="dropdown-menu" role="menu">
+              {link.children.map(child => (
+                <a class="dropdown-link" href={child.href} role="menuitem" target={child.href.startsWith('http') ? '_blank' : undefined} rel={child.href.startsWith('http') ? 'noopener' : undefined}>
+                  <span>{child.label}</span>
+                  <small>{child.description}</small>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </nav>
+
+    <div class="nav-actions">
+      <a href={`${altBase}/`} class="lang-switch" aria-label={`Switch to ${altLang.toUpperCase()}`}>
+        {altLang.toUpperCase()}
+      </a>
+      <a href={ctaHref} class="btn btn-primary">{ctaLabel}</a>
+      <button class="hamburger" aria-label={hamburgerLabel} aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav aria-label={mobileMenuLabel}>
+      {navLinks.map(link => (
+        <div class="mobile-link-group">
+          <a href={link.href} class="mobile-link">{link.label}</a>
+          {link.children && (
+            <div class="mobile-sub-links">
+              {link.children.map(child => (
+                <a href={child.href} class="mobile-sub-link" target={child.href.startsWith('http') ? '_blank' : undefined} rel={child.href.startsWith('http') ? 'noopener' : undefined}>{child.label}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+      <a href={ctaHref} class="btn btn-primary mobile-cta">{ctaLabel}</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .82);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+.logo { display: flex; align-items: center; }
+.logo img { height: 32px; width: auto; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 76px;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14.5px;
+  color: var(--text);
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-link:hover,
+.nav-link.active { color: var(--primary); }
+.nav-caret { transition: transform .2s; }
+.has-dropdown:hover .nav-caret,
+.has-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 50%;
+  min-width: 268px;
+  padding: 10px;
+  background: rgba(255, 255, 255, .98);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 20px 45px -26px rgba(0, 18, 92, .34), 0 8px 18px -12px rgba(0, 18, 92, .16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity .16s, transform .16s;
+}
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+.dropdown-link {
+  display: grid;
+  gap: 2px;
+  padding: 11px 12px;
+  border-radius: 7px;
+  color: var(--text);
+  transition: background .18s, color .18s;
+}
+.dropdown-link:hover,
+.dropdown-link:focus {
+  background: var(--bg-soft);
+  color: var(--primary);
+}
+.dropdown-link span {
+  font-size: 14px;
+  font-weight: 700;
+}
+.dropdown-link small {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.lang-switch {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  transition: color .2s, border-color .2s;
+  letter-spacing: .04em;
+}
+.lang-switch:hover { color: var(--primary); border-color: var(--primary); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-top: 1px solid var(--border-soft);
+  padding: 16px 20px 24px;
+  gap: 4px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu nav {
+  display: grid;
+  gap: 4px;
+}
+.mobile-link-group {
+  display: grid;
+  gap: 2px;
+}
+.mobile-link {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  padding: 12px 8px;
+  border-radius: 8px;
+  transition: background .2s, color .2s;
+}
+.mobile-link:hover { background: var(--bg-soft); color: var(--primary); }
+.mobile-sub-links {
+  display: grid;
+  gap: 2px;
+  padding-left: 14px;
+  margin-bottom: 4px;
+}
+.mobile-sub-link {
+  display: block;
+  padding: 8px 10px;
+  border-left: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.mobile-sub-link:hover { color: var(--primary); }
+.mobile-cta { margin-top: 12px; width: 100%; justify-content: center; }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 480px) {
+  .lang-switch { display: none; }
+}
+</style>
+
+<script>
+const btn = document.querySelector('.hamburger') as HTMLButtonElement | null;
+const menu = document.getElementById('mobile-menu');
+if (btn && menu) {
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu.setAttribute('aria-hidden', String(open));
+    menu.classList.toggle('open', !open);
+  });
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('open');
+    }
+  });
+}
+</script>

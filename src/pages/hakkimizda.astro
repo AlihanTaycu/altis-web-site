@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Altis Teknoloji Hakkımızda"
+};
+---
+
+<Base
+  title="Hakkımızda | Altis Teknoloji"
+  description="Altis Teknoloji; RFID, IoT, Auto-ID ve operasyonel zekâ alanlarında saha odaklı yazılım ve otomasyon çözümleri geliştirir."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/about/"
+>
+  <section class="about-hero">
+    <div class="container">
+      <div class="eyebrow">Hakkımızda</div>
+      <h1>Altis Teknoloji, fiziksel operasyonları dijital karar sistemlerine bağlar.</h1>
+      <p>RFID, IoT, Auto-ID ve endüstriyel entegrasyon deneyimini; depo, perakende, tekstil ve üretim sahalarında çalışan pratik ürünlere dönüştürüyoruz.</p>
+      <a class="btn btn-primary" href="/iletisim/">Bizimle Görüşün</a>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="container grid">
+      <article>
+        <h2>Saha gerçekliği</h2>
+        <p>Çözümlerimizi sadece dashboard olarak değil, okuyucu, sensör, etiket, operatör ve mevcut ERP/WMS/MES akışıyla birlikte tasarlarız.</p>
+      </article>
+      <article>
+        <h2>Entegrasyon disiplini</h2>
+        <p>RFID ve IoT verisini mevcut sistemleri değiştirmeden, kontrollü ve ölçülebilir bir orkestrasyon katmanı olarak konumlandırırız.</p>
+      </article>
+      <article>
+        <h2>Ölçülebilir değer</h2>
+        <p>Pilot kapsamını stok doğruluğu, sayım hızı, OEE, enerji tüketimi ve duruş süresi gibi net metriklerle tanımlarız.</p>
+      </article>
+    </div>
+  </section>
+</Base>
+
+<style>
+.about-hero { padding: 110px 0 72px; background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%); }
+.about-hero h1 { max-width: 940px; margin-top: 18px; font-size: clamp(38px, 5vw, 64px); }
+.about-hero p { max-width: 780px; margin: 22px 0 28px; font-size: 19px; }
+.principles { padding: 56px 0 110px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+article { padding: 30px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+article h2 { font-size: 26px; }
+article p { margin-top: 14px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,498 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TrueScan",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Standart endüstriyel kameraları yapay zeka tabanlı okuma motoruyla akıllandıran, zorlu saha koşullarında %99.5 doğrulukla 2D/QR/barkod okuyan görüntü işleme çözümü.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+  "provider": { "@type": "Organization", "name": "Altis Teknoloji" }
+};
+---
+
+<Base
+  title="TrueScan – Endüstriyel Görüntü İşleme | Altis Teknoloji"
+  description="TrueScan; metal parlama, kirli etiket ve düşük kontrast gibi zorlu saha koşullarında standart okuyucuların başarısız olduğu yerde yapay zeka ile %99.5 doğrulukla okuma sağlar."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/solutions/image-processing/"
+>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Ana Sayfa</a>
+      <span class="sep">/</span>
+      <a href="/cozumler/">Çözümler</a>
+      <span class="sep">/</span>
+      <span style="color:var(--primary);font-weight:600">TrueScan</span>
+    </div>
+    <div class="hero-inner" style="margin-top:32px">
+      <div>
+        <div class="solution-pill">
+          <span class="pill-tag">Çözüm</span>
+          <span>Görüntü İşleme · Yapay Zeka · Barkod / 2D / QR</span>
+        </div>
+        <div class="product-name" style="margin: 24px 0 14px">TrueScan</div>
+        <h1 class="product-tag">Donanımın okuyamadığını yazılım okur.</h1>
+        <p class="hero-sub">Metal parlama, kirli etiket, düşük kontrast, perspektif bozulması — standart okuyucuların durduğu yerde TrueScan, mevcut kameralarınızı yapay zeka ile akıllandırarak sahada kesintisiz okuma sağlar.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/iletisim/">Demo Talep Et
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#nasil-calisar">Nasıl Çalışır</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="v">%99.5</div><div class="l">okuma doğruluğu</div></div>
+          <div class="hero-stat"><div class="v">2D · QR</div><div class="l">desteklenen kod tipleri</div></div>
+          <div class="hero-stat"><div class="v">Sıfır</div><div class="l">ek donanım yatırımı</div></div>
+        </div>
+      </div>
+
+      <!-- Comparison mockup -->
+      <div class="compare-card">
+        <div class="compare-head">
+          <span class="ttl">Saha Testi · Yeşilyurt Demir Çelik</span>
+          <span class="badge-live">Gerçek Vaka</span>
+        </div>
+        <div class="compare-body">
+          <div class="compare-row fail">
+            <div class="compare-label">
+              <div class="dot dot-fail"></div>
+              <span>Standart Donanım</span>
+            </div>
+            <div class="compare-result">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+              <span>Okuma başarısız</span>
+            </div>
+          </div>
+          <div class="compare-row pass">
+            <div class="compare-label">
+              <div class="dot dot-pass"></div>
+              <span>TrueScan</span>
+            </div>
+            <div class="compare-result">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2.5 4-5"></path></svg>
+              <span>%99.5 doğruluk</span>
+            </div>
+          </div>
+          <div class="condition-tags">
+            <span class="ctag">Metal parlama</span>
+            <span class="ctag">Kirli etiket</span>
+            <span class="ctag">Düşük kontrast</span>
+            <span class="ctag">Perspektif bozulması</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Problem</div>
+      <h2>Teoride kolay görünen barkod okuma, sahada darboğaza dönüşür</h2>
+      <p>Standart endüstriyel okuyucular ideal koşullar için tasarlanmıştır. Gerçek üretim sahası ise ideal değildir.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-group">
+        <div class="problem-group-label">Saha Koşulları</div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+          <div>
+            <strong>Metal Parlama</strong>
+            <p>Yüzey yansımaları standart sensörlerin görüşünü kör eder.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <div>
+            <strong>Değişken Işık</strong>
+            <p>Düşük kontrast ve yetersiz aydınlatma okuma hatalarını tetikler.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"></path></svg>
+          <div>
+            <strong>Dinamik Ortam</strong>
+            <p>Hareketli hatlar ve titreşim odaklanma sorunları yaratır.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-group">
+        <div class="problem-group-label">Etiket Durumu</div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 18 18M9 9c-.9.9-1.5 2.2-1.5 3.5 0 2.8 2.2 5 5 5 1.3 0 2.6-.5 3.5-1.5"></path><path d="M14.5 9.5A3.5 3.5 0 0 0 9.5 14.5"></path><path d="m21 3-9 9"></path></svg>
+          <div>
+            <strong>Kirli ve Hasarlı</strong>
+            <p>Yağ, kir ve fiziksel çizikler barkod bütünlüğünü bozar.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 2 20 20M7 7H4l-1 5h14M7 7V4h10v3M7 7h10M12 7v4"></path></svg>
+          <div>
+            <strong>Perspektif Kaybı</strong>
+            <p>Eğik açılar ve deformasyon geometrik bozulmaya yol açar.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"></rect><path d="M6 9V5h12v4"></path></svg>
+          <div>
+            <strong>Kötü Baskı</strong>
+            <p>Silik ve düşük çözünürlüklü baskılar standart okuyucuları durdurur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-impact">
+        <div class="impact-label">Kritik Kayıplar</div>
+        <div class="impact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+          <span>Operasyonel yavaşlama</span>
+        </div>
+        <div class="impact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+          <span>Artan manuel müdahale</span>
+        </div>
+        <div class="impact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+          <span>Yüksek donanım maliyeti</span>
+        </div>
+        <blockquote>"Teoride kolay görünen barkod okuma, sahada bir darboğaza dönüşür."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="approach" id="nasil-calisar">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Yaklaşım</div>
+      <h2>Donanım değil, yazılım kazanır</h2>
+      <p>Pahalı ve özel donanımlar yerine, mevcut standart endüstriyel kameraları yapay zeka tabanlı bir okuma motoruyla akıllandırıyoruz. Yatırım korunur, kapasite artırılır.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6M9 12h6M9 15h4"></path></svg>
+        </div>
+        <h3>Yazılım Odaklı Mimari</h3>
+        <p>Mevcut standart kameralar üzerine entegre edilen esnek okuma motoru. Donanım markasından bağımsız çalışır.</p>
+      </div>
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path><circle cx="18" cy="6" r="4" fill="currentColor" opacity=".2" stroke="currentColor"></circle><path d="m16 6 2 2 4-4"></path></svg>
+        </div>
+        <h3>Yapay Zeka Tabanlı Analiz</h3>
+        <p>Görüntüyü sadece taramak yerine, her pikseli anlamlandıran derin öğrenme modelleri ile okuma yapılır.</p>
+      </div>
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <h3>Maliyet Verimliliği</h3>
+        <p>Pahalı AI entegreli kameralara ihtiyaç duymadan mevcut altyapıyı akıllandırma. Yatırım korunur.</p>
+      </div>
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
+        <h3>Esnek Entegrasyon</h3>
+        <p>Donanım markasından bağımsız, her türlü üretim hattına ve kurumsal sisteme hızlı adaptasyon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TrueScan capabilities -->
+<section class="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">TrueScan Teknolojisi</div>
+      <h2>Görüntüyü anlamlandırmak için dört algoritma</h2>
+      <p>Her saha koşulu farklı bir sorun yaratır. TrueScan, bu dört kritik sorunu ayrı algoritmalarla çözer.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-num">01</div>
+        <h3>Perspektif Düzeltme</h3>
+        <p>Eğik açılardan gelen görüntüleri gerçek zamanlı olarak düzeltir. Geometrik bozulmaları ortadan kaldırarak barkodu ideal okuma açısına getirir.</p>
+        <div class="cap-tag">Gerçek zamanlı</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">02</div>
+        <h3>Parlama Toleransı</h3>
+        <p>Metal yüzeylerdeki ışık patlamalarını filtreler. Dinamik eşikleme algoritmaları ile parlamanın altındaki veriyi kurtarır.</p>
+        <div class="cap-tag">Dinamik eşikleme</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">03</div>
+        <h3>Düşük Kontrast Okuma</h3>
+        <p>Silik baskıları ve yetersiz ışık altındaki etiketleri analiz eder. Yapay zeka ile piksel bazlı iyileştirme yaparak okuma sağlar.</p>
+        <div class="cap-tag">Piksel bazlı AI</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">04</div>
+        <h3>Hasar Analizi</h3>
+        <p>Kirlenmiş, çizilmiş veya yırtılmış etiketlerdeki eksik veriyi hata düzeltme kodları ve örüntü tanıma ile tamamlar.</p>
+        <div class="cap-tag">Örüntü tanıma</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case study: Yeşilyurt -->
+<section class="casestudy">
+  <div class="container">
+    <div class="cs-grid">
+      <div class="cs-copy">
+        <div class="eyebrow">Referans Proje</div>
+        <h2 style="margin-top:18px">Yeşilyurt Demir Çelik</h2>
+        <p style="font-size:17px;margin-top:16px;line-height:1.65">Türkiye'nin en büyük sanayi kuruluşlarından biri olan Yeşilyurt Demir Çelik'in üretim sahası, aşırı kötü baskılı, silik ve deforme olmuş barkodlar nedeniyle standart endüstriyel okuyucuların tamamen körleştiği bir ortamdı. Mevcut donanımlar durdu.</p>
+        <p style="font-size:17px;margin-top:14px;line-height:1.65">TrueScan ile birlikte, insan gözünün bile seçmekte zorlandığı veriler saniyeler içinde anlamlandırılarak sisteme aktarıldı.</p>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <div class="cs-v">%99.5</div>
+            <div class="cs-l">Okuma doğruluğu</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-v">0</div>
+            <div class="cs-l">Manuel müdahale</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-v">İSO 500</div>
+            <div class="cs-l">İlk 100 / 750+ çalışan</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-results">
+        <div class="cs-result-head">Proje Kazanımları</div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Kesintisiz Operasyon</strong>
+            <span>Daha önce okunamayan tüm barkodlar sisteme entegre edildi.</span>
+          </div>
+        </div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Minimum Müdahale</strong>
+            <span>Manuel veri girişi ihtiyacı ortadan kalktı, personel verimliliği arttı.</span>
+          </div>
+        </div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Yüksek Güven</strong>
+            <span>Hata oranları dramatik şekilde azaldı, veri bütünlüğü sağlandı.</span>
+          </div>
+        </div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Hızlı Akış</strong>
+            <span>Üretim hattındaki duraksamalar engellendi, çevrim süreleri optimize edildi.</span>
+          </div>
+        </div>
+        <div class="cs-quote">"Her problem donanımla çözülmez. Doğru mühendislik kazandırır."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="eyebrow">Demo &amp; Keşif</div>
+    <h2>TrueScan'i kendi üretim hattınızda görelim</h2>
+    <p>Okuma sorunu yaşadığınız ortamı ve mevcut kamera altyapınızı paylaşın. Ekibimiz uygulanabilir bir yol haritasıyla geri dönsün.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="/iletisim/">Demo Talep Et
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/cozumler/">Diğer Çözümler</a>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style>
+:root{
+  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;--navy-600:#1E2F8C;
+  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
+  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
+  --border:#E3E8F2;--border-soft:#EEF1F7;
+  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
+  --steel:#8B95A5;--slate:#334155;
+  --primary:var(--navy-800);--accent:var(--cyan);
+  --radius:14px;--radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
+  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
+  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
+  --container:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
+h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(36px,4.5vw,60px);font-weight:700}
+h2{font-size:clamp(28px,3vw,42px);font-weight:700;letter-spacing:-.025em}
+h3{font-size:20px;font-weight:600}
+p{margin:0;color:var(--text-muted);text-wrap:pretty}
+section{padding:110px 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--bg-soft)}
+.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
+
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px}
+.breadcrumb a{color:var(--text-muted)}.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:64px 0 120px;overflow:hidden;
+  background:radial-gradient(900px 500px at 80% -100px, rgba(24,183,214,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(0,18,92,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+          mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.solution-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.solution-pill .pill-tag{background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.product-name{
+  font-size:clamp(52px,7vw,88px);font-weight:800;letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#1E2F8C 60%,#18B7D6 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.product-tag{font-size:clamp(24px,2.4vw,34px);font-weight:700;line-height:1.2;color:var(--navy-800)}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:520px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);max-width:520px}
+.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.hero-stat .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+/* Compare card */
+.compare-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.compare-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border-soft);background:#FCFCFE}
+.compare-head .ttl{font-size:13px;font-weight:600;color:var(--navy-800)}
+.badge-live{background:#E6F7EE;color:#15a06b;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.04em}
+.compare-body{padding:28px}
+.compare-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-radius:10px;margin-bottom:12px}
+.compare-row.fail{background:#FEF2F2;border:1px solid #FCA5A5}
+.compare-row.pass{background:#E6F7EE;border:1px solid #86EFAC}
+.compare-label{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text)}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot-fail{background:#EF4444}
+.dot-pass{background:#15a06b}
+.compare-result{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700}
+.compare-row.fail .compare-result{color:#DC2626}
+.compare-row.pass .compare-result{color:#15a06b}
+.condition-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.ctag{font-size:11.5px;padding:4px 10px;background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:6px;color:var(--text-muted);font-weight:500}
+
+/* Problem */
+.problem{background:var(--bg-soft)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr 280px;gap:20px;align-items:start}
+.problem-group{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:28px;display:grid;gap:20px}
+.problem-group-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-bottom:12px;border-bottom:1px solid var(--border-soft)}
+.problem-item{display:flex;gap:14px;align-items:flex-start}
+.problem-item svg{color:var(--primary);flex-shrink:0;margin-top:3px}
+.problem-item strong{display:block;font-size:14px;color:var(--text);margin-bottom:4px}
+.problem-item p{font-size:13.5px;line-height:1.55}
+.problem-impact{background:var(--navy-800);border-radius:var(--radius-lg);padding:28px;display:grid;gap:14px;align-content:start}
+.impact-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1)}
+.impact-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.85)}
+.impact-item svg{color:#EF4444;flex-shrink:0}
+.problem-impact blockquote{margin:8px 0 0;padding:14px;border-left:3px solid var(--cyan);background:rgba(255,255,255,.05);border-radius:0 8px 8px 0;font-size:13px;font-style:italic;color:rgba(255,255,255,.7);line-height:1.55}
+
+/* Approach */
+.approach{background:#fff}
+.approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.approach-card{padding:28px;border:1px solid var(--border-soft);border-radius:var(--radius-lg);transition:all .25s}
+.approach-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--primary)}
+.ac-icon{width:48px;height:48px;border-radius:12px;background:var(--bg-blue);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.approach-card h3{font-size:17px;margin-bottom:10px}
+.approach-card p{font-size:14px;line-height:1.6}
+
+/* Capabilities */
+.capabilities{background:var(--navy-800)}
+.capabilities .section-head{color:#fff}
+.capabilities h2{color:#fff}
+.capabilities .section-head p{color:rgba(255,255,255,.7)}
+.capabilities .eyebrow{color:var(--cyan)}
+.capabilities .eyebrow::before{background:var(--cyan)}
+.cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cap-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:28px;transition:all .25s}
+.cap-card:hover{background:rgba(255,255,255,.09);border-color:var(--cyan)}
+.cap-num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--cyan);letter-spacing:.1em;font-weight:700;margin-bottom:14px}
+.cap-card h3{font-size:18px;color:#fff;margin-bottom:12px}
+.cap-card p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.65)}
+.cap-tag{display:inline-flex;margin-top:18px;font-size:11px;font-weight:600;padding:4px 10px;background:rgba(24,183,214,.15);border-radius:6px;color:var(--cyan);letter-spacing:.04em}
+
+/* Case study */
+.casestudy{background:var(--bg-soft)}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border-soft)}
+.cs-v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--primary)}
+.cs-l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:4px}
+.cs-results{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:grid;gap:18px}
+.cs-result-head{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-bottom:14px;border-bottom:1px solid var(--border-soft)}
+.cs-result-item{display:flex;gap:12px;align-items:flex-start;font-size:14.5px}
+.cs-result-item svg{color:var(--accent);flex-shrink:0;margin-top:3px}
+.cs-result-item strong{display:block;color:var(--text);font-weight:600;margin-bottom:2px}
+.cs-result-item span{color:var(--text-muted);font-size:13.5px}
+.cs-quote{margin-top:4px;padding:16px;background:var(--bg-soft);border-left:3px solid var(--primary);border-radius:0 8px 8px 0;font-size:13.5px;font-style:italic;color:var(--text-muted);line-height:1.55}
+
+/* CTA */
+.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 80% 50%,rgba(24,183,214,.15),transparent 60%)}
+.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.cta-inner .eyebrow{color:var(--cyan)}
+.cta-inner .eyebrow::before{background:var(--cyan)}
+.cta-inner h2{color:#fff;margin-top:18px}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
+.cta-inner .hero-cta{justify-content:center;margin-top:36px}
+.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25)}
+.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+@media (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .problem-grid{grid-template-columns:1fr 1fr}
+  .problem-impact{grid-column:1/-1}
+  .approach-grid,.cap-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-grid{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:720px){
+  section{padding:72px 0}
+  .problem-grid,.approach-grid,.cap-grid{grid-template-columns:1fr}
+  .cs-metrics{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{grid-template-columns:repeat(2,auto)}
+}
+</style>
