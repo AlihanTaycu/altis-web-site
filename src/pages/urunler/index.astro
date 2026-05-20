@@ -1,0 +1,178 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "RFID Ürünler — Altis Teknoloji",
+  "description": "Altis Teknoloji RFID ürün portföyü: etiketler, okuyucular, el terminalleri, yazıcılar ve perakende ürünler.",
+  "url": "https://www.altis.com.tr/urunler/"
+};
+
+const products = [
+  {
+    href: '/urunler/rfid-etiketler/',
+    title: 'RFID Etiketler',
+    description: 'UHF, HF ve özel form faktörlü etiketler. Tekstilden metale, dondurucu ortamdan dış sahaya her uygulamaya uygun etiket çözümleri.',
+    icon: '🏷️',
+  },
+  {
+    href: '/urunler/rfid-okuyucular/',
+    title: 'RFID Okuyucular',
+    description: 'Sabit portal, portatif ve entegre okuyucu çözümleri. Yüksek okuma hızı ve geniş alan kapsama alanı ile kesintisiz takip.',
+    icon: '📡',
+  },
+  {
+    href: '/urunler/rfid-el-terminalleri/',
+    title: 'RFID El Terminalleri',
+    description: 'Mobil RFID işlem ve envanter terminalleri. Depo, mağaza ve saha operasyonlarında hız ve doğruluk.',
+    icon: '📲',
+  },
+  {
+    href: '/urunler/rfid-yazicilar/',
+    title: 'RFID Yazıcılar',
+    description: 'RFID etiket yazdırma ve kodlama cihazları. Masaüstünden endüstriyel ölçeğe kadar tam çözüm yelpazesi.',
+    icon: '🖨️',
+  },
+  {
+    href: '/urunler/rfid-perakende/',
+    title: 'RFID Perakende Ürünler',
+    description: 'Perakende operasyonlarına özel RFID çözümler. EAS, envanter sayımı ve müşteri deneyimi için entegre donanım.',
+    icon: '🏪',
+  },
+];
+---
+
+<Base
+  title="RFID Ürünler — Altis Teknoloji"
+  description="Altis Teknoloji RFID ürün portföyü: etiketler, okuyucular, el terminalleri, yazıcılar ve perakende ürünler."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/products/"
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Ürün Portföyü</p>
+      <h1>RFID <span class="highlight">Donanım</span> Çözümleri</h1>
+      <p class="lead">Projelerinize en uygun RFID donanımını seçin. Altis Teknoloji, sektör lideri markalarla çalışarak ihtiyacınıza göre yapılandırılmış ürün ve entegrasyon desteği sunar.</p>
+    </div>
+  </section>
+
+  <section class="products-grid container">
+    {products.map(product => (
+      <a href={product.href} class="product-card">
+        <span class="product-icon">{product.icon}</span>
+        <h2>{product.title}</h2>
+        <p>{product.description}</p>
+        <span class="card-link">İncele →</span>
+      </a>
+    ))}
+  </section>
+
+  <section class="cta-section container">
+    <div class="cta-box">
+      <h2>Projeniz için doğru ürünü bulmak ister misiniz?</h2>
+      <p>Uzmanlarımız ihtiyaç analizi yaparak size en uygun RFID donanımını önerir.</p>
+      <a href="/iletisim/" class="btn btn-primary">Uzmanla Konuşun</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%);
+  color: #fff;
+  padding: 80px 0 72px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.highlight { color: var(--cyan); }
+.lead {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.8);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  transition: box-shadow .2s, border-color .2s, transform .2s;
+}
+.product-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 32px rgba(0,18,92,.1);
+  transform: translateY(-2px);
+}
+.product-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.product-card h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+.product-card p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  flex: 1;
+  margin: 0;
+}
+.card-link {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.cta-section {
+  padding-bottom: 80px;
+}
+.cta-box {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 52px 40px;
+  text-align: center;
+}
+.cta-box h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.cta-box p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+</style>

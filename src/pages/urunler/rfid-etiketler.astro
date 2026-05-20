@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "RFID Etiketler",
+  "description": "UHF, HF ve özel form faktörlü RFID etiket çözümleri.",
+  "brand": { "@type": "Brand", "name": "Altis Teknoloji" }
+};
+---
+
+<Base
+  title="RFID Etiketler — Altis Teknoloji"
+  description="UHF, HF ve özel form faktörlü RFID etiketler. Tekstilden metale, dondurucu ortamdan dış sahaya her uygulamaya uygun etiket çözümleri."
+  {schema}
+  lang="tr"
+  alternateUrl="https://www.altis.com.tr/en/products/rfid-tags/"
+>
+  <section class="hero">
+    <div class="container">
+      <a href="/urunler/" class="breadcrumb">← Ürünler</a>
+      <p class="eyebrow">RFID Donanım</p>
+      <h1>RFID Etiketler</h1>
+      <p class="lead">UHF, HF ve özel form faktörlü etiket çözümleri. Tekstilden metale, dondurucu ortamdan dış sahaya her uygulamaya uygun RFID etiketler.</p>
+    </div>
+  </section>
+
+  <section class="content container">
+    <div class="coming-soon">
+      <h2>Ürün detayları hazırlanıyor</h2>
+      <p>Bu sayfa yakında tamamlanacak. Bilgi almak için uzmanlarımızla iletişime geçin.</p>
+      <a href="/iletisim/" class="btn btn-primary">İletişime Geçin</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%);
+  color: #fff;
+  padding: 72px 0 64px;
+}
+.breadcrumb {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 20px;
+  transition: color .2s;
+}
+.breadcrumb:hover { color: #fff; }
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.lead {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.8);
+  max-width: 580px;
+  line-height: 1.7;
+}
+.content {
+  padding: 80px 0;
+}
+.coming-soon {
+  text-align: center;
+  padding: 60px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.coming-soon h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.coming-soon p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+</style>

@@ -41,6 +41,17 @@ const navLinks = lang === 'tr'
           { href: `${base}/sektorler/uretim/`, label: 'Üretim', description: 'OEE, bakım ve enerji izleme' },
         ],
       },
+      {
+        href: `${base}/urunler/`,
+        label: 'Ürünler',
+        children: [
+          { href: `${base}/urunler/rfid-etiketler/`, label: 'RFID Etiketler', description: 'UHF, HF ve özel form faktörlü etiketler' },
+          { href: `${base}/urunler/rfid-okuyucular/`, label: 'RFID Okuyucular', description: 'Sabit, portatif ve entegre okuyucu çözümleri' },
+          { href: `${base}/urunler/rfid-el-terminalleri/`, label: 'RFID El Terminalleri', description: 'Mobil RFID işlem ve envanter terminalleri' },
+          { href: `${base}/urunler/rfid-yazicilar/`, label: 'RFID Yazıcılar', description: 'RFID etiket yazdırma ve kodlama cihazları' },
+          { href: `${base}/urunler/rfid-perakende/`, label: 'RFID Perakende Ürünler', description: 'Perakende operasyonlarına özel RFID çözümler' },
+        ],
+      },
       { href: `${base}/hakkimizda/`, label: 'Hakkımızda' },
       { href: `${base}/iletisim/`, label: 'İletişim' },
     ]
@@ -71,6 +82,17 @@ const navLinks = lang === 'tr'
           { href: `${base}/sectors/warehouse-logistics/`, label: 'Warehouse & Logistics', description: 'Inventory, shipping, and WMS visibility' },
           { href: `${base}/sectors/retail-textile/`, label: 'Retail & Textile', description: 'Store and apparel RFID chain' },
           { href: `${base}/sectors/manufacturing/`, label: 'Manufacturing', description: 'OEE, maintenance, and energy monitoring' },
+        ],
+      },
+      {
+        href: `${base}/products/`,
+        label: 'Products',
+        children: [
+          { href: `${base}/products/rfid-tags/`, label: 'RFID Tags', description: 'UHF, HF and custom form-factor labels' },
+          { href: `${base}/products/rfid-readers/`, label: 'RFID Readers', description: 'Fixed, portable and integrated readers' },
+          { href: `${base}/products/rfid-handhelds/`, label: 'RFID Handhelds', description: 'Mobile RFID inventory and transaction terminals' },
+          { href: `${base}/products/rfid-printers/`, label: 'RFID Printers', description: 'RFID label printing and encoding devices' },
+          { href: `${base}/products/rfid-retail/`, label: 'RFID Retail Products', description: 'RFID solutions tailored for retail operations' },
         ],
       },
       { href: `${base}/about/`, label: 'About' },
