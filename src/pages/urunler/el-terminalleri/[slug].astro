@@ -1,0 +1,404 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { products } from '../../../data/el-terminalleri';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return products.map(p => ({
+    params: { slug: p.slug },
+    props: { product: p },
+  }));
+};
+
+const { product } = Astro.props;
+
+const related = products.filter(p => p.slug !== product.slug && p.brand === product.brand).slice(0, 3);
+const otherRelated = related.length < 3
+  ? [...related, ...products.filter(p => p.slug !== product.slug && p.brand !== product.brand)].slice(0, 3)
+  : related;
+
+const contactHref = `/iletisim/?urun=${encodeURIComponent(product.title)}`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.title,
+  "description": product.shortDesc,
+  "brand": { "@type": "Brand", "name": product.brand },
+  "image": product.image,
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "Altis Teknoloji" }
+  }
+};
+---
+
+<Base
+  title={`${product.title} — Altis Teknoloji`}
+  description={product.shortDesc}
+  {schema}
+  lang="tr"
+  alternateUrl={`https://www.altis.com.tr/en/products/rfid-handhelds/${product.slug}/`}
+>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/urunler/">Ürünler</a>
+      <span aria-hidden="true">›</span>
+      <a href="/urunler/rfid-el-terminalleri/">RFID El Terminalleri</a>
+      <span aria-hidden="true">›</span>
+      <span>{product.title}</span>
+    </div>
+  </nav>
+
+  <section class="product-hero container">
+    <div class="product-image-wrap">
+      <img
+        src={product.image}
+        alt={product.title}
+        width="560"
+        height="420"
+        loading="eager"
+      />
+    </div>
+
+    <div class="product-info">
+      <span class="brand-badge">{product.brand}</span>
+      <h1>{product.title}</h1>
+
+      <div class="tags-row">
+        {product.tags.map(tag => <span class="tag">{tag}</span>)}
+      </div>
+
+      <p class="description">{product.description}</p>
+
+      <div class="price-block">
+        <p class="price-label">Fiyat bilgisi için teklif alın</p>
+        <p class="price-sub">Ürün, adet ve teslimat koşullarına göre özel fiyatlandırma sunuyoruz.</p>
+      </div>
+
+      <div class="cta-group">
+        <a href={contactHref} class="btn btn-primary btn-lg">Fiyat Teklifi Al</a>
+        <a href="/iletisim/" class="btn btn-outline btn-lg">Demo Talep Et</a>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Resmi Distribütör</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Hızlı Teslimat</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span>Teknik Destek</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details-section container">
+    <div class="detail-card">
+      <h2>Ürün Hakkında</h2>
+      <p>{product.description}</p>
+    </div>
+    <div class="detail-card">
+      <h2>Marka</h2>
+      <p class="brand-info">
+        <strong>{product.brand}</strong> — Altis Teknoloji, bu markanın Türkiye resmi distribütörü olarak stok ve teknik destek sağlamaktadır.
+      </p>
+      <a href={product.storeUrl} target="_blank" rel="noopener" class="external-link">
+        Eski mağazamızda görüntüle →
+      </a>
+    </div>
+  </section>
+
+  {otherRelated.length > 0 && (
+    <section class="related-section container">
+      <h2>Benzer Ürünler</h2>
+      <div class="related-grid">
+        {otherRelated.map(rel => (
+          <a href={`/urunler/el-terminalleri/${rel.slug}/`} class="related-card">
+            <img src={rel.image} alt={rel.title} loading="lazy" width="200" height="150" />
+            <div class="related-info">
+              <span class="brand-label">{rel.brand}</span>
+              <p>{rel.title}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="bottom-cta">
+    <div class="container">
+      <h2>Bu ürün hakkında teknik bilgi almak ister misiniz?</h2>
+      <p>RFID uzmanlarımız doğru ürün seçimi ve entegrasyon konusunda size yardımcı olur.</p>
+      <div class="bottom-cta-btns">
+        <a href={contactHref} class="btn btn-primary">Fiyat Teklifi Al</a>
+        <a href="/urunler/rfid-el-terminalleri/" class="btn btn-outline-white">Tüm El Terminalleri</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-bar {
+  border-bottom: 1px solid var(--border-soft);
+  background: #fff;
+}
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: var(--text-muted); transition: color .2s; }
+.breadcrumb-inner a:hover { color: var(--primary); }
+.breadcrumb-inner span:last-child { color: var(--primary); font-weight: 600; }
+
+.product-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  align-items: start;
+}
+.product-image-wrap {
+  background: #f8f9fb;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--cyan);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.product-info h1 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.description {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.price-block {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+.price-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 4px;
+}
+.price-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.btn-lg { padding: 14px 28px; font-size: 15px; }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+
+.trust-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.trust-item svg { color: var(--cyan); flex-shrink: 0; }
+
+.details-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  padding-bottom: 60px;
+}
+.detail-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.detail-card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.detail-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+.brand-info { margin-bottom: 12px !important; }
+.external-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cyan);
+  transition: opacity .2s;
+}
+.external-link:hover { opacity: .75; }
+
+.related-section {
+  padding-bottom: 60px;
+}
+.related-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.related-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow .2s, border-color .2s;
+}
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(0,18,92,.08); }
+.related-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: #f8f9fb;
+  padding: 16px;
+}
+.related-info {
+  padding: 14px 16px;
+}
+.brand-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: block;
+  margin-bottom: 4px;
+}
+.related-info p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.bottom-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%);
+  padding: 72px 0;
+  text-align: center;
+}
+.bottom-cta h2 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.bottom-cta p {
+  color: rgba(255,255,255,.75);
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+.bottom-cta-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-outline-white {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,.5);
+  color: #fff;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,.1); }
+
+@media (max-width: 768px) {
+  .product-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .details-section {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
