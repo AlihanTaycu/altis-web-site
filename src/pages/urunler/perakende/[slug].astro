@@ -1,0 +1,707 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { retailProducts } from '../../../data/rfid-perakende';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return retailProducts.map(p => ({
+    params: { slug: p.slug },
+    props: { product: p },
+  }));
+};
+
+const { product } = Astro.props;
+
+const related = retailProducts.filter(p => p.slug !== product.slug).slice(0, 3);
+const contactHref = `/iletisim/?urun=${encodeURIComponent(product.title)}`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.title,
+  "description": product.shortDesc,
+  "brand": { "@type": "Brand", "name": product.brand },
+  "image": product.image,
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "Altis Teknoloji" }
+  }
+};
+---
+
+<Base
+  title={`${product.title} — Altis Teknoloji`}
+  description={product.shortDesc}
+  {schema}
+  lang="tr"
+  alternateUrl={`https://www.altis.com.tr/en/products/rfid-retail/${product.slug}/`}
+>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/urunler/">Ürünler</a>
+      <span>›</span>
+      <a href="/urunler/rfid-perakende/">RFID Perakende</a>
+      <span>›</span>
+      <span>{product.title}</span>
+    </div>
+  </nav>
+
+  <section class="product-hero container">
+    <div class="product-image-col">
+      {product.isAltisOwn && <div class="own-banner">Altis Teknoloji Kendi Ürünü</div>}
+      <div class="product-image-wrap" id="product-image-wrap">
+        <img id="main-img" src={product.image} alt={product.title} width="560" height="420" loading="eager" data-index="0" />
+        <button class="zoom-hint" type="button" aria-label="Görseli büyüt">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <span>Büyüt</span>
+        </button>
+      </div>
+      {product.gallery && product.gallery.length > 1 && (
+        <div class="gallery-thumbs" id="gallery-thumbs">
+          {product.gallery.map((src, i) => (
+            <button class:list={['thumb-btn', { active: src === product.image }]} data-index={i} data-src={src} type="button">
+              <img src={src} alt={`${product.title} görsel ${i + 1}`} width="80" height="60" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <div class="product-info">
+      <div class="badges">
+        <span class:list={['brand-badge', { 'brand-badge--own': product.isAltisOwn }]}>{product.brand}</span>
+        <span class="category-badge">{product.category}</span>
+      </div>
+      <h1>{product.title}</h1>
+
+      <div class="connectivity-row">
+        <span class="conn-label">Bağlantı:</span>
+        {product.connectivity.map(c => <span class="conn-chip">{c}</span>)}
+      </div>
+
+      <div class="tags-row">
+        {product.tags.map(tag => <span class="tag">{tag}</span>)}
+      </div>
+
+      <p class="description">{product.shortDesc}</p>
+
+      <div class="cta-group">
+        <a href={contactHref} class="btn btn-primary">Fiyat Teklifi Al</a>
+        <a href="/iletisim/" class="btn btn-outline">Uzmanla Konuş</a>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>{product.isAltisOwn ? 'Altis Kendi Ürünü' : 'Resmi Distribütör'}</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Hızlı Teslimat</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span>Teknik Destek</span>
+        </div>
+      </div>
+
+      {product.datasheet && (
+        <a href={product.datasheet} class="datasheet-card" target="_blank" rel="noopener">
+          <span class="datasheet-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 2h8l4 4v16H6V2Z" fill="currentColor" opacity=".14"/><path d="M14 2v5h5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 2h8l5 5v15H6V2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.4 15.8h7.2M8.4 18.2h5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8.5 9.5h2.8c1 0 1.7.6 1.7 1.5s-.7 1.5-1.7 1.5H9.8v1.7H8.5V9.5Zm5.4 0h1.9c1.5 0 2.6 1 2.6 2.35 0 1.35-1.1 2.35-2.6 2.35h-1.9V9.5Z" fill="currentColor"/></svg>
+          </span>
+          <span class="datasheet-copy">
+            <span class="datasheet-eyebrow">PDF Dökümantasyon</span>
+            <span class="datasheet-title">{product.title} Teknik Dökümanı</span>
+          </span>
+          <span class="datasheet-action">PDF'i Aç</span>
+        </a>
+      )}
+    </div>
+  </section>
+
+  <section class="overview-section container" data-reveal>
+    <h2 class="section-title">Ürün Hakkında</h2>
+    <p class="overview-text">
+      {product.title}, perakende mağaza girişleri ve satış alanlarında RFID tabanlı ürün takibi,
+      EAS alarm yönetimi ve mağaza operasyon entegrasyonu için konumlandırılan kompakt bir akıllı geçit çözümüdür.
+      UHF RFID mimarisi, hızlı etiket okuma performansı ve çoklu bağlantı seçenekleriyle envanter görünürlüğünü,
+      kayıp önlemeyi ve operasyonel doğrulamayı tek cihaz üzerinde birleştirir.
+    </p>
+  </section>
+
+  <section class="features-section container" data-reveal>
+    <h2 class="section-title">Öne Çıkan Özellikler</h2>
+    <ul class="features-list">
+      {product.featureHighlights.map(f => (
+        <li>
+          <span class="check-icon" aria-hidden="true">✓</span>
+          {f}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="specs-section container" data-reveal>
+    <h2 class="section-title">Teknik Özellikler</h2>
+    {product.sections.map(section => (
+      <div class="spec-block">
+        <h3 class="spec-group-title">{section.name}</h3>
+        <table class="spec-table">
+          <tbody>
+            {Object.entries(section.items).map(([key, val]) => (
+              <tr>
+                <th>{key}</th>
+                <td>{val}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ))}
+  </section>
+
+  {related.length > 0 && (
+    <section class="related-section container" data-reveal>
+      <h2 class="section-title">Benzer Ürünler</h2>
+      <div class="related-grid">
+        {related.map(p => (
+          <a href={`/urunler/perakende/${p.slug}/`} class="related-card">
+            <img src={p.image} alt={p.title} width="200" height="150" loading="lazy" />
+            <div class="related-info">
+              <span class="related-brand">{p.brand}</span>
+              <span class="related-title">{p.title}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="cta-strip">
+    <div class="container">
+      <p>Bu ürün hakkında daha fazla bilgi almak ister misiniz?</p>
+      <a href={contactHref} class="btn btn-primary">Fiyat Teklifi Al</a>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Ürün görseli görüntüleyici" hidden>
+    <button class="lb-close" id="lb-close" type="button" aria-label="Kapat">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lb-prev" type="button" aria-label="Önceki görsel">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lb-nav lb-next" id="lb-next" type="button" aria-label="Sonraki görsel">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lb-stage" id="lb-stage">
+      <img class="lb-image" id="lb-image" src="" alt="" />
+    </div>
+    <div class="lb-toolbar">
+      <button class="lb-tool" id="lb-zoom-out" type="button" aria-label="Uzaklaştır">−</button>
+      <span class="lb-counter" id="lb-counter">1 / 1</span>
+      <button class="lb-tool" id="lb-zoom-in" type="button" aria-label="Yakınlaştır">+</button>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ gallery: product.gallery && product.gallery.length > 0 ? product.gallery : [product.image], title: product.title }}>
+    (function () {
+      const mainImg = document.getElementById('main-img');
+      const thumbs = document.querySelectorAll('#gallery-thumbs .thumb-btn');
+      const wrap = document.getElementById('product-image-wrap');
+      const lightbox = document.getElementById('lightbox');
+      const lbImage = document.getElementById('lb-image');
+      const lbCounter = document.getElementById('lb-counter');
+      const lbClose = document.getElementById('lb-close');
+      const lbPrev = document.getElementById('lb-prev');
+      const lbNext = document.getElementById('lb-next');
+      const lbStage = document.getElementById('lb-stage');
+      const lbZoomIn = document.getElementById('lb-zoom-in');
+      const lbZoomOut = document.getElementById('lb-zoom-out');
+      let currentIndex = 0;
+      let zoom = 1;
+      let panX = 0, panY = 0;
+      let dragging = false;
+      let startX = 0, startY = 0;
+
+      function setMain(i) {
+        currentIndex = (i + gallery.length) % gallery.length;
+        mainImg.src = gallery[currentIndex];
+        mainImg.dataset.index = currentIndex;
+        thumbs.forEach((t, ti) => t.classList.toggle('active', ti === currentIndex));
+      }
+
+      thumbs.forEach((t) => {
+        t.addEventListener('click', () => setMain(parseInt(t.dataset.index, 10)));
+      });
+
+      function applyTransform() {
+        lbImage.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + zoom + ')';
+        lbImage.style.cursor = zoom > 1 ? (dragging ? 'grabbing' : 'grab') : 'zoom-in';
+      }
+
+      function setZoom(z) {
+        zoom = Math.max(1, Math.min(4, z));
+        if (zoom === 1) { panX = 0; panY = 0; }
+        applyTransform();
+      }
+
+      function updateLb() {
+        lbImage.src = gallery[currentIndex];
+        lbImage.alt = title + ' görsel ' + (currentIndex + 1);
+        lbCounter.textContent = (currentIndex + 1) + ' / ' + gallery.length;
+        setZoom(1);
+      }
+
+      function openLb(i) {
+        currentIndex = i;
+        updateLb();
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => lightbox.classList.add('open'));
+      }
+
+      function closeLb() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        setTimeout(() => { lightbox.hidden = true; }, 220);
+      }
+
+      wrap.addEventListener('click', (e) => {
+        if (e.target.closest('.zoom-hint') || e.target === mainImg || e.target === wrap) {
+          openLb(parseInt(mainImg.dataset.index || '0', 10));
+        }
+      });
+
+      lbClose.addEventListener('click', closeLb);
+      lbPrev.addEventListener('click', () => { currentIndex = (currentIndex - 1 + gallery.length) % gallery.length; updateLb(); });
+      lbNext.addEventListener('click', () => { currentIndex = (currentIndex + 1) % gallery.length; updateLb(); });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === lbStage) closeLb();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowLeft') lbPrev.click();
+        else if (e.key === 'ArrowRight') lbNext.click();
+        else if (e.key === '+' || e.key === '=') setZoom(zoom + 0.5);
+        else if (e.key === '-') setZoom(zoom - 0.5);
+      });
+
+      lbZoomIn.addEventListener('click', () => setZoom(zoom + 0.5));
+      lbZoomOut.addEventListener('click', () => setZoom(zoom - 0.5));
+
+      lbImage.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (zoom === 1) setZoom(2);
+        else setZoom(1);
+      });
+
+      lbImage.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        setZoom(zoom + (e.deltaY < 0 ? 0.25 : -0.25));
+      }, { passive: false });
+
+      lbImage.addEventListener('mousedown', (e) => {
+        if (zoom <= 1) return;
+        dragging = true;
+        startX = e.clientX - panX;
+        startY = e.clientY - panY;
+        applyTransform();
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (!dragging) return;
+        panX = e.clientX - startX;
+        panY = e.clientY - startY;
+        applyTransform();
+      });
+      window.addEventListener('mouseup', () => { dragging = false; applyTransform(); });
+
+      let touchStartX = null;
+      lbStage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) touchStartX = e.touches[0].clientX;
+      });
+      lbStage.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 50 && zoom === 1) {
+          if (dx < 0) lbNext.click(); else lbPrev.click();
+        }
+        touchStartX = null;
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      const items = document.querySelectorAll('[data-reveal]');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      items.forEach((el) => io.observe(el));
+    })();
+  </script>
+</Base>
+
+<style>
+.breadcrumb-bar { background: var(--bg-soft); border-bottom: 1px solid var(--border); padding: 10px 0; }
+.breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); flex-wrap: wrap; }
+.breadcrumb-inner a { color: var(--primary); font-weight: 500; transition: color .2s; }
+.breadcrumb-inner a:hover { color: var(--cyan); }
+.breadcrumb-inner span { color: var(--text-muted); }
+
+.product-hero {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 60px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  align-items: start;
+}
+.product-image-col { display: flex; flex-direction: column; gap: 12px; }
+.product-image-wrap {
+  background: #f8f9fb;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  position: relative;
+  cursor: zoom-in;
+  transition: border-color .2s, box-shadow .2s;
+}
+.product-image-wrap:hover { border-color: rgba(24,183,214,.5); box-shadow: 0 6px 22px rgba(0,18,92,.08); }
+.product-image-wrap:hover .zoom-hint { opacity: 1; transform: translateY(0); }
+.product-image-wrap img { max-width: 100%; max-height: 460px; width: auto; height: auto; object-fit: contain; display: block; transition: transform .35s ease; }
+.product-image-wrap:hover img { transform: scale(1.02); }
+.zoom-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,18,92,.85);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 999px;
+  cursor: zoom-in;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .2s, transform .2s;
+  backdrop-filter: blur(6px);
+  letter-spacing: .03em;
+}
+.zoom-hint svg { color: var(--cyan); }
+.own-banner {
+  align-self: flex-start;
+  background: var(--cyan);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+.product-info { display: flex; flex-direction: column; gap: 16px; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.brand-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(0,18,92,.07);
+  border: 1px solid rgba(0,18,92,.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.brand-badge--own { background: var(--cyan); color: #fff; border-color: var(--cyan); }
+.category-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.product-info h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--primary); line-height: 1.15; margin: 0; }
+
+.connectivity-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.conn-label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.conn-chip { font-size: 12px; font-weight: 600; color: var(--primary); background: rgba(0,18,92,.07); border: 1px solid rgba(0,18,92,.15); padding: 3px 10px; border-radius: 4px; }
+
+.tags-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 11.5px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 4px 10px; border-radius: 20px; }
+
+.description { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; margin: 0; }
+
+.cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
+.btn-outline:hover { background: var(--primary); color: #fff; }
+
+.datasheet-card {
+  order: 3;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 18px;
+  color: var(--text);
+  background: linear-gradient(180deg,#fff,#f8fbff);
+  border: 1px solid #d9e3f3;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 86px;
+  box-shadow: 0 10px 26px rgba(0,18,92,.06);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.datasheet-card:hover {
+  border-color: rgba(24,183,214,.45);
+  box-shadow: 0 10px 28px rgba(0,18,92,.08);
+  transform: translateY(-1px);
+}
+.datasheet-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  color: #e53935;
+  background: #fff4f3;
+  border: 1px solid #ffd7d3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.datasheet-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.datasheet-eyebrow {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.datasheet-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.35;
+}
+.datasheet-action {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #fff;
+  background: #1479d4;
+  border-radius: 999px;
+  padding: 10px 18px;
+  white-space: nowrap;
+}
+
+.trust-row { order: 2; display: flex; gap: 18px; flex-wrap: wrap; padding-top: 4px; }
+.trust-item { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--text-muted); }
+.trust-item svg { color: var(--cyan); flex-shrink: 0; }
+
+.gallery-thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.thumb-btn {
+  padding: 4px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: #f8f9fb;
+  cursor: pointer;
+  transition: border-color .2s;
+  overflow: hidden;
+}
+.thumb-btn img { width: 72px; height: 54px; object-fit: contain; display: block; }
+.thumb-btn:hover { border-color: var(--primary); }
+.thumb-btn.active { border-color: var(--cyan); }
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-soft);
+}
+
+.overview-section { padding-top: 48px; }
+.overview-text {
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 920px;
+}
+
+.features-section { padding-top: 48px; }
+.features-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  line-height: 1.5;
+}
+.check-icon { color: var(--cyan); font-weight: 900; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+.specs-section { padding-top: 56px; padding-bottom: 16px; }
+.spec-block { margin-bottom: 32px; }
+.spec-group-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+}
+.spec-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.spec-table th, .spec-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+.spec-table th { width: 36%; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); }
+.spec-table td { color: var(--text); }
+.spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: none; }
+
+.related-section { padding-top: 48px; padding-bottom: 48px; }
+.related-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+.related-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  transition: border-color .2s, box-shadow .2s;
+  flex: 1;
+  min-width: 220px;
+}
+.related-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(0,18,92,.08); }
+.related-card img { width: 60px; height: 45px; object-fit: contain; background: var(--bg-soft); border-radius: 6px; flex-shrink: 0; }
+.related-info { display: flex; flex-direction: column; gap: 2px; }
+.related-brand { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); }
+.related-title { font-size: 13px; font-weight: 600; color: var(--primary); line-height: 1.3; }
+
+.cta-strip { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); padding: 48px 0; margin-top: 16px; }
+.cta-strip .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.cta-strip p { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0; }
+
+[data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 12, 32, .88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .22s ease;
+}
+.lightbox.open { opacity: 1; }
+.lightbox[hidden] { display: none; }
+.lb-stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 56px 80px;
+  box-sizing: border-box;
+}
+.lb-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition: transform .25s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform-origin: center center;
+}
+.lb-close, .lb-nav, .lb-tool {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+  backdrop-filter: blur(8px);
+}
+.lb-close:hover, .lb-nav:hover, .lb-tool:hover { background: rgba(255, 255, 255, .22); transform: scale(1.06); }
+.lb-close { position: absolute; top: 22px; right: 22px; z-index: 2; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; }
+.lb-nav:hover { transform: translateY(-50%) scale(1.06); }
+.lb-prev { left: 18px; }
+.lb-next { right: 18px; }
+.lb-toolbar {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  padding: 6px 8px;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+.lb-tool { width: 32px; height: 32px; font-size: 18px; font-weight: 700; border: none; background: transparent; }
+.lb-tool:hover { background: rgba(255, 255, 255, .18); transform: scale(1.08); }
+.lb-counter { color: #fff; font-size: 13px; font-weight: 600; padding: 0 8px; letter-spacing: .04em; }
+
+@media (max-width: 768px) {
+  .product-hero { grid-template-columns: 1fr; gap: 32px; }
+  .datasheet-card { grid-template-columns: auto 1fr; }
+  .datasheet-action { grid-column: 1 / -1; text-align: center; }
+  .gallery-thumbs { gap: 6px; }
+  .features-list { grid-template-columns: 1fr; }
+  .cta-strip .container { flex-direction: column; text-align: center; }
+  .lb-stage { padding: 60px 16px 80px; }
+  .lb-prev { left: 6px; }
+  .lb-next { right: 6px; }
+}
+</style>
