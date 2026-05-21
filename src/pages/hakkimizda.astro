@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import SectionHead from '../components/sections/SectionHead.astro';
+import LogoMarquee from '../components/sections/LogoMarquee.astro';
+import { partnerLogos } from '../data/partner-logos';
 
 const schema = {
   "@context": "https://schema.org",
@@ -253,15 +255,7 @@ const schema = {
 <!-- ===== Referanslar ===== -->
 <section class="refs">
   <div class="container">
-    <p class="refs-label">Referanslar &amp; İş Ortakları</p>
-    <div class="refs-logos">
-      <div class="ref-logo">LOGO · 01</div>
-      <div class="ref-logo">LOGO · 02</div>
-      <div class="ref-logo">LOGO · 03</div>
-      <div class="ref-logo">LOGO · 04</div>
-      <div class="ref-logo">LOGO · 05</div>
-      <div class="ref-logo">LOGO · 06</div>
-    </div>
+    <LogoMarquee logos={partnerLogos} label="Çözüm Ortakları &amp; Tedarikçiler" />
   </div>
 </section>
 
@@ -563,35 +557,6 @@ const schema = {
 
 /* ===== Refs ===== */
 .refs { padding: 60px 0; background: #fff; text-align: center; }
-.refs-label {
-  font-size: 11px;
-  font-weight: 700;
-  font-family: "JetBrains Mono", monospace;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: var(--text-faint);
-  margin-bottom: 28px;
-}
-.refs-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: center;
-}
-.ref-logo {
-  width: 160px;
-  height: 60px;
-  border: 1.5px dashed var(--border);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-family: "JetBrains Mono", monospace;
-  color: var(--text-faint);
-  font-weight: 600;
-  letter-spacing: .06em;
-}
 
 /* ===== CTA ===== */
 .about-cta {
