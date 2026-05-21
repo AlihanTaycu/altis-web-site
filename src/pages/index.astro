@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import SectionHead from '../components/sections/SectionHead.astro';
+import LogoMarquee from '../components/sections/LogoMarquee.astro';
 
 const schema = [
   {
@@ -212,11 +214,11 @@ const partnerLogos = [
 <!-- ============== Problem ============== -->
 <section class="problem">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Operasyonel Gerçek</div>
-      <h2>Sahadaki veriler hâlâ dağınık, gecikmeli ve yönetilemez mi?</h2>
-      <p>Modern operasyonlarda cihazlar, sensörler, makineler, yazıcılar, okuyucular ve kurumsal sistemler çoğu zaman birbirinden kopuk çalışır. Bu durum görünmeyen risklere, hatalı stoklara, manuel iş yüküne ve verimsiz operasyonlara yol açar.</p>
-    </div>
+    <SectionHead
+      eyebrow="Operasyonel Gerçek"
+      heading="Sahadaki veriler hâlâ dağınık, gecikmeli ve yönetilemez mi?"
+      description="Modern operasyonlarda cihazlar, sensörler, makineler, yazıcılar, okuyucular ve kurumsal sistemler çoğu zaman birbirinden kopuk çalışır. Bu durum görünmeyen risklere, hatalı stoklara, manuel iş yüküne ve verimsiz operasyonlara yol açar."
+    />
     <div class="card-grid">
       <div class="problem-card">
         <div class="icon-box">
@@ -253,11 +255,11 @@ const partnerLogos = [
 <!-- ============== Approach ============== -->
 <section>
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Altis Yaklaşımı</div>
-      <h2>Teknolojiyi değil, çalışan operasyon sistemleri kuruyoruz.</h2>
-      <p>Saha ihtiyaçlarını analiz eder, doğru donanımı seçer, yazılımı geliştirir, sistemleri entegre eder ve operasyonun sürdürülebilir şekilde çalışmasını sağlarız. Yalnızca bir ürün tedarikçisi değil; analizden devreye almaya kadar yer alan bir proje ve teknoloji ortağıyız.</p>
-    </div>
+    <SectionHead
+      eyebrow="Altis Yaklaşımı"
+      heading="Teknolojiyi değil, çalışan operasyon sistemleri kuruyoruz."
+      description="Saha ihtiyaçlarını analiz eder, doğru donanımı seçer, yazılımı geliştirir, sistemleri entegre eder ve operasyonun sürdürülebilir şekilde çalışmasını sağlarız. Yalnızca bir ürün tedarikçisi değil; analizden devreye almaya kadar yer alan bir proje ve teknoloji ortağıyız."
+    />
     <div class="approach-grid">
       <div class="approach-line"></div>
       <div class="step">
@@ -287,11 +289,11 @@ const partnerLogos = [
 <!-- ============== Platforms ============== -->
 <section class="platforms" id="platforms">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">İki Amiral Gemisi Platform</div>
-      <h2>İki güçlü platform, tek hedef: görünür, izlenebilir, yönetilebilir operasyonlar</h2>
-      <p>Tag&amp;Trace ve Predictivo, Altis Teknoloji'nin saha verisini yöneten iki ana platformudur. Biri Auto-ID ve RFID operasyonlarını, diğeri IoT ve operasyonel verileri merkezileştirir.</p>
-    </div>
+    <SectionHead
+      eyebrow="İki Amiral Gemisi Platform"
+      heading="İki güçlü platform, tek hedef: görünür, izlenebilir, yönetilebilir operasyonlar"
+      description="Tag&amp;Trace ve Predictivo, Altis Teknoloji'nin saha verisini yöneten iki ana platformudur. Biri Auto-ID ve RFID operasyonlarını, diğeri IoT ve operasyonel verileri merkezileştirir."
+    />
 
     <div class="platform-grid">
       <!-- Tag&Trace -->
@@ -1027,11 +1029,11 @@ const partnerLogos = [
 <!-- ============== Comparison ============== -->
 <section class="compare">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Platform Karşılaştırma</div>
-      <h2>Hangi platform hangi ihtiyaca cevap verir?</h2>
-      <p>Tag&amp;Trace, RFID ve Auto-ID operasyonlarının orkestrasyonu için idealdir. Predictivo, IoT, sensör, enerji, makine ve operasyon verilerinin izlenmesi ve aksiyona dönüştürülmesi için tasarlanmıştır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Platform Karşılaştırma"
+      heading="Hangi platform hangi ihtiyaca cevap verir?"
+      description="Tag&amp;Trace, RFID ve Auto-ID operasyonlarının orkestrasyonu için idealdir. Predictivo, IoT, sensör, enerji, makine ve operasyon verilerinin izlenmesi ve aksiyona dönüştürülmesi için tasarlanmıştır."
+    />
     <div class="compare-table">
       <div class="compare-row head">
         <div>İhtiyaç</div>
@@ -1100,11 +1102,13 @@ const partnerLogos = [
 <!-- ============== Tag&Trace Detail ============== -->
 <section class="detail tag-detail" id="tagtrace">
   <div class="container">
-    <div class="section-head left" style="max-width:780px">
-      <div class="eyebrow">Tag&amp;Trace · Derinlemesine</div>
-      <h2>RFID ve Auto-ID kaosunu orkestrasyona dönüştürün</h2>
-      <p>RFID projelerinde farklı marka ve model okuyucular, yazıcılar, sensörler, PLC'ler ve kurumsal sistemler çoğu zaman karmaşık bir yapı oluşturur. Tag&amp;Trace bu yapıyı soyutlayarak tüm cihazları standart bir arayüzden yönetmenizi ve veriyi anlamlı iş akışlarına dönüştürmenizi sağlar.</p>
-    </div>
+    <SectionHead
+      eyebrow="Tag&amp;Trace · Derinlemesine"
+      heading="RFID ve Auto-ID kaosunu orkestrasyona dönüştürün"
+      description="RFID projelerinde farklı marka ve model okuyucular, yazıcılar, sensörler, PLC'ler ve kurumsal sistemler çoğu zaman karmaşık bir yapı oluşturur. Tag&amp;Trace bu yapıyı soyutlayarak tüm cihazları standart bir arayüzden yönetmenizi ve veriyi anlamlı iş akışlarına dönüştürmenizi sağlar."
+      align="left"
+      maxWidth="780px"
+    />
 
     <div class="detail-grid">
       <div>
@@ -1306,11 +1310,11 @@ const partnerLogos = [
 <!-- ============== Use cases ============== -->
 <section class="usecases" id="solutions">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Kullanım Senaryoları</div>
-      <h2>Saha, depo ve üretim operasyonları için uygulanabilir çözümler</h2>
-      <p>Altis Teknoloji, platformlarını farklı sektör ve operasyon ihtiyaçlarına göre uyarlayarak ölçülebilir iş sonuçları üretir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Kullanım Senaryoları"
+      heading="Saha, depo ve üretim operasyonları için uygulanabilir çözümler"
+      description="Altis Teknoloji, platformlarını farklı sektör ve operasyon ihtiyaçlarına göre uyarlayarak ölçülebilir iş sonuçları üretir."
+    />
     <div class="use-grid">
       <article class="use-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05M12 22.08V12"/></svg></div>
@@ -1367,10 +1371,10 @@ const partnerLogos = [
 <!-- ============== Industries ============== -->
 <section class="industries" id="industries">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Sektörel Çözümler</div>
-      <h2>Farklı sektörlere uyarlanabilen esnek teknoloji altyapısı</h2>
-    </div>
+    <SectionHead
+      eyebrow="Sektörel Çözümler"
+      heading="Farklı sektörlere uyarlanabilen esnek teknoloji altyapısı"
+    />
     <div class="ind-grid">
       <div class="ind-card">
         <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9 5 4h14l2 5"/></svg></div>
@@ -1419,11 +1423,11 @@ const partnerLogos = [
 <!-- ============== Tech architecture ============== -->
 <section class="tech" id="technology">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Teknoloji &amp; Mimari</div>
-      <h2>Endüstri standartlarıyla uyumlu, güvenli ve ölçeklenebilir altyapı</h2>
-      <p>Altis platformları, farklı cihaz ve sistemlerin aynı operasyon yapısında güvenilir şekilde çalışmasını sağlayacak modern teknolojiler üzerine inşa edilir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Teknoloji &amp; Mimari"
+      heading="Endüstri standartlarıyla uyumlu, güvenli ve ölçeklenebilir altyapı"
+      description="Altis platformları, farklı cihaz ve sistemlerin aynı operasyon yapısında güvenilir şekilde çalışmasını sağlayacak modern teknolojiler üzerine inşa edilir."
+    />
 
     <div class="tech-stack">
       <div class="tech-layer">
@@ -1496,11 +1500,11 @@ const partnerLogos = [
 <!-- ============== Project approach ============== -->
 <section class="project">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Proje Yaklaşımı</div>
-      <h2>Fikirden çalışan sisteme: uçtan uca proje teslimatı</h2>
-      <p>Altis Teknoloji, projeyi yalnızca yazılım veya donanım teslimatı olarak görmez. Her projede saha gerçekleri, kullanıcı alışkanlıkları, veri akışı, entegrasyon gereksinimleri ve sürdürülebilir operasyon birlikte ele alınır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Proje Yaklaşımı"
+      heading="Fikirden çalışan sisteme: uçtan uca proje teslimatı"
+      description="Altis Teknoloji, projeyi yalnızca yazılım veya donanım teslimatı olarak görmez. Her projede saha gerçekleri, kullanıcı alışkanlıkları, veri akışı, entegrasyon gereksinimleri ve sürdürülebilir operasyon birlikte ele alınır."
+    />
     <div class="proj-list">
       <div class="proj-step">
         <div class="n">01</div>
@@ -1534,11 +1538,11 @@ const partnerLogos = [
 <!-- ============== Trust ============== -->
 <section class="trust" id="about">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Deneyim &amp; Güven</div>
-      <h2>Sahada deneyimli, yazılımda güçlü, entegrasyonda esnek</h2>
-      <p>Altis Teknoloji ve Yazılım, 2003'ten bu yana sanayi tesislerinin üretim süreçlerini dijitalleştirmektedir. Endüstri 4.0, IIoT, RFID, BLE, UWB ve Auto-ID teknolojilerini kendi geliştirdiğimiz platformlarla birleştirerek sahadan kurumsal sisteme kesintisiz veri akışı kuruyoruz.</p>
-    </div>
+    <SectionHead
+      eyebrow="Deneyim &amp; Güven"
+      heading="Sahada deneyimli, yazılımda güçlü, entegrasyonda esnek"
+      description="Altis Teknoloji ve Yazılım, 2003'ten bu yana sanayi tesislerinin üretim süreçlerini dijitalleştirmektedir. Endüstri 4.0, IIoT, RFID, BLE, UWB ve Auto-ID teknolojilerini kendi geliştirdiğimiz platformlarla birleştirerek sahadan kurumsal sisteme kesintisiz veri akışı kuruyoruz."
+    />
     <div class="trust-grid">
       <div class="trust-card">
         <div class="ph">Yıllık Deneyim</div>
@@ -1561,14 +1565,7 @@ const partnerLogos = [
         <div class="lbl">Türkiye çözüm ortağı · RTLS &amp; bebek koruma</div>
       </div>
     </div>
-    <p class="trust-logos-label">Referanslar &amp; Çözüm Ortakları</p>
-    <div class="trust-logos">
-      {partnerLogos.map(partner => (
-        <div class="trust-logo">
-          <img src={partner.src} alt={`${partner.name} logo`} width="160" height="70" loading="lazy" />
-        </div>
-      ))}
-    </div>
+    <LogoMarquee logos={partnerLogos} label="Referanslar & Çözüm Ortakları" />
     <p style="margin-top:32px;font-size:13.5px;max-width:640px;margin-left:auto;margin-right:auto">Farklı sektörlerde yürüttüğümüz projelerden elde ettiğimiz saha deneyimini, ölçeklenebilir yazılım platformlarımızla birleştiriyoruz.</p>
   </div>
 </section>
@@ -2131,26 +2128,6 @@ section{padding:var(--section-y) 0}
 }
 .trust-card .big{font-size:36px;font-weight:700;color:var(--navy-800);font-family:"JetBrains Mono",monospace}
 .trust-card .lbl{font-size:13px;color:var(--text-muted);margin-top:6px}
-.trust-logos-label{
-  margin-top:56px;font-size:13px;color:var(--text-faint);
-  font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.12em;
-}
-.trust-logos{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));
-  gap:18px 22px;margin-top:34px;align-items:center;
-}
-.trust-logo{
-  height:74px;display:flex;align-items:center;justify-content:center;
-  background:#fff;border-radius:8px;padding:18px 20px;
-  transition:transform .2s ease, opacity .2s ease;
-}
-.trust-logo:hover{transform:translateY(-2px)}
-.trust-logo img{
-  max-width:100%;max-height:42px;width:auto;height:auto;object-fit:contain;
-  filter:saturate(.92);opacity:.86;
-}
-.trust-logo:hover img{opacity:1;filter:saturate(1)}
-
 /* CTA */
 .cta-section{
   background:var(--navy-800);color:#fff;position:relative;overflow:hidden;
@@ -2242,7 +2219,6 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
   .proj-list{grid-template-columns:repeat(2,1fr)}
   .cta-grid{grid-template-columns:1fr;gap:48px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .trust-logos{grid-template-columns:repeat(3,1fr)}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:720px){
@@ -2254,7 +2230,6 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
   .compare-row{grid-template-columns:1fr;gap:0}
   .compare-row > div{padding:12px 18px}
   .foot-grid{grid-template-columns:1fr}
-  .trust-logos{grid-template-columns:repeat(2,1fr)}
 }
 
 /* Density */

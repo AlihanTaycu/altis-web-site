@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -179,11 +180,11 @@ const schema = {
 <!-- Modules -->
 <section class="modules">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Üç Temel Modül</div>
-      <h2>Demirbaşlarınız için özel modüller</h2>
-      <p>Asset Tag &amp; Trace üç ana modül üzerine kuruludur: bakım planlama, arıza takibi ve hareket yönetimi. Her modül birbiriyle entegre, tek arayüzden.</p>
-    </div>
+    <SectionHead
+      eyebrow="Üç Temel Modül"
+      heading="Demirbaşlarınız için özel modüller"
+      description="Asset Tag &amp; Trace üç ana modül üzerine kuruludur: bakım planlama, arıza takibi ve hareket yönetimi. Her modül birbiriyle entegre, tek arayüzden."
+    />
     <div class="mod-grid">
       <div class="mod-card">
         <div class="tag">01 · BAKIM</div>
@@ -216,10 +217,10 @@ const schema = {
 <!-- Features quick grid -->
 <section class="features" id="features">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Yeni Nesil Demirbaş Yönetimi</div>
-      <h2>Envanteriniz her zaman kontrol altında</h2>
-    </div>
+    <SectionHead
+      eyebrow="Yeni Nesil Demirbaş Yönetimi"
+      heading="Envanteriniz her zaman kontrol altında"
+    />
     <div class="feat-grid">
       <div class="feat-card">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
@@ -248,10 +249,10 @@ const schema = {
 <!-- Deep dive blocks -->
 <section class="deep">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Yetenekler · Derinlemesine</div>
-      <h2>İşletmeniz ne kadar büyük olursa olsun, kontrol sizde</h2>
-    </div>
+    <SectionHead
+      eyebrow="Yetenekler · Derinlemesine"
+      heading="İşletmeniz ne kadar büyük olursa olsun, kontrol sizde"
+    />
 
     <!-- Multi-location -->
     <div class="deep-block">
@@ -426,11 +427,11 @@ const schema = {
 <!-- Tech compatibility strip -->
 <section style="padding:90px 0;background:var(--bg-soft)">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Teknoloji Uyumu</div>
-      <h2>RFID, Barkod, NFC, QR — hepsiyle</h2>
-      <p>İşletmenizdeki mevcut etiketleme altyapısına göre uygun teknolojiyi seçin. Asset Tag &amp; Trace dördüyle de aynı anda çalışır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Teknoloji Uyumu"
+      heading="RFID, Barkod, NFC, QR — hepsiyle"
+      description="İşletmenizdeki mevcut etiketleme altyapısına göre uygun teknolojiyi seçin. Asset Tag &amp; Trace dördüyle de aynı anda çalışır."
+    />
     <div class="tech-row">
       <div class="tech-chip">
         <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></div>
@@ -463,11 +464,11 @@ const schema = {
 <!-- Process -->
 <section class="process">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Başlangıç Süreci</div>
-      <h2>Ortam fark etmeksizin, hemen başlayın</h2>
-      <p>Asset Tag &amp; Trace 5 basit adımda devreye alınır. Telefon, tablet ya da bilgisayar — hangisi varsa ondan başlayabilirsiniz.</p>
-    </div>
+    <SectionHead
+      eyebrow="Başlangıç Süreci"
+      heading="Ortam fark etmeksizin, hemen başlayın"
+      description="Asset Tag &amp; Trace 5 basit adımda devreye alınır. Telefon, tablet ya da bilgisayar — hangisi varsa ondan başlayabilirsiniz."
+    />
     <div class="process-steps">
       <div class="process-step">
         <div class="num">01</div>
@@ -501,11 +502,11 @@ const schema = {
 <!-- Pricing -->
 <section class="pricing" id="pricing">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Abonelik Paketleri</div>
-      <h2>İhtiyacınıza uygun paket</h2>
-      <p>İlk 30 gün ücretsiz. İşletmenizin büyüklüğüne göre ölçeklenir; paket yükseltmek isterseniz indirim uygulanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Abonelik Paketleri"
+      heading="İhtiyacınıza uygun paket"
+      description="İlk 30 gün ücretsiz. İşletmenizin büyüklüğüne göre ölçeklenir; paket yükseltmek isterseniz indirim uygulanır."
+    />
     <div class="price-grid">
       <div class="price-card">
         <div class="price-name">Keşif</div>

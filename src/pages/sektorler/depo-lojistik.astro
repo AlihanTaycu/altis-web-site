@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -140,11 +141,11 @@ const schema = {
 <!-- Pain points -->
 <section class="pains">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Depo Operasyonlarında</div>
-      <h2>Tanıdık geliyor mu?</h2>
-      <p>Modern depo operasyonlarında küçük sürtünmeler büyük maliyetler doğurur. Bu sürtünmelerin çoğu, sahadaki cihazlarla kurumsal sistemler arasındaki kopukluktan kaynaklanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Depo Operasyonlarında"
+      heading="Tanıdık geliyor mu?"
+      description="Modern depo operasyonlarında küçük sürtünmeler büyük maliyetler doğurur. Bu sürtünmelerin çoğu, sahadaki cihazlarla kurumsal sistemler arasındaki kopukluktan kaynaklanır."
+    />
     <div class="pain-grid">
       <div class="pain-card">
         <div class="qty">↓ %92</div>
@@ -173,11 +174,11 @@ const schema = {
 <!-- Solution mapping: Sektör → Platform -->
 <section class="solution">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Çözüm Haritası</div>
-      <h2>Depodaki ihtiyaç, doğru platform</h2>
-      <p>Depo operasyonunun farklı parçaları farklı yetenekler ister. Tag&amp;Trace cihaz orkestrasyonu ve etiketleme tarafını, Predictivo görünürlük ve operasyon zekâsı tarafını üstlenir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Çözüm Haritası"
+      heading="Depodaki ihtiyaç, doğru platform"
+      description="Depo operasyonunun farklı parçaları farklı yetenekler ister. Tag&amp;Trace cihaz orkestrasyonu ve etiketleme tarafını, Predictivo görünürlük ve operasyon zekâsı tarafını üstlenir."
+    />
     <div class="sol-map">
       <div class="sol-col">
         <h4>İhtiyaç</h4>
@@ -230,11 +231,11 @@ const schema = {
 <!-- Use cases (sector-specific) -->
 <section class="uc" id="use-cases">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Depo Senaryoları</div>
-      <h2>Depo operasyonu için 6 uygulanabilir çözüm</h2>
-      <p>Bu senaryolar farklı sektörlerdeki depo operasyonlarına uyarlanır. Her biri pilot olarak başlatılabilir, ölçeklenebilir bir yapıdadır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Depo Senaryoları"
+      heading="Depo operasyonu için 6 uygulanabilir çözüm"
+      description="Bu senaryolar farklı sektörlerdeki depo operasyonlarına uyarlanır. Her biri pilot olarak başlatılabilir, ölçeklenebilir bir yapıdadır."
+    />
     <div class="uc-grid">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
@@ -297,11 +298,11 @@ const schema = {
 <!-- Operations flow -->
 <section class="opflow">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Operasyonda Tipik Akış</div>
-      <h2>Mal kabulden sevkiyata, beş adımda</h2>
-      <p>Bir RFID destekli depoda tipik bir kolinin yolculuğu. Her adımda doğru cihaz, doğru veri ve doğru sistem entegrasyonu çalışır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Operasyonda Tipik Akış"
+      heading="Mal kabulden sevkiyata, beş adımda"
+      description="Bir RFID destekli depoda tipik bir kolinin yolculuğu. Her adımda doğru cihaz, doğru veri ve doğru sistem entegrasyonu çalışır."
+    />
     <div class="op-steps">
       <div class="op-step">
         <div class="step-num">01</div>
@@ -340,11 +341,11 @@ const schema = {
 <!-- ROI -->
 <section class="roi">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Beklenen Etki</div>
-      <h2>RFID destekli depo, ölçülebilir kazanç</h2>
-      <p>Pilot projelerde gözlemlenen tipik operasyonel iyileşmeler. Sonuçlar saha koşullarına, ürün karakteristiğine ve mevcut operasyon olgunluğuna göre farklılaşır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Beklenen Etki"
+      heading="RFID destekli depo, ölçülebilir kazanç"
+      description="Pilot projelerde gözlemlenen tipik operasyonel iyileşmeler. Sonuçlar saha koşullarına, ürün karakteristiğine ve mevcut operasyon olgunluğuna göre farklılaşır."
+    />
     <div class="roi-grid">
       <div class="roi-card">
         <div class="b">×20<sup></sup></div>
@@ -482,11 +483,11 @@ const schema = {
 <!-- Buyer-specific FAQ -->
 <section class="buyer">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Hangi sorulara cevap veriyoruz?</div>
-      <h2>Karar verici profillerine göre</h2>
-      <p>Depo dijitalleşmesi tek bir kişinin değil, bir ekibin kararıdır. Her rol farklı soru sorar; cevaplarımız her birine net olarak konuşur.</p>
-    </div>
+    <SectionHead
+      eyebrow="Hangi sorulara cevap veriyoruz?"
+      heading="Karar verici profillerine göre"
+      description="Depo dijitalleşmesi tek bir kişinin değil, bir ekibin kararıdır. Her rol farklı soru sorar; cevaplarımız her birine net olarak konuşur."
+    />
     <div class="buyer-grid">
       <div class="buyer-card">
         <span class="role-tag">Depo Müdürü</span>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  eyebrow: string;
+  heading: string;
+  description?: string;
+  align?: 'center' | 'left';
+  maxWidth?: string;
+}
+
+const { eyebrow, heading, description, align = 'center', maxWidth } = Astro.props;
+const classes = ['section-head', align === 'left' ? 'left' : null].filter(Boolean).join(' ');
+const style = maxWidth ? `max-width:${maxWidth}` : undefined;
+---
+
+<div class={classes} style={style}>
+  <div class="eyebrow" set:html={eyebrow} />
+  <h2 set:html={heading} />
+  {description && <p set:html={description} />}
+</div>

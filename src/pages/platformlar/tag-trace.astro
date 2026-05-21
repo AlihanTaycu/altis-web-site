@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -127,11 +128,11 @@ const schema = {
 <!-- Three Pillars -->
 <section class="pillars" id="capabilities">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Üç Temel Yetenek</div>
-      <h2>Cihazı yönet, veriyi işle, sisteme bağla</h2>
-      <p>Tag&amp;Trace; karmaşık RFID ve Auto-ID kurulumlarını standart bir arayüze indirgeyen üç temel yetenek üzerine kuruludur.</p>
-    </div>
+    <SectionHead
+      eyebrow="Üç Temel Yetenek"
+      heading="Cihazı yönet, veriyi işle, sisteme bağla"
+      description="Tag&amp;Trace; karmaşık RFID ve Auto-ID kurulumlarını standart bir arayüze indirgeyen üç temel yetenek üzerine kuruludur."
+    />
     <div class="pillar-grid">
       <div class="pillar">
         <div class="pn">01 · DEVICES</div>
@@ -173,10 +174,10 @@ const schema = {
 <!-- Feature deep dives -->
 <section>
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Yetenekler · Derinlemesine</div>
-      <h2>Tag&amp;Trace neler yapar?</h2>
-    </div>
+    <SectionHead
+      eyebrow="Yetenekler · Derinlemesine"
+      heading="Tag&amp;Trace neler yapar?"
+    />
 
     <!-- Feature 0: Rule Engine -->
     <div class="feature-block flip">
@@ -356,11 +357,11 @@ const schema = {
 <!-- Architecture -->
 <section class="arch">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Mimari</div>
-      <h2>Sahadan kurumsal sisteme, dört katmanda</h2>
-      <p>Tag&amp;Trace; cihaz, edge, platform ve kurumsal katmanlarda standart bir bağlantı modeli sunar. Her katman bağımsız ölçeklenir, her sınırda güvenli iletişim kurulur.</p>
-    </div>
+    <SectionHead
+      eyebrow="Mimari"
+      heading="Sahadan kurumsal sisteme, dört katmanda"
+      description="Tag&amp;Trace; cihaz, edge, platform ve kurumsal katmanlarda standart bir bağlantı modeli sunar. Her katman bağımsız ölçeklenir, her sınırda güvenli iletişim kurulur."
+    />
     <div class="arch-diagram">
       <div class="arch-cols">
         <div class="arch-col">
@@ -420,11 +421,11 @@ const schema = {
 <!-- Hardware matrix -->
 <section class="matrix">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Donanım Uyumluluğu</div>
-      <h2>Marka bağımsız; mevcut donanımınızla çalışır</h2>
-      <p>Tag&amp;Trace; endüstride yaygın olarak kullanılan RFID, barkod, sensör ve otomasyon donanımlarıyla uyumludur. Mevcut yatırımınız korunur; yeni donanım ihtiyacında en uygun seçenek beraber belirlenir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Donanım Uyumluluğu"
+      heading="Marka bağımsız; mevcut donanımınızla çalışır"
+      description="Tag&amp;Trace; endüstride yaygın olarak kullanılan RFID, barkod, sensör ve otomasyon donanımlarıyla uyumludur. Mevcut yatırımınız korunur; yeni donanım ihtiyacında en uygun seçenek beraber belirlenir."
+    />
     <div class="matrix-grid">
       <div class="matrix-card">
         <h5>RFID Reader</h5>
@@ -512,11 +513,11 @@ const schema = {
 <!-- Use cases -->
 <section class="usecase-deep">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Kullanım Senaryoları</div>
-      <h2>Tag&amp;Trace nerede kullanılır?</h2>
-      <p>RFID ve Auto-ID gerektiren her operasyonda Tag&amp;Trace, projeye özel uyarlanabilir bir orkestrasyon katmanı olarak konumlanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Kullanım Senaryoları"
+      heading="Tag&amp;Trace nerede kullanılır?"
+      description="RFID ve Auto-ID gerektiren her operasyonda Tag&amp;Trace, projeye özel uyarlanabilir bir orkestrasyon katmanı olarak konumlanır."
+    />
     <div class="uc-grid">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M3 9 5 4h14l2 5M9 13h6"></path></svg></div>

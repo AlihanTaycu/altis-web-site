@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = [
   {
@@ -166,11 +167,11 @@ const schema = [
 <!-- How it works -->
 <section class="howit" id="how">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Nasıl Çalışır?</div>
-      <h2>Sipariş gelir, ışık yanar, operatör toplar.</h2>
-      <p>Pick-to-Light sürecin tamamını basitleştirir: operatörün cebinden kâğıt çıkar, gözden ekran çıkar, dikkati sadece rafa ve ışığa odaklanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Nasıl Çalışır?"
+      heading="Sipariş gelir, ışık yanar, operatör toplar."
+      description="Pick-to-Light sürecin tamamını basitleştirir: operatörün cebinden kâğıt çıkar, gözden ekran çıkar, dikkati sadece rafa ve ışığa odaklanır."
+    />
     <div class="how-grid">
       <div class="how-step">
         <div class="n">01</div>
@@ -267,11 +268,11 @@ const schema = [
 <!-- Working modes -->
 <section class="modes">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Çalışma Modları</div>
-      <h2>Pick-to-Light, Put-to-Light, Cluster Picking</h2>
-      <p>Aynı donanım, farklı operasyonel mantıkla çalışabilir. Toplama, dağıtım ve çoklu sipariş senaryolarının her birine özel mod desteği.</p>
-    </div>
+    <SectionHead
+      eyebrow="Çalışma Modları"
+      heading="Pick-to-Light, Put-to-Light, Cluster Picking"
+      description="Aynı donanım, farklı operasyonel mantıkla çalışabilir. Toplama, dağıtım ve çoklu sipariş senaryolarının her birine özel mod desteği."
+    />
     <div class="mode-grid">
       <div class="mode-card">
         <span class="tag">Mode 01</span>
@@ -328,11 +329,11 @@ const schema = [
 <!-- Why pick-to-light -->
 <section class="why">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Beklenen Etki</div>
-      <h2>Işıklı toplama, ölçülebilir kazanç</h2>
-      <p>Pick-to-Light özellikle yüksek-frekanslı, çok-kalemli sipariş yapısında belirgin kazanç sağlar. Tipik pilot sonuçları:</p>
-    </div>
+    <SectionHead
+      eyebrow="Beklenen Etki"
+      heading="Işıklı toplama, ölçülebilir kazanç"
+      description="Pick-to-Light özellikle yüksek-frekanslı, çok-kalemli sipariş yapısında belirgin kazanç sağlar. Tipik pilot sonuçları:"
+    />
     <div class="why-grid">
       <div class="why-card">
         <div class="b">×2-3<sup></sup></div>
@@ -361,11 +362,11 @@ const schema = [
 <!-- Architecture -->
 <section class="arch">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Mimari</div>
-      <h2>WMS / ERP'den rafa, dört blokta</h2>
-      <p>Siparişin Pick-to-Light modüllerine ulaşma yolu basit ve standarttır. Mevcut WMS veya ERP'nizle entegre çalışır; istenirse Tag&amp;Trace orkestrasyon katmanı eklenir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Mimari"
+      heading="WMS / ERP'den rafa, dört blokta"
+      description="Siparişin Pick-to-Light modüllerine ulaşma yolu basit ve standarttır. Mevcut WMS veya ERP'nizle entegre çalışır; istenirse Tag&amp;Trace orkestrasyon katmanı eklenir."
+    />
     <div class="arch-diagram">
       <div class="arch-flow">
         <div class="arch-block">
@@ -399,11 +400,11 @@ const schema = [
 <!-- Use cases -->
 <section class="uc">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Kullanım Senaryoları</div>
-      <h2>Pick-to-Light nerede en güçlü?</h2>
-      <p>Yüksek-frekanslı, çok-kalemli ve hata maliyeti yüksek toplama operasyonlarında Pick-to-Light vazgeçilmez bir çözümdür.</p>
-    </div>
+    <SectionHead
+      eyebrow="Kullanım Senaryoları"
+      heading="Pick-to-Light nerede en güçlü?"
+      description="Yüksek-frekanslı, çok-kalemli ve hata maliyeti yüksek toplama operasyonlarında Pick-to-Light vazgeçilmez bir çözümdür."
+    />
     <div class="uc-grid">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><path d="M3 4h2l2.4 11.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 7H6"/></svg></div>

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 import { vuzixComparisonRows, vuzixSmartGlasses } from '../../data/vuzix-smart-glasses';
 
 const schema = {
@@ -54,11 +55,11 @@ const featuredModel = vuzixSmartGlasses.find(model => model.slug === 'vuzix-lx1'
 
   <section class="model-strip" id="modeller">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Ürün Ailesi</p>
-        <h2>Üç model, üç farklı saha önceliği.</h2>
-        <p>M400 esnek saha kullanımı, M4000 gerçek AR katmanı, LX1 ise depo ve lojistikte tam vardiya operasyon için konumlanır.</p>
-      </div>
+      <SectionHead
+        eyebrow="Ürün Ailesi"
+        heading="Üç model, üç farklı saha önceliği."
+        description="M400 esnek saha kullanımı, M4000 gerçek AR katmanı, LX1 ise depo ve lojistikte tam vardiya operasyon için konumlanır."
+      />
 
       <div class="model-grid">
         {vuzixSmartGlasses.map(model => (
@@ -101,10 +102,10 @@ const featuredModel = vuzixSmartGlasses.find(model => model.slug === 'vuzix-lx1'
 
   <section class="compare-section" id="karsilastir">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Karşılaştır</p>
-        <h2>Hangi Vuzix modeli size uygun?</h2>
-      </div>
+      <SectionHead
+        eyebrow="Karşılaştır"
+        heading="Hangi Vuzix modeli size uygun?"
+      />
       <div class="compare-table-wrap">
         <table class="compare-table">
           <thead>
@@ -130,10 +131,10 @@ const featuredModel = vuzixSmartGlasses.find(model => model.slug === 'vuzix-lx1'
 
   <section class="altis-value">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Neden Altis Teknoloji</p>
-        <h2>Donanım değil, sahada çalışan çözüm.</h2>
-      </div>
+      <SectionHead
+        eyebrow="Neden Altis Teknoloji"
+        heading="Donanım değil, sahada çalışan çözüm."
+      />
       <div class="value-grid">
         <article>
           <h3>Resmi distribütör desteği</h3>

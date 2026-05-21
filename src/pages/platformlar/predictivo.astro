@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -207,11 +208,11 @@ const schema = {
 <!-- 5-step flow -->
 <section class="flow5" id="capabilities">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Beş Adımda Veri Aksiyona Dönüşür</div>
-      <h2>Bağlan · İşle · Görselleştir · Harekete Geç · Raporla</h2>
-      <p>Predictivo'nun beş temel yeteneği, sahadan gelen ham veriyi yönetilebilir operasyona dönüştüren tutarlı bir veri yaşam döngüsü oluşturur.</p>
-    </div>
+    <SectionHead
+      eyebrow="Beş Adımda Veri Aksiyona Dönüşür"
+      heading="Bağlan · İşle · Görselleştir · Harekete Geç · Raporla"
+      description="Predictivo'nun beş temel yeteneği, sahadan gelen ham veriyi yönetilebilir operasyona dönüştüren tutarlı bir veri yaşam döngüsü oluşturur."
+    />
     <div class="flow5-steps">
       <div class="flow5-step">
         <div class="num">01 · CONNECT</div>
@@ -255,10 +256,10 @@ const schema = {
 <!-- Feature deep dives -->
 <section>
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Yetenekler · Derinlemesine</div>
-      <h2>Predictivo neler yapar?</h2>
-    </div>
+    <SectionHead
+      eyebrow="Yetenekler · Derinlemesine"
+      heading="Predictivo neler yapar?"
+    />
 
     <!-- Feature 1: Dashboard builder -->
     <div class="feature-block">
@@ -475,11 +476,11 @@ const schema = {
 <!-- Architecture -->
 <section class="arch">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Mimari</div>
-      <h2>Sahadan kullanıcıya, dört katmanlı IoT mimarisi</h2>
-      <p>Predictivo; cihaz, gateway, platform ve kullanıcı katmanlarında ölçeklenebilir ve güvenli bir IoT veri yaşam döngüsü kurar. Her katman bağımsız, her sınırda standart.</p>
-    </div>
+    <SectionHead
+      eyebrow="Mimari"
+      heading="Sahadan kullanıcıya, dört katmanlı IoT mimarisi"
+      description="Predictivo; cihaz, gateway, platform ve kullanıcı katmanlarında ölçeklenebilir ve güvenli bir IoT veri yaşam döngüsü kurar. Her katman bağımsız, her sınırda standart."
+    />
     <div class="arch-diagram">
       <div class="arch-cols">
         <div class="arch-col">
@@ -539,11 +540,11 @@ const schema = {
 <!-- Sensor / protocol matrix -->
 <section class="matrix">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Veri Kaynakları</div>
-      <h2>Yaygın endüstri protokolleriyle uyumlu</h2>
-      <p>Predictivo, IoT ve endüstriyel dünyada yaygın olarak kullanılan protokol ve cihaz kategorileriyle uyumludur. Mevcut sensörler, sayaçlar ve sistemler değiştirilmeden platforma bağlanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Veri Kaynakları"
+      heading="Yaygın endüstri protokolleriyle uyumlu"
+      description="Predictivo, IoT ve endüstriyel dünyada yaygın olarak kullanılan protokol ve cihaz kategorileriyle uyumludur. Mevcut sensörler, sayaçlar ve sistemler değiştirilmeden platforma bağlanır."
+    />
     <div class="matrix-grid">
       <div class="matrix-card">
         <h5>Endüstriyel Protokoller</h5>
@@ -629,11 +630,11 @@ const schema = {
 <!-- Use cases -->
 <section class="usecase-deep">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Kullanım Senaryoları</div>
-      <h2>Predictivo nerede kullanılır?</h2>
-      <p>IoT verisinin yönetilebilir operasyona dönüştüğü her yerde Predictivo bir bağlantı katmanı, bir analiz motoru ve bir karar destek panosu olarak konumlanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Kullanım Senaryoları"
+      heading="Predictivo nerede kullanılır?"
+      description="IoT verisinin yönetilebilir operasyona dönüştüğü her yerde Predictivo bir bağlantı katmanı, bir analiz motoru ve bir karar destek panosu olarak konumlanır."
+    />
     <div class="uc-grid">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>

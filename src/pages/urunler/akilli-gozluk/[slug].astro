@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
 import { getVuzixModel, vuzixSmartGlasses } from '../../../data/vuzix-smart-glasses';
 import type { VuzixSmartGlass } from '../../../data/vuzix-smart-glasses';
 import type { GetStaticPaths } from 'astro';
@@ -78,10 +79,10 @@ const schema = {
 
   <section class="feature-section">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Öne Çıkan Özellikler</p>
-        <h2>{selectedModel.positioning}</h2>
-      </div>
+      <SectionHead
+        eyebrow="Öne Çıkan Özellikler"
+        heading={selectedModel.positioning}
+      />
       <div class="feature-grid">
         {selectedModel.highlights.map(feature => (
           <article>
@@ -126,10 +127,10 @@ const schema = {
 
   <section class="spec-section" id="teknik-ozellikler">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Teknik Özellikler</p>
-        <h2>{selectedModel.name} teknik detayları</h2>
-      </div>
+      <SectionHead
+        eyebrow="Teknik Özellikler"
+        heading={`${selectedModel.name} teknik detayları`}
+      />
       <div class="spec-grid">
         {selectedModel.specGroups.map(group => (
           <article class="spec-card">
@@ -175,10 +176,10 @@ const schema = {
 
   <section class="related-section">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Diğer Vuzix Modelleri</p>
-        <h2>Alternatif modelleri karşılaştırın.</h2>
-      </div>
+      <SectionHead
+        eyebrow="Diğer Vuzix Modelleri"
+        heading="Alternatif modelleri karşılaştırın."
+      />
       <div class="related-grid">
         {related.map(item => (
           <a href={item.route} class="related-card">

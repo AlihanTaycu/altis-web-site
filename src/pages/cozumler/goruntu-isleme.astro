@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -96,11 +97,11 @@ const schema = {
 <!-- Problem -->
 <section class="problem">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Problem</div>
-      <h2>Teoride kolay görünen barkod okuma, sahada darboğaza dönüşür</h2>
-      <p>Standart endüstriyel okuyucular ideal koşullar için tasarlanmıştır. Gerçek üretim sahası ise ideal değildir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Problem"
+      heading="Teoride kolay görünen barkod okuma, sahada darboğaza dönüşür"
+      description="Standart endüstriyel okuyucular ideal koşullar için tasarlanmıştır. Gerçek üretim sahası ise ideal değildir."
+    />
     <div class="problem-grid">
       <div class="problem-group">
         <div class="problem-group-label">Saha Koşulları</div>
@@ -173,11 +174,11 @@ const schema = {
 <!-- How it works -->
 <section class="approach" id="nasil-calisar">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Yaklaşım</div>
-      <h2>Donanım değil, yazılım kazanır</h2>
-      <p>Pahalı ve özel donanımlar yerine, mevcut standart endüstriyel kameraları yapay zeka tabanlı bir okuma motoruyla akıllandırıyoruz. Yatırım korunur, kapasite artırılır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Yaklaşım"
+      heading="Donanım değil, yazılım kazanır"
+      description="Pahalı ve özel donanımlar yerine, mevcut standart endüstriyel kameraları yapay zeka tabanlı bir okuma motoruyla akıllandırıyoruz. Yatırım korunur, kapasite artırılır."
+    />
     <div class="approach-grid">
       <div class="approach-card">
         <div class="ac-icon">
@@ -214,11 +215,11 @@ const schema = {
 <!-- TrueScan capabilities -->
 <section class="capabilities">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">TrueScan Teknolojisi</div>
-      <h2>Görüntüyü anlamlandırmak için dört algoritma</h2>
-      <p>Her saha koşulu farklı bir sorun yaratır. TrueScan, bu dört kritik sorunu ayrı algoritmalarla çözer.</p>
-    </div>
+    <SectionHead
+      eyebrow="TrueScan Teknolojisi"
+      heading="Görüntüyü anlamlandırmak için dört algoritma"
+      description="Her saha koşulu farklı bir sorun yaratır. TrueScan, bu dört kritik sorunu ayrı algoritmalarla çözer."
+    />
     <div class="cap-grid">
       <div class="cap-card">
         <div class="cap-num">01</div>

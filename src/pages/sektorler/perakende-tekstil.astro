@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -159,11 +160,11 @@ const schema = {
 <!-- Pain points -->
 <section class="pains">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Perakende &amp; Tekstilde</div>
-      <h2>Tanıdık geliyor mu?</h2>
-      <p>Hızlı moda, sezonluk yoğunluk ve mağaza-depo arasındaki kopukluk; doğru stoğun doğru mağazada bulunmasını her zaman zorlaştırır. RFID bu kopukluğu tamamen ortadan kaldıran tek teknolojidir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Perakende &amp; Tekstilde"
+      heading="Tanıdık geliyor mu?"
+      description="Hızlı moda, sezonluk yoğunluk ve mağaza-depo arasındaki kopukluk; doğru stoğun doğru mağazada bulunmasını her zaman zorlaştırır. RFID bu kopukluğu tamamen ortadan kaldıran tek teknolojidir."
+    />
     <div class="pain-grid">
       <div class="pain-card">
         <div class="qty">↓ %65</div>
@@ -192,11 +193,11 @@ const schema = {
 <!-- Solution mapping -->
 <section class="solution">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Çözüm Haritası</div>
-      <h2>Konfeksiyon, RFID için en olgun kullanım alanıdır</h2>
-      <p>Üründen sevkiyata, sevkiyattan mağaza rafına ve POS'a kadar tüm zincir tek bir Auto-ID platformu üzerinden orkestre edilir. Tag&amp;Trace bu zincirin merkezindeki katmandır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Çözüm Haritası"
+      heading="Konfeksiyon, RFID için en olgun kullanım alanıdır"
+      description="Üründen sevkiyata, sevkiyattan mağaza rafına ve POS'a kadar tüm zincir tek bir Auto-ID platformu üzerinden orkestre edilir. Tag&amp;Trace bu zincirin merkezindeki katmandır."
+    />
     <div class="sol-map">
       <div class="sol-col">
         <h4>İhtiyaç</h4>
@@ -321,11 +322,11 @@ const schema = {
 <!-- Use cases -->
 <section class="uc" id="use-cases">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Perakende &amp; Tekstil Senaryoları</div>
-      <h2>RFID için 6 uygulanabilir çözüm</h2>
-      <p>Tag&amp;Trace ve Altis RFID donanımı; konfeksiyon zincirinin her noktasına özel bir uygulama olarak konumlanır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Perakende &amp; Tekstil Senaryoları"
+      heading="RFID için 6 uygulanabilir çözüm"
+      description="Tag&amp;Trace ve Altis RFID donanımı; konfeksiyon zincirinin her noktasına özel bir uygulama olarak konumlanır."
+    />
     <div class="uc-grid">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg></div>
@@ -388,11 +389,11 @@ const schema = {
 <!-- Operations flow -->
 <section class="opflow">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Tedarik Zinciri Akışı</div>
-      <h2>Fabrikadan mağaza rafına, beş adımda</h2>
-      <p>Bir tişörtün üretim hattından çıkıp mağaza rafına gidene kadar geçtiği yol. Her adımda RFID okuması, her adımda doğrulanmış sistem kaydı.</p>
-    </div>
+    <SectionHead
+      eyebrow="Tedarik Zinciri Akışı"
+      heading="Fabrikadan mağaza rafına, beş adımda"
+      description="Bir tişörtün üretim hattından çıkıp mağaza rafına gidene kadar geçtiği yol. Her adımda RFID okuması, her adımda doğrulanmış sistem kaydı."
+    />
     <div class="op-steps">
       <div class="op-step">
         <div class="step-num">01</div>
@@ -431,11 +432,11 @@ const schema = {
 <!-- ROI -->
 <section class="roi">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Beklenen Etki</div>
-      <h2>RFID destekli perakende, ölçülebilir kazanç</h2>
-      <p>Konfeksiyon ve perakende projelerinde gözlemlenen tipik operasyonel iyileşmeler. Sonuçlar ürün karakteristiği, mağaza yapısı ve mevcut operasyon olgunluğuna göre farklılaşır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Beklenen Etki"
+      heading="RFID destekli perakende, ölçülebilir kazanç"
+      description="Konfeksiyon ve perakende projelerinde gözlemlenen tipik operasyonel iyileşmeler. Sonuçlar ürün karakteristiği, mağaza yapısı ve mevcut operasyon olgunluğuna göre farklılaşır."
+    />
     <div class="roi-grid">
       <div class="roi-card">
         <div class="b">%99<sup>+</sup></div>
@@ -464,11 +465,11 @@ const schema = {
 <!-- Buyer FAQ -->
 <section class="buyer">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Hangi sorulara cevap veriyoruz?</div>
-      <h2>Karar verici profillerine göre</h2>
-      <p>Perakende RFID dönüşümü tek bir kişinin değil, bir ekibin kararıdır. Her rol farklı soru sorar; cevaplarımız her birine net olarak konuşur.</p>
-    </div>
+    <SectionHead
+      eyebrow="Hangi sorulara cevap veriyoruz?"
+      heading="Karar verici profillerine göre"
+      description="Perakende RFID dönüşümü tek bir kişinin değil, bir ekibin kararıdır. Her rol farklı soru sorar; cevaplarımız her birine net olarak konuşur."
+    />
     <div class="buyer-grid">
       <div class="buyer-card">
         <span class="role-tag">Operasyon &amp; Mağaza</span>
