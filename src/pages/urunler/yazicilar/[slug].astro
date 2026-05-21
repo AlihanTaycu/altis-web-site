@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { printers } from '../../../data/rfid-yazicilar';
+import type { Printer } from '../../../data/rfid-yazicilar';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -10,7 +11,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   }));
 };
 
-const { printer } = Astro.props;
+const { printer } = Astro.props as { printer: Printer };
 
 const typeLabel = { endüstriyel: 'Endüstriyel', masaüstü: 'Masaüstü', mobil: 'Mobil' }[printer.type];
 

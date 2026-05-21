@@ -43,3 +43,11 @@ test('home page uses clean Astro routes and removes dev-only scripts', () => {
   assert.match(indexSource, /\/cozumler\/pick-to-light\//);
   assert.match(indexSource, /\/cozumler\/asset-yonetimi\//);
 });
+
+test('home page trust section uses real partner logos', () => {
+  assert.match(indexSource, /partnerLogos/);
+  assert.match(indexSource, /\/images\/partners\/altis-zebra-logo\.webp/);
+  assert.match(indexSource, /\/images\/partners\/vuzix-logo-2\.webp/);
+  assert.match(indexSource, /<img src=\{partner\.src\}/);
+  assert.doesNotMatch(indexSource, /LOGO · 0[1-6]/);
+});

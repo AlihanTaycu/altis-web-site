@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { retailProducts } from '../../../data/rfid-perakende';
+import type { RetailProduct } from '../../../data/rfid-perakende';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -10,7 +11,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   }));
 };
 
-const { product } = Astro.props;
+const { product } = Astro.props as { product: RetailProduct };
 
 const related = retailProducts.filter(p => p.slug !== product.slug).slice(0, 3);
 const contactHref = `/iletisim/?urun=${encodeURIComponent(product.title)}`;

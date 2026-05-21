@@ -38,8 +38,8 @@ export const vuzixSmartGlasses: VuzixSmartGlass[] = [
     headline: 'Sahada çalışan ekipler için güçlü ve esnek akıllı gözlük.',
     shortDesc: 'Vuzix M400; 13 MP kamera, parlak OLED ekran, sıcak değiştirilebilir pil ve IP67 dayanıklılık ile saha servis, sağlık ve uzaktan destek operasyonları için tasarlanmıştır.',
     description: 'M400, depo, sağlık, saha servis ve eğitim senaryolarında operatörün ellerini serbest bırakan Android tabanlı bir giyilebilir bilgisayardır. Hafif gövdesi, çoklu montaj seçenekleri, 13 MP kamerası ve parlak OLED ekranı ile görüntülü destek, barkod okuma, iş talimatı ve saha dokümantasyonu süreçlerini tek cihazda toplar.',
-    image: '/images/vuzix/m400-hero.webp',
-    gallery: ['/images/vuzix/m400-hero.webp', '/images/vuzix/m400.png', '/images/vuzix/vuzix-workflow.webp'],
+    image: '/images/vuzix/m400-hero.jpg',
+    gallery: ['/images/vuzix/m400-hero.jpg', '/images/vuzix/vuzix-M400-ozellikler-altis-1920x688.webp', '/images/vuzix/vuzix_m400_manken.webp'],
     heroStats: [
       { value: '13 MP', label: 'kamera' },
       { value: 'IP67', label: 'koruma' },
@@ -105,7 +105,7 @@ export const vuzixSmartGlasses: VuzixSmartGlass[] = [
     shortDesc: 'Vuzix M4000; şeffaf waveguide ekranı, 5000 nit parlaklığı, 4K kamera desteği ve hafif form faktörüyle üretim, montaj ve bakım operasyonları için geliştirilmiştir.',
     description: 'M4000, M400 platformunun kurumsal gücünü şeffaf waveguide optiklerle birleştirir. Operatör gerçek dünyayı görmeye devam ederken iş talimatı, uzman yönlendirmesi, kalite kontrol bilgisi ve AR katmanlarını görüş alanında takip eder. Bu yapı özellikle karmaşık montaj, bakım, mühendislik ve eğitim süreçlerinde güçlü bir avantaj sağlar.',
     image: '/images/vuzix/m4000-hero.webp',
-    gallery: ['/images/vuzix/m4000-hero.webp', '/images/vuzix/m4000-detail.webp', '/images/vuzix/vuzix-workflow.webp'],
+    gallery: ['/images/vuzix/m4000-hero.webp', '/images/vuzix/m4000-detail.webp', '/images/vuzix/vuzix_m4000_manken.webp'],
     heroStats: [
       { value: '5000 nit', label: 'parlaklık' },
       { value: '28°', label: 'görüş açısı' },
@@ -170,8 +170,8 @@ export const vuzixSmartGlasses: VuzixSmartGlass[] = [
     headline: 'Depo ekipleri için tam vardiya eller serbest çalışma.',
     shortDesc: 'Vuzix LX1; 7000 mAh çıkarılabilir pil, Android 15, Wi-Fi 6E, yüksek parlaklıklı OLED ekran ve kemik iletimi mikrofonuyla depo ve lojistik operasyonları için tasarlanmıştır.',
     description: 'LX1, modern depo ve lojistik ekiplerinin voice picking, vision picking, barkod doğrulama ve uzaktan destek ihtiyaçları için geliştirilen yeni nesil Vuzix modelidir. 7000 mAh pil, -20 derece çalışma aralığı, Wi-Fi 6E ve Android 15 altyapısıyla tek vardiya boyunca stabil kullanım hedefler.',
-    image: '/images/vuzix/lx1-hero.jpg',
-    gallery: ['/images/vuzix/lx1-hero.jpg', '/images/vuzix/lx1.png', '/images/vuzix/vuzix-workflow.webp'],
+    image: '/images/vuzix/lx1.png',
+    gallery: ['/images/vuzix/lx1.png', '/images/vuzix/lx1-detail.jpg', '/images/vuzix/vuzix_Lx1_manken.webp'],
     heroStats: [
       { value: '7000 mAh', label: 'pil' },
       { value: '10 saat', label: 'çalışma' },

@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { getVuzixModel, vuzixSmartGlasses } from '../../../data/vuzix-smart-glasses';
+import type { VuzixSmartGlass } from '../../../data/vuzix-smart-glasses';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -10,7 +11,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   }));
 };
 
-const { model } = Astro.props;
+const { model } = Astro.props as { model: VuzixSmartGlass };
 const related = vuzixSmartGlasses.filter(item => item.slug !== model.slug);
 const contactHref = `/iletisim/?urun=${encodeURIComponent(model.name)}`;
 const selectedModel = getVuzixModel(model.slug) ?? model;
@@ -95,7 +96,11 @@ const schema = {
   <section class="gallery-section">
     <div class="container gallery-grid">
       {selectedModel.gallery.map((image, index) => (
-        <figure class:list={['gallery-card', { 'gallery-card--wide': index === 2 }]}>
+        <figure class:list={[
+          'gallery-card',
+          `gallery-card--${selectedModel.slug.replace('vuzix-', '')}`,
+          { 'gallery-card--first': index === 0, 'gallery-card--wide': index === 2 },
+        ]}>
           <img src={image} alt={`${selectedModel.name} görsel ${index + 1}`} width="720" height="480" loading="lazy" />
         </figure>
       ))}
@@ -298,6 +303,13 @@ const schema = {
 }
 .gallery-card--wide { grid-column: 1 / -1; padding: 0; }
 .gallery-card img { width: 100%; height: 100%; object-fit: contain; }
+.gallery-card--lx1:not(.gallery-card--wide) img {
+  width: 82%;
+  height: 82%;
+  max-width: 520px;
+  max-height: 300px;
+}
+.gallery-card--lx1.gallery-card--first img { max-width: 460px; }
 .gallery-card--wide img { aspect-ratio: 16/7; object-fit: cover; }
 
 .usecase-layout {

@@ -58,6 +58,27 @@ test('vuzix dynamic detail page renders model content, specs, and related models
   ]);
 });
 
+test('vuzix detail gallery can tune image scale per model', async () => {
+  const source = await readSource('src/pages/urunler/akilli-gozluk/[slug].astro');
+
+  assertIncludesAll(source, [
+    'gallery-card--lx1',
+    'gallery-card--first',
+    '.gallery-card--lx1:not(.gallery-card--wide) img',
+    '.gallery-card--lx1.gallery-card--first img',
+  ]);
+});
+
+test('vuzix galleries pair each model with a model-specific detail image', async () => {
+  const dataSource = await readSource('src/data/vuzix-smart-glasses.ts');
+
+  assertIncludesAll(dataSource, [
+    "gallery: ['/images/vuzix/m400-hero.jpg', '/images/vuzix/vuzix-M400-ozellikler-altis-1920x688.webp', '/images/vuzix/vuzix_m400_manken.webp']",
+    "gallery: ['/images/vuzix/m4000-hero.webp', '/images/vuzix/m4000-detail.webp', '/images/vuzix/vuzix_m4000_manken.webp']",
+    "gallery: ['/images/vuzix/lx1.png', '/images/vuzix/lx1-detail.jpg', '/images/vuzix/vuzix_Lx1_manken.webp']",
+  ]);
+});
+
 test('vuzix local image references exist under public', async () => {
   const dataSource = await readSource('src/data/vuzix-smart-glasses.ts');
   const pageSource = await readSource('src/pages/urunler/akilli-gozluk.astro');
