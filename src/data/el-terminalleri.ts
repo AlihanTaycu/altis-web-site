@@ -7,11 +7,13 @@ export type Product = {
   description: string;
   storeUrl: string;
   tags: string[];
+  datasheet?: string;
 };
 
 export const products: Product[] = [
   {
     slug: 'brady-hh83-rfid-handheld-terminal-2d-imager',
+    datasheet: '/assets/products/brady-hh83-rfid-handheld-terminal-2d-imager/brady-hh83-rfid-handheld-terminal-2d-imager-datasheet.pdf',
     title: 'Brady HH83 RFID Handheld Terminal (2D Imager)',
     brand: 'Brady',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/04/brady-hh83-el-terminali.webp',
@@ -22,6 +24,7 @@ export const products: Product[] = [
   },
   {
     slug: 'brady-hh83-uhf-rfid-handheld-terminal-acd-lte',
+    datasheet: '/assets/products/brady-hh83-uhf-rfid-handheld-terminal-acd-lte/brady-hh83-uhf-rfid-handheld-terminal-acd-lte-datasheet.pdf',
     title: 'Brady HH83 UHF RFID Handheld Terminal ACD LTE',
     brand: 'Brady',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/04/brady-hh83-el-terminali.webp',
@@ -32,6 +35,7 @@ export const products: Product[] = [
   },
   {
     slug: 'brady-hh85-uhf-rfid-handheld-terminal',
+    datasheet: '/assets/products/brady-hh85-uhf-rfid-handheld-terminal/brady-hh85-uhf-rfid-handheld-terminal-datasheet.pdf',
     title: 'Brady HH85 UHF RFID Handheld Terminal ACD LTE',
     brand: 'Brady',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/04/brady-hh85-rfid-el-terminali.webp',
@@ -42,6 +46,7 @@ export const products: Product[] = [
   },
   {
     slug: 'honeywell-ck65-handheld-terminal',
+    datasheet: '/assets/products/honeywell-ck65-handheld-terminal/honeywell-ck65-handheld-terminal-datasheet.pdf',
     title: 'Honeywell CK65 Handheld Terminal',
     brand: 'Honeywell',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/02/honeywell-ck65-tarayici-p.webp',
@@ -52,6 +57,7 @@ export const products: Product[] = [
   },
   {
     slug: 'honeywell-eda51-handheld-terminal',
+    datasheet: '/assets/products/honeywell-eda51-handheld-terminal/honeywell-eda51-handheld-terminal-datasheet.pdf',
     title: 'Honeywell EDA51 Handheld Terminal',
     brand: 'Honeywell',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/11/honeywell-eda51-android-el-terminali-p7.webp',
@@ -62,6 +68,7 @@ export const products: Product[] = [
   },
   {
     slug: 'honeywell-eda61k-handheld-terminal',
+    datasheet: '/assets/products/honeywell-eda61k-handheld-terminal/honeywell-eda61k-handheld-terminal-datasheet.pdf',
     title: 'Honeywell EDA61K Handheld Terminal',
     brand: 'Honeywell',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/11/honeywell-eda61k-el-terminali-p.webp',
@@ -72,6 +79,7 @@ export const products: Product[] = [
   },
   {
     slug: 'hopeland-wing-820-handheld-rfid-terminal',
+    datasheet: '/assets/products/hopeland-wing-820-handheld-rfid-terminal/hopeland-wing-820-handheld-rfid-terminal-datasheet.pdf',
     title: 'Hopeland Wing 820 Handheld RFID Terminal',
     brand: 'Hopeland',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/10/hopeland-wing-820-el-tipi-rfid-okuyucu.webp',
@@ -82,6 +90,7 @@ export const products: Product[] = [
   },
   {
     slug: 'nordic-id-exa51e-host-device-installation-kit',
+    datasheet: '/assets/products/nordic-id-exa51e-host-device-installation-kit/nordic-id-exa51e-host-device-installation-kit-datasheet.pdf',
     title: 'Nordic ID EXA51e Host Device Installation Kit',
     brand: 'Nordic ID',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-hostdevice-install-kit.webp',
@@ -92,6 +101,7 @@ export const products: Product[] = [
   },
   {
     slug: 'nordic-id-exa51e-uhf-rfid-reader',
+    datasheet: '/assets/products/nordic-id-exa51e-uhf-rfid-reader/nordic-id-exa51e-uhf-rfid-reader-datasheet.pdf',
     title: 'Nordic ID EXA51e UHF RFID Reader (2D/Wireless)',
     brand: 'Nordic ID',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-exa51e-okuyucu.webp',
@@ -102,6 +112,7 @@ export const products: Product[] = [
   },
   {
     slug: 'nordic-id-hh83-uhf-rfid-handheld-terminal-wlan',
+    datasheet: '/assets/products/nordic-id-hh83-uhf-rfid-handheld-terminal-wlan/nordic-id-hh83-uhf-rfid-handheld-terminal-wlan-datasheet.pdf',
     title: 'Nordic ID HH83 UHF RFID Handheld Terminal (2D/WLAN)',
     brand: 'Nordic ID',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-hh83-el-terminali.webp',
@@ -112,6 +123,7 @@ export const products: Product[] = [
   },
   {
     slug: 'nordic-id-hh83-uhf-rfid-handheld-terminal-4g',
+    datasheet: '/assets/products/nordic-id-hh83-uhf-rfid-handheld-terminal-4g/nordic-id-hh83-uhf-rfid-handheld-terminal-4g-datasheet.pdf',
     title: 'Nordic ID HH83 UHF RFID Handheld Terminal (2D/WLAN/4G)',
     brand: 'Nordic ID',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-hh83-el-terminali.webp',
@@ -122,6 +134,7 @@ export const products: Product[] = [
   },
   {
     slug: 'nordic-id-hh85-uhf-rfid-handheld-terminal-wlan',
+    datasheet: '/assets/products/nordic-id-hh85-uhf-rfid-handheld-terminal-wlan/nordic-id-hh85-uhf-rfid-handheld-terminal-wlan-datasheet.pdf',
     title: 'Nordic ID HH85 UHF RFID Handheld Terminal (2D/WLAN)',
     brand: 'Nordic ID',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-hh85-el-terminali-1.webp',
@@ -132,6 +145,7 @@ export const products: Product[] = [
   },
   {
     slug: 'nordic-id-hh85-uhf-rfid-handheld-terminal-4g',
+    datasheet: '/assets/products/nordic-id-hh85-uhf-rfid-handheld-terminal-4g/nordic-id-hh85-uhf-rfid-handheld-terminal-4g-datasheet.pdf',
     title: 'Nordic ID HH85 UHF RFID Handheld Terminal (2D/WLAN/4G)',
     brand: 'Nordic ID',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-hh85-el-terminali-1.webp',
@@ -142,6 +156,7 @@ export const products: Product[] = [
   },
   {
     slug: 'zebra-mc3330xr-handheld-terminal',
+    datasheet: '/assets/products/zebra-mc3330xr-handheld-terminal/zebra-mc3330xr-handheld-terminal-datasheet.pdf',
     title: 'Zebra MC3330xR Handheld Terminal',
     brand: 'Zebra',
     image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/11/zebra-mc3330xr-1.webp',

@@ -67,6 +67,9 @@ const schema = {
           <div class="card-actions">
             <a href={`/urunler/el-terminalleri/${product.slug}/`} class="btn btn-primary btn-sm">Ürünü İncele</a>
             <a href={`/iletisim/?urun=${encodeURIComponent(product.title)}`} class="btn btn-outline btn-sm">Fiyat Teklifi Al</a>
+            {product.datasheet && (
+              <a href={product.datasheet} class="btn btn-pdf btn-sm" target="_blank" rel="noopener">PDF</a>
+            )}
           </div>
         </div>
       </article>
@@ -263,6 +266,16 @@ const schema = {
 }
 .btn-outline:hover {
   background: var(--primary);
+  color: #fff;
+}
+.btn-pdf {
+  background: #fff4f3;
+  border: 1.5px solid #ffd7d3;
+  color: #c62828;
+}
+.btn-pdf:hover {
+  background: #c62828;
+  border-color: #c62828;
   color: #fff;
 }
 
