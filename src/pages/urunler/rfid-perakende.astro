@@ -166,8 +166,8 @@ const schema = {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
 }
 .product-card {
   background: #fff;
@@ -184,7 +184,7 @@ const schema = {
 .card-image-link {
   display: block;
   background: #f8f9fb;
-  padding: 20px;
+  padding: 24px;
   aspect-ratio: 4/3;
   overflow: hidden;
   position: relative;
@@ -205,7 +205,7 @@ const schema = {
   text-transform: uppercase;
   box-shadow: 0 2px 6px rgba(0,18,92,.15);
 }
-.card-body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card-body { padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .brand-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
 .category-badge {
   display: inline-block;
@@ -218,10 +218,10 @@ const schema = {
   border-radius: 4px;
   align-self: flex-start;
 }
-.card-body h3 { font-size: 13.5px; font-weight: 700; line-height: 1.35; margin: 0; }
+.card-body h3 { font-size: 15px; font-weight: 700; line-height: 1.35; margin: 0; }
 .card-body h3 a { color: var(--primary); transition: color .2s; }
 .card-body h3 a:hover { color: var(--cyan); }
-.short-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; flex: 1; margin: 0; }
+.short-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; flex: 1; margin: 0; }
 .connectivity { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
 .conn-tag { font-size: 10.5px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
 .card-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
