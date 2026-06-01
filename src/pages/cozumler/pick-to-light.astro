@@ -1,4 +1,4 @@
----
+﻿---
 import Base from '../../layouts/Base.astro';
 import SectionHead from '../../components/sections/SectionHead.astro';
 
@@ -543,8 +543,8 @@ p{margin:0;color:var(--text-muted);text-wrap:pretty}
           mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 .hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:32px}
-.platform-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
-.platform-pill .pill-tag{background:var(--ptl);color:#1a1200;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.platform-pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;flex-wrap:wrap;white-space:normal;line-height:1.35;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.platform-pill .pill-tag{background:var(--ptl);color:#1a1200;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
 .product-name{
   font-size:clamp(48px,6vw,84px);font-weight:800;letter-spacing:-.035em;line-height:1;
   background:linear-gradient(135deg,#00125C 0%,#B8800F 60%,#E8A317 130%);
@@ -560,7 +560,7 @@ p{margin:0;color:var(--text-muted);text-wrap:pretty}
 
 /* Hero visual — rack with light modules */
 .rack-scene{
-  background:#0F0F14;border-radius:var(--radius-lg);
+  max-width:100%;min-width:0;background:#0F0F14;border-radius:var(--radius-lg);
   box-shadow:var(--shadow-lg);overflow:hidden;position:relative;
   padding:32px;
 }
@@ -868,12 +868,29 @@ footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:1
   .arch-arrow{transform:rotate(90deg)}
 }
 @media (max-width:720px){
+  .container{padding:0 20px}
   .nav-links{display:none}
   section{padding:72px 0}
+  .hero{overflow:hidden}
+  .hero-inner{grid-template-columns:minmax(0,1fr);max-width:100%;overflow:hidden}
+  .hero-inner > *{min-width:0;max-width:calc(100vw - 40px);width:min(100%, calc(100vw - 40px))}
+  .product-name{font-size:clamp(42px,12vw,52px)}
+  .hero h1.product-tag{font-size:clamp(24px,8vw,30px)}
+  .hero-sub{max-width:100%;font-size:16px;overflow-wrap:break-word}
+  .platform-pill{border-radius:14px;align-items:flex-start}
+  .platform-pill > span:last-child{min-width:0;overflow-wrap:anywhere}
+  .hero-cta{max-width:100%;width:100%}
+  .hero-cta .btn{width:100%}
   .how-grid,.uc-grid,.mode-grid,.why-grid{grid-template-columns:1fr}
   .crow{grid-template-columns:1fr;gap:0}
   .crow > div{padding:10px 18px}
-  .hero-stats{grid-template-columns:repeat(2,auto)}
+  .hero-stats{grid-template-columns:1fr;gap:18px}
+  .rack-scene{padding:18px}
+  .rack-head,.rack-foot{display:grid;grid-template-columns:1fr;gap:10px}
+  .rack{min-height:300px;padding:12px;gap:8px}
+  .rack-shelf{gap:6px;padding:10px 6px}
+  .bin{height:50px}
+  .lmod{padding:0 4px}
   .module-big{min-width:auto;flex-direction:column;padding:20px;gap:14px}
   .module-big .lcd-big{font-size:32px;width:100%}
 }
