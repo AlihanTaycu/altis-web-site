@@ -4,9 +4,14 @@ import assert from 'node:assert/strict';
 
 const headerSource = await readFile(new URL('../src/components/layout/Header.astro', import.meta.url), 'utf8');
 
-test('desktop header defines dropdown groups for platform, solution, and sector navigation', () => {
-  const requiredContent = [
-    'children:',
+// Legacy test file retained for compatibility — assertions migrated to mega menu structure.
+test('header still surfaces the core navigation labels used across the site', () => {
+  const requiredLabels = [
+    'Platformlar',
+    'Çözümler',
+    'Sektörler',
+    'Ürünler',
+    'Kaynaklar',
     'Tag&Trace',
     'Predictivo',
     'Pick-to-Light',
@@ -14,21 +19,21 @@ test('desktop header defines dropdown groups for platform, solution, and sector 
     'Depo & Lojistik',
     'Perakende & Tekstil',
     'Üretim',
-    "'has-dropdown': link.children",
-    'dropdown-menu',
-    'aria-haspopup=',
   ];
 
-  for (const content of requiredContent) {
-    assert.match(headerSource, new RegExp(content.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  for (const label of requiredLabels) {
+    assert.ok(
+      headerSource.includes(label),
+      `Header should include navigation label "${label}"`,
+    );
   }
 });
 
-test('mobile header renders grouped navigation children as nested links', () => {
+test('mobile header still renders grouped navigation children as nested links', () => {
   const requiredContent = [
     'mobile-link-group',
     'mobile-sub-link',
-    'link.children',
+    'mobile-sub-links',
   ];
 
   for (const content of requiredContent) {

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { Warehouse, Store, Factory, ArrowUpRight } from '@lucide/astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -25,36 +26,225 @@ const schema = {
   </section>
 
   <section class="hub-list">
-    <div class="container grid">
-      <a class="hub-card" href="/sektorler/depo-lojistik/">
-        <span class="tag">Depo &amp; Lojistik</span>
-        <h2>Depo &amp; Lojistik</h2>
-        <p>RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryoları.</p>
-      </a>
-      <a class="hub-card" href="/sektorler/perakende-tekstil/">
-        <span class="tag">Perakende &amp; Tekstil</span>
-        <h2>Perakende &amp; Tekstil</h2>
-        <p>Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu.</p>
-      </a>
-      <a class="hub-card" href="/sektorler/uretim/">
-        <span class="tag">Üretim</span>
-        <h2>Üretim</h2>
-        <p>OEE, kestirimci bakım, enerji izleme, üretim izlenebilirliği ve SCADA/MES/ERP entegrasyonu.</p>
-      </a>
+    <div class="container">
+      <div class="featured-row">
+        <a class="hub-card hub-card-big" href="/sektorler/depo-lojistik/">
+          <div class="card-head">
+            <span class="card-icon"><Warehouse size={26} stroke-width={1.7} /></span>
+            <span class="card-tag">Depo &amp; Lojistik</span>
+          </div>
+          <h2>Depo &amp; Lojistik</h2>
+          <p>RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryolarıyla depo operasyonunu uçtan uca görünür kılar.</p>
+          <div class="card-visual" aria-hidden="true">
+            <svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="wh-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#EEF3FF" />
+                  <stop offset="1" stop-color="#E8FAFD" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="480" height="200" rx="10" fill="url(#wh-bg)" />
+              {[0, 1, 2].map(row => (
+                [0, 1, 2, 3, 4].map(col => (
+                  <rect x={40 + col * 75} y={50 + row * 38} width="60" height="28" rx="3" fill="#fff" stroke="#D5DEF0" />
+                ))
+              ))}
+              <g transform="translate(420, 60)">
+                <rect x="0" y="0" width="40" height="100" rx="5" fill="#00125C" />
+                <circle cx="20" cy="30" r="8" fill="#18B7D6" />
+                <rect x="6" y="55" width="28" height="3" rx="1.5" fill="#fff" opacity=".6" />
+                <rect x="6" y="62" width="20" height="3" rx="1.5" fill="#fff" opacity=".4" />
+              </g>
+            </svg>
+          </div>
+          <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
+        </a>
+
+        <div class="featured-small-stack">
+          <a class="hub-card" href="/sektorler/perakende-tekstil/">
+            <div class="card-head">
+              <span class="card-icon"><Store size={22} stroke-width={1.7} /></span>
+              <span class="card-tag">Perakende</span>
+            </div>
+            <h2>Perakende &amp; Tekstil</h2>
+            <p>Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu.</p>
+            <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
+          </a>
+
+          <a class="hub-card hub-card-dark" href="/sektorler/uretim/">
+            <div class="card-head">
+              <span class="card-icon card-icon-dark"><Factory size={22} stroke-width={1.7} /></span>
+              <span class="card-tag card-tag-dark">Üretim</span>
+            </div>
+            <h2>Üretim</h2>
+            <p>OEE, kestirimci bakım, enerji izleme ve SCADA/MES/ERP entegrasyonu ile akıllı fabrika zinciri.</p>
+            <span class="card-link card-link-dark">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </Base>
 
 <style>
-.hub-hero { padding: 96px 0 52px; background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%); }
-.hub-hero h1 { max-width: 900px; margin-top: 18px; font-size: clamp(38px, 5vw, 62px); }
-.hub-hero p { max-width: 760px; margin-top: 20px; font-size: 19px; }
+.hub-hero {
+  padding: 96px 0 52px;
+  background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%);
+}
+.hub-hero .eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.hub-hero h1 {
+  max-width: 900px;
+  margin-top: 18px;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.08;
+}
+.hub-hero p {
+  max-width: 760px;
+  margin-top: 20px;
+  font-size: 19px;
+  color: var(--text-muted);
+}
+
 .hub-list { padding: 40px 0 100px; }
-.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.hub-card { display: grid; gap: 14px; min-height: 280px; padding: 30px; border: 1px solid var(--border); border-radius: 8px; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
-.hub-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--primary); }
-.hub-card h2 { font-size: 28px; }
-.hub-card p { font-size: 16px; }
-.tag { width: fit-content; color: var(--primary); background: var(--bg-blue); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 700; }
-@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } .hub-card { min-height: auto; } }
+
+.featured-row {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 20px;
+}
+.featured-small-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.hub-card {
+  display: grid;
+  gap: 12px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text);
+  align-content: start;
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+}
+.hub-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 24px 50px -28px rgba(0, 18, 92, .28);
+  transform: translateY(-2px);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-blue);
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: background .18s, color .18s;
+}
+.hub-card:hover .card-icon {
+  background: rgba(24, 183, 214, .14);
+  color: var(--cyan);
+}
+.card-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.hub-card h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -.01em;
+  margin: 0;
+}
+.hub-card p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cyan);
+  transition: gap .18s;
+}
+.hub-card:hover .card-link { gap: 9px; }
+
+.hub-card-big {
+  padding: 32px;
+  gap: 14px;
+}
+.hub-card-big h2 { font-size: 34px; }
+.hub-card-big p { font-size: 16px; max-width: 540px; }
+.card-visual {
+  margin-top: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-visual svg { width: 100%; height: auto; display: block; }
+
+.hub-card-dark {
+  background: linear-gradient(150deg, #00125C 0%, #0A1E75 100%);
+  border-color: transparent;
+  color: #fff;
+}
+.hub-card-dark:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 24px 60px -28px rgba(24, 183, 214, .55);
+}
+.hub-card-dark h2 { color: #fff; }
+.hub-card-dark p { color: rgba(255, 255, 255, .78); }
+.card-icon-dark {
+  background: rgba(24, 183, 214, .18);
+  color: var(--cyan);
+}
+.hub-card-dark:hover .card-icon-dark {
+  background: rgba(24, 183, 214, .28);
+  color: #fff;
+}
+.card-tag-dark { color: var(--cyan); }
+.card-link-dark { color: var(--cyan); }
+
+@media (max-width: 1000px) {
+  .featured-row { grid-template-columns: 1fr; }
+  .featured-small-stack { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+}
+@media (max-width: 760px) {
+  .hub-hero { padding: 72px 0 40px; overflow: hidden; }
+  .hub-hero h1{font-size:clamp(34px,10vw,44px);overflow-wrap:break-word;}
+  .hub-hero p { font-size: 17px; overflow-wrap: break-word; }
+  .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+  .hub-card { padding: 22px; }
+  .hub-card-big { padding: 24px; }
+  .hub-card-big h2 { font-size: 28px; }
+  .hub-card h2 { font-size: 22px; }
+}
 </style>
