@@ -1,5 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import {
+  Tag, Activity, ArrowUpRight, Check,
+  Cpu, Database, Smartphone, ChartColumn,
+  Radio, Shield, CodeXml, Bell,
+} from '@lucide/astro';
+import { partnerLogos } from '../../data/partner-logos';
 
 const schema = {
   "@context": "https://schema.org",
@@ -7,6 +13,19 @@ const schema = {
   "name": "Altis Platformlar",
   "description": "Altis Teknoloji platformları: Tag&Trace ve Predictivo"
 };
+
+const trustLogos = partnerLogos.filter(l => ['Zebra','Honeywell','Vuzix','Stanley Healthcare','SATO','Datalogic','Nordic ID','Impinj'].includes(l.name));
+
+const capabilities = [
+  { Icon: Cpu,        title: 'RFID altyapısı',         desc: 'Sabit, portatif ve entegre okuyucu yönetimi' },
+  { Icon: Database,   title: 'WMS / ERP entegrasyonu', desc: 'SAP, Oracle, Logo ve özel sistemlerle hat' },
+  { Icon: Smartphone, title: 'Mobil saha uygulaması',  desc: 'Android tabanlı sayım ve doğrulama akışı' },
+  { Icon: ChartColumn,  title: 'Dashboard & raporlama',  desc: 'Canlı KPI panelleri ve özel raporlar' },
+  { Icon: Radio,      title: 'IoT / sensör verisi',    desc: 'Titreşim, sıcaklık, enerji ve makine durumu' },
+  { Icon: Shield,     title: 'Yetkilendirme & roller',  desc: 'AD/LDAP entegrasyonu ve granular erişim' },
+  { Icon: CodeXml,      title: 'API / entegrasyon',      desc: 'REST, webhook ve mesaj kuyruğu desteği' },
+  { Icon: Bell,       title: 'Alarm & iş akışları',    desc: 'Eşik bazlı alarm ve otomatik aksiyon' },
+];
 ---
 
 <Base
@@ -16,40 +35,843 @@ const schema = {
   lang="tr"
   alternateUrl="https://www.altis.com.tr/en/platforms/"
 >
-  <section class="hub-hero">
-    <div class="container">
-      <div class="eyebrow">Platformlar</div>
-      <h1>Operasyon verisini sahadan karar ekranına taşıyan iki ana platform.</h1>
-      <p>Tag&Trace fiziksel akışı ve Auto-ID katmanını yönetir. Predictivo makine, enerji ve operasyon verisini canlı zekâya dönüştürür.</p>
+  {/* ============ HERO ============ */}
+  <section class="hero-dark">
+    <div class="glow glow-cyan" aria-hidden="true"></div>
+    <div class="glow glow-blue" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="eyebrow-dark">Platformlar</div>
+      <h1>
+        Sahadan karar ekranına <span class="grad-text">tek akış</span>.
+      </h1>
+      <p class="lead">İki ana platform — Tag&Trace ve Predictivo — operasyon verisini gerçek zamanlı izlenebilir, müdahale edilebilir ve raporlanabilir hale getirir.</p>
+
+      <div class="hero-cta">
+        <a href="/platformlar/tag-trace/" class="btn-pill btn-pill-primary">
+          Tag&Trace
+          <ArrowUpRight size={14} stroke-width={2.2} />
+        </a>
+        <a href="/platformlar/predictivo/" class="btn-pill btn-pill-ghost">
+          Predictivo
+          <ArrowUpRight size={14} stroke-width={2.2} />
+        </a>
+      </div>
+
+      <div class="hero-meta" data-reveal>
+        <div class="meta-item"><span class="meta-num" data-count="12+">12+</span><span class="meta-lbl">Yıllık saha deneyimi</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-item"><span class="meta-num" data-count="50+">50+</span><span class="meta-lbl">Aktif kurumsal müşteri</span></div>
+        <div class="meta-divider"></div>
+        <div class="meta-item"><span class="meta-num" data-count="23">23</span><span class="meta-lbl">Donanım çözüm ortağı</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="hub-list">
-    <div class="container grid">
-      <a class="hub-card" href="/platformlar/tag-trace/">
-        <span class="tag">RFID & Auto-ID</span>
+  {/* ============ TRUST BAND ============ */}
+  <section class="trust-band">
+    <div class="container">
+      <p class="trust-label">Birlikte çalıştığımız teknoloji ortakları</p>
+      <div class="trust-strip">
+        {trustLogos.map(logo => (
+          <div class="trust-cell">
+            <img src={logo.src} alt={`${logo.name} logo`} width="120" height="40" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============ TAG&TRACE SHOWCASE ============ */}
+  <section class="showcase showcase-light">
+    <div class="container showcase-grid" data-reveal>
+      <div class="showcase-content">
+        <div class="eyebrow-inline"><Tag size={14} stroke-width={2} /> RFID &amp; Auto-ID Platformu</div>
         <h2>Tag&Trace</h2>
-        <p>RFID reader, barkod, etiket, WMS/ERP ve saha cihazlarını tek merkezden orkestre eden izlenebilirlik platformu.</p>
-      </a>
-      <a class="hub-card" href="/platformlar/predictivo/">
-        <span class="tag">Industrial IoT</span>
+        <p class="lead-md">RFID okuyucu, barkod, etiket ve saha cihazlarını tek merkezden orkestre eden uçtan uca izlenebilirlik platformu.</p>
+        <ul class="check-list">
+          <li><Check size={16} stroke-width={2.4} /> Çoklu lokasyon, çoklu reader yönetimi</li>
+          <li><Check size={16} stroke-width={2.4} /> WMS / ERP entegrasyonu (SAP, Oracle, Logo)</li>
+          <li><Check size={16} stroke-width={2.4} /> Mobil saha uygulaması ve canlı dashboard</li>
+          <li><Check size={16} stroke-width={2.4} /> Olay tabanlı alarm ve iş akışları</li>
+        </ul>
+        <a href="/platformlar/tag-trace/" class="link-arrow link-arrow-primary">
+          Tag&Trace detayları
+          <ArrowUpRight size={16} stroke-width={2.2} />
+        </a>
+      </div>
+
+      <div class="mockup">
+        <div class="mockup-chrome">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="mockup-title">altis · tag&amp;trace</span>
+          <span class="mockup-live"><span class="pulse"></span>LIVE</span>
+        </div>
+        <div class="mockup-body">
+          <div class="kpi-row">
+            <div class="kpi"><span class="kpi-num">12</span><span class="kpi-lbl">Aktif Reader</span></div>
+            <div class="kpi"><span class="kpi-num">5,432</span><span class="kpi-lbl">Bugünkü Okuma</span></div>
+            <div class="kpi kpi-accent"><span class="kpi-num">99.7%</span><span class="kpi-lbl">Sync Oranı</span></div>
+          </div>
+
+          <div class="reader-grid">
+            <div class="reader-card">
+              <div class="rc-head"><span class="rc-name">DEPO-A · PORTAL-01</span><span class="status status-ok"></span></div>
+              <div class="rc-meta">FX9600 · 4 antenna</div>
+              <div class="rc-stat">247 <span>tag/dk</span></div>
+            </div>
+            <div class="reader-card">
+              <div class="rc-head"><span class="rc-name">DEPO-B · TUNEL-03</span><span class="status status-ok"></span></div>
+              <div class="rc-meta">R700 · 8 antenna</div>
+              <div class="rc-stat">412 <span>tag/dk</span></div>
+            </div>
+            <div class="reader-card">
+              <div class="rc-head"><span class="rc-name">SEVKIYAT · KAPI-2</span><span class="status status-warn"></span></div>
+              <div class="rc-meta">AR82 · LAN+POE</div>
+              <div class="rc-stat">89 <span>tag/dk</span></div>
+            </div>
+            <div class="reader-card">
+              <div class="rc-head"><span class="rc-name">MAGAZA · KASA-A</span><span class="status status-ok"></span></div>
+              <div class="rc-meta">SAMPO S2 · WLAN</div>
+              <div class="rc-stat">32 <span>tag/dk</span></div>
+            </div>
+          </div>
+
+          <div class="event-feed">
+            <div class="ef-head">SON OLAYLAR</div>
+            <div class="ef-row"><span class="ef-time">14:42:12</span><span class="ef-text">Etiket okundu · DEPO-A · EPC E280...A1F4</span></div>
+            <div class="ef-row"><span class="ef-time">14:42:08</span><span class="ef-text">Sevkiyat doğrulandı · IRSALIYE #54219</span></div>
+            <div class="ef-row"><span class="ef-time">14:41:51</span><span class="ef-text">Reader heartbeat · DEPO-B-TUNEL-03</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ============ PREDICTIVO SHOWCASE ============ */}
+  <section class="showcase showcase-dark">
+    <div class="glow glow-cyan-soft" aria-hidden="true"></div>
+    <div class="container showcase-grid showcase-grid-flip" data-reveal>
+      <div class="mockup mockup-dark">
+        <div class="mockup-chrome mockup-chrome-dark">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="mockup-title mockup-title-dark">altis · predictivo</span>
+          <span class="mockup-live"><span class="pulse"></span>LIVE</span>
+        </div>
+        <div class="mockup-body mockup-body-dark">
+          <div class="oee-card">
+            <div class="oee-head">
+              <span class="oee-title">Genel OEE</span>
+              <span class="oee-pct">87.4<span>%</span></span>
+              <span class="oee-delta">▲ 2.1% / 7g</span>
+            </div>
+            <svg class="oee-chart" viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="oee-area" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#18B7D6" stop-opacity=".35" />
+                  <stop offset="1" stop-color="#18B7D6" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M0,72 L20,65 L40,68 L60,55 L80,58 L100,42 L120,46 L140,33 L160,38 L180,28 L200,32 L220,22 L240,25 L260,18 L280,22 L300,12 L320,16 L320,90 L0,90 Z" fill="url(#oee-area)" />
+              <path d="M0,72 L20,65 L40,68 L60,55 L80,58 L100,42 L120,46 L140,33 L160,38 L180,28 L200,32 L220,22 L240,25 L260,18 L280,22 L300,12 L320,16" fill="none" stroke="#18B7D6" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="machine-grid">
+            <div class="machine-card">
+              <span class="m-name">CNC-04</span>
+              <span class="m-state m-ok">ÇALIŞIYOR</span>
+              <div class="m-bar"><div class="m-bar-fill" style="width:92%"></div></div>
+              <span class="m-meta">92% verim</span>
+            </div>
+            <div class="machine-card">
+              <span class="m-name">PRES-12</span>
+              <span class="m-state m-ok">ÇALIŞIYOR</span>
+              <div class="m-bar"><div class="m-bar-fill" style="width:84%"></div></div>
+              <span class="m-meta">84% verim</span>
+            </div>
+            <div class="machine-card">
+              <span class="m-name">KAYNAK-07</span>
+              <span class="m-state m-warn">UYARI</span>
+              <div class="m-bar"><div class="m-bar-fill m-bar-warn" style="width:48%"></div></div>
+              <span class="m-meta">titreşim eşik üstü</span>
+            </div>
+          </div>
+
+          <div class="alert-row">
+            <span class="alert-dot"></span>
+            <span class="alert-text"><strong>Kestirimci uyarı:</strong> KAYNAK-07 rulman titreşimi son 4 saatte %38 arttı. Bakım planı önerildi.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-content showcase-content-dark">
+        <div class="eyebrow-inline eyebrow-inline-dark"><Activity size={14} stroke-width={2} /> Industrial IoT Platformu</div>
         <h2>Predictivo</h2>
-        <p>Makine sağlığı, OEE, enerji ve sensör verisini canlı dashboard, alarm ve rapor akışına çeviren operasyonel zekâ platformu.</p>
-      </a>
+        <p class="lead-md">Makine sağlığı, OEE, enerji ve sensör verisini canlı dashboard, alarm ve rapor akışına çeviren operasyonel zekâ platformu.</p>
+        <ul class="check-list check-list-dark">
+          <li><Check size={16} stroke-width={2.4} /> Gerçek zamanlı OEE, durum ve verim izleme</li>
+          <li><Check size={16} stroke-width={2.4} /> Titreşim, sıcaklık ve enerji bazlı kestirimci bakım</li>
+          <li><Check size={16} stroke-width={2.4} /> SCADA/MES/ERP entegrasyonu</li>
+          <li><Check size={16} stroke-width={2.4} /> Vardiya, hat ve hücre bazlı analitik</li>
+        </ul>
+        <a href="/platformlar/predictivo/" class="link-arrow link-arrow-cyan">
+          Predictivo detayları
+          <ArrowUpRight size={16} stroke-width={2.2} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ============ CAPABILITIES ============ */}
+  <section class="capabilities">
+    <div class="container">
+      <div class="cap-head">
+        <div class="eyebrow">Ortak altyapı</div>
+        <h2>İki platform, tek mühendislik standardı.</h2>
+        <p>Cihaz yönetiminden raporlamaya, entegrasyondan yetkilendirmeye kadar her katman aynı kurumsal standartla kurulur.</p>
+      </div>
+      <div class="cap-grid" data-reveal data-reveal-delay="100">
+        {capabilities.map(({ Icon, title, desc }) => (
+          <div class="cap-card">
+            <span class="cap-icon"><Icon size={20} stroke-width={1.8} /></span>
+            <div class="cap-text">
+              <span class="cap-title">{title}</span>
+              <span class="cap-desc">{desc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============ CTA BANNER ============ */}
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <div class="eyebrow">Tek demo · iki platform</div>
+          <h2>Operasyonunuz için doğru karışımı planlayalım.</h2>
+          <p>Saha, depo ve fabrika senaryolarınızı dinleyip Tag&Trace ve Predictivo'nun nasıl konumlanacağını birlikte çıkaralım.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="/iletisim/" class="btn-pill btn-pill-primary">Demo Talep Et <ArrowUpRight size={14} stroke-width={2.2} /></a>
+          <a href="/cozumler/" class="btn-pill btn-pill-ghost-light">Çözümler <ArrowUpRight size={14} stroke-width={2.2} /></a>
+        </div>
+      </div>
     </div>
   </section>
 </Base>
 
 <style>
-.hub-hero { padding: 96px 0 52px; background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%); }
-.hub-hero h1 { max-width: 900px; margin-top: 18px; font-size: clamp(38px, 5vw, 62px); }
-.hub-hero p { max-width: 760px; margin-top: 20px; font-size: 19px; }
-.hub-list { padding: 40px 0 100px; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-.hub-card { display: grid; gap: 14px; min-height: 280px; padding: 34px; border: 1px solid var(--border); border-radius: 8px; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
-.hub-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--primary); }
-.hub-card h2 { font-size: 32px; }
-.hub-card p { font-size: 16.5px; }
-.tag { width: fit-content; color: var(--primary); background: var(--bg-blue); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 700; }
-@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .hub-card { min-height: auto; } }
+/* ============================================================
+   PREMIUM PLATFORMS PAGE
+   ============================================================ */
+
+/* ============ HERO ============ */
+.hero-dark {
+  position: relative;
+  padding: 110px 0 80px;
+  background: radial-gradient(120% 100% at 50% 0%, #0A1E75 0%, #00125C 55%, #000A3A 100%);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+.glow-cyan {
+  top: -120px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: rgba(24, 183, 214, .35);
+}
+.glow-blue {
+  bottom: -180px;
+  left: -100px;
+  width: 520px;
+  height: 520px;
+  background: rgba(30, 47, 140, .55);
+}
+.glow-cyan-soft {
+  top: -100px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: rgba(24, 183, 214, .22);
+  border-radius: 50%;
+  filter: blur(90px);
+  position: absolute;
+  pointer-events: none;
+}
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-inner { position: relative; }
+.eyebrow-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.eyebrow-dark::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+}
+.hero-dark h1 {
+  max-width: 920px;
+  margin-top: 22px;
+  font-size: clamp(40px, 5.6vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -.025em;
+  color: #fff;
+  font-weight: 800;
+}
+.grad-text {
+  background: linear-gradient(90deg, #18B7D6 0%, #6FE3F5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lead {
+  max-width: 680px;
+  margin-top: 22px;
+  font-size: 18.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .78);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 10px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  transition: transform .15s, box-shadow .15s, background .15s, border-color .15s;
+}
+.btn-pill-primary {
+  background: linear-gradient(180deg, #1FCBEC 0%, #18B7D6 100%);
+  color: #00125C;
+  box-shadow: 0 8px 28px -10px rgba(24, 183, 214, .65), inset 0 -2px 0 rgba(0, 18, 92, .15);
+}
+.btn-pill-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 36px -10px rgba(24, 183, 214, .8), inset 0 -2px 0 rgba(0, 18, 92, .15); }
+.btn-pill-ghost {
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .18);
+}
+.btn-pill-ghost:hover { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .3); }
+.btn-pill-ghost-light {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+.btn-pill-ghost-light:hover { border-color: var(--primary); }
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 52px;
+  flex-wrap: wrap;
+}
+.meta-item { display: flex; flex-direction: column; gap: 2px; }
+.meta-num { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -.02em; }
+.meta-lbl { font-size: 12.5px; color: rgba(255, 255, 255, .55); }
+.meta-divider { width: 1px; height: 36px; background: rgba(255, 255, 255, .12); }
+
+/* ============ TRUST BAND ============ */
+.trust-band {
+  padding: 32px 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border-soft);
+}
+.trust-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+  margin: 0 0 20px;
+}
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+.trust-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 8px 12px;
+}
+.trust-cell img {
+  max-width: 100%;
+  max-height: 32px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: .55;
+  filter: grayscale(100%);
+  transition: opacity .2s, filter .2s;
+}
+.trust-cell:hover img { opacity: 1; filter: grayscale(0); }
+
+/* ============ SHOWCASE ============ */
+.showcase {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.showcase-light { background: linear-gradient(180deg, #fff 0%, #F6F8FC 100%); }
+.showcase-dark {
+  background: radial-gradient(120% 100% at 100% 0%, #0A1E75 0%, #00125C 60%, #000A3A 100%);
+  color: #fff;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+.showcase-grid-flip { grid-template-columns: 1.15fr 1fr; }
+
+.showcase-content { min-width: 0; }
+.eyebrow-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.eyebrow-inline::after {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--accent);
+}
+.eyebrow-inline-dark {
+  color: var(--cyan);
+}
+.eyebrow-inline-dark::after {
+  background: var(--cyan);
+}
+.showcase-content h2 {
+  margin: 18px 0 14px;
+  font-size: clamp(36px, 4.4vw, 54px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+  color: var(--primary);
+}
+.showcase-content-dark h2 { color: #fff; }
+.lead-md {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 22px;
+}
+.showcase-content-dark .lead-md { color: rgba(255, 255, 255, .78); }
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 10px;
+}
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--text);
+}
+.check-list li :global(svg) {
+  color: var(--cyan);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.check-list-dark li { color: rgba(255, 255, 255, .88); }
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: gap .15s;
+}
+.link-arrow:hover { gap: 10px; }
+.link-arrow-primary { color: var(--primary); }
+.link-arrow-cyan { color: var(--cyan); }
+
+/* ============ MOCKUP ============ */
+.mockup {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 32px 80px -28px rgba(0, 18, 92, .28),
+    0 8px 24px -10px rgba(0, 18, 92, .12);
+  overflow: hidden;
+  min-width: 0;
+}
+.mockup-dark {
+  background: linear-gradient(180deg, #001233 0%, #000A22 100%);
+  border-color: rgba(24, 183, 214, .18);
+  box-shadow:
+    0 32px 80px -20px rgba(0, 0, 0, .6),
+    0 0 0 1px rgba(24, 183, 214, .08) inset;
+}
+
+.mockup-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border-soft);
+  background: linear-gradient(180deg, #F8FAFD 0%, #F1F4FA 100%);
+}
+.mockup-chrome-dark {
+  background: linear-gradient(180deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-r { background: #FF5F57; }
+.dot-y { background: #FEBC2E; }
+.dot-g { background: #28C840; }
+.mockup-title {
+  margin-left: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+}
+.mockup-title-dark { color: rgba(255, 255, 255, .55); }
+.mockup-live {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(24, 183, 214, .12);
+  color: var(--cyan);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+.pulse {
+  width: 6px; height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(24, 183, 214, .8);
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(24, 183, 214, .6); }
+  70% { box-shadow: 0 0 0 6px rgba(24, 183, 214, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(24, 183, 214, 0); }
+}
+
+.mockup-body { padding: 20px; display: grid; gap: 14px; }
+.mockup-body-dark { color: rgba(255, 255, 255, .85); }
+
+/* Tag&Trace mockup */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.kpi {
+  padding: 14px 16px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: #fff;
+  display: grid;
+  gap: 2px;
+}
+.kpi-num { font-size: 22px; font-weight: 800; color: var(--primary); letter-spacing: -.02em; }
+.kpi-lbl { font-size: 11px; color: var(--text-muted); }
+.kpi-accent { background: linear-gradient(150deg, #EEF3FF, #E8FAFD); border-color: rgba(24, 183, 214, .3); }
+.kpi-accent .kpi-num { color: var(--cyan); }
+
+.reader-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.reader-card {
+  padding: 12px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: #fff;
+  display: grid;
+  gap: 6px;
+}
+.rc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rc-name { font-family: "JetBrains Mono", monospace; font-size: 10.5px; font-weight: 700; color: var(--primary); }
+.rc-meta { font-size: 11px; color: var(--text-faint); }
+.rc-stat { font-size: 16px; font-weight: 800; color: var(--primary); }
+.rc-stat span { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.status {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-ok { background: #28C840; box-shadow: 0 0 0 2px rgba(40, 200, 64, .15); }
+.status-warn { background: #FEBC2E; box-shadow: 0 0 0 2px rgba(254, 188, 46, .2); }
+
+.event-feed {
+  padding: 12px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: #FAFBFE;
+  display: grid;
+  gap: 6px;
+}
+.ef-head {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--text-faint);
+  margin-bottom: 2px;
+}
+.ef-row {
+  display: flex;
+  gap: 10px;
+  font-size: 11.5px;
+  color: var(--text);
+}
+.ef-time { font-family: "JetBrains Mono", monospace; color: var(--cyan); flex-shrink: 0; }
+.ef-text { color: var(--text-muted); }
+
+/* Predictivo mockup */
+.oee-card {
+  padding: 16px;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 10px;
+}
+.oee-head { display: grid; gap: 4px; margin-bottom: 8px; }
+.oee-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+.oee-pct { font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -.02em; line-height: 1; }
+.oee-pct span { font-size: 18px; color: var(--cyan); }
+.oee-delta { font-size: 12px; color: var(--cyan); font-weight: 600; }
+.oee-chart { width: 100%; height: auto; display: block; }
+
+.machine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.machine-card {
+  padding: 12px;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 10px;
+  display: grid;
+  gap: 6px;
+}
+.m-name { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; color: #fff; }
+.m-state {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+.m-ok { background: rgba(40, 200, 64, .14); color: #58E472; }
+.m-warn { background: rgba(254, 188, 46, .16); color: #FFD173; }
+.m-bar { height: 4px; background: rgba(255, 255, 255, .08); border-radius: 2px; overflow: hidden; }
+.m-bar-fill { height: 100%; background: linear-gradient(90deg, #18B7D6, #6FE3F5); }
+.m-bar-warn { background: linear-gradient(90deg, #FEBC2E, #FFD173); }
+.m-meta { font-size: 10.5px; color: rgba(255, 255, 255, .55); }
+
+.alert-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(254, 188, 46, .08);
+  border: 1px solid rgba(254, 188, 46, .25);
+  border-radius: 10px;
+}
+.alert-dot {
+  width: 8px; height: 8px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: #FEBC2E;
+  box-shadow: 0 0 0 3px rgba(254, 188, 46, .2);
+  flex-shrink: 0;
+}
+.alert-text { font-size: 12.5px; line-height: 1.45; color: rgba(255, 255, 255, .85); }
+.alert-text strong { color: #FFD173; font-weight: 700; }
+
+/* ============ CAPABILITIES ============ */
+.capabilities { padding: 100px 0; background: #fff; }
+.cap-head { max-width: 760px; margin: 0 auto 44px; text-align: center; }
+.cap-head .eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.cap-head h2 {
+  margin: 12px 0;
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+.cap-head p { font-size: 17px; color: var(--text-muted); margin: 0; }
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.cap-card {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+.cap-card:hover {
+  border-color: var(--border);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -16px rgba(0, 18, 92, .2);
+}
+.cap-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--bg-blue);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.cap-text { display: grid; gap: 3px; min-width: 0; }
+.cap-title { font-size: 14.5px; font-weight: 700; color: var(--primary); }
+.cap-desc { font-size: 13px; line-height: 1.45; color: var(--text-muted); }
+
+/* ============ CTA BANNER ============ */
+.cta-banner { padding: 60px 0 100px; background: #fff; }
+.cta-box {
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 44px 48px;
+  border-radius: 20px;
+  background: radial-gradient(120% 100% at 0% 0%, #0A1E75 0%, #00125C 70%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.cta-box::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: rgba(24, 183, 214, .25);
+  filter: blur(80px);
+  border-radius: 50%;
+}
+.cta-box > div { position: relative; z-index: 1; }
+.cta-box .eyebrow { color: var(--cyan); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.cta-box h2 {
+  margin: 10px 0 10px;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+.cta-box p { font-size: 16px; color: rgba(255, 255, 255, .78); margin: 0; max-width: 540px; }
+.cta-actions { display: flex; gap: 10px; flex-wrap: wrap; position: relative; z-index: 1; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1100px) {
+  .trust-strip { grid-template-columns: repeat(4, 1fr); }
+  .cap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
+  .showcase-grid { grid-template-columns: 1fr; gap: 36px; }
+  .showcase-grid-flip { grid-template-columns: 1fr; }
+  .showcase-grid-flip .mockup { order: 2; }
+  .cta-box { grid-template-columns: 1fr; padding: 36px 28px; }
+}
+@media (max-width: 760px) {
+  .hero-dark { padding: 80px 0 60px; }
+  .hero-meta { gap: 18px; }
+  .meta-divider { display: none; }
+  .meta-num { font-size: 22px; }
+  .trust-strip { grid-template-columns: repeat(3, 1fr); }
+  .showcase { padding: 64px 0; }
+  .kpi-row { grid-template-columns: 1fr; }
+  .reader-grid { grid-template-columns: 1fr; }
+  .machine-grid { grid-template-columns: 1fr; }
+  .cap-grid { grid-template-columns: 1fr; }
+  .capabilities { padding: 64px 0; }
+}
 </style>

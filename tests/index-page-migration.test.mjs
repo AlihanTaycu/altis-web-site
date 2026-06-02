@@ -3,6 +3,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 const indexSource = await readFile(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
+const partnerLogosSource = await readFile(new URL('../src/data/partner-logos.ts', import.meta.url), 'utf8');
+const logoMarqueeSource = await readFile(new URL('../src/components/sections/LogoMarquee.astro', import.meta.url), 'utf8');
 
 test('home page has the migrated landing content instead of the stub', () => {
   const requiredContent = [
@@ -42,4 +44,13 @@ test('home page uses clean Astro routes and removes dev-only scripts', () => {
   assert.match(indexSource, /\/platformlar\/predictivo\//);
   assert.match(indexSource, /\/cozumler\/pick-to-light\//);
   assert.match(indexSource, /\/cozumler\/asset-yonetimi\//);
+});
+
+test('home page trust section uses real partner logos', () => {
+  assert.match(indexSource, /partnerLogos/);
+  assert.match(indexSource, /<LogoMarquee logos=\{partnerLogos\}/);
+  assert.match(partnerLogosSource, /\/images\/partners\/altis-zebra-logo\.webp/);
+  assert.match(partnerLogosSource, /\/images\/partners\/vuzix-logo-2\.webp/);
+  assert.match(logoMarqueeSource, /<img src=\{logo\.src\}/);
+  assert.doesNotMatch(indexSource, /LOGO · 0[1-6]/);
 });

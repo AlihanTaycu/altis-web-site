@@ -1,103 +1,138 @@
 ---
+import {
+  Tag, Activity, Boxes, Camera, Lightbulb, QrCode, Store,
+  CreditCard, Factory, Warehouse, Building2, Mail, Package,
+  Radio, Smartphone, Printer, Glasses,
+  Cpu, Database, ChartColumn, Shield, CodeXml, Bell,
+  ArrowUpRight, ChevronDown,
+} from '@lucide/astro';
+
 interface Props {
   lang?: 'tr' | 'en';
-  /** Current page path to highlight active link */
   currentPath?: string;
 }
-
 const { lang = 'tr', currentPath = '' } = Astro.props;
 
 const base = lang === 'en' ? '/en' : '';
 const altLang = lang === 'tr' ? 'en' : 'tr';
 const altBase = altLang === 'en' ? '/en' : '';
 
-const navLinks = lang === 'tr'
-  ? [
-      { href: `${base}/`, label: 'Ana Sayfa' },
-      {
-        href: `${base}/platformlar/`,
-        label: 'Platformlar',
-        children: [
-          { href: `${base}/platformlar/tag-trace/`, label: 'Tag&Trace', description: 'RFID ve Auto-ID orkestrasyonu' },
-          { href: `${base}/platformlar/predictivo/`, label: 'Predictivo', description: 'Industrial IoT ve operasyonel zekâ' },
-        ],
-      },
-      {
-        href: `${base}/cozumler/`,
-        label: 'Çözümler',
-        children: [
-          { href: `${base}/cozumler/pick-to-light/`, label: 'Pick-to-Light', description: 'Depo toplama ve yönlendirme' },
-          { href: `${base}/cozumler/asset-yonetimi/`, label: 'Asset Yönetimi', description: 'NFC ve QR tabanlı varlık takibi' },
-          { href: `${base}/cozumler/goruntu-isleme/`, label: 'TrueScan', description: 'AI ile zorlu saha koşullarında okuma' },
-          { href: 'https://roxcard.com.tr', label: 'Rox Card', description: 'NFC & QR dijital kartvizit platformu' },
-        ],
-      },
-      {
-        href: `${base}/sektorler/`,
-        label: 'Sektörler',
-        children: [
-          { href: `${base}/sektorler/depo-lojistik/`, label: 'Depo & Lojistik', description: 'Sayım, sevkiyat ve WMS görünürlüğü' },
-          { href: `${base}/sektorler/perakende-tekstil/`, label: 'Perakende & Tekstil', description: 'Mağaza ve konfeksiyon RFID zinciri' },
-          { href: `${base}/sektorler/uretim/`, label: 'Üretim', description: 'OEE, bakım ve enerji izleme' },
-        ],
-      },
-      {
-        href: `${base}/urunler/`,
-        label: 'Ürünler',
-        children: [
-          { href: `${base}/urunler/rfid-etiketler/`, label: 'RFID Etiketler', description: 'UHF, HF ve özel form faktörlü etiketler' },
-          { href: `${base}/urunler/rfid-okuyucular/`, label: 'RFID Okuyucular', description: 'Sabit, portatif ve entegre okuyucu çözümleri' },
-          { href: `${base}/urunler/rfid-el-terminalleri/`, label: 'RFID El Terminalleri', description: 'Mobil RFID işlem ve envanter terminalleri' },
-          { href: `${base}/urunler/rfid-yazicilar/`, label: 'RFID Yazıcılar', description: 'RFID etiket yazdırma ve kodlama cihazları' },
-          { href: `${base}/urunler/rfid-perakende/`, label: 'RFID Perakende Ürünler', description: 'Perakende operasyonlarına özel RFID çözümler' },
-        ],
-      },
-      { href: `${base}/hakkimizda/`, label: 'Hakkımızda' },
-      { href: `${base}/iletisim/`, label: 'İletişim' },
-    ]
-  : [
-      { href: `${base}/`, label: 'Home' },
-      {
-        href: `${base}/platforms/`,
-        label: 'Platforms',
-        children: [
-          { href: `${base}/platforms/tag-trace/`, label: 'Tag&Trace', description: 'RFID and Auto-ID orchestration' },
-          { href: `${base}/platforms/predictivo/`, label: 'Predictivo', description: 'Industrial IoT and operational intelligence' },
-        ],
-      },
-      {
-        href: `${base}/solutions/`,
-        label: 'Solutions',
-        children: [
-          { href: `${base}/solutions/pick-to-light/`, label: 'Pick-to-Light', description: 'Warehouse picking guidance' },
-          { href: `${base}/solutions/asset-management/`, label: 'Asset Management', description: 'NFC and QR asset tracking' },
-          { href: `${base}/solutions/image-processing/`, label: 'TrueScan', description: 'AI-powered reading in tough conditions' },
-          { href: 'https://roxcard.com.tr', label: 'Rox Card', description: 'NFC & QR digital business card platform' },
-        ],
-      },
-      {
-        href: `${base}/sectors/`,
-        label: 'Sectors',
-        children: [
-          { href: `${base}/sectors/warehouse-logistics/`, label: 'Warehouse & Logistics', description: 'Inventory, shipping, and WMS visibility' },
-          { href: `${base}/sectors/retail-textile/`, label: 'Retail & Textile', description: 'Store and apparel RFID chain' },
-          { href: `${base}/sectors/manufacturing/`, label: 'Manufacturing', description: 'OEE, maintenance, and energy monitoring' },
-        ],
-      },
-      {
-        href: `${base}/products/`,
-        label: 'Products',
-        children: [
-          { href: `${base}/products/rfid-tags/`, label: 'RFID Tags', description: 'UHF, HF and custom form-factor labels' },
-          { href: `${base}/products/rfid-readers/`, label: 'RFID Readers', description: 'Fixed, portable and integrated readers' },
-          { href: `${base}/products/rfid-handhelds/`, label: 'RFID Handhelds', description: 'Mobile RFID inventory and transaction terminals' },
-          { href: `${base}/products/rfid-printers/`, label: 'RFID Printers', description: 'RFID label printing and encoding devices' },
-          { href: `${base}/products/rfid-retail/`, label: 'RFID Retail Products', description: 'RFID solutions tailored for retail operations' },
-        ],
-      },
-      { href: `${base}/about/`, label: 'About' },
-      { href: `${base}/contact/`, label: 'Contact' },
-    ];
+// ---------- TR mega menu data ----------
+const trNav = [
+  {
+    type: 'mega-platform' as const,
+    label: 'Platformlar',
+    href: '/platformlar/',
+    data: {
+      platforms: [
+        { Icon: Tag,      label: 'Tag&Trace',         desc: 'RFID ve Auto-ID orkestrasyonu',         href: '/platformlar/tag-trace/' },
+        { Icon: Activity, label: 'Predictivo',        desc: 'Industrial IoT ve operasyonel zekâ',    href: '/platformlar/predictivo/' },
+        { Icon: Boxes,    label: 'Asset Tag & Trace', desc: 'Bulut tabanlı varlık yönetimi',         href: '/cozumler/asset-yonetimi/' },
+      ],
+      blocks: [
+        { Icon: Cpu,        label: 'RFID altyapısı' },
+        { Icon: Database,   label: 'WMS / ERP entegrasyonu' },
+        { Icon: Smartphone, label: 'Mobil saha uygulaması' },
+        { Icon: ChartColumn,  label: 'Dashboard & raporlama' },
+        { Icon: Radio,      label: 'IoT / sensör verisi' },
+        { Icon: Shield,     label: 'Yetkilendirme ve roller' },
+        { Icon: CodeXml,      label: 'API / entegrasyon' },
+        { Icon: Bell,       label: 'Alarm ve iş akışları' },
+      ],
+      resources: [
+        { label: 'Vaka analizleri',   href: '/cozumler/' },
+        { label: 'Teknik dokümanlar', href: '/' },
+        { label: 'Demo süreci',       href: '/iletisim/' },
+        { label: 'SSS',               href: '/' },
+        { label: 'İletişim',          href: '/iletisim/' },
+      ],
+      featured: [
+        { label: 'RFID Okuyucular',      href: '/urunler/rfid-okuyucular/' },
+        { label: 'RFID El Terminalleri', href: '/urunler/rfid-el-terminalleri/' },
+        { label: 'RFID Yazıcılar',       href: '/urunler/rfid-yazicilar/' },
+        { label: 'Akıllı Gözlükler',     href: '/urunler/akilli-gozluk/' },
+      ],
+    },
+  },
+  {
+    type: 'mega-solutions' as const,
+    label: 'Çözümler',
+    href: '/cozumler/',
+    data: {
+      cards: [
+        { Icon: Camera,     label: 'TrueScan',       desc: 'AI ile zorlu saha koşullarında barkod ve 2D okuma',        href: '/cozumler/goruntu-isleme/' },
+        { Icon: Lightbulb,  label: 'Pick-to-Light',  desc: 'Depo toplama ve ayrıştırma sürecinde ışıklı yönlendirme',  href: '/cozumler/pick-to-light/' },
+        { Icon: QrCode,     label: 'Asset Yönetimi', desc: 'QR, NFC ve mobil uygulama ile demirbaş takibi',            href: '/cozumler/asset-yonetimi/' },
+        { Icon: Store,      label: 'RFID Perakende', desc: 'Mağaza, kasa ve sevkiyat RFID çözümleri',                  href: '/urunler/rfid-perakende/' },
+        { Icon: Tag,        label: 'Tag&Trace',      desc: 'RFID ve Auto-ID ile uçtan uca izlenebilirlik',             href: '/platformlar/tag-trace/' },
+        { Icon: CreditCard, label: 'Rox Card',       desc: 'NFC ve QR ile dijital kartvizit platformu',                href: 'https://roxcard.com.tr', external: true },
+      ],
+    },
+  },
+  {
+    type: 'mega-sectors' as const,
+    label: 'Sektörler',
+    href: '/sektorler/',
+    data: {
+      cards: [
+        { Icon: Warehouse, label: 'Depo & Lojistik',     desc: 'Sayım, sevkiyat ve WMS görünürlüğü',     href: '/sektorler/depo-lojistik/' },
+        { Icon: Store,     label: 'Perakende & Tekstil', desc: 'Mağaza ve konfeksiyon RFID zinciri',     href: '/sektorler/perakende-tekstil/' },
+        { Icon: Factory,   label: 'Üretim',              desc: 'OEE, kestirimci bakım ve enerji izleme', href: '/sektorler/uretim/' },
+      ],
+    },
+  },
+  {
+    type: 'mega-products' as const,
+    label: 'Ürünler',
+    href: '/urunler/',
+    data: {
+      groups: [
+        {
+          title: 'RFID Ürünleri',
+          items: [
+            { Icon: Tag,        label: 'RFID Etiketler',       desc: 'UHF, HF ve özel form faktörü',       href: '/urunler/rfid-etiketler/' },
+            { Icon: Radio,      label: 'RFID Okuyucular',      desc: 'Sabit, portatif ve entegre okuyucu', href: '/urunler/rfid-okuyucular/' },
+            { Icon: Smartphone, label: 'RFID El Terminalleri', desc: 'Mobil RFID işlem ve envanter',       href: '/urunler/rfid-el-terminalleri/' },
+            { Icon: Printer,    label: 'RFID Yazıcılar',       desc: 'RFID etiket yazdırma ve kodlama',    href: '/urunler/rfid-yazicilar/' },
+            { Icon: Store,      label: 'RFID Perakende',       desc: 'EAS, sayım ve mağaza için RFID',     href: '/urunler/rfid-perakende/' },
+          ],
+        },
+        {
+          title: 'Akıllı Gözlükler',
+          items: [
+            { Icon: Glasses, label: 'Vuzix Akıllı Gözlükler', desc: 'Hands-free saha için M400, M4000, LX1', href: '/urunler/akilli-gozluk/' },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    type: 'mega-resources' as const,
+    label: 'Kaynaklar',
+    href: '#',
+    data: {
+      cards: [
+        { Icon: Building2, label: 'Hakkımızda', desc: 'Altis Teknoloji ekibi ve hikâyesi', href: '/hakkimizda/' },
+        { Icon: Mail,      label: 'İletişim',   desc: 'Demo, teklif ve uzman görüşmesi',   href: '/iletisim/' },
+        { Icon: Lightbulb, label: 'Çözümler',   desc: 'Sahadaki operasyonel çözümler',     href: '/cozumler/' },
+        { Icon: Package,   label: 'Ürünler',    desc: 'RFID donanım ve Vuzix portföyü',    href: '/urunler/' },
+      ],
+    },
+  },
+];
+
+// ---------- EN fallback (simple) ----------
+const enNav = [
+  { type: 'simple' as const, label: 'Home',      href: '/en/' },
+  { type: 'simple' as const, label: 'Platforms', href: '/en/platforms/' },
+  { type: 'simple' as const, label: 'Solutions', href: '/en/solutions/' },
+  { type: 'simple' as const, label: 'Sectors',   href: '/en/sectors/' },
+  { type: 'simple' as const, label: 'Products',  href: '/en/products/' },
+  { type: 'simple' as const, label: 'About',     href: '/en/about/' },
+  { type: 'simple' as const, label: 'Contact',   href: '/en/contact/' },
+];
+
+const navLinks = lang === 'tr' ? trNav : enNav;
 
 const ctaLabel = lang === 'tr' ? 'Demo Talep Et' : 'Request Demo';
 const ctaHref = lang === 'tr' ? `${base}/iletisim/` : `${base}/contact/`;
@@ -114,25 +149,173 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
 
     <nav class="nav-links" aria-label={menuLabel}>
       {navLinks.map(link => (
-        <div class:list={['nav-item', { 'has-dropdown': link.children }]}>
+        <div class:list={['nav-item', { 'has-mega': link.type !== 'simple' }]}>
           <a
             href={link.href}
-            class:list={['nav-link', { active: currentPath.startsWith(link.href) && link.href !== `${base}/` }]}
-            aria-haspopup={link.children ? 'true' : undefined}
+            class:list={['nav-link', { active: link.href !== '#' && link.href !== `${base}/` && currentPath.startsWith(link.href) }]}
+            aria-haspopup={link.type !== 'simple' ? 'true' : undefined}
           >
             {link.label}
-            {link.children && (
-              <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            {link.type !== 'simple' && (
+              <ChevronDown class="nav-caret" size={14} stroke-width={2.2} aria-hidden="true" />
             )}
           </a>
-          {link.children && (
-            <div class="dropdown-menu" role="menu">
-              {link.children.map(child => (
-                <a class="dropdown-link" href={child.href} role="menuitem" target={child.href.startsWith('http') ? '_blank' : undefined} rel={child.href.startsWith('http') ? 'noopener' : undefined}>
-                  <span>{child.label}</span>
-                  <small>{child.description}</small>
-                </a>
-              ))}
+
+          {/* ---------- Platform mega ---------- */}
+          {link.type === 'mega-platform' && (
+            <div class="mega-panel">
+              <div class="container mega-grid mega-platform-grid">
+                <div class="mega-col">
+                  <div class="mega-eyebrow">Platformlar</div>
+                  <div class="mega-items">
+                    {link.data.platforms.map((it: any) => (
+                      <a href={it.href} class="mega-item">
+                        <span class="mega-icon"><it.Icon size={18} stroke-width={1.8} /></span>
+                        <span class="mega-item-text">
+                          <span class="mega-item-label">{it.label}</span>
+                          <span class="mega-item-desc">{it.desc}</span>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mega-col mega-col-wide">
+                  <div class="mega-eyebrow">Yapı Taşları</div>
+                  <div class="mega-blocks">
+                    {link.data.blocks.map((it: any) => (
+                      <span class="mega-block">
+                        <span class="mega-icon mega-icon-sm"><it.Icon size={16} stroke-width={1.8} /></span>
+                        <span class="mega-block-label">{it.label}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mega-col mega-col-soft">
+                  <div class="mega-eyebrow">Kaynaklar</div>
+                  <ul class="mega-list">
+                    {link.data.resources.map((it: any) => (
+                      <li><a href={it.href}>{it.label}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mega-strip">
+                <div class="container mega-strip-inner">
+                  <span class="mega-strip-label">Öne Çıkanlar</span>
+                  <div class="mega-strip-items">
+                    {link.data.featured.map((it: any) => (
+                      <a href={it.href} class="mega-strip-link">
+                        {it.label}
+                        <ArrowUpRight size={12} stroke-width={2} />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ---------- Solutions mega ---------- */}
+          {link.type === 'mega-solutions' && (
+            <div class="mega-panel">
+              <div class="container mega-cards-grid">
+                {link.data.cards.map((it: any) => (
+                  <a
+                    href={it.href}
+                    class="mega-card"
+                    target={it.external ? '_blank' : undefined}
+                    rel={it.external ? 'noopener' : undefined}
+                  >
+                    <span class="mega-card-icon"><it.Icon size={22} stroke-width={1.7} /></span>
+                    <div class="mega-card-body">
+                      <span class="mega-card-title">
+                        {it.label}
+                        {it.external && <ArrowUpRight size={12} stroke-width={2} />}
+                      </span>
+                      <span class="mega-card-desc">{it.desc}</span>
+                    </div>
+                    <span class="mega-card-visual" aria-hidden="true">
+                      <svg viewBox="0 0 80 56" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="0" width="80" height="56" rx="6" fill="url(#g-sol)" />
+                        <defs>
+                          <linearGradient id="g-sol" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#EEF3FF" />
+                            <stop offset="1" stop-color="#E8FAFD" />
+                          </linearGradient>
+                        </defs>
+                        <circle cx="22" cy="28" r="10" fill="#18B7D6" opacity=".22" />
+                        <rect x="40" y="20" width="28" height="4" rx="2" fill="#00125C" opacity=".25" />
+                        <rect x="40" y="30" width="20" height="4" rx="2" fill="#00125C" opacity=".15" />
+                      </svg>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ---------- Sectors mega ---------- */}
+          {link.type === 'mega-sectors' && (
+            <div class="mega-panel">
+              <div class="container mega-sectors-grid">
+                {link.data.cards.map((it: any) => (
+                  <a href={it.href} class="mega-card mega-card-sector">
+                    <span class="mega-card-icon"><it.Icon size={22} stroke-width={1.7} /></span>
+                    <div class="mega-card-body">
+                      <span class="mega-card-title">{it.label}</span>
+                      <span class="mega-card-desc">{it.desc}</span>
+                    </div>
+                    <span class="mega-card-cta">
+                      İncele
+                      <ArrowUpRight size={12} stroke-width={2} />
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ---------- Products mega ---------- */}
+          {link.type === 'mega-products' && (
+            <div class="mega-panel">
+              <div class="container mega-products-grid">
+                {link.data.groups.map((group: any) => (
+                  <div class="mega-product-group">
+                    <div class="mega-eyebrow">{group.title}</div>
+                    <div class="mega-items">
+                      {group.items.map((it: any) => (
+                        <a href={it.href} class="mega-item">
+                          <span class="mega-icon"><it.Icon size={18} stroke-width={1.8} /></span>
+                          <span class="mega-item-text">
+                            <span class="mega-item-label">{it.label}</span>
+                            <span class="mega-item-desc">{it.desc}</span>
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ---------- Resources mega ---------- */}
+          {link.type === 'mega-resources' && (
+            <div class="mega-panel">
+              <div class="container mega-resources-grid">
+                {link.data.cards.map((it: any) => (
+                  <a href={it.href} class="mega-card mega-card-resource">
+                    <span class="mega-card-icon"><it.Icon size={20} stroke-width={1.7} /></span>
+                    <div class="mega-card-body">
+                      <span class="mega-card-title">{it.label}</span>
+                      <span class="mega-card-desc">{it.desc}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -152,18 +335,44 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
 
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <nav aria-label={mobileMenuLabel}>
-      {navLinks.map(link => (
-        <div class="mobile-link-group">
-          <a href={link.href} class="mobile-link">{link.label}</a>
-          {link.children && (
-            <div class="mobile-sub-links">
-              {link.children.map(child => (
-                <a href={child.href} class="mobile-sub-link" target={child.href.startsWith('http') ? '_blank' : undefined} rel={child.href.startsWith('http') ? 'noopener' : undefined}>{child.label}</a>
-              ))}
+      {navLinks.map(link => {
+        const isMega = link.type !== 'simple';
+        const subItems: { label: string; href: string; external?: boolean }[] = [];
+        if (link.type === 'mega-platform') {
+          link.data.platforms.forEach((p: any) => subItems.push({ label: p.label, href: p.href }));
+          link.data.featured.forEach((p: any) => subItems.push({ label: p.label, href: p.href }));
+        } else if (link.type === 'mega-solutions' || link.type === 'mega-sectors' || link.type === 'mega-resources') {
+          link.data.cards.forEach((p: any) => subItems.push({ label: p.label, href: p.href, external: p.external }));
+        } else if (link.type === 'mega-products') {
+          link.data.groups.forEach((g: any) => g.items.forEach((p: any) => subItems.push({ label: p.label, href: p.href })));
+        }
+        return (
+          <div class="mobile-link-group">
+            <div class="mobile-link-row">
+              <a href={link.href} class="mobile-link">{link.label}</a>
+              {isMega && (
+                <button class="mobile-toggle" aria-label={`${link.label} alt menüsü`} aria-expanded="false">
+                  <ChevronDown size={18} stroke-width={2} />
+                </button>
+              )}
             </div>
-          )}
-        </div>
-      ))}
+            {isMega && subItems.length > 0 && (
+              <div class="mobile-sub-links">
+                {subItems.map(child => (
+                  <a
+                    href={child.href}
+                    class="mobile-sub-link"
+                    target={child.external ? '_blank' : undefined}
+                    rel={child.external ? 'noopener' : undefined}
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
       <a href={ctaHref} class="btn btn-primary mobile-cta">{ctaLabel}</a>
     </nav>
   </div>
@@ -174,10 +383,16 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, .82);
+  background: rgba(255, 255, 255, .9);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--border-soft);
+  transition: background var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
+}
+.site-header.scrolled {
+  background: rgba(255, 255, 255, .96);
+  border-bottom-color: transparent;
+  box-shadow: 0 8px 30px -18px rgba(0, 18, 92, .25);
 }
 .nav {
   display: flex;
@@ -194,7 +409,7 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
   gap: 28px;
 }
 .nav-item {
-  position: relative;
+  position: static;
   display: flex;
   align-items: center;
   min-height: 76px;
@@ -211,52 +426,258 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
 .nav-link:hover,
 .nav-link.active { color: var(--primary); }
 .nav-caret { transition: transform .2s; }
-.has-dropdown:hover .nav-caret,
-.has-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
-.dropdown-menu {
+.has-mega:hover .nav-caret,
+.has-mega:focus-within .nav-caret { transform: rotate(180deg); color: var(--primary); }
+
+/* ============ MEGA PANEL ============ */
+.mega-panel {
   position: absolute;
-  top: calc(100% - 8px);
-  left: 50%;
-  min-width: 268px;
-  padding: 10px;
-  background: rgba(255, 255, 255, .98);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: 0 20px 45px -26px rgba(0, 18, 92, .34), 0 8px 18px -12px rgba(0, 18, 92, .16);
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 28px 60px -32px rgba(0, 18, 92, .22);
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, 8px);
-  transition: opacity .16s, transform .16s;
+  transform: translateY(6px);
+  transition: opacity .18s ease, transform .18s ease;
 }
-.has-dropdown:hover .dropdown-menu,
-.has-dropdown:focus-within .dropdown-menu {
+.has-mega:hover .mega-panel,
+.has-mega:focus-within .mega-panel {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
-.dropdown-link {
+.mega-grid {
   display: grid;
-  gap: 2px;
-  padding: 11px 12px;
-  border-radius: 7px;
+  gap: 32px;
+  padding: 28px 32px 24px;
+}
+.mega-col { min-width: 0; }
+.mega-eyebrow {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+.mega-items { display: grid; gap: 4px; }
+.mega-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 10px;
   color: var(--text);
-  transition: background .18s, color .18s;
+  transition: background .15s;
 }
-.dropdown-link:hover,
-.dropdown-link:focus {
-  background: var(--bg-soft);
+.mega-item:hover { background: var(--bg-soft); }
+.mega-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--bg-blue);
   color: var(--primary);
+  flex-shrink: 0;
 }
-.dropdown-link span {
+.mega-item:hover .mega-icon {
+  background: rgba(24, 183, 214, .14);
+  color: var(--cyan);
+}
+.mega-icon-sm { width: 28px; height: 28px; border-radius: 8px; }
+.mega-item-text { display: grid; gap: 2px; min-width: 0; }
+.mega-item-label {
   font-size: 14px;
   font-weight: 700;
+  color: var(--primary);
 }
-.dropdown-link small {
+.mega-item-desc {
   font-size: 12.5px;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text-muted);
 }
 
+/* Platform layout: 1fr 2fr .9fr + featured strip */
+.mega-platform-grid {
+  grid-template-columns: 1.05fr 1.9fr .95fr;
+}
+.mega-col-wide { padding-left: 8px; }
+.mega-col-soft {
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  padding: 20px;
+  align-self: start;
+}
+.mega-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.mega-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+.mega-block:hover { background: var(--bg-soft); }
+.mega-block-label { font-weight: 500; }
+.mega-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.mega-list a {
+  display: block;
+  padding: 6px 4px;
+  font-size: 13.5px;
+  color: var(--text);
+  border-radius: 6px;
+  transition: color .15s, padding-left .15s;
+}
+.mega-list a:hover { color: var(--cyan); padding-left: 8px; }
+
+/* Featured strip under platform */
+.mega-strip {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border-soft);
+}
+.mega-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 32px;
+  flex-wrap: wrap;
+}
+.mega-strip-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.mega-strip-items { display: flex; gap: 6px; flex-wrap: wrap; }
+.mega-strip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  transition: color .15s, border-color .15s;
+}
+.mega-strip-link:hover { color: var(--cyan); border-color: var(--cyan); }
+
+/* Solutions: 6 cards 3x2 with visual */
+.mega-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 28px 32px;
+}
+.mega-card {
+  display: grid;
+  grid-template-columns: 44px 1fr 92px;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  color: var(--text);
+  background: #fff;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.mega-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 14px 30px -22px rgba(0, 18, 92, .25);
+  transform: translateY(-1px);
+}
+.mega-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-blue);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.mega-card:hover .mega-card-icon {
+  background: rgba(24, 183, 214, .14);
+  color: var(--cyan);
+}
+.mega-card-body { display: grid; gap: 3px; min-width: 0; }
+.mega-card-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.mega-card-desc {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+.mega-card-visual {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 56px;
+}
+.mega-card-visual svg { width: 100%; height: 100%; border-radius: 6px; }
+
+/* Sectors: 3 cards with CTA */
+.mega-sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 28px 32px;
+}
+.mega-card-sector { grid-template-columns: 44px 1fr; row-gap: 6px; }
+.mega-card-cta {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+/* Products: 2 groups */
+.mega-products-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 32px;
+  padding: 28px 32px;
+}
+.mega-product-group .mega-items { grid-template-columns: 1fr 1fr; }
+.mega-product-group:last-child .mega-items { grid-template-columns: 1fr; }
+
+/* Resources: 4 cards */
+.mega-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  padding: 28px 32px;
+}
+.mega-card-resource { grid-template-columns: 44px 1fr; }
+
+/* ============ ACTIONS ============ */
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 .lang-switch {
   font-size: 12.5px;
@@ -293,39 +714,56 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
 .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ============ MOBILE MENU ============ */
 .mobile-menu {
   display: none;
   flex-direction: column;
   background: #fff;
   border-top: 1px solid var(--border-soft);
   padding: 16px 20px 24px;
-  gap: 4px;
+  max-height: calc(100vh - 76px);
+  overflow-y: auto;
 }
 .mobile-menu.open { display: flex; }
-.mobile-menu nav {
-  display: grid;
+.mobile-menu nav { display: grid; gap: 2px; }
+.mobile-link-group { display: grid; gap: 2px; }
+.mobile-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 4px;
-}
-.mobile-link-group {
-  display: grid;
-  gap: 2px;
 }
 .mobile-link {
   display: block;
+  flex: 1;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text);
   padding: 12px 8px;
   border-radius: 8px;
   transition: background .2s, color .2s;
 }
 .mobile-link:hover { background: var(--bg-soft); color: var(--primary); }
+.mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-muted);
+  border-radius: 8px;
+  transition: transform .2s, background .2s;
+}
+.mobile-toggle:hover { background: var(--bg-soft); }
+.mobile-toggle[aria-expanded="true"] { transform: rotate(180deg); color: var(--primary); }
 .mobile-sub-links {
-  display: grid;
+  display: none;
+  grid-template-columns: 1fr;
   gap: 2px;
   padding-left: 14px;
-  margin-bottom: 4px;
+  margin: 4px 0 8px;
 }
+.mobile-sub-links.open { display: grid; }
 .mobile-sub-link {
   display: block;
   padding: 8px 10px;
@@ -335,11 +773,21 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
   font-weight: 500;
 }
 .mobile-sub-link:hover { color: var(--primary); }
-.mobile-cta { margin-top: 12px; width: 100%; justify-content: center; }
+.mobile-cta { display: inline-flex; margin-top: 14px; width: 100%; justify-content: center; }
 
-@media (max-width: 900px) {
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1100px) {
+  .nav-links { gap: 18px; }
+  .mega-cards-grid,
+  .mega-sectors-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mega-resources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+}
+@media (max-width: 640px) {
+  .nav-actions > .btn { display: none; }
 }
 @media (max-width: 480px) {
   .lang-switch { display: none; }
@@ -347,21 +795,49 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
 </style>
 
 <script>
-const btn = document.querySelector('.hamburger') as HTMLButtonElement | null;
-const menu = document.getElementById('mobile-menu');
-if (btn && menu) {
-  btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    menu.setAttribute('aria-hidden', String(open));
-    menu.classList.toggle('open', !open);
-  });
-  document.addEventListener('click', (e) => {
-    if (!btn.contains(e.target as Node) && !menu.contains(e.target as Node)) {
-      btn.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.classList.remove('open');
+  // Re-runs on every View Transitions navigation; re-queries fresh DOM nodes.
+  function initHeaderMenu() {
+    const btn = document.querySelector('.hamburger') as HTMLButtonElement | null;
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu && !btn.dataset.bound) {
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.setAttribute('aria-hidden', String(open));
+        menu.classList.toggle('open', !open);
+      });
     }
-  });
-}
+
+    document.querySelectorAll<HTMLButtonElement>('.mobile-toggle').forEach((toggle) => {
+      if (toggle.dataset.bound) return;
+      toggle.dataset.bound = 'true';
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        const subLinks = toggle.closest('.mobile-link-group')?.querySelector('.mobile-sub-links');
+        if (subLinks) subLinks.classList.toggle('open', !expanded);
+      });
+    });
+
+    // Outside-click closes menu — bound once at document level.
+    if (!(window as any).__altisHeaderBound) {
+      (window as any).__altisHeaderBound = true;
+      document.addEventListener('click', (e) => {
+        const b = document.querySelector('.hamburger');
+        const m = document.getElementById('mobile-menu');
+        if (b && m && !b.contains(e.target as Node) && !m.contains(e.target as Node)) {
+          b.setAttribute('aria-expanded', 'false');
+          m.setAttribute('aria-hidden', 'true');
+          m.classList.remove('open');
+        }
+      });
+    }
+  }
+
+  if (document.readyState !== 'loading') initHeaderMenu();
+  else document.addEventListener('DOMContentLoaded', initHeaderMenu);
 </script>

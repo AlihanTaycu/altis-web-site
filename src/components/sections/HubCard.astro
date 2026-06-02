@@ -1,0 +1,158 @@
+---
+import { ArrowUpRight } from '@lucide/astro';
+
+interface Props {
+  href: string;
+  title: string;
+  desc: string;
+  tag?: string;
+  variant?: 'default' | 'big' | 'dark';
+  /** Lucide icon component, e.g. import { Camera } and pass Icon={Camera} */
+  Icon?: any;
+  cta?: string;
+  external?: boolean;
+}
+
+const {
+  href,
+  title,
+  desc,
+  tag,
+  variant = 'default',
+  Icon,
+  cta = 'İncele',
+  external = false,
+} = Astro.props;
+
+const classes = ['hub-card', variant === 'big' && 'hub-card-big', variant === 'dark' && 'hub-card-dark']
+  .filter(Boolean)
+  .join(' ');
+const iconSize = variant === 'big' ? 26 : 22;
+const hasVisual = Astro.slots.has('visual');
+---
+
+<a
+  class={classes}
+  href={href}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener' : undefined}
+>
+  <div class="card-head">
+    {Icon && (
+      <span class:list={['card-icon', { 'card-icon-dark': variant === 'dark' }]}>
+        <Icon size={iconSize} stroke-width={1.7} />
+      </span>
+    )}
+    {tag && <span class:list={['card-tag', { 'card-tag-dark': variant === 'dark' }]}>{tag}</span>}
+  </div>
+  <h2>{title}</h2>
+  <p>{desc}</p>
+  {hasVisual && (
+    <div class="card-visual" aria-hidden="true">
+      <slot name="visual" />
+    </div>
+  )}
+  <span class:list={['card-link', { 'card-link-dark': variant === 'dark' }]}>
+    {cta}
+    <ArrowUpRight size={14} stroke-width={2.2} />
+  </span>
+</a>
+
+<style>
+  .hub-card {
+    display: grid;
+    gap: 12px;
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--text);
+    align-content: start;
+    transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+  }
+  .hub-card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 24px 50px -28px rgba(0, 18, 92, .28);
+    transform: translateY(-2px);
+  }
+
+  .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--bg-blue);
+    color: var(--primary);
+    flex-shrink: 0;
+    transition: background var(--dur-fast), color var(--dur-fast);
+  }
+  .hub-card:hover .card-icon { background: rgba(24, 183, 214, .14); color: var(--cyan); }
+  .card-tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .hub-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -.01em;
+    margin: 0;
+  }
+  .hub-card p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
+    padding-top: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--cyan);
+    transition: gap var(--dur-fast);
+  }
+  .hub-card:hover .card-link { gap: 9px; }
+
+  /* Big variant */
+  .hub-card-big { padding: 32px; gap: 14px; }
+  .hub-card-big h2 { font-size: 32px; }
+  .hub-card-big p { font-size: 16px; max-width: 540px; }
+  .card-visual { margin-top: 8px; border-radius: 10px; overflow: hidden; background: #fff; }
+  .card-visual :global(svg) { width: 100%; height: auto; display: block; }
+
+  /* Dark variant */
+  .hub-card-dark {
+    background: linear-gradient(150deg, #00125C 0%, #0A1E75 100%);
+    border-color: transparent;
+    color: #fff;
+  }
+  .hub-card-dark:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 24px 60px -28px rgba(24, 183, 214, .55);
+  }
+  .hub-card-dark h2 { color: #fff; }
+  .hub-card-dark p { color: rgba(255, 255, 255, .78); }
+  .card-icon-dark { background: rgba(24, 183, 214, .18); color: var(--cyan); }
+  .hub-card-dark:hover .card-icon-dark { background: rgba(24, 183, 214, .28); color: #fff; }
+  .card-tag-dark { color: var(--cyan); }
+  .card-link-dark { color: var(--cyan); }
+
+  @media (max-width: 760px) {
+    .hub-card { padding: 22px; }
+    .hub-card-big { padding: 24px; }
+    .hub-card-big h2 { font-size: 26px; }
+    .hub-card h2 { font-size: 22px; }
+  }
+</style>

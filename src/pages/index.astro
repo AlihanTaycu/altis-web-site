@@ -1,5 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import SectionHead from '../components/sections/SectionHead.astro';
+import LogoMarquee from '../components/sections/LogoMarquee.astro';
+import { partnerLogos } from '../data/partner-logos';
 
 const schema = [
   {
@@ -49,6 +52,7 @@ const schema = [
     }
   }
 ];
+
 ---
 
 <Base
@@ -186,12 +190,12 @@ const schema = [
 <!-- ============== Problem ============== -->
 <section class="problem">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Operasyonel Gerçek</div>
-      <h2>Sahadaki veriler hâlâ dağınık, gecikmeli ve yönetilemez mi?</h2>
-      <p>Modern operasyonlarda cihazlar, sensörler, makineler, yazıcılar, okuyucular ve kurumsal sistemler çoğu zaman birbirinden kopuk çalışır. Bu durum görünmeyen risklere, hatalı stoklara, manuel iş yüküne ve verimsiz operasyonlara yol açar.</p>
-    </div>
-    <div class="card-grid">
+    <SectionHead
+      eyebrow="Operasyonel Gerçek"
+      heading="Sahadaki veriler hâlâ dağınık, gecikmeli ve yönetilemez mi?"
+      description="Modern operasyonlarda cihazlar, sensörler, makineler, yazıcılar, okuyucular ve kurumsal sistemler çoğu zaman birbirinden kopuk çalışır. Bu durum görünmeyen risklere, hatalı stoklara, manuel iş yüküne ve verimsiz operasyonlara yol açar."
+    />
+    <div class="card-grid" data-reveal data-reveal-delay="100">
       <div class="problem-card">
         <div class="icon-box">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
@@ -227,12 +231,12 @@ const schema = [
 <!-- ============== Approach ============== -->
 <section>
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Altis Yaklaşımı</div>
-      <h2>Teknolojiyi değil, çalışan operasyon sistemleri kuruyoruz.</h2>
-      <p>Saha ihtiyaçlarını analiz eder, doğru donanımı seçer, yazılımı geliştirir, sistemleri entegre eder ve operasyonun sürdürülebilir şekilde çalışmasını sağlarız. Yalnızca bir ürün tedarikçisi değil; analizden devreye almaya kadar yer alan bir proje ve teknoloji ortağıyız.</p>
-    </div>
-    <div class="approach-grid">
+    <SectionHead
+      eyebrow="Altis Yaklaşımı"
+      heading="Teknolojiyi değil, çalışan operasyon sistemleri kuruyoruz."
+      description="Saha ihtiyaçlarını analiz eder, doğru donanımı seçer, yazılımı geliştirir, sistemleri entegre eder ve operasyonun sürdürülebilir şekilde çalışmasını sağlarız. Yalnızca bir ürün tedarikçisi değil; analizden devreye almaya kadar yer alan bir proje ve teknoloji ortağıyız."
+    />
+    <div class="approach-grid" data-reveal data-reveal-delay="100">
       <div class="approach-line"></div>
       <div class="step">
         <div class="step-num">01</div>
@@ -261,13 +265,13 @@ const schema = [
 <!-- ============== Platforms ============== -->
 <section class="platforms" id="platforms">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">İki Amiral Gemisi Platform</div>
-      <h2>İki güçlü platform, tek hedef: görünür, izlenebilir, yönetilebilir operasyonlar</h2>
-      <p>Tag&amp;Trace ve Predictivo, Altis Teknoloji'nin saha verisini yöneten iki ana platformudur. Biri Auto-ID ve RFID operasyonlarını, diğeri IoT ve operasyonel verileri merkezileştirir.</p>
-    </div>
+    <SectionHead
+      eyebrow="İki Amiral Gemisi Platform"
+      heading="İki güçlü platform, tek hedef: görünür, izlenebilir, yönetilebilir operasyonlar"
+      description="Tag&amp;Trace ve Predictivo, Altis Teknoloji'nin saha verisini yöneten iki ana platformudur. Biri Auto-ID ve RFID operasyonlarını, diğeri IoT ve operasyonel verileri merkezileştirir."
+    />
 
-    <div class="platform-grid">
+    <div class="platform-grid" data-reveal data-reveal-delay="100">
       <!-- Tag&Trace -->
       <article class="platform-card tag">
         <div class="platform-tag">RFID &amp; Auto-ID Orchestration</div>
@@ -374,7 +378,7 @@ const schema = [
 <!-- ============== Pick-to-Light Standalone ============== -->
 <style>
 .ptl-section{
-  position:relative;padding:120px 0;overflow:hidden;
+  position:relative;padding:var(--section-y) 0;overflow:hidden;
   background:
     radial-gradient(900px 500px at 85% 30%, rgba(232,163,23,.10), transparent 60%),
     linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
@@ -387,7 +391,7 @@ const schema = [
           mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 .ptl-section .container{position:relative}
-.ptl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.ptl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
 .ptl-section .eyebrow{color:#B8800F}
 .ptl-section .eyebrow::before{background:#E8A317}
 .ptl-section .product-name{
@@ -450,7 +454,7 @@ const schema = [
 
 @media (max-width:1100px){
   .ptl-grid{grid-template-columns:1fr;gap:48px}
-  .ptl-section{padding:80px 0}
+  .ptl-section{padding:var(--section-y) 0}
 }
 @media (max-width:720px){
   .ptl-feat-row{grid-template-columns:1fr}
@@ -459,7 +463,7 @@ const schema = [
 </style>
 <section class="ptl-section" id="pick-to-light">
   <div class="container">
-    <div class="ptl-grid">
+    <div class="ptl-grid" data-reveal>
       <div>
         <div class="eyebrow">Üçüncü Ürün · Light-Directed Picking</div>
         <div class="product-name">Pick-to-Light</div>
@@ -546,7 +550,7 @@ const schema = [
 
 <!-- ============== Asset Tag & Trace ============== -->
 <style>
-.att-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#F4FAF7 0%,#fff 100%)}
+.att-section{position:relative;padding:var(--section-y) 0;overflow:hidden;background:linear-gradient(180deg,#F4FAF7 0%,#fff 100%)}
 .att-section::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(800px 500px at 85% 30%, rgba(16,169,104,.10), transparent 60%);
@@ -658,7 +662,7 @@ const schema = [
 
 @media (max-width:1100px){
   .att-grid{grid-template-columns:1fr;gap:48px}
-  .att-section{padding:80px 0}
+  .att-section{padding:var(--section-y) 0}
   .att-phone-mini{right:0}
 }
 @media (max-width:720px){
@@ -668,7 +672,7 @@ const schema = [
 </style>
 <section class="att-section" id="asset-tag-and-trace">
   <div class="container">
-    <div class="att-grid">
+    <div class="att-grid" data-reveal>
       <div>
         <div class="eyebrow">Beşinci Ürün · Demirbaş Yönetimi</div>
         <div class="att-name">Asset Tag <span class="amp">&amp;</span> Trace</div>
@@ -789,7 +793,7 @@ const schema = [
 
 <!-- ============== Rox Card ============== -->
 <style>
-.rox-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#FAFBFE 0%,#F1EEFA 100%)}
+.rox-section{position:relative;padding:var(--section-y) 0;overflow:hidden;background:linear-gradient(180deg,#FAFBFE 0%,#F1EEFA 100%)}
 .rox-section::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(800px 500px at 15% 30%, rgba(124,58,237,.10), transparent 60%);
@@ -898,7 +902,7 @@ const schema = [
 
 @media (max-width:1100px){
   .rox-grid{grid-template-columns:1fr;gap:48px}
-  .rox-section{padding:80px 0}
+  .rox-section{padding:var(--section-y) 0}
 }
 @media (max-width:720px){
   .rox-feat-row{grid-template-columns:1fr}
@@ -908,7 +912,7 @@ const schema = [
 </style>
 <section class="rox-section" id="rox-card">
   <div class="container">
-    <div class="rox-grid">
+    <div class="rox-grid" data-reveal>
       <div class="rox-visual">
         <div class="rox-qr">
           <div class="rox-qr-grid">
@@ -1001,12 +1005,12 @@ const schema = [
 <!-- ============== Comparison ============== -->
 <section class="compare">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Platform Karşılaştırma</div>
-      <h2>Hangi platform hangi ihtiyaca cevap verir?</h2>
-      <p>Tag&amp;Trace, RFID ve Auto-ID operasyonlarının orkestrasyonu için idealdir. Predictivo, IoT, sensör, enerji, makine ve operasyon verilerinin izlenmesi ve aksiyona dönüştürülmesi için tasarlanmıştır.</p>
-    </div>
-    <div class="compare-table">
+    <SectionHead
+      eyebrow="Platform Karşılaştırma"
+      heading="Hangi platform hangi ihtiyaca cevap verir?"
+      description="Tag&amp;Trace, RFID ve Auto-ID operasyonlarının orkestrasyonu için idealdir. Predictivo, IoT, sensör, enerji, makine ve operasyon verilerinin izlenmesi ve aksiyona dönüştürülmesi için tasarlanmıştır."
+    />
+    <div class="compare-table" data-reveal data-reveal-delay="100">
       <div class="compare-row head">
         <div>İhtiyaç</div>
         <div class="col-tag">Tag&amp;Trace</div>
@@ -1071,221 +1075,15 @@ const schema = [
   </div>
 </section>
 
-<!-- ============== Tag&Trace Detail ============== -->
-<section class="detail tag-detail" id="tagtrace">
-  <div class="container">
-    <div class="section-head left" style="max-width:780px">
-      <div class="eyebrow">Tag&amp;Trace · Derinlemesine</div>
-      <h2>RFID ve Auto-ID kaosunu orkestrasyona dönüştürün</h2>
-      <p>RFID projelerinde farklı marka ve model okuyucular, yazıcılar, sensörler, PLC'ler ve kurumsal sistemler çoğu zaman karmaşık bir yapı oluşturur. Tag&amp;Trace bu yapıyı soyutlayarak tüm cihazları standart bir arayüzden yönetmenizi ve veriyi anlamlı iş akışlarına dönüştürmenizi sağlar.</p>
-    </div>
-
-    <div class="detail-grid">
-      <div>
-        <div class="diagram">
-          <div style="font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:20px;text-align:center">Kaotik çizgiler · Düzenli akışa</div>
-          <div class="diagram-flow">
-            <div class="diagram-col">
-              <div class="lbl">Saha</div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
-                RFID Reader
-              </div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg>
-                RFID Printer
-              </div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2v16H3zM7 4h1v16H7zM10 4h2v16h-2zM14 4h1v16h-1zM17 4h2v16h-2zM21 4h0v16"/></svg>
-                Barkod
-              </div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-                PLC / Sensor
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
-              <div class="arrow"></div>
-              <div class="diagram-center">
-                <div class="nm">Tag&amp;Trace</div>
-                <div class="sm">Orchestration Core</div>
-              </div>
-              <div class="arrow"></div>
-            </div>
-            <div class="diagram-col">
-              <div class="lbl">Kurumsal</div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
-                ERP / SAP
-              </div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
-                WMS
-              </div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></svg>
-                REST API
-              </div>
-              <div class="node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
-                MQTT Bus
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="detail-features">
-          <div class="detail-feat">
-            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
-            <div>
-              <h4>Merkezi Cihaz Yönetimi</h4>
-              <p>Tüm RFID okuyucularınızı, yazıcılarınızı ve saha cihazlarınızı marka ve modelden bağımsız şekilde tek merkezden kaydedin, yapılandırın ve izleyin.</p>
-            </div>
-          </div>
-          <div class="detail-feat">
-            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></div>
-            <div>
-              <h4>Gelişmiş RFID Okuyucu Kontrolü</h4>
-              <p>Anten gücü, okuma modu, session, frekans, tetikleme modu ve bağlantı parametrelerini merkezi olarak yönetin; saha koşullarına göre profil tanımlayın.</p>
-            </div>
-          </div>
-          <div class="detail-feat">
-            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg></div>
-            <div>
-              <h4>RFID Yazıcı ve Şablon Yönetimi</h4>
-              <p>ZPL gibi endüstri standartlarını destekleyen etiket şablonları tasarlayın, ERP'den gelen verilerle dinamik etiketler üretin ve baskıyı merkezden yönlendirin.</p>
-            </div>
-          </div>
-          <div class="detail-feat">
-            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="M6 8v8M18 8v8M8 6h8M8 18h8"/></svg></div>
-            <div>
-              <h4>Görsel Kural Motoru</h4>
-              <p>RFID Reader In, Printer In, HTTP In, MQTT In giriş nodlarını işleyerek HTTP Request, Printer Out, MQTT Out gibi aksiyonlara dönüştürün — kod yazmadan.</p>
-            </div>
-          </div>
-          <div class="detail-feat">
-            <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
-            <div>
-              <h4>Edge Framework</h4>
-              <p>Veriyi kaynağında işleyin, gecikmeyi azaltın, ağ kesintilerinde operasyonel sürekliliği koruyun. Edge node'larınızı merkezden güncelleyin.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== Predictivo Detail ============== -->
-<section class="detail pred" id="predictivo" style="background:var(--bg-soft)">
-  <div class="container">
-    <div class="section-head left" style="max-width:780px">
-      <div class="eyebrow" style="color:#0c7d94">Predictivo · Derinlemesine</div>
-      <h2>Operasyonel verilerinizi karar destek sistemine dönüştürün</h2>
-      <p>Predictivo; sensörlerden, makinelerden, sayaçlardan, beacon'lardan, SCADA sistemlerinden ve üçüncü parti platformlardan gelen verileri tek merkezde birleştirir. Bu verileri dashboard'lar, alarmlar, raporlar ve kural motoru ile operasyonel aksiyonlara dönüştürür.</p>
-    </div>
-
-    <div class="detail-grid">
-      <div class="detail-features" style="margin-top:0">
-        <div class="detail-feat">
-          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><circle cx="12" cy="12" r="4"/></svg></div>
-          <div>
-            <h4>Bağlan</h4>
-            <p>Sensör, makine, enerji sayacı, beacon, SCADA, gateway ve üçüncü parti sistemlerden veri alın — MQTT, HTTP, CoAP, LoRaWAN, NB-IoT.</p>
-          </div>
-        </div>
-        <div class="detail-feat">
-          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.36.39.83.61 1.51.61H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <div>
-            <h4>İşle</h4>
-            <p>Gelen veriyi anlamlandırın, filtreleyin, eşik değerleri tanımlayın ve görsel kural motoru ile iş akışları oluşturun.</p>
-          </div>
-        </div>
-        <div class="detail-feat">
-          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
-          <div>
-            <h4>Görselleştir</h4>
-            <p>Dashboard'lar, grafikler, haritalar, sayaçlar ve operasyon panelleriyle veriyi rol bazlı, anlaşılır hale getirin.</p>
-          </div>
-        </div>
-        <div class="detail-feat">
-          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <div>
-            <h4>Harekete Geç</h4>
-            <p>Alarm, bildirim, rapor, cihaz tetikleme ve operasyon aksiyonları ile veriyi iş sonucuna dönüştürün.</p>
-          </div>
-        </div>
-        <div class="detail-feat">
-          <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
-          <div>
-            <h4>Raporla</h4>
-            <p>Günlük, haftalık ve aylık periyotlarda PDF raporlar oluşturun; performans, trend ve riskleri analiz edin.</p>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="pred-dash">
-          <div class="pred-dash-head">
-            <div class="ttl">Operasyon Paneli · Tesis A</div>
-            <div class="live"><span class="dot-pulse"></span>Canlı</div>
-          </div>
-          <div class="pred-dash-grid">
-            <div class="pd-kpi">
-              <div class="lbl">Enerji</div>
-              <div class="val">128.4 <span style="font-size:14px;color:var(--text-muted);font-family:Inter">kWh</span></div>
-              <div class="meta" style="color:#15a06b">▼ 7% · hedef altı</div>
-            </div>
-            <div class="pd-kpi">
-              <div class="lbl">Makine Sağlığı</div>
-              <div class="val">94<span style="font-size:14px;color:var(--text-muted);font-family:Inter"> / 100</span></div>
-              <div class="meta">3 makine bakım planında</div>
-            </div>
-            <div class="pd-chart">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-                <span style="font-size:12px;font-weight:600;color:var(--slate)">Hat verimliliği · 7 gün</span>
-                <span style="font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--text-faint)">OEE</span>
-              </div>
-              <svg viewBox="0 0 360 80" width="100%" height="76" preserveAspectRatio="none">
-                <g stroke="#EEF1F7" stroke-width="1">
-                  <line x1="0" y1="20" x2="360" y2="20"/>
-                  <line x1="0" y1="40" x2="360" y2="40"/>
-                  <line x1="0" y1="60" x2="360" y2="60"/>
-                </g>
-                <g>
-                  <rect x="12" y="32" width="34" height="40" rx="3" fill="#00125C"/>
-                  <rect x="62" y="22" width="34" height="50" rx="3" fill="#00125C"/>
-                  <rect x="112" y="28" width="34" height="44" rx="3" fill="#1A5DC8"/>
-                  <rect x="162" y="18" width="34" height="54" rx="3" fill="#1A5DC8"/>
-                  <rect x="212" y="14" width="34" height="58" rx="3" fill="#1A5DC8"/>
-                  <rect x="262" y="22" width="34" height="50" rx="3" fill="#18B7D6"/>
-                  <rect x="312" y="10" width="34" height="62" rx="3" fill="#18B7D6"/>
-                </g>
-              </svg>
-            </div>
-            <div class="pd-alarm">
-              <span class="pill">Uyarı</span>
-              <span class="txt">Hat-2 vibrasyon eşik üstü — bakım önerisi tetiklendi</span>
-              <span style="font-size:11px;color:var(--text-faint);font-family:'JetBrains Mono',monospace">2dk önce</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============== Use cases ============== -->
 <section class="usecases" id="solutions">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Kullanım Senaryoları</div>
-      <h2>Saha, depo ve üretim operasyonları için uygulanabilir çözümler</h2>
-      <p>Altis Teknoloji, platformlarını farklı sektör ve operasyon ihtiyaçlarına göre uyarlayarak ölçülebilir iş sonuçları üretir.</p>
-    </div>
-    <div class="use-grid">
+    <SectionHead
+      eyebrow="Kullanım Senaryoları"
+      heading="Saha, depo ve üretim operasyonları için uygulanabilir çözümler"
+      description="Altis Teknoloji, platformlarını farklı sektör ve operasyon ihtiyaçlarına göre uyarlayarak ölçülebilir iş sonuçları üretir."
+    />
+    <div class="use-grid" data-reveal data-reveal-delay="100">
       <article class="use-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05M12 22.08V12"/></svg></div>
         <h3>Varlık ve Demirbaş Takibi</h3>
@@ -1341,11 +1139,11 @@ const schema = [
 <!-- ============== Industries ============== -->
 <section class="industries" id="industries">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Sektörel Çözümler</div>
-      <h2>Farklı sektörlere uyarlanabilen esnek teknoloji altyapısı</h2>
-    </div>
-    <div class="ind-grid">
+    <SectionHead
+      eyebrow="Sektörel Çözümler"
+      heading="Farklı sektörlere uyarlanabilen esnek teknoloji altyapısı"
+    />
+    <div class="ind-grid" data-reveal data-reveal-delay="100">
       <div class="ind-card">
         <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9 5 4h14l2 5"/></svg></div>
         <h4>Depo &amp; Lojistik</h4>
@@ -1393,13 +1191,13 @@ const schema = [
 <!-- ============== Tech architecture ============== -->
 <section class="tech" id="technology">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Teknoloji &amp; Mimari</div>
-      <h2>Endüstri standartlarıyla uyumlu, güvenli ve ölçeklenebilir altyapı</h2>
-      <p>Altis platformları, farklı cihaz ve sistemlerin aynı operasyon yapısında güvenilir şekilde çalışmasını sağlayacak modern teknolojiler üzerine inşa edilir.</p>
-    </div>
+    <SectionHead
+      eyebrow="Teknoloji &amp; Mimari"
+      heading="Endüstri standartlarıyla uyumlu, güvenli ve ölçeklenebilir altyapı"
+      description="Altis platformları, farklı cihaz ve sistemlerin aynı operasyon yapısında güvenilir şekilde çalışmasını sağlayacak modern teknolojiler üzerine inşa edilir."
+    />
 
-    <div class="tech-stack">
+    <div class="tech-stack" data-reveal data-reveal-delay="100">
       <div class="tech-layer">
         <div class="num">L1 · DEVICE</div>
         <h4>Saha Cihazları</h4>
@@ -1470,12 +1268,12 @@ const schema = [
 <!-- ============== Project approach ============== -->
 <section class="project">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Proje Yaklaşımı</div>
-      <h2>Fikirden çalışan sisteme: uçtan uca proje teslimatı</h2>
-      <p>Altis Teknoloji, projeyi yalnızca yazılım veya donanım teslimatı olarak görmez. Her projede saha gerçekleri, kullanıcı alışkanlıkları, veri akışı, entegrasyon gereksinimleri ve sürdürülebilir operasyon birlikte ele alınır.</p>
-    </div>
-    <div class="proj-list">
+    <SectionHead
+      eyebrow="Proje Yaklaşımı"
+      heading="Fikirden çalışan sisteme: uçtan uca proje teslimatı"
+      description="Altis Teknoloji, projeyi yalnızca yazılım veya donanım teslimatı olarak görmez. Her projede saha gerçekleri, kullanıcı alışkanlıkları, veri akışı, entegrasyon gereksinimleri ve sürdürülebilir operasyon birlikte ele alınır."
+    />
+    <div class="proj-list" data-reveal data-reveal-delay="100">
       <div class="proj-step">
         <div class="n">01</div>
         <h4>Keşif &amp; Analiz</h4>
@@ -1508,12 +1306,12 @@ const schema = [
 <!-- ============== Trust ============== -->
 <section class="trust" id="about">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Deneyim &amp; Güven</div>
-      <h2>Sahada deneyimli, yazılımda güçlü, entegrasyonda esnek</h2>
-      <p>Altis Teknoloji ve Yazılım, 2003'ten bu yana sanayi tesislerinin üretim süreçlerini dijitalleştirmektedir. Endüstri 4.0, IIoT, RFID, BLE, UWB ve Auto-ID teknolojilerini kendi geliştirdiğimiz platformlarla birleştirerek sahadan kurumsal sisteme kesintisiz veri akışı kuruyoruz.</p>
-    </div>
-    <div class="trust-grid">
+    <SectionHead
+      eyebrow="Deneyim &amp; Güven"
+      heading="Sahada deneyimli, yazılımda güçlü, entegrasyonda esnek"
+      description="Altis Teknoloji ve Yazılım, 2003'ten bu yana sanayi tesislerinin üretim süreçlerini dijitalleştirmektedir. Endüstri 4.0, IIoT, RFID, BLE, UWB ve Auto-ID teknolojilerini kendi geliştirdiğimiz platformlarla birleştirerek sahadan kurumsal sisteme kesintisiz veri akışı kuruyoruz."
+    />
+    <div class="trust-grid" data-reveal data-reveal-delay="100">
       <div class="trust-card">
         <div class="ph">Yıllık Deneyim</div>
         <div class="big">23+</div>
@@ -1535,15 +1333,7 @@ const schema = [
         <div class="lbl">Türkiye çözüm ortağı · RTLS &amp; bebek koruma</div>
       </div>
     </div>
-    <p style="margin-top:48px;font-size:14px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.1em">— Referanslar &amp; Çözüm Ortakları —</p>
-    <div class="trust-logos">
-      <div class="trust-logo">LOGO · 01</div>
-      <div class="trust-logo">LOGO · 02</div>
-      <div class="trust-logo">LOGO · 03</div>
-      <div class="trust-logo">LOGO · 04</div>
-      <div class="trust-logo">LOGO · 05</div>
-      <div class="trust-logo">LOGO · 06</div>
-    </div>
+    <LogoMarquee logos={partnerLogos} label="Referanslar & Çözüm Ortakları" />
     <p style="margin-top:32px;font-size:13.5px;max-width:640px;margin-left:auto;margin-right:auto">Farklı sektörlerde yürüttüğümüz projelerden elde ettiğimiz saha deneyimini, ölçeklenebilir yazılım platformlarımızla birleştiriyoruz.</p>
   </div>
 </section>
@@ -1561,7 +1351,7 @@ const schema = [
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Uygulanabilir çözüm önerisi &amp; mimari taslak</li>
       </ul>
     </div>
-    <form class="cta-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Teşekkürler — sizinle iletişime geçeceğiz';">
+    <form class="cta-form" onsubmit="this.querySelector('button').textContent='Teşekkürler — sizinle iletişime geçeceğiz';return false;">
       <h3>Demo Talep Et</h3>
       <p class="sub">Ekibimiz proje ihtiyacınızı analiz ederek size en uygun çözüm yaklaşımıyla dönüş sağlar.</p>
       <div class="form-grid">
@@ -1724,14 +1514,14 @@ p{margin:0;color:var(--text-muted);text-wrap:pretty}
 }
 .hero-badge{
   display:inline-flex;align-items:center;gap:10px;
-  padding:7px 14px 7px 8px;border-radius:999px;
+  padding:7px 14px 7px 8px;border-radius:6px;
   background:#fff;border:1px solid var(--border);
   font-size:12.5px;font-weight:600;color:var(--slate);
   box-shadow:var(--shadow-sm);
 }
 .hero-badge .pill{
   background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;
-  padding:3px 9px;border-radius:999px;text-transform:uppercase;
+  padding:3px 9px;border-radius:6px;text-transform:uppercase;
 }
 .hero h1{margin-top:24px}
 .hero-sub{font-size:19px;line-height:1.55;color:var(--text-muted);max-width:540px;margin-top:24px}
@@ -2106,16 +1896,6 @@ section{padding:var(--section-y) 0}
 }
 .trust-card .big{font-size:36px;font-weight:700;color:var(--navy-800);font-family:"JetBrains Mono",monospace}
 .trust-card .lbl{font-size:13px;color:var(--text-muted);margin-top:6px}
-.trust-logos{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:48px;
-}
-.trust-logo{
-  height:64px;border:1px dashed var(--border);border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint);
-  background:#FAFBFE;
-}
-
 /* CTA */
 .cta-section{
   background:var(--navy-800);color:#fff;position:relative;overflow:hidden;
@@ -2207,7 +1987,6 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
   .proj-list{grid-template-columns:repeat(2,1fr)}
   .cta-grid{grid-template-columns:1fr;gap:48px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .trust-logos{grid-template-columns:repeat(3,1fr)}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:720px){
@@ -2229,7 +2008,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
 
 <style>
 .ptl-section{
-  position:relative;padding:120px 0;overflow:hidden;
+  position:relative;padding:var(--section-y) 0;overflow:hidden;
   background:
     radial-gradient(900px 500px at 85% 30%, rgba(232,163,23,.10), transparent 60%),
     linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
@@ -2242,7 +2021,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
           mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 .ptl-section .container{position:relative}
-.ptl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.ptl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
 .ptl-section .eyebrow{color:#B8800F}
 .ptl-section .eyebrow::before{background:#E8A317}
 .ptl-section .product-name{
@@ -2305,7 +2084,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
 
 @media (max-width:1100px){
   .ptl-grid{grid-template-columns:1fr;gap:48px}
-  .ptl-section{padding:80px 0}
+  .ptl-section{padding:var(--section-y) 0}
 }
 @media (max-width:720px){
   .ptl-feat-row{grid-template-columns:1fr}
@@ -2314,7 +2093,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
 </style>
 
 <style>
-.att-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#F4FAF7 0%,#fff 100%)}
+.att-section{position:relative;padding:var(--section-y) 0;overflow:hidden;background:linear-gradient(180deg,#F4FAF7 0%,#fff 100%)}
 .att-section::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(800px 500px at 85% 30%, rgba(16,169,104,.10), transparent 60%);
@@ -2426,7 +2205,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
 
 @media (max-width:1100px){
   .att-grid{grid-template-columns:1fr;gap:48px}
-  .att-section{padding:80px 0}
+  .att-section{padding:var(--section-y) 0}
   .att-phone-mini{right:0}
 }
 @media (max-width:720px){
@@ -2436,7 +2215,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
 </style>
 
 <style>
-.rox-section{position:relative;padding:120px 0;overflow:hidden;background:linear-gradient(180deg,#FAFBFE 0%,#F1EEFA 100%)}
+.rox-section{position:relative;padding:var(--section-y) 0;overflow:hidden;background:linear-gradient(180deg,#FAFBFE 0%,#F1EEFA 100%)}
 .rox-section::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(800px 500px at 15% 30%, rgba(124,58,237,.10), transparent 60%);
@@ -2545,7 +2324,7 @@ footer{background:#0A1438;color:rgba(255,255,255,.7);padding:80px 0 32px;font-si
 
 @media (max-width:1100px){
   .rox-grid{grid-template-columns:1fr;gap:48px}
-  .rox-section{padding:80px 0}
+  .rox-section{padding:var(--section-y) 0}
 }
 @media (max-width:720px){
   .rox-feat-row{grid-template-columns:1fr}

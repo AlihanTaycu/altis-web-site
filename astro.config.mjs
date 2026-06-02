@@ -4,6 +4,13 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://www.altis.com.tr',
+  vite: {
+    server: {
+      watch: {
+        ignored: ['!**/src/data/**'],
+      },
+    },
+  },
   integrations: [
     sitemap({
       i18n: {

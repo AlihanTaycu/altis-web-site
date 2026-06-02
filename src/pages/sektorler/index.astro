@@ -1,5 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
+import HubHero from '../../components/sections/HubHero.astro';
+import HubCard from '../../components/sections/HubCard.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import { Warehouse, Store, Factory } from '@lucide/astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -16,45 +20,93 @@ const schema = {
   lang="tr"
   alternateUrl="https://www.altis.com.tr/en/sectors/"
 >
-  <section class="hub-hero">
+  <HubHero
+    eyebrow="Sektörler"
+    heading="Her sektör için aynı teknoloji değil, doğru operasyon modeli."
+    description="Altis, RFID ve IoT altyapısını sektöre göre kurgular: depoda sevkiyat doğrulama, mağazada stok görünürlüğü, fabrikada OEE ve bakım zekâsı."
+  />
+
+  <section class="hub-list">
     <div class="container">
-      <div class="eyebrow">Sektörler</div>
-      <h1>Her sektör için aynı teknoloji değil, doğru operasyon modeli.</h1>
-      <p>Altis, RFID ve IoT altyapısını sektöre göre kurgular: depoda sevkiyat doğrulama, mağazada stok görünürlüğü, fabrikada OEE ve bakım zekâsı.</p>
+      <div class="featured-row" data-reveal>
+        <HubCard
+          variant="big"
+          href="/sektorler/depo-lojistik/"
+          Icon={Warehouse}
+          tag="Depo & Lojistik"
+          title="Depo & Lojistik"
+          desc="RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryolarıyla depo operasyonunu uçtan uca görünür kılar."
+        >
+          <svg slot="visual" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="wh-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#EEF3FF" />
+                <stop offset="1" stop-color="#E8FAFD" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="480" height="200" rx="10" fill="url(#wh-bg)" />
+            {[0, 1, 2].map(row => (
+              [0, 1, 2, 3, 4].map(col => (
+                <rect x={40 + col * 75} y={50 + row * 38} width="60" height="28" rx="3" fill="#fff" stroke="#D5DEF0" />
+              ))
+            ))}
+            <g transform="translate(420, 60)">
+              <rect x="0" y="0" width="40" height="100" rx="5" fill="#00125C" />
+              <circle cx="20" cy="30" r="8" fill="#18B7D6" />
+              <rect x="6" y="55" width="28" height="3" rx="1.5" fill="#fff" opacity=".6" />
+              <rect x="6" y="62" width="20" height="3" rx="1.5" fill="#fff" opacity=".4" />
+            </g>
+          </svg>
+        </HubCard>
+
+        <div class="featured-small-stack">
+          <HubCard
+            href="/sektorler/perakende-tekstil/"
+            Icon={Store}
+            tag="Perakende"
+            title="Perakende & Tekstil"
+            desc="Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu."
+          />
+          <HubCard
+            variant="dark"
+            href="/sektorler/uretim/"
+            Icon={Factory}
+            tag="Üretim"
+            title="Üretim"
+            desc="OEE, kestirimci bakım, enerji izleme ve SCADA/MES/ERP entegrasyonu ile akıllı fabrika zinciri."
+          />
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="hub-list">
-    <div class="container grid">
-      <a class="hub-card" href="/sektorler/depo-lojistik/">
-        <span class="tag">Depo &amp; Lojistik</span>
-        <h2>Depo &amp; Lojistik</h2>
-        <p>RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryoları.</p>
-      </a>
-      <a class="hub-card" href="/sektorler/perakende-tekstil/">
-        <span class="tag">Perakende &amp; Tekstil</span>
-        <h2>Perakende &amp; Tekstil</h2>
-        <p>Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu.</p>
-      </a>
-      <a class="hub-card" href="/sektorler/uretim/">
-        <span class="tag">Üretim</span>
-        <h2>Üretim</h2>
-        <p>OEE, kestirimci bakım, enerji izleme, üretim izlenebilirliği ve SCADA/MES/ERP entegrasyonu.</p>
-      </a>
-    </div>
-  </section>
+  <CTABanner
+    heading="Sektörünüze özel operasyon modelini konuşalım"
+    description="Depo, perakende veya üretim — sahadaki ihtiyacınıza göre doğru RFID/IoT kurgusunu birlikte tasarlayalım."
+    secondaryLabel="Çözümleri İncele"
+    secondaryHref="/cozumler/"
+  />
 </Base>
 
 <style>
-.hub-hero { padding: 96px 0 52px; background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%); }
-.hub-hero h1 { max-width: 900px; margin-top: 18px; font-size: clamp(38px, 5vw, 62px); }
-.hub-hero p { max-width: 760px; margin-top: 20px; font-size: 19px; }
-.hub-list { padding: 40px 0 100px; }
-.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.hub-card { display: grid; gap: 14px; min-height: 280px; padding: 30px; border: 1px solid var(--border); border-radius: 8px; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
-.hub-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--primary); }
-.hub-card h2 { font-size: 28px; }
-.hub-card p { font-size: 16px; }
-.tag { width: fit-content; color: var(--primary); background: var(--bg-blue); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 700; }
-@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } .hub-card { min-height: auto; } }
+  .hub-list { padding: 40px 0 80px; }
+
+  .featured-row {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 20px;
+  }
+  .featured-small-stack {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 1000px) {
+    .featured-row { grid-template-columns: 1fr; }
+    .featured-small-stack { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+  }
 </style>

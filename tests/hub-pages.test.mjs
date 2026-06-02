@@ -16,7 +16,7 @@ const pages = [
   {
     path: '../src/pages/sektorler/index.astro',
     name: 'sectors hub',
-    required: ['Sektörler', 'Depo &amp; Lojistik', 'Perakende &amp; Tekstil', 'Üretim', '/sektorler/depo-lojistik/', '/sektorler/perakende-tekstil/', '/sektorler/uretim/'],
+    required: ['Sektörler', 'Depo & Lojistik', 'Perakende & Tekstil', 'Üretim', '/sektorler/depo-lojistik/', '/sektorler/perakende-tekstil/', '/sektorler/uretim/'],
   },
   {
     path: '../src/pages/iletisim.astro',

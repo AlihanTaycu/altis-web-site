@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { products } from '../../../data/el-terminalleri';
+import type { Product } from '../../../data/el-terminalleri';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -10,7 +11,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   }));
 };
 
-const { product } = Astro.props;
+const { product } = Astro.props as { product: Product };
 
 const related = products.filter(p => p.slug !== product.slug && p.brand === product.brand).slice(0, 3);
 const otherRelated = related.length < 3
