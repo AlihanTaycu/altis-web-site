@@ -66,7 +66,9 @@ test('solution pages include mobile-specific overflow containment', async () => 
 });
 
 test('solution hub has a narrow-screen typography guard', async () => {
-  const hub = await source('src/pages/cozumler/index.astro');
+  // Hub hero styles are centralized in the shared HubHero component,
+  // used by /cozumler, /sektorler and /urunler hub pages.
+  const hubHero = await source('src/components/sections/HubHero.astro');
 
-  assert.match(hub, /@media \(max-width: 760px\)[\s\S]*\.hub-hero h1\{[^}]*overflow-wrap:break-word/s);
+  assert.match(hubHero, /@media \(max-width: 760px\)[\s\S]*\.hub-hero h1\s*\{[^}]*overflow-wrap:\s*break-word/s);
 });

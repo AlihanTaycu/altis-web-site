@@ -1,6 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Glasses, Tag, Radio, Smartphone, Printer, Store, ArrowUpRight } from '@lucide/astro';
+import HubHero from '../../components/sections/HubHero.astro';
+import HubCard from '../../components/sections/HubCard.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import { Glasses, Tag, Radio, Smartphone, Printer, Store } from '@lucide/astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -18,306 +21,132 @@ const schema = {
   lang="tr"
   alternateUrl="https://www.altis.com.tr/en/products/"
 >
-  <section class="hub-hero">
-    <div class="container">
-      <div class="eyebrow">Ürün Portföyü</div>
-      <h1>RFID donanımı ve hands-free saha cihazları.</h1>
-      <p>Projelerinize en uygun RFID donanımını ve akıllı gözlük çözümünü seçin. Altis Teknoloji, sektör lideri markalarla çalışarak ihtiyacınıza göre yapılandırılmış ürün ve entegrasyon desteği sunar.</p>
-    </div>
-  </section>
+  <HubHero
+    eyebrow="Ürün Portföyü"
+    heading="RFID donanımı ve hands-free saha cihazları."
+    description="Projelerinize en uygun RFID donanımını ve akıllı gözlük çözümünü seçin. Altis Teknoloji, sektör lideri markalarla çalışarak ihtiyacınıza göre yapılandırılmış ürün ve entegrasyon desteği sunar."
+  />
 
   <section class="hub-list">
     <div class="container">
-      <div class="featured-row">
-        <a class="hub-card hub-card-big" href="/urunler/akilli-gozluk/">
-          <div class="card-head">
-            <span class="card-icon"><Glasses size={26} stroke-width={1.7} /></span>
-            <span class="card-tag">Akıllı Gözlükler</span>
-          </div>
-          <h2>Vuzix Akıllı Gözlükler</h2>
-          <p>Depo, üretim ve saha operasyonlarında hands-free çalışma için Vuzix M400, M4000 ve LX1 akıllı gözlükler. Türkiye distribütörü Altis Teknoloji.</p>
-          <div class="card-visual" aria-hidden="true">
-            <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="vx-bg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#EEF3FF" />
-                  <stop offset="1" stop-color="#E8FAFD" />
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" width="480" height="220" rx="10" fill="url(#vx-bg)" />
-              <g transform="translate(110, 70)">
-                <rect x="0" y="20" width="80" height="50" rx="10" fill="#fff" stroke="#00125C" stroke-width="2" />
-                <rect x="100" y="20" width="80" height="50" rx="10" fill="#fff" stroke="#00125C" stroke-width="2" />
-                <line x1="80" y1="40" x2="100" y2="40" stroke="#00125C" stroke-width="3" />
-                <rect x="180" y="32" width="80" height="6" rx="3" fill="#00125C" />
-                <rect x="-20" y="32" width="20" height="6" rx="3" fill="#00125C" />
-                <circle cx="40" cy="45" r="12" fill="#18B7D6" opacity=".4" />
-                <circle cx="140" cy="45" r="12" fill="#18B7D6" opacity=".4" />
-                <text x="40" y="50" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#18B7D6" text-anchor="middle">AR</text>
-                <text x="140" y="50" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#18B7D6" text-anchor="middle">AR</text>
-              </g>
-              <g transform="translate(300, 160)">
-                <rect x="0" y="0" width="60" height="20" rx="3" fill="#00125C" opacity=".1" />
-                <text x="30" y="13" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#00125C" text-anchor="middle">M400</text>
-              </g>
-              <g transform="translate(370, 160)">
-                <rect x="0" y="0" width="60" height="20" rx="3" fill="#00125C" opacity=".1" />
-                <text x="30" y="13" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#00125C" text-anchor="middle">M4000</text>
-              </g>
-            </svg>
-          </div>
-          <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
-        </a>
+      <div class="featured-row" data-reveal>
+        <HubCard
+          variant="big"
+          href="/urunler/akilli-gozluk/"
+          Icon={Glasses}
+          tag="Akıllı Gözlükler"
+          title="Vuzix Akıllı Gözlükler"
+          desc="Depo, üretim ve saha operasyonlarında hands-free çalışma için Vuzix M400, M4000 ve LX1 akıllı gözlükler. Türkiye distribütörü Altis Teknoloji."
+        >
+          <svg slot="visual" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="vx-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#EEF3FF" />
+                <stop offset="1" stop-color="#E8FAFD" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="480" height="220" rx="10" fill="url(#vx-bg)" />
+            <g transform="translate(110, 70)">
+              <rect x="0" y="20" width="80" height="50" rx="10" fill="#fff" stroke="#00125C" stroke-width="2" />
+              <rect x="100" y="20" width="80" height="50" rx="10" fill="#fff" stroke="#00125C" stroke-width="2" />
+              <line x1="80" y1="40" x2="100" y2="40" stroke="#00125C" stroke-width="3" />
+              <rect x="180" y="32" width="80" height="6" rx="3" fill="#00125C" />
+              <rect x="-20" y="32" width="20" height="6" rx="3" fill="#00125C" />
+              <circle cx="40" cy="45" r="12" fill="#18B7D6" opacity=".4" />
+              <circle cx="140" cy="45" r="12" fill="#18B7D6" opacity=".4" />
+              <text x="40" y="50" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#18B7D6" text-anchor="middle">AR</text>
+              <text x="140" y="50" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#18B7D6" text-anchor="middle">AR</text>
+            </g>
+            <g transform="translate(300, 160)">
+              <rect x="0" y="0" width="60" height="20" rx="3" fill="#00125C" opacity=".1" />
+              <text x="30" y="13" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#00125C" text-anchor="middle">M400</text>
+            </g>
+            <g transform="translate(370, 160)">
+              <rect x="0" y="0" width="60" height="20" rx="3" fill="#00125C" opacity=".1" />
+              <text x="30" y="13" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#00125C" text-anchor="middle">M4000</text>
+            </g>
+          </svg>
+        </HubCard>
 
         <div class="featured-small-stack">
-          <a class="hub-card" href="/urunler/rfid-etiketler/">
-            <div class="card-head">
-              <span class="card-icon"><Tag size={22} stroke-width={1.7} /></span>
-              <span class="card-tag">Etiket</span>
-            </div>
-            <h2>RFID Etiketler</h2>
-            <p>UHF, HF ve özel form faktörlü etiketler. Tekstilden metale, dondurucu ortamdan dış sahaya her uygulama.</p>
-            <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
-          </a>
-          <a class="hub-card" href="/urunler/rfid-okuyucular/">
-            <div class="card-head">
-              <span class="card-icon"><Radio size={22} stroke-width={1.7} /></span>
-              <span class="card-tag">Okuyucu</span>
-            </div>
-            <h2>RFID Okuyucular</h2>
-            <p>Sabit portal, portatif ve entegre okuyucu çözümleri. Yüksek okuma hızı ve geniş alan kapsama.</p>
-            <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
-          </a>
+          <HubCard
+            href="/urunler/rfid-etiketler/"
+            Icon={Tag}
+            tag="Etiket"
+            title="RFID Etiketler"
+            desc="UHF, HF ve özel form faktörlü etiketler. Tekstilden metale, dondurucu ortamdan dış sahaya her uygulama."
+          />
+          <HubCard
+            href="/urunler/rfid-okuyucular/"
+            Icon={Radio}
+            tag="Okuyucu"
+            title="RFID Okuyucular"
+            desc="Sabit portal, portatif ve entegre okuyucu çözümleri. Yüksek okuma hızı ve geniş alan kapsama."
+          />
         </div>
       </div>
 
-      <div class="row-three">
-        <a class="hub-card" href="/urunler/rfid-el-terminalleri/">
-          <div class="card-head">
-            <span class="card-icon"><Smartphone size={22} stroke-width={1.7} /></span>
-            <span class="card-tag">El Terminali</span>
-          </div>
-          <h2>RFID El Terminalleri</h2>
-          <p>Mobil RFID işlem ve envanter terminalleri. Depo, mağaza ve saha operasyonlarında hız ve doğruluk.</p>
-          <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
-        </a>
-
-        <a class="hub-card" href="/urunler/rfid-yazicilar/">
-          <div class="card-head">
-            <span class="card-icon"><Printer size={22} stroke-width={1.7} /></span>
-            <span class="card-tag">Yazıcı</span>
-          </div>
-          <h2>RFID Yazıcılar</h2>
-          <p>RFID etiket yazdırma ve kodlama cihazları. Masaüstünden endüstriyel ölçeğe tam çözüm yelpazesi.</p>
-          <span class="card-link">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
-        </a>
-
-        <a class="hub-card hub-card-dark" href="/urunler/rfid-perakende/">
-          <div class="card-head">
-            <span class="card-icon card-icon-dark"><Store size={22} stroke-width={1.7} /></span>
-            <span class="card-tag card-tag-dark">Perakende</span>
-          </div>
-          <h2>RFID Perakende</h2>
-          <p>Perakende operasyonlarına özel RFID çözümler. EAS, envanter sayımı ve müşteri deneyimi için entegre donanım.</p>
-          <span class="card-link card-link-dark">İncele <ArrowUpRight size={14} stroke-width={2.2} /></span>
-        </a>
-      </div>
-
-      <div class="cta-box">
-        <h2>Projeniz için doğru ürünü bulmak ister misiniz?</h2>
-        <p>Uzmanlarımız ihtiyaç analizi yaparak size en uygun RFID donanımını ve akıllı gözlük çözümünü önerir.</p>
-        <a href="/iletisim/" class="btn btn-primary">Uzmanla Konuşun</a>
+      <div class="row-three" data-reveal data-reveal-delay="120">
+        <HubCard
+          href="/urunler/rfid-el-terminalleri/"
+          Icon={Smartphone}
+          tag="El Terminali"
+          title="RFID El Terminalleri"
+          desc="Mobil RFID işlem ve envanter terminalleri. Depo, mağaza ve saha operasyonlarında hız ve doğruluk."
+        />
+        <HubCard
+          href="/urunler/rfid-yazicilar/"
+          Icon={Printer}
+          tag="Yazıcı"
+          title="RFID Yazıcılar"
+          desc="RFID etiket yazdırma ve kodlama cihazları. Masaüstünden endüstriyel ölçeğe tam çözüm yelpazesi."
+        />
+        <HubCard
+          variant="dark"
+          href="/urunler/rfid-perakende/"
+          Icon={Store}
+          tag="Perakende"
+          title="RFID Perakende"
+          desc="Perakende operasyonlarına özel RFID çözümler. EAS, envanter sayımı ve müşteri deneyimi için entegre donanım."
+        />
       </div>
     </div>
   </section>
+
+  <CTABanner
+    heading="Projeniz için doğru ürünü bulmak ister misiniz?"
+    description="Uzmanlarımız ihtiyaç analizi yaparak size en uygun RFID donanımını ve akıllı gözlük çözümünü önerir."
+    primaryLabel="Uzmanla Konuşun"
+  />
 </Base>
 
 <style>
-.hub-hero {
-  padding: 96px 0 52px;
-  background: linear-gradient(180deg, #f6f8fc 0%, #fff 100%);
-}
-.hub-hero .eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--cyan);
-}
-.hub-hero h1 {
-  max-width: 900px;
-  margin-top: 18px;
-  font-size: clamp(38px, 5vw, 62px);
-  line-height: 1.08;
-}
-.hub-hero p {
-  max-width: 760px;
-  margin-top: 20px;
-  font-size: 19px;
-  color: var(--text-muted);
-}
+  .hub-list { padding: 40px 0 80px; }
 
-.hub-list { padding: 40px 0 100px; }
+  .featured-row {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .featured-small-stack {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+  .row-three {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
 
-.featured-row {
-  display: grid;
-  grid-template-columns: 1.55fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-.featured-small-stack {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-}
-.row-three {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  margin-bottom: 48px;
-}
-
-.hub-card {
-  display: grid;
-  gap: 12px;
-  padding: 26px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fff;
-  color: var(--text);
-  align-content: start;
-  transition: border-color .18s, box-shadow .18s, transform .18s;
-}
-.hub-card:hover {
-  border-color: var(--cyan);
-  box-shadow: 0 24px 50px -28px rgba(0, 18, 92, .28);
-  transform: translateY(-2px);
-}
-
-.card-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-.card-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: var(--bg-blue);
-  color: var(--primary);
-  flex-shrink: 0;
-  transition: background .18s, color .18s;
-}
-.hub-card:hover .card-icon {
-  background: rgba(24, 183, 214, .14);
-  color: var(--cyan);
-}
-.card-tag {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.hub-card h2 {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--primary);
-  letter-spacing: -.01em;
-  margin: 0;
-}
-.hub-card p {
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-.card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: auto;
-  padding-top: 8px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--cyan);
-  transition: gap .18s;
-}
-.hub-card:hover .card-link { gap: 9px; }
-
-.hub-card-big {
-  padding: 32px;
-  gap: 14px;
-}
-.hub-card-big h2 { font-size: 32px; }
-.hub-card-big p { font-size: 16px; max-width: 540px; }
-.card-visual {
-  margin-top: 8px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.card-visual svg { width: 100%; height: auto; display: block; }
-
-.hub-card-dark {
-  background: linear-gradient(150deg, #00125C 0%, #0A1E75 100%);
-  border-color: transparent;
-  color: #fff;
-}
-.hub-card-dark:hover {
-  border-color: var(--cyan);
-  box-shadow: 0 24px 60px -28px rgba(24, 183, 214, .55);
-}
-.hub-card-dark h2 { color: #fff; }
-.hub-card-dark p { color: rgba(255, 255, 255, .78); }
-.card-icon-dark {
-  background: rgba(24, 183, 214, .18);
-  color: var(--cyan);
-}
-.hub-card-dark:hover .card-icon-dark {
-  background: rgba(24, 183, 214, .28);
-  color: #fff;
-}
-.card-tag-dark { color: var(--cyan); }
-.card-link-dark { color: var(--cyan); }
-
-.cta-box {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 48px 40px;
-  text-align: center;
-}
-.cta-box h2 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 12px;
-}
-.cta-box p {
-  color: var(--text-muted);
-  margin-bottom: 24px;
-}
-
-@media (max-width: 1000px) {
-  .featured-row { grid-template-columns: 1fr; }
-  .featured-small-stack { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
-  .row-three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 760px) {
-  .hub-hero { padding: 72px 0 40px; overflow: hidden; }
-  .hub-hero h1{font-size:clamp(34px,10vw,44px);overflow-wrap:break-word;}
-  .hub-hero p { font-size: 17px; overflow-wrap: break-word; }
-  .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; }
-  .row-three { grid-template-columns: 1fr; }
-  .hub-card { padding: 22px; }
-  .hub-card-big { padding: 24px; }
-  .hub-card-big h2 { font-size: 26px; }
-  .cta-box { padding: 36px 24px; }
-}
+  @media (max-width: 1000px) {
+    .featured-row { grid-template-columns: 1fr; }
+    .featured-small-stack { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+    .row-three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+    .row-three { grid-template-columns: 1fr; }
+  }
 </style>

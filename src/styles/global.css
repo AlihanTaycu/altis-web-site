@@ -47,7 +47,18 @@
 
   /* Spacing */
   --section-y: 120px;
+  --section-y-tight: 80px;
+  --hero-y: 110px;
   --container: 1240px;
+
+  /* Motion */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur-fast: .18s;
+  --dur-base: .3s;
+  --dur-slow: .6s;
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(24, 183, 214, .45);
 }
 
 /* ---- Reset ---- */
@@ -67,10 +78,32 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
+/* ---- Accessible focus ---- */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+a:focus-visible, button:focus-visible, .btn:focus-visible,
+input:focus-visible, textarea:focus-visible, select:focus-visible,
+.card:focus-visible, [tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
 /* ---- Layout ---- */
 .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 32px; }
 main, section, .container { min-width: 0; }
 section { padding: var(--section-y) 0; }
+
+/* Section rhythm variants — use instead of ad-hoc paddings */
+.section--tight { padding: var(--section-y-tight) 0; }
+.section--hero { padding: var(--hero-y) 0; }
+.section--flush-top { padding-top: 0; }
+.section--soft { background: var(--bg-soft); }
+.section--blue { background: var(--bg-blue); }
+.section--dark { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); color: #fff; }
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: #fff; }
 
 /* ---- Typography ---- */
 h1, h2, h3, h4 {
@@ -103,6 +136,9 @@ p { margin: 0; color: var(--text-muted); text-wrap: pretty; }
   height: 1px;
   background: var(--accent);
 }
+/* On dark backgrounds (navy hero/award sections) */
+.eyebrow--on-dark { color: var(--cyan); }
+.eyebrow--on-dark::before { background: var(--cyan); }
 
 /* ---- Buttons ---- */
 .btn {
@@ -139,6 +175,7 @@ p { margin: 0; color: var(--text-muted); text-wrap: pretty; }
 .btn-ghost { background: transparent; color: var(--text); padding: 8px 14px; }
 .btn-ghost:hover { background: var(--bg-soft); }
 .btn-lg { padding: 16px 28px; font-size: 15.5px; border-radius: 12px; }
+.btn:active { transform: translateY(0) scale(.98); }
 
 /* ---- Section header ---- */
 .section-head { max-width: 780px; margin: 0 auto 64px; text-align: center; }
@@ -183,11 +220,34 @@ p { margin: 0; color: var(--text-muted); text-wrap: pretty; }
   50%       { opacity: .15; }
 }
 
+/* ---- Scroll reveal (driven by Reveal.astro IntersectionObserver) ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal="fade"] { transform: none; }
+[data-reveal="scale"] { transform: scale(.96); }
+[data-reveal].is-revealed { opacity: 1; transform: none; }
+
 /* ---- Responsive ---- */
 @media (max-width: 1100px) {
-  :root { --section-y: 96px; }
+  :root { --section-y: 96px; --hero-y: 88px; }
 }
 @media (max-width: 720px) {
-  :root { --section-y: 72px; }
+  :root { --section-y: 72px; --section-y-tight: 56px; --hero-y: 64px; }
   .container { padding: 0 20px; }
+}
+
+/* ---- Reduced motion: honor user preference everywhere ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
 }

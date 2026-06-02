@@ -59,12 +59,12 @@ const capabilities = [
         </a>
       </div>
 
-      <div class="hero-meta">
-        <div class="meta-item"><span class="meta-num">12+</span><span class="meta-lbl">Yıllık saha deneyimi</span></div>
+      <div class="hero-meta" data-reveal>
+        <div class="meta-item"><span class="meta-num" data-count="12+">12+</span><span class="meta-lbl">Yıllık saha deneyimi</span></div>
         <div class="meta-divider"></div>
-        <div class="meta-item"><span class="meta-num">50+</span><span class="meta-lbl">Aktif kurumsal müşteri</span></div>
+        <div class="meta-item"><span class="meta-num" data-count="50+">50+</span><span class="meta-lbl">Aktif kurumsal müşteri</span></div>
         <div class="meta-divider"></div>
-        <div class="meta-item"><span class="meta-num">23</span><span class="meta-lbl">Donanım çözüm ortağı</span></div>
+        <div class="meta-item"><span class="meta-num" data-count="23">23</span><span class="meta-lbl">Donanım çözüm ortağı</span></div>
       </div>
     </div>
   </section>
@@ -85,7 +85,7 @@ const capabilities = [
 
   {/* ============ TAG&TRACE SHOWCASE ============ */}
   <section class="showcase showcase-light">
-    <div class="container showcase-grid">
+    <div class="container showcase-grid" data-reveal>
       <div class="showcase-content">
         <div class="eyebrow-inline"><Tag size={14} stroke-width={2} /> RFID &amp; Auto-ID Platformu</div>
         <h2>Tag&Trace</h2>
@@ -154,7 +154,7 @@ const capabilities = [
   {/* ============ PREDICTIVO SHOWCASE ============ */}
   <section class="showcase showcase-dark">
     <div class="glow glow-cyan-soft" aria-hidden="true"></div>
-    <div class="container showcase-grid showcase-grid-flip">
+    <div class="container showcase-grid showcase-grid-flip" data-reveal>
       <div class="mockup mockup-dark">
         <div class="mockup-chrome mockup-chrome-dark">
           <span class="dot dot-r"></span>
@@ -236,7 +236,7 @@ const capabilities = [
         <h2>İki platform, tek mühendislik standardı.</h2>
         <p>Cihaz yönetiminden raporlamaya, entegrasyondan yetkilendirmeye kadar her katman aynı kurumsal standartla kurulur.</p>
       </div>
-      <div class="cap-grid">
+      <div class="cap-grid" data-reveal data-reveal-delay="100">
         {capabilities.map(({ Icon, title, desc }) => (
           <div class="cap-card">
             <span class="cap-icon"><Icon size={20} stroke-width={1.8} /></span>

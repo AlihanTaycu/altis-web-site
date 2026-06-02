@@ -1,0 +1,69 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+interface Props {
+  stats: Stat[];
+  variant?: 'default' | 'on-dark';
+  align?: 'left' | 'center';
+}
+const { stats, variant = 'default', align = 'left' } = Astro.props;
+---
+
+<div class:list={['stat-strip', `stat-strip--${variant}`, `is-${align}`]}>
+  {stats.map(s => (
+    <div class="stat">
+      <span class="stat-value" data-count={s.value}>{s.value}</span>
+      <span class="stat-label">{s.label}</span>
+    </div>
+  ))}
+</div>
+
+<style>
+  .stat-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .stat-strip.is-center { justify-content: center; }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 28px;
+    border-right: 1px solid var(--border);
+  }
+  .stat:first-child { padding-left: 0; }
+  .stat:last-child { border-right: none; padding-right: 0; }
+  .stat-value {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--text-faint);
+  }
+
+  /* On dark navy backgrounds */
+  .stat-strip--on-dark .stat { border-right-color: rgba(255, 255, 255, .15); }
+  .stat-strip--on-dark .stat-value { color: var(--cyan); }
+  .stat-strip--on-dark .stat-label { color: rgba(255, 255, 255, .55); }
+
+  @media (max-width: 600px) {
+    .stat-strip { flex-direction: column; gap: 20px; }
+    .stat {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 0 0 20px;
+    }
+    .stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat-strip--on-dark .stat { border-bottom-color: rgba(255, 255, 255, .12); }
+  }
+</style>

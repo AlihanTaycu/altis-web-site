@@ -1,6 +1,7 @@
 ﻿---
 import Base from '../../layouts/Base.astro';
 import SectionHead from '../../components/sections/SectionHead.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -545,7 +546,7 @@ const schema = {
       heading="Yaygın endüstri protokolleriyle uyumlu"
       description="Predictivo, IoT ve endüstriyel dünyada yaygın olarak kullanılan protokol ve cihaz kategorileriyle uyumludur. Mevcut sensörler, sayaçlar ve sistemler değiştirilmeden platforma bağlanır."
     />
-    <div class="matrix-grid">
+    <div class="matrix-grid" data-reveal data-reveal-delay="100">
       <div class="matrix-card">
         <h5>Endüstriyel Protokoller</h5>
         <div class="items">
@@ -635,7 +636,7 @@ const schema = {
       heading="Predictivo nerede kullanılır?"
       description="IoT verisinin yönetilebilir operasyona dönüştüğü her yerde Predictivo bir bağlantı katmanı, bir analiz motoru ve bir karar destek panosu olarak konumlanır."
     />
-    <div class="uc-grid">
+    <div class="uc-grid" data-reveal data-reveal-delay="100">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>
         <h3>Kestirimci Bakım</h3>
@@ -694,87 +695,24 @@ const schema = {
   </div>
 </section>
 
-<!-- Tag&Trace cross-link -->
-<section class="crosslink">
-  <div class="container">
-    <div class="crosslink-card">
-      <div>
-        <div class="lbl">Birlikte Kullanım</div>
-        <h3>Tag&amp;Trace ile birleşince ne olur?</h3>
-        <p>Tag&amp;Trace sahadaki RFID, etiket ve cihaz orkestrasyonunu yönetir; Predictivo bu cihazlardan ve sensörlerden gelen veriyi dashboard, alarm ve raporlara dönüştürür. İkisi bir arada, Auto-ID ve IoT'yi aynı operasyon zekâsı çatısı altında birleştirir.</p>
-      </div>
-      <a class="btn btn-primary btn-lg" href="/platformlar/tag-trace/">Tag&amp;Trace'i İncele
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
-<section class="cta-section">
-  <div class="container cta-inner">
-    <div class="eyebrow">Demo &amp; Keşif</div>
-    <h2>Predictivo'yu kendi operasyonunuzda görelim</h2>
-    <p>Ekibimizle bir keşif görüşmesi planlayın. Hangi verileri topladığınızı, hangi karar süreçlerini iyileştirmek istediğinizi birlikte değerlendirelim — uygulanabilir bir yol haritası ve canlı dashboard demosu ile dönelim.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="/iletisim/">Demo Talep Et
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="btn btn-secondary btn-lg" href="/platformlar/tag-trace/">Tag&amp;Trace'e Geç</a>
-    </div>
-  </div>
-</section>
+<CTABanner
+  variant="dark"
+  eyebrow="Demo &amp; Keşif"
+  heading="Predictivo'yu kendi operasyonunuzda görelim"
+  description="Ekibimizle bir keşif görüşmesi planlayın. Hangi verileri topladığınızı, hangi karar süreçlerini iyileştirmek istediğinizi birlikte değerlendirelim — uygulanabilir bir yol haritası ve canlı dashboard demosu ile dönelim."
+  secondaryLabel="Tag&amp;Trace'e Geç"
+  secondaryHref="/platformlar/tag-trace/"
+/>
 </Base>
 
 <style>
 :root{
-  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;--navy-600:#1E2F8C;
-  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
-  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
-  --border:#E3E8F2;--border-soft:#EEF1F7;
-  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
-  --steel:#8B95A5;--slate:#334155;
-  --primary:var(--navy-800);--accent:var(--cyan);
-  /* Predictivo gets a deeper teal-cyan accent palette */
+  /* Page-specific tokens not in global.css */
   --predicto:#0F8FA8;
   --ok:#15a06b;--warn:#c47700;--crit:#d64545;
-  --radius:14px;--radius-lg:22px;
-  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
-  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
-  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
-  --container:1240px;
 }
-*,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-.container{max-width:var(--container);margin:0 auto;padding:0 32px}
 .mono{font-family:"JetBrains Mono",monospace}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
-h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
-h1{font-size:clamp(40px,5vw,68px);font-weight:700}
-h2{font-size:clamp(30px,3.2vw,44px);font-weight:700;letter-spacing:-.025em}
-h3{font-size:20px;font-weight:600}
-h4{font-size:16px;font-weight:600}
-p{margin:0;color:var(--text-muted);text-wrap:pretty}
-
-/* Header */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border-soft)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{display:flex;align-items:center;gap:12px}
-.logo img{height:30px;width:auto}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-size:14.5px;color:var(--text);font-weight:500}
-.nav-links a:hover{color:var(--primary)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
-.btn-primary:hover{transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
-.btn-secondary:hover{background:var(--bg-soft)}
-.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
 
 /* Breadcrumb */
 .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px}
@@ -1030,21 +968,6 @@ section{padding:110px 0}
 .crosslink-card .lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint)}
 .crosslink-card h3{font-size:26px;margin-top:10px;margin-bottom:10px}
 .crosslink-card p{font-size:15px;max-width:600px}
-
-/* CTA */
-.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
-.cta-section::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(700px 400px at 80% 50%, rgba(24,183,214,.15), transparent 60%);
-}
-.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
-.cta-inner .eyebrow{color:var(--cyan)}
-.cta-inner .eyebrow::before{background:var(--cyan)}
-.cta-inner h2{color:#fff;margin-top:18px}
-.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
-.cta-inner .hero-cta{justify-content:center;margin-top:36px}
-.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25);background:transparent}
-.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
 
 /* Footer */
 footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}

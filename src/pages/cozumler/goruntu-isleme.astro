@@ -179,7 +179,7 @@ const schema = {
       heading="Teoride kolay görünen barkod okuma, sahada darboğaza dönüşür"
       description="Standart endüstriyel okuyucular ideal koşullar için tasarlanmıştır. Gerçek üretim sahası ise ideal değildir."
     />
-    <div class="problem-grid">
+    <div class="problem-grid" data-reveal data-reveal-delay="100">
       <div class="problem-group">
         <div class="problem-group-label">Saha Koşulları</div>
         <div class="problem-item">
@@ -256,7 +256,7 @@ const schema = {
       heading="Donanım değil, yazılım kazanır"
       description="Pahalı ve özel donanımlar yerine, mevcut standart endüstriyel kameraları yapay zeka tabanlı bir okuma motoruyla akıllandırıyoruz. Yatırım korunur, kapasite artırılır."
     />
-    <div class="approach-grid">
+    <div class="approach-grid" data-reveal data-reveal-delay="100">
       <div class="approach-card">
         <div class="ac-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6M9 12h6M9 15h4"></path></svg>
@@ -297,7 +297,7 @@ const schema = {
       heading="Görüntüyü anlamlandırmak için dört algoritma"
       description="Her saha koşulu farklı bir sorun yaratır. TrueScan, bu dört kritik sorunu ayrı algoritmalarla çözer."
     />
-    <div class="cap-grid">
+    <div class="cap-grid" data-reveal data-reveal-delay="100">
       <div class="cap-card">
         <div class="cap-num">01</div>
         <h3>Perspektif Düzeltme</h3>
@@ -329,7 +329,7 @@ const schema = {
 <!-- Case study: Yeşilyurt -->
 <section class="casestudy">
   <div class="container">
-    <div class="cs-grid">
+    <div class="cs-grid" data-reveal>
       <div class="cs-copy">
         <div class="eyebrow">Referans Proje</div>
         <h2 style="margin-top:18px">Yeşilyurt Demir Çelik</h2>
@@ -394,7 +394,7 @@ const schema = {
       heading="Üç adımda sahaya alın"
       description="Tek hat pilotuyla başlar, ölçülen sonuçla yaygınlaştırırız. Risksiz."
     />
-    <div class="process-grid">
+    <div class="process-grid" data-reveal data-reveal-delay="100">
       <div class="process-card">
         <div class="process-num">01</div>
         <div class="process-time">15–30 dk</div>
@@ -464,45 +464,6 @@ const schema = {
 </Base>
 
 <style>
-:root{
-  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;--navy-600:#1E2F8C;
-  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
-  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
-  --border:#E3E8F2;--border-soft:#EEF1F7;
-  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
-  --steel:#8B95A5;--slate:#334155;
-  --primary:var(--navy-800);--accent:var(--cyan);
-  --radius:14px;--radius-lg:22px;
-  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
-  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
-  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
-  --container:1240px;
-}
-*,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-.container{max-width:var(--container);margin:0 auto;padding:0 32px}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
-h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
-h1{font-size:clamp(36px,4.5vw,60px);font-weight:700}
-h2{font-size:clamp(28px,3vw,42px);font-weight:700;letter-spacing:-.025em}
-h3{font-size:20px;font-weight:600}
-p{margin:0;color:var(--text-muted);text-wrap:pretty}
-section{padding:110px 0}
-.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
-.section-head h2{margin-top:18px}
-.section-head p{font-size:18px;margin-top:18px}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
-.btn-primary:hover{transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
-.btn-secondary:hover{background:var(--bg-soft)}
-.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
-
 /* Breadcrumb */
 .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px}
 .breadcrumb a{color:var(--text-muted)}.breadcrumb a:hover{color:var(--primary)}
@@ -522,8 +483,8 @@ section{padding:110px 0}
           mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
 }
 .hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.solution-pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;flex-wrap:wrap;white-space:normal;line-height:1.35;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
-.solution-pill .pill-tag{background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
+.solution-pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;flex-wrap:wrap;white-space:normal;line-height:1.35;padding:7px 14px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.solution-pill .pill-tag{background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
 .product-name{
   font-size:clamp(52px,7vw,88px);font-weight:800;letter-spacing:-.04em;line-height:1;
   background:linear-gradient(135deg,#00125C 0%,#1E2F8C 60%,#18B7D6 130%);
@@ -540,7 +501,7 @@ section{padding:110px 0}
 .compare-card{max-width:100%;min-width:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden}
 .compare-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border-soft);background:#FCFCFE}
 .compare-head .ttl{font-size:13px;font-weight:600;color:var(--navy-800)}
-.badge-live{background:#E6F7EE;color:#15a06b;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:.04em}
+.badge-live{background:#E6F7EE;color:#15a06b;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.04em}
 .compare-body{padding:28px}
 .compare-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-radius:10px;margin-bottom:12px}
 .compare-row.fail{background:#FEF2F2;border:1px solid #FCA5A5}
@@ -738,7 +699,7 @@ section{padding:110px 0}
 .process-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--accent)}
 .process-card-mid{background:linear-gradient(180deg,#F6F8FC 0%,#fff 100%);border-color:var(--border)}
 .process-num{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--accent)}
-.process-time{display:inline-flex;width:fit-content;padding:4px 10px;background:var(--bg-blue);color:var(--primary);font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:6px}
+.process-time{display:inline-flex;width:fit-content;padding:4px 10px;background:var(--bg-blue);color:var(--primary);font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px}
 .process-card h3{font-size:22px;font-weight:800;color:var(--primary);letter-spacing:-.01em;line-height:1.15}
 .process-card p{font-size:14.5px;line-height:1.55;color:var(--text-muted);margin:0}
 .process-list{list-style:none;padding:0;margin:0;display:grid;gap:6px}

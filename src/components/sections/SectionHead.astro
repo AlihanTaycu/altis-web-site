@@ -12,7 +12,7 @@ const classes = ['section-head', align === 'left' ? 'left' : null].filter(Boolea
 const style = maxWidth ? `max-width:${maxWidth}` : undefined;
 ---
 
-<div class={classes} style={style}>
+<div class={classes} style={style} data-reveal>
   <div class="eyebrow" set:html={eyebrow} />
   <h2 set:html={heading} />
   {description && <p set:html={description} />}

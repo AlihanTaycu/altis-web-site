@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import SectionHead from '../components/sections/SectionHead.astro';
 import LogoMarquee from '../components/sections/LogoMarquee.astro';
+import StatStrip from '../components/sections/StatStrip.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
 import { partnerLogos } from '../data/partner-logos';
 
 const schema = {
@@ -28,24 +30,15 @@ const schema = {
     <div class="eyebrow about-eyebrow">Hakkımızda</div>
     <h1>Fiziksel operasyonları dijital karar sistemlerine bağlıyoruz.</h1>
     <p class="hero-sub">RFID, IoT, Auto-ID ve endüstriyel entegrasyon deneyimini depo, perakende, tekstil ve üretim sahalarında çalışan pratik ürünlere dönüştürüyoruz. 2003'ten bu yana — 20 yılı aşkın saha ve yazılım deneyimiyle.</p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="v">23+</span>
-        <span class="l">Yıl Deneyim</span>
-      </div>
-      <div class="hero-stat">
-        <span class="v">5</span>
-        <span class="l">Kendi Ürünü</span>
-      </div>
-      <div class="hero-stat">
-        <span class="v">#1</span>
-        <span class="l">Bilişim 500</span>
-      </div>
-      <div class="hero-stat">
-        <span class="v">4</span>
-        <span class="l">Teknoloji Alanı</span>
-      </div>
-    </div>
+    <StatStrip
+      variant="on-dark"
+      stats={[
+        { value: '23+', label: 'Yıl Deneyim' },
+        { value: '5', label: 'Kendi Ürünü' },
+        { value: '#1', label: 'Bilişim 500' },
+        { value: '4', label: 'Teknoloji Alanı' },
+      ]}
+    />
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="/iletisim/">Bizimle Görüşün</a>
       <a class="btn btn-secondary btn-lg" href="#hikaye">Hikayemizi Okuyun</a>
@@ -56,7 +49,7 @@ const schema = {
 <!-- ===== Şirket Hikayesi ===== -->
 <section class="story" id="hikaye">
   <div class="container">
-    <div class="story-layout">
+    <div class="story-layout" data-reveal>
       <div class="story-text">
         <div class="eyebrow">Kuruluşumuz</div>
         <h2>2003'ten bu yana — saha deneyimi, yazılım gücü</h2>
@@ -97,7 +90,7 @@ const schema = {
       eyebrow="Yaklaşımımız"
       heading="Teknolojiyi değil, çalışan operasyon sistemleri kuruyoruz"
     />
-    <div class="principles-grid">
+    <div class="principles-grid" data-reveal data-reveal-delay="100">
       <article class="principle-card">
         <div class="pc-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -126,7 +119,7 @@ const schema = {
 <!-- ===== Bilişim 500 ===== -->
 <section class="award-section">
   <div class="container">
-    <div class="award-inner">
+    <div class="award-inner" data-reveal>
       <div class="award-text">
         <div class="eyebrow award-eyebrow">Başarılarımız · 2020</div>
         <h2>Türkiye'nin En Hızlı Büyüyen IT Şirketi</h2>
@@ -189,7 +182,7 @@ const schema = {
       heading="Küresel markalarla, yerel uzmanlıkla"
       description="Dünyanın önde gelen teknoloji markalarının Türkiye resmi iş ortağı olarak en güncel çözümleri sahaya taşıyoruz."
     />
-    <div class="partners-grid">
+    <div class="partners-grid" data-reveal data-reveal-delay="100">
 
       <article class="partner-card">
         <div class="partner-header">
@@ -260,16 +253,12 @@ const schema = {
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="about-cta">
-  <div class="container">
-    <h2>Projenizi birlikte değerlendirelim</h2>
-    <p>RFID, IoT, RTLS veya saha otomasyon projeniz için Altis Teknoloji ekibiyle tanışın.</p>
-    <div class="cta-btns">
-      <a href="/iletisim/" class="btn btn-primary btn-lg">Demo Talep Et</a>
-      <a href="/platformlar/tag-trace/" class="btn btn-secondary btn-lg">Platformları İncele</a>
-    </div>
-  </div>
-</section>
+<CTABanner
+  heading="Projenizi birlikte değerlendirelim"
+  description="RFID, IoT, RTLS veya saha otomasyon projeniz için Altis Teknoloji ekibiyle tanışın."
+  secondaryLabel="Platformları İncele"
+  secondaryHref="/platformlar/tag-trace/"
+/>
 
 </Base>
 
@@ -306,38 +295,7 @@ const schema = {
   color: rgba(255,255,255,.72);
   margin-bottom: 44px;
 }
-.hero-stats {
-  display: flex;
-  gap: 0;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  max-width: 640px;
-}
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-  min-width: 120px;
-  padding: 0 28px 0 0;
-  border-right: 1px solid rgba(255,255,255,.15);
-  margin-right: 28px;
-}
-.hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
-.hero-stat .v {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--cyan);
-  font-family: "JetBrains Mono", monospace;
-  line-height: 1;
-}
-.hero-stat .l {
-  font-size: 11px;
-  color: rgba(255,255,255,.55);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
+.about-hero :global(.stat-strip) { max-width: 640px; margin-bottom: 40px; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ===== Story ===== */
@@ -558,16 +516,6 @@ const schema = {
 /* ===== Refs ===== */
 .refs { padding: 60px 0; background: #fff; text-align: center; }
 
-/* ===== CTA ===== */
-.about-cta {
-  background: var(--bg-soft, #f6f8fc);
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-.about-cta h2 { font-size: clamp(22px, 2.8vw, 36px); color: var(--primary); margin-bottom: 14px; }
-.about-cta p { font-size: 16px; color: var(--text-muted); max-width: 520px; margin: 0 auto 32px; line-height: 1.7; }
-.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
   .story-layout { grid-template-columns: 1fr; gap: 48px; }
@@ -576,9 +524,6 @@ const schema = {
   .partners-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  .hero-stats { flex-direction: column; gap: 20px; }
-  .hero-stat { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: 20px; }
-  .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
   .award-cards { grid-template-columns: 1fr 1fr; }
 }
 </style>

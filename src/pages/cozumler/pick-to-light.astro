@@ -172,7 +172,7 @@ const schema = [
       heading="Sipariş gelir, ışık yanar, operatör toplar."
       description="Pick-to-Light sürecin tamamını basitleştirir: operatörün cebinden kâğıt çıkar, gözden ekran çıkar, dikkati sadece rafa ve ışığa odaklanır."
     />
-    <div class="how-grid">
+    <div class="how-grid" data-reveal data-reveal-delay="100">
       <div class="how-step">
         <div class="n">01</div>
         <h3>Sipariş Düşer</h3>
@@ -198,7 +198,7 @@ const schema = [
 <!-- Hardware showcase -->
 <section class="hardware">
   <div class="container">
-    <div class="hw-grid">
+    <div class="hw-grid" data-reveal data-reveal-delay="100">
       <div class="hw-display">
         <div class="module-big">
           <div class="led-big"></div>
@@ -273,7 +273,7 @@ const schema = [
       heading="Pick-to-Light, Put-to-Light, Cluster Picking"
       description="Aynı donanım, farklı operasyonel mantıkla çalışabilir. Toplama, dağıtım ve çoklu sipariş senaryolarının her birine özel mod desteği."
     />
-    <div class="mode-grid">
+    <div class="mode-grid" data-reveal data-reveal-delay="100">
       <div class="mode-card">
         <span class="tag">Mode 01</span>
         <h3>Pick-to-Light</h3>
@@ -334,7 +334,7 @@ const schema = [
       heading="Işıklı toplama, ölçülebilir kazanç"
       description="Pick-to-Light özellikle yüksek-frekanslı, çok-kalemli sipariş yapısında belirgin kazanç sağlar. Tipik pilot sonuçları:"
     />
-    <div class="why-grid">
+    <div class="why-grid" data-reveal data-reveal-delay="100">
       <div class="why-card">
         <div class="b">×2-3<sup></sup></div>
         <div class="lbl">Toplama hızı</div>
@@ -405,7 +405,7 @@ const schema = [
       heading="Pick-to-Light nerede en güçlü?"
       description="Yüksek-frekanslı, çok-kalemli ve hata maliyeti yüksek toplama operasyonlarında Pick-to-Light vazgeçilmez bir çözümdür."
     />
-    <div class="uc-grid">
+    <div class="uc-grid" data-reveal data-reveal-delay="100">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><path d="M3 4h2l2.4 11.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 7H6"/></svg></div>
         <h3>E-Ticaret Depoları</h3>
@@ -470,55 +470,17 @@ const schema = [
 
 <style>
 :root{
-  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;
-  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
-  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
-  --border:#E3E8F2;--border-soft:#EEF1F7;
-  --slate:#334155;
-  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
-  /* Pick-to-Light yellow — warm amber that reads as classic PtL */
+  /* Pick-to-Light accent tokens */
   --ptl:#E8A317;
   --ptl-deep:#B8800F;
   --ptl-soft:#FFF6E0;
   --ptl-glow:rgba(232,163,23,.35);
   --ok:#15a06b;--warn:#c47700;--crit:#d64545;
-  --primary:var(--navy-800);
-  --radius:14px;--radius-lg:22px;
-  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
-  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
-  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
-  --container:1240px;
 }
-*,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-.container{max-width:var(--container);margin:0 auto;padding:0 32px}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ptl-deep);display:inline-flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--ptl)}
-h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
-h1{font-size:clamp(40px,5vw,68px);font-weight:700}
-h2{font-size:clamp(30px,3.2vw,44px);font-weight:700;letter-spacing:-.025em}
-h3{font-size:20px;font-weight:600}
-h4{font-size:16px;font-weight:600}
-p{margin:0;color:var(--text-muted);text-wrap:pretty}
-
-/* Header */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border-soft)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{display:flex;align-items:center;gap:12px}
-.logo img{height:30px;width:auto}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-size:14.5px;color:var(--text);font-weight:500}
-.nav-links a:hover{color:var(--primary)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
-.btn-primary:hover{transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
-.btn-secondary:hover{background:var(--bg-soft)}
-.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
+/* PtL amber eyebrow override */
+.eyebrow{color:var(--ptl-deep)}
+.eyebrow::before{background:var(--ptl)}
+/* PtL accent button */
 .btn-ptl{background:var(--ptl);color:#1a1200;box-shadow:0 6px 20px -10px var(--ptl-glow)}
 .btn-ptl:hover{background:var(--ptl-deep);color:#fff;transform:translateY(-1px)}
 

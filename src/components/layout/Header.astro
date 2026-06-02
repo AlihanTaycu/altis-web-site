@@ -387,6 +387,12 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--border-soft);
+  transition: background var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
+}
+.site-header.scrolled {
+  background: rgba(255, 255, 255, .96);
+  border-bottom-color: transparent;
+  box-shadow: 0 8px 30px -18px rgba(0, 18, 92, .25);
 }
 .nav {
   display: flex;
@@ -789,33 +795,49 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
 </style>
 
 <script>
-const btn = document.querySelector('.hamburger') as HTMLButtonElement | null;
-const menu = document.getElementById('mobile-menu');
-if (btn && menu) {
-  btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    menu.setAttribute('aria-hidden', String(open));
-    menu.classList.toggle('open', !open);
-  });
-  document.addEventListener('click', (e) => {
-    if (!btn.contains(e.target as Node) && !menu.contains(e.target as Node)) {
-      btn.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.classList.remove('open');
-    }
-  });
-}
+  // Re-runs on every View Transitions navigation; re-queries fresh DOM nodes.
+  function initHeaderMenu() {
+    const btn = document.querySelector('.hamburger') as HTMLButtonElement | null;
+    const menu = document.getElementById('mobile-menu');
 
-// Mobile accordion toggles
-document.querySelectorAll<HTMLButtonElement>('.mobile-toggle').forEach((toggle) => {
-  toggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    const subLinks = toggle.closest('.mobile-link-group')?.querySelector('.mobile-sub-links');
-    if (subLinks) subLinks.classList.toggle('open', !expanded);
-  });
-});
+    if (btn && menu && !btn.dataset.bound) {
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.setAttribute('aria-hidden', String(open));
+        menu.classList.toggle('open', !open);
+      });
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('.mobile-toggle').forEach((toggle) => {
+      if (toggle.dataset.bound) return;
+      toggle.dataset.bound = 'true';
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        const subLinks = toggle.closest('.mobile-link-group')?.querySelector('.mobile-sub-links');
+        if (subLinks) subLinks.classList.toggle('open', !expanded);
+      });
+    });
+
+    // Outside-click closes menu — bound once at document level.
+    if (!(window as any).__altisHeaderBound) {
+      (window as any).__altisHeaderBound = true;
+      document.addEventListener('click', (e) => {
+        const b = document.querySelector('.hamburger');
+        const m = document.getElementById('mobile-menu');
+        if (b && m && !b.contains(e.target as Node) && !m.contains(e.target as Node)) {
+          b.setAttribute('aria-expanded', 'false');
+          m.setAttribute('aria-hidden', 'true');
+          m.classList.remove('open');
+        }
+      });
+    }
+  }
+
+  if (document.readyState !== 'loading') initHeaderMenu();
+  else document.addEventListener('DOMContentLoaded', initHeaderMenu);
 </script>
