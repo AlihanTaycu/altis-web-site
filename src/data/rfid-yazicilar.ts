@@ -3,6 +3,8 @@ export type Printer = {
   title: string;
   brand: string;
   image: string;
+  gallery?: string[];
+  datasheet?: string;
   shortDesc: string;
   description: string;
   storeUrl: string;

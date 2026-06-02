@@ -1,0 +1,26 @@
+---
+import EnglishProductDetail from '../../../../components/products/EnglishProductDetail.astro';
+import { retailProducts } from '../../../../data/rfid-perakende';
+
+export function getStaticPaths() {
+  return retailProducts.map(item => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const related = retailProducts
+  .filter(product => product.slug !== item.slug)
+  .sort((a, b) => Number(b.brand === item.brand) - Number(a.brand === item.brand))
+  .slice(0, 4);
+---
+
+<EnglishProductDetail
+  item={item}
+  categoryTitle="RFID Retail Products"
+  listHref="/en/products/rfid-retail/"
+  relatedHrefBase="/en/products/rfid-retail/"
+  related={related}
+  alternateUrl={`https://www.altis.com.tr/urunler/perakende/${item.slug}/`}
+/>

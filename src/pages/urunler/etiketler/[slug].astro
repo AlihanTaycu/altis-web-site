@@ -1,0 +1,162 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { rfidTags } from '../../../data/rfid-etiketler';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => rfidTags.map(tag => ({
+  params: { slug: tag.slug },
+  props: { tag },
+}));
+
+const { tag } = Astro.props;
+const contactHref = `/iletisim/?urun=${encodeURIComponent(tag.title)}`;
+const related = rfidTags
+  .filter(item => item.slug !== tag.slug && (item.brand === tag.brand || item.onMetal === tag.onMetal))
+  .slice(0, 4);
+
+const specs = [
+  ['Model', tag.model],
+  ['SKU', tag.sku],
+  ['Frekans', tag.frequencyBand || tag.frequency],
+  ['Protokol', tag.protocol],
+  ['Çip', tag.chip],
+  ['Yüzey', tag.onMetal ? 'Metal üstü' : 'Metal dışı'],
+  ['Form Faktörü', tag.formFactor],
+  ['Ölçü', tag.sizeText],
+  ['Malzeme', tag.material],
+  ['Sabit Okuma', tag.fixedReadRange],
+  ['El Terminali Okuma', tag.handheldReadRange],
+  ['Çalışma Sıcaklığı', tag.operatingTemp],
+  ['IP', tag.ipRating],
+].filter(([, value]) => value);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: tag.title,
+  description: tag.shortDesc,
+  brand: { '@type': 'Brand', name: tag.brand },
+  image: tag.image,
+};
+---
+
+<Base title={`${tag.title} - Altis Teknoloji`} description={tag.shortDesc} {schema} lang="tr" alternateUrl={`https://www.altis.com.tr/en/products/rfid-tags/${tag.slug}/`}>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/urunler/">Ürünler</a>
+      <span>&rsaquo;</span>
+      <a href="/urunler/rfid-etiketler/">RFID Etiketler</a>
+      <span>&rsaquo;</span>
+      <span>{tag.title}</span>
+    </div>
+  </nav>
+
+  <section class="product-hero container">
+    <div class="image-col">
+      <div class="image-wrap">
+        <img src={tag.image} alt={tag.title} width="560" height="420" loading="eager" />
+        <span class:list={['surface-badge', { metal: tag.onMetal }]}>{tag.onMetal ? 'Metal Üstü' : 'Metal Dışı'}</span>
+      </div>
+      {tag.datasheet && (
+        <a href={tag.datasheet} class="datasheet-card" target="_blank" rel="noopener">
+          <span class="datasheet-icon">PDF</span>
+          <span>
+            <strong>{tag.title} Teknik Dokümanı</strong>
+            <small>Datasheet dosyasını aç</small>
+          </span>
+        </a>
+      )}
+    </div>
+
+    <div class="info-col">
+      <span class="brand-badge">{tag.brand}</span>
+      <h1>{tag.title}</h1>
+      <p class="description">{tag.description || tag.shortDesc}</p>
+      <div class="tag-row">
+        {tag.tags.slice(0, 6).map(item => <span>{item}</span>)}
+      </div>
+      <div class="cta-group">
+        <a href={contactHref} class="btn btn-primary btn-lg">Teklif Al</a>
+        <a href="/iletisim/" class="btn btn-outline btn-lg">Uzmanla Görüş</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="details-section container">
+    <div class="detail-card full">
+      <h2>Teknik Özellikler</h2>
+      <div class="spec-grid">
+        {specs.map(([label, value]) => (
+          <div class="spec-item">
+            <span>{label}</span>
+            <strong>{value}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+    {tag.applications.length > 0 && (
+      <div class="detail-card full">
+        <h2>Kullanım Alanları</h2>
+        <div class="app-list">
+          {tag.applications.map(item => <span>{item}</span>)}
+        </div>
+      </div>
+    )}
+  </section>
+
+  {related.length > 0 && (
+    <section class="related-section container">
+      <h2>Benzer Etiketler</h2>
+      <div class="related-grid">
+        {related.map(item => (
+          <a href={`/urunler/etiketler/${item.slug}/`} class="related-card">
+            <img src={item.image} alt={item.title} loading="lazy" width="200" height="150" />
+            <span>{item.brand}</span>
+            <strong>{item.title}</strong>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+.breadcrumb-bar { border-bottom: 1px solid var(--border-soft); background: #fff; }
+.breadcrumb-inner { display: flex; align-items: center; gap: 8px; padding: 14px 0; font-size: 13px; color: var(--text-muted); flex-wrap: wrap; }
+.breadcrumb-inner a { color: var(--text-muted); }
+.breadcrumb-inner a:hover, .breadcrumb-inner span:last-child { color: var(--primary); font-weight: 600; }
+.product-hero { display: grid; grid-template-columns: .85fr 1fr; gap: 58px; padding-top: 56px; padding-bottom: 56px; align-items: start; }
+.image-col { display: flex; flex-direction: column; gap: 18px; }
+.image-wrap { background: #f8f9fb; border: 1px solid var(--border); border-radius: 16px; padding: 34px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.image-wrap img { width: 100%; height: 100%; object-fit: contain; }
+.surface-badge { position: absolute; top: 16px; right: 16px; background: #eef3ff; color: var(--primary); border: 1px solid rgba(0,18,92,.12); font-size: 11px; font-weight: 800; padding: 6px 11px; border-radius: 999px; }
+.surface-badge.metal { background: #fff4f3; color: #c62828; border-color: #ffd7d3; }
+.datasheet-card { display: flex; align-items: center; gap: 14px; color: var(--text); background: linear-gradient(180deg,#fff,#f8fbff); border: 1px solid #d9e3f3; border-radius: 12px; padding: 16px; }
+.datasheet-icon { width: 52px; height: 52px; border-radius: 10px; color: #c62828; background: #fff4f3; border: 1px solid #ffd7d3; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; }
+.datasheet-card strong { display: block; color: var(--primary); font-size: 14px; }
+.datasheet-card small { color: var(--text-muted); font-size: 12px; }
+.brand-badge { display: inline-flex; color: #fff; background: var(--cyan); border-radius: 20px; padding: 5px 13px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px; }
+.info-col h1 { font-size: clamp(1.5rem,3vw,2.1rem); font-weight: 800; color: var(--primary); line-height: 1.18; margin-bottom: 18px; }
+.description { color: var(--text-muted); font-size: 14.5px; line-height: 1.75; margin-bottom: 22px; }
+.tag-row, .app-list { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag-row span, .app-list span { font-size: 11.5px; font-weight: 700; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 5px 10px; border-radius: 5px; }
+.cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+.btn-lg { padding: 14px 28px; font-size: 15px; }
+.btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
+.details-section { display: grid; gap: 20px; padding-bottom: 60px; }
+.detail-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+.detail-card h2, .related-section h2 { color: var(--primary); font-size: 1.15rem; font-weight: 800; margin-bottom: 18px; }
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; }
+.spec-item { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+.spec-item span { display: block; color: var(--text-muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+.spec-item strong { color: var(--primary); font-size: 13px; line-height: 1.4; }
+.related-section { padding-bottom: 70px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(210px,1fr)); gap: 16px; }
+.related-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 7px; }
+.related-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f8f9fb; border-radius: 8px; padding: 10px; }
+.related-card span { color: var(--cyan); font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.related-card strong { color: var(--primary); font-size: 13px; line-height: 1.35; }
+@media (max-width: 768px) {
+  .product-hero { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>

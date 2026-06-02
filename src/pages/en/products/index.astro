@@ -1,0 +1,68 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const title = 'RFID Products - Altis Technology';
+const description = 'Explore RFID tags, readers, handheld terminals, printers, and retail RFID systems supplied by Altis Technology.';
+const categories = [
+  {
+    title: 'RFID Tags',
+    href: '/en/products/rfid-tags/',
+    text: 'RFID labels and tags for textile, logistics, retail, and industrial tracking projects.',
+  },
+  {
+    title: 'RFID Readers',
+    href: '/en/products/rfid-readers/',
+    text: 'Fixed and integrated RFID readers from Altis and global hardware brands.',
+  },
+  {
+    title: 'RFID Handheld Terminals',
+    href: '/en/products/rfid-handhelds/',
+    text: 'Mobile RFID terminals for field operations, inventory, and asset tracking.',
+  },
+  {
+    title: 'RFID Printers',
+    href: '/en/products/rfid-printers/',
+    text: 'RFID label printers for desktop, industrial, and mobile printing workflows.',
+  },
+  {
+    title: 'RFID Retail Products',
+    href: '/en/products/rfid-retail/',
+    text: 'Altis retail RFID gates, tunnels, counters, and item-level reading systems.',
+  },
+];
+---
+
+<Base {title} {description} lang="en" alternateUrl="https://www.altis.com.tr/urunler/">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">RFID Product Portfolio</p>
+      <h1>RFID Products</h1>
+      <p class="lead">Choose the right RFID hardware for store operations, logistics, manufacturing, and asset visibility projects.</p>
+    </div>
+  </section>
+
+  <section class="category-grid container">
+    {categories.map(category => (
+      <a href={category.href} class="category-card">
+        <span class="card-kicker">Altis Technology</span>
+        <h2>{category.title}</h2>
+        <p>{category.text}</p>
+        <span class="card-action">View Products</span>
+      </a>
+    ))}
+  </section>
+</Base>
+
+<style>
+.hero { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); color: #fff; padding: 76px 0 64px; }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+.hero h1 { font-size: clamp(2rem,4vw,3rem); color: #fff; font-weight: 800; margin-bottom: 14px; }
+.lead { max-width: 680px; color: rgba(255,255,255,.78); font-size: 1.06rem; line-height: 1.7; margin: 0; }
+.category-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 22px; padding-top: 56px; padding-bottom: 72px; }
+.category-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 26px; min-height: 230px; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.category-card:hover { transform: translateY(-2px); border-color: rgba(24,183,214,.55); box-shadow: 0 12px 30px rgba(0,18,92,.08); }
+.card-kicker { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
+.category-card h2 { color: var(--primary); font-size: 1.18rem; font-weight: 800; line-height: 1.25; margin-bottom: 12px; }
+.category-card p { color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 0; flex: 1; }
+.card-action { margin-top: 20px; color: var(--primary); font-weight: 800; font-size: 13px; }
+</style>
