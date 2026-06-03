@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { retailProducts } from '../../../data/rfid-perakende';
+import type { RetailProduct } from '../../../data/rfid-perakende';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -10,7 +11,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   }));
 };
 
-const { product } = Astro.props;
+const { product } = Astro.props as { product: RetailProduct };
 
 const related = retailProducts.filter(p => p.slug !== product.slug).slice(0, 3);
 const contactHref = `/iletisim/?urun=${encodeURIComponent(product.title)}`;
@@ -404,7 +405,7 @@ const schema = {
   font-weight: 700;
   padding: 7px 12px;
   border: none;
-  border-radius: 999px;
+  border-radius: 6px;
   cursor: zoom-in;
   opacity: 0;
   transform: translateY(6px);
@@ -423,7 +424,7 @@ const schema = {
   text-transform: uppercase;
   text-align: center;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 6px;
 }
 
 .product-info { display: flex; flex-direction: column; gap: 16px; }
@@ -517,7 +518,7 @@ const schema = {
   font-weight: 800;
   color: #fff;
   background: #1479d4;
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 10px 18px;
   white-space: nowrap;
 }
@@ -658,7 +659,7 @@ const schema = {
   background: rgba(255, 255, 255, .12);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, .18);
-  border-radius: 999px;
+  border-radius: 6px;
   width: 44px;
   height: 44px;
   display: inline-flex;
@@ -684,7 +685,7 @@ const schema = {
   gap: 10px;
   background: rgba(255, 255, 255, .12);
   border: 1px solid rgba(255, 255, 255, .18);
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 6px 8px;
   backdrop-filter: blur(8px);
   z-index: 2;

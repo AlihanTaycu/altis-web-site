@@ -1,5 +1,6 @@
----
+﻿---
 import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -159,12 +160,12 @@ const schema = {
 <!-- Pain points -->
 <section class="pains">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Perakende &amp; Tekstilde</div>
-      <h2>Tanıdık geliyor mu?</h2>
-      <p>Hızlı moda, sezonluk yoğunluk ve mağaza-depo arasındaki kopukluk; doğru stoğun doğru mağazada bulunmasını her zaman zorlaştırır. RFID bu kopukluğu tamamen ortadan kaldıran tek teknolojidir.</p>
-    </div>
-    <div class="pain-grid">
+    <SectionHead
+      eyebrow="Perakende &amp; Tekstilde"
+      heading="Tanıdık geliyor mu?"
+      description="Hızlı moda, sezonluk yoğunluk ve mağaza-depo arasındaki kopukluk; doğru stoğun doğru mağazada bulunmasını her zaman zorlaştırır. RFID bu kopukluğu tamamen ortadan kaldıran tek teknolojidir."
+    />
+    <div class="pain-grid" data-reveal data-reveal-delay="100">
       <div class="pain-card">
         <div class="qty">↓ %65</div>
         <h3>Stok doğruluğu</h3>
@@ -192,11 +193,11 @@ const schema = {
 <!-- Solution mapping -->
 <section class="solution">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Çözüm Haritası</div>
-      <h2>Konfeksiyon, RFID için en olgun kullanım alanıdır</h2>
-      <p>Üründen sevkiyata, sevkiyattan mağaza rafına ve POS'a kadar tüm zincir tek bir Auto-ID platformu üzerinden orkestre edilir. Tag&amp;Trace bu zincirin merkezindeki katmandır.</p>
-    </div>
+    <SectionHead
+      eyebrow="Çözüm Haritası"
+      heading="Konfeksiyon, RFID için en olgun kullanım alanıdır"
+      description="Üründen sevkiyata, sevkiyattan mağaza rafına ve POS'a kadar tüm zincir tek bir Auto-ID platformu üzerinden orkestre edilir. Tag&amp;Trace bu zincirin merkezindeki katmandır."
+    />
     <div class="sol-map">
       <div class="sol-col">
         <h4>İhtiyaç</h4>
@@ -240,7 +241,7 @@ const schema = {
 <!-- RFID Hardware: Altis Tunnel + Box -->
 <section class="hw">
   <div class="container">
-    <div class="hw-grid">
+    <div class="hw-grid" data-reveal data-reveal-delay="100">
       <div>
         <span class="badge">Altis Donanımı</span>
         <h3>Altis tasarımı RFID tünel ve kutuları</h3>
@@ -321,12 +322,12 @@ const schema = {
 <!-- Use cases -->
 <section class="uc" id="use-cases">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Perakende &amp; Tekstil Senaryoları</div>
-      <h2>RFID için 6 uygulanabilir çözüm</h2>
-      <p>Tag&amp;Trace ve Altis RFID donanımı; konfeksiyon zincirinin her noktasına özel bir uygulama olarak konumlanır.</p>
-    </div>
-    <div class="uc-grid">
+    <SectionHead
+      eyebrow="Perakende &amp; Tekstil Senaryoları"
+      heading="RFID için 6 uygulanabilir çözüm"
+      description="Tag&amp;Trace ve Altis RFID donanımı; konfeksiyon zincirinin her noktasına özel bir uygulama olarak konumlanır."
+    />
+    <div class="uc-grid" data-reveal data-reveal-delay="100">
       <article class="uc-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg></div>
         <h3>RFID Etiket Üretimi</h3>
@@ -388,11 +389,11 @@ const schema = {
 <!-- Operations flow -->
 <section class="opflow">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Tedarik Zinciri Akışı</div>
-      <h2>Fabrikadan mağaza rafına, beş adımda</h2>
-      <p>Bir tişörtün üretim hattından çıkıp mağaza rafına gidene kadar geçtiği yol. Her adımda RFID okuması, her adımda doğrulanmış sistem kaydı.</p>
-    </div>
+    <SectionHead
+      eyebrow="Tedarik Zinciri Akışı"
+      heading="Fabrikadan mağaza rafına, beş adımda"
+      description="Bir tişörtün üretim hattından çıkıp mağaza rafına gidene kadar geçtiği yol. Her adımda RFID okuması, her adımda doğrulanmış sistem kaydı."
+    />
     <div class="op-steps">
       <div class="op-step">
         <div class="step-num">01</div>
@@ -431,12 +432,12 @@ const schema = {
 <!-- ROI -->
 <section class="roi">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Beklenen Etki</div>
-      <h2>RFID destekli perakende, ölçülebilir kazanç</h2>
-      <p>Konfeksiyon ve perakende projelerinde gözlemlenen tipik operasyonel iyileşmeler. Sonuçlar ürün karakteristiği, mağaza yapısı ve mevcut operasyon olgunluğuna göre farklılaşır.</p>
-    </div>
-    <div class="roi-grid">
+    <SectionHead
+      eyebrow="Beklenen Etki"
+      heading="RFID destekli perakende, ölçülebilir kazanç"
+      description="Konfeksiyon ve perakende projelerinde gözlemlenen tipik operasyonel iyileşmeler. Sonuçlar ürün karakteristiği, mağaza yapısı ve mevcut operasyon olgunluğuna göre farklılaşır."
+    />
+    <div class="roi-grid" data-reveal data-reveal-delay="100">
       <div class="roi-card">
         <div class="b">%99<sup>+</sup></div>
         <div class="lbl">Stok doğruluğu</div>
@@ -464,12 +465,12 @@ const schema = {
 <!-- Buyer FAQ -->
 <section class="buyer">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Hangi sorulara cevap veriyoruz?</div>
-      <h2>Karar verici profillerine göre</h2>
-      <p>Perakende RFID dönüşümü tek bir kişinin değil, bir ekibin kararıdır. Her rol farklı soru sorar; cevaplarımız her birine net olarak konuşur.</p>
-    </div>
-    <div class="buyer-grid">
+    <SectionHead
+      eyebrow="Hangi sorulara cevap veriyoruz?"
+      heading="Karar verici profillerine göre"
+      description="Perakende RFID dönüşümü tek bir kişinin değil, bir ekibin kararıdır. Her rol farklı soru sorar; cevaplarımız her birine net olarak konuşur."
+    />
+    <div class="buyer-grid" data-reveal data-reveal-delay="100">
       <div class="buyer-card">
         <span class="role-tag">Operasyon &amp; Mağaza</span>
         <h3>Personeli nasıl etkiler?</h3>
@@ -610,8 +611,8 @@ p{margin:0;color:var(--text-muted);text-wrap:pretty}
           mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 .hero-inner{position:relative;display:grid;grid-template-columns:1.05fr 1.05fr;gap:56px;align-items:center;margin-top:32px}
-.sector-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
-.sector-pill .pill-tag{background:var(--sector);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.sector-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.sector-pill .pill-tag{background:var(--sector);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
 .hero h1{margin-top:24px}
 .hero h1 em{color:var(--sector);font-style:normal}
 .hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:540px;line-height:1.6}

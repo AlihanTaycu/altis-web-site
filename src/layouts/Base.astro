@@ -42,6 +42,9 @@ const currentPath = Astro.url.pathname;
     {lang}
     {alternateUrl}
   />
+  <noscript>
+    <style>[data-reveal]{opacity:1 !important;transform:none !important;}</style>
+  </noscript>
 </head>
 <body>
   <Header {lang} {currentPath} />
@@ -49,5 +52,76 @@ const currentPath = Astro.url.pathname;
     <slot />
   </main>
   <Footer {lang} />
+
+  <script>
+    // ---- Interaction layer: scroll-reveal, count-up, header scroll state ----
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateCount(el: HTMLElement) {
+      const raw = el.dataset.count ?? el.textContent ?? '';
+      const match = raw.match(/^(\D*)([\d.,]+)(\D*)$/);
+      if (!match) return; // leave non-numeric values (e.g. "×2-3", "2D · QR") untouched
+      const [, prefix, numStr, suffix] = match;
+      const decimals = (numStr.split('.')[1] || '').length;
+      const target = parseFloat(numStr.replace(/,/g, ''));
+      if (Number.isNaN(target)) return;
+      const duration = 1100;
+      const start = performance.now();
+      function tick(now: number) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = (target * eased).toFixed(decimals);
+        el.textContent = `${prefix}${val}${suffix}`;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function initReveal() {
+      const items = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+      const counters = Array.from(document.querySelectorAll<HTMLElement>('[data-count]'));
+
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('is-revealed'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries, obs) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const el = entry.target as HTMLElement;
+          const delay = el.dataset.revealDelay;
+          if (delay) el.style.setProperty('--reveal-delay', `${delay}ms`);
+          el.classList.add('is-revealed');
+          obs.unobserve(el);
+        }
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      items.forEach(el => io.observe(el));
+
+      const co = new IntersectionObserver((entries, obs) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          animateCount(entry.target as HTMLElement);
+          obs.unobserve(entry.target);
+        }
+      }, { threshold: 0.6 });
+      counters.forEach(el => co.observe(el));
+    }
+
+    function initHeaderScroll() {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    function boot() {
+      initReveal();
+      initHeaderScroll();
+    }
+    if (document.readyState !== 'loading') boot();
+    else document.addEventListener('DOMContentLoaded', boot);
+  </script>
 </body>
 </html>
