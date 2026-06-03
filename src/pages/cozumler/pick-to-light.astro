@@ -70,7 +70,7 @@ const schema = [
             <span class="live">canlı</span>
           </div>
         </div>
-        <div class="rack">
+        <div class="rack" data-reveal>
           <!-- Shelf 1 -->
           <div class="rack-shelf">
             <div class="bin">
@@ -154,10 +154,10 @@ const schema = [
           </div>
         </div>
         <div class="rack-foot">
-          <div class="rfoot"><div class="l">Aktif Bin</div><div class="v amb">3</div></div>
+          <div class="rfoot"><div class="l">Aktif Bin</div><div class="v amb" data-count>3</div></div>
           <div class="rfoot"><div class="l">Toplanan</div><div class="v">4 / 12</div></div>
           <div class="rfoot"><div class="l">Süre</div><div class="v">02:14</div></div>
-          <div class="rfoot"><div class="l">Doğruluk</div><div class="v" style="color:#7ED957">100%</div></div>
+          <div class="rfoot"><div class="l">Doğruluk</div><div class="v" style="color:#7ED957" data-count>100%</div></div>
         </div>
       </div>
     </div>
@@ -550,7 +550,9 @@ const schema = [
   position:relative;height:60px;background:linear-gradient(180deg,#2a2a35,#1f1f28);
   border:1px solid rgba(255,255,255,.04);border-radius:4px;
   display:flex;flex-direction:column;justify-content:flex-end;padding:4px;
+  transition:transform .2s var(--ease,ease), border-color .2s;
 }
+.bin:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.14)}
 .bin .code{
   position:absolute;top:4px;left:5px;font-family:"JetBrains Mono",monospace;font-size:8.5px;
   color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.04em;
@@ -571,13 +573,22 @@ const schema = [
   width:14px;height:8px;background:#2a2a35;border-radius:2px;display:flex;align-items:center;justify-content:center;
 }
 /* Active states */
-.bin.active .lmod .led{background:var(--ptl);box-shadow:0 0 8px var(--ptl),0 0 14px var(--ptl-glow);animation:blink 1s infinite}
+.bin.active .lmod .led{background:var(--ptl);box-shadow:0 0 8px var(--ptl),0 0 14px var(--ptl-glow)}
 .bin.active .lmod .lcd{color:var(--ptl);text-shadow:0 0 6px var(--ptl-glow)}
 .bin.active{box-shadow:inset 0 0 0 1px var(--ptl),0 0 18px var(--ptl-glow)}
 .bin.active .code{color:var(--ptl);opacity:.8}
 .bin.done .lmod .led{background:var(--ok);box-shadow:0 0 4px rgba(21,160,107,.6)}
 .bin.done .lmod .lcd{color:var(--ok)}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.5}}
+/* Active LEDs breathe; staggered shelf-to-shelf for a gentle wave */
+@media (prefers-reduced-motion: no-preference){
+  .bin.active .lmod .led{animation:ledBreathe 1.9s ease-in-out infinite}
+  .rack-shelf:nth-child(2) .bin.active .lmod .led{animation-delay:.45s}
+  .rack-shelf:nth-child(3) .bin.active .lmod .led{animation-delay:.9s}
+  @keyframes ledBreathe{
+    0%,100%{box-shadow:0 0 6px var(--ptl),0 0 10px var(--ptl-glow);opacity:.82}
+    50%{box-shadow:0 0 12px var(--ptl),0 0 22px var(--ptl-glow);opacity:1}
+  }
+}
 
 .rack-foot{
   position:relative;margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;

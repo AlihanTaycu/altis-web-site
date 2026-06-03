@@ -69,9 +69,9 @@ const schema = {
           </a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="v">%80</div><div class="l">verimlilik artışı</div></div>
-          <div class="hero-stat"><div class="v">4</div><div class="l">teknoloji desteği</div></div>
-          <div class="hero-stat"><div class="v">15 gün</div><div class="l">ücretsiz deneme</div></div>
+          <div class="hero-stat"><div class="v" data-count>%80</div><div class="l">verimlilik artışı</div></div>
+          <div class="hero-stat"><div class="v" data-count>4</div><div class="l">teknoloji desteği</div></div>
+          <div class="hero-stat"><div class="v" data-count>15 gün</div><div class="l">ücretsiz deneme</div></div>
         </div>
       </div>
 
@@ -96,35 +96,35 @@ const schema = {
               </div>
               <div class="att-kpi">
                 <div class="l">Aktif Bakım</div>
-                <div class="v warn">8</div>
+                <div class="v warn" data-count>8</div>
                 <div class="meta">3 yaklaşıyor</div>
               </div>
               <div class="att-kpi">
                 <div class="l">Sayım Doğruluğu</div>
-                <div class="v ok">%99.4</div>
+                <div class="v ok" data-count>%99.4</div>
                 <div class="meta">son sayım: bugün</div>
               </div>
               <div class="asset-table">
                 <h6>Son hareketler</h6>
-                <div class="asset-row">
+                <div class="asset-row" data-reveal data-reveal-delay="0">
                   <span class="id">AST-04812</span>
                   <span class="nm">Dell Latitude 7430</span>
                   <span class="loc">Ofis-2 · K3</span>
                   <span class="st ok">AKTİF</span>
                 </div>
-                <div class="asset-row">
+                <div class="asset-row" data-reveal data-reveal-delay="80">
                   <span class="id">AST-04821</span>
                   <span class="nm">Forklift Linde H30</span>
                   <span class="loc">Depo-A</span>
                   <span class="st warn">BAKIM</span>
                 </div>
-                <div class="asset-row">
+                <div class="asset-row" data-reveal data-reveal-delay="160">
                   <span class="id">AST-04832</span>
                   <span class="nm">RFID Reader Impinj R700</span>
                   <span class="loc">Kapı-B</span>
                   <span class="st move">TRANSFER</span>
                 </div>
-                <div class="asset-row">
+                <div class="asset-row" data-reveal data-reveal-delay="240">
                   <span class="id">AST-04877</span>
                   <span class="nm">Projeksiyon Epson EB-L</span>
                   <span class="loc">Toplantı-3</span>
@@ -272,7 +272,7 @@ const schema = {
           <span class="right">4 lokasyon · 1 487 varlık</span>
         </div>
         <div class="surface-body">
-          <div class="loc-grid">
+          <div class="loc-grid" data-reveal>
             <div class="loc-card">
               <div class="h">
                 <span class="nm">Genel Müdürlük · Ümraniye</span>
@@ -319,7 +319,7 @@ const schema = {
         </div>
         <div class="surface-body">
           <div class="task-list">
-            <div class="task-row">
+            <div class="task-row" data-reveal data-reveal-delay="0">
               <div class="num">01</div>
               <div class="body">
                 <strong>Q1 Genel Sayım — Üretim Hattı 2</strong>
@@ -327,7 +327,7 @@ const schema = {
               </div>
               <span class="status done">Tamamlandı</span>
             </div>
-            <div class="task-row">
+            <div class="task-row" data-reveal data-reveal-delay="90">
               <div class="num">02</div>
               <div class="body">
                 <strong>Ofis IT Ekipman Doğrulama</strong>
@@ -335,7 +335,7 @@ const schema = {
               </div>
               <span class="status prog">Devam ediyor</span>
             </div>
-            <div class="task-row">
+            <div class="task-row" data-reveal data-reveal-delay="180">
               <div class="num">03</div>
               <div class="body">
                 <strong>Depo Aylık Sayımı</strong>
@@ -376,15 +376,15 @@ const schema = {
           <span class="right">PDF · Excel</span>
         </div>
         <div class="surface-body" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-          <div class="rep-box">
+          <div class="rep-box" data-reveal>
             <h6>Sayım Doğruluğu</h6>
-            <div class="donut">
+            <div class="donut donut-acc">
               <svg width="80" height="80" viewBox="0 0 80 80">
                 <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border-soft)" stroke-width="10"/>
-                <circle cx="40" cy="40" r="30" fill="none" stroke="var(--att)" stroke-width="10" stroke-dasharray="188.5" stroke-dashoffset="11.3" stroke-linecap="round"/>
+                <circle class="ring-fg" cx="40" cy="40" r="30" fill="none" stroke="var(--att)" stroke-width="10" stroke-dasharray="188.5" style="--t:11.3" stroke-linecap="round"/>
               </svg>
               <div class="info">
-                <div class="v">%99.4</div>
+                <div class="v" data-count>%99.4</div>
                 <div class="l">son sayım</div>
               </div>
             </div>
@@ -877,6 +877,22 @@ section{padding:110px 0}
 .donut-leg .lg2::before{background:var(--cyan)}
 .donut-leg .lg3::before{background:var(--warn)}
 .donut-leg .lg4::before{background:var(--border)}
+
+/* ---- Asset motion layer (subtle; default state = final/visible) ---- */
+.donut-acc .ring-fg{stroke-dashoffset:var(--t);transition:stroke-dashoffset 1s var(--ease,ease-out)}
+@media (prefers-reduced-motion: no-preference){
+  /* Location capacity bars grow on view, lightly staggered */
+  .loc-card .bar > div{transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease,ease-out)}
+  .loc-grid.is-revealed .loc-card .bar > div{transform:scaleX(1)}
+  .loc-grid.is-revealed .loc-card:nth-child(2) .bar > div{transition-delay:.1s}
+  .loc-grid.is-revealed .loc-card:nth-child(3) .bar > div{transition-delay:.2s}
+  .loc-grid.is-revealed .loc-card:nth-child(4) .bar > div{transition-delay:.3s}
+  /* Accuracy donut sweeps from empty to its value on view */
+  .rep-box:not(.is-revealed) .donut-acc .ring-fg{stroke-dashoffset:188.5}
+  /* In-progress task status soft pulse */
+  .task-row .status.prog{animation:attTaskPulse 1.9s ease-in-out infinite}
+  @keyframes attTaskPulse{0%,100%{box-shadow:0 0 0 0 rgba(196,119,0,0)}50%{box-shadow:0 0 0 3px rgba(196,119,0,.16)}}
+}
 
 /* Tech compatibility */
 .tech-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}

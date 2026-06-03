@@ -48,7 +48,7 @@ const schema = {
           <a class="btn btn-secondary btn-lg" href="#capabilities">Yetenekleri İncele</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="v">12+</div><div class="l">protokol desteği</div></div>
+          <div class="hero-stat"><div class="v" data-count>12+</div><div class="l">protokol desteği</div></div>
           <div class="hero-stat"><div class="v">∞</div><div class="l">sensör ölçeklenmesi</div></div>
           <div class="hero-stat"><div class="v">RT</div><div class="l">canlı dashboard</div></div>
         </div>
@@ -70,28 +70,28 @@ const schema = {
           <div class="kpi-row">
             <div class="kpi">
               <div class="l">OEE</div>
-              <div class="v">82.4<span class="u">%</span></div>
+              <div class="v"><span data-count>82.4</span><span class="u">%</span></div>
               <div class="trend up">↑ 3.2 dün</div>
             </div>
             <div class="kpi">
               <div class="l">Enerji</div>
-              <div class="v">142<span class="u">kWh</span></div>
+              <div class="v"><span data-count>142</span><span class="u">kWh</span></div>
               <div class="trend dn">↓ -8% hedef</div>
             </div>
             <div class="kpi">
               <div class="l">Aktif Alarm</div>
-              <div class="v" style="color:var(--warn)">3</div>
+              <div class="v" style="color:var(--warn)" data-count>3</div>
               <div class="trend up" style="color:var(--text-faint)">2 kritik · 1 uyarı</div>
             </div>
             <div class="kpi">
               <div class="l">Cihaz</div>
-              <div class="v">248<span class="u">/250</span></div>
+              <div class="v"><span data-count>248</span><span class="u">/250</span></div>
               <div class="trend up">99.2% online</div>
             </div>
           </div>
 
           <!-- Energy chart -->
-          <div class="dash-card">
+          <div class="dash-card chart-card" data-reveal data-reveal-delay="120">
             <div class="ttl"><h5>Enerji Tüketimi · Hat 2</h5><span class="meta">kWh · son 12s</span></div>
             <div class="chart">
               <svg viewBox="0 0 300 96" preserveAspectRatio="none">
@@ -107,23 +107,23 @@ const schema = {
                   <line x1="0" y1="72" x2="300" y2="72"/>
                 </g>
                 <path class="area" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24 L300,96 L0,96 Z"/>
-                <path class="line" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24"/>
+                <path class="line" pathLength="1" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24"/>
                 <circle class="point" cx="300" cy="24" r="3.5"/>
               </svg>
             </div>
           </div>
 
           <!-- Machine health gauges -->
-          <div class="dash-card">
+          <div class="dash-card gauge-card" data-reveal data-reveal-delay="200">
             <div class="ttl"><h5>Makine Sağlığı</h5><span class="meta">4/5 sağlıklı</span></div>
             <div class="gauges">
               <div class="gauge">
                 <div class="ring">
                   <svg viewBox="0 0 60 60">
                     <circle class="bg" cx="30" cy="30" r="24"/>
-                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--ok)" stroke-dasharray="150.8" stroke-dashoffset="22.6"/>
+                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--ok)" stroke-dasharray="150.8" style="--t:22.6"/>
                   </svg>
-                  <div class="v">85<small>SAĞLIK</small></div>
+                  <div class="v"><span data-count>85</span><small>SAĞLIK</small></div>
                 </div>
                 <div class="lbl">CNC-01</div>
               </div>
@@ -131,9 +131,9 @@ const schema = {
                 <div class="ring">
                   <svg viewBox="0 0 60 60">
                     <circle class="bg" cx="30" cy="30" r="24"/>
-                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--warn)" stroke-dasharray="150.8" stroke-dashoffset="75.4"/>
+                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--warn)" stroke-dasharray="150.8" style="--t:75.4"/>
                   </svg>
-                  <div class="v">50<small>SAĞLIK</small></div>
+                  <div class="v"><span data-count>50</span><small>SAĞLIK</small></div>
                 </div>
                 <div class="lbl">CNC-02</div>
               </div>
@@ -144,17 +144,17 @@ const schema = {
           <div class="dash-card">
             <div class="ttl"><h5>Aktif Alarmlar</h5><span class="meta">3</span></div>
             <div class="alarm-list">
-              <div class="alarm crit">
+              <div class="alarm crit" data-reveal data-reveal-delay="60">
                 <div class="sev"></div>
                 <div class="body">Titreşim eşik aşımı<span class="sub">CNC-02 · X axis · 4.8mm/s</span></div>
                 <div class="t">14:22</div>
               </div>
-              <div class="alarm warn">
+              <div class="alarm warn" data-reveal data-reveal-delay="140">
                 <div class="sev"></div>
                 <div class="body">Enerji hedefi aşıldı<span class="sub">Hat 2 · +12% trend</span></div>
                 <div class="t">13:50</div>
               </div>
-              <div class="alarm info">
+              <div class="alarm info" data-reveal data-reveal-delay="220">
                 <div class="sev"></div>
                 <div class="body">Sensör kalibrasyon önerisi<span class="sub">TEMP-12 · sapma yakın</span></div>
                 <div class="t">12:08</div>
@@ -825,6 +825,31 @@ const schema = {
 .map-pin.b{background:var(--warn);box-shadow:0 0 0 4px rgba(196,119,0,.2)}
 .map-pin.c{background:var(--crit);box-shadow:0 0 0 4px rgba(214,69,69,.2)}
 .map-label{position:absolute;font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--slate);background:rgba(255,255,255,.85);padding:1px 5px;border-radius:3px;font-weight:600}
+
+/* ---- Dashboard motion layer (subtle; default state = final/visible) ---- */
+/* Gauge fill: default already at target value; emptied only before reveal when motion allowed */
+.gauge .ring .fg{stroke-dashoffset:var(--t)}
+@media (prefers-reduced-motion: no-preference){
+  /* Energy chart line draws on view */
+  .chart-card .chart .line{stroke-dasharray:1;stroke-dashoffset:1}
+  .chart-card.is-revealed .chart .line{animation:chartDraw 1.3s var(--ease,ease-out) forwards}
+  @keyframes chartDraw{to{stroke-dashoffset:0}}
+  /* Area gradient fades in just behind the line */
+  .chart-card .chart .area{opacity:0}
+  .chart-card.is-revealed .chart .area{animation:chartArea .9s ease .5s forwards}
+  @keyframes chartArea{to{opacity:1}}
+  /* Live data point gentle glow */
+  .chart-card.is-revealed .chart .point{animation:pointGlow 2.4s ease-in-out 1.4s infinite}
+  @keyframes pointGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(15,143,168,0))}50%{filter:drop-shadow(0 0 4px rgba(15,143,168,.75))}}
+  /* Gauge rings sweep up from empty to target */
+  .gauge-card:not(.is-revealed) .gauge .ring .fg{stroke-dashoffset:150.8}
+  /* Critical alarm severity bar soft pulse */
+  .alarm.crit .sev{animation:sevPulse 1.9s ease-in-out infinite}
+  @keyframes sevPulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,69,0)}50%{box-shadow:0 0 8px 0 rgba(214,69,69,.6)}}
+  /* RTLS warning pin ping */
+  .map-pin.b::after{content:"";position:absolute;inset:0;border-radius:50%;animation:pinPing 2.6s ease-out infinite}
+  @keyframes pinPing{0%{box-shadow:0 0 0 0 rgba(196,119,0,.45)}70%{box-shadow:0 0 0 10px rgba(196,119,0,0)}100%{box-shadow:0 0 0 0 rgba(196,119,0,0)}}
+}
 
 /* Section base */
 section{padding:110px 0}
