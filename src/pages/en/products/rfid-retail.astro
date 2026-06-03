@@ -1,0 +1,15 @@
+---
+import EnglishProductList from '../../../components/products/EnglishProductList.astro';
+import { retailProducts } from '../../../data/rfid-perakende';
+---
+
+<EnglishProductList
+  title="RFID Retail Products - Altis Technology"
+  description="Altis RFID retail systems for item-level reading and store operations."
+  eyebrow="Retail RFID"
+  heading="RFID Retail Products"
+  lead="Browse Altis RFID retail gates, tunnels, readers, and counters for store and item-level automation."
+  items={retailProducts}
+  detailBase="/en/products/rfid-retail/"
+  alternateUrl="https://www.altis.com.tr/urunler/rfid-perakende/"
+/>

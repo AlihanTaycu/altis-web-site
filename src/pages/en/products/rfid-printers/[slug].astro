@@ -1,0 +1,26 @@
+---
+import EnglishProductDetail from '../../../../components/products/EnglishProductDetail.astro';
+import { printers } from '../../../../data/rfid-yazicilar';
+
+export function getStaticPaths() {
+  return printers.map(item => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const related = printers
+  .filter(product => product.slug !== item.slug)
+  .sort((a, b) => Number(b.brand === item.brand) - Number(a.brand === item.brand))
+  .slice(0, 4);
+---
+
+<EnglishProductDetail
+  item={item}
+  categoryTitle="RFID Printers"
+  listHref="/en/products/rfid-printers/"
+  relatedHrefBase="/en/products/rfid-printers/"
+  related={related}
+  alternateUrl={`https://www.altis.com.tr/urunler/yazicilar/${item.slug}/`}
+/>

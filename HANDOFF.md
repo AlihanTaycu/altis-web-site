@@ -207,6 +207,14 @@ node scripts\migrate-manufacturing.mjs
 
 ## Teknik Notlar
 
+### El Terminali Datasheet UI Notu
+
+- EL_TERMINALLERI PDF'leri urun verisinde `datasheet` alaniyla bagli.
+- PDF dosyalari public tarafta `public/assets/products/<urun-slug>/<urun-slug>-datasheet.pdf` yapisinda tutuluyor.
+- El terminali detay sayfasinda datasheet karti urun gorselinin altinda (`src/pages/urunler/el-terminalleri/[slug].astro`).
+- El terminali liste sayfasinda PDF'in kullanici tarafindan gorunur olmasi icin kart aksiyonlarina kirmizi `PDF` butonu eklendi (`src/pages/urunler/rfid-el-terminalleri.astro`). Bu kisim silinirse kullanici UI'da PDF'i goremiyor.
+- Dev server bazen eski gorunumu gosterebiliyor; `npm.cmd run dev -- --host 127.0.0.1` ile temiz yeniden baslatmak ve tarayicida `Ctrl+F5` yapmak sorunu giderdi.
+
 Sayfa pattern'i:
 
 ```astro

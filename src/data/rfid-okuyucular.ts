@@ -4,12 +4,14 @@ export type Reader = {
   brand: string;
   isAltisOwn?: boolean;
   image: string;
+  gallery?: string[];
   shortDesc: string;
   description: string;
   storeUrl: string;
   tags: string[];
   ports?: string;
   connectivity?: string[];
+  datasheet?: string;
 };
 
 export const readers: Reader[] = [
@@ -19,7 +21,11 @@ export const readers: Reader[] = [
     title: 'Altis RFID R-Gate',
     brand: 'Altis',
     isAltisOwn: true,
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/04/altis-rfid-r-gate-2.webp',
+    image: '/assets/products/altis-rfid-r-gate/altis-rfid-r-gate-1.webp',
+    gallery: [
+      '/assets/products/altis-rfid-r-gate/altis-rfid-r-gate-1.webp',
+      '/assets/products/altis-rfid-r-gate/altis-rfid-r-gate-2.webp',
+    ],
     shortDesc: 'Altis\'in kendi tasarımı, ultra ince RFID geçit sistemi. Forklift ve paletli araçlar için yönlü okuma, WMS/ERP entegrasyonu.',
     description: 'Altis RFID R-Gate, Altis Teknoloji\'nin kendi tasarladığı, sınıfının en iyisi hafif ve ince RFID geçit sistemidir. Forklift ve palet araçlarıyla giriş/çıkış operasyonlarını (palet veya ürün seviyesinde) kolaylaştırır. Operatörler Altis RFID Dock ve Portal Çözümü boyunca elleri serbest hareket edebilir; depodaki tüm geçişler WMS veya ERP sistemlerine esnek web servisleri aracılığıyla gerçek zamanlı olarak kaydedilir. Altis RFID R-Gate, yalnızca algoritmayla değil, gelişmiş sensör ve donanımla da RFID etiket yönünü belirler; bu da iki yönlü geçit uygulamaları için vazgeçilmez bir çözüm sunar.',
     storeUrl: 'https://www.altis.com.tr/store/product/altis-rfid-r-gate/',
@@ -31,9 +37,18 @@ export const readers: Reader[] = [
   // ── ALIEN ────────────────────────────────────────────────────────────────
   {
     slug: 'alien-alr-f800-rfid-reader',
+    datasheet: '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-datasheet.pdf',
     title: 'Alien ALR-F800 RFID Okuyucu',
     brand: 'Alien',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/09/f800-1.webp',
+    image: '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-1.webp',
+      '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-2.webp',
+      '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-3.webp',
+      '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-4.webp',
+      '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-5.webp',
+      '/assets/products/alien-alr-f800-rfid-reader/alien-alr-f800-rfid-reader-6.webp',
+    ],
     shortDesc: '4 port, Ruby gömülü platform, Cloud/REST API doğrudan gönderim, PoE, endüstriyel grade.',
     description: 'Alien ALR-F800, RFID dünyasının referans okuyucusudur. AutonomMode, StreamMode, NotifyMode ve TriggeredMode gibi Alien\'a özgü üstün özellikler bu modelde de mevcuttur. EPCglobal UHF Gen2 mimarisiyle ağır sanayi, yüksek hacimli lojistik, tedarik zinciri, perakende ve varlık takibi projelerinde tercih edilen F800; gömülü Ruby platformu sayesinde Cloud sistemlerine, REST API\'ye ve web servislerine doğrudan veri gönderimi yapabilir. Altis\'in 16 yılı aşkın Ruby deneyimiyle desteklenmektedir.',
     storeUrl: 'https://www.altis.com.tr/store/product/alien-alr-f-800-rfid-reader/',
@@ -45,9 +60,19 @@ export const readers: Reader[] = [
   // ── HOPELAND ─────────────────────────────────────────────────────────────
   {
     slug: 'hopeland-cl7206b5a-rfid-reader',
+    datasheet: '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-datasheet.pdf',
     title: 'Hopeland CL7206B5A RFID Okuyucu',
     brand: 'Hopeland',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/10/hopeland-cl7206b5a-rfid-okuyucu-1.webp',
+    image: '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-1.webp',
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-2.webp',
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-3.webp',
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-4.webp',
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-5.webp',
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-6.webp',
+      '/assets/products/hopeland-cl7206b5a-rfid-reader/hopeland-cl7206b5a-rfid-reader-7.webp',
+    ],
     shortDesc: 'Araç yönetimi ve erişim kontrol için gömülü okuyucu + yüksek performanslı anten, su geçirmez alüminyum döküm kasa.',
     description: 'Hopeland CL7206B5A, araç yönetimi ve erişim kontrol sistemlerinin vazgeçilmezi; site ve otopark şirketleri tarafından tercih edilen gömülü okuyucu ve yüksek performanslı RFID anten içeren tekil ve benzersiz bir sistemdir. HGS/OGS sistemleri için ideal çözümdür. Impinj Indy R2000 Chip ile güçlendirilen CL7206B5A, alüminyum döküm yapısıyla su geçirmez olarak tasarlanmış olup tüm hava koşullarına rağmen yıllar boyu maksimum okuma performansı sunar. Farklı projeleriniz için özelleştirilebilir arayüzler ve genişletilebilir veri transferi sunar.',
     storeUrl: 'https://www.altis.com.tr/store/product/hopeland-cl7206b5a-rfid-reader/',
@@ -56,9 +81,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'hopeland-sharp-340-rfid-reader',
+    datasheet: '/assets/products/hopeland-sharp-340-rfid-reader/hopeland-sharp-340-rfid-reader-datasheet.pdf',
     title: 'Hopeland Sharp 340 RFID Okuyucu',
     brand: 'Hopeland',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/10/hopeland-sharp-340-uhf-rfid-okuyucu-1.webp',
+    image: '/assets/products/hopeland-sharp-340-rfid-reader/hopeland-sharp-340-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/hopeland-sharp-340-rfid-reader/hopeland-sharp-340-rfid-reader-1.webp',
+    ],
     shortDesc: '4 veya 8 port seçeneği, Linux 2.6, 2GB RAM, WiFi/4G/Bluetooth/HDMI, 40.000 etiket offline.',
     description: 'Hopeland Sharp 340, 4 veya 8 port seçeneğiyle sipariş edebileceğiniz, metal kasası ve gelişmiş arayüz tasarımıyla hem düşük maliyet hem yüksek performans arayanları bir araya getiren bir RFID okuyucudur. Linux 2.6 işletim sistemi, 2 GB RAM ve 16 GB ROM kapasitesine sahiptir. 40.000 etikete kadar offline çalışmayı destekleyen Sharp 340; WiFi, Bluetooth, 4G, USB, RJ45, RS232 ve HDMI arayüzlerine sahiptir.',
     storeUrl: 'https://www.altis.com.tr/store/product/hopeland-sharp-340-rfid-reader/',
@@ -68,9 +97,15 @@ export const readers: Reader[] = [
   },
   {
     slug: 'hopeland-shine-340-rfid-reader',
+    datasheet: '/assets/products/hopeland-shine-340-rfid-reader/hopeland-shine-340-rfid-reader-datasheet.pdf',
     title: 'Hopeland Shine 340 RFID Okuyucu',
     brand: 'Hopeland',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/02/hopeland-shine-340-rfid-okuyucu.webp',
+    image: '/assets/products/hopeland-shine-340-rfid-reader/hopeland-shine-340-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/hopeland-shine-340-rfid-reader/hopeland-shine-340-rfid-reader-1.webp',
+      '/assets/products/hopeland-shine-340-rfid-reader/hopeland-shine-340-rfid-reader-2.webp',
+      '/assets/products/hopeland-shine-340-rfid-reader/hopeland-shine-340-rfid-reader-3.webp',
+    ],
     shortDesc: 'Android 9.0, Impinj R2000, 4/8 port, 4G + Bluetooth + Wiegand, gömülü uygulama geliştirme.',
     description: 'Hopeland Shine 340, Impinj R2000 çipli en yeni Hopeland ürünü olup Android 9.0 işletim sistemini temel alır. Sharp 340 serisinin güvenilir yapısı ile yeni nesil Android işletim sistemini bir araya getiren bu ürünle RFID geliştiricileri onlarca farklı gömülü uygulama geliştirebilir. 4 veya 8 port seçeneğiyle sipariş edilebilen Shine 340; RJ45, RS485, Wiegand, USB, Bluetooth ve 4G arayüzlerine sahiptir. 40.000 etikete kadar offline çalışmayı destekler.',
     storeUrl: 'https://www.altis.com.tr/store/product/hopeland-shine-340-rfid-reader/',
@@ -82,9 +117,18 @@ export const readers: Reader[] = [
   // ── IMPINJ ───────────────────────────────────────────────────────────────
   {
     slug: 'impinj-r220-rfid-reader',
+    datasheet: '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-datasheet.pdf',
     title: 'Impinj R220 RFID Okuyucu',
     brand: 'Impinj',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/02/impinj-speedway-revolution-r220-uhf-rfid-okuyucu-2-port.webp',
+    image: '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-1.webp',
+      '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-2.webp',
+      '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-3.webp',
+      '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-4.webp',
+      '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-5.webp',
+      '/assets/products/impinj-r220-rfid-reader/impinj-r220-rfid-reader-6.webp',
+    ],
     shortDesc: '2 port, Autopilot ile ortama otomatik uyum, RF gürültüsünden etkilenmeyen yüksek okuma hızı.',
     description: 'Impinj Speedway Revolution R220, etiketlenmiş envanter ve varlıklar için optimum görünürlük sağlamak amacıyla gereken performans, kalite ve güvenilirliği sunar. Autopilot işleviyle ortama göre otomatik ayarlanan bu okuyucu, RF gürültüsüne veya parazite bakılmaksızın yüksek okuma hızlarını koruyabilir. EPC sertifikalı Speedway serisinin üzerine inşa edilen R220, uygulama ve kurulum esnekliği sağlayan yazılım, donanım ve anten setiyle desteklenmektedir.',
     storeUrl: 'https://www.altis.com.tr/store/product/impinj-r220-rfid-reader/',
@@ -94,9 +138,15 @@ export const readers: Reader[] = [
   },
   {
     slug: 'impinj-r420-rfid-reader',
+    datasheet: '/assets/products/impinj-r420-rfid-reader/impinj-r420-rfid-reader-datasheet.pdf',
     title: 'Impinj R420 RFID Okuyucu',
     brand: 'Impinj',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/02/impinj-speedway-revolution-r420-uhf-rfid-okuyucu-4-port-1.webp',
+    image: '/assets/products/impinj-r420-rfid-reader/impinj-r420-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/impinj-r420-rfid-reader/impinj-r420-rfid-reader-1.webp',
+      '/assets/products/impinj-r420-rfid-reader/impinj-r420-rfid-reader-2.webp',
+      '/assets/products/impinj-r420-rfid-reader/impinj-r420-rfid-reader-3.webp',
+    ],
     shortDesc: '4 port, EPCglobal UHF Gen2, kapı ve konveyör gibi hızlı geçişlerde üstün performans, LLRP + PoE.',
     description: 'Impinj Speedway Revolution R420, 4 portlu yapısıyla neredeyse her sektörde kolaylıkla kullanılabilen rekor kıran bir UHF RFID okuyucudur. EPCglobal UHF Gen2 standardında çalışan R420, otomatik uyum ve RF gürültüsünden etkilenmeden yüksek okuma hızlarını korur. Kapı ve konveyör gibi hızlı geçiş içeren RFID etiket tanımlamalarında yüksek performans gösterir. LLRP ve PoE özellikleriyle çözüm ortaklarının devreye alma ve proje geliştirme süreçlerini kolaylaştırır.',
     storeUrl: 'https://www.altis.com.tr/store/product/impinj-r420-rfid-reader/',
@@ -106,9 +156,17 @@ export const readers: Reader[] = [
   },
   {
     slug: 'impinj-r700-rfid-reader',
+    datasheet: '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-datasheet.pdf',
     title: 'Impinj R700 RFID Okuyucu',
     brand: 'Impinj',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/09/impinj-r700-rain-rfid-okuyucu.webp',
+    image: '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-1.webp',
+      '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-2.webp',
+      '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-3.webp',
+      '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-4.webp',
+      '/assets/products/impinj-r700-rfid-reader/impinj-r700-rfid-reader-5.webp',
+    ],
     shortDesc: '4 port, R420\'den 2.5x güçlü, 33dBm çıkış, -92dBm hassasiyet, IoT Device Interface, 32 antene kadar.',
     description: 'Impinj R700, ünlü Speedway R220 ve R420 serisinin amiral gemisidir. R420\'ye kıyasla 2.5 kat daha güçlü olan R700, 33 dBm çıkış gücü ve -92 dBm okuma hassasiyetiyle Alien F800 ile rekabet edebilecek düzeydedir. 1 GB RAM ve 1 GHz işlemciye sahip olup 3 USB arabirimi, gigabit Ethernet ve GPIO portları içerir. Impinj\'in "IoT Device Interface" teknolojisi sayesinde sahadaki IoT cihazlarıyla iletişim kurar ve MQTT desteğiyle yapılandırılabilir. 32 antene kadar genişletilebilir, Linux işletim sisteminde çalışır.',
     storeUrl: 'https://www.altis.com.tr/store/product/impinj-r700-rfid-reader/',
@@ -118,9 +176,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'impinj-xarray-gateway',
+    datasheet: '/assets/products/impinj-xarray-gateway/impinj-xarray-gateway-datasheet.pdf',
     title: 'Impinj xArray Gateway RFID Okuyucu',
     brand: 'Impinj',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/09/impinj-x-array-gateway-rfid-okuyucu.jpg',
+    image: '/assets/products/impinj-xarray-gateway/impinj-xarray-gateway-1.jpg',
+    gallery: [
+      '/assets/products/impinj-xarray-gateway/impinj-xarray-gateway-1.jpg',
+    ],
     shortDesc: '52 anten ışını, 40 fitlik çap kapsama, tavan montajlı geniş alan izleme, perakende ve üretim için.',
     description: 'Impinj xArray Gateway, RFID okuyucu ile antenleri birleştirerek RFID etiketli nesnelerin gerçek zamanlı tanımlanması, konumlandırılması ve yönünün belirlenmesi için sürekli açık, geniş alan izleme sağlayan sabit altyapı RFID ağ geçididir. 15 fit yüksekten tavana monte edildiğinde 40 fitlik çap içinde tam güç sunar. 52 farklı anten ışınını ayırt edebilen xArray, okuma bölgesi içinde konum ataması yapabilir. Perakende, sağlık ve üretim sektörlerindeki geniş ölçekli uygulamalar için tasarlanmış; tesis içi veya tedarik zinciri genelinde konumlandırma imkânı sunar.',
     storeUrl: 'https://www.altis.com.tr/store/product/impinj-xarray-gateway-rfid-reader/',
@@ -131,9 +193,13 @@ export const readers: Reader[] = [
   // ── NORDIC ID — AR62 ─────────────────────────────────────────────────────
   {
     slug: 'nordic-id-ar62-lanpoe',
+    datasheet: '/assets/products/nordic-id-ar62-lanpoe/nordic-id-ar62-lanpoe-datasheet.pdf',
     title: 'Nordic ID AR62 4 Port RFID Okuyucu (LAN&PoE)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar62-4port-okuyucu.webp',
+    image: '/assets/products/nordic-id-ar62-lanpoe/nordic-id-ar62-lanpoe-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar62-lanpoe/nordic-id-ar62-lanpoe-1.webp',
+    ],
     shortDesc: '4 port, son teknoloji UHF okuma hassasiyeti, çok yönlü yazılım geliştirme desteği.',
     description: 'Nordic ID AR62, son teknoloji UHF RFID okuma hassasiyeti ve çok yönlü iletişim seçenekleri sunan 4 portlu bir okuyucudur. Çok yönlü yazılım geliştirme seçenekleriyle tüm RFID çözümlerinizi desteklemek için üretilmiştir. LAN ve PoE bağlantısıyla standart ağ altyapısına kolayca entegre olur.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar62-4-port-rfid-reader-lanpoe/',
@@ -143,9 +209,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-ar62-lanpoe-wlan',
+    datasheet: '/assets/products/nordic-id-ar62-lanpoe-wlan/nordic-id-ar62-lanpoe-wlan-datasheet.pdf',
     title: 'Nordic ID AR62 4 Port RFID Okuyucu (LAN&PoE&WLAN)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar62-4port-okuyucu.webp',
+    image: '/assets/products/nordic-id-ar62-lanpoe-wlan/nordic-id-ar62-lanpoe-wlan-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar62-lanpoe-wlan/nordic-id-ar62-lanpoe-wlan-1.webp',
+    ],
     shortDesc: '4 port, LAN + PoE + WLAN bağlantısı, UHF okuma hassasiyeti, çok yönlü yazılım desteği.',
     description: 'Nordic ID AR62, son teknoloji UHF RFID okuma hassasiyeti ve çok yönlü iletişim seçenekleri sunan 4 portlu bir okuyucudur. LAN, PoE ve WLAN bağlantı seçenekleriyle hem kablolu hem kablosuz ağ altyapısına kolayca entegre olur. Çok yönlü yazılım geliştirme seçenekleriyle tüm RFID çözümlerinizi destekler.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar62-4-port-rfid-reader-lanpoewlan/',
@@ -155,9 +225,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-ar62-lanpoe-wlan-3g',
+    datasheet: '/assets/products/nordic-id-ar62-lanpoe-wlan-3g/nordic-id-ar62-lanpoe-wlan-3g-datasheet.pdf',
     title: 'Nordic ID AR62 4 Port RFID Okuyucu (LAN&PoE&WLAN/3G)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar62-4port-okuyucu.webp',
+    image: '/assets/products/nordic-id-ar62-lanpoe-wlan-3g/nordic-id-ar62-lanpoe-wlan-3g-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar62-lanpoe-wlan-3g/nordic-id-ar62-lanpoe-wlan-3g-1.webp',
+    ],
     shortDesc: '4 port, LAN + PoE + WLAN + 3G tam bağlantı paketi, saha ve depo kullanımı için.',
     description: 'Nordic ID AR62 (LAN&PoE&WLAN/3G), son teknoloji UHF RFID okuma hassasiyeti sunan 4 portlu okuyucunun tam bağlantı paketidir. LAN, PoE, WLAN ve 3G seçenekleriyle her ortamda kablosuz veya kablolu bağlantı sağlar. Saha ve depo uygulamalarında internet bağlantısının kısıtlı olduğu noktalarda 3G üzerinden veri iletimini sürdürür.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar62-4-port-rfid-reader/',
@@ -169,9 +243,13 @@ export const readers: Reader[] = [
   // ── NORDIC ID — AR82 ─────────────────────────────────────────────────────
   {
     slug: 'nordic-id-ar82-lanpoe',
+    datasheet: '/assets/products/nordic-id-ar82-lanpoe/nordic-id-ar82-lanpoe-datasheet.pdf',
     title: 'Nordic ID AR82 16 Port RFID Okuyucu (LAN&PoE)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar82-16port-okuyucu.webp',
+    image: '/assets/products/nordic-id-ar82-lanpoe/nordic-id-ar82-lanpoe-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar82-lanpoe/nordic-id-ar82-lanpoe-1.webp',
+    ],
     shortDesc: '16 port, 1000 etiket/sn, Linux/Debian, raf okuma sistemleri için enterprise çözüm.',
     description: 'Nordic ID AR82, 16 portlu yapısı ve saniyede 1000 etiket okuma kapasitesiyle enterprise raf okuma çözümleri için tasarlanmış güçlü bir UHF RFID okuyucudur. Dahili bilgisayar ve çoklu bağlantı seçenekleri içerir. Debian tabanlı Linux işletim sisteminde çalışır. Çok yönlü yazılım geliştirme seçenekleriyle tüm RFID çözümlerinizi destekler.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar82-16-port-rfid-reader-lanpoe/',
@@ -181,9 +259,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-ar82-lanpoe-wlan',
+    datasheet: '/assets/products/nordic-id-ar82-lanpoe-wlan/nordic-id-ar82-lanpoe-wlan-datasheet.pdf',
     title: 'Nordic ID AR82 16 Port RFID Okuyucu (LAN&PoE/WLAN)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar82-16port-okuyucu.webp',
+    image: '/assets/products/nordic-id-ar82-lanpoe-wlan/nordic-id-ar82-lanpoe-wlan-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar82-lanpoe-wlan/nordic-id-ar82-lanpoe-wlan-1.webp',
+    ],
     shortDesc: '16 port, WLAN dahil, 1000 etiket/sn, Linux, raf okuma ve enterprise depo uygulamaları için.',
     description: 'Nordic ID AR82 (LAN&PoE/WLAN), 16 portlu yapısı ve saniyede 1000 etiket okuma kapasitesiyle enterprise depo ve raf okuma uygulamaları için güçlü bir çözümdür. WLAN bağlantısıyla kablo gerektirmeyen esnek kurulum sunar. Debian tabanlı Linux işletim sisteminde çalışır.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar82-16-port-reader-lanpoe-wlan/',
@@ -193,9 +275,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-ar82-lanpoe-wlan-3g',
+    datasheet: '/assets/products/nordic-id-ar82-lanpoe-wlan-3g/nordic-id-ar82-lanpoe-wlan-3g-datasheet.pdf',
     title: 'Nordic ID AR82 16 Port RFID Okuyucu (LAN&PoE&WLAN/3G)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar82-16port-okuyucu.webp',
+    image: '/assets/products/nordic-id-ar82-lanpoe-wlan-3g/nordic-id-ar82-lanpoe-wlan-3g-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar82-lanpoe-wlan-3g/nordic-id-ar82-lanpoe-wlan-3g-1.webp',
+    ],
     shortDesc: '16 port, LAN + PoE + WLAN + 3G, 1000 etiket/sn, tam bağlantı enterprise okuyucu.',
     description: 'Nordic ID AR82 (LAN&PoE&WLAN/3G), 16 portlu enterprise RFID okuyucunun en kapsamlı bağlantı paketidir. LAN, PoE, WLAN ve 3G seçenekleri her ortamda kesintisiz bağlantı sağlar. Saniyede 1000 etiket okuma kapasitesi ve Debian tabanlı Linux işletim sistemiyle yüksek hacimli uygulamalar için uygundur.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar82-16-port-rfid-reader-lanpoewlan-3g/',
@@ -207,9 +293,13 @@ export const readers: Reader[] = [
   // ── NORDIC ID — AR85 ─────────────────────────────────────────────────────
   {
     slug: 'nordic-id-ar85-beam-lanpoe',
+    datasheet: '/assets/products/nordic-id-ar85-beam-lanpoe/nordic-id-ar85-beam-lanpoe-datasheet.pdf',
     title: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar85-okuyucu-1.webp',
+    image: '/assets/products/nordic-id-ar85-beam-lanpoe/nordic-id-ar85-beam-lanpoe-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar85-beam-lanpoe/nordic-id-ar85-beam-lanpoe-1.webp',
+    ],
     shortDesc: '120 m² alan kapsama, 1000 etiket/sn, gömülü bilgisayar, sabit alan izleme için.',
     description: 'Nordic ID AR85 Beam Okuyucu, çeşitli bağlantı seçenekleriyle güçlü, otomatik UHF RFID performansı sunar. Nordic ID NUR2-1W modülü ve akıllı anten çözümüyle 120 m² zemin alanını kaplayan ve saniyede 1000 etiket okuyabilen sabit alan okuyucusudur. Okumakta güçlük çekilen etiketler bile kolayca algılanabilir. Gömülü bilgisayarı sayesinde üçüncü taraf yazılımlar kurulup çalıştırılabilir. Belirli bir alanın sürekli gözetimi için idealdir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar85-beam-reader-lanpoe/',
@@ -218,9 +308,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-ar85-beam-lanpoe-wlan',
+    datasheet: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan/nordic-id-ar85-beam-lanpoe-wlan-datasheet.pdf',
     title: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE/WLAN)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar85-okuyucu-1.webp',
+    image: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan/nordic-id-ar85-beam-lanpoe-wlan-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar85-beam-lanpoe-wlan/nordic-id-ar85-beam-lanpoe-wlan-1.webp',
+    ],
     shortDesc: '120 m² kapsama, WLAN dahil, 1000 etiket/sn, gömülü bilgisayar, kablosuz esnek kurulum.',
     description: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE/WLAN), 120 m² zemin kapsama alanı ve saniyede 1000 etiket okuma kapasitesiyle güçlü alan izleme sağlar. WLAN bağlantısı sayesinde kablosuz ve esnek kurulum imkânı sunar. Gömülü bilgisayarı üzerinde üçüncü taraf yazılımlar çalıştırılabilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar85-beam-reader-lanpoe-wlan/',
@@ -229,9 +323,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-ar85-beam-lanpoe-wlan-3g',
+    datasheet: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan-3g/nordic-id-ar85-beam-lanpoe-wlan-3g-datasheet.pdf',
     title: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE&WLAN/3G)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-ar85-okuyucu-1.webp',
+    image: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan-3g/nordic-id-ar85-beam-lanpoe-wlan-3g-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-ar85-beam-lanpoe-wlan-3g/nordic-id-ar85-beam-lanpoe-wlan-3g-1.webp',
+    ],
     shortDesc: '120 m² kapsama, LAN + PoE + WLAN + 3G, 1000 etiket/sn, tam bağlantı beam okuyucu.',
     description: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE&WLAN/3G), 120 m² zemin kapsama alanı ve saniyede 1000 etiket okuma kapasitesine sahip beam okuyucunun en kapsamlı bağlantı paketidir. LAN, PoE, WLAN ve 3G seçenekleriyle her ortamda kesintisiz bağlantı sağlar.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-ar85-beam-reader-lanpoewlan-3g/',
@@ -242,9 +340,13 @@ export const readers: Reader[] = [
   // ── NORDIC ID — EXA / SAMPO ──────────────────────────────────────────────
   {
     slug: 'nordic-id-exa21-ble-usb',
+    datasheet: '/assets/products/nordic-id-exa21-ble-usb/nordic-id-exa21-ble-usb-datasheet.pdf',
     title: 'Nordic ID EXA21 UHF RFID Okuyucu (BLE/USB)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-exa21-okuyucu.webp',
+    image: '/assets/products/nordic-id-exa21-ble-usb/nordic-id-exa21-ble-usb-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-exa21-ble-usb/nordic-id-exa21-ble-usb-1.webp',
+    ],
     shortDesc: 'Taşınabilir, Bluetooth LE, Android/iOS/Windows uyumlu, POS entegre, elleri serbest kasiyerlik.',
     description: 'Nordic ID EXA21, Bluetooth düşük enerji aracılığıyla herhangi bir uyumlu Android/iOS akıllı cihaza veya Windows 10 PC\'ye zahmetsizce bağlanabilen taşınabilir bir RFID okuyucudur. Hafif, küçük ve ergonomik tasarımı sayesinde hareket halinde veri okumak eskisinden çok daha kolay ve keyiflidir. POS kart okuyucusuna takılabilir, bilek kayışıyla takılabilir, kemerle klipslenebilir veya optik sensörün okumayı tetikleyebileceği bir yere yerleştirilebilir. Esnek kasa işleme, mağaza içi hızlı ürün bulma ve gerçek zamanlı sevkiyat raporlama için idealdir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-exa21-uhf-rfid-reader-ble-usb/',
@@ -255,7 +357,10 @@ export const readers: Reader[] = [
     slug: 'nordic-id-exa31-ble-2d',
     title: 'Nordic ID EXA31 UHF RFID Okuyucu (BLE/2D)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-exa31-okuyucu.webp',
+    image: '/assets/products/nordic-id-exa31-ble-2d/nordic-id-exa31-ble-2d-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-exa31-ble-2d/nordic-id-exa31-ble-2d-1.webp',
+    ],
     shortDesc: 'Giyilebilir, Bluetooth LE, 2D barkod, ambidextrous toplama ve erişim kontrol uygulamaları için.',
     description: 'Nordic ID EXA31, Bluetooth düşük enerji aracılığıyla herhangi bir akıllı cihaza bağlanabilen küçük ve hafif giyilebilir UHF RFID okuyucudur. Ergonomik tasarımı hareket halinde veri toplama faaliyetlerini daha kolay ve rahat hale getirir. EXA31 çeşitli şekillerde sabitlenebilir; ellerinizi tamamen iş görevlerine odaklanmak için serbest bırakır. Bu UHF RFID okuyucu, iki el için uygun toplama operasyonları ve erişim kontrol yönetim sistemleri için mükemmeldir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-exa31-uhf-rfid-reader-ble-2d/',
@@ -264,9 +369,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s1-usb',
+    datasheet: '/assets/products/nordic-id-sampo-s1-usb/nordic-id-sampo-s1-usb-datasheet.pdf',
     title: 'Nordic ID Sampo S1 UHF RFID Okuyucu (USB)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s1-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s1-usb/nordic-id-sampo-s1-usb-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s1-usb/nordic-id-sampo-s1-usb-1.webp',
+    ],
     shortDesc: 'Montajlanabilir, ayarlanabilir okuma menzili, ışık sensörü + dokunma sensörü, 3 anten portu.',
     description: 'Nordic ID Sampo S1 (USB), ayarlanabilir okuma menziline sahip montajlanabilir bir UHF RFID okuyucudur. Işık sensörü ve dokunma sensörüyle donatılmış olan S1, okuma kapsamını genişletmek için 3 ek anten portuna sahiptir. USB bağlantısıyla kolayca sisteme entegre edilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s1-uhf-rfid-reader-usb/',
@@ -275,9 +384,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s1-usb-3xaux',
+    datasheet: '/assets/products/nordic-id-sampo-s1-usb-3xaux/nordic-id-sampo-s1-usb-3xaux-datasheet.pdf',
     title: 'Nordic ID Sampo S1 UHF RFID Okuyucu (USB/3xAUX)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s1-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s1-usb-3xaux/nordic-id-sampo-s1-usb-3xaux-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s1-usb-3xaux/nordic-id-sampo-s1-usb-3xaux-1.webp',
+    ],
     shortDesc: 'Montajlanabilir, USB + 3 AUX anten çıkışı, ışık ve dokunma sensörlü, geniş alan kapsama.',
     description: 'Nordic ID Sampo S1 (USB/3xAUX), ayarlanabilir okuma menziliyle montajlanabilir bir UHF RFID okuyucudur. Işık sensörü ve dokunma sensörüyle okumayı başlatabilirsiniz. 3 ek anten bağlantısıyla okuma kapsamınızı genişletebilirsiniz. USB + 3 AUX çıkışıyla geniş alan kapsama uygulamaları için idealdir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s1-uhf-rfid-reader-usb-3xaux/',
@@ -286,9 +399,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s2-one',
+    datasheet: '/assets/products/nordic-id-sampo-s2-one/nordic-id-sampo-s2-one-datasheet.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu One',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s2-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s2-one/nordic-id-sampo-s2-one-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s2-one/nordic-id-sampo-s2-one-1.webp',
+    ],
     shortDesc: 'Entegre antenli esnek sabit okuyucu, POS ve geçit uygulamaları, AB + ABD frekansı.',
     description: 'Nordic ID Sampo S2 One, yazılım aracılığıyla ayarlanabilen entegre anteniyle esnek bir sabit UHF RFID okuyucudur. AB ve ABD frekanslarını destekler. POS ve geçit uygulamaları dahil çeşitli kullanım senaryolarında okuyucu ve yazıcı olarak kullanılabilir. Gömülü bilgisayarında üçüncü taraf yazılımlar kurulup çalıştırılabilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s2-uhf-rfid-reader-one/',
@@ -297,9 +414,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s2-one-wlan',
+    datasheet: '/assets/products/nordic-id-sampo-s2-one-wlan/nordic-id-sampo-s2-one-wlan-datasheet.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu One (WLAN)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s2-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s2-one-wlan/nordic-id-sampo-s2-one-wlan-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s2-one-wlan/nordic-id-sampo-s2-one-wlan-1.webp',
+    ],
     shortDesc: 'Entegre antenli esnek sabit okuyucu + WLAN, POS ve geçit uygulamaları, AB + ABD frekansı.',
     description: 'Nordic ID Sampo S2 One (WLAN), yazılım aracılığıyla ayarlanabilen entegre anteniyle esnek bir sabit UHF RFID okuyucudur. WLAN bağlantısı kablosuz kurulum esnekliği sağlar. AB ve ABD frekanslarını destekler; POS ve geçit uygulamalarında okuyucu/yazıcı olarak kullanılabilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s2-uhf-rfid-reader-one-wlan/',
@@ -308,9 +429,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s2-one-wlan-3g',
+    datasheet: '/assets/products/nordic-id-sampo-s2-one-wlan-3g/nordic-id-sampo-s2-one-wlan-3g-datasheet.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu One (WLAN/3G)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s2-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s2-one-wlan-3g/nordic-id-sampo-s2-one-wlan-3g-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s2-one-wlan-3g/nordic-id-sampo-s2-one-wlan-3g-1.webp',
+    ],
     shortDesc: 'Entegre antenli esnek sabit okuyucu, WLAN + 3G, saha bağlantısı için tam paket.',
     description: 'Nordic ID Sampo S2 One (WLAN/3G), entegre anteniyle esnek sabit UHF RFID okuyucunun WLAN ve 3G destekli versiyonudur. İnternet altyapısının kısıtlı olduğu noktalarda 3G üzerinden veri iletimini sürdürür. POS ve geçit uygulamaları için uygundur.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s2-uhf-rfid-reader-one-wlan-3g/',
@@ -319,9 +444,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s2-usblan',
+    datasheet: '/assets/products/nordic-id-sampo-s2-usblan/nordic-id-sampo-s2-usblan-datasheet.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu (USB&LAN)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s2-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s2-usblan/nordic-id-sampo-s2-usblan-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s2-usblan/nordic-id-sampo-s2-usblan-1.webp',
+    ],
     shortDesc: 'Entegre antenli esnek sabit okuyucu, USB + LAN çift bağlantı, POS ve geçit uygulamaları.',
     description: 'Nordic ID Sampo S2 (USB&LAN), yazılım aracılığıyla ayarlanabilen entegre anteniyle esnek bir sabit UHF RFID okuyucudur. USB ve LAN çift bağlantı seçeneği sunar. AB ve ABD frekanslarını destekler; POS ve geçit uygulamalarında okuyucu/yazıcı olarak kullanılabilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s2-uhf-rfid-reader-usblan/',
@@ -330,9 +459,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s2-usblan-3g',
+    datasheet: '/assets/products/nordic-id-sampo-s2-usblan-3g/nordic-id-sampo-s2-usblan-3g-datasheet.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu (USB&LAN/3G)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s2-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s2-usblan-3g/nordic-id-sampo-s2-usblan-3g-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s2-usblan-3g/nordic-id-sampo-s2-usblan-3g-1.webp',
+    ],
     shortDesc: 'Entegre antenli esnek sabit okuyucu, USB + LAN + 3G, saha uygulamaları için geniş bağlantı.',
     description: 'Nordic ID Sampo S2 (USB&LAN/3G), entegre antenli esnek sabit UHF okuyucunun USB, LAN ve 3G destekli versiyonudur. Saha uygulamalarında kablolu ve kablosuz bağlantı seçeneklerini bir arada sunar.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s2-uhf-rfid-reader-usblan-3g/',
@@ -341,9 +474,13 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-sampo-s2-usblanpoe',
+    datasheet: '/assets/products/nordic-id-sampo-s2-usblanpoe/nordic-id-sampo-s2-usblanpoe-datasheet.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu (USB&LAN&PoE)',
     brand: 'Nordic ID',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/03/nordic-id-sampo-s2-rfid-okuyucu.webp',
+    image: '/assets/products/nordic-id-sampo-s2-usblanpoe/nordic-id-sampo-s2-usblanpoe-1.webp',
+    gallery: [
+      '/assets/products/nordic-id-sampo-s2-usblanpoe/nordic-id-sampo-s2-usblanpoe-1.webp',
+    ],
     shortDesc: 'Entegre antenli esnek sabit okuyucu, USB + LAN + PoE, ayrı güç kaynağı gerektirmez.',
     description: 'Nordic ID Sampo S2 (USB&LAN&PoE), entegre antenli esnek sabit UHF RFID okuyucunun PoE destekli versiyonudur. Power over Ethernet ile ayrı güç kaynağı gerektirmeden çalışır. POS ve geçit uygulamaları için uygundur.',
     storeUrl: 'https://www.altis.com.tr/store/product/nordic-id-sampo-s2-uhf-rfid-reader-usblanpoe/',
@@ -354,9 +491,16 @@ export const readers: Reader[] = [
   // ── CAEN (easy2read) ─────────────────────────────────────────────────────
   {
     slug: 'caen-proton-rfid-reader',
+    datasheet: '/assets/products/caen-proton-rfid-reader/caen-proton-rfid-reader-datasheet.pdf',
     title: 'CAEN Proton RAIN RFID Okuyucu',
     brand: 'CAEN',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2023/10/iradets-proton-reader.webp',
+    image: '/assets/products/caen-proton-rfid-reader/caen-proton-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/caen-proton-rfid-reader/caen-proton-rfid-reader-1.webp',
+      '/assets/products/caen-proton-rfid-reader/caen-proton-rfid-reader-2.png',
+      '/assets/products/caen-proton-rfid-reader/caen-proton-rfid-reader-3.png',
+      '/assets/products/caen-proton-rfid-reader/caen-proton-rfid-reader-4.png',
+    ],
     shortDesc: '4 port, 31.5 dBm, IP65, M12 endüstriyel konektör, Linux gömülü, Industry 4.0 uyumlu.',
     description: 'easy2read© ürün ailesinden CAEN Proton (Model R4320P), endüstriyel ortamlarda kullanım için ideal, dayanıklı ve uzun menzilli bir RAIN RFID okuyucudur. 31.5 dBm maksimum güç çıkışıyla 4 anten bağlayıcısı sayesinde lojistik RFID portalları oluşturmak için uygundur. IP65 koruması zorlu ortamlarda veya açık havada kuruluma izin verir. GPIOlar, RS232 ve endüstriyel standart M12 konektörler üzerinden Power Over Ethernet ile Industry 4.0 çözümleri için ideal bir seçenektir. Entegre Linux platformu dahili web arayüzüyle kolayca yapılandırılabilir; Java kodu yükleyerek tam özelleştirme sağlanabilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/proton/',
@@ -366,9 +510,17 @@ export const readers: Reader[] = [
   },
   {
     slug: 'caen-quattro-rfid-reader',
+    datasheet: '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-datasheet.pdf',
     title: 'CAEN Quattro RAIN RFID Okuyucu',
     brand: 'CAEN',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2023/10/Quattro-Smart-4-port-RAIN-RFID-Long-Range-Reader.webp',
+    image: '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-1.webp',
+      '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-2.png',
+      '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-3.png',
+      '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-4.png',
+      '/assets/products/caen-quattro-rfid-reader/caen-quattro-rfid-reader-5.png',
+    ],
     shortDesc: '4 port, 31.5 dBm, PoE, USB host, perakende ve depo için kompakt long-range okuyucu.',
     description: 'easy2read© ürün ailesinden CAEN Quattro (Model R4321P), perakende ve depo alanlarında kullanım için ideal, kompakt ve uzun menzilli bir RAIN RFID okuyucudur. 31.5 dBm maksimum güçle 4 anten portu, uzun menzilli RFID portalları oluşturmaya olanak tanır. Kompakt form faktörü dar alanlarda bile kolay kurulum sağlar. USB ve Ethernet (PoE) arabirimiyle tek bağlantıyla okuyucuya bağlanıp güç aktarabilirsiniz. USB host konektörü sayesinde yazıcı, klavye ve barkod okuyucu gibi aksesuar bağlanabilir. Entegre Linux platformu dahili web arayüzüyle yapılandırılabilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/quattro/',
@@ -378,9 +530,14 @@ export const readers: Reader[] = [
   },
   {
     slug: 'caen-skid-rfid-reader',
+    datasheet: '/assets/products/caen-skid-rfid-reader/caen-skid-rfid-reader-datasheet.pdf',
     title: 'CAEN skID RAIN RFID Okuyucu',
     brand: 'CAEN',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2023/10/iradets-skid-reader.webp',
+    image: '/assets/products/caen-skid-rfid-reader/caen-skid-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/caen-skid-rfid-reader/caen-skid-rfid-reader-1.webp',
+      '/assets/products/caen-skid-rfid-reader/caen-skid-rfid-reader-2.jpg',
+    ],
     shortDesc: 'Taşınabilir, Bluetooth LE + klasik, akıllı telefona 3 farklı montaj seçeneği, Impinj R2000.',
     description: 'easy2read© ürün ailesinden CAEN skID (Model R1280IE/R1280IU), orta menzil uygulamaları için entegre antenli taşınabilir bir RAIN RFID okuyucudur. Dahili şarj edilebilir bataryası sayesinde Bluetooth veya USB kabloyla kablosuz/kablolu kullanılabilir. Android, iOS, Windows CE/Mobile ve Windows 8/10 ile uyumludur. Bluetooth Low Energy (BLE) ve klasik Bluetooth\'u; klavye emülasyonu için HID profilini destekler. Akıllı telefona bağlamak için SP-Connect, 3M Dual Lock veya mıknatıs seçeneği sunar. Impinj R2000 çipsetiyle güçlendirilmiştir.',
     storeUrl: 'https://www.altis.com.tr/store/product/skid/',
@@ -391,9 +548,17 @@ export const readers: Reader[] = [
   // ── SICK ─────────────────────────────────────────────────────────────────
   {
     slug: 'sick-rfu630-rfid-reader',
+    datasheet: '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-datasheet.pdf',
     title: 'SICK RFU630 RFID Okuyucu',
     brand: 'SICK',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2021/09/sick-rfu63x-okuyucu.webp',
+    image: '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-1.webp',
+      '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-2.webp',
+      '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-3.webp',
+      '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-4.webp',
+      '/assets/products/sick-rfu630-rfid-reader/sick-rfu630-rfid-reader-5.webp',
+    ],
     shortDesc: '4 port, 4DPro teknoloji, MicroSD, Profinet + OPC UA + PLC doğrudan entegrasyon, görüş dışı okuma.',
     description: 'SICK RFU630, ISO/IEC 18000-6C/EPC G2C1 standardına uygun, MicroSD hafıza kartlı ve lojistik, ulaşım ve üretim sektörlerinde kullanılan bir RFID okuyucusudur. Üstün okuma performansıyla 4DPro teknolojisine sahip olan RFU630, 4 portlu yapısıyla esnek ve gerçek endüstriyel çözümler sunar. Görüş dışı okumada bile yüksek performansta çalışır. Dahili hafıza kartı sayesinde tüm parametreler diğer cihazlara aktarılabilir; PLC ve HMI sistemleriyle otomatik entegrasyon sağlar. Profinet, OPC UA gibi otomasyon sistemlerine doğrudan entegre edilebilir.',
     storeUrl: 'https://www.altis.com.tr/store/product/sick-rfu630-rfid-reader/',
@@ -405,9 +570,16 @@ export const readers: Reader[] = [
   // ── ZEBRA ─────────────────────────────────────────────────────────────────
   {
     slug: 'zebra-fx9600-rfid-reader',
+    datasheet: '/assets/products/zebra-fx9600-rfid-reader/zebra-fx9600-rfid-reader-datasheet.pdf',
     title: 'Zebra FX9600 RFID Okuyucu',
     brand: 'Zebra',
-    image: 'https://www.altis.com.tr/store/wp-content/uploads/2022/02/zebra-fx9600-4-port-1.webp',
+    image: '/assets/products/zebra-fx9600-rfid-reader/zebra-fx9600-rfid-reader-1.webp',
+    gallery: [
+      '/assets/products/zebra-fx9600-rfid-reader/zebra-fx9600-rfid-reader-1.webp',
+      '/assets/products/zebra-fx9600-rfid-reader/zebra-fx9600-rfid-reader-2.webp',
+      '/assets/products/zebra-fx9600-rfid-reader/zebra-fx9600-rfid-reader-3.webp',
+      '/assets/products/zebra-fx9600-rfid-reader/zebra-fx9600-rfid-reader-4.webp',
+    ],
     shortDesc: '8 anten portu, PoE+, IP53, WiFi/Bluetooth, yüksek trafik ve zorlu ortamlar için enterprise okuyucu.',
     description: 'Zebra FX9600, yüksek hacimli ve zorlu koşullar için sektör lideri performans sunan RFID okuyucudur. FX9600, PoE ve PoE+ desteği, IP 53 korumalı kasa ve 8 RF anten bağlantısıyla varlık takibi ve envanter yönetimi uygulamalarına yeni bir yetenek seviyesi kazandırır. WiFi/Bluetooth dongle desteği sayesinde erişim noktasına kablolu bağlantı gerekmez. Sınıfının en iyi işlemcisi ve genişletilmiş belleği sayesinde çok yüksek trafik akışını ve gelişmiş yazılım uygulamalarını destekler.',
     storeUrl: 'https://www.altis.com.tr/store/product/zebra-fx9600-rfid-reader/',
