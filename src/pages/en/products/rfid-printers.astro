@@ -1,0 +1,18 @@
+---
+import EnglishProductList from '../../../components/products/EnglishProductList.astro';
+import { printers } from '../../../data/rfid-yazicilar';
+import { withEnglishProductCopy } from '../../../data/english-product-copy';
+
+const englishPrinters = printers.map(withEnglishProductCopy);
+---
+
+<EnglishProductList
+  title="RFID Printers - Altis Technology"
+  description="RFID label printers supplied by Altis Technology."
+  eyebrow="RFID Printing"
+  heading="RFID Printers"
+  lead="Browse RFID printers for encoding and printing labels in desktop, mobile, and industrial environments."
+  items={englishPrinters}
+  detailBase="/en/products/rfid-printers/"
+  alternateUrl="https://www.altis.com.tr/urunler/rfid-yazicilar/"
+/>

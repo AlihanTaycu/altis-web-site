@@ -1,0 +1,29 @@
+---
+import EnglishProductDetail from '../../../../components/products/EnglishProductDetail.astro';
+import { products as handhelds } from '../../../../data/el-terminalleri';
+import { withEnglishProductCopy } from '../../../../data/english-product-copy';
+
+export function getStaticPaths() {
+  const englishHandhelds = handhelds.map(withEnglishProductCopy);
+  return englishHandhelds.map(item => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const englishHandhelds = handhelds.map(withEnglishProductCopy);
+const related = englishHandhelds
+  .filter(product => product.slug !== item.slug)
+  .sort((a, b) => Number(b.brand === item.brand) - Number(a.brand === item.brand))
+  .slice(0, 4);
+---
+
+<EnglishProductDetail
+  item={item}
+  categoryTitle="RFID Handheld Terminals"
+  listHref="/en/products/rfid-handhelds/"
+  relatedHrefBase="/en/products/rfid-handhelds/"
+  related={related}
+  alternateUrl={`https://www.altis.com.tr/urunler/el-terminalleri/${item.slug}/`}
+/>

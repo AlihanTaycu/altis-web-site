@@ -1,0 +1,129 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { rfidTags, tagBrands } from '../../../data/rfid-etiketler';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'RFID Tags - Altis Technology',
+  description: 'UHF, HF, on-metal, and non-metal RFID tag products supplied by Altis Technology.',
+  url: 'https://www.altis.com.tr/en/products/rfid-tags/',
+};
+
+const surfaceCounts = {
+  onMetal: rfidTags.filter(tag => tag.onMetal).length,
+  nonMetal: rfidTags.filter(tag => !tag.onMetal).length,
+};
+---
+
+<Base
+  title="RFID Tags - Altis Technology"
+  description="UHF, HF, on-metal, and non-metal RFID tags for textile, logistics, manufacturing, asset tracking, and retail projects."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/urunler/rfid-etiketler/"
+>
+  <section class="hero">
+    <div class="container">
+      <a href="/en/products/" class="breadcrumb">&larr; Products</a>
+      <p class="eyebrow">RFID Consumables</p>
+      <h1>RFID Tags</h1>
+      <p class="lead">
+        UHF, HF, on-metal, and non-metal RFID tags for different field conditions.
+        {rfidTags.length} products across {tagBrands.length} brands.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><strong>{rfidTags.length}</strong><span>Products</span></div>
+        <div class="stat"><strong>{tagBrands.length}</strong><span>Brands</span></div>
+        <div class="stat"><strong>{surfaceCounts.onMetal}</strong><span>On Metal</span></div>
+        <div class="stat"><strong>{surfaceCounts.nonMetal}</strong><span>Non Metal</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-nav container">
+    {tagBrands.map(brand => (
+      <a href={`#brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="brand-btn">{brand}</a>
+    ))}
+    <a href="/iletisim/" class="btn btn-outline btn-sm">Request Bulk Quote</a>
+  </section>
+
+  {tagBrands.map(brand => {
+    const group = rfidTags.filter(tag => tag.brand === brand);
+    return (
+      <section class="brand-section container" id={`brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+        <div class="brand-header">
+          <h2 class="brand-title">{brand} <span class="count">({group.length} products)</span></h2>
+        </div>
+        <div class="products-grid">
+          {group.map(tag => (
+            <article class="product-card">
+              <a href={`/en/products/rfid-tags/${tag.slug}/`} class="card-image-link">
+                <img src={tag.image} alt={tag.title} loading="lazy" width="400" height="300" />
+                <span class:list={['surface-ribbon', { metal: tag.onMetal }]}>{tag.onMetal ? 'On Metal' : 'Non Metal'}</span>
+              </a>
+              <div class="card-body">
+                <span class="brand-label">{tag.brand}</span>
+                <h3><a href={`/en/products/rfid-tags/${tag.slug}/`}>{tag.title}</a></h3>
+                <p class="short-desc">{tag.shortDesc}</p>
+                <div class="tag-row">
+                  {[tag.frequency, tag.formFactor, tag.chip].filter(Boolean).slice(0, 3).map(item => <span class="tag">{item}</span>)}
+                </div>
+                <div class="card-actions">
+                  <a href={`/en/products/rfid-tags/${tag.slug}/`} class="btn btn-primary btn-sm">View Product</a>
+                  <a href={`/iletisim/?urun=${encodeURIComponent(tag.title)}`} class="btn btn-outline btn-sm">Request Quote</a>
+                  {tag.datasheet && <a href={tag.datasheet} class="btn btn-pdf btn-sm" target="_blank" rel="noopener">PDF</a>}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</Base>
+
+<style>
+.hero { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); color: #fff; padding: 72px 0 60px; }
+.breadcrumb { display: inline-block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.7); margin-bottom: 20px; }
+.breadcrumb:hover { color: #fff; }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+.hero h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.15; }
+.lead { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 720px; line-height: 1.7; margin-bottom: 36px; }
+.hero-stats { display: flex; gap: 34px; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat strong { font-size: 1.5rem; font-weight: 800; color: var(--cyan); line-height: 1; }
+.stat span { font-size: 12px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .06em; }
+.brand-nav { display: flex; align-items: center; gap: 8px; padding-top: 28px; padding-bottom: 12px; flex-wrap: wrap; }
+.brand-btn { display: inline-flex; align-items: center; font-size: 13px; font-weight: 700; color: var(--primary); background: rgba(0,18,92,.06); border: 1px solid rgba(0,18,92,.15); padding: 6px 14px; border-radius: 20px; transition: background .2s, color .2s; }
+.brand-btn:hover { background: var(--primary); color: #fff; }
+.btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); margin-left: auto; }
+.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-sm { font-size: 13px; padding: 7px 14px; }
+.brand-section { padding-top: 44px; padding-bottom: 16px; }
+.brand-header { margin-bottom: 20px; }
+.brand-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); padding-bottom: 10px; border-bottom: 2px solid var(--border-soft); }
+.count { font-size: 14px; font-weight: 500; color: var(--text-muted); }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.product-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, border-color .2s, transform .2s; }
+.product-card:hover { border-color: var(--primary); box-shadow: 0 8px 28px rgba(0,18,92,.09); transform: translateY(-2px); }
+.card-image-link { display: block; background: #f8f9fb; padding: 20px; aspect-ratio: 4/3; overflow: hidden; position: relative; }
+.card-image-link img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
+.product-card:hover .card-image-link img { transform: scale(1.04); }
+.surface-ribbon { position: absolute; top: 12px; right: 12px; background: #eef3ff; color: var(--primary); border: 1px solid rgba(0,18,92,.12); font-size: 10.5px; font-weight: 800; padding: 4px 9px; border-radius: 999px; }
+.surface-ribbon.metal { background: #fff4f3; color: #c62828; border-color: #ffd7d3; }
+.card-body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.brand-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
+.card-body h3 { font-size: 13.5px; font-weight: 700; line-height: 1.35; margin: 0; }
+.card-body h3 a { color: var(--primary); }
+.short-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; flex: 1; margin: 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.tag { font-size: 10.5px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
+.card-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.card-actions .btn-outline { margin-left: 0; }
+.btn-pdf { background: #fff4f3; border: 1.5px solid #ffd7d3; color: #c62828; }
+.btn-pdf:hover { background: #c62828; border-color: #c62828; color: #fff; }
+@media (max-width: 600px) {
+  .btn-outline { margin-left: 0; width: 100%; justify-content: center; }
+}
+</style>

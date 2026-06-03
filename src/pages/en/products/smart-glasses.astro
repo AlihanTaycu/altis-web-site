@@ -1,0 +1,279 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
+import { vuzixSmartGlasses } from '../../../data/vuzix-smart-glasses';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Vuzix Smart Glasses - Altis Technology',
+  description: 'Vuzix M400, M4000, and LX1 smart glasses for hands-free warehouse, manufacturing, field service, and remote support workflows.',
+  url: 'https://www.altis.com.tr/en/products/smart-glasses/',
+};
+
+const modelCopy = {
+  'vuzix-m400': {
+    badge: 'Enterprise Monocular',
+    positioning: 'A powerful, lightweight, and versatile enterprise smart glasses platform.',
+    shortDesc: 'Vuzix M400 combines a 13 MP camera, bright OLED display, hot-swappable battery design, and IP67 durability for field service, healthcare, warehouse, and remote support operations.',
+    stats: [
+      { value: '13 MP', label: 'camera' },
+      { value: 'IP67', label: 'protection' },
+      { value: '2 m', label: 'drop test' },
+    ],
+  },
+  'vuzix-m4000': {
+    badge: 'Waveguide AR',
+    positioning: 'A transparent waveguide AR solution for industrial teams.',
+    shortDesc: 'Vuzix M4000 brings transparent waveguide optics, high brightness, professional camera capabilities, and a lightweight form factor to manufacturing, assembly, maintenance, and training workflows.',
+    stats: [
+      { value: '5000 nit', label: 'brightness' },
+      { value: '28°', label: 'field of view' },
+      { value: '4K', label: 'video' },
+    ],
+  },
+  'vuzix-lx1': {
+    badge: 'Warehouse Smart Glasses',
+    positioning: 'A next-generation, full-shift smart glasses platform for warehouse operations.',
+    shortDesc: 'Vuzix LX1 is designed for warehouse and logistics workflows with a removable 7000 mAh battery, Android 15, Wi-Fi 6E, a bright OLED display, and voice picking readiness.',
+    stats: [
+      { value: '7000 mAh', label: 'battery' },
+      { value: '10 hours', label: 'runtime' },
+      { value: 'Wi-Fi 6E', label: 'connectivity' },
+    ],
+  },
+};
+
+const comparisonRows = [
+  { label: 'Ideal use', values: ['Field service and healthcare', 'Industrial AR and assembly', 'Warehouse and logistics'] },
+  { label: 'Display approach', values: ['Monocular OLED', 'Transparent waveguide AR', 'Monocular OLED'] },
+  { label: 'Camera', values: ['13 MP, 1080p/60', '12.8 MP, 4K/30 OIS', '12 MP, 1080p/60'] },
+  { label: 'Battery approach', values: ['External, hot-swappable', '750 mAh or power bank options', '7000 mAh full-shift battery'] },
+  { label: 'Connectivity', values: ['Wi-Fi 5, Bluetooth 5.0', 'Wi-Fi 5, Bluetooth 5.0', 'Wi-Fi 6E, Bluetooth, NFC'] },
+  { label: 'Key difference', values: ['Versatile field use', 'True AR overlay', 'Purpose-built warehouse platform'] },
+];
+
+const featuredModel = vuzixSmartGlasses.find(model => model.slug === 'vuzix-lx1') ?? vuzixSmartGlasses[0];
+const featuredCopy = modelCopy[featuredModel.slug];
+const modelHref = (slug: string) => `/en/products/smart-glasses/${slug}/`;
+---
+
+<Base
+  title="Vuzix Smart Glasses - Altis Technology"
+  description="Vuzix M400, M4000, and LX1 smart glasses for hands-free warehouse, manufacturing, field service, and remote support workflows."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/urunler/akilli-gozluk/"
+>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/en/">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="/en/products/">Products</a>
+      <span aria-hidden="true">›</span>
+      <span>Vuzix Smart Glasses</span>
+    </div>
+  </nav>
+
+  <section class="vuzix-hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Vuzix Smart Glasses</p>
+        <h1>Premium hands-free work for field teams.</h1>
+        <p class="hero-lead">Vuzix M400, M4000, and LX1 models bring work instructions, video support, barcode verification, and operational guidance into the operator's line of sight.</p>
+        <div class="hero-actions">
+          <a href="/en/contact/" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="#compare" class="btn btn-secondary btn-lg">Compare Models</a>
+        </div>
+      </div>
+      <div class="hero-product">
+        <span class="hero-badge">New model</span>
+        <img src={featuredModel.image} alt={featuredModel.name} width="720" height="520" loading="eager" />
+        <div class="hero-product-caption">
+          <strong>{featuredModel.name}</strong>
+          <span>{featuredCopy.positioning}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="model-strip" id="models">
+    <div class="container">
+      <SectionHead
+        eyebrow="Product Family"
+        heading="Three models, three field priorities."
+        description="M400 is built for flexible field use, M4000 adds a true AR overlay, and LX1 focuses on full-shift warehouse and logistics operations."
+      />
+
+      <div class="model-grid">
+        {vuzixSmartGlasses.map(model => {
+          const copy = modelCopy[model.slug];
+          return (
+            <article class="model-card">
+              <a href={modelHref(model.slug)} class="model-media" aria-label={`${model.name} detail page`}>
+                <img src={model.image} alt={model.name} width="520" height="360" loading="lazy" />
+              </a>
+              <div class="model-body">
+                <span class="model-badge">{copy.badge}</span>
+                <h3>{model.name}</h3>
+                <p>{copy.shortDesc}</p>
+                <div class="model-stats">
+                  {copy.stats.map(stat => (
+                    <div>
+                      <strong>{stat.value}</strong>
+                      <span>{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href={modelHref(model.slug)} class="model-link">View Model</a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-band">
+    <div class="container premium-grid">
+      <div class="premium-copy">
+        <p class="eyebrow">Operational Flow</p>
+        <h2>Instructions at eye level, verification hands-free.</h2>
+        <p>Vuzix smart glasses support pick lists, maintenance steps, barcode validation, live expert support, and quality documentation without interrupting the operator's workflow. Altis Technology deploys them as part of a working solution with WMS, ERP, MDM, and field training support.</p>
+      </div>
+      <div class="premium-image">
+        <img src="/images/vuzix/vuzix_Lx1_manken.webp" alt="Vuzix smart glasses warehouse operation" width="960" height="540" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-section" id="compare">
+    <div class="container">
+      <SectionHead
+        eyebrow="Compare"
+        heading="Which Vuzix model fits your workflow?"
+      />
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              {vuzixSmartGlasses.map(model => (
+                <th><a href={modelHref(model.slug)}>{model.shortName}</a></th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonRows.map(row => (
+              <tr>
+                <th>{row.label}</th>
+                {row.values.map(value => <td>{value}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="altis-value">
+    <div class="container">
+      <SectionHead
+        eyebrow="Why Altis Technology"
+        heading="Not just hardware, a field-ready solution."
+      />
+      <div class="value-grid">
+        <article>
+          <h3>Product and lifecycle support</h3>
+          <p>Model selection, accessories, warranty, service planning, and operational guidance are handled with the Altis team.</p>
+        </article>
+        <article>
+          <h3>Integration expertise</h3>
+          <p>RFID, barcode, WMS, ERP, MDM, and field applications are positioned within the same operating flow.</p>
+        </article>
+        <article>
+          <h3>Pilot and training</h3>
+          <p>We help define the right pilot scope, train users, and prepare the path from proof of concept to live operation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow">Demo and Quote</p>
+        <h2>Choose the right Vuzix model for your field scenario.</h2>
+      </div>
+      <a href="/en/contact/" class="btn btn-primary btn-lg">Request Quote</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-bar { background: #fff; }
+.breadcrumb-inner { display: flex; align-items: center; gap: 8px; padding-top: 14px; padding-bottom: 14px; color: var(--text-muted); font-size: 13px; }
+.breadcrumb-inner a:hover { color: var(--primary); }
+.breadcrumb-inner span:last-child { color: var(--primary); font-weight: 600; }
+.vuzix-hero { background: #fff; padding: 88px 0 72px; }
+.hero-inner { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 72px; align-items: center; }
+.hero-copy h1 { font-size: clamp(42px, 5.4vw, 76px); max-width: 720px; margin: 18px 0 22px; }
+.hero-lead { max-width: 620px; color: var(--text-muted); font-size: 18px; line-height: 1.8; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.hero-product { position: relative; min-height: 520px; display: grid; align-items: center; justify-items: center; background: #fff; border-radius: 28px; padding: 48px; }
+.hero-product img { width: min(100%, 620px); max-height: 430px; object-fit: contain; }
+.hero-badge { position: absolute; top: 24px; left: 24px; color: var(--primary); background: #fff; border-radius: 6px; padding: 7px 14px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.hero-product-caption { position: absolute; right: 24px; bottom: 24px; left: 24px; display: flex; justify-content: space-between; gap: 20px; align-items: end; padding-top: 18px; }
+.hero-product-caption strong { color: var(--primary); font-size: 18px; }
+.hero-product-caption span { color: var(--text-muted); font-size: 13px; text-align: right; max-width: 280px; }
+.model-strip { background: var(--bg-soft); }
+.model-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.model-card { background: #fff; border-radius: 18px; overflow: hidden; }
+.model-media { display: grid; place-items: center; min-height: 280px; padding: 34px; background: #fff; }
+.model-media img { width: 100%; height: 230px; object-fit: contain; transition: transform .25s; }
+.model-card:hover .model-media img { transform: scale(1.035); }
+.model-body { padding: 28px; }
+.model-badge { display: inline-flex; color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.model-body h3 { font-size: 28px; margin-bottom: 12px; }
+.model-body p { font-size: 14.5px; line-height: 1.75; }
+.model-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0; padding-top: 20px; }
+.model-stats strong { display: block; color: var(--primary); font-size: 15px; }
+.model-stats span { display: block; color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.model-link { color: var(--primary); font-weight: 800; font-size: 14px; }
+.model-link:hover { color: var(--cyan); }
+.premium-band { background: #fff; }
+.premium-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: center; }
+.premium-copy h2 { margin: 18px 0; }
+.premium-copy p:not(.eyebrow) { font-size: 17px; line-height: 1.85; }
+.premium-image { border-radius: 24px; overflow: hidden; background: var(--bg-soft); }
+.premium-image img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.compare-section { background: var(--bg-soft); }
+.compare-table-wrap { overflow-x: auto; border-radius: 16px; background: #fff; }
+.compare-table { width: 100%; min-width: 760px; border-collapse: collapse; }
+.compare-table th, .compare-table td { padding: 18px 22px; text-align: left; font-size: 14px; }
+.compare-table thead th { color: var(--primary); font-size: 15px; background: #fff; }
+.compare-table tbody th { color: var(--text-muted); font-weight: 700; width: 220px; background: #fafbfe; }
+.compare-table td { color: var(--text); }
+.altis-value { background: #fff; }
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.value-grid article { border-radius: 16px; padding: 28px; background: #fff; }
+.value-grid h3 { font-size: 19px; margin-bottom: 12px; }
+.value-grid p { font-size: 14.5px; line-height: 1.75; }
+.cta-section { background: var(--primary); padding: 76px 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.cta-inner .eyebrow { color: var(--cyan); }
+.cta-inner h2 { color: #fff; max-width: 760px; margin-top: 14px; }
+@media (max-width: 980px) {
+  .hero-inner, .premium-grid { grid-template-columns: 1fr; }
+  .model-grid, .value-grid { grid-template-columns: 1fr; }
+  .hero-product { min-height: 420px; }
+}
+@media (max-width: 620px) {
+  .vuzix-hero { padding-top: 64px; }
+  .hero-product { padding: 28px; border-radius: 20px; }
+  .hero-product-caption { position: static; margin-top: 18px; align-items: start; flex-direction: column; }
+  .hero-product-caption span { text-align: left; }
+  .model-stats { grid-template-columns: 1fr; }
+  .cta-inner { align-items: flex-start; flex-direction: column; }
+}
+</style>

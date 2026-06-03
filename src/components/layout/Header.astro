@@ -120,13 +120,37 @@ const trNav = [
   },
 ];
 
-// ---------- EN fallback (simple) ----------
+// ---------- EN navigation ----------
 const enNav = [
   { type: 'simple' as const, label: 'Home',      href: '/en/' },
   { type: 'simple' as const, label: 'Platforms', href: '/en/platforms/' },
   { type: 'simple' as const, label: 'Solutions', href: '/en/solutions/' },
   { type: 'simple' as const, label: 'Sectors',   href: '/en/sectors/' },
-  { type: 'simple' as const, label: 'Products',  href: '/en/products/' },
+  {
+    type: 'mega-products' as const,
+    label: 'Products',
+    href: '/en/products/',
+    data: {
+      groups: [
+        {
+          title: 'RFID Products',
+          items: [
+            { Icon: Tag,        label: 'RFID Tags',               desc: 'UHF, HF and specialty form factors',       href: '/en/products/rfid-tags/' },
+            { Icon: Radio,      label: 'RFID Readers',            desc: 'Fixed, handheld and integrated readers',   href: '/en/products/rfid-readers/' },
+            { Icon: Smartphone, label: 'RFID Handheld Terminals', desc: 'Mobile RFID processing and inventory',     href: '/en/products/rfid-handhelds/' },
+            { Icon: Printer,    label: 'RFID Printers',           desc: 'RFID label printing and encoding',         href: '/en/products/rfid-printers/' },
+            { Icon: Store,      label: 'RFID Retail',             desc: 'EAS, counting and store RFID systems',     href: '/en/products/rfid-retail/' },
+          ],
+        },
+        {
+          title: 'Smart Glasses',
+          items: [
+            { Icon: Glasses, label: 'Vuzix Smart Glasses', desc: 'M400, M4000 and LX1 for hands-free field work', href: '/en/products/smart-glasses/' },
+          ],
+        },
+      ],
+    },
+  },
   { type: 'simple' as const, label: 'About',     href: '/en/about/' },
   { type: 'simple' as const, label: 'Contact',   href: '/en/contact/' },
 ];

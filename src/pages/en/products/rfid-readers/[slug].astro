@@ -1,0 +1,29 @@
+---
+import EnglishProductDetail from '../../../../components/products/EnglishProductDetail.astro';
+import { readers } from '../../../../data/rfid-okuyucular';
+import { withEnglishProductCopy } from '../../../../data/english-product-copy';
+
+export function getStaticPaths() {
+  const englishReaders = readers.map(withEnglishProductCopy);
+  return englishReaders.map(item => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const englishReaders = readers.map(withEnglishProductCopy);
+const related = englishReaders
+  .filter(product => product.slug !== item.slug)
+  .sort((a, b) => Number(b.brand === item.brand) - Number(a.brand === item.brand))
+  .slice(0, 4);
+---
+
+<EnglishProductDetail
+  item={item}
+  categoryTitle="RFID Readers"
+  listHref="/en/products/rfid-readers/"
+  relatedHrefBase="/en/products/rfid-readers/"
+  related={related}
+  alternateUrl={`https://www.altis.com.tr/urunler/okuyucular/${item.slug}/`}
+/>

@@ -1,0 +1,18 @@
+---
+import EnglishProductList from '../../../components/products/EnglishProductList.astro';
+import { products as handhelds } from '../../../data/el-terminalleri';
+import { withEnglishProductCopy } from '../../../data/english-product-copy';
+
+const englishHandhelds = handhelds.map(withEnglishProductCopy);
+---
+
+<EnglishProductList
+  title="RFID Handheld Terminals - Altis Technology"
+  description="Mobile RFID handheld terminals supplied by Altis Technology."
+  eyebrow="Mobile RFID"
+  heading="RFID Handheld Terminals"
+  lead="Browse handheld RFID terminals for inventory, field operations, and enterprise mobility projects."
+  items={englishHandhelds}
+  detailBase="/en/products/rfid-handhelds/"
+  alternateUrl="https://www.altis.com.tr/urunler/rfid-el-terminalleri/"
+/>
