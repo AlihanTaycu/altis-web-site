@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { translateEnglishTags } from '../../data/english-product-copy';
 
 type Item = {
   slug: string;
@@ -30,6 +31,7 @@ const displayTitle = (value: string) => value
   .replace(/RFID Yazıcı/g, 'RFID Printer')
   .replace(/Yazıcı/g, 'Printer')
   .replace(/El Terminali/g, 'Handheld Terminal');
+const displayTag = (value: string) => translateEnglishTags([value])[0];
 const productTitle = displayTitle(item.title);
 const englishDatasheet = (value?: string) => value?.replace(/\.pdf$/, '-en.pdf');
 const gallery = item.gallery && item.gallery.length > 0 ? item.gallery : [item.image];
@@ -94,7 +96,7 @@ const schema = {
       </div>
       <h1>{productTitle}</h1>
       <div class="tags-row">
-        {item.tags.map(tag => <span class="tag">{tag}</span>)}
+        {item.tags.map(tag => <span class="tag">{displayTag(tag)}</span>)}
       </div>
       <p class="description">{description}</p>
       <div class="price-block">
@@ -105,17 +107,36 @@ const schema = {
         <a href={contactHref} class="btn btn-primary btn-lg">Request Quote</a>
         <a href="/en/contact/" class="btn btn-outline btn-lg">Request Demo</a>
       </div>
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Official Distributor</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Fast Delivery</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span>Technical Support</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="details-section container">
-    <div class="detail-card full">
+    <div class="detail-card">
       <h2>Product Overview</h2>
       <p>{description}</p>
     </div>
     <div class="detail-card">
-      <h2>Brand & Availability</h2>
+      <h2>Brand</h2>
       <p><strong>{item.brand}</strong> — Altis Technology provides product selection, integration support, and project delivery guidance.</p>
+      {item.storeUrl && (
+        <a href={item.storeUrl} target="_blank" rel="noopener" class="external-link">
+          View in legacy store →
+        </a>
+      )}
     </div>
   </section>
 
@@ -146,19 +167,121 @@ const schema = {
       </div>
     </div>
   </section>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image viewer" hidden>
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lb-prev" type="button" aria-label="Previous image">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lb-nav lb-next" id="lb-next" type="button" aria-label="Next image">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lb-stage" id="lb-stage">
+      <img class="lb-image" id="lb-image" src="" alt="" />
+    </div>
+    <div class="lb-toolbar">
+      <button class="lb-tool" id="lb-zoom-out" type="button" aria-label="Zoom out">-</button>
+      <span class="lb-counter" id="lb-counter">1 / 1</span>
+      <button class="lb-tool" id="lb-zoom-in" type="button" aria-label="Zoom in">+</button>
+    </div>
+  </div>
 
   <script is:inline define:vars={{ gallery }}>
     (function () {
       const mainImg = document.getElementById('main-img');
       const thumbs = document.querySelectorAll('#gallery-thumbs .thumb-btn');
+      const wrap = document.getElementById('product-image-wrap');
+      const lightbox = document.getElementById('lightbox');
+      const lbImage = document.getElementById('lb-image');
+      const lbCounter = document.getElementById('lb-counter');
+      const lbClose = document.getElementById('lb-close');
+      const lbPrev = document.getElementById('lb-prev');
+      const lbNext = document.getElementById('lb-next');
+      const lbStage = document.getElementById('lb-stage');
+      const lbZoomIn = document.getElementById('lb-zoom-in');
+      const lbZoomOut = document.getElementById('lb-zoom-out');
       if (!mainImg) return;
+      let currentIndex = 0;
+      let zoom = 1;
+      let panX = 0;
+      let panY = 0;
+
+      function setMain(index) {
+        currentIndex = (index + gallery.length) % gallery.length;
+        mainImg.src = gallery[currentIndex];
+        mainImg.dataset.index = currentIndex;
+        thumbs.forEach((item, itemIndex) => item.classList.toggle('active', itemIndex === currentIndex));
+      }
+
       thumbs.forEach((thumb) => {
         thumb.addEventListener('click', () => {
-          const index = parseInt(thumb.dataset.index, 10);
-          mainImg.src = gallery[index];
-          mainImg.dataset.index = index;
-          thumbs.forEach((item, itemIndex) => item.classList.toggle('active', itemIndex === index));
+          setMain(parseInt(thumb.dataset.index, 10));
         });
+      });
+
+      if (!wrap || !lightbox || !lbImage || !lbCounter || !lbClose || !lbPrev || !lbNext || !lbStage || !lbZoomIn || !lbZoomOut) return;
+
+      function applyTransform() {
+        lbImage.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + zoom + ')';
+      }
+
+      function setZoom(value) {
+        zoom = Math.max(1, Math.min(4, value));
+        if (zoom === 1) {
+          panX = 0;
+          panY = 0;
+        }
+        applyTransform();
+      }
+
+      function updateLightbox() {
+        lbImage.src = gallery[currentIndex];
+        lbImage.alt = 'Product image ' + (currentIndex + 1);
+        lbCounter.textContent = (currentIndex + 1) + ' / ' + gallery.length;
+        setZoom(1);
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => lightbox.classList.add('open'));
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          lightbox.hidden = true;
+        }, 220);
+      }
+
+      wrap.addEventListener('click', () => openLightbox(parseInt(mainImg.dataset.index || '0', 10)));
+      lbClose.addEventListener('click', closeLightbox);
+      lbPrev.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+        updateLightbox();
+      });
+      lbNext.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % gallery.length;
+        updateLightbox();
+      });
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox || event.target === lbStage) closeLightbox();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (lightbox.hidden) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') lbPrev.click();
+        if (event.key === 'ArrowRight') lbNext.click();
+      });
+      lbZoomIn.addEventListener('click', () => setZoom(zoom + 0.5));
+      lbZoomOut.addEventListener('click', () => setZoom(zoom - 0.5));
+      lbImage.addEventListener('click', (event) => {
+        event.stopPropagation();
+        setZoom(zoom === 1 ? 2 : 1);
       });
     })();
   </script>
@@ -204,11 +327,16 @@ const schema = {
 .btn-lg { padding: 14px 28px; font-size: 15px; }
 .btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
 .btn-outline:hover { background: var(--primary); color: #fff; }
-.details-section { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 60px; }
+.trust-row { display: flex; gap: 20px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--border-soft); }
+.trust-item { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--text-muted); }
+.trust-item svg { color: var(--cyan); flex-shrink: 0; }
+.details-section { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; padding-bottom: 60px; }
 .detail-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
 .detail-card.full { grid-column: 1 / -1; }
 .detail-card h2 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
 .detail-card p { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin: 0; }
+.external-link { display: inline-flex; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--cyan); transition: opacity .2s; }
+.external-link:hover { opacity: .75; }
 .related-section { padding-bottom: 60px; }
 .related-section h2 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
 .related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 16px; }
@@ -224,11 +352,30 @@ const schema = {
 .bottom-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn-outline-white { background: transparent; border: 1.5px solid rgba(255,255,255,.5); color: #fff; }
 .btn-outline-white:hover { background: rgba(255,255,255,.1); }
+.lightbox { position: fixed; inset: 0; background: rgba(6,12,32,.88); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; transition: opacity .22s ease; }
+.lightbox.open { opacity: 1; }
+.lightbox[hidden] { display: none; }
+.lb-stage { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 56px 80px; box-sizing: border-box; }
+.lb-image { max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; transition: transform .25s ease; user-select: none; -webkit-user-drag: none; transform-origin: center center; }
+.lb-close, .lb-nav, .lb-tool { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background .15s, transform .15s; backdrop-filter: blur(8px); }
+.lb-close:hover, .lb-nav:hover, .lb-tool:hover { background: rgba(255,255,255,.22); transform: scale(1.06); }
+.lb-close { position: absolute; top: 22px; right: 22px; z-index: 2; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; }
+.lb-nav:hover { transform: translateY(-50%) scale(1.06); }
+.lb-prev { left: 18px; }
+.lb-next { right: 18px; }
+.lb-toolbar { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 6px 8px; backdrop-filter: blur(8px); z-index: 2; }
+.lb-tool { width: 32px; height: 32px; font-size: 18px; font-weight: 700; border: none; background: transparent; }
+.lb-tool:hover { background: rgba(255,255,255,.18); transform: scale(1.08); }
+.lb-counter { color: #fff; font-size: 13px; font-weight: 600; padding: 0 8px; letter-spacing: .04em; }
 @media (max-width: 768px) {
   .product-hero { grid-template-columns: 1fr; gap: 32px; }
   .details-section { grid-template-columns: 1fr; }
   .detail-card.full { grid-column: auto; }
   .datasheet-card { grid-template-columns: auto 1fr; }
   .datasheet-action { grid-column: 1 / -1; text-align: center; }
+  .lb-stage { padding: 60px 16px 80px; }
+  .lb-prev { left: 6px; }
+  .lb-next { right: 6px; }
 }
 </style>

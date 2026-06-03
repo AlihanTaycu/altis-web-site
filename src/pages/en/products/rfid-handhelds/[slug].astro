@@ -1,16 +1,19 @@
 ---
 import EnglishProductDetail from '../../../../components/products/EnglishProductDetail.astro';
 import { products as handhelds } from '../../../../data/el-terminalleri';
+import { withEnglishProductCopy } from '../../../../data/english-product-copy';
 
 export function getStaticPaths() {
-  return handhelds.map(item => ({
+  const englishHandhelds = handhelds.map(withEnglishProductCopy);
+  return englishHandhelds.map(item => ({
     params: { slug: item.slug },
     props: { item },
   }));
 }
 
 const { item } = Astro.props;
-const related = handhelds
+const englishHandhelds = handhelds.map(withEnglishProductCopy);
+const related = englishHandhelds
   .filter(product => product.slug !== item.slug)
   .sort((a, b) => Number(b.brand === item.brand) - Number(a.brand === item.brand))
   .slice(0, 4);

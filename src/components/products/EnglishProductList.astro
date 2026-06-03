@@ -1,14 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { translateEnglishTags } from '../../data/english-product-copy';
 
 type Item = {
   slug: string;
   title: string;
   brand: string;
   image: string;
+  listImage?: string;
   shortDesc: string;
   tags: string[];
   datasheet?: string;
+  isAltisOwn?: boolean;
 };
 
 interface Props {
@@ -32,8 +35,8 @@ const displayTitle = (value: string) => value
   .replace(/RFID Yazıcı/g, 'RFID Printer')
   .replace(/Yazıcı/g, 'Printer')
   .replace(/El Terminali/g, 'Handheld Terminal');
+const displayTag = (value: string) => translateEnglishTags([value])[0];
 const englishDatasheet = (value?: string) => value?.replace(/\.pdf$/, '-en.pdf');
-const cardDescription = (item: Item) => `Explore gallery images, technical datasheet, and quote options for ${displayTitle(item.title)}.`;
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -58,24 +61,25 @@ const schema = {
   </section>
 
   <section class="filter-bar container">
-    <div class="filter-group">
+    <div class="brands">
       {brands.map(brand => <span class="brand-badge">{brand}</span>)}
     </div>
-    <a href="/en/contact/" class="btn btn-outline">Request Quote</a>
+    <a href="/en/contact/" class="btn btn-outline">Request Bulk Quote</a>
   </section>
 
-  <section class="products-grid container">
+  <section class="products container">
     {items.map(item => (
-      <article class="product-card">
+      <article class:list={['product-card', { 'product-card--own': item.isAltisOwn }]}>
         <a href={`${detailBase}${item.slug}/`} class="card-image-link">
-          <img src={item.image} alt={displayTitle(item.title)} loading="lazy" width="400" height="300" />
+          <img src={item.listImage || item.image} alt={displayTitle(item.title)} loading="lazy" width="400" height="300" />
+          {item.isAltisOwn && <span class="own-ribbon">Our Own Product</span>}
         </a>
         <div class="card-body">
           <span class="brand-label">{item.brand}</span>
           <h2><a href={`${detailBase}${item.slug}/`}>{displayTitle(item.title)}</a></h2>
-          <p class="short-desc">{cardDescription(item)}</p>
+          <p class="short-desc">{displayTitle(item.shortDesc)}</p>
           <div class="card-tags">
-            {item.tags.slice(0, 3).map(tag => <span class="tag">{tag}</span>)}
+            {item.tags.slice(0, 3).map(tag => <span class="tag">{displayTag(tag)}</span>)}
           </div>
           <div class="card-actions">
             <a href={`${detailBase}${item.slug}/`} class="btn btn-primary btn-sm">View Product</a>
@@ -107,18 +111,22 @@ const schema = {
 .stat strong { font-size: 1.5rem; font-weight: 800; color: var(--cyan); line-height: 1; }
 .stat span { font-size: 12px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .06em; }
 .filter-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 32px; padding-bottom: 24px; flex-wrap: wrap; }
-.filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.brands { display: flex; gap: 8px; flex-wrap: wrap; }
 .brand-badge { font-size: 12.5px; font-weight: 700; color: var(--primary); background: rgba(0,18,92,.07); border: 1px solid rgba(0,18,92,.15); padding: 5px 12px; border-radius: 20px; }
-.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding-bottom: 64px; }
+.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding-bottom: 64px; }
 .product-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, border-color .2s, transform .2s; }
 .product-card:hover { border-color: var(--primary); box-shadow: 0 8px 32px rgba(0,18,92,.1); transform: translateY(-2px); }
-.card-image-link { display: block; background: #f8f9fb; padding: 24px; aspect-ratio: 4/3; overflow: hidden; }
+.product-card--own { border-color: rgba(24,183,214,.3); }
+.product-card--own:hover { border-color: var(--cyan); }
+.card-image-link { position: relative; display: block; background: #f8f9fb; padding: 24px; aspect-ratio: 4/3; overflow: hidden; }
 .card-image-link img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
 .product-card:hover .card-image-link img { transform: scale(1.04); }
+.own-ribbon { position: absolute; top: 10px; right: 10px; background: var(--cyan); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,18,92,.15); }
 .card-body { padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .brand-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
 .card-body h2 { font-size: 15px; font-weight: 700; line-height: 1.35; margin: 0; }
-.card-body h2 a { color: var(--primary); }
+.card-body h2 a { color: var(--primary); transition: color .2s; }
+.card-body h2 a:hover { color: var(--cyan); }
 .short-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; flex: 1; margin: 0; }
 .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .tag { font-size: 11px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; }

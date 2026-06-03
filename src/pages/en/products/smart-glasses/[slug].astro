@@ -1,0 +1,375 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import SectionHead from '../../../../components/sections/SectionHead.astro';
+import { vuzixSmartGlasses } from '../../../../data/vuzix-smart-glasses';
+import type { VuzixSmartGlass } from '../../../../data/vuzix-smart-glasses';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => vuzixSmartGlasses.map(model => ({
+  params: { slug: model.slug },
+  props: { model },
+}));
+
+const englishModels = {
+  'vuzix-m400': {
+    badge: 'Enterprise Monocular',
+    headline: 'A powerful and flexible smart glasses platform for field teams.',
+    positioning: 'A powerful, lightweight, and versatile enterprise smart glasses platform.',
+    shortDesc: 'Vuzix M400 combines a 13 MP camera, bright OLED display, hot-swappable battery design, and IP67 durability for field service, healthcare, warehouse, and remote support operations.',
+    description: 'M400 is an Android-based wearable computer that keeps operators hands-free across warehouse, healthcare, field service, training, and remote support workflows. Its lightweight body, flexible mounting options, 13 MP camera, and bright OLED display bring video support, barcode reading, work instructions, and field documentation into a single device.',
+    stats: [
+      { value: '13 MP', label: 'camera' },
+      { value: 'IP67', label: 'protection' },
+      { value: '2 m', label: 'drop test' },
+      { value: 'OLED', label: 'bright display' },
+    ],
+    highlights: [
+      { title: 'Powerful XR1 platform', text: 'Qualcomm XR1 processing, 6 GB RAM, and Android support enterprise applications in the field.' },
+      { title: 'Hot-swappable battery', text: 'External battery architecture supports battery changes during shifts without shutting the device down.' },
+      { title: 'Remote expert support', text: 'See-what-I-see video, high audio output, and noise-reducing microphones make live support clearer.' },
+      { title: 'Flexible mounting', text: 'Right-eye or left-eye use, frames, hard-hat mounts, headbands, and safety-glasses options adapt to different sites.' },
+    ],
+    useCases: [
+      { title: 'Field service', text: 'Technicians view maintenance steps, capture photos or video, and collaborate with remote experts.' },
+      { title: 'Healthcare and telemedicine', text: 'Clinical training and live expert support workflows benefit from hands-free video and documentation.' },
+      { title: 'Warehouse and inventory', text: 'Barcode reading, work orders, and quality checks move into the operator’s field of view.' },
+    ],
+    specGroups: [
+      { title: 'System', specs: [{ label: 'Processor', value: 'Qualcomm XR1, 8-core 2.52 GHz' }, { label: 'Memory', value: '6 GB LPDDR4 RAM' }, { label: 'Storage', value: '64 GB internal flash' }, { label: 'Operating system', value: 'Android, OTA upgradeable' }] },
+      { title: 'Display and Camera', specs: [{ label: 'Display', value: 'nHD OLED, 16:9' }, { label: 'Brightness', value: '2000+ nits' }, { label: 'Contrast', value: 'Above 10,000:1' }, { label: 'Camera', value: '13 MP photo, 1080p/60 video, PDAF' }] },
+      { title: 'Durability and Connectivity', specs: [{ label: 'Protection', value: 'IP67 dust and water protection' }, { label: 'Drop test', value: 'Up to 2 meters' }, { label: 'Connectivity', value: 'Wi-Fi 5, Bluetooth 5.0, USB-C' }, { label: 'Audio', value: '97 dB speaker and triple noise-cancelling microphones' }] },
+    ],
+    packageNotes: [
+      { title: 'Longevity series', text: 'Includes M400 main unit, IP67 USB-C battery, lensless frame, power cable, USB charging cable, carrying case, and user guide.' },
+      { title: 'Extended series', text: 'Can be configured with a 3350 mAh USB-C power bank for longer operating time.' },
+    ],
+    certifications: ['IP67', 'IEC 60601', 'ISO 14644-1', '2 m drop test'],
+  },
+  'vuzix-m4000': {
+    badge: 'Waveguide AR',
+    headline: 'Bring true AR guidance into the operator’s field of view.',
+    positioning: 'A transparent waveguide AR solution for industrial teams.',
+    shortDesc: 'Vuzix M4000 brings transparent waveguide optics, high brightness, professional camera capabilities, and a lightweight form factor to manufacturing, assembly, maintenance, and training workflows.',
+    description: 'M4000 combines the enterprise power of the M400 platform with transparent waveguide optics. Operators continue seeing the real world while work instructions, expert guidance, quality data, and AR overlays appear in their field of view.',
+    stats: [
+      { value: '5000 nit', label: 'brightness' },
+      { value: '28°', label: 'field of view' },
+      { value: '4K', label: 'video' },
+      { value: '<100 g', label: 'lightweight' },
+    ],
+    highlights: [
+      { title: 'Transparent waveguide optics', text: 'AR content is overlaid while real-world visibility is preserved.' },
+      { title: 'High brightness', text: '5000-nit brightness improves readability in demanding industrial environments.' },
+      { title: 'Professional camera', text: '12.8 MP camera, 4K video, optical image stabilization, and barcode workflows are supported.' },
+      { title: 'Enterprise mounting options', text: 'Frames, safety glasses, hard-hat mounts, headbands, and headset mounts adapt the device to the site.' },
+    ],
+    useCases: [
+      { title: 'Assembly instructions', text: 'Operators follow step-by-step instructions and quality alerts in the real work area.' },
+      { title: 'Complex maintenance', text: 'Experts can view the field feed live and guide interventions with visual direction.' },
+      { title: 'Industrial training', text: 'New personnel learn procedures with visual guidance in real workflows.' },
+    ],
+    specGroups: [
+      { title: 'Optics', specs: [{ label: 'Display', value: 'Transparent waveguide DLP' }, { label: 'Resolution', value: 'WVGA 854 x 480' }, { label: 'Field of view', value: '28 degrees diagonal' }, { label: 'Brightness', value: '5000 nits' }] },
+      { title: 'System', specs: [{ label: 'Processor', value: 'Qualcomm XR1, 8-core 2.52 GHz' }, { label: 'Memory', value: '6 GB LPDDR4 RAM' }, { label: 'Storage', value: '64 GB internal flash' }, { label: 'MDM', value: 'Multi-partner support' }] },
+      { title: 'Camera and Connectivity', specs: [{ label: 'Camera', value: '12.8 MP photo, 4K/30 video, PDAF, OIS' }, { label: 'Connectivity', value: 'Wi-Fi 5, Bluetooth 5.0, USB-C, GPS/GLONASS' }, { label: 'Battery', value: '750 mAh IP67 battery or 3350 mAh power bank options' }, { label: 'Runtime', value: '2-12 hours depending on battery option' }] },
+    ],
+    packageNotes: [
+      { title: 'Longevity series', text: 'Includes M4000 smart glasses, IP67 USB-C battery, viewer cable, protective glasses, lens accessory, quick-start guide, and rugged case.' },
+      { title: 'Extended series', text: 'Can be configured with a 3350 mAh USB-C power bank for longer use.' },
+    ],
+    certifications: ['IP67', 'IEC 60601', '1 m drop test', 'Left/right eye support'],
+  },
+  'vuzix-lx1': {
+    badge: 'Warehouse Smart Glasses',
+    headline: 'Full-shift hands-free work for warehouse teams.',
+    positioning: 'A next-generation, full-shift smart glasses platform for warehouse operations.',
+    shortDesc: 'Vuzix LX1 is designed for warehouse and logistics workflows with a removable 7000 mAh battery, Android 15, Wi-Fi 6E, a bright OLED display, and voice picking readiness.',
+    description: 'LX1 is a next-generation Vuzix model for voice picking, vision picking, barcode verification, and remote support in modern warehouse and logistics operations. Its 7000 mAh battery, cold-environment readiness, Wi-Fi 6E, and Android 15 foundation target stable full-shift use.',
+    stats: [
+      { value: '7000 mAh', label: 'battery' },
+      { value: '10 hours', label: 'runtime' },
+      { value: 'Wi-Fi 6E', label: 'connectivity' },
+      { value: 'Android 15', label: 'operating system' },
+    ],
+    highlights: [
+      { title: 'Full-shift battery', text: 'A removable 7000 mAh battery targets long-shift use on a single charge.' },
+      { title: 'Warehouse-focused design', text: 'Headband, quick-release mounting, and cold-environment readiness focus on logistics sites.' },
+      { title: 'Voice and vision together', text: 'Voice picking workflows can be paired with visual validation, pick lists, and barcode confirmation.' },
+      { title: 'Modern platform', text: 'Qualcomm QCS4490, 6 GB LPDDR5 RAM, 128 GB storage, Android 15, and Wi-Fi 6E.' },
+    ],
+    useCases: [
+      { title: 'Pick and pack', text: 'Operators view pick lists at eye level and perform location or barcode checks hands-free.' },
+      { title: 'Cold storage', text: 'Low-temperature operating range supports refrigerated and cold-chain workflows.' },
+      { title: 'Shipment verification', text: 'Camera, barcode, and video documentation capabilities help digitize shipment checks.' },
+    ],
+    specGroups: [
+      { title: 'System', specs: [{ label: 'Processor', value: 'Qualcomm QCS4490, 8-core 2.4/2.0 GHz' }, { label: 'Memory', value: '6 GB LPDDR5 RAM' }, { label: 'Storage', value: '128 GB internal flash' }, { label: 'Operating system', value: 'Android 15' }] },
+      { title: 'Display, Audio, and Camera', specs: [{ label: 'Display', value: 'High-resolution OLED' }, { label: 'Brightness', value: 'Above 2000 nits' }, { label: 'Contrast', value: 'Above 10,000:1' }, { label: 'Camera', value: '12 MP photo, 1080p/60 video, autofocus' }, { label: 'Audio', value: '100 dB speaker, triple microphones, bone-conduction microphone' }] },
+      { title: 'Warehouse Durability', specs: [{ label: 'Battery', value: 'Removable 7000 mAh battery' }, { label: 'Connectivity', value: 'Bluetooth, Wi-Fi 6E, NFC tap-to-pair' }, { label: 'Operating temperature', value: '-20°C to 45°C' }, { label: 'Security', value: 'Secure Boot and Verified Boot' }] },
+    ],
+    packageNotes: [
+      { title: 'Standard package', text: 'Includes LX1 smart glasses, 7000 mAh battery, quick-release headband mounting system, user guide, and mounting guide.' },
+      { title: 'Operational accessories', text: 'Can be configured with accessories such as multi-battery charging stations and cap mounts.' },
+    ],
+    certifications: ['FCC', 'CE', '-20°C operation', 'MIL-STD-810H storage test'],
+  },
+};
+
+const { model } = Astro.props as { model: VuzixSmartGlass };
+const copy = englishModels[model.slug];
+const related = vuzixSmartGlasses.filter(item => item.slug !== model.slug);
+const gallery = model.gallery && model.gallery.length > 0 ? model.gallery : [model.image];
+const contactHref = `/en/contact/?product=${encodeURIComponent(model.name)}`;
+const modelHref = (slug: string) => `/en/products/smart-glasses/${slug}/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: model.name,
+  description: copy.shortDesc,
+  brand: { '@type': 'Brand', name: 'Vuzix' },
+  image: model.image,
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    seller: { '@type': 'Organization', name: 'Altis Technology' },
+  },
+};
+---
+
+<Base
+  title={`${model.name} - Smart Glasses | Altis Technology`}
+  description={copy.shortDesc}
+  {schema}
+  lang="en"
+  alternateUrl={`https://www.altis.com.tr/urunler/akilli-gozluk/${model.slug}/`}
+>
+  <nav class="breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <a href="/en/products/">Products</a>
+      <span aria-hidden="true">›</span>
+      <a href="/en/products/smart-glasses/">Vuzix Smart Glasses</a>
+      <span aria-hidden="true">›</span>
+      <span>{model.name}</span>
+    </div>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{copy.badge}</p>
+        <h1>{copy.headline}</h1>
+        <p class="hero-lead">{copy.description}</p>
+        <div class="hero-actions">
+          <a href={contactHref} class="btn btn-primary btn-lg">Request Quote</a>
+          <a href="#technical-specs" class="btn btn-secondary btn-lg">Technical Specs</a>
+        </div>
+      </div>
+      <div class="product-stage">
+        <img src={model.image} alt={model.name} width="760" height="520" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container stats-grid">
+      {copy.stats.map(stat => (
+        <div class="stat-item">
+          <strong>{stat.value}</strong>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <div class="container">
+      <SectionHead eyebrow="Highlights" heading={copy.positioning} />
+      <div class="feature-grid">
+        {copy.highlights.map(feature => (
+          <article>
+            <h3>{feature.title}</h3>
+            <p>{feature.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container gallery-grid">
+      {gallery.map((image, index) => (
+        <figure class:list={['gallery-card', { 'gallery-card--wide': index === 2 }]}>
+          <img src={image} alt={`${model.name} image ${index + 1}`} width="720" height="480" loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="usecase-section">
+    <div class="container usecase-layout">
+      <div class="usecase-copy">
+        <p class="eyebrow">Use Cases</p>
+        <h2>Positioned around the workflow in the field.</h2>
+      </div>
+      <div class="usecase-list">
+        {copy.useCases.map(useCase => (
+          <article>
+            <h3>{useCase.title}</h3>
+            <p>{useCase.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="spec-section" id="technical-specs">
+    <div class="container">
+      <SectionHead eyebrow="Technical Specs" heading={`${model.name} technical details`} />
+      <div class="spec-grid">
+        {copy.specGroups.map(group => (
+          <article class="spec-card">
+            <h3>{group.title}</h3>
+            <table>
+              <tbody>
+                {group.specs.map(spec => (
+                  <tr>
+                    <th>{spec.label}</th>
+                    <td>{spec.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="package-section">
+    <div class="container package-grid">
+      <div>
+        <p class="eyebrow">Package and Durability</p>
+        <h2>Configured for enterprise use.</h2>
+      </div>
+      <div class="package-cards">
+        {copy.packageNotes.map(note => (
+          <article>
+            <h3>{note.title}</h3>
+            <p>{note.text}</p>
+          </article>
+        ))}
+        <article>
+          <h3>Certifications</h3>
+          <div class="cert-list">
+            {copy.certifications.map(cert => <span>{cert}</span>)}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="container">
+      <SectionHead eyebrow="Other Vuzix Models" heading="Compare alternative models." />
+      <div class="related-grid">
+        {related.map(item => {
+          const relatedCopy = englishModels[item.slug];
+          return (
+            <a href={modelHref(item.slug)} class="related-card">
+              <img src={item.image} alt={item.name} width="420" height="280" loading="lazy" />
+              <span>{relatedCopy.badge}</span>
+              <strong>{item.name}</strong>
+              <p>{relatedCopy.positioning}</p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <div class="container bottom-cta-inner">
+      <div>
+        <p class="eyebrow">Altis Technology</p>
+        <h2>Request a demo or quote for {model.name}.</h2>
+        <p>Talk with our team about model selection, pilot scope, integration, and field training.</p>
+      </div>
+      <div class="bottom-actions">
+        <a href={contactHref} class="btn btn-primary btn-lg">Request Quote</a>
+        <a href="/en/products/smart-glasses/" class="btn btn-secondary btn-lg">All Models</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.breadcrumb-bar { background: #fff; }
+.breadcrumb-inner { display: flex; align-items: center; gap: 8px; padding-top: 14px; padding-bottom: 14px; color: var(--text-muted); font-size: 13px; flex-wrap: wrap; }
+.breadcrumb-inner a:hover { color: var(--primary); }
+.breadcrumb-inner span:last-child { color: var(--primary); font-weight: 700; }
+.detail-hero { background: #fff; padding: 86px 0 68px; }
+.hero-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 72px; align-items: center; }
+.hero-copy h1 { font-size: clamp(40px, 5.2vw, 72px); margin: 18px 0 22px; }
+.hero-lead { max-width: 650px; font-size: 17px; line-height: 1.85; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.product-stage { min-height: 520px; display: grid; place-items: center; border-radius: 30px; background: #fff; padding: 54px; }
+.product-stage img { width: 100%; max-height: 430px; object-fit: contain; }
+.stats-band { background: #fff; padding: 0 0 86px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-item { padding: 28px 24px; }
+.stat-item strong { display: block; color: var(--primary); font-size: clamp(24px, 3vw, 34px); line-height: 1; }
+.stat-item span { display: block; margin-top: 8px; color: var(--text-faint); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.feature-section, .usecase-section, .related-section { background: var(--bg-soft); }
+.feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.feature-grid article, .usecase-list article, .package-cards article, .related-card { background: #fff; border-radius: 18px; padding: 26px; }
+.feature-grid h3, .usecase-list h3, .package-cards h3 { font-size: 18px; margin-bottom: 12px; }
+.feature-grid p, .usecase-list p, .package-cards p { font-size: 14px; line-height: 1.75; }
+.gallery-section { background: #fff; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.gallery-card { margin: 0; display: grid; place-items: center; min-height: 360px; border-radius: 24px; background: #fff; overflow: hidden; padding: 32px; }
+.gallery-card--wide { grid-column: 1 / -1; padding: 0; }
+.gallery-card img { width: 100%; height: 100%; object-fit: contain; }
+.gallery-card--wide img { aspect-ratio: 16/7; object-fit: cover; }
+.usecase-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; }
+.usecase-copy h2 { margin-top: 18px; }
+.usecase-list { display: grid; gap: 16px; }
+.spec-section { background: #fff; }
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: stretch; gap: 18px; }
+.spec-card { border-radius: 18px; overflow: hidden; background: #fff; display: flex; flex-direction: column; min-height: 100%; }
+.spec-card h3 { padding: 22px 24px; font-size: 19px; }
+.spec-card table { width: 100%; border-collapse: collapse; height: 100%; }
+.spec-card th, .spec-card td { padding: 14px 20px; vertical-align: top; text-align: left; font-size: 13px; }
+.spec-card th { width: 38%; color: var(--text-muted); font-weight: 700; background: #fafbfe; }
+.spec-card td { color: var(--primary); font-weight: 600; }
+.package-section { background: #fff; padding-top: 0; }
+.package-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 52px; }
+.package-grid h2 { margin-top: 18px; }
+.package-cards { display: grid; gap: 16px; }
+.cert-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.cert-list span { color: var(--primary); background: var(--bg-blue); border-radius: 6px; padding: 7px 12px; font-size: 12px; font-weight: 800; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.related-card { display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: 20px; transition: transform .2s, box-shadow .2s; }
+.related-card:hover { transform: translateY(-3px); box-shadow: 0 18px 46px -34px rgba(0,18,92,.38); }
+.related-card img { grid-row: span 3; width: 180px; height: 130px; object-fit: contain; }
+.related-card span { color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.related-card strong { color: var(--primary); font-size: 22px; }
+.related-card p { font-size: 14px; line-height: 1.6; }
+.bottom-cta { background: #fff; padding-top: 0; }
+.bottom-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; border-radius: 24px; padding: 42px; background: #fff; }
+.bottom-cta h2 { margin: 12px 0; }
+.bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 1080px) {
+  .hero-grid, .usecase-layout, .package-grid { grid-template-columns: 1fr; }
+  .feature-grid, .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .product-stage { min-height: 360px; padding: 28px; border-radius: 22px; }
+  .feature-grid, .spec-grid, .gallery-grid, .related-grid { grid-template-columns: 1fr; }
+  .gallery-card--wide { grid-column: auto; }
+  .related-card { grid-template-columns: 1fr; }
+  .related-card img { grid-row: auto; width: 100%; }
+  .bottom-cta-inner { align-items: flex-start; flex-direction: column; padding: 28px; }
+}
+</style>

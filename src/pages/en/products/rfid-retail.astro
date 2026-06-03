@@ -1,6 +1,9 @@
 ---
 import EnglishProductList from '../../../components/products/EnglishProductList.astro';
 import { retailProducts } from '../../../data/rfid-perakende';
+import { withEnglishRetailCopy } from '../../../data/english-product-copy';
+
+const englishRetailProducts = retailProducts.map(withEnglishRetailCopy);
 ---
 
 <EnglishProductList
@@ -9,7 +12,7 @@ import { retailProducts } from '../../../data/rfid-perakende';
   eyebrow="Retail RFID"
   heading="RFID Retail Products"
   lead="Browse Altis RFID retail gates, tunnels, readers, and counters for store and item-level automation."
-  items={retailProducts}
+  items={englishRetailProducts}
   detailBase="/en/products/rfid-retail/"
   alternateUrl="https://www.altis.com.tr/urunler/rfid-perakende/"
 />

@@ -1,16 +1,19 @@
 ---
 import EnglishProductDetail from '../../../../components/products/EnglishProductDetail.astro';
 import { printers } from '../../../../data/rfid-yazicilar';
+import { withEnglishProductCopy } from '../../../../data/english-product-copy';
 
 export function getStaticPaths() {
-  return printers.map(item => ({
+  const englishPrinters = printers.map(withEnglishProductCopy);
+  return englishPrinters.map(item => ({
     params: { slug: item.slug },
     props: { item },
   }));
 }
 
 const { item } = Astro.props;
-const related = printers
+const englishPrinters = printers.map(withEnglishProductCopy);
+const related = englishPrinters
   .filter(product => product.slug !== item.slug)
   .sort((a, b) => Number(b.brand === item.brand) - Number(a.brand === item.brand))
   .slice(0, 4);

@@ -29,7 +29,7 @@ export type RfidTag = {
   tags: string[];
 };
 
-export const rfidTags: RfidTag[] = [
+const allRfidTags: RfidTag[] = [
   {
     "slug": "alien-aln-9654",
     "title": "Alien ALN-9654 UHF RFID Tag",
@@ -596,13 +596,13 @@ export const rfidTags: RfidTag[] = [
   },
   {
     "slug": "avery-ad-23x-u9-pure-95",
-    "title": "Avery Dennison AD-23x U9 Pure 95â„¢",
+    "title": "Avery Dennison AD-23x U9 Pure 95™",
     "brand": "Avery Dennison",
-    "model": "AD-23x U9 Pure 95â„¢",
-    "sku": "AD-23x U9 Pure 95â„¢",
+    "model": "AD-23x U9 Pure 95™",
+    "sku": "AD-23x U9 Pure 95™",
     "subtitle": "RFID Inlay/Tag",
     "shortDesc": "Brand Protection, Home Essentials, Supply Chain Management",
-    "description": "SKU: AD-23x U9 Pure 95â„¢. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Fit for a wide variety of RFID tagging applications",
+    "description": "SKU: AD-23x U9 Pure 95™. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Fit for a wide variety of RFID tagging applications",
     "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Brand Protection, Home Essentials, Supply Chain Management",
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-23X-U9-pure-antenna-340x340%EF%B8%8F.png",
     "datasheet": "",
@@ -780,10 +780,10 @@ export const rfidTags: RfidTag[] = [
     "brand": "Avery Dennison",
     "model": "AD Sample Pack",
     "sku": "AD Sample Pack",
-    "subtitle": "Mixed (AD-238u8, AD-324u8, AD-385u8 â€” 10 units each) RFID Tag",
+    "subtitle": "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each) RFID Tag",
     "shortDesc": "Sample pack containing 10 each of AD-238u8, AD-324u8 and AD-385u8 UHF RFID tags",
-    "description": "Model: AD Sample Pack. Brand: Avery Dennison. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Mixed (AD-238u8, AD-324u8, AD-385u8 â€” 10 units each). Sample pack containing 10 each of AD-238u8, AD-324u8 and AD-385u8 UHF RFID tags",
-    "customerSummary": "Mixed (AD-238u8, AD-324u8, AD-385u8 â€” 10 units each) RFID Tag | UHF | Applications: Project testing, RFID solution evaluation",
+    "description": "Model: AD Sample Pack. Brand: Avery Dennison. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each). Sample pack containing 10 each of AD-238u8, AD-324u8 and AD-385u8 UHF RFID tags",
+    "customerSummary": "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each) RFID Tag | UHF | Applications: Project testing, RFID solution evaluation",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/avery-dennison-rfid-tag-sample-pack-p-scaled.webp",
     "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/avery-dennison-rfid-tag-sample-pack-datasheet.pdf",
     "productUrl": "https://www.altis.com.tr/store/tr/urun/avery-dennison-rfid-etiket-numune-paketi/",
@@ -793,7 +793,7 @@ export const rfidTags: RfidTag[] = [
     "chip": "NXP UCode 8",
     "surface": "non_metal",
     "onMetal": false,
-    "formFactor": "Mixed (AD-238u8, AD-324u8, AD-385u8 â€” 10 units each)",
+    "formFactor": "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each)",
     "sizeText": "Standard",
     "material": "",
     "fixedReadRange": "Standard",
@@ -809,7 +809,7 @@ export const rfidTags: RfidTag[] = [
     ],
     "tags": [
       "UHF",
-      "Mixed (AD-238u8, AD-324u8, AD-385u8 â€” 10 units each)",
+      "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each)",
       "Non Metal",
       "NXP UCode 8",
       "Project testing",
@@ -3551,7 +3551,7 @@ export const rfidTags: RfidTag[] = [
   },
   {
     "slug": "omni-id-adept-400-5-layer-gs",
-    "title": "Omni-ID Adept 400 (5 Layer) â€“ GS",
+    "title": "Omni-ID Adept 400 (5 Layer) – GS",
     "brand": "Omni-ID",
     "model": "Adept 400 5-Layer GS",
     "sku": "Adept 400 5-Layer GS",
@@ -3595,7 +3595,7 @@ export const rfidTags: RfidTag[] = [
   },
   {
     "slug": "omni-id-adept-400-5-layer-us",
-    "title": "Omni-ID Adept 400 (5 layer) â€“ US",
+    "title": "Omni-ID Adept 400 (5 layer) – US",
     "brand": "Omni-ID",
     "model": "Adept 400 5-Layer US",
     "sku": "Adept 400 5-Layer US",
@@ -20256,7 +20256,7 @@ export const rfidTags: RfidTag[] = [
   },
   {
     "slug": "xerafy-roswell-autoclavable",
-    "title": "Xerafy Roswell â€“ Autoclavable",
+    "title": "Xerafy Roswell – Autoclavable",
     "brand": "Xerafy",
     "model": "Roswell Autoclavable",
     "sku": "Roswell Autoclavable",
@@ -21213,6 +21213,8 @@ export const rfidTags: RfidTag[] = [
     ]
   }
 ];
+
+export const rfidTags = allRfidTags.filter(tag => tag.brand !== 'RichRFID');
 
 export const tagBrands = [...new Set(rfidTags.map(tag => tag.brand))].sort();
 export const tagSurfaceTypes = [...new Set(rfidTags.map(tag => tag.onMetal ? 'On Metal' : 'Non Metal'))].sort();
