@@ -2,6 +2,8 @@
 import Head from '../components/seo/Head.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import CookieBanner from '../components/layout/CookieBanner.astro';
+import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 
 interface Props {
@@ -52,6 +54,8 @@ const currentPath = Astro.url.pathname;
     <slot />
   </main>
   <Footer {lang} />
+  <CookieBanner />
+  <Analytics />
 
   <script>
     // ---- Interaction layer: scroll-reveal, count-up, header scroll state ----

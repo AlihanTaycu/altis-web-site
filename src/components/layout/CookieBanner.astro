@@ -1,0 +1,151 @@
+---
+// KVKK & Cookie consent banner — shown once, stored in localStorage
+---
+
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Çerez bildirimi" hidden>
+  <div class="cb-inner">
+    <div class="cb-text">
+      <strong>Çerez Politikası</strong>
+      <p>
+        Web sitemizde deneyiminizi iyileştirmek için çerezler kullanıyoruz.
+        <a href="/gizlilik/" class="cb-link">Gizlilik Politikası</a>'nı
+        inceleyerek daha fazla bilgi alabilirsiniz.
+      </p>
+    </div>
+    <div class="cb-actions">
+      <button id="cookie-reject" class="cb-btn cb-btn--ghost">Reddet</button>
+      <button id="cookie-accept" class="cb-btn cb-btn--accept">Kabul Et</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding: 16px 24px;
+    transform: translateY(100%);
+    transition: transform var(--dur-base) var(--ease);
+  }
+
+  .cookie-banner.is-visible {
+    transform: translateY(0);
+  }
+
+  .cb-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .cb-text {
+    flex: 1;
+    min-width: 280px;
+    color: rgba(255,255,255,.85);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cb-text strong {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .cb-text p {
+    margin: 0;
+  }
+
+  .cb-link {
+    color: var(--cyan);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cb-link:hover {
+    color: #fff;
+  }
+
+  .cb-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .cb-btn {
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity var(--dur-fast) var(--ease);
+  }
+
+  .cb-btn:hover {
+    opacity: .85;
+  }
+
+  .cb-btn--ghost {
+    background: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.8);
+  }
+
+  .cb-btn--accept {
+    background: var(--cyan);
+    color: var(--navy);
+  }
+
+  @media (max-width: 600px) {
+    .cb-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cb-actions {
+      width: 100%;
+    }
+
+    .cb-btn {
+      flex: 1;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'altis_cookie_consent';
+  const banner = document.getElementById('cookie-banner') as HTMLElement | null;
+
+  function dismiss() {
+    if (!banner) return;
+    banner.classList.remove('is-visible');
+    setTimeout(() => { banner.hidden = true; }, 350);
+  }
+
+  if (banner && !localStorage.getItem(STORAGE_KEY)) {
+    banner.hidden = false;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => banner.classList.add('is-visible'));
+    });
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'accepted');
+    dismiss();
+  });
+
+  document.getElementById('cookie-reject')?.addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'rejected');
+    dismiss();
+  });
+</script>
