@@ -61,7 +61,7 @@ const base = lang === 'en' ? '/en' : '';
         <h5>{lang === 'tr' ? 'İletişim' : 'Contact'}</h5>
         <ul>
           <li><a href="mailto:info@altis.com.tr">info@altis.com.tr</a></li>
-          <li><a href="tel:+908508850950">0 (850) 885 09 50</a></li>
+          <li><a href="tel:+902164158255">+90 216 415 82 55</a></li>
           <li>
             <a
               href="https://maps.google.com/?q=Kartal+Plaza+%C3%9Cmraniye"
@@ -104,7 +104,7 @@ const base = lang === 'en' ? '/en' : '';
       aria-hidden="true"
     >
       <span itemprop="name">Altis Teknoloji ve Yazılım</span>
-      <span itemprop="telephone">+90 850 885 09 50</span>
+      <span itemprop="telephone">+90 216 415 82 55</span>
       <span itemprop="email">info@altis.com.tr</span>
       <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="streetAddress">Natoyolu Cad. İlkyaz Sok. Kartal Plaza No:24-28 Kat:1 D:1</span>
@@ -117,7 +117,10 @@ const base = lang === 'en' ? '/en' : '';
 
     <div class="foot-bottom">
       <div>© 2003–2026 Altis Teknoloji ve Yazılım. {lang === 'tr' ? 'Tüm hakları saklıdır.' : 'All rights reserved.'}</div>
-      <div>{lang === 'tr' ? 'Dijital Dönüşümde Güvenilir Partneriniz' : 'Your Trusted Partner in Digital Transformation'}</div>
+      <div class="foot-legal">
+        <a href={`${base}/gizlilik/`}>{lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy'}</a>
+        <span>{lang === 'tr' ? 'Dijital Dönüşümde Güvenilir Partneriniz' : 'Your Trusted Partner in Digital Transformation'}</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -190,6 +193,20 @@ footer {
   flex-wrap: wrap;
   gap: 8px;
 }
+.foot-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.foot-legal a {
+  color: rgba(255, 255, 255, .45);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color .2s;
+}
+.foot-legal a:hover {
+  color: var(--cyan);
+}
 
 @media (max-width: 1100px) {
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -197,5 +214,6 @@ footer {
 @media (max-width: 600px) {
   .foot-grid { grid-template-columns: 1fr; gap: 28px; }
   .foot-bottom { flex-direction: column; text-align: center; }
+  .foot-legal { flex-direction: column; gap: 6px; }
 }
 </style>
