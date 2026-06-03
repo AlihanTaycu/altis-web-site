@@ -1,15 +1,3 @@
-import rAerotunnelData from '../../Altis Gate Products/Json Files/r-aerotunnel.json';
-import rBasketreaderData from '../../Altis Gate Products/Json Files/r-basketreader.json';
-import rBoxtunnelData from '../../Altis Gate Products/Json Files/r-boxtunnel.json';
-import rInbasketreaderData from '../../Altis Gate Products/Json Files/r-inbasketreader.json';
-import rMinitunnelData from '../../Altis Gate Products/Json Files/r-minitunnel.json';
-import rOverheadrData from '../../Altis Gate Products/Json Files/r-overheadr.json';
-import rProtunnelData from '../../Altis Gate Products/Json Files/r-protunnel.json';
-import rShieldedboxData from '../../Altis Gate Products/Json Files/r-shieldedbox.json';
-import rVisiondeskminiData from '../../Altis Gate Products/Json Files/r-visiondeskmini.json';
-import rVisiondeskomniData from '../../Altis Gate Products/Json Files/r-visiondeskomni.json';
-import rWidetunnelData from '../../Altis Gate Products/Json Files/r-widetunnel.json';
-
 type ProductWithCopy = {
   slug: string;
   shortDesc: string;
@@ -121,19 +109,7 @@ const tagTranslations: Record<string, string> = {
   'LED Gösterge': 'LED Indicator',
 };
 
-const englishRetailCopies = [
-  rAerotunnelData,
-  rBasketreaderData,
-  rBoxtunnelData,
-  rInbasketreaderData,
-  rMinitunnelData,
-  rOverheadrData,
-  rProtunnelData,
-  rShieldedboxData,
-  rVisiondeskminiData,
-  rVisiondeskomniData,
-  rWidetunnelData,
-].map(items => (items as RetailEnglishCopy[])[0]);
+const englishRetailCopies: RetailEnglishCopy[] = [];
 
 const englishRetailBySlug = new Map(englishRetailCopies.map(item => [item.id, item]));
 
