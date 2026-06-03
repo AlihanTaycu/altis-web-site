@@ -1,4 +1,4 @@
-export type RfidTag = {
+﻿export type RfidTag = {
   slug: string;
   title: string;
   brand: string;
@@ -345,7 +345,7 @@ const allRfidTags: RfidTag[] = [
     "surface": "non_metal",
     "onMetal": false,
     "formFactor": "Inlay",
-    "sizeText": "Ã˜ 29 mm / 1.15 in",
+    "sizeText": "Ø 29 mm / 1.15 in",
     "material": "PET / Paper",
     "fixedReadRange": "Up to 10m",
     "handheldReadRange": "Up to 6m",
@@ -1939,8 +1939,8 @@ const allRfidTags: RfidTag[] = [
     "model": "Heatwave Tough",
     "sku": "Heatwave Tough",
     "subtitle": "Hard tag RFID Tag",
-    "shortDesc": "High-temperature resistant RFID tag for metal surfaces, suitable for automotive paint shop processes up to 225Â°C",
-    "description": "Model: Heatwave Tough. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag. High-temperature resistant RFID tag for metal surfaces, suitable for automotive paint shop processes up to 225Â°C",
+    "shortDesc": "High-temperature resistant RFID tag for metal surfaces, suitable for automotive paint shop processes up to 225°C",
+    "description": "Model: Heatwave Tough. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag. High-temperature resistant RFID tag for metal surfaces, suitable for automotive paint shop processes up to 225°C",
     "customerSummary": "Hard tag RFID Tag | UHF | Applications: Automotive paint processes, High-temperature industrial environments",
     "image": "/assets/og/altis-default.jpg",
     "datasheet": "",
@@ -3070,8 +3070,8 @@ const allRfidTags: RfidTag[] = [
     "model": "High Temp Metal Tag 48x35x7",
     "sku": "High Temp Metal Tag 48x35x7",
     "subtitle": "Label RFID Tag",
-    "shortDesc": "IP68 waterproof RFID tag operating up to 225Â°C with 10-meter read range for metallic asset tracking",
-    "description": "Model: High Temp Metal Tag 48x35x7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. IP68 waterproof RFID tag operating up to 225Â°C with 10-meter read range for metallic asset tracking",
+    "shortDesc": "IP68 waterproof RFID tag operating up to 225°C with 10-meter read range for metallic asset tracking",
+    "description": "Model: High Temp Metal Tag 48x35x7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. IP68 waterproof RFID tag operating up to 225°C with 10-meter read range for metallic asset tracking",
     "customerSummary": "Label RFID Tag | UHF | Applications: Metallic asset tracking, Medical devices, Surgical instruments, Mining, Containers",
     "image": "/assets/og/altis-default.jpg",
     "datasheet": "",
@@ -3115,8 +3115,8 @@ const allRfidTags: RfidTag[] = [
     "model": "PCB Metal Tag HT 48x35x7",
     "sku": "PCB Metal Tag HT 48x35x7",
     "subtitle": "PCB label RFID Tag",
-    "shortDesc": "IP68 waterproof high-temperature RFID tag operating up to 225Â°C for metallic asset tracking",
-    "description": "Model: PCB Metal Tag HT 48x35x7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: PCB label. IP68 waterproof high-temperature RFID tag operating up to 225Â°C for metallic asset tracking",
+    "shortDesc": "IP68 waterproof high-temperature RFID tag operating up to 225°C for metallic asset tracking",
+    "description": "Model: PCB Metal Tag HT 48x35x7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: PCB label. IP68 waterproof high-temperature RFID tag operating up to 225°C for metallic asset tracking",
     "customerSummary": "PCB label RFID Tag | UHF | Applications: Metal asset tracking, Medical devices, Surgical instruments, Mining, Automated production",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-yuksek-sicakliga-dayanikli-metal-ustu-etiketi-48x35x7-mm-p-1-600x603.webp",
     "datasheet": "",
@@ -3685,8 +3685,8 @@ const allRfidTags: RfidTag[] = [
     "model": "Exo 400 HT",
     "sku": "Exo 400 HT",
     "subtitle": "Compact rectangular tag RFID Tag",
-    "shortDesc": "High-temperature RFID tag for metal surfaces, withstanding temperatures up to 235Â°C",
-    "description": "Model: Exo 400 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Compact rectangular tag. High-temperature RFID tag for metal surfaces, withstanding temperatures up to 235Â°C",
+    "shortDesc": "High-temperature RFID tag for metal surfaces, withstanding temperatures up to 235°C",
+    "description": "Model: Exo 400 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Compact rectangular tag. High-temperature RFID tag for metal surfaces, withstanding temperatures up to 235°C",
     "customerSummary": "Compact rectangular tag RFID Tag | UHF | Applications: Healthcare sterilization, Manufacturing, Automotive paint processes",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Exo-400-HT-600x400.webp",
     "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-exo-400-ht-datasheet.pdf",
@@ -3728,8 +3728,8 @@ const allRfidTags: RfidTag[] = [
     "model": "Fit 220 HT",
     "sku": "Fit 220 HT",
     "subtitle": "Small rectangular tag RFID Tag",
-    "shortDesc": "Smallest regional RFID tag capable of withstanding thermal cycling to +235Â°C",
-    "description": "Model: Fit 220 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Small rectangular tag. Smallest regional RFID tag capable of withstanding thermal cycling to +235Â°C",
+    "shortDesc": "Smallest regional RFID tag capable of withstanding thermal cycling to +235°C",
+    "description": "Model: Fit 220 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Small rectangular tag. Smallest regional RFID tag capable of withstanding thermal cycling to +235°C",
     "customerSummary": "Small rectangular tag RFID Tag | UHF | Applications: Small hand tools, IT assets, Medical instruments",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Fit-220HT-600x400.webp",
     "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-220-ht-datasheet.pdf",
@@ -3771,8 +3771,8 @@ const allRfidTags: RfidTag[] = [
     "model": "Fit 400 HT",
     "sku": "Fit 400 HT",
     "subtitle": "Compact tag RFID Tag",
-    "shortDesc": "Compact high-temperature RFID tag withstanding temperatures up to 235Â°C for small metal assets",
-    "description": "Model: Fit 400 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Compact tag. Compact high-temperature RFID tag withstanding temperatures up to 235Â°C for small metal assets",
+    "shortDesc": "Compact high-temperature RFID tag withstanding temperatures up to 235°C for small metal assets",
+    "description": "Model: Fit 400 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Compact tag. Compact high-temperature RFID tag withstanding temperatures up to 235°C for small metal assets",
     "customerSummary": "Compact tag RFID Tag | UHF | Applications: Small metal hand tools, IT assets, Autoclaves, High-temperature sterilization",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Fit-220HT-600x400.webp",
     "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-400-ht-datasheet.pdf",
@@ -3858,8 +3858,8 @@ const allRfidTags: RfidTag[] = [
     "model": "IQ 400P HT",
     "sku": "IQ 400P HT",
     "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "High-temperature synthetic RFID label withstanding up to 230Â°C for single-use applications",
-    "description": "Model: IQ 400P HT. Brand: Omni-ID. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Adhesive label. High-temperature synthetic RFID label withstanding up to 230Â°C for single-use applications",
+    "shortDesc": "High-temperature synthetic RFID label withstanding up to 230°C for single-use applications",
+    "description": "Model: IQ 400P HT. Brand: Omni-ID. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Adhesive label. High-temperature synthetic RFID label withstanding up to 230°C for single-use applications",
     "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Manufacturing, Automotive paint processes, Electronics",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-IQ-400P-HT-600x400.webp",
     "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-iq-400-p-ht-datasheet.pdf",
@@ -3901,8 +3901,8 @@ const allRfidTags: RfidTag[] = [
     "model": "IQ 800P HT",
     "sku": "IQ 800P HT",
     "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "High-temperature synthetic RFID label withstanding up to 230Â°C for manufacturing applications",
-    "description": "Model: IQ 800P HT. Brand: Omni-ID. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Adhesive label. High-temperature synthetic RFID label withstanding up to 230Â°C for manufacturing applications",
+    "shortDesc": "High-temperature synthetic RFID label withstanding up to 230°C for manufacturing applications",
+    "description": "Model: IQ 800P HT. Brand: Omni-ID. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Adhesive label. High-temperature synthetic RFID label withstanding up to 230°C for manufacturing applications",
     "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Manufacturing, Automotive paint processes, Electronics",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-IQ-400P-HT.webp",
     "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-iq-800-p-ht-datasheet.pdf",
@@ -18982,7 +18982,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 12m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19022,7 +19022,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Industry grade polymer",
     "fixedReadRange": "Up to 40m",
     "handheldReadRange": "Up to 25m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Yard Management",
@@ -19108,7 +19108,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 2.5m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19148,7 +19148,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Industry grade polymer",
     "fixedReadRange": "Up to 2.5m",
     "handheldReadRange": "Up to 1.8m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Logistics",
@@ -19191,7 +19191,7 @@ const allRfidTags: RfidTag[] = [
     "material": "High-performance polymer",
     "fixedReadRange": "Up to 4.5m",
     "handheldReadRange": "Up to 2.5m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "IT Assets",
@@ -19234,7 +19234,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 11m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19274,7 +19274,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Thermal transfer face stock",
     "fixedReadRange": "Up to 8m",
     "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Logistics",
@@ -19317,7 +19317,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 19m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19357,7 +19357,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 16m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19397,7 +19397,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 9.5m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19437,7 +19437,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 0.05m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19477,7 +19477,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 8m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19517,7 +19517,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 10m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19557,7 +19557,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Engineering Plastic",
     "fixedReadRange": "Up to 10m",
     "handheldReadRange": "Up to 7m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Pallets",
@@ -19600,7 +19600,7 @@ const allRfidTags: RfidTag[] = [
     "material": "High-temp polymer",
     "fixedReadRange": "Up to 10m",
     "handheldReadRange": "Up to 7m",
-    "operatingTemp": "-40Â°C to +250Â°C",
+    "operatingTemp": "-40°C to +250°C",
     "ipRating": "IP68",
     "applications": [
       "Automotive",
@@ -19643,7 +19643,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 6m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19769,7 +19769,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 8m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19809,7 +19809,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 2m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19849,7 +19849,7 @@ const allRfidTags: RfidTag[] = [
     "material": "FR4 (PCB)",
     "fixedReadRange": "Up to 0.5m",
     "handheldReadRange": "Up to 0.3m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Small Tools",
@@ -19892,7 +19892,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 1.5m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19932,7 +19932,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 3m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -19972,7 +19972,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Ceramic",
     "fixedReadRange": "Limited",
     "handheldReadRange": "Up to 2m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Tool Tracking",
@@ -20015,7 +20015,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Ceramic",
     "fixedReadRange": "Up to 3m",
     "handheldReadRange": "Up to 2m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Tool Tracking",
@@ -20060,7 +20060,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Industry grade polymer",
     "fixedReadRange": "Up to 3m",
     "handheldReadRange": "Up to 2m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Manufacturing",
@@ -20235,7 +20235,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Stainless Steel",
     "fixedReadRange": "Up to 5m",
     "handheldReadRange": "Up to 3m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP69K",
     "applications": [
       "Oil & Gas",
@@ -20365,7 +20365,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 10m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20405,7 +20405,7 @@ const allRfidTags: RfidTag[] = [
     "material": "High-temp polymer",
     "fixedReadRange": "Up to 2m",
     "handheldReadRange": "Up to 1.5m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "IT Assets",
@@ -20448,7 +20448,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 6m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20488,7 +20488,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 6m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20528,7 +20528,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Textile",
     "fixedReadRange": "Limited",
     "handheldReadRange": "Up to 10m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Laundry",
@@ -20571,7 +20571,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 6m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20611,7 +20611,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 9m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20651,7 +20651,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 1.5m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20691,7 +20691,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Industry grade polymer",
     "fixedReadRange": "Up to 2m",
     "handheldReadRange": "Up to 1.5m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Sensors",
@@ -20734,7 +20734,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 10m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20817,7 +20817,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 5m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -20857,7 +20857,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Stainless steel 316L",
     "fixedReadRange": "Up to 1.5m",
     "handheldReadRange": "Up to 1m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Oil & Gas",
@@ -21030,7 +21030,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Ceramic",
     "fixedReadRange": "Up to 2m",
     "handheldReadRange": "Up to 1.5m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Hand Tools",
@@ -21073,7 +21073,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Ceramic",
     "fixedReadRange": "Up to 1.5m",
     "handheldReadRange": "Up to 1m",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Small Tools",
@@ -21116,7 +21116,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 1m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -21156,7 +21156,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 16m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"
@@ -21196,7 +21196,7 @@ const allRfidTags: RfidTag[] = [
     "material": "Standard",
     "fixedReadRange": "Up to 9m",
     "handheldReadRange": "Standard",
-    "operatingTemp": "-40Â°C to +85Â°C",
+    "operatingTemp": "-40°C to +85°C",
     "ipRating": "IP68",
     "applications": [
       "Industrial"

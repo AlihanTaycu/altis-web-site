@@ -186,14 +186,14 @@ const schema = {
       </div>
     </div>
   </section>
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="ÃœrÃ¼n gÃ¶rseli gÃ¶rÃ¼ntÃ¼leyici" hidden>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Ürün görseli görüntüleyici" hidden>
     <button class="lb-close" id="lb-close" type="button" aria-label="Kapat">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <button class="lb-nav lb-prev" id="lb-prev" type="button" aria-label="Ã–nceki gÃ¶rsel">
+    <button class="lb-nav lb-prev" id="lb-prev" type="button" aria-label="Önceki görsel">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <button class="lb-nav lb-next" id="lb-next" type="button" aria-label="Sonraki gÃ¶rsel">
+    <button class="lb-nav lb-next" id="lb-next" type="button" aria-label="Sonraki görsel">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
     <div class="lb-stage" id="lb-stage">
@@ -257,7 +257,7 @@ const schema = {
 
       function updateLightbox() {
         lbImage.src = gallery[currentIndex];
-        lbImage.alt = title + ' gÃ¶rsel ' + (currentIndex + 1);
+        lbImage.alt = title + ' görsel ' + (currentIndex + 1);
         lbCounter.textContent = (currentIndex + 1) + ' / ' + gallery.length;
         setZoom(1);
       }
