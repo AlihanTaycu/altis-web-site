@@ -1,4 +1,4 @@
-﻿export type RfidTag = {
+export type RfidTag = {
   slug: string;
   title: string;
   brand: string;
@@ -9,6 +9,7 @@
   description: string;
   customerSummary: string;
   image: string;
+  gallery?: string[];
   datasheet: string;
   productUrl: string;
   frequency: string;
@@ -27,4001 +28,5086 @@
   applications: string[];
   industries: string[];
   tags: string[];
+  sections?: {
+    name: string;
+    items: Record<string, string>;
+  }[];
 };
 
-const allRfidTags: RfidTag[] = [
+const allRfidTags: any[] = [
   {
-    "slug": "alien-aln-9654",
-    "title": "Alien ALN-9654 UHF RFID Tag",
-    "brand": "Alien",
-    "model": "ALN-9654",
-    "sku": "ALN-9654",
-    "subtitle": "Inlay/Tag RFID Tag",
-    "shortDesc": "General-purpose high-performance UHF RFID tag with enhanced performance on glass, plastic and mica",
-    "description": "Model: ALN-9654. Brand: Alien. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Inlay/Tag. General-purpose high-performance UHF RFID tag with enhanced performance on glass, plastic and mica",
-    "customerSummary": "Inlay/Tag RFID Tag | UHF | Applications: Plastic deposit transport pallets, Crates, Vehicle windows, Asset tracking",
+    "id": "alien-aln-9654",
+    "alt_code": "ALN-9654",
+    "display_brand": "Alien Technology",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Alien ALN-9654 G Inlay",
+    "summary_en": "Ultra-high-performance general-purpose UHF RFID inlay powered by Alien Higgs-3 IC, optimized for high-dielectric materials such as windshields, reusable plastic pallets and containers. World Tag compliant for worldwide operation.",
+    "feature_highlights_en": [
+      "Alien Higgs-3 IC with 800-bit nonvolatile memory",
+      "96–480-bit extensible EPC memory bank",
+      "512-bit User Memory for distributed data applications",
+      "Pre-programmed 64-bit Unique TID for authentication and serialization",
+      "Password-protected read/write with 32-bit Access and Kill passwords",
+      "World Tag compliant – worldwide UHF operation 840–960 MHz",
+      "Available in dry (unslit/slit) and white wet inlay roll formats"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-6C, EPCglobal Class 1 Gen 2",
+          "Integrated Circuit": "Alien Higgs-3",
+          "Operating Frequency": "840–960 MHz",
+          "EPC Size": "96–480 Bits",
+          "User Memory": "512 Bits",
+          "TID": "32 Bits",
+          "Unique TID": "64 Bits",
+          "Access Password": "32 Bits",
+          "Kill Password": "32 Bits",
+          "EPCglobal Certificate": "950110126000001084"
+        }
+      },
+      {
+        "name": "DRY INLAY DIMENSIONS",
+        "items": {
+          "Antenna Width": "3.66\" [93.0 mm]",
+          "Antenna Length": "0.748\" [19.0 mm]",
+          "Web Width (-FR Unslit)": "4.173\" [106.0 mm]",
+          "Web Width (-FSR Slit)": "3.799\" [96.5 mm]",
+          "Web Pitch": "1.0\" [25.4 mm]",
+          "Inlays per Roll": "12,500 Nominal",
+          "Maximum Roll OD": "< 12\" [304.8 mm]",
+          "Core ID": "6\" [152.4 mm]",
+          "Core Material": "Fiberboard",
+          "Interleaf Material": "Paper",
+          "Interleaf Width": "1.5\" [38.1 mm]"
+        }
+      },
+      {
+        "name": "WET INLAY DIMENSIONS",
+        "items": {
+          "Inlay Width": "3.799\" [96.5 mm]",
+          "Inlay Length": "0.913\" [23.2 mm]",
+          "Web Width": "3.925\" [99.7 mm]",
+          "Web Pitch": "1.0\" [25.4 mm]",
+          "Inlays per Roll": "12,500 Nominal",
+          "Maximum Roll OD": "< 16\" [406.4 mm]",
+          "Printable Surface": "White TT Printable White Film",
+          "Overlay Adhesive": "General Purpose Permanent",
+          "Inlay Adhesive": "General Purpose Permanent",
+          "Adhesive Application Temp": "> +25°F [-4°C]",
+          "Adhesive Service Temp": "-40°F to +200°F [-40°C to +93.3°C]",
+          "Release Liner": "40# SCK"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL",
+        "items": {
+          "Shelf Life (Dry)": "5 years at +25°C @ 40% RH",
+          "Shelf Life (Wet)": "2 years at +25°C @ 40% RH",
+          "Recommended Storage": "+25°C @ 40% RH",
+          "Storage Limits": "-25°C to +50°C, 20–90% RH non-condensing",
+          "Operating Limits": "-40°C to +70°C, 20–90% RH non-condensing",
+          "Bend Diameter": "> 1.97\" [50 mm]",
+          "Write Cycles": "100,000 @ 25°C",
+          "RoHS": "2002/95/EC, 2005/618/EC, 2011/65/EU Compliant",
+          "REACH": "1907/2006/EC Compliant",
+          "ESD Limit (HBM / CDM)": "5.0 kV / 1.5 kV"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/alien-aln-9654-g-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/alien-aln-9654-g-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/alien-aln-9654-uhf-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Class 1 Gen2",
-    "chip": "Alien Higgs",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay/Tag",
-    "sizeText": "Standard",
-    "material": "Non-metal compatible",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Plastic deposit transport pallets",
-      "Crates",
-      "Vehicle windows",
-      "Asset tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay/Tag",
-      "Non Metal",
-      "Alien Higgs",
-      "Plastic deposit transport pallets",
-      "Crates"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "ALN-9654 G Inlay Datasheet – Alien Technology",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/alien-aln-9654-g-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/alien-aln-9654-uhf-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "alien-aln-9654-4x2",
-    "title": "Alien ALN-9654 UHF RFID Tag 4x2\"",
-    "brand": "Alien",
-    "model": "ALN-9654 4x2",
-    "sku": "ALN-9654 4x2",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "High-performance UHF RFID tag with Higgs 3 chip in 4x2 inch format for non-metal surfaces",
-    "description": "Model: ALN-9654 4x2. Brand: Alien. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive label. High-performance UHF RFID tag with Higgs 3 chip in 4x2 inch format for non-metal surfaces",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: General-purpose RFID tagging, Asset tracking, Non-metal surface identification",
+    "id": "alien-aln-9654-4x2",
+    "alt_code": "ALN-9654 4x2\"",
+    "display_brand": "Alien Technology",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Alien ALN-9654 G Label 4x2\"",
+    "summary_en": "High-performance UHF RFID label in 4x2\" TT-printable white wet format, embedding the Alien Higgs-3 inlay. Designed for general-purpose non-metal surface asset tracking and identification.",
+    "feature_highlights_en": [
+      "4x2\" (103 x 52 mm) white thermal-transfer printable label format",
+      "Alien Higgs-3 IC – 840–960 MHz worldwide UHF operation",
+      "512-bit User Memory and 96–480-bit extensible EPC",
+      "General-purpose permanent adhesive for non-metal surfaces",
+      "Pre-programmed 64-bit Unique TID for serialization and authentication",
+      "Password-protected read/write with 32-bit Access and Kill passwords",
+      "World Tag compliant – consistent operation across all world regions"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-6C, EPCglobal Class 1 Gen 2",
+          "Integrated Circuit": "Alien Higgs-3",
+          "Operating Frequency": "840–960 MHz",
+          "EPC Size": "96–480 Bits",
+          "User Memory": "512 Bits",
+          "TID": "32 Bits",
+          "Unique TID": "64 Bits",
+          "Access Password": "32 Bits",
+          "Kill Password": "32 Bits"
+        }
+      },
+      {
+        "name": "LABEL DIMENSIONS",
+        "items": {
+          "Label Size": "4x2\" (103 x 52 mm)",
+          "Inlay Width": "3.799\" [96.5 mm]",
+          "Inlay Length": "0.913\" [23.2 mm]",
+          "Web Width": "3.925\" [99.7 mm]",
+          "Web Pitch": "1.0\" [25.4 mm]",
+          "Inlays per Roll": "12,500 Nominal",
+          "Maximum Roll OD": "< 16\" [406.4 mm]",
+          "Printable Surface": "White TT Printable White Film",
+          "Overlay Adhesive": "General Purpose Permanent",
+          "Inlay Adhesive": "General Purpose Permanent",
+          "Adhesive Application Temp": "> +25°F [-4°C]",
+          "Adhesive Service Temp": "-40°F to +200°F [-40°C to +93.3°C]",
+          "Release Liner": "40# SCK"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL",
+        "items": {
+          "Shelf Life": "2 years at +25°C @ 40% RH",
+          "Recommended Storage": "+25°C @ 40% RH",
+          "Storage Limits": "-25°C to +50°C, 20–90% RH non-condensing",
+          "Operating Limits": "-40°C to +70°C, 20–90% RH non-condensing",
+          "Write Cycles": "100,000 @ 25°C",
+          "RoHS": "2002/95/EC, 2005/618/EC, 2011/65/EU Compliant",
+          "REACH": "1907/2006/EC Compliant",
+          "ESD Limit (HBM / CDM)": "5.0 kV / 1.5 kV"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/alien-aln9654-rfid-tag-103x52-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/alien-aln-9654-g-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/alien-aln-9654-uhf-rfid-etiketi-4x2/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Class 1 Gen2",
-    "chip": "Alien Higgs 3",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "103 x 52 mm (4x2 inches)",
-    "material": "Non-metal compatible",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "General-purpose RFID tagging",
-      "Asset tracking",
-      "Non-metal surface identification"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Alien Higgs 3",
-      "General-purpose RFID tagging",
-      "Asset tracking"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "ALN-9654 G Inlay Datasheet – Alien Technology",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/alien-aln-9654-g-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/alien-aln-9654-uhf-rfid-etiketi-4x2/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "altis-it-asset-sample-pack",
-    "title": "IT Equipment and Asset Tracking UHF RFID Tag Sample Pack",
-    "brand": "Altis",
-    "model": "IT Asset Sample Pack",
-    "sku": "IT Asset Sample Pack",
-    "subtitle": "Mixed (Confidex Silverline Classic II, Slim II, Micro II, Blade II) RFID Tag",
-    "shortDesc": "Sample pack containing 4 Confidex Silverline products (3 units each) for IT asset tracking evaluation",
-    "description": "Model: IT Asset Sample Pack. Brand: Altis. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Mixed (Confidex Silverline Classic II, Slim II, Micro II, Blade II). Sample pack containing 4 Confidex Silverline products (3 units each) for IT asset tracking evaluation",
-    "customerSummary": "Mixed (Confidex Silverline Classic II, Slim II, Micro II, Blade II) RFID Tag | UHF | Applications: IT asset tracking, Corporate assets, Healthcare equipment, Vehicles",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/it-varlik-takibi-sample-pack.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/it-varlik-takibi-uhf-rfid-etiketi-sample-pack/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Gen2",
-    "chip": "",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Mixed (Confidex Silverline Classic II, Slim II, Micro II, Blade II)",
-    "sizeText": "Standard",
-    "material": "",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "IT asset tracking",
-      "Corporate assets",
-      "Healthcare equipment",
-      "Vehicles"
+    "id": "altis-pvc-rti-label",
+    "alt_code": "Crafty Bold",
+    "display_brand": "Altis",
+    "category": "UHF RFID PVC Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Altis Crafty Bold RFID PVC Label",
+    "summary_en": "107 × 31 mm UHF RFID PVC label optimized for RTI, PLP and KLT plastic transport assets. Provides read range up to 7 m, is fully GRAI, GTIN and SSCC encoding compliant, and supports customizable dual-sided full-color printing.",
+    "feature_highlights_en": [
+      "Optimized for reusable plastic layer pads (PLP), returnable transport items (RTI) and small load carriers (KLT)",
+      "GRAI, GTIN and SSCC memory block encoding compliant",
+      "Read range up to 7 m – operates on large portals and wide dock gates",
+      "Mountable on plastic surfaces or concealable inside assets",
+      "Chip options: Impinj R6, M730/750, Alien H9, UCode U8/U9",
+      "Customized dual-sided full color artwork and visual printing",
+      "CE, REACH and RoHS certified"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Gen2 Class 1 (ISO 18000-6C)",
+          "Encoding Compliance": "GRAI, GTIN, SSCC",
+          "Operating Frequency": "UHF 868 MHz (EU)",
+          "Chip Options": "Impinj R6 / M730/750 / Alien H9 / UCode U8/U9",
+          "Read Range": "Up to 7 m (fixed portal)",
+          "Surface": "Non-metal / Plastic optimized"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Size": "107 × 31 mm (custom sizes available on demand)",
+          "Material": "High-durability PVC",
+          "Form Factor": "Adhesive label",
+          "Mounting": "Surface adhesive or hidden inside asset",
+          "Printing": "Dual-sided full color – logo, text, barcode, numbering",
+          "Certifications": "CE, REACH, RoHS"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Primary Use": "Returnable Transport Item (RTI) tracking",
+          "Asset Types": "Plastic layer pads (PLP), small load carriers (KLT), containers",
+          "Industries": "Automotive, white goods, logistics, supply chain",
+          "Portal Compatibility": "Standard ramps and wide dock gates (up to 7 m read range)"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Mixed (Confidex Silverline Classic II, Slim II, Micro II, Blade II)",
-      "On Metal",
-      "IT asset tracking",
-      "Corporate assets"
-    ]
-  },
-  {
-    "slug": "altis-pvc-rti-label",
-    "title": "RFID PVC Returnable Transport Item Label",
-    "brand": "Altis",
-    "model": "PVC RTI Label",
-    "sku": "PVC RTI Label",
-    "subtitle": "Adhesive tag RFID Tag",
-    "shortDesc": "UHF RFID PVC tag developed for RTI, KLT and PLP returnable transport units",
-    "description": "Model: PVC RTI Label. Brand: Altis. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive tag. UHF RFID PVC tag developed for RTI, KLT and PLP returnable transport units",
-    "customerSummary": "Adhesive tag RFID Tag | UHF | Applications: Automotive, White goods, Returnable transport containers, KLT boxes, Shipping",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/altis-crafty-bold-rfid-etiketi-scaled-1-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/rfid-pcv-depozitolu-tasima-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-pvc-depozitolu-tasima-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Gen2 (SSCC, GRAI, GTIN)",
-    "chip": "Impinj R6 / M730/750 / Alien H9 / UCode U8/U9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive tag",
-    "sizeText": "107 x 31 mm",
-    "material": "High-durability PVC",
-    "fixedReadRange": "up to 7m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Automotive",
-      "White goods",
-      "Returnable transport containers",
-      "KLT boxes",
-      "Shipping"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive tag",
-      "Non Metal",
-      "Impinj R6 / M730/750 / Alien H9 / UCode U8/U9",
-      "Automotive",
-      "White goods"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Altis Crafty Bold RFID Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/rfid-pcv-depozitolu-tasima-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-pvc-depozitolu-tasima-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-141-u9",
-    "title": "Avery Dennison AD-141 U9",
-    "brand": "Avery Dennison",
-    "model": "AD-141 U9",
-    "sku": "AD-141 U9",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Home Essentials",
-    "description": "SKU: AD-141 U9. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Optimum read ranges in challenging environments.",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Home Essentials",
+    "id": "altis-it-asset-sample-pack",
+    "_note": "DATASHEET MISSING – awaiting correct datasheet URL from user before generating PDF"
+  },
+  {
+    "id": "avery-ad-141-u9",
+    "alt_code": "AD-141 U9",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-141 U9 UHF RFID Inlay",
+    "summary_en": "Ultra-slim 4 × 28 mm Gen2 UHF RFID inlay powered by NXP UCODE 9 with Direct Chip Attach technology. Designed for beauty & personal care and pharmaceutical applications with excellent broadband performance across 860–930 MHz.",
+    "feature_highlights_en": [
+      "NXP UCODE 9 chip with Direct Chip Attach technology",
+      "96-bit EPC memory and 96-bit factory-locked TID",
+      "Ultra-slim 4 × 28 mm antenna for space-constrained retail items",
+      "Excellent broadband performance 860–930 MHz (global design)",
+      "Available in dry inlay and wet inlay formats",
+      "ARC accredited quality – ISO 9001:2015 and ISO 14001:2015 certified",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 9",
+          "IC Attachment Technology": "Direct Chip Attach",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "96-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "4 × 28 mm / 0.157 × 1.102 in",
+          "Dry Inlay (3008211 / IL-604154)": "PET substrate — 15,000 pcs/reel — pitch 36 mm",
+          "Wet Inlay (IL-611143)": "6 × 30 mm die-cut — White PET 50 face sheet — 8,000 pcs/reel",
+          "Web Width": "40 mm / 1.575 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-141-U9-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-141.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "6 x 30 mm / 0.24 x 1.18 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Home Essentials"
-    ],
-    "industries": [
-      "Home Essentials"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 9",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-141 U9 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-141-U9.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-141.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-163u8",
-    "title": "Avery Dennison AD-163u8",
-    "brand": "Avery Dennison",
-    "model": "AD-163u8",
-    "sku": "AD-163u8",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Home Essentials",
-    "description": "SKU: AD-163u8. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Optimum read ranges in challenging environments",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Home Essentials",
+    "id": "avery-ad-163u8",
+    "alt_code": "AD-163u8",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-163u8 UHF RFID Inlay",
+    "summary_en": "Slender 60 × 4 mm Gen2 UHF RFID inlay with NXP UCODE 8 featuring Self Adjust technology. Achieves up to 7 m read distance on high-dielectric materials including glass, plastics and near-liquid. Ideal for beauty & personal care and pharmaceutical tagging.",
+    "feature_highlights_en": [
+      "NXP UCODE 8 with Self Adjust feature for challenging environments",
+      "128-bit EPC memory and 48-bit unique serialized TID number",
+      "Up to 7 m read distance on glass, plastics and near-liquid",
+      "Slender 60 × 4 mm antenna – ideal for small retail items",
+      "Available in dry inlay, wet inlay and label / sticker formats",
+      "ARC accredited quality by RFID Lab at Auburn University",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "60 × 4 mm / 2.36 × 0.16 in",
+          "Dry Inlay (RF601236)": "PET substrate — 20,000 pcs/reel — pitch 15.88 mm",
+          "Wet Inlay (RF601235)": "64 × 6 mm die-cut — PET substrate — 20,000 pcs/reel",
+          "Label / Sticker (RF100479)": "64 × 6 mm — White BOPP face sheet — 7,008 pcs/reel",
+          "Web Width": "70.4 mm / 3 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-163-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-163u8.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "64 x 6 mm / 2.52 x 0.24 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Home Essentials"
-    ],
-    "industries": [
-      "Home Essentials"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 8",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-163u8 Product Data Sheet – Avery Dennison",
+      "source_url": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-163u8.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-163u8.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-164-u9",
-    "title": "Avery Dennison AD-164 U9",
-    "brand": "Avery Dennison",
-    "model": "AD-164 U9",
-    "sku": "AD-164 U9",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Home Essentials",
-    "description": "SKU: AD-164 U9. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Optimum read ranges in challenging environments",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Home Essentials",
+    "id": "avery-ad-164-u9",
+    "alt_code": "AD-164 U9",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-164 U9 UHF RFID Inlay",
+    "summary_en": "Slender 60 × 4 mm Gen2 UHF RFID inlay powered by NXP UCODE 9 with Direct Chip Attach. Achieves up to 7 m read distance on high-dielectric materials. Upgraded from UCODE 8 with improved read/write sensitivity and faster encoding speed.",
+    "feature_highlights_en": [
+      "NXP UCODE 9 with Direct Chip Attach and Self Adjust feature",
+      "96-bit EPC memory – improved sensitivity vs. UCODE 8",
+      "Up to 7 m read distance on glass, plastics and near-liquid",
+      "Slender 60 × 4 mm antenna – die-cut 64 × 6 mm",
+      "Available in dry inlay, wet inlay and label formats",
+      "ARC accredited – ISO 9001:2015 and ISO 14001:2015 certified",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 9",
+          "IC Attachment Technology": "Direct Chip Attach",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "96-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "60 × 4 mm / 2.362 × 0.157 in",
+          "Die-Cut Dimension": "64 × 6 mm / 2.520 × 0.236 in",
+          "Dry Inlay (3008611 / IL-604464)": "38um PET — 20,000 pcs/reel — MAX OD 15.5\"",
+          "Wet Inlay (3008613 / IL-604466)": "38um PET — 10,000 pcs/reel — MAX OD 13\"",
+          "Label (3008612 / IL-604465)": "38um PET + BW0053 face sheet — 5,000 pcs/reel — MAX OD 8\"",
+          "Web Width": "70.35–70.36 mm / 2.770 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-164-U9-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-164.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "64 x 6 mm / 2.52 x 0.24 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Home Essentials"
-    ],
-    "industries": [
-      "Home Essentials"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 9",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-164 U9 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-164-U9.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-164.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-183-u9",
-    "title": "Avery Dennison AD-183 U9",
-    "brand": "Avery Dennison",
-    "model": "AD-183 U9",
-    "sku": "AD-183 U9",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Asset Tracking, Home Essentials, Personal Care Products",
-    "description": "SKU: AD-183 U9. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: High performance item tagging",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Asset Tracking, Home Essentials, Personal Care Products",
+    "id": "avery-ad-183-u9",
+    "alt_code": "AD-183 U9",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-183 U9 UHF RFID Inlay",
+    "summary_en": "Compact round Ø 26 mm Gen2 UHF RFID inlay with NXP UCODE 9. Achieves class-leading read distances on a wide array of surfaces. Ideal for apparel, cosmetics and personal care product tagging.",
+    "feature_highlights_en": [
+      "NXP UCODE 9 chip with 96-bit EPC memory and unique serialized TID",
+      "Compact round Ø 26 mm form factor for small cosmetic items",
+      "Class-leading read distances across diverse surface materials",
+      "Excellent broadband performance 860–930 MHz global design",
+      "Available in dry inlay, wet inlay and paper label formats",
+      "RoHS and REACH compliant",
+      "ARC accredited quality by RFID Lab at Auburn University"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 9",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "96-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and Directive (EU) 2015/863",
+          "REACH": "Regulation (EC) No. 1907/2006"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "Ø 26 mm / 1.02 in",
+          "Die-Cut Dimension": "29.25 mm / 1.152 in",
+          "Dry Inlay (RF602211 / IL-605984)": "Opaque PET + 1.2 mil PET overlaminate — 9,958 pcs/reel",
+          "Wet Inlay (RF602212 / IL-605630)": "Opaque PET — 3,341 pcs/reel",
+          "Label Paper (RF100993 / IL-606134)": "Paper + TT2C face stock — 2,366 pcs/reel",
+          "Label PET (RF100994 / IL-612867)": "Opaque PET + 1.2 mil overlaminate + TC PET — 2,500 pcs/reel",
+          "Web Width": "36 mm / 1.4 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-183-U9-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-183u9.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "Ø 29 mm / 1.15 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Asset Tracking",
-      "Home Essentials",
-      "Personal Care Products"
-    ],
-    "industries": [
-      "Asset Tracking",
-      "Home Essentials",
-      "Personal Care Products"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 9",
-      "Asset Tracking",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-183 U9 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-183-U9.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-183u9.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-192-m730",
-    "title": "Avery Dennison AD-192 M730",
-    "brand": "Avery Dennison",
-    "model": "AD-192 M730",
-    "sku": "AD-192 M730",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Fashion Jewelry and Sunglasses, Personal Care Products, Pharmaceutical and Healthcare",
-    "description": "SKU: AD-192 M730. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Ideal for small item-level tagging",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Fashion Jewelry and Sunglasses, Personal Care Products, Pharmaceutical and Healthcare",
+    "id": "avery-ad-192-m730",
+    "alt_code": "AD-192 M730",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-192 M730 UHF RFID Inlay",
+    "summary_en": "Tiny 22 × 12.5 mm Gen2 UHF RFID inlay with Impinj M730 Strap Attach chip featuring autotune technology. Specially designed for jewelry, cosmetics and small item-level tagging with 100% performance testing.",
+    "feature_highlights_en": [
+      "Impinj M730 chip with autotune for peak efficiency in changing environments",
+      "128-bit EPC memory and 96-bit TID with 48-bit unique serial number",
+      "Tiny 22 × 12.5 mm form factor for small hang-tags and cosmetic items",
+      "100% performance tested",
+      "Available in dry inlay, wet inlay and label delivery formats",
+      "RoHS and REACH compliant",
+      "ISO 9001:2015 and ISO 14001:2015 certified"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "Impinj M730",
+          "IC Attachment Technology": "Strap Attach",
+          "Standard": "ISO 18000-63, EPC Class 1 Gen 2",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "RoHS": "EU Directive 2011/65/EC and Directive (EU) 2015/863",
+          "REACH": "Regulation (EC) No 1907/2006"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "22 × 12.5 mm / 0.9 × 0.5 in",
+          "Dry Inlay (RF602397 / IL-607934)": "40# Paper substrate — pitch 38.1 mm — web 36.83 mm",
+          "Wet Inlay (RF602398 / IL-605202)": "24 × 15.5 mm die-cut — 40# Paper — pitch 38.1 mm",
+          "Label (RF101097 / IL-605854)": "31.75 × 15.5 mm — TT2C Bright White — pitch 38.1 mm",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-192-M730-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-192.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "24 x 16 mm / 0.95 x 0.61 in\n32 x 16 mm / 1.25 x 0.61 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Fashion Jewelry and Sunglasses",
-      "Personal Care Products",
-      "Pharmaceutical and Healthcare"
-    ],
-    "industries": [
-      "Fashion Jewelry and Sunglasses",
-      "Personal Care Products",
-      "Pharmaceutical and Healthcare"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "Impinj M730",
-      "Fashion Jewelry and Sunglasses",
-      "Personal Care Products"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-192 M730 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-192-M730.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-192.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-229r6-p",
-    "title": "Avery Dennison AD-229r6-P",
-    "brand": "Avery Dennison",
-    "model": "AD-229r6-P",
-    "sku": "AD-229r6-P",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Brand Protection, Returnable Transport Units (RTUs), Supply Chain Management",
-    "description": "SKU: AD-229r6-P. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: One tag, two chips, many applications",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Brand Protection, Returnable Transport Units (RTUs), Supply Chain Management",
+    "id": "avery-ad-229r6-p",
+    "alt_code": "AD-229r6-P",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-229r6-P UHF RFID Inlay",
+    "summary_en": "High-performing 95 × 8.15 mm Gen2 UHF RFID inlay with Impinj Monza R6-P chip. Offers multiple EPC and user memory options, kill and access password protection. Suitable for supply chain, RTUs, apparel and brand protection.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P chip – multiple EPC and user memory options (128/96-bit EPC, 32/64-bit user)",
+      "Kill and access password protection for user privacy",
+      "96-bit TID with 48-bit unique factory-encoded serial number",
+      "Long 95 × 8.15 mm antenna for high read performance",
+      "Available in dry inlay and wet inlay formats",
+      "ARC accredited quality by RFID Lab at Auburn University",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "Impinj Monza R6-P",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory Options": "128-bit or 96-bit",
+          "User Memory Options": "32-bit or 64-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "Access Password": "Supported",
+          "Kill Password": "Supported",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "95 × 8.15 mm / 3.74 × 0.32 in",
+          "Dry Inlay (RF600776)": "Opaque PET — 20,000 pcs/reel — pitch 15.88 mm — core 152 mm / 6 in",
+          "Wet Inlay (RF600773)": "98.7 × 11.2 mm die-cut — Opaque PET — 20,000 pcs/reel — core 76 mm / 3 in",
+          "Web Width (Dry)": "98 mm / 3.875 in",
+          "Web Width (Wet)": "105 mm / 4.125 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-229-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-229.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Impinj Monza R6-P",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "98 x 12 mm / 3.90 x 0.40 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Brand Protection",
-      "Returnable Transport Units (RTUs)",
-      "Supply Chain Management"
-    ],
-    "industries": [
-      "Brand Protection",
-      "Returnable Transport Units (RTUs)",
-      "Supply Chain Management"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "Impinj Monza R6-P",
-      "Brand Protection",
-      "Returnable Transport Units (RTUs)"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-229r6 / AD-229r6-P Product Data Sheet – Avery Dennison",
+      "source_url": "https://static.ticimax.cloud/54431/uploads/dosyalar/avery-dennison-ad-229.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-229.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-dennison-ad-238u8",
-    "title": "Avery Dennison AD-238u8 UHF RFID Tag",
-    "brand": "Avery Dennison",
-    "model": "AD-238u8",
-    "sku": "AD-238u8",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "UHF RFID adhesive label for supply chain, inventory, logistics and apparel applications",
-    "description": "Model: AD-238u8. Brand: Avery Dennison. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive label. UHF RFID adhesive label for supply chain, inventory, logistics and apparel applications",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Supply chain, Inventory management, Logistics, Apparel",
+    "id": "avery-dennison-ad-238u8",
+    "alt_code": "AD-238u8",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-238u8 UHF RFID Inlay",
+    "summary_en": "High-performance 70 × 14.5 mm Gen2 UHF RFID inlay powered by NXP UCODE 8 chip, suitable for supply chain, inventory & logistics, apparel and home essentials. ARC-certified quality manufactured to the highest industry standards.",
+    "feature_highlights_en": [
+      "NXP UCODE 8 chip with 128-bit EPC memory and 96-bit factory-locked TID",
+      "48-bit unique serial number factory-encoded into TID",
+      "Compact 70 × 14.5 mm footprint for space-constrained applications",
+      "Available in dry inlay, wet inlay and pressure sensitive label formats",
+      "ARC accredited quality by RFID Lab at Auburn University",
+      "Operating temperature -40°C to +85°C",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "70 × 14.5 mm / 2.76 × 0.57 in",
+          "Dry Inlay (RF600958)": "PET substrate — 40,000 pcs/reel — pitch 22.23 mm",
+          "Wet Inlay (RF600959)": "73 × 17 mm die-cut — PET substrate — 10,000 pcs/reel",
+          "Label / Sticker (RF100413)": "76 × 20 mm — 40# Paper + TT2C Bright White — 3,154 pcs/reel",
+          "Core Size (Dry)": "152 mm / 6 in",
+          "Core Size (Wet / Label)": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/avery-dennison-ad238-rfid-etiketi-1-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/averydennison-ad238-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/avery-dennison-ad-238-u8-uhf-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO/IEC 18000-63 Type C",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "76 x 20 mm",
-    "material": "TT2C (FASSON) Bright White",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Supply chain",
-      "Inventory management",
-      "Logistics",
-      "Apparel"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Supply chain",
-      "Inventory management"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-238u8 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/averydennison-ad238-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/avery-dennison-ad-238-u8-uhf-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-239-m730",
-    "title": "Avery Dennison AD-239 M730",
-    "brand": "Avery Dennison",
-    "model": "AD-239 M730",
-    "sku": "AD-239 M730",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Brand Protection, Home Essentials, Supply Chain Management",
-    "description": "SKU: AD-239 M730. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Fit for a wide variety of RFID tagging applications",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Brand Protection, Home Essentials, Supply Chain Management",
+    "id": "avery-ad-239-m730",
+    "alt_code": "AD-239 M730",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-239 M730 UHF RFID Inlay",
+    "summary_en": "High-performance 70 × 14.5 mm Gen2 UHF RFID inlay with Impinj M730 Strap Attach chip. Suitable for supply chain, inventory & logistics, apparel and home essentials with ARC-certified quality.",
+    "feature_highlights_en": [
+      "Impinj M730 chip with Strap Attach technology",
+      "128-bit EPC memory and 96-bit factory-locked TID with 48-bit unique serial number",
+      "70 × 14.5 mm footprint – maximum performance on given form factor",
+      "Available in dry inlay, wet inlay and label formats",
+      "ARC certified (multiple Spec compliance including N, Q, G, F, L, J, I, K, W1–W6)",
+      "RoHS compliant – EU Directive 2011/65/EC and Directive (EU) 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "Impinj M730",
+          "IC Attachment Technology": "Strap Attach",
+          "Standard": "ISO 18000-63, EPC Class 1 Gen 2",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (Spec N, Q, G, F, L, J, I, K, W1–W6)",
+          "RoHS": "EU Directive 2011/65/EC and Directive (EU) 2015/863"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "70 × 14.5 mm / 2.76 × 0.57 in",
+          "Dry Inlay (RF602386 / IL-605262)": "40# Paper substrate — pitch 38.1 mm — web 82.5 mm",
+          "Wet Inlay (RF602387 / IL-605608)": "76 × 20 mm die-cut — 40# Paper — MAX OD 13\"",
+          "Label (RF101088 / IL-606128)": "76 × 20 mm — TT2C Bright White — MAX OD 8\"",
+          "Core Size": "76.2 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-239-M730-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-239.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "76 x 20 mm / 3,25 x 0.80 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "industries": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "Impinj M730",
-      "Brand Protection",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-239 M730 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-239-M730.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-239.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-23x-u9",
-    "title": "Avery Dennison AD-23x U9",
-    "brand": "Avery Dennison",
-    "model": "AD-23x U9",
-    "sku": "AD-23x U9",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Brand Protection, Home Essentials, Supply Chain Management",
-    "description": "SKU: AD-23x U9. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Fit for a wide variety of RFID tagging applications",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Brand Protection, Home Essentials, Supply Chain Management",
+    "id": "avery-ad-23x-u9",
+    "alt_code": "AD-23x U9",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-23x U9 UHF RFID Inlay",
+    "summary_en": "High-performance 70 × 14.5 mm Gen2 UHF RFID inlay with NXP UCODE 9. Delivers maximum performance for supply chain, inventory & logistics, apparel and brand protection applications with comprehensive ARC certification.",
+    "feature_highlights_en": [
+      "NXP UCODE 9 chip with 96-bit EPC memory and 96-bit factory-locked TID",
+      "48-bit unique serial number factory-encoded into TID",
+      "70 × 14.5 mm footprint – die-cut 76 × 20 mm",
+      "Available in dry inlay, wet inlay and pressure sensitive label",
+      "Comprehensive ARC certification (Spec N, Q, M, G, F, L, J, I, K, W1–W6)",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 9",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "96-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (Spec N, Q, M, G, F, L, J, I, K, W1–W6)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "70 × 14.5 mm / 2.76 × 0.57 in",
+          "Dry Inlay (RF602327 / IL-607121)": "40# Paper substrate — 12,390 pcs/reel (13\" max OD)",
+          "Wet Inlay (RF602328 / IL-605267)": "76 × 20 mm die-cut — 40# Paper — 11,377 pcs/reel (13\" max OD)",
+          "Label (RF101055 / IL-605489)": "76 × 20 mm — TT2C Bright White — 3,154 pcs/reel (8\" max OD)",
+          "Web Width": "82.5 mm / 3.25 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-23xu9-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-23x.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "76 x 20 mm / 3.00 x 0.80 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "industries": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 9",
-      "Brand Protection",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-23x U9 Product Data Sheet – Avery Dennison",
+      "source_url": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-23xu9.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-23x.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-23x-u9-pure-95",
-    "title": "Avery Dennison AD-23x U9 Pure 95™",
-    "brand": "Avery Dennison",
-    "model": "AD-23x U9 Pure 95™",
-    "sku": "AD-23x U9 Pure 95™",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Brand Protection, Home Essentials, Supply Chain Management",
-    "description": "SKU: AD-23x U9 Pure 95™. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Fit for a wide variety of RFID tagging applications",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Brand Protection, Home Essentials, Supply Chain Management",
+    "id": "avery-ad-23x-u9-pure-95",
+    "alt_code": "AD-23x U9 Pure 95",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-23x U9 Pure 95™ UHF RFID Inlay",
+    "summary_en": "Sustainable 70 × 14.5 mm Gen2 UHF RFID inlay with NXP UCODE 9, featuring up to 95% plastic-free construction with pure aluminum antenna. Delivers 70–90% carbon footprint savings vs. traditional etching and is certified recyclable.",
+    "feature_highlights_en": [
+      "Up to 95% plastic-free construction – pure aluminum antenna replaces PET laminate",
+      "70–90% carbon footprint savings vs. traditional etching methods",
+      "EU and US paper recyclability certified (PTS-RH021:97/2012, SBS-E)",
+      "NXP UCODE 9 with 96-bit EPC memory and 96-bit TID",
+      "Available in wet inlay and pressure sensitive label formats",
+      "RoHS and REACH compliant",
+      "ARC accredited quality by RFID Lab at Auburn University"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 9",
+          "IC Attachment Technology": "Strap Attach",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "96-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant",
+          "REACH": "Regulation (EC) No. 1907/2006"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "70 × 14.5 mm / 2.756 × 0.571 in",
+          "Die-Cut Dimension": "76 × 20 mm",
+          "Wet Inlay (IL-607854)": "40# Paper substrate — 5,767 pcs/reel — MAX OD 13\"",
+          "Label (IL-612802)": "40# Paper + TT2C face sheet — 6,300 pcs/reel — MAX OD 9\"",
+          "Web Width": "82.55 mm / 3.25 in",
+          "Core Size": "76.2 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      },
+      {
+        "name": "SUSTAINABILITY",
+        "items": {
+          "Plastic-Free Content": "Up to 95% plastic-free (wet inlay and label formats)",
+          "Antenna Material": "Pure aluminum (replaces PET aluminum laminate)",
+          "Carbon Footprint Savings": "Typically 70–90% vs. traditional etching methods",
+          "EU Recyclability": "PTS-RH 021:97/2012 certified",
+          "US Recyclability": "SBS-E Part I (repulpability) and Part II (recyclability)"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-23X-U9-pure-antenna-340x340%EF%B8%8F.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-23x-pure-95.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "industries": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 9",
-      "Brand Protection",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-23x U9 Pure 95™ Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-23x-U9-Pure-95.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-23x-pure-95.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-ad-23x-u9-slim",
-    "title": "Avery Dennison AD-23x U9 Slim",
-    "brand": "Avery Dennison",
-    "model": "AD-23x U9 Slim",
-    "sku": "AD-23x U9 Slim",
-    "subtitle": "RFID Inlay/Tag",
-    "shortDesc": "Brand Protection, Home Essentials, Supply Chain Management",
-    "description": "SKU: AD-23x U9 Slim. Supplier: Avery Dennison. Category: RFID Inlay/Tag. Frequency: UHF UHF 860 - 960 MHz. Non-metal surface application. Form factor: Inlay. Description: Fit for a wide variety of RFID tagging applications",
-    "customerSummary": "RFID Inlay/Tag | Inlay | Applications: Brand Protection, Home Essentials, Supply Chain Management",
+    "id": "avery-ad-23x-u9-slim",
+    "alt_code": "AD-23x U9 Slim",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-23x U9 Slim UHF RFID Inlay",
+    "summary_en": "Slim-profile 70 × 10.5 mm Gen2 UHF RFID inlay with NXP UCODE 9 and Strap Attach. Optimized for supply chain, apparel and brand protection with a narrower footprint than the standard AD-23x for tighter label applications.",
+    "feature_highlights_en": [
+      "NXP UCODE 9 with Strap Attach – 96-bit EPC and 96-bit TID",
+      "Slimmer 70 × 10.5 mm antenna vs. standard AD-23x (narrower profile)",
+      "Die-cut 73 × 13.5 mm for wet inlay and label formats",
+      "Available in wet inlay and pressure sensitive label formats",
+      "ARC Specification Guide certified",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 9",
+          "IC Attachment Technology": "Strap Attach",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "96-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC Specification Guide",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "70 × 10.5 mm / 2.756 × 0.413 in",
+          "Die-Cut Dimension": "73 × 13.5 mm / 2.874 × 0.532 in",
+          "Wet Inlay (IL-611239)": "40# Paper — pitch 15.88 mm — MAX OD 13\"",
+          "Label (IL-611588)": "40# Paper + TT2C Bright White — pitch 19.05 mm — MAX OD 8\"",
+          "Web Width": "82.55 mm / 3.25 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://rfid.averydennison.com/content/dam/rfid/en/products/rfid-products/thumbnails/AD-23xu9-slim-antenna-340x340.png",
-    "datasheet": "",
-    "productUrl": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-23x-slim.html",
-    "frequency": "UHF",
-    "frequencyBand": "UHF 860 - 960 MHz",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Inlay",
-    "sizeText": "73 x 14 mm / 2.87 x 0.53 in",
-    "material": "PET / Paper",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40 to +85C",
-    "ipRating": "IP67",
-    "applications": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "industries": [
-      "Brand Protection",
-      "Home Essentials",
-      "Supply Chain Management"
-    ],
-    "tags": [
-      "UHF",
-      "Inlay",
-      "Non Metal",
-      "NXP UCODE 9",
-      "Brand Protection",
-      "Home Essentials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-23x U9 Slim Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.averydennison.com/content/dam/rfid/en/products/rfid-products/data-sheets/datasheet-AD-23x-U9-Slim.pdf",
+      "product_url": "https://rfid.averydennison.com/content/rfid/na/en/home/product-finder/ad-23x-slim.html",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-dennison-ad-324u8",
-    "title": "Avery Dennison AD-324 u8 UHF RFID Tag",
-    "brand": "Avery Dennison",
-    "model": "AD-324u8",
-    "sku": "AD-324u8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "UCode 8 chip-based RFID tag widely used in supply chain, apparel, pharmaceutical and healthcare",
-    "description": "Model: AD-324u8. Brand: Avery Dennison. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Label. UCode 8 chip-based RFID tag widely used in supply chain, apparel, pharmaceutical and healthcare",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Supply chain, Inventory, Logistics, Apparel, Pharmaceutical, Healthcare",
+    "id": "avery-dennison-ad-324u8",
+    "alt_code": "AD-324u8 FCC",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-324u8 FCC UHF RFID Inlay",
+    "summary_en": "Versatile 41.4 × 16 mm Gen2 UHF RFID inlay optimized for FCC frequency band (902–928 MHz) with NXP UCODE 8. Ideal for supply chain, inventory & logistics, apparel and pharmaceutical & healthcare applications.",
+    "feature_highlights_en": [
+      "NXP UCODE 8 chip with 128-bit EPC memory and 96-bit TID",
+      "FCC optimized (902–928 MHz); ETSI-specific design also available",
+      "Supports Perma-LOCK and Kill Command per EPC global V.2.0.1",
+      "48-bit unique serial number factory-encoded into TID",
+      "Compact 41.4 × 16 mm footprint – die-cut 44 × 19 mm",
+      "Available in dry inlay, wet inlay and paper label formats",
+      "ARC accredited quality – RoHS EU Directive 2011/65/EU and 2015/863 Compliant"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz (FCC optimized: 902–928 MHz)",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "41 × 16 mm / 1.63 × 0.63 in",
+          "Die-cut Dimension": "44 × 19 mm / 1.75 × 0.75 in",
+          "Dry Inlay (RF601478)": "38um Paper — 20,000 pcs/reel",
+          "Wet Inlay (RF601480)": "38um Paper — 20,000 pcs/reel",
+          "Label / Sticker (RF100606)": "5 pt Paper substrate — 5,966 pcs/reel",
+          "Web Width": "50.8 mm / 2 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/avery-dennison-ad324-rfid-etiketi-1.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/averydennison-ad324u8-fcc-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/avery-dennison-ad-324u8-uhf-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO/IEC 18000-63 Type C",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "44 x 19 mm",
-    "material": "5 pt Paper",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Supply chain",
-      "Inventory",
-      "Logistics",
-      "Apparel",
-      "Pharmaceutical",
-      "Healthcare"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Supply chain",
-      "Inventory"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-324u8 FCC Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/averydennison-ad324u8-fcc-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/avery-dennison-ad-324u8-uhf-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-dennison-ad-385u8",
-    "title": "Avery Dennison AD-385 u8 UHF RFID Tag",
-    "brand": "Avery Dennison",
-    "model": "AD-385u8",
-    "sku": "AD-385u8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "High-performance UHF RFID label with NXP UCode 8 chip for supply chain and apparel applications",
-    "description": "Model: AD-385u8. Brand: Avery Dennison. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Label. High-performance UHF RFID label with NXP UCode 8 chip for supply chain and apparel applications",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Supply chain, Inventory tracking, Logistics, Garment/textile labeling",
+    "id": "avery-dennison-ad-385u8",
+    "alt_code": "AD-385u8",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison AD-385u8 UHF RFID Inlay",
+    "summary_en": "High-performing 50 × 30 mm Gen2 UHF RFID inlay combining performance and versatility with NXP UCODE 8 chip. Available in wide-edge and narrow-edge leading formats for supply chain, logistics and apparel.",
+    "feature_highlights_en": [
+      "NXP UCODE 8 chip with 128-bit EPC memory, 32-bit access and kill passwords",
+      "96-bit TID with 48-bit unique serial number factory-encoded",
+      "Available in wide-edge leading (WEL) and narrow-edge leading (NEL) formats",
+      "50 × 30 mm antenna – die-cut 54 × 34 mm (wet and label)",
+      "Available in dry inlay, wet inlay and label / sticker delivery formats",
+      "ARC accredited quality by RFID Lab at Auburn University",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit (48-bit unique serial number)",
+          "Access Password": "32-bit",
+          "Kill Password": "32-bit",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "50 × 30 mm / 1.97 × 1.18 in",
+          "Dry Inlay (RF601086)": "PET substrate — 15,000 pcs/reel",
+          "Wet Inlay (RF601087)": "54 × 34 mm die-cut — PET substrate — 10,000 pcs/reel",
+          "Label / Sticker (RF100465)": "54 × 34 mm — 38um Paper + TT2C Bright White — 2,610 pcs/reel",
+          "Web Width": "54–58 mm / 2 in",
+          "Core Size": "76 mm / 3 in",
+          "Operating Temperature": "-40°C to +85°C"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/avery-dennison-ad385-rfid-etiketi-1-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/averydennison-ad385-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/avery-dennison-ad-385u8-uhf-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO/IEC 18000-63 Type C",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "54 x 34 mm",
-    "material": "TT2C (FASSON) Bright White",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Supply chain",
-      "Inventory tracking",
-      "Logistics",
-      "Garment/textile labeling"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Supply chain",
-      "Inventory tracking"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "AD-385u8 Product Data Sheet – Avery Dennison",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/averydennison-ad385-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/avery-dennison-ad-385u8-uhf-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "avery-dennison-ad-sample-pack",
-    "title": "Avery Dennison RFID Tag Sample Pack",
-    "brand": "Avery Dennison",
-    "model": "AD Sample Pack",
-    "sku": "AD Sample Pack",
-    "subtitle": "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each) RFID Tag",
-    "shortDesc": "Sample pack containing 10 each of AD-238u8, AD-324u8 and AD-385u8 UHF RFID tags",
-    "description": "Model: AD Sample Pack. Brand: Avery Dennison. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each). Sample pack containing 10 each of AD-238u8, AD-324u8 and AD-385u8 UHF RFID tags",
-    "customerSummary": "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each) RFID Tag | UHF | Applications: Project testing, RFID solution evaluation",
+    "id": "avery-dennison-ad-sample-pack",
+    "alt_code": "AD Sample Pack",
+    "display_brand": "Avery Dennison",
+    "category": "UHF RFID Inlay Sample Pack",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Avery Dennison RFID Inlay Sample Pack",
+    "summary_en": "Evaluation pack containing 10 units each of AD-238u8, AD-324u8 and AD-385u8 Gen2 UHF RFID inlays. Enables side-by-side testing of three high-performance NXP UCODE 8 inlay formats before project deployment.",
+    "feature_highlights_en": [
+      "10 units each of AD-238u8, AD-324u8 and AD-385u8 — 30 inlays total",
+      "All powered by NXP UCODE 8 with 128-bit EPC memory",
+      "Three different antenna footprints for application compatibility testing",
+      "Covers supply chain, apparel, logistics and brand protection use cases",
+      "Ideal for RFID project evaluation and pre-deployment testing",
+      "ARC accredited quality from RFID Lab at Auburn University",
+      "RoHS compliant – EU Directive 2011/65/EU and 2015/863"
+    ],
+    "sections": [
+      {
+        "name": "INCLUDED PRODUCTS",
+        "items": {
+          "AD-238u8 (×10)": "70 × 14.5 mm antenna — supply chain, apparel, home essentials",
+          "AD-324u8 FCC (×10)": "41.4 × 16 mm antenna — logistics, healthcare, supply chain",
+          "AD-385u8 (×10)": "50 × 30 mm antenna — apparel, logistics, brand protection",
+          "Total Quantity": "30 inlays (10 each)"
+        }
+      },
+      {
+        "name": "SHARED RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Standard": "ISO/IEC 18000-63 Type C",
+          "Frequency Band": "UHF 860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit / 48-bit unique serial number",
+          "On-Metal": "Non metal",
+          "Certificate": "ARC (RFID Lab, Auburn University)",
+          "RoHS": "EU Directive 2011/65/EU and 2015/863 Compliant"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/avery-dennison-rfid-tag-sample-pack-p-scaled.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/avery-dennison-rfid-tag-sample-pack-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/avery-dennison-rfid-etiket-numune-paketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Gen 2",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each)",
-    "sizeText": "Standard",
-    "material": "",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Project testing",
-      "RFID solution evaluation"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Mixed (AD-238u8, AD-324u8, AD-385u8 — 10 units each)",
-      "Non Metal",
-      "NXP UCode 8",
-      "Project testing",
-      "RFID solution evaluation"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Avery Dennison RFID Inlay Sample Pack Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/avery-dennison-rfid-tag-sample-pack-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/avery-dennison-rfid-etiket-numune-paketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-nfc-pet-25x25",
-    "title": "Brady Anti-Liquid NFC RFID Label",
-    "brand": "Brady",
-    "model": "THT-NFC-PET-25X25",
-    "sku": "THT-NFC-PET-25X25",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Polyester anti-liquid NFC RFID label for high-volume applications on all surface materials including metal",
-    "description": "Model: THT-NFC-PET-25X25. Brand: Brady. Frequency: 13.56 MHz (NFC). Surface: both. Form factor: Label. Polyester anti-liquid NFC RFID label for high-volume applications on all surface materials including metal",
-    "customerSummary": "Label RFID Tag | HF | Applications: High-volume applications, All surface materials including metal",
+    "id": "brady-tht-nfc-pet-25x25",
+    "alt_code": "THT-NFC-25x25",
+    "display_brand": "Brady",
+    "category": "NFC RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady Anti-Liquid NFC RFID Label 25×25 mm",
+    "summary_en": "25×25 mm polyester NFC RFID label designed for on-metal and all-surface applications. Fully customisable including antenna, chip, label material, adhesive and print. 500 labels per roll.",
+    "feature_highlights_en": [
+      "NFC frequency – works on metal and all surface materials",
+      "25×25 mm polyester construction – anti-liquid",
+      "Up to 2 cm NFC read range",
+      "144 bytes user memory",
+      "500 labels per roll",
+      "Operating temperature -35°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "NFC",
+          "Frequency": "13.56 MHz",
+          "Material (Label)": "Polyester",
+          "EPC Memory": "—",
+          "User Memory": "144 bytes",
+          "Read Range": "Up to 2 cm",
+          "On-Metal": "Yes"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-NFC-25x25",
+          "Art Number": "309086",
+          "Dimensions": "25×25 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-35°C to +85°C",
+          "Markets": "General, Manufacturing, Healthcare"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-nfc-rfid-etiketi-l-2588-25b-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-anti-sivi-nfc-rfid-etiketi/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz (NFC)",
-    "protocol": "NFC",
-    "chip": "",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "25 x 25 mm",
-    "material": "Polyester",
-    "fixedReadRange": "up to 2cm",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "",
-    "applications": [
-      "High-volume applications",
-      "All surface materials including metal"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Label",
-      "On Metal",
-      "High-volume applications",
-      "All surface materials including metal"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-anti-sivi-nfc-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-uhf-pet-64x6",
-    "title": "Brady Anti-Liquid UHF RFID Label",
-    "brand": "Brady",
-    "model": "THT-UHF-PET-64X6",
-    "sku": "THT-UHF-PET-64X6",
-    "subtitle": "Label strip RFID Tag",
-    "shortDesc": "High-performance UHF RFID label for metal surfaces and challenging materials including liquids and plastics",
-    "description": "Model: THT-UHF-PET-64X6. Brand: Brady. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label strip. High-performance UHF RFID label for metal surfaces and challenging materials including liquids and plastics",
-    "customerSummary": "Label strip RFID Tag | UHF | Applications: Metal surface labeling, Healthcare, Beverages, Industrial materials tracking",
+    "id": "brady-tht-uhf-pet-64x6",
+    "alt_code": "THT-UHF-64x6",
+    "display_brand": "Brady",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady Anti-Liquid UHF RFID Label 64×6 mm",
+    "summary_en": "64×6 mm slim polyester UHF RFID label designed for on-metal surfaces including healthcare, beverages and industrial materials tracking. Read range up to 3 m. 500 labels per roll.",
+    "feature_highlights_en": [
+      "UHF frequency optimized for metal surfaces",
+      "Slim 64×6 mm polyester label strip format",
+      "Up to 3 m read range on metal",
+      "128-bit EPC memory",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "UHF",
+          "Frequency": "860–960 MHz",
+          "Material (Label)": "Polyester",
+          "EPC Memory": "128 bits",
+          "User Memory": "—",
+          "Read Range": "Up to 3 m",
+          "On-Metal": "Yes"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF-64x6",
+          "Art Number": "309087",
+          "Dimensions": "64×6 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Manufacturing, Healthcare, Data/Telecom"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-uhf-rfid-etiketi-l-2588-25c.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-anti-sivi-uhf-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label strip",
-    "sizeText": "64 x 6 mm",
-    "material": "Polyester",
-    "fixedReadRange": "up to 3m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Metal surface labeling",
-      "Healthcare",
-      "Beverages",
-      "Industrial materials tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label strip",
-      "On Metal",
-      "Metal surface labeling",
-      "Healthcare"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-anti-sivi-uhf-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-df-423-33x17",
-    "title": "Brady B-423 Dual Frequency RFID Label (33x17 mm)",
-    "brand": "Brady",
-    "model": "THT-DF-423-33X17",
-    "sku": "THT-DF-423-33X17",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polyester dual-frequency RFID label for indoor/outdoor use with UV resistance",
-    "description": "Model: THT-DF-423-33X17. Brand: Brady. Frequency: UHF + HF (13.56 MHz). Surface: non_metal. Form factor: Adhesive label. Polyester dual-frequency RFID label for indoor/outdoor use with UV resistance",
-    "customerSummary": "Adhesive label RFID Tag | Dual | Applications: Retail, Supply chain, Product verification, Media",
+    "id": "brady-tht-df-423-33x17",
+    "alt_code": "THT-UHF/NF-B423-33x17",
+    "display_brand": "Brady",
+    "category": "Dual Frequency RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-423 Dual Frequency RFID Label 33×17 mm",
+    "summary_en": "33×17 mm polyester B-423 dual-frequency (NFC + UHF) RFID label for retail, supply chain and product authentication. UHF up to 2.8 m, NFC up to 2 cm. 2048-bit user memory (UHF + HF). 500 labels per roll.",
+    "feature_highlights_en": [
+      "Dual frequency: NFC (13.56 MHz) + UHF (860–960 MHz) in one label",
+      "480-bit EPC memory and 2048-bit user memory (UHF + HF combined)",
+      "UHF read range up to 2.8 m; NFC up to 2 cm",
+      "Polyester B-423 material – UV resistant",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "NFC + UHF (Dual Frequency)",
+          "Frequency": "13.56 MHz (NFC) + 860–960 MHz (UHF)",
+          "Material (Label)": "Polyester (B-423)",
+          "EPC Memory": "480 bits",
+          "User Memory": "2048 bits (UHF + HF)",
+          "Read Range (UHF)": "Up to 2.8 m",
+          "Read Range (NFC)": "Up to 2 cm",
+          "On-Metal": "No"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF/NF-B423-33x17",
+          "Art Number": "310250",
+          "Dimensions": "33×17 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Laboratory, Manufacturing, Healthcare, Data/Telecom, Transport & Logistics"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-b-423-cift-frekansli-rfid-etiketi-l-2588-27d.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-423-cift-frekansli-rfid-etiketi-33x17-mm/",
-    "frequency": "Dual",
-    "frequencyBand": "UHF + HF (13.56 MHz)",
-    "protocol": "EPC Gen2 + HF",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "33 x 17 mm",
-    "material": "Polyester (B-423)",
-    "fixedReadRange": "UHF: up to 2.8m; HF: up to 2cm",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Retail",
-      "Supply chain",
-      "Product verification",
-      "Media"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "Dual",
-      "Adhesive label",
-      "Non Metal",
-      "Retail",
-      "Supply chain"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-423-cift-frekansli-rfid-etiketi-33x17-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-df-423-66x46",
-    "title": "Brady B-423 Dual Frequency RFID Label (66x46 mm)",
-    "brand": "Brady",
-    "model": "THT-DF-423-66X46",
-    "sku": "THT-DF-423-66X46",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polyester dual-frequency RFID label with UHF and NFC for various environments",
-    "description": "Model: THT-DF-423-66X46. Brand: Brady. Frequency: UHF + NFC (13.56 MHz). Surface: non_metal. Form factor: Adhesive label. Polyester dual-frequency RFID label with UHF and NFC for various environments",
-    "customerSummary": "Adhesive label RFID Tag | Dual | Applications: Retail, Industrial supply chain, Media, Product authentication",
+    "id": "brady-tht-df-423-66x46",
+    "alt_code": "THT-UHF/NF-B423-66x46",
+    "display_brand": "Brady",
+    "category": "Dual Frequency RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-423 Dual Frequency RFID Label 66×46 mm",
+    "summary_en": "66×46 mm polyester B-423 dual-frequency (NFC + UHF) RFID label for retail, industrial supply chain and product authentication. UHF up to 5 m, NFC up to 2 cm. 500 labels per roll.",
+    "feature_highlights_en": [
+      "Dual frequency: NFC (13.56 MHz) + UHF (860–960 MHz) in one label",
+      "128-bit EPC memory; 160-bit UHF user memory + 1920-bit NFC user memory",
+      "UHF read range up to 5 m; NFC up to 2 cm",
+      "Larger 66×46 mm format – easier to read and scan",
+      "Polyester B-423 material",
+      "500 labels per roll – operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "NFC + UHF (Dual Frequency)",
+          "Frequency": "13.56 MHz (NFC) + 860–960 MHz (UHF)",
+          "Material (Label)": "Polyester (B-423)",
+          "EPC Memory": "128 bits",
+          "User Memory (UHF)": "160 bits",
+          "User Memory (NFC)": "1920 bits",
+          "Read Range (UHF)": "Up to 5 m",
+          "Read Range (NFC)": "Up to 2 cm",
+          "On-Metal": "No"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF/NF-B423-66x46",
+          "Art Number": "310251",
+          "Dimensions": "66×46 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Laboratory, Manufacturing, Healthcare, Data/Telecom, Transport & Logistics"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-b-423-cift-frekansli-rfid-etiketi-l-2588-27c-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-423-cift-frekansli-rfid-etiketi-66x46-mm/",
-    "frequency": "Dual",
-    "frequencyBand": "UHF + NFC (13.56 MHz)",
-    "protocol": "UHF + NFC",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "66 x 46 mm",
-    "material": "Polyester (B-423)",
-    "fixedReadRange": "UHF: up to 5m; NFC: up to 2cm",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Retail",
-      "Industrial supply chain",
-      "Media",
-      "Product authentication"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "Dual",
-      "Adhesive label",
-      "Non Metal",
-      "Retail",
-      "Industrial supply chain"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-423-cift-frekansli-rfid-etiketi-66x46-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-nfc-423-50x40",
-    "title": "Brady B-423 Temperature Sensing NFC RFID Label",
-    "brand": "Brady",
-    "model": "THT-NFC-423-50X40",
-    "sku": "THT-NFC-423-50X40",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polyester NFC RFID label with temperature sensing capability for wireless temperature monitoring",
-    "description": "Model: THT-NFC-423-50X40. Brand: Brady. Frequency: 13.56 MHz (NFC). Surface: non_metal. Form factor: Adhesive label. Polyester NFC RFID label with temperature sensing capability for wireless temperature monitoring",
-    "customerSummary": "Adhesive label RFID Tag | HF | Applications: Temperature monitoring, UV-exposed environments, Wireless temperature tracking",
+    "id": "brady-tht-nfc-423-50x40",
+    "alt_code": "THT-NFC-B423-50x40",
+    "display_brand": "Brady",
+    "category": "NFC RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-423 Temperature Sensing NFC RFID Label 50×40 mm",
+    "summary_en": "50×40 mm polyester B-423 NFC RFID label with temperature sensing capability for wireless temperature monitoring in UV-exposed and challenging environments. 320 bytes user memory. 500 labels per roll.",
+    "feature_highlights_en": [
+      "NFC 13.56 MHz with built-in temperature sensing capability",
+      "320 bytes user memory for temperature data storage",
+      "Up to 5 cm NFC read range",
+      "Polyester B-423 material – UV and chemical resistant",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "NFC",
+          "Frequency": "13.56 MHz",
+          "Material (Label)": "Polyester (B-423)",
+          "EPC Memory": "—",
+          "User Memory": "320 bytes",
+          "Read Range": "Up to 5 cm",
+          "Special Feature": "Temperature sensing"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-NFC-B423-50x40",
+          "Art Number": "309084",
+          "Dimensions": "50×40 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Manufacturing"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-b-423-nfc-rfid-label-l-2899-7b-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-423-sicaklik-sensorlu-nfc-rfid-etiketi/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz (NFC)",
-    "protocol": "NFC",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "50 x 40 mm",
-    "material": "Polyester (B-423)",
-    "fixedReadRange": "up to 5cm",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Temperature monitoring",
-      "UV-exposed environments",
-      "Wireless temperature tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Adhesive label",
-      "Non Metal",
-      "Temperature monitoring",
-      "UV-exposed environments"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-423-sicaklik-sensorlu-nfc-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-uhf-423-53x26",
-    "title": "Brady B-423 Temperature Sensing UHF RFID Label (53x26 mm)",
-    "brand": "Brady",
-    "model": "THT-UHF-423-53X26",
-    "sku": "THT-UHF-423-53X26",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polyester UHF RFID label with temperature sensing capability for general applications",
-    "description": "Model: THT-UHF-423-53X26. Brand: Brady. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive label. Polyester UHF RFID label with temperature sensing capability for general applications",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Retail, Industrial, Supply chain",
+    "id": "brady-tht-uhf-423-53x26",
+    "alt_code": "THT-UHF-B423-53x26",
+    "display_brand": "Brady",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-423 Temperature Sensing UHF RFID Label 53×26 mm",
+    "summary_en": "53×26 mm polyester B-423 UHF RFID label for product ID, medical equipment and distribution & warehousing applications. Up to 11 m read range with 128-bit EPC memory. 500 labels per roll.",
+    "feature_highlights_en": [
+      "UHF 860–960 MHz with up to 11 m read range",
+      "128-bit EPC memory",
+      "Polyester B-423 material – suitable for industrial and healthcare environments",
+      "Applications: product ID, medical equipment ID, distribution & warehousing",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "UHF",
+          "Frequency": "860–960 MHz",
+          "Material (Label)": "Polyester (B-423)",
+          "EPC Memory": "128 bits",
+          "User Memory": "—",
+          "Read Range": "Up to 11 m",
+          "On-Metal": "No"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF-B423-53x26",
+          "Art Number": "307923",
+          "Dimensions": "53×26 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Manufacturing, Healthcare, Transport & Logistics"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polypropylene-b-7425-uhf-rfid-label-l-2588-26b.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-423-sicaklik-sensorlu-uhf-etiketi-53x26-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "53 x 26 mm",
-    "material": "Polyester (B-423)",
-    "fixedReadRange": "up to 11m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Retail",
-      "Industrial",
-      "Supply chain"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Retail",
-      "Industrial"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-423-sicaklik-sensorlu-uhf-etiketi-53x26-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-uhf-423-93x26",
-    "title": "Brady B-423 Temperature Sensing UHF RFID Label (93x26 mm)",
-    "brand": "Brady",
-    "model": "THT-UHF-423-93X26",
-    "sku": "THT-UHF-423-93X26",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Temperature-sensing UHF RFID label made of polyester, suitable for various environments",
-    "description": "Model: THT-UHF-423-93X26. Brand: Brady. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive label. Temperature-sensing UHF RFID label made of polyester, suitable for various environments",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Temperature monitoring, UV-exposed environments",
+    "id": "brady-tht-uhf-423-93x26",
+    "alt_code": "THT-UHF-B423-93x26",
+    "display_brand": "Brady",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-423 Temperature Sensing UHF RFID Label 93×26 mm",
+    "summary_en": "93×26 mm polyester B-423 UHF RFID label with temperature sensing for general manufacturing and warehousing. Up to 9 m read range, 128-bit EPC and 176-bit user memory. 500 labels per roll.",
+    "feature_highlights_en": [
+      "UHF 860–960 MHz with up to 9 m read range",
+      "128-bit EPC memory + 176-bit user memory",
+      "Built-in temperature sensing capability",
+      "Longer 93×26 mm format for improved readability",
+      "Polyester B-423 material",
+      "500 labels per roll – operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "UHF",
+          "Frequency": "860–960 MHz",
+          "Material (Label)": "Polyester (B-423)",
+          "EPC Memory": "128 bits",
+          "User Memory": "176 bits",
+          "Read Range": "Up to 9 m",
+          "Special Feature": "Temperature sensing"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF-B423-93x26",
+          "Art Number": "309085",
+          "Dimensions": "93×26 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Manufacturing, Warehousing"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-b-423-uhf-rfid-etiketi-l-2899-8a.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-423-sicaklik-sensorlu-uhf-etiketi-93x26-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "93 x 26 mm",
-    "material": "Polyester (B-423)",
-    "fixedReadRange": "up to 9m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Temperature monitoring",
-      "UV-exposed environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Temperature monitoring",
-      "UV-exposed environments"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-423-sicaklik-sensorlu-uhf-etiketi-93x26-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-uhf-b481-24x16",
-    "title": "Brady B-481 Chemical Resistant RFID Label",
-    "brand": "Brady",
-    "model": "THT-UHF-B481-24X16",
-    "sku": "THT-UHF-B481-24X16",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polyester UHF RFID label designed for medical laboratory vials in pharmaceutical environments",
-    "description": "Model: THT-UHF-B481-24X16. Brand: Brady. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive label. Polyester UHF RFID label designed for medical laboratory vials in pharmaceutical environments",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Medical laboratory vials, Pharmaceutical industry, Healthcare, Chemical-resistant environments",
+    "id": "brady-tht-uhf-b481-24x16",
+    "alt_code": "THT-UHF-B481-24x16",
+    "display_brand": "Brady",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-481 Chemical Resistant UHF RFID Label 24×16 mm",
+    "summary_en": "24×16 mm polyester B-481 UHF RFID label designed for medical laboratory slide labelling and chemical-resistant environments. Up to 2 m read range, 128-bit EPC and 512-bit user memory. 500 labels per roll.",
+    "feature_highlights_en": [
+      "Chemical-resistant polyester B-481 material for laboratory use",
+      "UHF 860–960 MHz – up to 2 m read range",
+      "128-bit EPC memory + 512-bit user memory",
+      "Compact 24×16 mm format for medical slide labelling",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "UHF",
+          "Frequency": "860–960 MHz",
+          "Material (Label)": "Polyester (B-481)",
+          "EPC Memory": "128 bits",
+          "User Memory": "512 bits",
+          "Read Range": "Up to 2 m",
+          "On-Metal": "No"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF-B481-24x16",
+          "Art Number": "309083",
+          "Dimensions": "24×16 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "Laboratory"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polyester-b-481-uhf-rfid-label-l-2899-4c.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-481-kimyasal-dayanikli-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "24 x 16 mm",
-    "material": "Polyester (B-481)",
-    "fixedReadRange": "up to 2m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Medical laboratory vials",
-      "Pharmaceutical industry",
-      "Healthcare",
-      "Chemical-resistant environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Medical laboratory vials",
-      "Pharmaceutical industry"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-481-kimyasal-dayanikli-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-uhf-7425-45x30",
-    "title": "Brady B-7425 Special Purpose UHF RFID Label (45x30 mm)",
-    "brand": "Brady",
-    "model": "THT-UHF-7425-45X30",
-    "sku": "THT-UHF-7425-45X30",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polypropylene UHF RFID label for laboratory identification on conical tubes and well plates",
-    "description": "Model: THT-UHF-7425-45X30. Brand: Brady. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Adhesive label. Polypropylene UHF RFID label for laboratory identification on conical tubes and well plates",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Laboratory identification, Medical vials, Test tubes, Specimen containers",
+    "id": "brady-tht-uhf-7425-45x30",
+    "alt_code": "THT-UHF-B7425-45x30",
+    "display_brand": "Brady",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-7425 Special Purpose UHF RFID Label 45×30 mm",
+    "summary_en": "45×30 mm polypropylene B-7425 UHF RFID label for laboratory identification on conical tubes and well plates. Up to 6 m read range, 448-bit EPC and 2048-bit user memory. 500 labels per roll.",
+    "feature_highlights_en": [
+      "Polypropylene B-7425 material – laboratory-grade durability",
+      "UHF 860–960 MHz – up to 6 m read range",
+      "Large 448-bit EPC memory + 2048-bit user memory",
+      "45×30 mm format for conical tubes and well plates",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "UHF",
+          "Frequency": "860–960 MHz",
+          "Material (Label)": "Polypropylene (B-7425)",
+          "EPC Memory": "448 bits",
+          "User Memory": "2048 bits",
+          "Read Range": "Up to 6 m",
+          "On-Metal": "No"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF-B7425-45x30",
+          "Art Number": "309082",
+          "Dimensions": "45×30 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Laboratory, Manufacturing, Healthcare"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/07/polypropylene-b-7425-uhf-rfid-label-l-2588.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-7425-ozel-amacli-uhf-rfid-etiketi-45x30-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "45 x 30 mm",
-    "material": "Polypropylene (B-7425)",
-    "fixedReadRange": "up to 6m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Laboratory identification",
-      "Medical vials",
-      "Test tubes",
-      "Specimen containers"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Laboratory identification",
-      "Medical vials"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-7425-ozel-amacli-uhf-rfid-etiketi-45x30-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "brady-tht-uhf-7425-53x26",
-    "title": "Brady B-7425 Special Purpose UHF RFID Label (53x26 mm)",
-    "brand": "Brady",
-    "model": "THT-UHF-7425-53X26",
-    "sku": "THT-UHF-7425-53X26",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Polypropylene UHF RFID label for laboratory vials and test tubes in pharmaceutical environments",
-    "description": "Model: THT-UHF-7425-53X26. Brand: Brady. Frequency: 860-960 MHz. Surface: both. Form factor: Adhesive label. Polypropylene UHF RFID label for laboratory vials and test tubes in pharmaceutical environments",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Laboratory sample identification, Test tubes, Pharmaceutical tracking, Healthcare",
+    "id": "brady-tht-uhf-7425-53x26",
+    "alt_code": "THT-UHF-B7425-53x26",
+    "display_brand": "Brady",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Inlay",
+    "title_en": "Brady B-7425 Special Purpose UHF RFID Label 53×26 mm",
+    "summary_en": "53×26 mm polypropylene B-7425 UHF RFID label for laboratory sample identification, test tubes and pharmaceutical tracking. Up to 10 m read range with 128-bit EPC memory. 500 labels per roll.",
+    "feature_highlights_en": [
+      "Polypropylene B-7425 material – chemical and laboratory grade",
+      "UHF 860–960 MHz – up to 10 m read range",
+      "128-bit EPC memory",
+      "53×26 mm format for test tubes and specimen containers",
+      "500 labels per roll",
+      "Operating temperature -40°C to +85°C",
+      "Fully customisable: antenna, chip, material, adhesive and print"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "RFID Type": "UHF",
+          "Frequency": "860–960 MHz",
+          "Material (Label)": "Polypropylene (B-7425)",
+          "EPC Memory": "128 bits",
+          "User Memory": "—",
+          "Read Range": "Up to 10 m",
+          "On-Metal": "Yes (both surfaces)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Reference": "THT-UHF-B7425-53x26",
+          "Art Number": "309081",
+          "Dimensions": "53×26 mm",
+          "Quantity / Roll": "500",
+          "Operating Temperature": "-40°C to +85°C",
+          "Markets": "General, Laboratory, Manufacturing, Healthcare, Transport & Logistics"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/polypropylene-b-7425-uhf-rfid-label-l-2588-26b-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/brady-b-7425-ozel-amacli-rfid-etiketi-53x26-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Adhesive label",
-    "sizeText": "53 x 26 mm",
-    "material": "Polypropylene (B-7425)",
-    "fixedReadRange": "up to 10m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Laboratory sample identification",
-      "Test tubes",
-      "Pharmaceutical tracking",
-      "Healthcare"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "On Metal",
-      "Laboratory sample identification",
-      "Test tubes"
-    ]
+    "hero_image_variant": "large",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Brady Standard RFID Labels Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/03/brady-rfid-label-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/brady-b-7425-ozel-amacli-rfid-etiketi-53x26-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-carrier-classic",
-    "title": "Confidex Carrier Classic RFID Tag (Monza 4QT)",
-    "brand": "Confidex",
-    "model": "Carrier Classic",
-    "sku": "Carrier Classic",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "RFID tag optimized for washable adhesive plastic surfaces used in asset tracking applications",
-    "description": "Model: Carrier Classic. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. RFID tag optimized for washable adhesive plastic surfaces used in asset tracking applications",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Plastic container tracking, Items with limited labeling space",
+    "id": "confidex-carrier-classic",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Carrier Classic RFID Label",
+    "summary_en": "Slim printable UHF RFID label optimized for washable plastic surfaces. Engineered for returnable transport items, plastic containers and assets with limited labeling space, delivering read ranges up to 10 m on plastic.",
+    "feature_highlights_en": [
+      "EPCglobal Gen2v2 – 860–960 MHz global operation",
+      "Impinj Monza 4QT IC with 512-bit User Memory",
+      "Read range up to 10 m on plastic (ETSI)",
+      "IP68 waterproof – withstands industrial washing up to 60°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj Monza 4QT",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Memory": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range (2W ERP)": "Up to 10 m on plastic (ETSI)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "73 × 8 × 0.2 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Washing Resistance": "Industrial laundry up to 60°C",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-carrier-classic-rfid-etiketi-monza-4QT-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-carrier-classic-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-classic-rfid-etiketi-monza-4qt/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza 4QT",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "73 x 8 x 0.2 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 10m (ETSI plastic)",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Plastic container tracking",
-      "Items with limited labeling space"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza 4QT",
-      "Asset tracking",
-      "Plastic container tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Carrier Classic Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-carrier-classic-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-classic-rfid-etiketi-monza-4qt/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-carrier-dual",
-    "title": "Confidex Carrier Dual Tag",
-    "brand": "Confidex",
-    "model": "Carrier Dual",
-    "sku": "Carrier Dual",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Dual-frequency RFID tag combining UHF and NFC capabilities for supply chain management and inventory counting with extended read range",
-    "description": "Model: Carrier Dual. Brand: Confidex. Frequency: 860-960 MHz (UHF) + 13.56 MHz (HF/NFC). Surface: non_metal. Form factor: Label. Dual-frequency RFID tag combining UHF and NFC capabilities for supply chain management and inventory counting with extended read range",
-    "customerSummary": "Label RFID Tag | Dual | Applications: Supply chain management, Inventory counting, NFC mobile interaction",
+    "id": "confidex-carrier-dual",
+    "display_brand": "Confidex",
+    "category": "Dual-Frequency RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Carrier Dual RFID Label",
+    "summary_en": "Dual-frequency RFID label combining UHF (860–960 MHz) and HF/NFC (13.56 MHz) in a single slim tag. Ideal for supply chain management, inventory counting and NFC-based mobile interaction.",
+    "feature_highlights_en": [
+      "Dual UHF + HF/NFC in one tag – EM Microelectronic EM4425",
+      "UHF read range up to 11 m; NFC mobile read up to 3 cm",
+      "ISO/IEC 18000-63 + ISO/IEC 15693 compliant",
+      "Printable white PET – 36 × 70 × 0.2 mm",
+      "Enables simultaneous long-range UHF and smartphone NFC interaction",
+      "Operating temperature -35°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-63 (UHF) + ISO/IEC 15693 (HF)",
+          "Integrated Circuit": "EM Microelectronic EM4425",
+          "UHF Frequency": "860–960 MHz (Global)",
+          "HF/NFC Frequency": "13.56 MHz",
+          "UHF Read Range": "Up to 11 m (ETSI)",
+          "NFC Read Range (Mobile)": "Up to 3 cm",
+          "NFC Read Range (Fixed)": "Up to 60 cm"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "36 × 70 × 0.2 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/08/confidex-carrier-dual-rfid-etiketi-p.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/08/confidex-carrier-dual-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-dual-etiket/",
-    "frequency": "Dual",
-    "frequencyBand": "860-960 MHz (UHF) + 13.56 MHz (HF/NFC)",
-    "protocol": "ISO/IEC 18000-63 + ISO/IEC 15693",
-    "chip": "EM Microelectronic EM4425",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "36 x 70 x 0.2 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "UHF: up to 11m; NFC fixed: up to 60cm",
-    "handheldReadRange": "NFC mobile: up to 3cm",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Supply chain management",
-      "Inventory counting",
-      "NFC mobile interaction"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "Dual",
-      "Label",
-      "Non Metal",
-      "EM Microelectronic EM4425",
-      "Supply chain management",
-      "Inventory counting"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Carrier Dual Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/08/confidex-carrier-dual-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-dual-etiket/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-carrier-hf",
-    "title": "Confidex Carrier HF",
-    "brand": "Confidex",
-    "model": "Carrier HF",
-    "sku": "Carrier HF",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Washable reusable RFID tag optimized for printable plastic containers",
-    "description": "Model: Carrier HF. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. Washable reusable RFID tag optimized for printable plastic containers",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Washable returnable plastic containers, Asset tracking",
+    "id": "confidex-carrier-hf",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Carrier HF RFID Label",
+    "summary_en": "Washable and reusable UHF RFID label for plastic containers and returnable transport items. IP68-rated with industrial washing resistance, designed for long-term reuse in demanding supply chain environments.",
+    "feature_highlights_en": [
+      "EPCglobal Gen2v2 – 860–960 MHz global operation",
+      "Impinj Monza 4QT / 4E IC options",
+      "Read range up to 10 m on plastic (ETSI)",
+      "Withstands industrial washing – reusable lifecycle",
+      "IP68 waterproof, chemical resistant",
+      "Slim 73 × 8 × 0.2 mm printable white PET label"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2v2 (ISO 18000-6C)",
+          "IC Options": "Impinj Monza 4QT / Monza 4E",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Memory (Monza 4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "Memory (Monza 4E)": "EPC 496 bit; User 128 bit; TID 96 bit",
+          "Read Range (2W ERP)": "Up to 10 m on plastic (ETSI)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "73 × 8 × 0.2 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Washing Resistance": "Industrial laundry up to 60°C",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-carrier-hf-rfid-etiketi-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-hf-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-hf/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza 4QT / Monza 4E",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "73 x 8 x 0.2 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 10m (ETSI plastic)",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Washable returnable plastic containers",
-      "Asset tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza 4QT / Monza 4E",
-      "Washable returnable plastic containers",
-      "Asset tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Carrier HF Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-hf-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-hf/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-carrier-klt",
-    "title": "Confidex Carrier KLT RFID Tag",
-    "brand": "Confidex",
-    "model": "Carrier KLT",
-    "sku": "Carrier KLT",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Specially designed RFID tag for washable adhesive plastic surfaces optimized for returnable plastic containers (KLT)",
-    "description": "Model: Carrier KLT. Brand: Confidex. Frequency: 13.56 MHz. Surface: non_metal. Form factor: Adhesive label. Specially designed RFID tag for washable adhesive plastic surfaces optimized for returnable plastic containers (KLT)",
-    "customerSummary": "Adhesive label RFID Tag | HF | Applications: Automotive industry, Returnable plastic containers, KLT boxes, Plastic dollies",
+    "id": "confidex-carrier-klt",
+    "display_brand": "Confidex",
+    "category": "HF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Carrier KLT RFID Label",
+    "summary_en": "HF 13.56 MHz RFID label specially designed for washable adhesive plastic surfaces, optimized for KLT small load carriers and returnable plastic containers in automotive and industrial supply chains.",
+    "feature_highlights_en": [
+      "HF 13.56 MHz – designed for KLT and RTI container tracking",
+      "Adhesive label format for plastic surfaces",
+      "Optimized for automotive industry and returnable container logistics",
+      "Suitable for plastic dollies, KLT boxes and load carriers",
+      "Washable and reusable design"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Operating Frequency": "13.56 MHz (HF)",
+          "Applicable Surfaces": "Non-metal (plastic optimized)",
+          "Primary Application": "KLT small load carriers, returnable plastic containers"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Form Factor": "Adhesive label",
+          "Material": "Plastic",
+          "Delivery Format": "Standard",
+          "Applicable Surfaces": "Plastic, non-metal"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Primary Use": "KLT small load carrier tracking",
+          "Industries": "Automotive, industrial supply chain",
+          "Asset Types": "KLT boxes, plastic dollies, returnable containers"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-klt-rfid-etiketi-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-klt-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-klt/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "Standard",
-    "material": "Plastic",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Automotive industry",
-      "Returnable plastic containers",
-      "KLT boxes",
-      "Plastic dollies"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Adhesive label",
-      "Non Metal",
-      "Automotive industry",
-      "Returnable plastic containers"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Carrier KLT Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-klt-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-klt/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-carrier-pro",
-    "title": "Confidex Carrier Pro RFID Tag",
-    "brand": "Confidex",
-    "model": "Carrier Pro",
-    "sku": "Carrier Pro",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Washable RFID tag optimized for low surface energy plastics and returnable transport items (RTI)",
-    "description": "Model: Carrier Pro. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. Washable RFID tag optimized for low surface energy plastics and returnable transport items (RTI)",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Food sector, Returnable transport items (RTI), Metal cases, Dollies, Plastic containers",
+    "id": "confidex-carrier-pro",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Carrier Pro RFID Label",
+    "summary_en": "High-performance washable UHF RFID label optimized for low surface energy plastics and returnable transport items (RTI). Delivers read ranges up to 12.5 m on plastic and withstands industrial wash cycles.",
+    "feature_highlights_en": [
+      "Optimized for low surface energy (LSE) plastics and RTI",
+      "Impinj Monza 4QT / 4E IC options",
+      "Read range up to 12.5 m on plastic (ETSI)",
+      "IP68 waterproof – withstands industrial washing"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
+          "IC Options": "Impinj Monza 4QT / Monza 4E",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Memory (Monza 4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "Memory (Monza 4E)": "EPC 496 bit; User 128 bit; TID 96 bit",
+          "Read Range (2W ERP)": "Up to 12.5 m on plastic (ETSI)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "92 × 24 × 0.2 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, LSE plastics, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Washing Resistance": "Industrial laundry up to 60°C",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-carrier-pro-rfid-etiketi-monza-4QT-600x237.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-carrier-pro-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-pro/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
-    "chip": "Impinj Monza 4QT / Monza 4E",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "92 x 24 x 0.2 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 12.5m (ETSI plastic)",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Food sector",
-      "Returnable transport items (RTI)",
-      "Metal cases",
-      "Dollies",
-      "Plastic containers"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza 4QT / Monza 4E",
-      "Food sector",
-      "Returnable transport items (RTI)"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Carrier Pro Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-carrier-pro-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-pro/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-carrier-tough-slim",
-    "title": "Confidex Carrier Tough Slim Tag",
-    "brand": "Confidex",
-    "model": "Carrier Tough Slim",
-    "sku": "Carrier Tough Slim",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Flexible yet durable RFID tag optimized for washable adhesive plastic surfaces",
-    "description": "Model: Carrier Tough Slim. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. Flexible yet durable RFID tag optimized for washable adhesive plastic surfaces",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Washable items, Curved surfaces, High-temperature environments, Repeated washing cycles",
+    "id": "confidex-carrier-tough-slim",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Carrier Tough Slim RFID Label",
+    "summary_en": "Flexible yet durable UHF RFID label optimized for washable plastic surfaces. Engineered for assets exposed to repeated washing cycles, curved surfaces and high-temperature environments.",
+    "feature_highlights_en": [
+      "EPCglobal Gen2v2 – 860–960 MHz global operation",
+      "Impinj Monza 4QT / 4E IC options",
+      "Read range up to 10 m on plastic (ETSI)",
+      "IP68 waterproof – withstands repeated industrial wash cycles",
+      "Flexible construction for curved surfaces",
+      "Slim 73 × 8 × 0.2 mm printable white PET format"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2v2 (ISO 18000-6C)",
+          "IC Options": "Impinj Monza 4QT / Monza 4E",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Memory (Monza 4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "Memory (Monza 4E)": "EPC 496 bit; User 128 bit; TID 96 bit",
+          "Read Range (2W ERP)": "Up to 10 m on plastic (ETSI)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "73 × 8 × 0.2 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, non-metal, curved surfaces"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Washing Resistance": "Industrial laundry – repeated wash cycles",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-tough-slim-rfid-etiketi-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-tough-slim-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-tough-slim/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza 4QT / Monza 4E",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "73 x 8 x 0.2 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 10m (ETSI plastic)",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Washable items",
-      "Curved surfaces",
-      "High-temperature environments",
-      "Repeated washing cycles"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza 4QT / Monza 4E",
-      "Washable items",
-      "Curved surfaces"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Carrier Tough Slim Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-carrier-tough-slim-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-carrier-tough-slim/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-casey",
-    "title": "Confidex Casey RFID Tag (Monza R6-P)",
-    "brand": "Confidex",
-    "model": "Casey",
-    "sku": "Casey",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Industrial-grade UHF RFID label suitable for glass and plastic surfaces with Impinj Monza R6-P chip",
-    "description": "Model: Casey. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: non_metal. Form factor: Label. Industrial-grade UHF RFID label suitable for glass and plastic surfaces with Impinj Monza R6-P chip",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Industrial use, Inventory tracking, Asset management",
+    "id": "confidex-casey",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Casey RFID Label",
+    "summary_en": "Industrial-grade UHF RFID label with Impinj Monza R6-P IC, optimized for glass and plastic surfaces. Delivers exceptional read ranges up to 16 m on plastic for large-scale inventory and asset management applications.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P IC – 865–928 MHz global operation",
+      "Industry-leading read range up to 16 m on plastic",
+      "IP68 waterproof with chemical resistance",
+      "92 × 24 mm printable white synthetic face label",
+      "Applications: industrial use, inventory tracking, asset management"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6-P",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Read Range (2W ERP)": "Up to 16 m on plastic"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "92 × 24 × 0.2 mm",
+          "Material": "Printable white synthetic face layer",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Glass, plastic, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-casey-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-casey.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-casey-rfid-etiketi-monza-r6-p/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza R6-P",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "92 x 24 x 0.2 mm",
-    "material": "Printable white synthetic face layer",
-    "fixedReadRange": "up to 16m on plastic",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial use",
-      "Inventory tracking",
-      "Asset management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza R6-P",
-      "Industrial use",
-      "Inventory tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Casey Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-casey.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-casey-rfid-etiketi-monza-r6-p/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-crosswave-classic",
-    "title": "Confidex Crosswave Classic Tag",
-    "brand": "Confidex",
-    "model": "Crosswave Classic",
-    "sku": "Crosswave Classic",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Dual-dipole UHF RFID label optimized for plastic and cardboard surfaces",
-    "description": "Model: Crosswave Classic. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: non_metal. Form factor: Label. Dual-dipole UHF RFID label optimized for plastic and cardboard surfaces",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Logistics, Inventory management, Fast location updates",
+    "id": "confidex-crosswave-classic",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Crosswave Classic RFID Label",
+    "summary_en": "Dual-dipole UHF RFID label with Impinj M730 IC, optimized for plastic and cardboard surfaces. Provides 360-degree read angle and read ranges up to 11 m for logistics and inventory management.",
+    "feature_highlights_en": [
+      "Dual-dipole antenna for 360-degree read angle",
+      "Impinj M730 IC – 865–928 MHz global operation",
+      "Read range up to 11 m on plastic",
+      "75 × 50 mm printable matt-coated paper label",
+      "Applications: logistics, inventory management, supply chain"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj M730",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Read Range (2W ERP)": "Up to 11 m on plastic"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "75 × 50 × 0.2 mm",
+          "Material": "Printable matt coated paper",
+          "Adhesive": "Permanent adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, cardboard, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +70°C / -31°F to +158°F",
+          "Chemical Resistance": "Salt water, motor oil exposure",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-crosswave-classic-rfid-etiketi.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-crosswave-classic-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-crosswave-classic/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "75 x 50 x 0.2 mm",
-    "material": "Printable matt coated paper",
-    "fixedReadRange": "up to 11m on plastic",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 70C",
-    "ipRating": "",
-    "applications": [
-      "Logistics",
-      "Inventory management",
-      "Fast location updates"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj M730",
-      "Logistics",
-      "Inventory management"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Crosswave Classic Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-crosswave-classic-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-crosswave-classic/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-crosswave-neo-4x6",
-    "title": "Confidex Crosswave Neo 4x6 inch",
-    "brand": "Confidex",
-    "model": "Crosswave Neo 4x6",
-    "sku": "Crosswave Neo 4x6",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "High-performance printable UHF RFID label with superior performance through Impinj Monza 730 chip",
-    "description": "Model: Crosswave Neo 4x6. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: non_metal. Form factor: Label. High-performance printable UHF RFID label with superior performance through Impinj Monza 730 chip",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Logistics, Inventory management, Supply chain",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-crosswave-neo-4x6-yapistirilabilir-rfid-etiketi-monza-730-2.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-crosswave-neo-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-crosswave-neo-4x6/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "75 x 50 x 0.2 mm",
-    "material": "Printable matt coated paper",
-    "fixedReadRange": "up to 11m on plastic",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 70C",
-    "ipRating": "",
-    "applications": [
-      "Logistics",
-      "Inventory management",
-      "Supply chain"
+    "id": "confidex-crosswave-neo",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Crosswave Neo RFID Label",
+    "summary_en": "High-performance printable UHF RFID label with Impinj M730 IC and 360-degree read capability. Designed for logistics, asset tracking and washable plastic surface applications requiring excellent read range.",
+    "feature_highlights_en": [
+      "Impinj M730 IC – 865–928 MHz global operation",
+      "360-degree read angle for omnidirectional scanning",
+      "Read range up to 11 m on plastic",
+      "75 × 50 mm printable matt-coated paper label",
+      "Applications: logistics, asset tracking, washable plastic surfaces"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj M730",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Read Range (2W ERP)": "Up to 11 m on plastic"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "75 × 50 × 0.2 mm",
+          "Material": "Printable matt coated paper",
+          "Adhesive": "Permanent adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +70°C / -31°F to +158°F",
+          "Chemical Resistance": "Salt water, motor oil exposure",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj M730",
-      "Logistics",
-      "Inventory management"
-    ]
-  },
-  {
-    "slug": "confidex-crosswave-neo",
-    "title": "Confidex Crosswave Neo Tag",
-    "brand": "Confidex",
-    "model": "Crosswave Neo",
-    "sku": "Crosswave Neo",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "UHF RFID tag designed for logistics with Impinj M730 chip and 360-degree read angle",
-    "description": "Model: Crosswave Neo. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: non_metal. Form factor: Label. UHF RFID tag designed for logistics with Impinj M730 chip and 360-degree read angle",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Logistics, Asset tracking, Washable plastic surfaces",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-crosswave-neo-yapistirilabilir-rfid-etiketi-monza-730-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-crosswave-neo-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-crosswave-neo-etiket/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "75 x 50 x 0.2 mm",
-    "material": "Printable matt coated paper",
-    "fixedReadRange": "up to 11m on plastic",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 70C",
-    "ipRating": "",
-    "applications": [
-      "Logistics",
-      "Asset tracking",
-      "Washable plastic surfaces"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj M730",
-      "Logistics",
-      "Asset tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Crosswave Neo Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-crosswave-neo-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-crosswave-neo-etiket/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-cruiser-headlamp",
-    "title": "Confidex Cruiser Headlamp Tag",
-    "brand": "Confidex",
-    "model": "Cruiser Headlamp",
-    "sku": "Cruiser Headlamp",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "UHF RFID tag optimized for vehicle headlamps and windshields, tested against chemicals and UV rays",
-    "description": "Model: Cruiser Headlamp. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. UHF RFID tag optimized for vehicle headlamps and windshields, tested against chemicals and UV rays",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Vehicle headlamps, Vehicle windshields, Automotive tracking",
+    "id": "confidex-crosswave-neo-4x6",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Crosswave Neo 4×6\" RFID Label",
+    "summary_en": "4×6 inch high-performance printable UHF RFID label with Impinj M730 IC. The larger format offers superior read performance for logistics, supply chain and inventory applications requiring a standard shipping label size.",
+    "feature_highlights_en": [
+      "Standard 4×6 inch shipping label format",
+      "Impinj M730 IC – 865–928 MHz global operation",
+      "Read range up to 11 m on plastic",
+      "Printable matt-coated paper face",
+      "Applications: logistics, supply chain, inventory management"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj M730",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Read Range (2W ERP)": "Up to 11 m on plastic"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "4×6 inch (approx. 100 × 150 mm)",
+          "Material": "Printable matt coated paper",
+          "Adhesive": "Permanent adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Plastic, cardboard, non-metal"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +70°C / -31°F to +158°F",
+          "Chemical Resistance": "Salt water, motor oil exposure",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-crosswave-neo-4x6-yapistirilabilir-rfid-etiketi-monza-730-2.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Crosswave Neo Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-crosswave-neo-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-crosswave-neo-4x6/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "confidex-cruiser-headlamp",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Cruiser Headlamp RFID Label",
+    "summary_en": "UHF RFID label optimized for vehicle headlamps and plastic surfaces. Engineered to withstand UV radiation and automotive chemicals, delivering read ranges up to 9 m (ETSI) on glass for vehicle tracking applications.",
+    "feature_highlights_en": [
+      "Optimized for vehicle headlamps and windshields",
+      "Impinj Monza 4E IC – 860–960 MHz global operation",
+      "Read range up to 9 m (ETSI) / 10.5 m (FCC) on glass",
+      "UV and automotive chemical resistance",
+      "Transparent PET front – 90 × 11.5 × 0.2 mm slim format",
+      "Applications: automotive tracking, vehicle identification"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO 18000-6-3 / EPC Class 1 Gen 2v2",
+          "Integrated Circuit": "Impinj Monza 4E",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Read Range – ETSI on glass": "Up to 9 m / 30 ft",
+          "Read Range – FCC on glass": "Up to 10.5 m / 34 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "90 × 11.5 × 0.2 mm",
+          "Material": "Aluminum antenna; transparent PET front",
+          "Adhesive": "Acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Glass, plastic"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "UV Resistance": "Excellent",
+          "Chemical Resistance": "Automotive chemicals, salt water, motor oil",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-headlamp-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-headlamp-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-cruiser-headlamp/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "ISO 18000-6-3 (EPC Class 1 Gen 2 V2)",
-    "chip": "Impinj Monza 4E",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "90 x 11.5 x 0.2 mm",
-    "material": "Aluminum antenna with acrylic adhesive; transparent PET front",
-    "fixedReadRange": "up to 9m (ETSI) / 10.5m (FCC) on glass",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Vehicle headlamps",
-      "Vehicle windshields",
-      "Automotive tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza 4E",
-      "Vehicle headlamps",
-      "Vehicle windshields"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Cruiser Headlamp Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-headlamp-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-cruiser-headlamp/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-cruiser-windshield-crypto",
-    "title": "Confidex Cruiser Windshield Crypto Tag",
-    "brand": "Confidex",
-    "model": "Cruiser Windshield Crypto",
-    "sku": "Cruiser Windshield Crypto",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Passive RFID label optimized for vehicle windshields with cryptographic security for automatic vehicle identification and toll collection",
-    "description": "Model: Cruiser Windshield Crypto. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. Passive RFID label optimized for vehicle windshields with cryptographic security for automatic vehicle identification and toll collection",
-    "customerSummary": "Label RFID Tag | UHF | Applications: High-speed vehicle identification, Parking management, Automatic toll collection, Traffic flow optimization",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-crypto-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-crypto-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-cruiser-windshield-crypto-etiket/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPCglobal Gen2v2",
-    "chip": "NXP UCODE DNA",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "107 x 21.5 x 0.2 mm",
-    "material": "Aluminum antenna with acrylic adhesive; transparent PET front",
-    "fixedReadRange": "up to 10m (ETSI) / 8m (FCC) on glass",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "",
-    "applications": [
-      "High-speed vehicle identification",
-      "Parking management",
-      "Automatic toll collection",
-      "Traffic flow optimization"
+    "id": "confidex-cruiser-windshield",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Cruiser Windshield RFID Label",
+    "summary_en": "Passive UHF RFID label engineered for vehicle windshields, enabling fast and reliable vehicle identification. Suitable for OGS/HGS toll applications, parking management and vehicle authentication systems.",
+    "feature_highlights_en": [
+      "Specifically designed for vehicle windshield attachment",
+      "Impinj Monza 4E IC – EPCglobal Gen2v2",
+      "Read range up to 8 m on glass (ETSI/FCC)",
+      "PP front and back construction for printability",
+      "Applications: OGS/HGS tolling, parking management, vehicle authentication",
+      "92 × 26 × 0.2 mm format"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal Gen2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj Monza 4E",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Read Range on Glass (ETSI)": "Up to 8 m / 26 ft",
+          "Read Range on Glass (FCC)": "Up to 8 m / 26 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "92 × 26 × 0.2 mm",
+          "Material": "PP back + PP front (printable)",
+          "Adhesive": "Acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Glass (windshield)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +70°C / -31°F to +158°F",
+          "UV Resistance": "Excellent",
+          "Chemical Resistance": "Automotive chemicals, salt water",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCODE DNA",
-      "High-speed vehicle identification",
-      "Parking management"
-    ]
-  },
-  {
-    "slug": "confidex-cruiser-windshield",
-    "title": "Confidex Cruiser Windshield Tag",
-    "brand": "Confidex",
-    "model": "Cruiser Windshield",
-    "sku": "Cruiser Windshield",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Passive UHF RFID label designed for vehicle windshields enabling fast vehicle identification",
-    "description": "Model: Cruiser Windshield. Brand: Confidex. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Label. Passive UHF RFID label designed for vehicle windshields enabling fast vehicle identification",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Vehicle identification, OGS/HGS applications, Parking management, Vehicle authentication",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-rfid-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-cruiser-windshield/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPCglobal Gen2v2",
-    "chip": "Impinj Monza 4E",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "92 x 26 x 0.2 mm",
-    "material": "PP back + PP front (printable)",
-    "fixedReadRange": "up to 8m (ETSI) / 8m (FCC) on glass",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 70C",
-    "ipRating": "",
-    "applications": [
-      "Vehicle identification",
-      "OGS/HGS applications",
-      "Parking management",
-      "Vehicle authentication"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj Monza 4E",
-      "Vehicle identification",
-      "OGS/HGS applications"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Cruiser Windshield Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-cruiser-windshield/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ferrowave-classic",
-    "title": "Confidex Ferrowave Classic Tag",
-    "brand": "Confidex",
-    "model": "Ferrowave Classic",
-    "sku": "Ferrowave Classic",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "High-performance RFID label for all surfaces including metal, liquid, plastic, glass, and cardboard",
-    "description": "Model: Ferrowave Classic. Brand: Confidex. Frequency: 865-868 MHz (ETSI) / 902-928 MHz (FCC). Surface: both. Form factor: Label. High-performance RFID label for all surfaces including metal, liquid, plastic, glass, and cardboard",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking on metal, Logistics, Inventory management",
+    "id": "confidex-cruiser-windshield-crypto",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Cruiser Windshield Crypto RFID Label",
+    "summary_en": "Secure UHF RFID windshield label with NXP UCODE DNA cryptographic IC for authenticated vehicle identification. Engineered for high-speed tolling, parking systems and traffic management requiring tamper-proof vehicle authentication.",
+    "feature_highlights_en": [
+      "NXP UCODE DNA IC with cryptographic authentication",
+      "EPCglobal Gen2v2 – 860–960 MHz global operation",
+      "Read range up to 10 m (ETSI) / 8 m (FCC) on glass",
+      "Tamper-proof authenticated vehicle identification",
+      "107 × 21.5 mm windshield label format",
+      "Applications: toll collection, parking management, traffic optimization"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal Gen2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "NXP UCODE DNA",
+          "Security": "Cryptographic authentication",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Read Range – ETSI on glass": "Up to 10 m / 33 ft",
+          "Read Range – FCC on glass": "Up to 8 m / 26 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "107 × 21.5 × 0.2 mm",
+          "Material": "Aluminum antenna; transparent PET front",
+          "Adhesive": "Acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Glass (windshield)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "UV Resistance": "Excellent",
+          "Chemical Resistance": "Automotive chemicals, salt water",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-crypto-600x338.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Cruiser Windshield Crypto Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-cruiser-windshield-crypto-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-cruiser-windshield-crypto-etiket/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "confidex-ferrowave-classic",
+    "display_brand": "Confidex",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ferrowave Classic RFID Label",
+    "summary_en": "High-performance all-surface UHF RFID label for metal, liquid, plastic, glass and cardboard. IP68-rated and engineered to deliver reliable performance on metal surfaces with read ranges up to 5 m (FCC).",
+    "feature_highlights_en": [
+      "Works on all surfaces including metal and liquids",
+      "IC options: Impinj Monza R6-P / Monza 4E / NXP UCODE 8m",
+      "Read range up to 4 m (ETSI) / 5 m (FCC) on metal",
+      "IP68 waterproof with chemical resistance",
+      "100 × 17 × 1.1 mm printable white PET label",
+      "Applications: asset tracking, logistics, inventory management"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal UHF Class 1 Gen 2v2 (ISO 18000-6C)",
+          "IC Options": "Impinj Monza R6-P / Monza 4E / NXP UCODE 8m",
+          "Operating Frequency": "865–868 MHz (ETSI) / 902–928 MHz (FCC)",
+          "Read Range – ETSI on metal": "Up to 4 m / 13 ft",
+          "Read Range – FCC on metal": "Up to 5 m / 16 ft",
+          "Applicable Surfaces": "All surfaces (metal, plastic, glass, liquid, cardboard)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "100 × 17 × 1.1 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Metal, plastic, glass, liquid, cardboard"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "168h sulfuric acid, motor oil, salt water; 24h NaOH",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-ferrowave-classic-yapistirilabilir-rfid-etiketi-monza-R6-P-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ferrowave-classic-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ferrowave-classic/",
-    "frequency": "UHF",
-    "frequencyBand": "865-868 MHz (ETSI) / 902-928 MHz (FCC)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza R6-P / Monza 4E / NXP UCODE 8m",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "100 x 17 x 1.1 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 4m (ETSI) / 5m (FCC) on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking on metal",
-      "Logistics",
-      "Inventory management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza R6-P / Monza 4E / NXP UCODE 8m",
-      "Asset tracking on metal",
-      "Logistics"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ferrowave Classic Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ferrowave-classic-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ferrowave-classic/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ferrowave-micro",
-    "title": "Confidex Ferrowave Micro RFID Tag (Monza 730)",
-    "brand": "Confidex",
-    "model": "Ferrowave Micro",
-    "sku": "Ferrowave Micro",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "Compact RFID label optimized for metal surfaces for retail asset tracking in maintenance and sports equipment sectors",
-    "description": "Model: Ferrowave Micro. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Adhesive label. Compact RFID label optimized for metal surfaces for retail asset tracking in maintenance and sports equipment sectors",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Asset tracking, Sports equipment management, Maintenance equipment, Retail inventory",
-    "image": "/assets/og/altis-default.jpg",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ferrowave-micro-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ferrowave-micro-rfid-etiketi-monza-730/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
-    "chip": "Impinj M730",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Adhesive label",
-    "sizeText": "45 x 8 x 1.5 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 3m (ETSI) / 4m (FCC) on metal",
-    "handheldReadRange": "up to 1.5m on plastic",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Sports equipment management",
-      "Maintenance equipment",
-      "Retail inventory"
+    "id": "confidex-ferrowave-micro",
+    "display_brand": "Confidex",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ferrowave Micro RFID Label",
+    "summary_en": "Compact UHF RFID on-metal label with Impinj M730 IC in a slim 45 × 8 mm form factor. Ideal for asset tracking in retail, maintenance and sports equipment sectors where minimal labeling space is available.",
+    "feature_highlights_en": [
+      "Optimized for metal surfaces – compact 45 × 8 mm format",
+      "Impinj M730 IC – 865–928 MHz global operation",
+      "Read range up to 3 m (ETSI) / 4 m (FCC) on metal",
+      "IP68 waterproof with chemical resistance",
+      "Printable white PET adhesive label",
+      "Applications: retail asset tracking, maintenance equipment, sports equipment"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
+          "Integrated Circuit": "Impinj M730",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Read Range – ETSI on metal": "Up to 3 m / 10 ft",
+          "Read Range – FCC on metal": "Up to 4 m / 13 ft",
+          "Off-metal Read Range": "Up to 1.5 m / 5 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "45 × 8 × 1.5 mm",
+          "Material": "Printable white PET",
+          "Adhesive": "Permanent acrylic adhesive",
+          "Delivery Format": "Reel",
+          "Applicable Surfaces": "Metal (optimized)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "Salt water, motor oil, sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "On Metal",
-      "Impinj M730",
-      "Asset tracking",
-      "Sports equipment management"
-    ]
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-ferrowave-classic-yapistirilabilir-rfid-etiketi-monza-R6-P-600x338.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ferrowave Micro Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ferrowave-micro-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ferrowave-micro-rfid-etiketi-monza-730/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-heatwave-flag",
-    "title": "Confidex Heatwave Flag Tag",
-    "brand": "Confidex",
-    "model": "Heatwave Flag",
-    "sku": "Heatwave Flag",
-    "subtitle": "Hard tag RFID Tag",
-    "shortDesc": "Waterproof high-temperature resistant RFID tag for metal surfaces in automotive paint shop processes",
-    "description": "Model: Heatwave Flag. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag. Waterproof high-temperature resistant RFID tag for metal surfaces in automotive paint shop processes",
-    "customerSummary": "Hard tag RFID Tag | UHF | Applications: Automotive paint shop, Closed-loop manufacturing operations",
+    "id": "confidex-heatwave-flag",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Heatwave Flag RFID Tag",
+    "summary_en": "High-temperature resistant UHF RFID flag tag engineered for automotive paint shop processes. Withstands peak temperatures up to 260°C for 10 minutes and attaches via Ø5 mm screw or rivet holes, surviving the full paint shop lifecycle.",
+    "feature_highlights_en": [
+      "Survives peak temperature up to 260°C / 500°F for 10 minutes",
+      "Alien Higgs 9 IC with 688-bit User Memory",
+      "Read range up to 10 m / 33 ft (2W ERP)",
+      "IP68 waterproof – chemical resistant to acids, motor oil and NaOH",
+      "Screw/rivet attachment via Ø5 mm holes – flag form factor",
+      "Designed for single-use automotive paint shop lifecycle"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "UHF RFID / EPCglobal Gen2v2",
+          "Integrated Circuit": "Alien Higgs 9",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "EPC Memory": "96 bit (extendable to 496 bit)",
+          "User Memory": "688 bit",
+          "TID Memory": "96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range (2W ERP)": "Up to 10 m / 33 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "76 × 55 × 0.37 mm / 2.99 × 2.17 × 0.015 in",
+          "Tag Materials": "Special polymer designed for high temperatures",
+          "Attachment": "Screws or pop rivets through Ø5 mm holes",
+          "Weight": "1.5 g",
+          "Amount in Box": "200 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "Peak Temperature (168h)": "+180°C / +356°F",
+          "Peak Temperature (3h)": "+230°C / +446°F",
+          "Peak Temperature (10min)": "+260°C / +500°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "168h salt water (10%), motor oil, sulfuric acid (10%); 2h NaOH (10%); acetone wipe"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-heatwave-flag-rfid-etiketi-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-heatwave-flag-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-heatwave-flag/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag",
-    "sizeText": "76 x 55 x 0.37 mm",
-    "material": "Printable white PET",
-    "fixedReadRange": "up to 10m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Automotive paint shop",
-      "Closed-loop manufacturing operations"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Hard tag",
-      "On Metal",
-      "Alien Higgs 9",
-      "Automotive paint shop",
-      "Closed-loop manufacturing operations"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Heatwave Flag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-heatwave-flag-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-heatwave-flag/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-heatwave-tough",
-    "title": "Confidex Heatwave Tough Tag",
-    "brand": "Confidex",
-    "model": "Heatwave Tough",
-    "sku": "Heatwave Tough",
-    "subtitle": "Hard tag RFID Tag",
-    "shortDesc": "High-temperature resistant RFID tag for metal surfaces, suitable for automotive paint shop processes up to 225°C",
-    "description": "Model: Heatwave Tough. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag. High-temperature resistant RFID tag for metal surfaces, suitable for automotive paint shop processes up to 225°C",
-    "customerSummary": "Hard tag RFID Tag | UHF | Applications: Automotive paint processes, High-temperature industrial environments",
-    "image": "/assets/og/altis-default.jpg",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-heatwave-tough/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag",
-    "sizeText": "Standard",
-    "material": "Printable white PET",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 225C",
-    "ipRating": "IP68",
-    "applications": [
-      "Automotive paint processes",
-      "High-temperature industrial environments"
+    "id": "confidex-heatwave-tough",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Heatwave Tough RFID Tag",
+    "summary_en": "High-temperature resistant UHF RFID tag with NXP UCODE 7xm+ IC for metallic surfaces. Built from special epoxy-based composite, it withstands peak temperatures up to 250°C for 50 minutes – ideal for automotive paint shop drying cycles.",
+    "feature_highlights_en": [
+      "Withstands peak temperature 250°C / 482°F for 50 minutes",
+      "NXP UCODE 7xm+ IC – 2048-bit User Memory with 384-bit digital signature",
+      "Read range up to 9 m on metal (ETSI/FCC)",
+      "IP68 waterproof – chemical resistant to acetone, acids and oils",
+      "Special epoxy-based composite – 50 × 30 × 3 mm compact form factor",
+      "ETSI 865–869 MHz and FCC 902–928 MHz variants available"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "UHF RFID / EPCglobal Gen2v2",
+          "Integrated Circuit": "NXP UCODE 7xm+",
+          "Operating Frequency – ETSI": "865–869 MHz",
+          "Operating Frequency – FCC": "902–928 MHz",
+          "EPC Memory": "448 bit",
+          "User Memory": "2048 bit",
+          "TID Memory": "96 bit",
+          "Digital Signature": "384 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range – on metal": "Up to 9 m / 30 ft",
+          "Read Range – on plastic": "Up to 2 m / 7 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "50 × 30 × 3 mm / 1.97 × 1.18 × 0.12 in",
+          "Tag Materials": "Special epoxy-based engineering composite for extreme temperatures",
+          "Attachment": "Acrylic foam adhesive (optional), polyurethane/epoxy adhesives, silicone sealants",
+          "Weight": "9.5 g",
+          "Amount in Box": "100 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C / -40°F to +185°F",
+          "Peak Temperature": "250°C / 482°F for 50 minutes",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "168h salt water (10%), motor oil, acetone; 24h sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal conditions; designed for paint shop drying cycles"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Hard tag",
-      "On Metal",
-      "Alien Higgs 9",
-      "Automotive paint processes",
-      "High-temperature industrial environments"
-    ]
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-heatwave-flag-rfid-etiketi-600x338.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Heatwave Tough Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-heatwave-tough-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-heatwave-tough/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ironside-classic",
-    "title": "Confidex Ironside Classic RFID Tag (Monza 4 QT)",
-    "brand": "Confidex",
-    "model": "Ironside Classic",
-    "sku": "Ironside Classic",
-    "subtitle": "Hard tag RFID Tag",
-    "shortDesc": "Durable RFID tag designed for metal surfaces with high performance in harsh environments",
-    "description": "Model: Ironside Classic. Brand: Confidex. Frequency: 865-869 MHz (ETSI). Surface: on_metal. Form factor: Hard tag. Durable RFID tag designed for metal surfaces with high performance in harsh environments",
-    "customerSummary": "Hard tag RFID Tag | UHF | Applications: Asset tracking, Inventory management",
+    "id": "confidex-ironside-classic",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ironside Classic RFID Tag",
+    "summary_en": "The most durable RFID tag for challenging industrial asset management. SAE AS5678 compliant, IP68-rated and built from high-quality engineering plastics with thermoplastic elastomer surface, delivering read ranges up to 15 m on metal.",
+    "feature_highlights_en": [
+      "SAE AS5678 compliant – certified for industrial asset tracking",
+      "IC options: Impinj M4QT, M4E or MR6-P",
+      "Read range up to 15 m on metal (ETSI/FCC variants)",
+      "IP68, vibration and operational shock resistant (RTCA DO-160)",
+      "Pressure resistance: 170 kPa for 10 min",
+      "Multiple attachment: adhesive, structural adhesive, screws (M4), pop rivets, welding bracket"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "UHF RFID / EPCglobal Gen2v2 (ISO 18000-6C)",
+          "IC Options": "Impinj M4QT / M4E / MR6-P",
+          "Operating Frequency": "860–960 MHz (Global)",
+          "Memory (M4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "Memory (M4E)": "EPC 496 bit; User 128 bit; TID 96 bit",
+          "Read Range – ETSI on metal": "Up to 15 m / 50 ft",
+          "Read Range – FCC on metal": "Up to 15 m / 50 ft",
+          "Read Range – Global on metal (ETSI)": "Up to 9 m / 30 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "51.5 × 47.5 × 10 mm / 2.03 × 1.87 × 0.39 in",
+          "Tag Materials": "High quality engineering plastics; surface thermoplastic elastomer",
+          "Standard Compliancy": "SAE AS5678",
+          "Weight": "22 g",
+          "Amount in Box": "500 pcs",
+          "Delivery Format": "Single",
+          "Attachment Methods": "3M 300LSE adhesive, structural adhesive, M4 screws, pop rivets, welding bracket"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C / -40°F to +185°F",
+          "Ambient Temperature": "-55°C (3h) to +105°C / -67°F to +221°F",
+          "Peak Temperature": "+125°C / +257°F for 1 hour",
+          "IP Classification": "IP68",
+          "Pressure Resistance": "170 kPa for 10 min",
+          "Vibration Resistance": "JESD22-B103B service condition 2; RTCA DO-160 Rev E 8.5",
+          "Operational Shock": "RTCA DO-160 Rev E 7.2",
+          "Chemical Resistance": "168h motor oil, salt water (10%), sulfuric acid (10%); 24h NaOH (10%)"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-ironside-classic-rfid-etiketi-monza-4QT-600x600-1.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/ironside-classic.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-classic-rfid-etiketi-monza-4qt/",
-    "frequency": "UHF",
-    "frequencyBand": "865-869 MHz (ETSI)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza R6-P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag",
-    "sizeText": "51.5 x 47.5 x 10 mm",
-    "material": "High quality engineering plastics with thermoplastic elastomer surface",
-    "fixedReadRange": "up to 15m on metal",
-    "handheldReadRange": "up to 5m on plastic",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Asset tracking",
-      "Inventory management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Hard tag",
-      "On Metal",
-      "Impinj Monza R6-P",
-      "Asset tracking",
-      "Inventory management"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ironside Classic Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/ironside-classic.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-classic-rfid-etiketi-monza-4qt/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ironside-flag",
-    "title": "Confidex Ironside Flag RFID Tag (Monza 4E)",
-    "brand": "Confidex",
-    "model": "Ironside Flag",
-    "sku": "Ironside Flag",
-    "subtitle": "Flag RFID Tag",
-    "shortDesc": "Metal surface RFID tag with flag form factor, mountable via screw or rivet, IP69K rated for harsh environments",
-    "description": "Model: Ironside Flag. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Flag. Metal surface RFID tag with flag form factor, mountable via screw or rivet, IP69K rated for harsh environments",
-    "customerSummary": "Flag RFID Tag | UHF | Applications: Asset tracking, Metal container tagging, Returnable unit management, High-durability environments",
+    "id": "confidex-ironside-flag",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ironside Flag RFID Tag",
+    "summary_en": "Excellent-performing IP69K-rated UHF RFID flag tag with unique single-screw attachment. Engineered from high-quality thermoplastic elastomer for the most demanding industrial environments, delivering read ranges up to 11 m on metal.",
+    "feature_highlights_en": [
+      "IP69K rated – highest ingress protection standard",
+      "Impinj Monza 4E IC – EPC 496 bit / User 128 bit",
+      "Read range up to 11 m on metal / 4 m on plastic",
+      "Single-screw attachment with included metallic limiter",
+      "Peak temperature +140°C / +284°F for 10 min",
+      "High-quality thermoplastic elastomer construction"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "UHF RFID / EPCglobal Gen2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj Monza 4E",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "EPC Memory": "496 bit",
+          "User Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range – on metal": "Up to 11 m / 36 ft",
+          "Read Range – on plastic": "Up to 4 m / 13 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Tag Dimensions": "52.2 × 29 × 14 mm / 2.1 × 1.1 × 0.55 in",
+          "Tag Materials": "High quality thermoplastic elastomer",
+          "Attachment": "Single M5 screw or rivet through hole (15 mm from metal edge)",
+          "Weight": "5.5 g",
+          "Amount in Box": "500 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C / -40°F to +185°F",
+          "Peak Temperature": "+140°C / +284°F for 10 min",
+          "Water Resistance": "IP69K",
+          "Storage Condition": "1 year at +20°C / 50% RH",
+          "Chemical Resistance": "168h NaOH (10%), sulfuric acid (10%), motor oil, salt water (10%); 2h acetone",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/ironside-flag-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/ironside-flag-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-flag-rfid-etiketi-monza-4e/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2v2",
-    "chip": "Impinj Monza 4E",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Flag",
-    "sizeText": "52.2 x 29 x 14 mm",
-    "material": "High quality thermoplastic elastomer",
-    "fixedReadRange": "up to 11m on metal",
-    "handheldReadRange": "up to 4m off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP69K",
-    "applications": [
-      "Asset tracking",
-      "Metal container tagging",
-      "Returnable unit management",
-      "High-durability environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Flag",
-      "On Metal",
-      "Impinj Monza 4E",
-      "Asset tracking",
-      "Metal container tagging"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ironside Flag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/ironside-flag-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-flag-rfid-etiketi-monza-4e/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ironside-micro-nfc",
-    "title": "Confidex Ironside Micro NFC RFID Tag",
-    "brand": "Confidex",
-    "model": "Ironside Micro NFC",
-    "sku": "Ironside Micro NFC",
-    "subtitle": "Micro tag RFID Tag",
-    "shortDesc": "Durable NFC RFID tag tolerating impacts, chemicals, and moisture, compatible with smartphones",
-    "description": "Model: Ironside Micro NFC. Brand: Confidex. Frequency: 13.56 MHz. Surface: both. Form factor: Micro tag. Durable NFC RFID tag tolerating impacts, chemicals, and moisture, compatible with smartphones",
-    "customerSummary": "Micro tag RFID Tag | HF | Applications: Demanding environments, Asset tracking, Impact/chemical/moisture resistance",
+    "id": "confidex-ironside-micro",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ironside Micro RFID Tag",
+    "summary_en": "Compact square-inch on-metal UHF RFID tag with a 27 × 27 mm footprint. IP68-rated and built from high-quality engineering plastics, suitable for various metal asset tracking applications where space is limited.",
+    "feature_highlights_en": [
+      "Square-inch footprint – 27 × 27 × 5.5 mm compact form factor",
+      "IC options: Impinj Monza 4QT / 4E",
+      "Read range up to 5 m (ETSI) / 4 m (FCC) on metal",
+      "IP68 waterproof with chemical resistance",
+      "Multiple attachment: adhesive, screws (M3), pop rivets, plastic rivets",
+      "Polarization at 45° to the Confidex logo"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "UHF RFID / ISO 18000-6C / EPCglobal Gen2v2",
+          "IC Options": "Impinj Monza 4QT / Monza 4E",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Memory (M4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "Memory (M4E)": "EPC 496 bit; User 128 bit; TID 96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range – ETSI on metal": "Up to 5 m / 16 ft",
+          "Read Range – FCC on metal": "Up to 4 m / 13 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "27 × 27 × 5.5 mm / 1.06 × 1.06 × 0.22 in",
+          "Tag Materials": "High quality engineering plastics",
+          "Attachment": "Adhesive (3M 300LSE), screws (M3), pop rivets, plastic rivets (3mm)",
+          "Weight": "4.3 g",
+          "Amount in Box": "500 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "168h motor oil, salt water (10%); 5h sulfuric acid (10%); 1h NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-ironside-micro-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/10/confidex-ironside-micro-nfc-rfid-tag.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-micro-nfc-rfid-etiketi/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz",
-    "protocol": "NFC",
-    "chip": "",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Micro tag",
-    "sizeText": "Standard",
-    "material": "Durable construction",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Demanding environments",
-      "Asset tracking",
-      "Impact/chemical/moisture resistance"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Micro tag",
-      "On Metal",
-      "Demanding environments",
-      "Asset tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ironside Micro Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ironside-micro-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-micro-rfid-etiketi-monza-4qt/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ironside-micro",
-    "title": "Confidex Ironside Micro RFID Tag (Monza 4QT)",
-    "brand": "Confidex",
-    "model": "Ironside Micro",
-    "sku": "Ironside Micro",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Compact UHF RFID tag optimized for metal surfaces with minimal design for narrow spaces",
-    "description": "Model: Ironside Micro. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Label. Compact UHF RFID tag optimized for metal surfaces with minimal design for narrow spaces",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Metal surface tracking, Asset management, Fixed asset identification",
+    "id": "confidex-ironside-micro-nfc",
+    "display_brand": "Confidex",
+    "category": "NFC Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ironside Micro NFC Tag",
+    "summary_en": "Ruggedized NFC tag in the same compact 27 × 27 mm form factor as the Ironside Micro UHF. IP68-rated and built for harsh environments involving impacts, chemicals and moisture, compatible with any NFC smartphone.",
+    "feature_highlights_en": [
+      "NFC Forum Type 2 / ISO 14443A – 13.56 MHz",
+      "NXP NTAG213 IC – 144 bytes User Memory",
+      "Read range up to 30 mm (mobile) / 70 mm (fixed reader)",
+      "Works on any surface including metal",
+      "IP68 waterproof with chemical resistance",
+      "Same compact 27 × 27 × 5.5 mm footprint as Ironside Micro UHF"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "NFC Forum Type 2 / ISO 14443A",
+          "Integrated Circuit": "NXP NTAG213",
+          "Operating Frequency": "13.56 MHz",
+          "User Memory": "144 Bytes",
+          "Read Range – Mobile phone": "Up to 30 mm",
+          "Read Range – Fixed reader": "Up to 70 mm",
+          "Applicable Surfaces": "All materials including metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "27 × 27 × 5.5 mm / 1.06 × 1.06 × 0.22 in",
+          "Tag Materials": "High quality engineering plastics",
+          "Attachment": "Adhesive (3M 300LSE), screws (M3), pop rivets, plastic rivets (3mm)",
+          "Weight": "4.3 g",
+          "Amount in Box": "500 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "168h motor oil, salt water (10%); 5h sulfuric acid (10%); 1h NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-ironside-micro-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ironside-micro-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-micro-rfid-etiketi-monza-4qt/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "ISO 18000-6C / EPCglobal Gen2v2",
-    "chip": "Impinj Monza 4QT / Monza 4E",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "27 x 27 x 5.5 mm",
-    "material": "High quality engineering plastics",
-    "fixedReadRange": "up to 5m (ETSI)",
-    "handheldReadRange": "3-4m on metal",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Metal surface tracking",
-      "Asset management",
-      "Fixed asset identification"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza 4QT / Monza 4E",
-      "Metal surface tracking",
-      "Asset management"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ironside Micro NFC Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/10/confidex-ironside-micro-nfc-rfid-tag.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-micro-nfc-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ironside-plate",
-    "title": "Confidex Ironside Plate RFID Tag",
-    "brand": "Confidex",
-    "model": "Ironside Plate",
-    "sku": "Ironside Plate",
-    "subtitle": "Hard tag RFID Tag",
-    "shortDesc": "High-performance UHF RFID tag with aluminum/stainless steel construction for harsh environments",
-    "description": "Model: Ironside Plate. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag. High-performance UHF RFID tag with aluminum/stainless steel construction for harsh environments",
-    "customerSummary": "Hard tag RFID Tag | UHF | Applications: High-value asset tracking, Public sector, Construction, Harsh environments",
+    "id": "confidex-ironside-plate",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ironside Plate RFID Tag",
+    "summary_en": "Robust RAIN RFID tag with aluminum/stainless steel construction and durable laser-engravable surface. Engineered for the most challenging industrial environments, delivering read ranges up to 10 m on metal with IP68 rating.",
+    "feature_highlights_en": [
+      "Aluminum top with anti-corrosion coating + stainless steel back",
+      "NXP UCODE 8 IC – EPC 128 bit",
+      "Read range up to 10 m on metal / 7 m on plastic",
+      "IP68 waterproof – industrial washing resistance",
+      "Laser-engravable surface for permanent visual marking",
+      "Multiple attachment: 3M VHB adhesive, M3 screws or pop rivets"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
+          "Integrated Circuit": "NXP UCODE 8",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "EPC Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "EPC Content": "Unique 96 bit EPC in every tag",
+          "Read Range – on metal": "Up to 10 m / 33 ft",
+          "Read Range – on plastic": "Up to 7 m / 23 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Tag Dimensions": "108 × 50.8 × 3.7 mm / 4.25 × 2 × 0.15 in",
+          "Tag Surface": "Top: Aluminum with anti-corrosion coating; Back: Stainless steel",
+          "Attachment": "3M VHB adhesive (optional), M3 screws or pop rivets (Ø3.3 mm holes)",
+          "Weight": "68 g",
+          "Amount in Box": "80 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "Ambient Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "Peak Temperature": "+130°C / +266°F for 10 min",
+          "Water Resistance": "IP68 (tested 5h in 1m deep water)",
+          "Washing Resistance": "Tolerates industrial washing with standard solvents",
+          "Storage Condition": "1 year at +20°C / 50% RH",
+          "Chemical Resistance": "168h motor oil; 24h salt water (10%); 10min sulfuric acid (10%); 10min NaOH (10%)"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/ironside-plate-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ironside-plate-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-plate/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
-    "chip": "NXP UCode 8",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag",
-    "sizeText": "108 x 50.8 x 3.7 mm",
-    "material": "Aluminum top with anti-corrosion coating; stainless steel back",
-    "fixedReadRange": "up to 10m on metal",
-    "handheldReadRange": "up to 7m off metal",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "High-value asset tracking",
-      "Public sector",
-      "Construction",
-      "Harsh environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Hard tag",
-      "On Metal",
-      "NXP UCode 8",
-      "High-value asset tracking",
-      "Public sector"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ironside Plate Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ironside-plate-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-plate/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-ironside-slim",
-    "title": "Confidex Ironside Slim RFID Tag (M4E)",
-    "brand": "Confidex",
-    "model": "Ironside Slim",
-    "sku": "Ironside Slim",
-    "subtitle": "Hard tag RFID Tag",
-    "shortDesc": "High-performance RFID tag optimized for metal surfaces with compact form factor and excellent durability for logistics and heavy industry applications",
-    "description": "Model: Ironside Slim. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag. High-performance RFID tag optimized for metal surfaces with compact form factor and excellent durability for logistics and heavy industry applications",
-    "customerSummary": "Hard tag RFID Tag | UHF | Applications: Logistics, Warehousing, Heavy industry, Container tracking, Asset management",
+    "id": "confidex-ironside-slim",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Ironside Slim RFID Tag",
+    "summary_en": "Versatile and durable slim UHF RFID tag for global asset tracking with excellent on-metal performance. IP68-rated with Impinj Monza 4E IC, delivering read ranges up to 10 m on metal in a compact 85 × 21 mm form factor.",
+    "feature_highlights_en": [
+      "Slim 85 × 21 × 10 mm form factor – versatile global asset tracking",
+      "Impinj Monza 4E IC – EPC 496 bit / User 128 bit",
+      "Read range up to 10 m on metal / 4 m off metal",
+      "IP68 waterproof with chemical resistance",
+      "Multiple attachment: adhesive, structural adhesive, M4 screws",
+      "Available as Personalization Kit with 700 blank PET data labels per box"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCGlobal Gen2 v1.2 / ISO 18000-63",
+          "Integrated Circuit": "Impinj Monza 4E",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "EPC Memory": "496 bit",
+          "User Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range – on metal": "Up to 10 m / 33 ft",
+          "Read Range – off metal": "Up to 4 m / 13 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "85 × 21 × 10 mm / 3.35 × 0.83 × 0.39 in",
+          "Tag Materials": "High quality engineering plastics",
+          "Attachment": "Acrylic adhesive, polyurethane/epoxy adhesives, M4 screws with compression limiters",
+          "Weight": "15.5 g",
+          "Amount in Box": "600 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "IP Classification": "IP68",
+          "Chemical Resistance": "168h motor oil; 24h salt water (10%), sulfuric acid (10%), NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-ironside-slim-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ironside-slim.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-slim-rfid-etiketi-m4e/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCGlobal Gen2 v1.2 / ISO 18000-63",
-    "chip": "Impinj Monza 4E",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag",
-    "sizeText": "85 x 21 x 10 mm",
-    "material": "High quality engineering plastics",
-    "fixedReadRange": "up to 10m on metal",
-    "handheldReadRange": "up to 4m off metal",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Logistics",
-      "Warehousing",
-      "Heavy industry",
-      "Container tracking",
-      "Asset management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Hard tag",
-      "On Metal",
-      "Impinj Monza 4E",
-      "Logistics",
-      "Warehousing"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Ironside Slim Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-ironside-slim.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-ironside-slim-rfid-etiketi-m4e/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-leaf",
-    "title": "Confidex Leaf Tag",
-    "brand": "Confidex",
-    "model": "Leaf",
-    "sku": "Leaf",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Paper-based sustainable RFID tag optimized for short-term logistics and food shipping applications",
-    "description": "Model: Leaf. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: non_metal. Form factor: Label. Paper-based sustainable RFID tag optimized for short-term logistics and food shipping applications",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Short-term logistics, Food shipment tracking, Indirect food contact applications",
+    "id": "confidex-leaf",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Leaf RFID Label",
+    "summary_en": "Sustainable paper-based and plastic-free UHF RFID label suitable for indirect contact with food. Delivered on reel with water-soluble adhesive for short-term logistics, food shipping and eco-conscious supply chain applications.",
+    "feature_highlights_en": [
+      "Paper-based and 100% plastic-free – sustainable RFID label",
+      "Suitable for indirect food contact applications",
+      "Impinj Monza 4E IC – 865–928 MHz global operation",
+      "Read range up to 8 m (ETSI) / 10 m (FCC) on cardboard",
+      "Water-soluble adhesive – 92 × 27 mm on 2000 pcs/reel",
+      "Applications: short-term logistics, food shipment tracking"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "UHF RFID / EPCglobal Gen2v2 (ISO 18000-6C)",
+          "Integrated Circuit": "Impinj Monza 4E",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "EPC Memory": "496 bit",
+          "User Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "Read Range – ETSI on cardboard": "Up to 8 m / 26 ft",
+          "Read Range – FCC on cardboard": "Up to 10 m / 33 ft",
+          "Applicable Surfaces": "Non-metallic surfaces"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Tag Dimensions": "92 × 27 mm / 3.62 × 1.06 in",
+          "Tag Materials": "Paper face material (plastic-free)",
+          "Adhesive": "Water-soluble adhesive",
+          "Delivery Format": "2000 pcs on reel",
+          "Pitch on Reel": "33.87 mm / 1.333 in",
+          "Reel Core Inner Diameter": "76 mm / 3 in",
+          "Minimum Bending Diameter": "50 mm"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Application Temperature": "0°C to +30°C / 32°F to +86°F",
+          "Operating Temperature": "-30°C to +55°C / -22°F to +131°F",
+          "Storage Condition": "6 months shelf life at +20°C / 45% RH (original sealed package)",
+          "Additional Notes": "Label is sensitive to environmental humidity; store in plastic sealed packages"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-leaf-rfid-etiketi-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-leaf-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-leaf-etiket/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "75 x 50 x 0.2 mm",
-    "material": "Printable matt coated paper (plastic-free)",
-    "fixedReadRange": "up to 11m on plastic",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 70C",
-    "ipRating": "",
-    "applications": [
-      "Short-term logistics",
-      "Food shipment tracking",
-      "Indirect food contact applications"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj M730",
-      "Short-term logistics",
-      "Food shipment tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Leaf Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-leaf-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-leaf-etiket/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-looptag",
-    "title": "Confidex Looptag Tag",
-    "brand": "Confidex",
-    "model": "Looptag",
-    "sku": "Looptag",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "RFID tag optimized for tubes and wires, compatible with different diameters",
-    "description": "Model: Looptag. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: non_metal. Form factor: Label. RFID tag optimized for tubes and wires, compatible with different diameters",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Tubes and wires, Metallic and plastic parts, Asset management",
+    "id": "confidex-looptag",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex LoopTag RFID Label",
+    "summary_en": "Printable and versatile UHF RFID loop label designed for hard-to-tag cylindrical assets such as tubes, wires and pipes. Available in 150 mm and 250 mm strap lengths to accommodate a wide range of asset diameters.",
+    "feature_highlights_en": [
+      "Loop design for tubes, wires and cylindrical assets",
+      "Impinj Monza 4E IC – 865–928 MHz global operation",
+      "Read range up to 7 m on metal pipe / 5 m on plastic pipe",
+      "IP68 waterproof – chemical resistant",
+      "Available in 150 mm and 250 mm strap lengths",
+      "Printable white PET on 500 pcs/reel"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCglobal Class1 Gen2 ISO 18000-6C",
+          "Integrated Circuit": "Impinj Monza 4E",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "EPC Memory": "496 bit",
+          "User Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "Read Range – on metal pipe": "Up to 7 m / 23 ft",
+          "Read Range – on plastic pipe": "Up to 5 m / 16 ft",
+          "Applicable Surfaces": "All materials"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions (150 mm)": "150 × 33 × 0.2 mm / 5.91 × 1.30 × 0.01 in",
+          "Dimensions (250 mm)": "250 × 33 × 0.2 mm / 9.84 × 1.30 × 0.01 in",
+          "Tag Materials": "Printable white PET; resin ribbon recommended",
+          "Adhesive": "Permanent adhesive for general purpose",
+          "Weight": "< 1 g",
+          "Amount per Reel": "500 pcs",
+          "Reel Core Inner Diameter": "76 mm / 3 in",
+          "Minimum Bending Diameter": "50 mm (excluding strap)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C / -40°F to +185°F",
+          "Water Resistance": "IP68 (tested 5h in 1m deep water)",
+          "Storage Condition": "1 year at +20°C / 50% RH (adhesive shelf life)",
+          "Chemical Resistance": "168h salt water (10%), motor oil; 24h sulfuric acid (10%), NaOH (10%); 30min acetone",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-looptag-rfid-etiketi-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-looptag-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-looptag-etiket/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "75 x 50 x 0.2 mm",
-    "material": "Printable matt coated paper",
-    "fixedReadRange": "up to 11m on plastic",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 70C",
-    "ipRating": "",
-    "applications": [
-      "Tubes and wires",
-      "Metallic and plastic parts",
-      "Asset management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "Impinj M730",
-      "Tubes and wires",
-      "Metallic and plastic parts"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex LoopTag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/confidex-looptag-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-looptag-etiket/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-steelwave-classic",
-    "title": "Confidex Steelwave Classic RFID Tag (Monza 4 QT)",
-    "brand": "Confidex",
-    "model": "Steelwave Classic",
-    "sku": "Steelwave Classic",
-    "subtitle": "Hard tag label encased RFID Tag",
-    "shortDesc": "Ultra-thin metal surface RFID tag delivering impressive 12-meter read range with chemical protection",
-    "description": "Model: Steelwave Classic. Brand: Confidex. Frequency: 865-869 MHz (ETSI). Surface: on_metal. Form factor: Hard tag label encased. Ultra-thin metal surface RFID tag delivering impressive 12-meter read range with chemical protection",
-    "customerSummary": "Hard tag label encased RFID Tag | UHF | Applications: Metal surface tracking, Asset management, Depot shipment, Outdoor applications",
+    "id": "confidex-steelwave-classic",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Steelwave Classic RFID Tag",
+    "summary_en": "Thin all-surface UHF RFID tag for returnable transit item tracking with extreme performance. Delivers read ranges up to 12 m on metal and up to 11 m on other materials in a slim 115 × 30 × 3.9 mm enclosure.",
+    "feature_highlights_en": [
+      "All-surface performance – 12 m on metal, 11 m on other materials",
+      "Impinj Monza 4QT IC – EPC 128 bit / User 512 bit",
+      "ETSI 865–869 MHz and FCC 902–928 MHz variants",
+      "IP68 waterproof – industrial washing resistance",
+      "High-performance acrylic adhesive for metal and painted metal",
+      "Printable personalization with cover film protection"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Class1 Gen2 ISO 18000-6C / EPCglobal Gen2v2",
+          "Integrated Circuit": "Impinj Monza 4QT (4E upon request)",
+          "Operating Frequency – ETSI": "865–869 MHz",
+          "Operating Frequency – FCC": "902–928 MHz",
+          "Memory (Monza 4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range – on metal": "Up to 12 m / 40 ft",
+          "Read Range – other materials": "Up to 11 m / 36 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Tag Dimensions": "115 × 30 × 3.9 mm / 4.53 × 1.18 × 0.15 in",
+          "Tag Materials": "High quality engineering plastics",
+          "Adhesive": "High performance acrylic adhesive (metal and painted metal)",
+          "Weight": "12 g",
+          "Amount in Box": "50 tags",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-35°C to +85°C / -31°F to +185°F",
+          "Water Resistance": "IP68",
+          "Washing Resistance": "Tolerates industrial washing with standard solvents",
+          "Storage Condition": "1 year at +20°C / 50% RH (adhesive shelf life)",
+          "Chemical Resistance": "168h sulfuric acid (10%), motor oil, salt water (10%); 1h NaOH (10%)",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-steelwave-classic-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-steelwave-classic-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-steelwave-classic-rfid-etiketi-monza-4-qt-etsi/",
-    "frequency": "UHF",
-    "frequencyBand": "865-869 MHz (ETSI)",
-    "protocol": "EPCglobal UHF Class 1 Gen 2 (ISO 18000-6C)",
-    "chip": "Impinj Monza 4QT",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag label encased",
-    "sizeText": "115 x 30 x 3.9 mm",
-    "material": "High quality engineering plastics",
-    "fixedReadRange": "up to 12m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-35C to 85C",
-    "ipRating": "",
-    "applications": [
-      "Metal surface tracking",
-      "Asset management",
-      "Depot shipment",
-      "Outdoor applications"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Hard tag label encased",
-      "On Metal",
-      "Impinj Monza 4QT",
-      "Metal surface tracking",
-      "Asset management"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Steelwave Classic Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/confidex-steelwave-classic-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-steelwave-classic-rfid-etiketi-monza-4-qt-etsi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "confidex-steelwave-micro-ii",
-    "title": "Confidex Steelwave Micro II RFID Tag (Monza 4 QT)",
-    "brand": "Confidex",
-    "model": "Steelwave Micro II",
-    "sku": "Steelwave Micro II",
-    "subtitle": "Hard tag label encased RFID Tag",
-    "shortDesc": "High-performance RFID tag optimized for metal surfaces with compact dimensions for IT asset tracking",
-    "description": "Model: Steelwave Micro II. Brand: Confidex. Frequency: 865-928 MHz (Global). Surface: on_metal. Form factor: Hard tag label encased. High-performance RFID tag optimized for metal surfaces with compact dimensions for IT asset tracking",
-    "customerSummary": "Hard tag label encased RFID Tag | UHF | Applications: IT asset tracking, Office equipment monitoring, Inventory management",
+    "id": "confidex-steelwave-micro-ii",
+    "display_brand": "Confidex",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Confidex Steelwave Micro II RFID Tag",
+    "summary_en": "Small-sized on-metal RFID tag with versatile attachment options and unparalleled performance in a compact 38 × 13 mm form factor. IP67-rated, suitable for IT asset tracking, office equipment and inventory management.",
+    "feature_highlights_en": [
+      "Ultra-compact 38 × 13 × 4.5 mm on-metal form factor",
+      "Impinj Monza 4QT IC – EPC 128 bit / User 512 bit",
+      "Read range up to 5 m on metal / 1.5 m off metal",
+      "IP67 rated with acrylic adhesive included",
+      "Multiple attachment: adhesive, tethering string, cable tie",
+      "Applications: IT asset tracking, office equipment, inventory management"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
+          "Integrated Circuit": "Impinj Monza 4QT (4E upon request)",
+          "Operating Frequency": "865–928 MHz (Global)",
+          "Memory (Monza 4QT)": "EPC 128 bit; User 512 bit; TID 96 bit",
+          "EPC Content": "Unique number encoded",
+          "Read Range – on metal": "Up to 5 m / 16 ft",
+          "Read Range – off metal": "Up to 1.5 m / 5 ft"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "38 × 13 × 4.5 mm / 1.5 × 0.5 × 0.17 in",
+          "Tag Materials": "Engineering plastics with synthetic face layer",
+          "Adhesive": "High performance acrylic adhesive (included)",
+          "Attachment Options": "Adhesive, hanging with tethering string, cable tie through tag",
+          "Weight": "2 g",
+          "Amount in Box": "1000 pcs",
+          "Delivery Format": "Single"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-20°C to +70°C / -4°F to +158°F",
+          "IP Classification": "IP67",
+          "Chemical Resistance": "2h salt water (10%), motor oil; short-time sulfuric acid exposure",
+          "Expected Lifetime": "Years in normal operating conditions"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/confidex-steelwave-micro-II-rfid-etiketi-Monza-4-QT-600x338.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/steelwave-micro-2-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/confidex-steelwave-micro-2-rfid-etiketi-monza-4-qt/",
-    "frequency": "UHF",
-    "frequencyBand": "865-928 MHz (Global)",
-    "protocol": "EPCGlobal Class1 Gen2 ISO 18000-6C",
-    "chip": "Impinj Monza 4QT / Monza 4E",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Hard tag label encased",
-    "sizeText": "38 x 13 x 4.5 mm",
-    "material": "Engineering plastics with synthetic face layer",
-    "fixedReadRange": "up to 5m on metal",
-    "handheldReadRange": "up to 1.5m off metal",
-    "operatingTemp": "-20C to 70C",
-    "ipRating": "IP67",
-    "applications": [
-      "IT asset tracking",
-      "Office equipment monitoring",
-      "Inventory management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Hard tag label encased",
-      "On Metal",
-      "Impinj Monza 4QT / Monza 4E",
-      "IT asset tracking",
-      "Office equipment monitoring"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Confidex Steelwave Micro II Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/10/steelwave-micro-2-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/confidex-steelwave-micro-2-rfid-etiketi-monza-4-qt/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-on-metal-55x15x125",
-    "title": "Epozzy Printable on Metal RFID Tag 55x15x1.25 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 55x15x1.25",
-    "sku": "On-Metal 55x15x1.25",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "High-performance UHF RFID tag optimized for metallic surfaces with adhesive attachment",
-    "description": "Model: On-Metal 55x15x1.25. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. High-performance UHF RFID tag optimized for metallic surfaces with adhesive attachment",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Equipment identification, Curved metallic surfaces",
+    "id": "epozzy-on-metal-55x15x125",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Printable On-Metal RFID Label 55×15×1.25 mm",
+    "summary_en": "Ultra-slim flexible UHF RFID on-metal label in 55×15×1.25 mm format. Printable with Sato and Zebra RFID printers, optimized for curved metallic surfaces with read range up to 5.5 m on metal.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 5.5 m on metal / 2.8 m on plastic (FCC)",
+      "IP68 – flexible PET/Aluminum/Foam construction for curved surfaces"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6-P",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "User Memory": "32 bit",
+          "Read Range – on metal (FCC)": "5.5 m",
+          "Read Range – on plastic (FCC)": "2.8 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "55 × 15 × 1.25 mm (L×W×T)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive",
+          "Supported Printers": "SATO CL4NX, Zebra ZT410, Postek TX3r",
+          "Package": "500 pcs / roll, 76.2 mm / 3\" reel core"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68 (tested 5h at 1m depth)"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/55x15x1.25-metal-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-55x15x1.25mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-55x15x1-25-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "Impinj Monza R6P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "55 x 15 x 1.25 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 5.5m (FCC) / 3.5m (ETSI) on metal",
-    "handheldReadRange": "up to 2.8m (FCC) off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Equipment identification",
-      "Curved metallic surfaces"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza R6P",
-      "Asset tracking",
-      "Equipment identification"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 55x15x1.25 mm On-Metal Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-55x15x1.25mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-55x15x1-25-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-on-metal-60x25x1",
-    "title": "Epozzy Printable on Metal RFID Tag 60x25x1 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 60x25x1",
-    "sku": "On-Metal 60x25x1",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Metal-optimized RFID tag with 60x25x1mm dimensions and adhesive attachment",
-    "description": "Model: On-Metal 60x25x1. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Metal-optimized RFID tag with 60x25x1mm dimensions and adhesive attachment",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Metal surface application, Inventory management",
+    "id": "epozzy-on-metal-60x25x1",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Printable On-Metal RFID Label 60×25×1 mm",
+    "summary_en": "Flexible printable UHF RFID on-metal label in 60×25×1 mm format. Compatible with major RFID printers, optimized for metallic and curved assets with read range up to 5 m on metal.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 5 m on metal / 2 m on plastic (FCC)",
+      "IP68 – flexible PET/Aluminum/Foam for curved metal surfaces"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6-P",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "User Memory": "32 bit",
+          "Read Range – on metal (FCC)": "5 m",
+          "Read Range – on plastic (FCC)": "2 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "60 × 25 × 1 mm (L×W×T)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive",
+          "Supported Printers": "SATO CL4NX, Zebra ZT410, Postek TX3r",
+          "Package": "500 pcs / roll, 76.2 mm / 3\" reel core"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68 (tested 5h at 1m depth)"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/60x25x1-metal-yapiskanli-etiket-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-60x25x1mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-60x25x1-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "Impinj Monza R6P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "60 x 25 x 1 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 5m (FCC/ETSI) on metal",
-    "handheldReadRange": "up to 2m off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Metal surface application",
-      "Inventory management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza R6P",
-      "Asset tracking",
-      "Metal surface application"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 60x25x1 mm On-Metal Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-60x25x1mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-60x25x1-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-on-metal-64x6x1",
-    "title": "Epozzy Printable on Metal RFID Tag 64x6x1 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 64x6x1",
-    "sku": "On-Metal 64x6x1",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "High-performance RFID tag optimized for curved metal surfaces with 64x6x1mm dimensions",
-    "description": "Model: On-Metal 64x6x1. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. High-performance RFID tag optimized for curved metal surfaces with 64x6x1mm dimensions",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Equipment identification, Tool management",
+    "id": "epozzy-on-metal-64x6x1",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Printable On-Metal RFID Label 64×6×1 mm",
+    "summary_en": "Ultra-slim 64×6×1 mm UHF RFID on-metal label with NXP UCode 8 IC. Ideal for narrow metal assets such as tools, shelving and IT equipment, with read ranges up to 4 m on metal and 4.5 m on plastic.",
+    "feature_highlights_en": [
+      "NXP UCode 8 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 4 m on metal / 4.5 m on plastic (FCC)",
+      "IP68 – ultra-slim 64×6 mm for narrow metal surfaces"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 8",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "User Memory": "32 bit",
+          "Read Range – on metal (FCC)": "4 m",
+          "Read Range – on plastic (FCC)": "4.5 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "64 × 6 × 1 mm (L×W×T)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive",
+          "Supported Printers": "SATO CL4NX, Zebra ZT410, Postek TX3r",
+          "Package": "500 pcs / roll, 76.2 mm / 3\" reel core"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68 (tested 5h at 1m depth)"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/64x6x1-etiket-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-64x6x1mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-64x6x1-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 8",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "64 x 6 x 1 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 4m (ETSI) / 4.5m (FCC) on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Equipment identification",
-      "Tool management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 8",
-      "Asset tracking",
-      "Equipment identification"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 64x6x1 mm On-Metal Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-64x6x1mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-64x6x1-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-on-metal-80x20x1",
-    "title": "Epozzy Printable on Metal RFID Tag 80x20x1 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 80x20x1",
-    "sku": "On-Metal 80x20x1",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Adhesive RFID tag optimized for metallic surfaces with excellent performance on curved metal",
-    "description": "Model: On-Metal 80x20x1. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Adhesive RFID tag optimized for metallic surfaces with excellent performance on curved metal",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Tool management, Equipment labeling",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/80x20x1-on-metal-yapiskanli-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-80x20x1mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-80x20x1-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "Impinj Monza R6P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "80 x 20 x 1 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 7m (FCC/ETSI) on metal",
-    "handheldReadRange": "up to 4m off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Tool management",
-      "Equipment labeling"
+    "id": "epozzy-on-metal-70x30x1",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Printable On-Metal RFID Label 70×30×1 mm",
+    "summary_en": "Flexible printable UHF RFID on-metal label in 70×30×1 mm format. Delivers read ranges up to 8 m on metal, optimized for IT assets, fixed assets and metal equipment tracking.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 8 m on metal / 4 m on plastic (FCC)",
+      "IP68 – flexible PET/Aluminum/Foam adhesive label"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6-P",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "User Memory": "32 bit",
+          "Read Range – on metal (FCC)": "8 m",
+          "Read Range – on plastic (FCC)": "4 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "70 × 30 × 1 mm (L×W×T)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive",
+          "Supported Printers": "SATO CL4NX, Zebra ZT410, Postek TX3r",
+          "Package": "500 pcs / roll, 76.2 mm / 3\" reel core"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68 (tested 5h at 1m depth)"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza R6P",
-      "Asset tracking",
-      "Tool management"
-    ]
-  },
-  {
-    "slug": "epozzy-on-metal-95x22x125",
-    "title": "Epozzy Printable on Metal RFID Tag 95x22x1.25 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 95x22x1.25",
-    "sku": "On-Metal 95x22x1.25",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Adhesive metal surface RFID tag optimized for curved metallic surfaces",
-    "description": "Model: On-Metal 95x22x1.25. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Adhesive metal surface RFID tag optimized for curved metallic surfaces",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Equipment identification, Inventory management",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/95x22x1.25-on-metal-etiket-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-95x22x1.25mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-95x22x1-25-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "Impinj Monza R6P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "95 x 22 x 1.25 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 12m (FCC) / 7m (ETSI) on metal",
-    "handheldReadRange": "up to 10m (FCC) / 8m (ETSI) off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Equipment identification",
-      "Inventory management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza R6P",
-      "Asset tracking",
-      "Equipment identification"
-    ]
-  },
-  {
-    "slug": "epozzy-rfid-tire-tag-patch",
-    "title": "Epozzy RFID Tire Tag (Patch)",
-    "brand": "Epozzy",
-    "model": "RFID Tire Tag Patch",
-    "sku": "RFID Tire Tag Patch",
-    "subtitle": "Patch RFID Tag",
-    "shortDesc": "RFID patch tag designed to prevent tire cloning and theft, applied via vulcanization",
-    "description": "Model: RFID Tire Tag Patch. Brand: Epozzy. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Patch. RFID patch tag designed to prevent tire cloning and theft, applied via vulcanization",
-    "customerSummary": "Patch RFID Tag | UHF | Applications: Buses, Trucks, Trailers, Vehicle tracking, Tire theft prevention",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-rfid-tire-tag-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-tire-rfid-tag-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/epozzy-rfid-lastik-etiketi-yama/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Patch",
-    "sizeText": "Standard",
-    "material": "Rubber vulcanization adhesive",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Buses",
-      "Trucks",
-      "Trailers",
-      "Vehicle tracking",
-      "Tire theft prevention"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Patch",
-      "Non Metal",
-      "Buses",
-      "Trucks"
-    ]
-  },
-  {
-    "slug": "epozzy-round-head-silicone-wristband-hf",
-    "title": "Epozzy Round Head Silicone RFID Wristband (HF NTag213)",
-    "brand": "Epozzy",
-    "model": "Round Head Silicone Wristband HF",
-    "sku": "Round Head Silicone Wristband HF",
-    "subtitle": "Wristband RFID Tag",
-    "shortDesc": "Waterproof silicone wristband with embedded NFC tag for events, theme parks, and access control",
-    "description": "Model: Round Head Silicone Wristband HF. Brand: Epozzy. Frequency: 13.56 MHz. Surface: non_metal. Form factor: Wristband. Waterproof silicone wristband with embedded NFC tag for events, theme parks, and access control",
-    "customerSummary": "Wristband RFID Tag | HF | Applications: Swimming pools, Spas, Hotel management, Theme parks, Events, Access control",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-silicone-wristbandbracelet-tag-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-nfc-silikon-bileklik-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/yuvarlak-baslikli-silikon-rfid-bileklik-hf-ntag213/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz",
-    "protocol": "ISO14443A",
-    "chip": "NXP NTag213",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Wristband",
-    "sizeText": "Standard",
-    "material": "FDA-grade silicone rubber",
-    "fixedReadRange": "up to 100mm",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "Waterproof",
-    "applications": [
-      "Swimming pools",
-      "Spas",
-      "Hotel management",
-      "Theme parks",
-      "Events",
-      "Access control"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Wristband",
-      "Non Metal",
-      "NXP NTag213",
-      "Swimming pools",
-      "Spas"
-    ]
-  },
-  {
-    "slug": "epozzy-round-head-silicone-wristband-uhf",
-    "title": "Epozzy Round Head Silicone UHF RFID Wristband",
-    "brand": "Epozzy",
-    "model": "Round Head Silicone Wristband UHF",
-    "sku": "Round Head Silicone Wristband UHF",
-    "subtitle": "Wristband RFID Tag",
-    "shortDesc": "Waterproof silicone wristband with embedded round RFID tag for events and access control",
-    "description": "Model: Round Head Silicone Wristband UHF. Brand: Epozzy. Frequency: 13.56 MHz. Surface: non_metal. Form factor: Wristband. Waterproof silicone wristband with embedded round RFID tag for events and access control",
-    "customerSummary": "Wristband RFID Tag | HF | Applications: Swimming pools, Spas, Hotel management, Amusement parks, Events",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-silicone-wristbandbracelet-tag-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-yuvarlak-baslikli-silikon-bileklik-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/epozzy-yuvarlak-baslikli-silikon-uhf-rfid-bileklik/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz",
-    "protocol": "Contactless",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Wristband",
-    "sizeText": "Standard",
-    "material": "FDA-grade silicone rubber",
-    "fixedReadRange": "up to 100mm",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "Water-resistant",
-    "applications": [
-      "Swimming pools",
-      "Spas",
-      "Hotel management",
-      "Amusement parks",
-      "Events"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Wristband",
-      "Non Metal",
-      "Swimming pools",
-      "Spas"
-    ]
-  },
-  {
-    "slug": "epozzy-silicone-rfid-wristband",
-    "title": "Epozzy Silicone RFID Wristband",
-    "brand": "Epozzy",
-    "model": "Silicone RFID Wristband",
-    "sku": "Silicone RFID Wristband",
-    "subtitle": "Wristband with spring mechanism RFID Tag",
-    "shortDesc": "Slim multifunctional silicone wristband with embedded RFID tag, waterproof and wear-resistant",
-    "description": "Model: Silicone RFID Wristband. Brand: Epozzy. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Wristband with spring mechanism. Slim multifunctional silicone wristband with embedded RFID tag, waterproof and wear-resistant",
-    "customerSummary": "Wristband with spring mechanism RFID Tag | UHF | Applications: Swimming pools, Bathhouses, Hotel management, Theme parks, Events, Access control",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-rfid-silicone-spring-wristband-tag-gr-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-silikon-rfid-bileklik-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/epozzy-silikon-rfid-bileklik/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Wristband with spring mechanism",
-    "sizeText": "Standard",
-    "material": "Silicone",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Swimming pools",
-      "Bathhouses",
-      "Hotel management",
-      "Theme parks",
-      "Events",
-      "Access control"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Wristband with spring mechanism",
-      "Non Metal",
-      "Swimming pools",
-      "Bathhouses"
-    ]
-  },
-  {
-    "slug": "epozzy-pcb-metal-tag-36x13x27",
-    "title": "Epozzy UHF PCB Metal RFID Tag",
-    "brand": "Epozzy",
-    "model": "PCB Metal Tag 36x13x2.7",
-    "sku": "PCB Metal Tag 36x13x2.7",
-    "subtitle": "PCB with mounting holes RFID Tag",
-    "shortDesc": "Durable PCB RFID tag optimized for metal surfaces, mountable via adhesive or screw/rivet",
-    "description": "Model: PCB Metal Tag 36x13x2.7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: PCB with mounting holes. Durable PCB RFID tag optimized for metal surfaces, mountable via adhesive or screw/rivet",
-    "customerSummary": "PCB with mounting holes RFID Tag | UHF | Applications: Asset tracking, IT equipment, Industrial metal surfaces",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/36x13x2.7-metal-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-pcb-metal-rfid-etiketi-36x13x2.7mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-pcb-metal-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO/IEC 18000-6 Type C (EPC Gen2)",
-    "chip": "NXP UCode 7",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "PCB with mounting holes",
-    "sizeText": "36 x 13 x 2.7 mm",
-    "material": "FR-4",
-    "fixedReadRange": "up to 8.5m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "IT equipment",
-      "Industrial metal surfaces"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "PCB with mounting holes",
-      "On Metal",
-      "NXP UCode 7",
-      "Asset tracking",
-      "IT equipment"
-    ]
-  },
-  {
-    "slug": "epozzy-uhf-label-100x150",
-    "title": "Epozzy White Wet UHF RFID Label 100x150 mm",
-    "brand": "Epozzy",
-    "model": "UHF Label 100x150",
-    "sku": "UHF Label 100x150",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Passive UHF RFID label with NXP UCode 9 chip and H47 dual dipole antenna",
-    "description": "Model: UHF Label 100x150. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Passive UHF RFID label with NXP UCode 9 chip and H47 dual dipole antenna",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Clothing, Asset management, Logistics",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-passive-uhf-rfid-tag-100x150-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-pasif-uhf-rfid-label-tag-100x150mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-etiketi-100x150-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "100 x 150 mm (label), inlay 64x6x1 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 4m (ETSI) on metal",
-    "handheldReadRange": "up to 4.5m (FCC) off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Clothing",
-      "Asset management",
-      "Logistics"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 9",
-      "Clothing",
-      "Asset management"
-    ]
-  },
-  {
-    "slug": "epozzy-nfc-on-metal-30x30",
-    "title": "NFC On-Metal RFID Tag 30x30 mm",
-    "brand": "Epozzy",
-    "model": "NFC On-Metal 30x30",
-    "sku": "NFC On-Metal 30x30",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "NFC tag applicable to metal surfaces operating at 13.56 MHz",
-    "description": "Model: NFC On-Metal 30x30. Brand: Epozzy. Frequency: 13.56 MHz. Surface: on_metal. Form factor: Label. NFC tag applicable to metal surfaces operating at 13.56 MHz",
-    "customerSummary": "Label RFID Tag | HF | Applications: Asset tracking, Equipment tagging, Industrial identification",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/07/epozzy-metal-ustu-nfc-etiket-600x400.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/metal-ustu-nfc-rfid-etiketi-30x30-mm/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz",
-    "protocol": "ISO14443A",
-    "chip": "NXP Ntag 213/215/216",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "30 x 30 mm",
-    "material": "Paper / PET",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 75C",
-    "ipRating": "",
-    "applications": [
-      "Asset tracking",
-      "Equipment tagging",
-      "Industrial identification"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Label",
-      "On Metal",
-      "NXP Ntag 213/215/216",
-      "Asset tracking",
-      "Equipment tagging"
-    ]
-  },
-  {
-    "slug": "epozzy-ntag213-d25",
-    "title": "NFC Tag 25mm Diameter",
-    "brand": "Epozzy",
-    "model": "NTAG213 D25",
-    "sku": "NTAG213 D25",
-    "subtitle": "Label/Sticker RFID Tag",
-    "shortDesc": "Versatile NFC tag with unique identity and 144 bytes data storage for various sectors",
-    "description": "Model: NTAG213 D25. Brand: Epozzy. Frequency: 13.56 MHz. Surface: non_metal. Form factor: Label/Sticker. Versatile NFC tag with unique identity and 144 bytes data storage for various sectors",
-    "customerSummary": "Label/Sticker RFID Tag | HF | Applications: Access control, Ticketing, Payments, Healthcare, Logistics, Library",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-nfc-ntag-rfid-d25-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-d25mm-ntag-nfc-rfid-hf-seffaf-etiket-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/nfc-etiketi-ntag213-25-mm-cap/",
-    "frequency": "HF",
-    "frequencyBand": "13.56 MHz",
-    "protocol": "ISO14443A",
-    "chip": "NXP Ntag 213/215/216",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label/Sticker",
-    "sizeText": "25 mm diameter",
-    "material": "Paper / PET",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 75C",
-    "ipRating": "",
-    "applications": [
-      "Access control",
-      "Ticketing",
-      "Payments",
-      "Healthcare",
-      "Logistics",
-      "Library"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "HF",
-      "Label/Sticker",
-      "Non Metal",
-      "NXP Ntag 213/215/216",
-      "Access control",
-      "Ticketing"
-    ]
-  },
-  {
-    "slug": "epozzy-pin-tag-apparel",
-    "title": "Pin Tag RFID Apparel Tag",
-    "brand": "Epozzy",
-    "model": "Pin Tag Apparel",
-    "sku": "Pin Tag Apparel",
-    "subtitle": "Pin tag RFID Tag",
-    "shortDesc": "Reusable RFID pin tag with piercing metal pin, replacing traditional EAS security tags in apparel",
-    "description": "Model: Pin Tag Apparel. Brand: Epozzy. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Pin tag. Reusable RFID pin tag with piercing metal pin, replacing traditional EAS security tags in apparel",
-    "customerSummary": "Pin tag RFID Tag | UHF | Applications: Apparel tagging, Retail clothing management, Inventory tracking, Anti-shrink",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/07/epozzy-rfid-pin-tag-600x400.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/pin-tag-rfid-giysi-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "NXP UCode 9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Pin tag",
-    "sizeText": "Standard",
-    "material": "ABS plastic with rough coating",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Apparel tagging",
-      "Retail clothing management",
-      "Inventory tracking",
-      "Anti-shrink"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Pin tag",
-      "Non Metal",
-      "NXP UCode 9",
-      "Apparel tagging",
-      "Retail clothing management"
-    ]
-  },
-  {
-    "slug": "epozzy-flag-tag",
-    "title": "RFID Flag Tag",
-    "brand": "Epozzy",
-    "model": "Flag Tag",
-    "sku": "Flag Tag",
-    "subtitle": "Flag tag RFID Tag",
-    "shortDesc": "Product tracking tag for liquid-filled containers, cardboard boxes and various applications",
-    "description": "Model: Flag Tag. Brand: Epozzy. Frequency: 860-960 MHz. Surface: both. Form factor: Flag tag. Product tracking tag for liquid-filled containers, cardboard boxes and various applications",
-    "customerSummary": "Flag tag RFID Tag | UHF | Applications: Liquid-filled containers, Cardboard boxes, General product tracking",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-flag-tag-bayrak-etiketi-1.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-bayrak-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2",
-    "chip": "NXP UCode 9",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Flag tag",
-    "sizeText": "Standard",
-    "material": "",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Liquid-filled containers",
-      "Cardboard boxes",
-      "General product tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Flag tag",
-      "On Metal",
-      "NXP UCode 9",
-      "Liquid-filled containers",
-      "Cardboard boxes"
-    ]
-  },
-  {
-    "slug": "epozzy-high-temp-metal-tag-48x35x7",
-    "title": "RFID High Temperature Metal Tag 48x35x7 mm",
-    "brand": "Epozzy",
-    "model": "High Temp Metal Tag 48x35x7",
-    "sku": "High Temp Metal Tag 48x35x7",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "IP68 waterproof RFID tag operating up to 225°C with 10-meter read range for metallic asset tracking",
-    "description": "Model: High Temp Metal Tag 48x35x7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. IP68 waterproof RFID tag operating up to 225°C with 10-meter read range for metallic asset tracking",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Metallic asset tracking, Medical devices, Surgical instruments, Mining, Containers",
-    "image": "/assets/og/altis-default.jpg",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-yuksek-sicaklik-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "48 x 35 x 7 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 10m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 225C",
-    "ipRating": "IP68",
-    "applications": [
-      "Metallic asset tracking",
-      "Medical devices",
-      "Surgical instruments",
-      "Mining",
-      "Containers"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 9",
-      "Metallic asset tracking",
-      "Medical devices"
-    ]
-  },
-  {
-    "slug": "epozzy-pcb-metal-tag-ht-48x35x7",
-    "title": "RFID High Temperature PCB Metal Tag 48x35x7 mm",
-    "brand": "Epozzy",
-    "model": "PCB Metal Tag HT 48x35x7",
-    "sku": "PCB Metal Tag HT 48x35x7",
-    "subtitle": "PCB label RFID Tag",
-    "shortDesc": "IP68 waterproof high-temperature RFID tag operating up to 225°C for metallic asset tracking",
-    "description": "Model: PCB Metal Tag HT 48x35x7. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: PCB label. IP68 waterproof high-temperature RFID tag operating up to 225°C for metallic asset tracking",
-    "customerSummary": "PCB label RFID Tag | UHF | Applications: Metal asset tracking, Medical devices, Surgical instruments, Mining, Automated production",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-yuksek-sicakliga-dayanikli-metal-ustu-etiketi-48x35x7-mm-p-1-600x603.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-yuksek-sicakliga-dayanikli-pcb-metal-ustu-etiket-48x35x7-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "PCB label",
-    "sizeText": "48 x 35 x 7 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 4m (ETSI) on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 225C",
-    "ipRating": "IP68",
-    "applications": [
-      "Metal asset tracking",
-      "Medical devices",
-      "Surgical instruments",
-      "Mining",
-      "Automated production"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "PCB label",
-      "On Metal",
-      "NXP UCode 9",
-      "Metal asset tracking",
-      "Medical devices"
-    ]
-  },
-  {
-    "slug": "epozzy-uhf-label-4x2",
-    "title": "RFID Label 4x2 Inch",
-    "brand": "Epozzy",
-    "model": "UHF Label 4x2",
-    "sku": "UHF Label 4x2",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Passive UHF RFID label performing on both metal and non-metal surfaces",
-    "description": "Model: UHF Label 4x2. Brand: Epozzy. Frequency: 860-960 MHz. Surface: both. Form factor: Label. Passive UHF RFID label performing on both metal and non-metal surfaces",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Metal surfaces, Non-metal surfaces, Cardboard boxes, Plastic, Wood",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-passive-uhf-rfid-tag-101x50-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-pasif-uhf-rfid-label-tag-101x50mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-etiketi-4x2/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 8",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "101.6 x 50.8 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 4m (ETSI) on metal",
-    "handheldReadRange": "up to 4.5m (FCC) off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Metal surfaces",
-      "Non-metal surfaces",
-      "Cardboard boxes",
-      "Plastic",
-      "Wood"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 8",
-      "Metal surfaces",
-      "Non-metal surfaces"
-    ]
-  },
-  {
-    "slug": "epozzy-on-metal-70x30x1",
-    "title": "RFID Metal Surface Tag 70x30x1 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 70x30x1",
-    "sku": "On-Metal 70x30x1",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Adhesive RFID tag optimized for metallic surfaces in 70x30x1mm dimensions",
-    "description": "Model: On-Metal 70x30x1. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Adhesive RFID tag optimized for metallic surfaces in 70x30x1mm dimensions",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Asset tracking, Inventory management, Equipment identification",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/70x30x1-metal-yapiskanli-etiket-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-70x30x1mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-70x30x1-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "Impinj Monza R6P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "70 x 30 x 1 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 8m (FCC) / 6m (ETSI) on metal",
-    "handheldReadRange": "up to 4m (FCC) / 3m (ETSI) off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Inventory management",
-      "Equipment identification"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "Impinj Monza R6P",
-      "Asset tracking",
-      "Inventory management"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 70x30x1 mm On-Metal Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-70x30x1mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-70x30x1-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-on-metal-128x30x8",
-    "title": "RFID Metal Tag 128x30x8 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 128x30x8",
-    "sku": "On-Metal 128x30x8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Durable RFID tag for metal asset tracking in heavy industry, oil, gas and mining sectors",
-    "description": "Model: On-Metal 128x30x8. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Durable RFID tag for metal asset tracking in heavy industry, oil, gas and mining sectors",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Metal asset tracking, Heavy industry, Oil and gas, Mining, Harsh outdoor environments",
+    "id": "epozzy-on-metal-80x20x1",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Printable On-Metal RFID Label 80×20×1 mm",
+    "summary_en": "Flexible printable UHF RFID on-metal label in 80×20×1 mm format. Delivers read ranges up to 7 m on metal, well-suited for IT asset management, container tracking and warehouse shelf applications.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 7 m on metal / 4 m on plastic (FCC)",
+      "IP68 – flexible PET/Aluminum/Foam for curved surfaces"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6-P",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "User Memory": "32 bit",
+          "Read Range – on metal (FCC)": "7 m",
+          "Read Range – on plastic (FCC)": "4 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "80 × 20 × 1 mm (L×W×T)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive",
+          "Supported Printers": "SATO CL4NX, Zebra ZT410, Postek TX3r",
+          "Package": "500 pcs / roll, 76.2 mm / 3\" reel core"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68 (tested 5h at 1m depth)"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/80x20x1-on-metal-yapiskanli-etiketi-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 80x20x1 mm On-Metal Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-80x20x1mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-80x20x1-mm/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-on-metal-95x22x125",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Printable On-Metal RFID Label 95×22×1.25 mm",
+    "summary_en": "High-performance flexible UHF RFID on-metal label in 95×22×1.25 mm format. Delivers exceptional read ranges up to 12 m on metal and 10 m on plastic, ideal for large-scale metal asset tracking.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Best-in-class read range: 12 m on metal / 10 m on plastic (FCC)",
+      "IP68 – flexible PET/Aluminum/Foam adhesive label"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6-P",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "User Memory": "32 bit",
+          "Read Range – on metal (FCC)": "12 m",
+          "Read Range – on plastic (FCC)": "10 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "95 × 22 × 1.25 mm (L×W×T)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive",
+          "Supported Printers": "SATO CL4NX, Zebra ZT410, Postek TX3r",
+          "Package": "500 pcs / roll, 76.2 mm / 3\" reel core"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68 (tested 5h at 1m depth)"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/95x22x1.25-on-metal-etiket-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 95x22x1.25 mm On-Metal Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-metal-yapiskan-yazdirilabilir-rfid-etiketi-eu-95x22x1.25mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-95x22x1-25-mm/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-on-metal-128x30x8",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF Metal RFID Tag 128×30×8 mm",
+    "summary_en": "Rugged UHF RFID hard tag in 128×30×8 mm engineering plastic housing for metal asset tracking in heavy industry, oil, gas and mining. IP68-rated with read range up to 10 m and multiple attachment options.",
+    "feature_highlights_en": [
+      "Impinj Monza R6P – ISO/IEC 18000-6C, 860–960 MHz",
+      "Read range up to 10 m on metal (FCC)",
+      "IP68 – attachment: 3M adhesive, screw, magnet or cable"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-6C (EPC C1G2)",
+          "Integrated Circuit": "Impinj Monza R6P",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 (96) bit",
+          "User Memory": "32 (64) bit",
+          "Read Range (2W ERP FCC)": "10 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "128 × 30 × 8.5 mm",
+          "Material": "Engineering plastics",
+          "Weight": "15.5 g",
+          "Installation": "3M adhesive, screw, magnet, cable",
+          "Package": "100 pcs / bag"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68",
+          "Humidity": "98% non-condensing"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-metal-ustu-etiket-128x30x8.5-mm-p1-600x603.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-128x30-mm-rfid-metal-etiket-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-128x30x8-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "128 x 30 x 8 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 4m (ETSI) / 4.5m (FCC) on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Metal asset tracking",
-      "Heavy industry",
-      "Oil and gas",
-      "Mining",
-      "Harsh outdoor environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 9",
-      "Metal asset tracking",
-      "Heavy industry"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 128x30 mm UHF Metal Tag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-128x30-mm-rfid-metal-etiket-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-128x30x8-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-on-metal-136x43x10",
-    "title": "RFID Metal Tag 136x43x10 mm",
-    "brand": "Epozzy",
-    "model": "On-Metal 136x43x10",
-    "sku": "On-Metal 136x43x10",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Specialized RFID tag optimized for metal asset tracking with extended read range",
-    "description": "Model: On-Metal 136x43x10. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Label. Specialized RFID tag optimized for metal asset tracking with extended read range",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Metal asset tracking, Automated production lines, Warehouse shelving, Container management",
+    "id": "epozzy-on-metal-136x43x10",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF Metal RFID Tag 136×43×10 mm",
+    "summary_en": "High-protection UHF RFID metal tag in 136×43×10 mm engineering plastic housing. Delivers exceptional read range up to 30 m and supports multiple attachment methods for demanding industrial environments.",
+    "feature_highlights_en": [
+      "Impinj Monza 4E/4QT/4i – ISO/IEC 18000-6C, 860–960 MHz",
+      "Read range up to 30 m on metal (FCC)",
+      "IP68 – attachment: 3M adhesive, screw, magnet or cable"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-6C (EPC C1G2)",
+          "IC Options": "Impinj Monza 4E / 4QT / 4i",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "496 / 128 / 256 bit",
+          "User Memory": "128 / 512 / 480 bit",
+          "Max Read Range (2W ERP FCC)": "30 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "136 × 43 × 10 mm",
+          "Material": "Engineering plastics",
+          "Weight": "47 g",
+          "Installation": "3M adhesive, screw, magnet, cable",
+          "Package": "100 pcs / bag"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-metal-ustu-etiketi-136x43x10.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-metal-rfid-etiketi-136x43-mm-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-136x43x10-mm/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO18000-6C)",
-    "chip": "NXP UCode 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "136 x 43 x 10 mm",
-    "material": "PET / Aluminum Foil / Foam",
-    "fixedReadRange": "up to 4m (ETSI) / 4.5m (FCC) on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Metal asset tracking",
-      "Automated production lines",
-      "Warehouse shelving",
-      "Container management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 9",
-      "Metal asset tracking",
-      "Automated production lines"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy 136x43 mm UHF Metal Tag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-metal-rfid-etiketi-136x43-mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-metal-ustu-etiket-136x43x10-mm/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-silicone-rfid-wristband-classic",
-    "title": "Silicone RFID Wristband",
-    "brand": "Epozzy",
-    "model": "Silicone RFID Wristband Classic",
-    "sku": "Silicone RFID Wristband Classic",
-    "subtitle": "Wristband RFID Tag",
-    "shortDesc": "RFID wristband with integrated antenna for access control, events, theme parks and facility management",
-    "description": "Model: Silicone RFID Wristband Classic. Brand: Epozzy. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Wristband. RFID wristband with integrated antenna for access control, events, theme parks and facility management",
-    "customerSummary": "Wristband RFID Tag | UHF | Applications: Access control, Theme parks, Concerts, Swimming pools, Gyms, Healthcare",
+    "id": "epozzy-pcb-metal-tag-36x13x27",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID PCB Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF PCB On-Metal RFID Tag 36×13×2.7 mm",
+    "summary_en": "Rugged FR-4 PCB on-metal RFID tag in compact 36×13×2.7 mm format. IP68-rated with read range up to 8.5 m on metal, attachable via 3M adhesive or screws. Laser-printable surface for visual identification.",
+    "feature_highlights_en": [
+      "NXP UCode 7 – ISO/IEC 18000-6 Type-C (EPC Gen2)",
+      "Read range up to 8.5 m on metal (FCC)",
+      "IP68 – FR-4 PCB, attachable by 3M adhesive or screw, laser-printable"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-6 Type-C (EPC Gen2)",
+          "Integrated Circuit": "NXP UCode 7",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "User Memory": "32 bit",
+          "Read Range (2W ERP FCC)": "8.5 m on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "36 × 13 × 2.7 mm (L×W×T)",
+          "Material": "FR-4",
+          "Installation": "3M adhesive or screw",
+          "Customization": "Logo, serial number, barcode laser printing",
+          "Package": "200 pcs / bag"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68",
+          "Designed Lifetime": "Over 5 years in outdoor conditions"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/36x13x2.7-metal-etiketi-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy PCB On-Metal Tag 36x13x2.7 mm Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-pcb-metal-rfid-etiketi-36x13x2.7mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-pcb-metal-etiketi/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-uhf-label-100x150",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy White Wet UHF RFID Label 100×150 mm",
+    "summary_en": "Large-format 100×150 mm passive UHF RFID label with NXP UCode 9 chip and H47 dual dipole antenna. Designed for clothing, asset management and logistics applications requiring a standard shipping label size.",
+    "feature_highlights_en": [
+      "NXP UCode 9 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 4 m on metal (ETSI) / 4.5 m off-metal (FCC)",
+      "IP68 – PET/Aluminum/Foam adhesive label, 100×150 mm format"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 9",
+          "Operating Frequency": "860–960 MHz",
+          "Read Range – on metal (ETSI)": "Up to 4 m",
+          "Read Range – off metal (FCC)": "Up to 4.5 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Label Size": "100 × 150 mm",
+          "Inlay Dimensions": "64 × 6 × 1 mm",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-passive-uhf-rfid-tag-100x150-p-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF RFID Label 100x150 mm Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-pasif-uhf-rfid-label-tag-100x150mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-etiketi-100x150-mm/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-uhf-label-4x2",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF RFID Label 4×2 Inch",
+    "summary_en": "Passive UHF RFID label in standard 4×2 inch (101×51 mm) format with NXP UCode 8 IC. Performs on both metal and non-metal surfaces including cardboard, plastic and wood.",
+    "feature_highlights_en": [
+      "NXP UCode 8 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range up to 4 m on metal (ETSI) / 4.5 m off-metal (FCC)",
+      "IP68 – standard 4×2 inch format, works on metal and non-metal"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 8",
+          "Operating Frequency": "860–960 MHz",
+          "Read Range – on metal (ETSI)": "Up to 4 m",
+          "Read Range – off metal (FCC)": "Up to 4.5 m",
+          "Applicable Surfaces": "Metal, plastic, cardboard, wood"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "101.6 × 50.8 mm (4×2 in)",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-passive-uhf-rfid-tag-101x50-p-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF RFID Label 4x2 Inch Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-pasif-uhf-rfid-label-tag-101x50mm-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-etiketi-4x2/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-nfc-on-metal-30x30",
+    "display_brand": "Epozzy",
+    "category": "NFC On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy NFC On-Metal RFID Tag 30×30 mm",
+    "summary_en": "Compact 30×30 mm NFC tag designed to work directly on metallic surfaces. ISO 14443A compliant with NXP Ntag 213/215/216 chip, suitable for asset tagging and industrial identification on metal.",
+    "feature_highlights_en": [
+      "NXP Ntag 213/215/216 – ISO14443A, 13.56 MHz",
+      "Works directly on metal surfaces",
+      "30×30 mm compact form – Paper/PET adhesive label"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO14443A",
+          "Integrated Circuit": "NXP Ntag 213 / 215 / 216",
+          "Operating Frequency": "13.56 MHz",
+          "Applicable Surfaces": "On-metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "30 × 30 mm",
+          "Material": "Paper / PET",
+          "Installation": "Adhesive"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-20°C to +75°C"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/07/epozzy-metal-ustu-nfc-etiket-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "product_page",
+      "source_name": "Epozzy NFC On-Metal Tag 30x30 mm",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/metal-ustu-nfc-rfid-etiketi-30x30-mm/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-ntag213-d25",
+    "display_brand": "Epozzy",
+    "category": "NFC Label / Sticker",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy NFC Tag 25 mm Diameter",
+    "summary_en": "25 mm diameter ICODE NFC dry inlay / label tag operating at 13.56 MHz. ISO 15693 compliant with NXP ICODE SLI/SLIX chip family, suitable for logistics, library, IT asset management and retail applications.",
+    "feature_highlights_en": [
+      "NXP ICODE SLI/SLIX – ISO15693, 13.56 MHz",
+      "Read range 0–10 cm – connects Android and iOS smartphones",
+      "D=25 mm dry inlay, D=30 mm wet label available"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO15693",
+          "IC Options": "NXP ICODE SLI / SLIX / SLIX-L / SLIX-S",
+          "Operating Frequency": "13.56 MHz",
+          "Memory": "1024 / 1024 / 512 / 2048 bit",
+          "Read Range": "0–10 cm"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Size": "D=25 mm",
+          "Wet Inlay / Label Size": "D=30 mm (customized)",
+          "Label Material": "Coated Paper / PET / Fragile Paper",
+          "Delivery Format": "Reel"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-20°C to +75°C"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-nfc-ntag-rfid-d25-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy D=25mm ICODE NFC Dry Inlay Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-d25mm-ntag-nfc-rfid-hf-seffaf-etiket-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/nfc-etiketi-ntag213-25-mm-cap/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-rfid-tire-tag-patch",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Tire Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF RFID Tire Tag (Patch)",
+    "summary_en": "Durable rubber RFID patch tag designed to be vulcanized onto the sidewall of finished tires. Provides lifetime tire identification with unique ID to prevent theft and cloning for buses, trucks and trailers.",
+    "feature_highlights_en": [
+      "Alien Higgs-3 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Attached by vulcanization – lasts the lifetime of the tire",
+      "IP68 – rubber construction, 95×35×2 mm, 120 pcs/box"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Alien Higgs-3",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "96 bit",
+          "User Memory": "512 bit",
+          "Read Range (2W ERP FCC)": "1.08 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "95 × 35 × 2 mm",
+          "Material": "Rubber",
+          "Weight": "5.0 g",
+          "Installation": "Vulcanizing agent (outside tire sidewall)",
+          "Package": "120 pcs / box"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-rfid-tire-tag-p-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF RFID Tire Tag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-tire-rfid-tag-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/epozzy-rfid-lastik-etiketi-yama/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-round-head-silicone-wristband-hf",
+    "display_brand": "Epozzy",
+    "category": "NFC Silicone Wristband",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy NFC Silicone Wristband (Round Head, HF)",
+    "summary_en": "Waterproof NFC silicone wristband with round head design, operating at 13.56 MHz with NTAG213 chip. Designed for theme parks, swimming pools, access control, events and healthcare wearable identification.",
+    "feature_highlights_en": [
+      "NTAG213 – ISO14443/15693, 13.56 MHz NFC",
+      "Read range 0–10 cm – compatible with iOS and Android",
+      "IP68 waterproof silicone – D=50 mm, color options available"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO14443 / 15693",
+          "Integrated Circuit": "NTAG213",
+          "Operating Frequency": "13.56 MHz",
+          "Memory": "512 bits (8k)",
+          "Reading Range": "0–10 cm",
+          "Data Storage": "> 10 years"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "D=50 mm",
+          "Material": "Silicone",
+          "Color Options": "Red, blue, yellow and custom",
+          "Options": "Numbering, encoding, logo printing"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +100°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-silicone-wristbandbracelet-tag-p-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy NFC Silicone Wristband Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/epozzy-nfc-silikon-bileklik-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/yuvarlak-baslikli-silikon-rfid-bileklik-hf-ntag213/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-round-head-silicone-wristband-uhf",
+    "display_brand": "Epozzy",
+    "category": "UHF Silicone Wristband",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF Silicone Wristband (Round Head)",
+    "summary_en": "UHF RFID silicone wristband with round head design, operating at 860–960 MHz with up to 1 m read range. IP68-rated waterproof wristband for access control, theme parks, events and leisure center applications.",
+    "feature_highlights_en": [
+      "IC options: Alien Higgs3 / Monza4QT / Impinj M5 – 860–960 MHz",
+      "Read range 0.5–1 m – IP68 waterproof",
+      "Flexible silicone – D=72/65 mm, multiple color options"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "IC Options": "Alien Higgs3 / Monza4QT / Impinj M5",
+          "Operating Frequency": "860–960 MHz",
+          "Memory": "96–512 bit",
+          "Read Range (2W ERP FCC)": "0.5–1 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "D=72 mm / D=65 mm",
+          "Material": "Silicone",
+          "Color Options": "Blue, yellow, red and custom"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +100°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-silicone-wristbandbracelet-tag-p-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF Silicone Wristband Round Head Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-yuvarlak-baslikli-silikon-bileklik-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/epozzy-yuvarlak-baslikli-silikon-uhf-rfid-bileklik/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-silicone-rfid-wristband",
+    "display_brand": "Epozzy",
+    "category": "UHF Silicone Wristband",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF Silicone Spring Wristband",
+    "summary_en": "UHF RFID silicone wristband with spring mechanism, operating at 860–960 MHz with up to 1 m read range. IP68-rated for access control, pools, theme parks, events and healthcare applications.",
+    "feature_highlights_en": [
+      "IC options: Alien Higgs3 / Monza4QT / Impinj M5 – 860–960 MHz",
+      "Read range 0.5–1 m – IP68 waterproof, -40°C to +120°C",
+      "Silicone + spring mechanism – D=72×6 mm, color options"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "IC Options": "Alien Higgs3 / Monza4QT / Impinj M5",
+          "Operating Frequency": "860–960 MHz",
+          "Memory": "96–512 bit",
+          "Read Range (2W ERP FCC)": "0.5–1 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "D=72×6 mm",
+          "Material": "Silicone, Spring",
+          "Color Options": "Red, blue, black and custom"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +120°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-rfid-silicone-spring-wristband-tag-gr-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy Silicone Spring Wristband Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-silikon-rfid-bileklik-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/epozzy-silikon-rfid-bileklik/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-silicone-rfid-wristband-classic",
+    "display_brand": "Epozzy",
+    "category": "UHF Silicone Wristband",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF Remote Distance Silicone Wristband",
+    "summary_en": "UHF RFID adjustable silicone wristband with extended 2 m read range for hands-free access control, theme parks and leisure center applications. IP68-rated, operating at 860–960 MHz.",
+    "feature_highlights_en": [
+      "IC options: Alien Higgs3 / Monza4QT / Impinj M5 – 860–960 MHz",
+      "Extended read range up to 2 m (FCC)",
+      "IP68 – adjustable silicone, 258×21×10 mm, color options"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "IC Options": "Alien Higgs3 / Monza4QT / Impinj M5",
+          "Operating Frequency": "860–960 MHz",
+          "Memory": "512 bit",
+          "Read Range (2W ERP FCC)": "2 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "258 × 21 × 10 mm",
+          "Material": "Silicone",
+          "Color Options": "Blue, yellow, red and custom"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +120°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-uhf-remote-distance-silicone-rfid-wristband-tag-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uzak-menzilli-uhf-rfid-bileklik-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/silikon-rfid-bileklik/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Wristband",
-    "sizeText": "Standard",
-    "material": "Silicone",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Access control",
-      "Theme parks",
-      "Concerts",
-      "Swimming pools",
-      "Gyms",
-      "Healthcare"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Wristband",
-      "Non Metal",
-      "Access control",
-      "Theme parks"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF Remote Distance Silicone Wristband Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uzak-menzilli-uhf-rfid-bileklik-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/silikon-rfid-bileklik/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-tamper-proof-on-metal",
-    "title": "Tamper Proof On-Metal RFID Tag",
-    "brand": "Epozzy",
-    "model": "Tamper Proof On-Metal",
-    "sku": "Tamper Proof On-Metal",
-    "subtitle": "Tag RFID Tag",
-    "shortDesc": "Tamper-proof metal surface RFID tag for IT and industrial asset security",
-    "description": "Model: Tamper Proof On-Metal. Brand: Epozzy. Frequency: 860-960 MHz. Surface: on_metal. Form factor: Tag. Tamper-proof metal surface RFID tag for IT and industrial asset security",
-    "customerSummary": "Tag RFID Tag | UHF | Applications: IT asset tracking, Industrial metal asset security",
-    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/10/tamper-proof-metal-ustu-rfid-etiketi-p-1.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/tamper-proof-metal-ustu-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Gen 2",
-    "chip": "NXP UCode 9",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Tag",
-    "sizeText": "60 x 25 x 1 mm",
-    "material": "Metal surface",
-    "fixedReadRange": "up to 3m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "IT asset tracking",
-      "Industrial metal asset security"
+    "id": "epozzy-fabric-tag",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Fabric Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF RFID Fabric Tag",
+    "summary_en": "Sewable UHF RFID fabric tag in 50×35 mm format with Impinj Monza R6 IC. Designed for textile and garment inventory tracking, anti-counterfeiting and supply chain management with sew-in installation.",
+    "feature_highlights_en": [
+      "Impinj Monza R6 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range 3.0–6.0 m (FCC/ETSI) – data storage > 10 years",
+      "Sewable fabric – 50×35 mm, custom logo/barcode printing"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "Impinj Monza R6",
+          "Operating Frequency": "902–928 MHz (FCC) / 865–868 MHz (ETSI)",
+          "EPC Memory": "96 bit",
+          "Read Range": "3.0–6.0 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "50 × 35 mm",
+          "Material": "Fabric",
+          "Installation": "Sewing",
+          "Customization": "Company logo, barcode, number printing & encoding"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-20°C to +120°C",
+          "Humidity": "98% non-condensing",
+          "Data Storage": "> 10 years"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Tag",
-      "On Metal",
-      "NXP UCode 9",
-      "IT asset tracking",
-      "Industrial metal asset security"
-    ]
-  },
-  {
-    "slug": "epozzy-fabric-tag",
-    "title": "UHF RFID Fabric Tag",
-    "brand": "Epozzy",
-    "model": "Fabric Tag",
-    "sku": "Fabric Tag",
-    "subtitle": "Sewable textile label RFID Tag",
-    "shortDesc": "UHF RFID fabric tag suitable for textile applications, sewable into garments",
-    "description": "Model: Fabric Tag. Brand: Epozzy. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Sewable textile label. UHF RFID fabric tag suitable for textile applications, sewable into garments",
-    "customerSummary": "Sewable textile label RFID Tag | UHF | Applications: Textile tracking, Garment identification, Supply chain management, Inventory control",
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-tekstil-etiketi-50x35-1-600x603.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/08/epozzy-fabric-tag-kumas-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/uhf-rfid-kumas-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Sewable textile label",
-    "sizeText": "50 x 35 mm (approx.)",
-    "material": "Fabric/textile material",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Textile tracking",
-      "Garment identification",
-      "Supply chain management",
-      "Inventory control"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Sewable textile label",
-      "Non Metal",
-      "Textile tracking",
-      "Garment identification"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF Fabric Tag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/08/epozzy-fabric-tag-kumas-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/uhf-rfid-kumas-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-jewellery-tag-standard",
-    "title": "UHF RFID Jewellery Tag Standard",
-    "brand": "Epozzy",
-    "model": "Jewellery Tag Standard",
-    "sku": "Jewellery Tag Standard",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "UHF RFID tag designed for jewelry and valuable item tracking",
-    "description": "Model: Jewellery Tag Standard. Brand: Epozzy. Frequency: 860-960 MHz. Surface: both. Form factor: Label. UHF RFID tag designed for jewelry and valuable item tracking",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Jewelry tracking, Inventory management, Warehouse management, Counterfeit prevention",
+    "id": "epozzy-jewellery-tag-standard",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Jewellery Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF RFID Jewellery Label",
+    "summary_en": "Slim 68×13 mm UHF RFID PET adhesive label for jewellery, watch, glasses and bag tracking. NXP UCode 8 IC with read range up to 8 m (FCC), designed for retail inventory, anti-counterfeiting and warehouse management.",
+    "feature_highlights_en": [
+      "NXP UCode 8 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "Read range: 8 m (FCC) / 3.5 m (ETSI)",
+      "IP68 – slim 68×13 mm PET label, optimized for metallic-coated items"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 8",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "User Memory": "32 bit",
+          "Read Range – FCC (2W ERP)": "8 m",
+          "Read Range – ETSI (2W ERP)": "3.5 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "68 × 13 mm",
+          "Material": "PET",
+          "Installation": "Adhesive",
+          "Customization": "Logo, barcode / QR code, number printing"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-jewellery-kuyumcu-rfid-tag-p-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-rfid-kuyumcu-jewellery-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/rfid-kuyumcu-etiketi-standart-tip/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC C1G2 (ISO 18000-6C)",
-    "chip": "NXP UCode 8",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Label",
-    "sizeText": "68 x 13 mm",
-    "material": "Paper / PET",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Jewelry tracking",
-      "Inventory management",
-      "Warehouse management",
-      "Counterfeit prevention"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "On Metal",
-      "NXP UCode 8",
-      "Jewelry tracking",
-      "Inventory management"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy UHF PET Jewellery Label Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2021/12/epozzy-uhf-rfid-kuyumcu-jewellery-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-kuyumcu-etiketi-standart-tip/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "epozzy-washable-textile-tag",
-    "title": "Washable RFID Laundry Tag",
-    "brand": "Epozzy",
-    "model": "Washable Textile Tag",
-    "sku": "Washable Textile Tag",
-    "subtitle": "Textile tag RFID Tag",
-    "shortDesc": "Washable RFID laundry tag with minimalist design and 5m read range",
-    "description": "Model: Washable Textile Tag. Brand: Epozzy. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Textile tag. Washable RFID laundry tag with minimalist design and 5m read range",
-    "customerSummary": "Textile tag RFID Tag | UHF | Applications: Hospital, Hotel, Spa, Sports clubs, Laundry, Care facilities",
+    "id": "epozzy-pin-tag-apparel",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Pin Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy RFID Pin Tag (Apparel)",
+    "summary_en": "Reusable UHF RFID pin tag with metal piercing pin, replacing traditional EAS security tags in apparel retail. NXP UCode 9 chip, designed for garment tracking, inventory management and anti-theft protection.",
+    "feature_highlights_en": [
+      "NXP UCode 9 – EPC C1G2, 860–960 MHz",
+      "Replaces EAS hard tags – reusable pin attachment",
+      "ABS plastic – anti-theft, inventory counting, brand protection"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Gen 2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 9",
+          "Operating Frequency": "860–960 MHz"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "ABS plastic with rough coating",
+          "Installation": "Metal piercing pin",
+          "Applicable Use": "Apparel, retail garments"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Primary Use": "Retail garment tagging and anti-theft",
+          "Industries": "Apparel, retail",
+          "Features": "Inventory tracking, anti-shrink, brand anti-counterfeiting"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/07/epozzy-rfid-pin-tag-600x400.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "product_page",
+      "source_name": "Epozzy RFID Pin Tag Apparel",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/pin-tag-rfid-giysi-etiketi/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-flag-tag",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Flag Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF RFID Flag Tag",
+    "summary_en": "UHF RFID flag tag designed for tracking liquid-filled containers, cardboard boxes and general products. NXP UCode 9 chip with EPC C1G2 protocol, suitable for logistics and supply chain product identification.",
+    "feature_highlights_en": [
+      "NXP UCode 9 – EPC C1G2, 860–960 MHz",
+      "Flag form factor – suitable for liquid-filled containers and cardboard",
+      "General-purpose product tracking for logistics and supply chain"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 9",
+          "Operating Frequency": "860–960 MHz"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Form Factor": "Flag tag",
+          "Applicable Surfaces": "Non-metal, liquid containers, cardboard"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Primary Use": "Product tracking on liquid-filled containers and cardboard",
+          "Industries": "Logistics, supply chain, FMCG"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2021/11/epozzy-flag-tag-bayrak-etiketi-1.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "product_page",
+      "source_name": "Epozzy RFID Flag Tag",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-bayrak-etiketi/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-high-temp-metal-tag-48x35x7",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID High Temperature Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF High Temperature Metal Tag 48×35×7 mm",
+    "summary_en": "IP68 waterproof UHF RFID tag rated for operating temperatures up to 225°C, designed for metallic asset tracking in extreme environments including medical sterilization, surgical instruments and mining.",
+    "feature_highlights_en": [
+      "NXP UCode 9 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "High temperature rated – up to 225°C operating",
+      "IP68 – read range up to 10 m on metal"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 9",
+          "Operating Frequency": "860–960 MHz",
+          "Read Range": "Up to 10 m on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "48 × 35 × 7 mm",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +225°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-yuksek-sicakliga-dayanikli-metal-ustu-etiketi-48x35x7-mm-p-1.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "product_page",
+      "source_name": "Epozzy High Temperature Metal Tag 48x35x7 mm",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-yuksek-sicaklik-etiketi/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-pcb-metal-tag-ht-48x35x7",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID High Temperature Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy UHF High Temperature PCB Metal Tag 48×35×7 mm",
+    "summary_en": "IP68 waterproof high-temperature PCB RFID tag operating up to 225°C for metallic asset tracking in medical, surgical and industrial environments. Read range up to 4 m on metal (ETSI).",
+    "feature_highlights_en": [
+      "NXP UCode 9 – EPC C1G2 (ISO18000-6C), 860–960 MHz",
+      "High temperature rated – up to 225°C operating",
+      "IP68 – PCB construction, read range up to 4 m on metal"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC C1G2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 9",
+          "Operating Frequency": "860–960 MHz",
+          "Read Range – on metal (ETSI)": "Up to 4 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "48 × 35 × 7 mm",
+          "Material": "PET / Aluminum Foil / Foam",
+          "Installation": "Adhesive"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +225°C",
+          "IP Classification": "IP68"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/rfid-yuksek-sicakliga-dayanikli-metal-ustu-etiketi-48x35x7-mm-p-1-600x603.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "product_page",
+      "source_name": "Epozzy High Temperature PCB Metal Tag 48x35x7 mm",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/rfid-yuksek-sicakliga-dayanikli-pcb-metal-ustu-etiket-48x35x7-mm/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-tamper-proof-on-metal",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Tamper-Proof Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Tamper-Proof On-Metal RFID Tag",
+    "summary_en": "UHF RFID tamper-proof tag for IT and industrial metal asset security. NXP UCode 9 chip, detects any removal attempt, providing an additional layer of security for fixed asset tracking.",
+    "feature_highlights_en": [
+      "NXP UCode 9 – EPC Gen 2 (ISO18000-6C), 860–960 MHz",
+      "Tamper-proof – detects tag removal from metal surface",
+      "Read range up to 3 m – 60×25×1 mm adhesive format"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Gen 2 (ISO18000-6C)",
+          "Integrated Circuit": "NXP UCode 9",
+          "Operating Frequency": "860–960 MHz",
+          "Read Range": "Up to 3 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "60 × 25 × 1 mm",
+          "Material": "Metal surface",
+          "Installation": "Adhesive – tamper-evident on removal"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Primary Use": "IT asset security, industrial metal asset tracking",
+          "Security Feature": "Tamper detection on removal"
+        }
+      }
+    ],
+    "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/10/tamper-proof-metal-ustu-rfid-etiketi-p-1.webp",
+    "details_break_before": true,
+    "source": {
+      "source_type": "product_page",
+      "source_name": "Epozzy Tamper Proof On-Metal RFID Tag",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/tamper-proof-metal-ustu-rfid-etiketi/",
+      "last_updated": "2026-06-03"
+    }
+  },
+  {
+    "id": "epozzy-washable-textile-tag",
+    "display_brand": "Epozzy",
+    "category": "UHF RFID Laundry Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Epozzy Washable UHF RFID Laundry Tag",
+    "summary_en": "Flexible fabric UHF RFID laundry tag in 70×15 mm format with NXP UCODE 8 IC. Withstands 200 wash cycles, rated for detergent, bleach and alkali exposure. Read range up to 10.5 m (FCC) for hospital, hotel and linen management.",
+    "feature_highlights_en": [
+      "NXP UCODE 8 – ISO/IEC 18000-6C EPC Gen2, 860–960 MHz",
+      "Read range 10.5 m (FCC) / 7.5 m (ETSI) – sew or insert installation",
+      "200 wash cycles – chemical resistant to detergent, bleach and alkali"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO/IEC 18000-6 TypeC (EPC Gen2)",
+          "Integrated Circuit": "NXP UCODE 8",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128 bit",
+          "TID Memory": "96 bit",
+          "Read Range – FCC (2W ERP)": "10.5 m",
+          "Read Range – ETSI (2W ERP)": "7.5 m"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Dimensions": "70 × 15 mm",
+          "Weight": "0.6 g",
+          "Material": "Fabric Base",
+          "Installation": "Sewing or Insert",
+          "Estimated Lifetime": "200 washing cycles or 3 years"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-20°C to +50°C",
+          "Chemical Resistance": "Detergent, Softener, Bleach (Oxygen/Chlorine), Alkali",
+          "Water Extraction Pressure": "60 bar"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/tekstil-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/yikanabilir-rfid-tekstil-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/yikanabilir-rfid-tekstil-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Textile tag",
-    "sizeText": "Standard",
-    "material": "Textile",
-    "fixedReadRange": "up to 5m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Hospital",
-      "Hotel",
-      "Spa",
-      "Sports clubs",
-      "Laundry",
-      "Care facilities"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Textile tag",
-      "Non Metal",
-      "Hospital",
-      "Hotel"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Epozzy Washable UHF RFID Laundry Tag Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/yikanabilir-rfid-tekstil-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/yikanabilir-rfid-tekstil-etiketi/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-adept-400-5-layer-gs",
-    "title": "Omni-ID Adept 400 (5 Layer) – GS",
-    "brand": "Omni-ID",
-    "model": "Adept 400 5-Layer GS",
-    "sku": "Adept 400 5-Layer GS",
-    "subtitle": "Rugged industrial tag RFID Tag",
-    "shortDesc": "Industrial RFID tag for harsh environments, suited for pipe fittings and valves in remote facilities",
-    "description": "Model: Adept 400 5-Layer GS. Brand: Omni-ID. Frequency: 860-930 MHz (GS). Surface: on_metal. Form factor: Rugged industrial tag. Industrial RFID tag for harsh environments, suited for pipe fittings and valves in remote facilities",
-    "customerSummary": "Rugged industrial tag RFID Tag | UHF | Applications: Pipe fittings, Valves, Processing equipment, MRO applications",
+    "id": "omni-id-adept-400-5-layer-gs",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID Industrial Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Adept 400 (5-Layer) GS",
+    "summary_en": "Rugged 5-layer stainless steel UHF RFID tag for attachment to pipes and fixed assets in remote production, extraction and processing facilities. Global frequency, MIL-STD-810 G rated with optional ATEX/IECEx certification.",
+    "feature_highlights_en": [
+      "Impinj Monza 4QT – EPC Class 1 Gen2v2, 860–930 MHz (GS)",
+      "Read range: 4 m fixed / 2 m handheld – optimized for metal",
+      "MIL-STD-810 G, IP68 – steel strap or weld attachment, ATEX option"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range": "860–930 MHz (GS)",
+          "IC Type (Chip)": "Impinj Monza 4QT",
+          "EPC Memory": "128 bits",
+          "User Memory": "512 bits",
+          "Unique TID": "48 bits",
+          "Read Range – Fixed Reader": "Up to 4 m / 13.1 ft",
+          "Read Range – Handheld Reader": "Up to 2 m / 6.5 ft",
+          "Optimized For": "Metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "45 × 30.5 × 15.5 mm / 1.77 × 1.20 × 0.61 in",
+          "Material": "Stainless steel with ceramic core",
+          "Layers": "5 layers",
+          "Weight": "94 g",
+          "Attachment": "Steel strap or welded"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +65°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, RoHS; optional ATEX/IECEx, US&Canada C1D1/D2"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Adept-400-5-layer-gs.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-adept-400-5-layer-gs-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-adept-400-5-katman-gs/",
-    "frequency": "UHF",
-    "frequencyBand": "860-930 MHz (GS)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Impinj Monza 4QT",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rugged industrial tag",
-    "sizeText": "45 x 30.5 x 15.5 mm",
-    "material": "Stainless steel with ceramic core",
-    "fixedReadRange": "up to 4m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 65C",
-    "ipRating": "IP68",
-    "applications": [
-      "Pipe fittings",
-      "Valves",
-      "Processing equipment",
-      "MRO applications"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rugged industrial tag",
-      "On Metal",
-      "Impinj Monza 4QT",
-      "Pipe fittings",
-      "Valves"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Adept 400 (5-Layer) GS Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-adept-400-5-layer-gs-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-adept-400-5-katman-gs/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-adept-400-5-layer-us",
-    "title": "Omni-ID Adept 400 (5 layer) – US",
-    "brand": "Omni-ID",
-    "model": "Adept 400 5-Layer US",
-    "sku": "Adept 400 5-Layer US",
-    "subtitle": "Rugged industrial tag RFID Tag",
-    "shortDesc": "Industrial RFID tag optimized for metal surfaces in manufacturing and extraction facilities (US band)",
-    "description": "Model: Adept 400 5-Layer US. Brand: Omni-ID. Frequency: 902-928 MHz (US). Surface: on_metal. Form factor: Rugged industrial tag. Industrial RFID tag optimized for metal surfaces in manufacturing and extraction facilities (US band)",
-    "customerSummary": "Rugged industrial tag RFID Tag | UHF | Applications: Pipe fittings, Valves, Processing equipment",
+    "id": "omni-id-adept-400-5-layer-us",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID Industrial Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Adept 400 (5-Layer) US",
+    "summary_en": "Rugged 5-layer stainless steel UHF RFID tag for pipes and fixed assets in harsh industrial facilities. US band (902–928 MHz) with Alien Higgs 3 IC, MIL-STD-810 G and optional ATEX/IECEx certification.",
+    "feature_highlights_en": [
+      "Alien Higgs 3 – EPC Class 1 Gen2v2, 902–928 MHz (US)",
+      "Read range: 4–6 m fixed / 1–3 m handheld – optimized for metal",
+      "MIL-STD-810 G, IP68 – steel strap or weld attachment, ATEX option"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range": "902–928 MHz (US)",
+          "IC Type (Chip)": "Alien Higgs 3",
+          "EPC Memory": "96 bits",
+          "User Memory": "512 bits",
+          "Unique TID": "64 bits",
+          "Read Range – Fixed Reader": "4–6 m / 13–20 ft",
+          "Read Range – Handheld Reader": "1–3 m / 10 ft",
+          "Optimized For": "Metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "36 × 25 × 13.5 mm / 1.42 × 0.98 × 0.53 in",
+          "Material": "Stainless steel with ceramic core",
+          "Layers": "5 layers",
+          "Weight": "58 g",
+          "Attachment": "Steel strap or welded"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +65°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, RoHS; optional ATEX/IECEx, US&Canada C1D1/D2"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/Adept-400-5-layer-us-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-adept-400-5-layer-us-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-adept-400-5-katman-us/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rugged industrial tag",
-    "sizeText": "36 x 25 x 13.5 mm",
-    "material": "Stainless steel with ceramic core",
-    "fixedReadRange": "4-6m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 65C",
-    "ipRating": "IP68",
-    "applications": [
-      "Pipe fittings",
-      "Valves",
-      "Processing equipment"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rugged industrial tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Pipe fittings",
-      "Valves"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Adept 400 (5-Layer) US Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-adept-400-5-layer-us-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-adept-400-5-katman-us/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-adept-500-gs",
-    "title": "Omni-ID Adept 500 GS",
-    "brand": "Omni-ID",
-    "model": "Adept 500 GS",
-    "sku": "Adept 500 GS",
-    "subtitle": "Circular rigid hard tag RFID Tag",
-    "shortDesc": "Small circular UHF hard tag for permanent attachment to industrial gas cylinders",
-    "description": "Model: Adept 500 GS. Brand: Omni-ID. Frequency: 860-930 MHz (GS). Surface: on_metal. Form factor: Circular rigid hard tag. Small circular UHF hard tag for permanent attachment to industrial gas cylinders",
-    "customerSummary": "Circular rigid hard tag RFID Tag | UHF | Applications: Gas cylinders, Beverage barrels",
+    "id": "omni-id-adept-500-gs",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Adept 500 GS",
+    "summary_en": "Small circular UHF hard tag designed for permanent attachment to the shoulder of industrial gas cylinders and beverage kegs. Global frequency, Monza R6-P IC with exceptional 12 m fixed read range.",
+    "feature_highlights_en": [
+      "Impinj Monza R6-P – EPC Class 1 Gen2v2, 860–930 MHz (GS)",
+      "Read range: 12 m fixed / 5 m handheld – optimized for metal",
+      "IP68, MIL-STD-810 F – circular 37×37 mm, adhesive attachment"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range": "860–930 MHz (GS)",
+          "IC Type (Chip)": "Impinj Monza R6-P",
+          "EPC Memory": "128 (96) bits",
+          "User Memory": "32 (64) bits",
+          "Unique TID": "48 bits",
+          "Read Range – Fixed Reader": "Up to 12.0 m / 39.4 ft",
+          "Read Range – Handheld Reader": "Up to 5 m / 16.4 ft",
+          "Material Compatibility": "Metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "37 × 37 × 11.5 mm / 1.46 × 1.46 × 0.45 in",
+          "Material": "Durable thermoplastic material",
+          "Weight": "9.8 g",
+          "Attachment": "Adhesive (standard)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +65°C",
+          "Short Term Max Temperature": "+75°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 F",
+          "Certifications": "CE, RoHS; optional ATEX/IECEx, US&Canada C1D1/D2"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Adept-500-gs-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-adept-500-gs-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-adept-500-gs/",
-    "frequency": "UHF",
-    "frequencyBand": "860-930 MHz (GS)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Impinj Monza R6P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Circular rigid hard tag",
-    "sizeText": "37 x 37 x 11.5 mm",
-    "material": "Durable thermoplastic elastomer",
-    "fixedReadRange": "up to 12m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 65C",
-    "ipRating": "IP68",
-    "applications": [
-      "Gas cylinders",
-      "Beverage barrels"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Circular rigid hard tag",
-      "On Metal",
-      "Impinj Monza R6P",
-      "Gas cylinders",
-      "Beverage barrels"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Adept 500 GS Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-adept-500-gs-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-adept-500-gs/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-exo-400-ht",
-    "title": "Omni-ID Exo 400 HT",
-    "brand": "Omni-ID",
-    "model": "Exo 400 HT",
-    "sku": "Exo 400 HT",
-    "subtitle": "Compact rectangular tag RFID Tag",
-    "shortDesc": "High-temperature RFID tag for metal surfaces, withstanding temperatures up to 235°C",
-    "description": "Model: Exo 400 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Compact rectangular tag. High-temperature RFID tag for metal surfaces, withstanding temperatures up to 235°C",
-    "customerSummary": "Compact rectangular tag RFID Tag | UHF | Applications: Healthcare sterilization, Manufacturing, Automotive paint processes",
+    "id": "omni-id-exo-400-ht",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID High Temperature Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Exo 400 HT",
+    "summary_en": "Small form factor High Temperature UHF RFID tag optimized for metal, withstanding cycling temperatures up to +235°C. Ideal for healthcare sterilization, manufacturing and automotive paint processes.",
+    "feature_highlights_en": [
+      "Alien Higgs 3 – EPC Class 1 Gen2v2, EU 866–868 MHz / US 902–928 MHz",
+      "Survives cycling up to +235°C – read range 4 m fixed / 2 m handheld",
+      "IP68, MIL-STD-810 G – 37×14×7.5 mm, mechanical attachment (2×3mm holes)"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range – EU": "866–868 MHz",
+          "Frequency Range – US": "902–928 MHz",
+          "IC Type (Chip)": "Alien Higgs 3",
+          "EPC Memory": "96 bits",
+          "User Memory": "512 bits",
+          "Unique TID": "64 bits",
+          "Read Range – Fixed Reader": "Up to 4 m / 13.1 ft",
+          "Read Range – Handheld Reader": "Up to 2 m / 6.5 ft",
+          "Material Compatibility": "Metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "37 × 14 × 7.5 mm / 1.46 × 0.55 × 0.30 in",
+          "Material": "Thermoplastic cover",
+          "Weight": "5.7 g",
+          "Attachment": "Mechanical (2 × 3mm holes, standard)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +85°C",
+          "Max Temperature Exposure": "-20°C to +235°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, RoHS; optional ATEX/IECEx, US&Canada C1D1/D2"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Exo-400-HT-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-exo-400-ht-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-exo-400-ht/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Compact rectangular tag",
-    "sizeText": "37 x 14 x 7.5 mm",
-    "material": "Thermoplastic cover",
-    "fixedReadRange": "up to 4m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Healthcare sterilization",
-      "Manufacturing",
-      "Automotive paint processes"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Compact rectangular tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Healthcare sterilization",
-      "Manufacturing"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Exo 400 HT Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-exo-400-ht-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-exo-400-ht/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-fit-220-ht",
-    "title": "Omni-ID Fit 220 HT",
-    "brand": "Omni-ID",
-    "model": "Fit 220 HT",
-    "sku": "Fit 220 HT",
-    "subtitle": "Small rectangular tag RFID Tag",
-    "shortDesc": "Smallest regional RFID tag capable of withstanding thermal cycling to +235°C",
-    "description": "Model: Fit 220 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Small rectangular tag. Smallest regional RFID tag capable of withstanding thermal cycling to +235°C",
-    "customerSummary": "Small rectangular tag RFID Tag | UHF | Applications: Small hand tools, IT assets, Medical instruments",
+    "id": "omni-id-fit-220-ht",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID High Temperature Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Fit 220 HT",
+    "summary_en": "The smallest regional UHF RFID tag capable of surviving cycling to +235°C. At just 6.8×6.8 mm, the Fit 220 HT tracks very small metal assets including hand tools, IT assets and medical instruments.",
+    "feature_highlights_en": [
+      "Alien Higgs 3 – EPC Class 1 Gen2v2, EU/US dual frequency",
+      "Smallest high-temp tag: 6.8×6.8×2.7 mm, 0.6 g",
+      "Survives cycling to +235°C – IP68, MIL-STD-810 G"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range – EU": "866–868 MHz",
+          "Frequency Range – US": "902–928 MHz",
+          "IC Type (Chip)": "Alien Higgs 3",
+          "EPC Memory": "96 bits",
+          "User Memory": "512 bits",
+          "Unique TID": "64 bits",
+          "Read Range – Fixed Reader": "Up to 2.2 m / 7.2 ft",
+          "Read Range – Handheld Reader": "Up to 1.4 m / 4.6 ft",
+          "Material Compatibility": "Metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "6.8 × 6.8 × 2.7 mm (without IC bump)",
+          "Material": "Painted Black",
+          "Weight": "0.6 g",
+          "Attachment": "Film Adhesive (included)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +85°C",
+          "Max Temperature Exposure": "-20°C to +235°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, RoHS, Ex; optional ATEX/IECEx, US&Canada C1D1/D2"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Fit-220HT-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-220-ht-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-fit-220-ht/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Small rectangular tag",
-    "sizeText": "6.8 x 6.8 x 2.7 mm",
-    "material": "Painted Black",
-    "fixedReadRange": "up to 2.2m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Small hand tools",
-      "IT assets",
-      "Medical instruments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Small rectangular tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Small hand tools",
-      "IT assets"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Fit 220 HT Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-220-ht-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-fit-220-ht/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-fit-400-ht",
-    "title": "Omni-ID Fit 400 HT",
-    "brand": "Omni-ID",
-    "model": "Fit 400 HT",
-    "sku": "Fit 400 HT",
-    "subtitle": "Compact tag RFID Tag",
-    "shortDesc": "Compact high-temperature RFID tag withstanding temperatures up to 235°C for small metal assets",
-    "description": "Model: Fit 400 HT. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Compact tag. Compact high-temperature RFID tag withstanding temperatures up to 235°C for small metal assets",
-    "customerSummary": "Compact tag RFID Tag | UHF | Applications: Small metal hand tools, IT assets, Autoclaves, High-temperature sterilization",
+    "id": "omni-id-fit-400-ht",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID High Temperature Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Fit 400 HT",
+    "summary_en": "Compact High Temperature UHF RFID tag surviving cycling to +235°C with up to 4 m read range. At 13.1×7.8 mm the Fit 400 HT tracks small metal hand tools, IT assets and autoclave/sterilization applications.",
+    "feature_highlights_en": [
+      "Alien Higgs 3 – EPC Class 1 Gen2v2, EU/US dual frequency",
+      "Read range: 4 m fixed / 2 m handheld – 13.1×7.8×3.1 mm form factor",
+      "Survives cycling to +235°C – IP68, CE, RoHS, Ex certified"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range – EU": "866–868 MHz",
+          "Frequency Range – US": "902–928 MHz",
+          "IC Type (Chip)": "Alien Higgs 3",
+          "EPC Memory": "96 bits",
+          "User Memory": "512 bits",
+          "Unique TID": "64 bits",
+          "Read Range – Fixed Reader": "Up to 4 m / 13.1 ft",
+          "Read Range – Handheld Reader": "Up to 2 m / 6.5 ft",
+          "Material Compatibility": "Metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "13.1 × 7.8 × 3.1 mm / 0.52 × 0.31 × 0.12 in",
+          "Material": "Painted Black",
+          "Weight": "1.6 g",
+          "Attachment": "Film Adhesive (included)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +85°C",
+          "Max Temperature Exposure": "-20°C to +235°C",
+          "IP Rating": "IP68",
+          "Certifications": "CE, RoHS, Ex; optional ATEX/IECEx, US&Canada C1D1/D2"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Fit-220HT-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-400-ht-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-fit-400-ht/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Compact tag",
-    "sizeText": "13.1 x 7.8 x 3.1 mm",
-    "material": "Painted Black",
-    "fixedReadRange": "up to 4m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-20C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Small metal hand tools",
-      "IT assets",
-      "Autoclaves",
-      "High-temperature sterilization"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Compact tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Small metal hand tools",
-      "IT assets"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Fit 400 HT Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-400-ht-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-fit-400-ht/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-fit-400p",
-    "title": "Omni-ID Fit 400P",
-    "brand": "Omni-ID",
-    "model": "Fit 400P",
-    "sku": "Fit 400P",
-    "subtitle": "Low-profile tag RFID Tag",
-    "shortDesc": "Low-profile high-performance RFID tag for non-metallic substrates and plastics",
-    "description": "Model: Fit 400P. Brand: Omni-ID. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: non_metal. Form factor: Low-profile tag. Low-profile high-performance RFID tag for non-metallic substrates and plastics",
-    "customerSummary": "Low-profile tag RFID Tag | UHF | Applications: Plastic handles on hand tools, Small plastic instruments, Plastic components",
+    "id": "omni-id-fit-400p",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID Hard Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Fit 400P",
+    "summary_en": "Compact ceramic UHF RFID tag optimized for non-metallic and plastic substrates. Compatible with heat shrink, potting and injection moulding finishing processes for covert embedding in plastic assets and tool handles.",
+    "feature_highlights_en": [
+      "EM 4124 – EPC Class 1 Gen2v2, EU/US dual frequency",
+      "Read range: 4 m fixed / 2 m handheld – optimized for plastic/non-metal",
+      "IP68, MIL-STD-810 G – ceramic 17.6×7.1×4.1 mm, covert tag"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range – EU": "866–868 MHz",
+          "Frequency Range – US": "902–928 MHz",
+          "IC Type (Chip)": "EM 4124",
+          "EPC Memory": "96 bits",
+          "User Memory": "0 bits",
+          "Unique TID": "64 bits",
+          "Read Range – Fixed Reader": "Up to 4 m / 13.1 ft",
+          "Read Range – Handheld Reader": "Up to 2 m / 6.5 ft",
+          "Material Compatibility": "Plastic and non-metallic substrates"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "17.6 × 7.1 × 4.1 mm / 0.70 × 0.28 × 0.16 in",
+          "Material": "Ceramic",
+          "Weight": "2.6 g",
+          "Attachment": "Permanent liquid adhesive (not included) or film adhesive (option)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-40°C to +75°C",
+          "Application Temperature": "+18°C to +35°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, RoHS"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-Fit-400P-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-400-p-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-fit-400p/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "EM 4124",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Low-profile tag",
-    "sizeText": "17.6 x 7.1 x 4.1 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "up to 4m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 75C",
-    "ipRating": "IP68",
-    "applications": [
-      "Plastic handles on hand tools",
-      "Small plastic instruments",
-      "Plastic components"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Low-profile tag",
-      "Non Metal",
-      "EM 4124",
-      "Plastic handles on hand tools",
-      "Small plastic instruments"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Fit 400P Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-fit-400-p-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-fit-400p/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-iq-400p-ht",
-    "title": "Omni-ID IQ 400P HT",
-    "brand": "Omni-ID",
-    "model": "IQ 400P HT",
-    "sku": "IQ 400P HT",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "High-temperature synthetic RFID label withstanding up to 230°C for single-use applications",
-    "description": "Model: IQ 400P HT. Brand: Omni-ID. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Adhesive label. High-temperature synthetic RFID label withstanding up to 230°C for single-use applications",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Manufacturing, Automotive paint processes, Electronics",
+    "id": "omni-id-iq-400p-ht",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID High Temperature Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID IQ 400P HT",
+    "summary_en": "High temperature synthetic RFID hang tag rated to +230°C for single-use manufacturing applications. Global frequency with Alien Higgs 3 IC, optimized for thermal barcode printing in automotive paint and electronics processes.",
+    "feature_highlights_en": [
+      "Alien Higgs 3 – EPC Class 1 Gen2v2, 860–960 MHz (Global)",
+      "Survives up to +230°C – read range 4 m fixed / 2 m handheld",
+      "IP68 – 50×30×0.49 mm synthetic label, CE, RoHS, Ex certified"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range": "860–960 MHz (Global)",
+          "IC Type (Chip)": "Alien Higgs 3",
+          "EPC Memory": "96 bits",
+          "User Memory": "512 bits",
+          "Unique TID": "64 bits",
+          "Read Range – Fixed Reader": "Up to 4 m / 13.1 ft",
+          "Read Range – Handheld Reader": "Up to 2 m / 6.5 ft",
+          "Material Compatibility": "Plastic and non-metallic substrates"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "50 × 30 × 0.49 mm / 1.97 × 1.18 × 0.02 in",
+          "Material": "High Temperature Synthetic Label",
+          "Weight": "0.51 g",
+          "Attachment": "Holes for mechanical attachment",
+          "Supply Format": "1 roll (1,020 labels)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Max Temperature Exposure": "-40°C to +230°C",
+          "IP Rating": "IP68",
+          "Certifications": "CE, RoHS, Ex; optional ATEX/IECEx"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-IQ-400P-HT-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-iq-400-p-ht-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-iq-400p-ht/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Alien Higgs-3",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "50 x 30 x 0.49 mm",
-    "material": "High Temperature Synthetic Label",
-    "fixedReadRange": "up to 4m off metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Manufacturing",
-      "Automotive paint processes",
-      "Electronics"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Alien Higgs-3",
-      "Manufacturing",
-      "Automotive paint processes"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID IQ 400P HT Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-iq-400-p-ht-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-iq-400p-ht/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-iq-800p-ht",
-    "title": "Omni-ID IQ 800P HT",
-    "brand": "Omni-ID",
-    "model": "IQ 800P HT",
-    "sku": "IQ 800P HT",
-    "subtitle": "Adhesive label RFID Tag",
-    "shortDesc": "High-temperature synthetic RFID label withstanding up to 230°C for manufacturing applications",
-    "description": "Model: IQ 800P HT. Brand: Omni-ID. Frequency: 860-960 MHz (Global). Surface: non_metal. Form factor: Adhesive label. High-temperature synthetic RFID label withstanding up to 230°C for manufacturing applications",
-    "customerSummary": "Adhesive label RFID Tag | UHF | Applications: Manufacturing, Automotive paint processes, Electronics",
+    "id": "omni-id-iq-800p-ht",
+    "display_brand": "Omni-ID",
+    "category": "UHF RFID High Temperature Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID IQ 800P HT",
+    "summary_en": "Large format high temperature synthetic RFID hang tag rated to +230°C. Global frequency with Impinj M730 IC delivering 12 m fixed read range for manufacturing, automotive paint and electronics single-use applications.",
+    "feature_highlights_en": [
+      "Impinj M730 – EPC Class 1 Gen2v2, 860–960 MHz (Global)",
+      "Exceptional 12 m fixed / 6 m handheld read range",
+      "Survives up to +230°C – IP68, MIL-STD-810 G, 85×55 mm label"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "EPC Class 1 Gen2v2",
+          "Frequency Range": "860–960 MHz (Global)",
+          "IC Type (Chip)": "Impinj M730",
+          "EPC Memory": "128 bits",
+          "User Memory": "0 bits",
+          "Unique TID": "48 bits",
+          "Read Range – Fixed Reader": "Up to 12.0 m / 39.4 ft",
+          "Read Range – Handheld Reader": "Up to 6.0 m / 19.7 ft",
+          "Material Compatibility": "Plastic"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "85 × 55 × 0.49 mm / 3.35 × 2.17 × 0.02 in",
+          "Material": "High Temperature Synthetic Label",
+          "Weight": "1.5 g",
+          "Attachment": "Holes for mechanical attachment",
+          "Supply Format": "1,020 labels (1 roll)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Max Temperature Exposure": "-40°C to +230°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, RoHS"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-IQ-400P-HT.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-iq-800-p-ht-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-iq-800p-ht/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen2v2",
-    "chip": "Impinj M730",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Adhesive label",
-    "sizeText": "85 x 55 x 0.49 mm",
-    "material": "High Temperature Synthetic Label",
-    "fixedReadRange": "up to 12m off metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Manufacturing",
-      "Automotive paint processes",
-      "Electronics"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive label",
-      "Non Metal",
-      "Impinj M730",
-      "Manufacturing",
-      "Automotive paint processes"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID IQ 800P HT Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-iq-800-p-ht-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-iq-800p-ht/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-sense-asset-xl",
-    "title": "Omni-ID Sense Asset XL",
-    "brand": "Omni-ID",
-    "model": "Sense Asset XL",
-    "sku": "Sense Asset XL",
-    "subtitle": "Asset tracking device RFID Tag",
-    "shortDesc": "IoT device combining GPS and LoRa technologies for long-range asset tracking",
-    "description": "Model: Sense Asset XL. Brand: Omni-ID. Frequency: LoRa. Surface: both. Form factor: Asset tracking device. IoT device combining GPS and LoRa technologies for long-range asset tracking",
-    "customerSummary": "Asset tracking device RFID Tag | UHF | Applications: Container management, Port operations, Field operations, Fleet tracking",
+    "id": "omni-id-sense-asset-xl",
+    "display_brand": "Omni-ID",
+    "category": "IoT Asset Tracking Device",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Sense Asset XL",
+    "summary_en": "Ultra-rugged LoRaWAN + GPS IoT device for long-range outdoor asset tracking. 3-year battery life with GPS, accelerometer and temperature sensors for container management, ports, field operations and fleet tracking.",
+    "feature_highlights_en": [
+      "NFC + LoRaWAN – GPS, accelerometer and temperature sensors",
+      "3-year battery life (3.2 Ah) – outdoor accuracy with LoRa",
+      "IP68, MIL-STD-810 G – 113×58×24 mm rugged TPE construction"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "NFC, LoRaWAN",
+          "Supported Profiles": "868 MHz – Europe / 915 MHz – USA",
+          "Sensors": "GPS, Accelerometer, Temperature",
+          "Temperature Sensor Range": "-20°C to +60°C (±2°C accuracy)",
+          "Battery Type": "Sealed prismatic battery, non-replaceable",
+          "Battery Capacity": "3.2 Ah",
+          "Battery Life": "3 years (DBR 24h, 1 movement/day)",
+          "Default Beacon Rate": "1–254 hours",
+          "Visual Indicator": "Bi-color LED"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size": "113.4 × 58.3 × 24.3 mm / 4.46 × 2.30 × 0.96 in",
+          "Material": "Overmoulded durable, shock resistant TPE",
+          "Weight": "134 g",
+          "Attachment": "Mechanical (std), cable tie, magnet, foam adhesive"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-20°C to +60°C",
+          "IP Rating": "IP68",
+          "Shock & Vibration": "MIL-STD-810 G",
+          "Certifications": "CE, FCC, RoHS, NFC, LoRa"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-sense-asset-xl-2-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-sense-asset-xl-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-sense-asset-xl/",
-    "frequency": "UHF",
-    "frequencyBand": "LoRa",
-    "protocol": "LoRa/GPS",
-    "chip": "",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Asset tracking device",
-    "sizeText": "Standard",
-    "material": "Ultra-durable construction",
-    "fixedReadRange": "Long distance",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Container management",
-      "Port operations",
-      "Field operations",
-      "Fleet tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Asset tracking device",
-      "On Metal",
-      "Container management",
-      "Port operations"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Sense Asset XL Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-sense-asset-xl-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-sense-asset-xl/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
-    "slug": "omni-id-sense-shield",
-    "title": "Omni-ID Sense Shield",
-    "brand": "Omni-ID",
-    "model": "Sense Shield",
-    "sku": "Sense Shield",
-    "subtitle": "Wearable (Lanyard / Belt Clip / Watch Strap) RFID Tag",
-    "shortDesc": "Wearable BLE beacon device for contact tracing and personnel tracking with sub-meter accuracy",
-    "description": "Model: Sense Shield. Brand: Omni-ID. Frequency: BLE. Surface: non_metal. Form factor: Wearable (Lanyard / Belt Clip / Watch Strap). Wearable BLE beacon device for contact tracing and personnel tracking with sub-meter accuracy",
-    "customerSummary": "Wearable (Lanyard / Belt Clip / Watch Strap) RFID Tag | UHF | Applications: Asset Tracking, Personnel Tracking, Contact Tracing, Social Distance Monitoring",
+    "id": "omni-id-sense-shield",
+    "display_brand": "Omni-ID",
+    "category": "BLE Wearable Beacon",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Omni-ID Sense Shield",
+    "summary_en": "Wearable BLE beacon with Quuppa technology for sub-1-metre contact tracing and personnel tracking. Enables social distancing monitoring and worker safety alerts in warehouses, hospitals, ports and construction yards.",
+    "feature_highlights_en": [
+      "Bluetooth + NFC with Quuppa – sub-1-metre personnel tracking",
+      "6-month battery life (CR2032) – audible alert on distance breach",
+      "IP68 – 3 variants: lanyard, belt clip or watch strap"
+    ],
+    "sections": [
+      {
+        "name": "RF SPECIFICATION",
+        "items": {
+          "Radio Protocol": "Bluetooth, NFC",
+          "Supported Profiles": "Quuppa",
+          "Location Accuracy": "Sub 1 metre",
+          "Battery Type": "Replaceable CR2032",
+          "Battery Capacity": "225 mAh",
+          "Battery Life": "6 months (10h moving/day + 14h stationary/day)",
+          "Visual Indicator": "Bi-color LED"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Size – Lanyard/Belt Clip": "50.1 × 44.5 × 13 mm",
+          "Size – Watch Strap": "44.5 mm bezel",
+          "Material": "2-part durable plastic case",
+          "Attachment": "3 variants: lanyard, belt clip or watch strap"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL SPECIFICATION",
+        "items": {
+          "Operating Temperature": "-10°C to +60°C",
+          "IP Rating": "IP68",
+          "Certifications": "CE, FCC, RoHS, NFC, Bluetooth"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-sense-shield-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-sense-shield-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/omni-id-sense-shield/",
-    "frequency": "UHF",
-    "frequencyBand": "BLE",
-    "protocol": "BLE (Bluetooth Low Energy) with Quuppa",
-    "chip": "",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Wearable (Lanyard / Belt Clip / Watch Strap)",
-    "sizeText": "Standard",
-    "material": "",
-    "fixedReadRange": "Sub-1 meter accuracy",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Asset Tracking",
-      "Personnel Tracking",
-      "Contact Tracing",
-      "Social Distance Monitoring"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Wearable (Lanyard / Belt Clip / Watch Strap)",
-      "Non Metal",
-      "Asset Tracking",
-      "Personnel Tracking"
-    ]
+    "details_break_before": true,
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Omni-ID Sense Shield Datasheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/omni-id-sense-shield-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/omni-id-sense-shield/",
+      "last_updated": "2026-06-03"
+    }
   },
   {
     "slug": "rfid-discovery-voyager-10040",
@@ -21214,7 +22300,1094 @@ const allRfidTags: RfidTag[] = [
   }
 ];
 
-export const rfidTags = allRfidTags.filter(tag => tag.brand !== 'RichRFID');
+const localDatasheetSlugs = new Set([
+  'alien-aln-9654',
+  'alien-aln-9654-4x2',
+  'altis-pvc-rti-label',
+  'confidex-carrier-classic',
+  'confidex-carrier-dual',
+  'confidex-carrier-hf',
+  'confidex-carrier-klt',
+  'confidex-carrier-pro',
+  'confidex-carrier-tough-slim',
+  'confidex-casey',
+  'confidex-crosswave-classic',
+  'confidex-crosswave-neo',
+  'confidex-crosswave-neo-4x6',
+  'confidex-cruiser-headlamp',
+  'confidex-cruiser-windshield',
+  'confidex-cruiser-windshield-crypto',
+  'confidex-ferrowave-classic',
+  'confidex-ferrowave-micro',
+  'confidex-heatwave-flag',
+  'confidex-heatwave-tough',
+  'confidex-ironside-classic',
+  'confidex-ironside-flag',
+  'confidex-ironside-micro',
+  'confidex-ironside-micro-nfc',
+  'confidex-ironside-plate',
+  'confidex-ironside-slim',
+  'confidex-leaf',
+  'confidex-looptag',
+  'confidex-steelwave-classic',
+  'confidex-steelwave-micro-ii',
+  'avery-ad-141-u9',
+  'avery-ad-163u8',
+  'avery-ad-164-u9',
+  'avery-ad-183-u9',
+  'avery-ad-192-m730',
+  'avery-ad-229r6-p',
+  'avery-dennison-ad-238u8',
+  'avery-ad-239-m730',
+  'avery-ad-23x-u9',
+  'avery-ad-23x-u9-pure-95',
+  'avery-ad-23x-u9-slim',
+  'avery-dennison-ad-324u8',
+  'avery-dennison-ad-385u8',
+  'avery-dennison-ad-sample-pack',
+  'brady-tht-nfc-pet-25x25',
+  'brady-tht-uhf-pet-64x6',
+  'brady-tht-df-423-33x17',
+  'brady-tht-df-423-66x46',
+  'brady-tht-nfc-423-50x40',
+  'brady-tht-uhf-423-53x26',
+  'brady-tht-uhf-423-93x26',
+  'brady-tht-uhf-b481-24x16',
+  'brady-tht-uhf-7425-45x30',
+  'brady-tht-uhf-7425-53x26',
+  'omni-id-adept-400-5-layer-gs',
+  'omni-id-adept-400-5-layer-us',
+  'omni-id-adept-500-gs',
+  'omni-id-exo-400-ht',
+  'omni-id-fit-220-ht',
+  'omni-id-fit-400-ht',
+  'omni-id-fit-400p',
+  'omni-id-iq-400p-ht',
+  'omni-id-iq-800p-ht',
+  'omni-id-sense-asset-xl',
+  'omni-id-sense-shield',
+]);
+
+const localImageExtensions: Record<string, string> = {
+  'alien-aln-9654': 'webp',
+  'alien-aln-9654-4x2': 'webp',
+  'altis-pvc-rti-label': 'webp',
+  'confidex-carrier-classic': 'webp',
+  'confidex-carrier-dual': 'webp',
+  'confidex-carrier-hf': 'webp',
+  'confidex-carrier-klt': 'webp',
+  'confidex-carrier-pro': 'webp',
+  'confidex-carrier-tough-slim': 'webp',
+  'confidex-casey': 'webp',
+  'confidex-crosswave-classic': 'webp',
+  'confidex-crosswave-neo': 'webp',
+  'confidex-crosswave-neo-4x6': 'webp',
+  'confidex-cruiser-headlamp': 'webp',
+  'confidex-cruiser-windshield': 'webp',
+  'confidex-cruiser-windshield-crypto': 'webp',
+  'confidex-ferrowave-classic': 'webp',
+  'confidex-ferrowave-micro': 'webp',
+  'confidex-heatwave-flag': 'webp',
+  'confidex-heatwave-tough': 'webp',
+  'confidex-ironside-classic': 'webp',
+  'confidex-ironside-flag': 'webp',
+  'confidex-ironside-micro': 'webp',
+  'confidex-ironside-micro-nfc': 'webp',
+  'confidex-ironside-plate': 'webp',
+  'confidex-ironside-slim': 'webp',
+  'confidex-leaf': 'webp',
+  'confidex-looptag': 'webp',
+  'confidex-steelwave-classic': 'webp',
+  'confidex-steelwave-micro-ii': 'webp',
+  'avery-ad-141-u9': 'png',
+  'avery-ad-163u8': 'png',
+  'avery-ad-164-u9': 'png',
+  'avery-ad-183-u9': 'png',
+  'avery-ad-192-m730': 'png',
+  'avery-ad-229r6-p': 'png',
+  'avery-dennison-ad-238u8': 'webp',
+  'avery-ad-239-m730': 'png',
+  'avery-ad-23x-u9': 'png',
+  'avery-ad-23x-u9-pure-95': 'png',
+  'avery-ad-23x-u9-slim': 'png',
+  'avery-dennison-ad-324u8': 'webp',
+  'avery-dennison-ad-385u8': 'webp',
+  'avery-dennison-ad-sample-pack': 'webp',
+  'brady-tht-nfc-pet-25x25': 'webp',
+  'brady-tht-uhf-pet-64x6': 'webp',
+  'brady-tht-df-423-33x17': 'webp',
+  'brady-tht-df-423-66x46': 'webp',
+  'brady-tht-nfc-423-50x40': 'webp',
+  'brady-tht-uhf-423-53x26': 'webp',
+  'brady-tht-uhf-423-93x26': 'webp',
+  'brady-tht-uhf-b481-24x16': 'webp',
+  'brady-tht-uhf-7425-45x30': 'webp',
+  'brady-tht-uhf-7425-53x26': 'webp',
+  'omni-id-adept-400-5-layer-gs': 'webp',
+  'omni-id-adept-400-5-layer-us': 'webp',
+  'omni-id-adept-500-gs': 'webp',
+  'omni-id-exo-400-ht': 'webp',
+  'omni-id-fit-220-ht': 'webp',
+  'omni-id-fit-400-ht': 'webp',
+  'omni-id-fit-400p': 'webp',
+  'omni-id-iq-400p-ht': 'webp',
+  'omni-id-iq-800p-ht': 'webp',
+  'omni-id-sense-asset-xl': 'webp',
+  'omni-id-sense-shield': 'webp',
+};
+
+const localGalleryCounts: Record<string, number> = {
+  'alien-aln-9654-4x2': 3,
+  'altis-pvc-rti-label': 5,
+  'confidex-carrier-dual': 3,
+  'confidex-cruiser-windshield': 4,
+  'confidex-ironside-slim': 2,
+  'brady-tht-df-423-33x17': 2,
+  'brady-tht-df-423-66x46': 2,
+  'brady-tht-uhf-423-53x26': 2,
+  'brady-tht-uhf-7425-45x30': 2,
+  'brady-tht-uhf-7425-53x26': 2,
+};
+
+const confidexTurkishCopy: Record<string, { title?: string; shortDesc: string; description?: string; applications?: string[] }> = {
+  'confidex-carrier-classic': { title: 'Confidex Carrier Classic RFID Etiketi (Monza 4QT)', shortDesc: 'Confidex Carrier Classic RFID Etiketi (Monza 4QT) plastik y\u00fczeyler i\u00e7in tasarlanm\u0131\u015f, yap\u0131\u015fkanl\u0131 ve suya dayan\u0131kl\u0131 UHF RFID etiketi burada!', description: 'Confidex Carrier Classic RFID Etiketi (Monza 4QT) plastik y\u00fczeyler i\u00e7in tasarlanm\u0131\u015f, yap\u0131\u015fkanl\u0131 ve suya dayan\u0131kl\u0131 UHF RFID etiketi burada!' },
+  'confidex-carrier-dual': { title: 'Confidex Carrier Dual Etiket', shortDesc: 'Tedarik zinciri y\u00f6netimi ve envanter say\u0131m\u0131 i\u00e7in uzun menzilli bir okuma imkan\u0131 sunan Confidex Carrier Dual RFID Etiket \u015fimdi stoklar\u0131m\u0131zda!', description: 'Tedarik zinciri y\u00f6netimi ve envanter say\u0131m\u0131 i\u00e7in uzun menzilli bir okuma imkan\u0131 sunan Confidex Carrier Dual RFID Etiket \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-carrier-hf': { title: 'Confidex Carrier HF', shortDesc: 'Confidex Carrier HF y\u0131kanabilir, iade edilebilir ta\u015f\u0131ma \u00fcr\u00fcnleri i\u00e7in yaz\u0131c\u0131 uyumlu bir NFC ve HF RFID etiketidir.', description: 'Confidex Carrier HF y\u0131kanabilir, iade edilebilir ta\u015f\u0131ma \u00fcr\u00fcnleri i\u00e7in yaz\u0131c\u0131 uyumlu bir NFC ve HF RFID etiketidir.' },
+  'confidex-carrier-klt': { title: 'Confidex Carrier KLT Etiket', shortDesc: 'Confidex Carrier KLT Etiket \u00e7e\u015fitli plastik kap t\u00fcrlerine \u00f6zel, otomotiv end\u00fcstrisi uygulamalar\u0131 i\u00e7in tasarlanm\u0131\u015f yap\u0131\u015ft\u0131r\u0131labilir etikettir.', description: 'Confidex Carrier KLT Etiket \u00e7e\u015fitli plastik kap t\u00fcrlerine \u00f6zel, otomotiv end\u00fcstrisi uygulamalar\u0131 i\u00e7in tasarlanm\u0131\u015f yap\u0131\u015ft\u0131r\u0131labilir etikettir.' },
+  'confidex-carrier-pro': { title: 'Confidex Carrier Pro Etiket', shortDesc: 'Yiyecek sekt\u00f6r\u00fcnde ve y\u00fcksek su i\u00e7eren \u00fcr\u00fcnlerin ta\u015f\u0131nmas\u0131nda kullan\u0131labilen Carrier Pro RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!', description: 'Yiyecek sekt\u00f6r\u00fcnde ve y\u00fcksek su i\u00e7eren \u00fcr\u00fcnlerin ta\u015f\u0131nmas\u0131nda kullan\u0131labilen Carrier Pro RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-carrier-tough-slim': { title: 'Confidex Carrier Tough Slim Etiket', shortDesc: 'Confidex Carrier Tough Slim etiket, esnek yap\u0131s\u0131 sayesinde t\u00fcm zorlu y\u00fczeylerde kullan\u0131m imkan\u0131 sa\u011flayan bir RFID etiketidir.', description: 'Confidex Carrier Tough Slim etiket, esnek yap\u0131s\u0131 sayesinde t\u00fcm zorlu y\u00fczeylerde kullan\u0131m imkan\u0131 sa\u011flayan bir RFID etiketidir.' },
+  'confidex-casey': { title: 'Confidex Casey RFID Etiketi (Monza R6-P)', shortDesc: 'End\u00fcstriyel alanda kullan\u0131lmak \u00fczere tasarlanm\u0131\u015f olan Confidex Casey RFID Etiketi birbirinden farkl\u0131 pek \u00e7ok alanda da kullan\u0131ma uygun bir etikettir.', description: 'End\u00fcstriyel alanda kullan\u0131lmak \u00fczere tasarlanm\u0131\u015f olan Confidex Casey RFID Etiketi birbirinden farkl\u0131 pek \u00e7ok alanda da kullan\u0131ma uygun bir etikettir.' },
+  'confidex-crosswave-classic': { title: 'Confidex Crosswave Classic Etiket', shortDesc: 'Plastik ve karton y\u00fczeyler i\u00e7in optimize edilen Confidex Crosswave Classic RFID Etiket,lojistik uygulamalar\u0131 i\u00e7in ideal bir \u00e7\u00f6z\u00fcm sunan bir RFID etiketidir.', description: 'Plastik ve karton y\u00fczeyler i\u00e7in optimize edilen Confidex Crosswave Classic RFID Etiket,lojistik uygulamalar\u0131 i\u00e7in ideal bir \u00e7\u00f6z\u00fcm sunan bir RFID etiketidir.' },
+  'confidex-crosswave-neo': { title: 'Confidex Crosswave Neo Etiket', shortDesc: 'Lojistik uygulamalar\u0131nda kullan\u0131lmak \u00fczere tasarlanm\u0131\u015f olan Confidex Crosswave Neo RFID etiketi \u015fimdi stoklar\u0131m\u0131zda! Hemen her sekt\u00f6rde kullan\u0131ma uygundur.', description: 'Lojistik uygulamalar\u0131nda kullan\u0131lmak \u00fczere tasarlanm\u0131\u015f olan Confidex Crosswave Neo RFID etiketi \u015fimdi stoklar\u0131m\u0131zda! Hemen her sekt\u00f6rde kullan\u0131ma uygundur.' },
+  'confidex-crosswave-neo-4x6': { title: 'Confidex Crosswave Neo 4x6"', shortDesc: 'Confidex Crosswave Neo (4" x 6") RFID etiketi ile linear anten ile kullan\u0131ld\u0131\u011f\u0131nda bile s\u00fcrekli y\u00fcksek okuma oranlar\u0131 elde eder. Hemen al\u0131n!', description: 'Confidex Crosswave Neo (4" x 6") RFID etiketi ile linear anten ile kullan\u0131ld\u0131\u011f\u0131nda bile s\u00fcrekli y\u00fcksek okuma oranlar\u0131 elde eder. Hemen al\u0131n!' },
+  'confidex-cruiser-headlamp': { title: 'Confidex Cruiser Headlamp Etiket', shortDesc: 'Ara\u00e7 farlar\u0131 ve \u00f6n camlar\u0131nda kullanabilece\u011finiz Confidex Cruiser Headlamp RFID etiketi \u015fimdi stoklar\u0131m\u0131zda! Hemen sat\u0131n al\u0131n!', description: 'Ara\u00e7 farlar\u0131 ve \u00f6n camlar\u0131nda kullanabilece\u011finiz Confidex Cruiser Headlamp RFID etiketi \u015fimdi stoklar\u0131m\u0131zda! Hemen sat\u0131n al\u0131n!' },
+  'confidex-cruiser-windshield': { title: 'Confidex Cruiser Windshield Etiket', shortDesc: 'Otomobillerin \u00f6n cam\u0131nda kullan\u0131lmak \u00fczere tasarlanm\u0131\u015f olan Confidex Cruiser Windshield RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!Ara\u00e7 HGS etiketi Cruiser Windshield', description: 'Otomobillerin \u00f6n cam\u0131nda kullan\u0131lmak \u00fczere tasarlanm\u0131\u015f olan Confidex Cruiser Windshield RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!Ara\u00e7 HGS etiketi Cruiser Windshield' },
+  'confidex-cruiser-windshield-crypto': { title: 'Confidex Cruiser Windshield Crypto Etiket', shortDesc: 'Y\u00fcksek h\u0131zl\u0131 otomatik ara\u00e7 tan\u0131mlama, park etme ve otomatik ge\u00e7i\u015f \u00fccreti toplamak i\u00e7in Confidex Cruiser Windshield Crypto Etiketi tercih edin!', description: 'Y\u00fcksek h\u0131zl\u0131 otomatik ara\u00e7 tan\u0131mlama, park etme ve otomatik ge\u00e7i\u015f \u00fccreti toplamak i\u00e7in Confidex Cruiser Windshield Crypto Etiketi tercih edin!' },
+  'confidex-ferrowave-classic': { title: 'Confidex Ferrowave Classic Etiket', shortDesc: 'Metal y\u00fczeyler i\u00e7in tasarlanm\u0131\u015f olan y\u00fcksek performansl\u0131 RFID etiketi olan Confidex Ferrowave Classic RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!', description: 'Metal y\u00fczeyler i\u00e7in tasarlanm\u0131\u015f olan y\u00fcksek performansl\u0131 RFID etiketi olan Confidex Ferrowave Classic RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-ferrowave-micro': { title: 'Confidex Ferrowave Micro RFID Etiketi (Monza 730)', shortDesc: 'K\u00fc\u00e7\u00fck boyutlar\u0131na ra\u011fmen optimum okuma performans\u0131 sunan Confidex Ferrowave Micro ile mini varl\u0131klar\u0131n\u0131z\u0131n takibi art\u0131k \u00e7ok kolay! Spor malzemeleri, ki\u015fisel bak\u0131m \u00fcr\u00fcnleri, makas, b\u0131\u00e7ak gibi varl\u0131klar i\u00e7in ideal RFID etiketi!', description: 'K\u00fc\u00e7\u00fck boyutlar\u0131na ra\u011fmen optimum okuma performans\u0131 sunan Confidex Ferrowave Micro ile mini varl\u0131klar\u0131n\u0131z\u0131n takibi art\u0131k \u00e7ok kolay! Spor malzemeleri, ki\u015fisel bak\u0131m \u00fcr\u00fcnleri, makas, b\u0131\u00e7ak gibi varl\u0131klar i\u00e7in ideal RFID etiketi!' },
+  'confidex-heatwave-flag': { title: 'Confidex Heatwave Flag Etiket', shortDesc: 'Confidex Heatwave Flag Etiket otomotiv boyahane s\u00fcre\u00e7leri i\u00e7in tasarlanan, y\u00fcksek s\u0131cakl\u0131kta \u00e7al\u0131\u015fma olana\u011f\u0131 tan\u0131yan metal \u00fcst\u00fc RFID etiketi', description: 'Confidex Heatwave Flag Etiket otomotiv boyahane s\u00fcre\u00e7leri i\u00e7in tasarlanan, y\u00fcksek s\u0131cakl\u0131kta \u00e7al\u0131\u015fma olana\u011f\u0131 tan\u0131yan metal \u00fcst\u00fc RFID etiketi' },
+  'confidex-heatwave-tough': { title: 'Confidex Heatwave Tough RFID Etiketi', shortDesc: 'Confidex Heatwave Tough RFID etiketi, otomotiv boyahane süreçleri için tasarlanan, yüksek sıcaklıkta çalışmaya uygun metal üstü RFID etiketidir.', description: 'Confidex Heatwave Tough RFID etiketi, otomotiv boyahane süreçleri için tasarlanan, yüksek sıcaklıkta çalışmaya uygun metal üstü RFID etiketidir.' },
+  'confidex-ironside-classic': { title: 'Confidex Ironside Classic\u2122 RFID Etiketi (Monza 4 QT)', shortDesc: 'Sert \u00e7evresel \u015fartlar ve kullan\u0131mda sorunsuz varl\u0131k y\u00f6netimi sa\u011flamak i\u00e7in optimize Confidex Ironside Classic RFID Etiketi Monza 4 QT stoklar\u0131m\u0131zda!', description: 'Sert \u00e7evresel \u015fartlar ve kullan\u0131mda sorunsuz varl\u0131k y\u00f6netimi sa\u011flamak i\u00e7in optimize Confidex Ironside Classic RFID Etiketi Monza 4 QT stoklar\u0131m\u0131zda!' },
+  'confidex-ironside-flag': { title: 'Confidex Ironside Flag RFID Etiketi (Monza 4E)', shortDesc: 'Depozitolu metalik ta\u015f\u0131ma \u00fcnitelerinin etiketlenmesinde s\u0131k s\u0131k tercih edilen Confidex Ironside Flag RFID Etiketi \u015fimdi stoklar\u0131m\u0131zda!', description: 'Depozitolu metalik ta\u015f\u0131ma \u00fcnitelerinin etiketlenmesinde s\u0131k s\u0131k tercih edilen Confidex Ironside Flag RFID Etiketi \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-ironside-micro': { title: 'Confidex Ironside Micro RFID Etiketi (Monza 4QT)', shortDesc: 'Minimal tasar\u0131m\u0131 sayesinde en dar alanlarda bile kullan\u0131ma uygun olan Confidex Ironside Micro UHF RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!', description: 'Minimal tasar\u0131m\u0131 sayesinde en dar alanlarda bile kullan\u0131ma uygun olan Confidex Ironside Micro UHF RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-ironside-micro-nfc': { title: 'Confidex Ironside Micro NFC RFID Etiketi', shortDesc: 'K\u00fc\u00e7\u00fck boyutlu Confidex Ironside Micro NFC her metal y\u00fczeye monte edilebilir, sert ko\u015ful ve darbelere dayan\u0131kl\u0131d\u0131r. \u0130ncelemek i\u00e7in hemen t\u0131klay\u0131n!', description: 'K\u00fc\u00e7\u00fck boyutlu Confidex Ironside Micro NFC her metal y\u00fczeye monte edilebilir, sert ko\u015ful ve darbelere dayan\u0131kl\u0131d\u0131r. \u0130ncelemek i\u00e7in hemen t\u0131klay\u0131n!' },
+  'confidex-ironside-plate': { title: 'Confidex Ironside Plate Etiket', shortDesc: 'Y\u00fcksek de\u011ferdeki e\u015fyalar, kamu ve in\u015faat sekt\u00f6r\u00fc gibi birbirinden farkl\u0131 alanlar i\u00e7in \u00fcretilmi\u015f Confidex Ironside Plate RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!', description: 'Y\u00fcksek de\u011ferdeki e\u015fyalar, kamu ve in\u015faat sekt\u00f6r\u00fc gibi birbirinden farkl\u0131 alanlar i\u00e7in \u00fcretilmi\u015f Confidex Ironside Plate RFID etiketi \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-ironside-slim': { title: 'Confidex Ironside Slim RFID Etiketi (M4E)', shortDesc: 'Fiziksel yap\u0131s\u0131n\u0131n dar olmas\u0131 ve darbelere kar\u015f\u0131 dayan\u0131kl\u0131l\u0131\u011f\u0131yla \u00f6n plana \u00e7\u0131kan Confidex Ironside Slim RFID Etiketi \u015fimdi stoklar\u0131m\u0131zda!', description: 'Fiziksel yap\u0131s\u0131n\u0131n dar olmas\u0131 ve darbelere kar\u015f\u0131 dayan\u0131kl\u0131l\u0131\u011f\u0131yla \u00f6n plana \u00e7\u0131kan Confidex Ironside Slim RFID Etiketi \u015fimdi stoklar\u0131m\u0131zda!' },
+  'confidex-leaf': { title: 'Confidex Leaf Etiket', shortDesc: 'Confidex Leaf Etiket k\u0131sa vadeli lojistik uygulamalar i\u00e7in ka\u011f\u0131t bazl\u0131 etikettir. Plastik i\u00e7ermedi\u011fi i\u00e7in \u00e7evre dostudur.', description: 'Confidex Leaf Etiket k\u0131sa vadeli lojistik uygulamalar i\u00e7in ka\u011f\u0131t bazl\u0131 etikettir. Plastik i\u00e7ermedi\u011fi i\u00e7in \u00e7evre dostudur.' },
+  'confidex-looptag': { title: 'Confidex Looptag Etiket', shortDesc: 'Yaz\u0131c\u0131 dostu Confidex Looptag etiket , farkl\u0131 \u00e7aplarla uyumludur, metalik ve plastik par\u00e7alar \u00fczerinde \u00e7al\u0131\u015fmak \u00fczere optimize edilmi\u015ftir.', description: 'Yaz\u0131c\u0131 dostu Confidex Looptag etiket , farkl\u0131 \u00e7aplarla uyumludur, metalik ve plastik par\u00e7alar \u00fczerinde \u00e7al\u0131\u015fmak \u00fczere optimize edilmi\u015ftir.' },
+  'confidex-steelwave-classic': { title: 'Confidex Steelwave Classic RFID Etiketi (Monza 4 QT)', shortDesc: 'Confidex Steelwave Classic yazd\u0131r\u0131labilen, esnek ve dayan\u0131kl\u0131 metal y\u00fczey RFID etiketi! G\u00fc\u00e7l\u00fc yap\u0131\u015fkan\u0131 ile y\u0131llarca kullanabilirsiniz!', description: 'Confidex Steelwave Classic yazd\u0131r\u0131labilen, esnek ve dayan\u0131kl\u0131 metal y\u00fczey RFID etiketi! G\u00fc\u00e7l\u00fc yap\u0131\u015fkan\u0131 ile y\u0131llarca kullanabilirsiniz!' },
+  'confidex-steelwave-micro-ii': { title: 'Confidex Steelwave Micro II RFID Etiketi (Monza 4 QT)', shortDesc: 'Confidex Steelwave Micro RFID Etiket BT \u2013 IT varl\u0131klar\u0131n\u0131z\u0131 izlemek, di\u011fer ofis ekipmanlar\u0131n\u0131 takip etmek i\u00e7in kullan\u0131lan bir RFID etiketidir.', description: 'Confidex Steelwave Micro RFID Etiket BT \u2013 IT varl\u0131klar\u0131n\u0131z\u0131 izlemek, di\u011fer ofis ekipmanlar\u0131n\u0131 takip etmek i\u00e7in kullan\u0131lan bir RFID etiketidir.' },
+};
+
+const tagTurkishCopy: Record<string, { title?: string; shortDesc: string; description?: string; applications?: string[] }> = {
+  'alien-aln-9654': {
+    shortDesc: 'Alien Higgs-3 IC ile güçlendirilmiş, cam, plastik palet ve konteyner gibi yüksek dielektrik yüzeylerde yüksek performans sunan genel amaçlı UHF RFID inlay.',
+    applications: ['Cam yüzeyler', 'Plastik paletler', 'Konteyner takibi', 'Genel varlık takibi'],
+  },
+  'alien-aln-9654-4x2': {
+    shortDesc: 'Alien Higgs-3 inlay içeren 4x2 inç termal transfer baskıya uygun UHF RFID etiket; metal dışı yüzeylerde genel varlık takibi için tasarlanmıştır.',
+    applications: ['Varlık takibi', 'Stok yönetimi', 'Metal dışı yüzeyler', 'Genel etiketleme'],
+  },
+  'altis-pvc-rti-label': {
+    shortDesc: 'RTI, KLT ve PLP gibi depozitolu taşıma birimleri için geliştirilen dayanıklı UHF RFID PVC etiket.',
+    applications: ['Depozitolu taşıma birimleri', 'KLT takibi', 'PLP takibi', 'Lojistik'],
+  },
+  'avery-ad-141-u9': {
+    shortDesc: 'NXP UCODE 9 çipli, 4 x 28 mm ölçülerinde ultra ince Gen2 UHF RFID inlay; kozmetik, kişisel bakım ve ilaç uygulamaları için uygundur.',
+    applications: ['Kozmetik', 'Kişisel bakım', 'İlaç', 'Küçük ürün takibi'],
+  },
+  'avery-ad-163u8': {
+    shortDesc: 'NXP UCODE 8 çipli, 60 x 4 mm ince Gen2 UHF RFID inlay; cam, plastik ve sıvıya yakın yüksek dielektrik materyallerde güçlü okuma performansı sunar.',
+    applications: ['Kozmetik', 'Kişisel bakım', 'İlaç', 'Cam ve plastik yüzeyler'],
+  },
+  'avery-ad-164-u9': {
+    shortDesc: 'NXP UCODE 9 çipli, 60 x 4 mm ince Gen2 UHF RFID inlay; yüksek dielektrik materyallerde gelişmiş hassasiyet ve hızlı kodlama performansı sağlar.',
+    applications: ['İlaç', 'Kişisel bakım', 'Cam yüzeyler', 'Plastik yüzeyler'],
+  },
+  'avery-ad-183-u9': {
+    shortDesc: 'NXP UCODE 9 çipli, 26 mm yuvarlak kompakt Gen2 UHF RFID inlay; giyim, kozmetik ve kişisel bakım ürünleri için idealdir.',
+    applications: ['Giyim', 'Kozmetik', 'Kişisel bakım', 'Ürün bazlı takip'],
+  },
+  'avery-ad-192-m730': {
+    shortDesc: 'Impinj M730 çipli, 22 x 12.5 mm küçük Gen2 UHF RFID inlay; mücevher, kozmetik ve küçük ürün takibi için tasarlanmıştır.',
+    applications: ['Mücevher', 'Kozmetik', 'Küçük ürün takibi', 'Ürün bazlı etiketleme'],
+  },
+  'avery-ad-229r6-p': {
+    shortDesc: 'Impinj Monza R6-P çipli, 95 x 8.15 mm yüksek performanslı Gen2 UHF RFID inlay; tedarik zinciri, RTU, giyim ve marka koruma uygulamaları için uygundur.',
+    applications: ['Tedarik zinciri', 'RTU takibi', 'Giyim', 'Marka koruma'],
+  },
+  'avery-dennison-ad-238u8': {
+    shortDesc: 'NXP UCODE 8 çipli, 70 x 14.5 mm yüksek performanslı Gen2 UHF RFID inlay; tedarik zinciri, envanter, lojistik ve giyim uygulamalarına uygundur.',
+    applications: ['Tedarik zinciri', 'Envanter', 'Lojistik', 'Giyim'],
+  },
+  'avery-ad-239-m730': {
+    shortDesc: 'Impinj M730 çipli, 70 x 14.5 mm yüksek performanslı Gen2 UHF RFID inlay; tedarik zinciri, envanter, lojistik ve giyim uygulamalarında kullanılır.',
+    applications: ['Tedarik zinciri', 'Envanter', 'Lojistik', 'Giyim'],
+  },
+  'avery-ad-23x-u9': {
+    shortDesc: 'NXP UCODE 9 çipli, 70 x 14.5 mm yüksek performanslı Gen2 UHF RFID inlay; tedarik zinciri, envanter, lojistik, giyim ve marka koruma için geliştirilmiştir.',
+    applications: ['Tedarik zinciri', 'Envanter', 'Lojistik', 'Giyim', 'Marka koruma'],
+  },
+  'avery-ad-23x-u9-pure-95': {
+    shortDesc: 'NXP UCODE 9 çipli, 70 x 14.5 mm sürdürülebilir Gen2 UHF RFID inlay; yüzde 95e kadar plastiksiz yapısı ve saf alüminyum anteniyle öne çıkar.',
+    applications: ['Sürdürülebilir etiketleme', 'Tedarik zinciri', 'Giyim', 'Envanter'],
+  },
+  'avery-ad-23x-u9-slim': {
+    shortDesc: 'NXP UCODE 9 çipli, 70 x 10.5 mm dar profilli Gen2 UHF RFID inlay; daha dar etiket alanlarında tedarik zinciri, giyim ve marka koruma için uygundur.',
+    applications: ['Dar etiket alanları', 'Tedarik zinciri', 'Giyim', 'Marka koruma'],
+  },
+  'avery-dennison-ad-324u8': {
+    shortDesc: 'NXP UCODE 8 çipli, 41.4 x 16 mm Gen2 UHF RFID inlay; FCC frekans bandı için optimize edilmiştir ve tedarik zinciri, giyim, ilaç ve sağlık uygulamalarına uygundur.',
+    applications: ['Tedarik zinciri', 'Giyim', 'İlaç', 'Sağlık'],
+  },
+  'avery-dennison-ad-385u8': {
+    shortDesc: 'NXP UCODE 8 çipli, 50 x 30 mm yüksek performanslı Gen2 UHF RFID inlay; tedarik zinciri, lojistik ve giyim uygulamalarında esnek kullanım sağlar.',
+    applications: ['Tedarik zinciri', 'Lojistik', 'Giyim', 'Envanter'],
+  },
+  'avery-dennison-ad-sample-pack': {
+    shortDesc: 'AD-238u8, AD-324u8 ve AD-385u8 Gen2 UHF RFID inlay modellerinden oluÅŸan deÄŸerlendirme numune paketi.',
+    applications: ['Ürün testi', 'Proje değerlendirme', 'Numune çalışması', 'RFID performans karşılaştırması'],
+  },
+  'brady-tht-nfc-pet-25x25': {
+    title: 'Brady Anti-Sıvı NFC RFID Etiketi 25x25 mm',
+    shortDesc: '25 x 25 mm polyester NFC RFID etiket; metal üstü ve farklı yüzeylerde kullanılabilir, sıvıya dayanıklı yapıdadır ve 500 etiketlik rulo halinde sunulur.',
+    applications: ['Metal üstü yüzeyler', 'Üretim', 'Sağlık', 'Genel varlık takibi'],
+  },
+  'brady-tht-uhf-pet-64x6': {
+    title: 'Brady Anti-Sıvı UHF RFID Etiketi 64x6 mm',
+    shortDesc: '64 x 6 mm ince polyester UHF RFID etiket; metal yüzeylerde sağlık, içecek ve endüstriyel malzeme takibi için geliştirilmiştir.',
+    applications: ['Metal yüzeyler', 'Sağlık', 'Endüstriyel malzeme takibi', 'Veri ve telekom'],
+  },
+  'brady-tht-df-423-33x17': {
+    title: 'Brady B-423 Çift Frekanslı RFID Etiketi 33x17 mm',
+    shortDesc: '33 x 17 mm B-423 polyester çift frekanslı RFID etiket; NFC ve UHF desteğiyle perakende, tedarik zinciri ve ürün doğrulama süreçlerinde kullanılır.',
+    applications: ['Perakende', 'Tedarik zinciri', 'Ürün doğrulama', 'Sağlık'],
+  },
+  'brady-tht-df-423-66x46': {
+    title: 'Brady B-423 Çift Frekanslı RFID Etiketi 66x46 mm',
+    shortDesc: '66 x 46 mm B-423 polyester çift frekanslı RFID etiket; NFC ve UHF okuma desteğiyle endüstriyel tedarik zinciri ve ürün kimliklendirme için uygundur.',
+    applications: ['Endüstriyel takip', 'Tedarik zinciri', 'Ürün doğrulama', 'Lojistik'],
+  },
+  'brady-tht-nfc-423-50x40': {
+    title: 'Brady B-423 Sıcaklık Sensörlü NFC RFID Etiketi 50x40 mm',
+    shortDesc: '50 x 40 mm B-423 polyester NFC RFID etiket; sıcaklık algılama özelliğiyle zorlu ortamlarda kablosuz sıcaklık izleme için tasarlanmıştır.',
+    applications: ['Sıcaklık izleme', 'Üretim', 'Zorlu ortamlar', 'NFC kimliklendirme'],
+  },
+  'brady-tht-uhf-423-53x26': {
+    title: 'Brady B-423 Sıcaklık Sensörlü UHF RFID Etiketi 53x26 mm',
+    shortDesc: '53 x 26 mm B-423 polyester UHF RFID etiket; ürün kimliği, medikal ekipman ve depo-dağıtım uygulamaları için yüksek okuma mesafesi sunar.',
+    applications: ['Ürün kimliği', 'Medikal ekipman', 'Depo ve dağıtım', 'Lojistik'],
+  },
+  'brady-tht-uhf-423-93x26': {
+    title: 'Brady B-423 Sıcaklık Sensörlü UHF RFID Etiketi 93x26 mm',
+    shortDesc: '93 x 26 mm B-423 polyester UHF RFID etiket; sıcaklık algılama desteğiyle üretim ve depolama ortamlarında kullanılmak üzere geliştirilmiştir.',
+    applications: ['Sıcaklık izleme', 'Üretim', 'Depolama', 'Genel takip'],
+  },
+  'brady-tht-uhf-b481-24x16': {
+    title: 'Brady B-481 Kimyasala Dayanıklı UHF RFID Etiketi 24x16 mm',
+    shortDesc: '24 x 16 mm B-481 polyester UHF RFID etiket; kimyasala dayanıklı yapısıyla laboratuvar lamları ve medikal numune takibi için uygundur.',
+    applications: ['Laboratuvar', 'Medikal numune takibi', 'Kimyasala dayanıklı etiketleme', 'Kompakt ürün takibi'],
+  },
+  'brady-tht-uhf-7425-45x30': {
+    title: 'Brady B-7425 Özel Amaçlı UHF RFID Etiketi 45x30 mm',
+    shortDesc: '45 x 30 mm B-7425 polipropilen UHF RFID etiket; konik tüpler, well plate ve laboratuvar numune kimliklendirme için geliştirilmiştir.',
+    applications: ['Laboratuvar numuneleri', 'Konik tüpler', 'Well plate takibi', 'Sağlık'],
+  },
+  'brady-tht-uhf-7425-53x26': {
+    title: 'Brady B-7425 Özel Amaçlı UHF RFID Etiketi 53x26 mm',
+    shortDesc: '53 x 26 mm B-7425 polipropilen UHF RFID etiket; test tüpleri, numune kapları ve farmasötik takip uygulamalarında kullanılır.',
+    applications: ['Test tüpleri', 'Numune kapları', 'Farmasötik takip', 'Laboratuvar'],
+  },
+  'epozzy-on-metal-55x15x125': {
+    shortDesc: '55 x 15 x 1.25 mm ölçülerinde ultra ince ve esnek UHF metal üstü RFID etiket; SATO ve Zebra RFID yazıcılarla yazdırılabilir, kavisli metal yüzeylerde 5.5 m\'ye kadar okuma performansı sunar.',
+  },
+  'epozzy-on-metal-60x25x1': {
+    shortDesc: '60 x 25 x 1 mm ölçülerinde yazdırılabilir esnek UHF metal üstü RFID etiket; metal ve kavisli yüzeylerde kullanım için optimize edilmiştir, metal üzerinde 5 m\'ye kadar okuma sağlar.',
+  },
+  'epozzy-on-metal-64x6x1': {
+    shortDesc: '64 x 6 x 1 mm ölçülerinde ultra ince UHF metal üstü RFID etiket; el aletleri, raf sistemleri ve BT ekipmanları gibi dar metal yüzeylerde kullanım için uygundur.',
+  },
+  'epozzy-on-metal-70x30x1': {
+    shortDesc: '70 x 30 x 1 mm ölçülerinde yazdırılabilir esnek UHF metal üstü RFID etiket; BT varlıkları, sabit kıymetler ve metal ekipman takibinde 8 m\'ye kadar okuma mesafesi sunar.',
+  },
+  'epozzy-on-metal-80x20x1': {
+    shortDesc: '80 x 20 x 1 mm ölçülerinde yazdırılabilir esnek UHF metal üstü RFID etiket; BT varlık yönetimi, konteyner takibi ve depo raf uygulamaları için geliştirilmiştir.',
+  },
+  'epozzy-on-metal-95x22x125': {
+    shortDesc: '95 x 22 x 1.25 mm ölçülerinde yüksek performanslı esnek UHF metal üstü RFID etiket; büyük metal varlıkların takibinde metal üzerinde 12 m\'ye kadar okuma mesafesi sunar.',
+  },
+  'epozzy-on-metal-128x30x8': {
+    shortDesc: '128 x 30 x 8.5 mm gövdeye sahip dayanıklı UHF RFID sert etiket; ağır sanayi, petrol, gaz ve madencilik uygulamalarında metal varlık takibi için tasarlanmıştır.',
+  },
+  'epozzy-on-metal-136x43x10': {
+    shortDesc: '136 x 43 x 10 mm mühendislik plastiği gövdeye sahip yüksek korumalı UHF metal RFID etiket; zorlu endüstriyel ortamlarda 30 m\'ye kadar okuma performansı sağlar.',
+  },
+  'epozzy-pcb-metal-tag-36x13x27': {
+    shortDesc: '36 x 13 x 2.7 mm kompakt yapıda FR-4 PCB metal üstü RFID etiket; metal üzerinde 8.5 m\'ye kadar okuma mesafesi sunar ve yapışkan ya da vida ile monte edilebilir.',
+  },
+  'epozzy-uhf-label-100x150': {
+    shortDesc: '100 x 150 mm büyük formatlı pasif UHF RFID etiket; giyim, varlık yönetimi ve lojistik uygulamalarında standart sevkiyat etiketi boyutuna ihtiyaç duyan süreçler için uygundur.',
+  },
+  'epozzy-uhf-label-4x2': {
+    shortDesc: '4 x 2 inç (101.6 x 50.8 mm) standart formatta pasif UHF RFID etiket; karton, plastik ve ahşap gibi metal dışı yüzeylerde güvenilir performans sunar.',
+  },
+  'epozzy-nfc-on-metal-30x30': {
+    shortDesc: '30 x 30 mm kompakt NFC etiket; metal yüzeylerde doğrudan çalışmak üzere tasarlanmıştır ve varlık etiketleme ile endüstriyel kimliklendirme uygulamalarına uygundur.',
+  },
+  'epozzy-ntag213-d25': {
+    shortDesc: '25 mm çapında ICODE tabanlı NFC etiket; lojistik, kütüphane, BT varlık yönetimi ve perakende uygulamalarında kullanılmak üzere geliştirilmiştir.',
+  },
+  'epozzy-rfid-tire-tag-patch': {
+    shortDesc: 'Dayanıklı kauçuk RFID yama etiket; tamamlanmış lastiklerin yanak kısmına vulkanize edilerek otobüs, kamyon ve treyler lastiklerinde ömür boyu kimliklendirme sağlar.',
+  },
+  'epozzy-round-head-silicone-wristband-hf': {
+    shortDesc: 'Yuvarlak başlıklı, su geçirmez NFC silikon bileklik; tema parkları, yüzme havuzları, geçiş kontrolü, etkinlikler ve sağlık uygulamaları için uygundur.',
+  },
+  'epozzy-round-head-silicone-wristband-uhf': {
+    shortDesc: 'Yuvarlak başlıklı UHF RFID silikon bileklik; geçiş kontrolü, tema parkları, etkinlikler ve eğlence merkezlerinde kullanım için geliştirilmiş su geçirmez bileklik çözümüdür.',
+  },
+  'epozzy-silicone-rfid-wristband': {
+    shortDesc: 'Yay mekanizmalı UHF RFID silikon bileklik; geçiş kontrolü, havuzlar, tema parkları, etkinlikler ve sağlık uygulamalarında dayanıklı kullanım sunar.',
+  },
+  'epozzy-silicone-rfid-wristband-classic': {
+    shortDesc: 'Ayarlanabilir UHF RFID silikon bileklik; eller serbest geçiş kontrolü, tema parkları ve eğlence merkezlerinde 2 m\'ye kadar okuma mesafesi sağlar.',
+  },
+  'epozzy-fabric-tag': {
+    shortDesc: '50 x 35 mm ölçülerinde dikilebilir UHF RFID kumaş etiket; tekstil ve giyim envanter takibi, sahteciliği önleme ve tedarik zinciri yönetimi için uygundur.',
+  },
+  'epozzy-jewellery-tag-standard': {
+    shortDesc: '68 x 13 mm ince yapılı UHF RFID mücevher etiketi; takı, saat, gözlük ve çanta takibi için tasarlanmıştır ve perakende envanter süreçlerinde yüksek verim sağlar.',
+  },
+  'epozzy-pin-tag-apparel': {
+    shortDesc: 'Yeniden kullanılabilir UHF RFID pin etiket; geleneksel EAS güvenlik etiketlerinin yerine geçerek giyim perakendesinde ürün takibi ve hırsızlık önleme sağlar.',
+  },
+  'epozzy-flag-tag': {
+    shortDesc: 'UHF RFID bayrak etiket; sıvı içeren kaplar, karton kutular ve genel ürünler üzerinde takip ve ürün kimliklendirme için geliştirilmiştir.',
+  },
+  'epozzy-high-temp-metal-tag-48x35x7': {
+    shortDesc: '225°C\'ye kadar çalışma sıcaklığına dayanıklı IP68 UHF RFID etiket; medikal sterilizasyon, cerrahi aletler ve madencilik gibi zorlu ortamlarda metal varlık takibi için uygundur.',
+  },
+  'epozzy-pcb-metal-tag-ht-48x35x7': {
+    shortDesc: 'Yüksek sıcaklığa dayanıklı PCB UHF RFID etiket; medikal, cerrahi ve endüstriyel ortamlarda metal varlık takibi için 225°C\'ye kadar çalışma desteği sunar.',
+  },
+  'epozzy-tamper-proof-on-metal': {
+    shortDesc: 'Metal yüzeyler için tasarlanmış UHF RFID söküldüğünde iz bırakan güvenlik etiketi; BT ve endüstriyel metal varlıkların korunmasında ek güvenlik katmanı sağlar.',
+  },
+  'epozzy-washable-textile-tag': {
+    shortDesc: '70 x 15 mm esnek UHF RFID tekstil yıkama etiketi; 200 yıkama çevrimine dayanır ve hastane, otel ile çamaşırhane yönetiminde yüksek okuma performansı sunar.',
+  },
+  'omni-id-adept-400-5-layer-gs': {
+    shortDesc: 'Boru ve sabit metal varlıklara montaj için geliştirilen dayanıklı 5 katmanlı paslanmaz çelik UHF RFID etiket; uzak üretim, çıkarma ve işleme tesisleri için uygundur.',
+  },
+  'omni-id-adept-400-5-layer-us': {
+    shortDesc: 'Zorlu endüstriyel tesislerde boru ve sabit varlık takibi için geliştirilen 5 katmanlı paslanmaz çelik UHF RFID etiket; ABD frekans bandında metal yüzeyler için optimize edilmiştir.',
+  },
+  'omni-id-adept-500-gs': {
+    shortDesc: 'Endüstriyel gaz tüpleri ve içecek fıçılarına kalıcı montaj için tasarlanmış küçük dairesel UHF RFID sert etiket; metal üzerinde yüksek okuma mesafesi sunar.',
+  },
+  'omni-id-exo-400-ht': {
+    shortDesc: 'Küçük form faktörlü, yüksek sıcaklığa dayanıklı UHF RFID etiket; metal yüzeyler için optimize edilmiştir ve sterilizasyon, üretim ile otomotiv boyahane süreçlerinde kullanılabilir.',
+  },
+  'omni-id-fit-220-ht': {
+    shortDesc: '235°C çevrim sıcaklığına dayanabilen en küçük bölgesel UHF RFID etiketlerden biridir; el aletleri, BT varlıkları ve medikal ekipman takibinde küçük metal parçalar için uygundur.',
+  },
+  'omni-id-fit-400-ht': {
+    shortDesc: 'Kompakt yüksek sıcaklık UHF RFID etiket; küçük metal el aletleri, BT varlıkları ve otoklav/sterilizasyon uygulamaları için 4 metreye kadar okuma mesafesi sağlar.',
+  },
+  'omni-id-fit-400p': {
+    shortDesc: 'Plastik ve metal dışı yüzeyler için optimize edilmiş kompakt seramik UHF RFID etiket; plastik varlıklara ve takım saplarına gizli gömme uygulamaları için uygundur.',
+  },
+  'omni-id-iq-400p-ht': {
+    shortDesc: 'Tek kullanımlık üretim uygulamaları için geliştirilen yüksek sıcaklığa dayanıklı sentetik RFID askı etiket; otomotiv boyahane ve elektronik süreçlerinde termal barkod baskısına uygundur.',
+  },
+  'omni-id-iq-800p-ht': {
+    shortDesc: 'Büyük boy yüksek sıcaklığa dayanıklı sentetik RFID askı etiket; üretim, otomotiv boyahane ve elektronik süreçlerinde uzun okuma mesafesi sunar.',
+  },
+  'omni-id-sense-asset-xl': {
+    shortDesc: 'Uzun menzilli dış ortam varlık takibi için ultra dayanıklı LoRaWAN + GPS IoT cihazı; konteyner yönetimi, liman, saha operasyonları ve filo takibinde kullanılır.',
+  },
+  'omni-id-sense-shield': {
+    shortDesc: 'Quuppa teknolojili giyilebilir BLE beacon; personel takibi, sosyal mesafe izleme ve çalışan güvenliği uyarıları için depo, hastane, liman ve şantiye ortamlarına uygundur.',
+  },
+};
+
+const tagEnglishApplications: Record<string, string[]> = {
+  'alien-aln-9654': ['Windshield tagging', 'Plastic pallets', 'Container tracking', 'General asset tracking'],
+  'alien-aln-9654-4x2': ['Asset tracking', 'Inventory management', 'Non-metal surfaces', 'General labeling'],
+  'altis-pvc-rti-label': ['Returnable transport items', 'KLT tracking', 'PLP tracking', 'Logistics'],
+  'avery-ad-141-u9': ['Beauty', 'Personal care', 'Pharmaceuticals', 'Small item tracking'],
+  'avery-ad-163u8': ['Beauty', 'Personal care', 'Pharmaceuticals', 'Glass and plastic surfaces'],
+  'avery-ad-164-u9': ['Pharmaceuticals', 'Personal care', 'Glass surfaces', 'Plastic surfaces'],
+  'avery-ad-183-u9': ['Apparel', 'Cosmetics', 'Personal care', 'Item-level tracking'],
+  'avery-ad-192-m730': ['Jewelry', 'Cosmetics', 'Small item tracking', 'Item-level labeling'],
+  'avery-ad-229r6-p': ['Supply chain', 'RTU tracking', 'Apparel', 'Brand protection'],
+  'avery-dennison-ad-238u8': ['Supply chain', 'Inventory', 'Logistics', 'Apparel'],
+  'avery-ad-239-m730': ['Supply chain', 'Inventory', 'Logistics', 'Apparel'],
+  'avery-ad-23x-u9': ['Supply chain', 'Inventory', 'Logistics', 'Apparel', 'Brand protection'],
+  'avery-ad-23x-u9-pure-95': ['Sustainable labeling', 'Supply chain', 'Apparel', 'Inventory'],
+  'avery-ad-23x-u9-slim': ['Narrow label areas', 'Supply chain', 'Apparel', 'Brand protection'],
+  'avery-dennison-ad-324u8': ['Supply chain', 'Apparel', 'Pharmaceuticals', 'Healthcare'],
+  'avery-dennison-ad-385u8': ['Supply chain', 'Logistics', 'Apparel', 'Inventory'],
+  'avery-dennison-ad-sample-pack': ['Product testing', 'Project evaluation', 'Sample studies', 'RFID performance comparison'],
+  'brady-tht-nfc-pet-25x25': ['On-metal surfaces', 'Manufacturing', 'Healthcare', 'General asset tracking'],
+  'brady-tht-uhf-pet-64x6': ['On-metal surfaces', 'Healthcare', 'Industrial materials', 'Data and telecom'],
+  'brady-tht-df-423-33x17': ['Retail', 'Supply chain', 'Product authentication', 'Healthcare'],
+  'brady-tht-df-423-66x46': ['Industrial tracking', 'Supply chain', 'Product authentication', 'Logistics'],
+  'brady-tht-nfc-423-50x40': ['Temperature monitoring', 'Manufacturing', 'Challenging environments', 'NFC identification'],
+  'brady-tht-uhf-423-53x26': ['Product ID', 'Medical equipment ID', 'Distribution and warehousing', 'Logistics'],
+  'brady-tht-uhf-423-93x26': ['Temperature monitoring', 'Manufacturing', 'Warehousing', 'General tracking'],
+  'brady-tht-uhf-b481-24x16': ['Laboratory', 'Medical slide labeling', 'Chemical-resistant labeling', 'Compact item tracking'],
+  'brady-tht-uhf-7425-45x30': ['Laboratory samples', 'Conical tubes', 'Well plate tracking', 'Healthcare'],
+  'brady-tht-uhf-7425-53x26': ['Test tubes', 'Specimen containers', 'Pharmaceutical tracking', 'Laboratory'],
+};
+
+const sectionLabelMap: Record<string, string> = {
+  'RFID SPECIFICATION': 'RFID Özellikleri',
+  'DRY INLAY DIMENSIONS': 'Kuru Inlay Ölçüleri',
+  'WET INLAY DIMENSIONS': 'Islak Inlay Ölçüleri',
+  'LABEL DIMENSIONS': 'Etiket Ölçüleri',
+  'PHYSICAL SPECIFICATION': 'Fiziksel Özellikler',
+  APPLICATIONS: 'Uygulamalar',
+  ENVIRONMENTAL: 'Çevresel Özellikler',
+  SUSTAINABILITY: 'Sürdürülebilirlik',
+  'RF SPECIFICATION': 'RFID Özellikleri',
+  'ENVIRONMENTAL SPECIFICATION': 'Çevresel Dayanım',
+};
+
+const specLabelMap: Record<string, string> = {
+  Protocol: 'Protokol',
+  'Integrated Circuit': 'Entegre Devre',
+  'Operating Frequency': 'Çalışma Frekansı',
+  Frequency: 'Frekans',
+  'EPC Size': 'EPC Boyutu',
+  'User Memory': 'Kullanıcı Hafızası',
+  TID: 'TID',
+  'Unique TID': 'Benzersiz TID',
+  'Access Password': 'Erişim Şifresi',
+  'Kill Password': 'Kill Şifresi',
+  'Label Size': 'Etiket Ölçüsü',
+  'Antenna Width': 'Anten GeniÅŸliÄŸi',
+  'Antenna Length': 'Anten UzunluÄŸu',
+  'Inlay Width': 'Inlay GeniÅŸliÄŸi',
+  'Inlay Length': 'Inlay UzunluÄŸu',
+  'Web Width': 'Web GeniÅŸliÄŸi',
+  'Web Pitch': 'Web Aralığı',
+  'Inlays per Roll': 'Rulo Başına Inlay',
+  'Maximum Roll OD': 'Maksimum Rulo Dış Çapı',
+  'Core ID': 'Kovan İç Çapı',
+  'Core Material': 'Kovan Malzemesi',
+  'Printable Surface': 'Baskı Yüzeyi',
+  'Overlay Adhesive': 'Üst Yapışkan',
+  'Inlay Adhesive': 'Inlay Yapışkanı',
+  'Adhesive Application Temp': 'Yapışkan Uygulama Sıcaklığı',
+  'Adhesive Service Temp': 'Yapışkan Kullanım Sıcaklığı',
+  'Release Liner': 'Taşıyıcı Liner',
+  'Shelf Life': 'Raf Ömrü',
+  'Recommended Storage': 'Önerilen Saklama',
+  'Storage Limits': 'Saklama Limitleri',
+  'Operating Limits': 'Çalışma Limitleri',
+  'Bend Diameter': 'Bükülme Çapı',
+  'Write Cycles': 'Yazma Döngüsü',
+  RoHS: 'RoHS',
+  REACH: 'REACH',
+  'ESD Limit (HBM / CDM)': 'ESD Limiti (HBM / CDM)',
+  Chip: 'Çip',
+  'IC Attachment Technology': 'IC Bağlantı Teknolojisi',
+  Standard: 'Standart',
+  'Frequency Band': 'Frekans Bandı',
+  'EPC Memory': 'EPC Hafızası',
+  'TID Memory': 'TID Hafızası',
+  'RFID Type': 'RFID Tipi',
+  'Material (Label)': 'Etiket Malzemesi',
+  'Read Range': 'Okuma Mesafesi',
+  'Read Range (UHF)': 'UHF Okuma Mesafesi',
+  'Read Range (NFC)': 'NFC Okuma Mesafesi',
+  'User Memory (UHF)': 'UHF Kullanıcı Hafızası',
+  'User Memory (NFC)': 'NFC Kullanıcı Hafızası',
+  'Label Reference': 'Etiket Referansı',
+  'Art Number': 'Ürün Numarası',
+  Dimensions: 'Ölçüler',
+  'Quantity / Roll': 'Rulo Adedi',
+  Markets: 'Pazarlar',
+  'Special Feature': 'Özel Özellik',
+  'On-Metal': 'Metal Üstü',
+  'Antenna Dimensions': 'Anten Ölçüleri',
+  'Die-Cut Dimension': 'Kesim Ölçüsü',
+  'Wet Inlay (IL-607854)': 'Islak Inlay (IL-607854)',
+  'Label (IL-612802)': 'Etiket (IL-612802)',
+  'Core Size': 'Kovan Ölçüsü',
+  'Operating Temperature': 'Çalışma Sıcaklığı',
+  'Plastic-Free Content': 'Plastiksiz İçerik',
+  'Antenna Material': 'Anten Malzemesi',
+  'Carbon Footprint Savings': 'Karbon Ayak İzi Tasarrufu',
+  'EU Recyclability': 'AB Geri Dönüştürülebilirlik',
+  'US Recyclability': 'ABD Geri Dönüştürülebilirlik',
+};
+
+Object.assign(sectionLabelMap, {
+  'ENVIRONMENTAL RESISTANCE': 'Çevresel Dayanım',
+});
+
+Object.assign(specLabelMap, {
+  'Operating Frequency – ETSI': 'Çalışma Frekansı – ETSI',
+  'Operating Frequency – FCC': 'Çalışma Frekansı – FCC',
+  'Memory (Monza 4QT)': 'Hafıza (Monza 4QT)',
+  'EPC Content': 'EPC İçeriği',
+  'Read Range – on metal': 'Metal üstü okuma mesafesi',
+  'Read Range – on metal (FCC)': 'Metal üstü okuma mesafesi (FCC)',
+  'Read Range – on metal (ETSI)': 'Metal üstü okuma mesafesi (ETSI)',
+  'Read Range – other materials': 'Diğer yüzeylerde okuma mesafesi',
+  'Read Range – off metal (FCC)': 'Metal dışı okuma mesafesi (FCC)',
+  'Read Range – on plastic (FCC)': 'Plastik üzerinde okuma mesafesi (FCC)',
+  'Read Range – on metal pipe': 'Metal boru üzerinde okuma mesafesi',
+  'Read Range – on plastic pipe': 'Plastik boru üzerinde okuma mesafesi',
+  'Read Range (2W ERP FCC)': 'Okuma mesafesi (2W ERP FCC)',
+  'Max Read Range (2W ERP FCC)': 'Maksimum okuma mesafesi (2W ERP FCC)',
+  'Applicable Surfaces': 'Uygulanabilir Yüzeyler',
+  'Tag Dimensions': 'Etiket Ölçüleri',
+  'Tag Materials': 'Etiket Malzemeleri',
+  Material: 'Malzeme',
+  Memory: 'Hafıza',
+  Installation: 'Montaj',
+  'Supported Printers': 'Desteklenen Yazıcılar',
+  Package: 'Paketleme',
+  'IP Classification': 'IP Sınıfı',
+  'Inlay Dimensions': 'Inlay Ölçüleri',
+  'IC Options': 'Çip Seçenekleri',
+  Humidity: 'Nem',
+  Customization: 'Özelleştirme',
+  'Designed Lifetime': 'Tasarım Ömrü',
+  'Reading Range': 'Okuma Mesafesi',
+  'Data Storage': 'Veri Saklama Süresi',
+  'Color Options': 'Renk Seçenekleri',
+  Options: 'Seçenekler',
+  'Antenna Size': 'Anten Boyutu',
+  'Wet Inlay / Label Size': 'Islak Inlay / Etiket Ölçüsü',
+  'Label Material': 'Etiket Malzemesi',
+  Adhesive: 'Yapışkan',
+  Weight: 'Ağırlık',
+  'Amount in Box': 'Kutu Adedi',
+  'Amount per Reel': 'Rulo Adedi',
+  'Delivery Format': 'Teslimat Formatı',
+  'Storage Condition': 'Saklama KoÅŸulu',
+  'Water Resistance': 'Su Dayanımı',
+  'Washing Resistance': 'Yıkama Dayanımı',
+  'Chemical Resistance': 'Kimyasal Dayanım',
+  'Expected Lifetime': 'Beklenen Kullanım Ömrü',
+  'Dimensions (150 mm)': 'Ölçüler (150 mm)',
+  'Dimensions (250 mm)': 'Ölçüler (250 mm)',
+  'Reel Core Inner Diameter': 'Rulo Göbeği İç Çapı',
+  'Minimum Bending Diameter': 'Minimum Bükülme Çapı',
+  'Read Range – FCC (2W ERP)': 'Okuma mesafesi - FCC (2W ERP)',
+  'Read Range – ETSI (2W ERP)': 'Okuma mesafesi - ETSI (2W ERP)',
+  'Applicable Use': 'Kullanım Alanı',
+  'Primary Use': 'Temel Kullanım',
+  Industries: 'Sektörler',
+  Features: 'Öne Çıkan Özellikler',
+  'Security Feature': 'Güvenlik Özelliği',
+  'Form Factor': 'Form Faktörü',
+  'Estimated Lifetime': 'Tahmini Kullanım Ömrü',
+  'Water Extraction Pressure': 'Su Sıkma Basıncı',
+  'Radio Protocol': 'Radyo Protokolü',
+  'Frequency Range': 'Frekans Aralığı',
+  'Frequency Range – EU': 'Frekans Aralığı - AB',
+  'Frequency Range – US': 'Frekans Aralığı - ABD',
+  'IC Type (Chip)': 'IC Tipi (Çip)',
+  'Read Range – Fixed Reader': 'Okuma mesafesi - Sabit okuyucu',
+  'Read Range – Handheld Reader': 'Okuma mesafesi - El terminali',
+  'Optimized For': 'Optimize Edildiği Yüzey',
+  'Material Compatibility': 'Malzeme UyumluluÄŸu',
+  Size: 'Ölçüler',
+  Layers: 'Katman Sayısı',
+  Attachment: 'Montaj',
+  'IP Rating': 'IP Sınıfı',
+  'Shock & Vibration': 'Darbe ve TitreÅŸim',
+  Certifications: 'Sertifikalar',
+  'Short Term Max Temperature': 'Kısa Süreli Maksimum Sıcaklık',
+  'Max Temperature Exposure': 'Maksimum Sıcaklık Maruziyeti',
+  'Application Temperature': 'Uygulama Sıcaklığı',
+  'Supply Format': 'Tedarik Formatı',
+  'Supported Profiles': 'Desteklenen Profiller',
+  Sensors: 'Sensörler',
+  'Temperature Sensor Range': 'Sıcaklık Sensörü Aralığı',
+  'Battery Type': 'Pil Tipi',
+  'Battery Capacity': 'Pil Kapasitesi',
+  'Battery Life': 'Pil Ömrü',
+  'Default Beacon Rate': 'Varsayılan Beacon Aralığı',
+  'Visual Indicator': 'Görsel Göstergeler',
+  'Size – Lanyard/Belt Clip': 'Ölçüler - Yaka Kartı/Kemer Klipsi',
+  'Size – Watch Strap': 'Ölçüler - Saat Kayışı',
+});
+
+[
+  'epozzy-fabric-tag',
+  'epozzy-flag-tag',
+  'epozzy-high-temp-metal-tag-48x35x7',
+  'epozzy-jewellery-tag-standard',
+  'epozzy-nfc-on-metal-30x30',
+  'epozzy-ntag213-d25',
+  'epozzy-on-metal-128x30x8',
+  'epozzy-on-metal-136x43x10',
+  'epozzy-on-metal-55x15x125',
+  'epozzy-on-metal-60x25x1',
+  'epozzy-on-metal-64x6x1',
+  'epozzy-on-metal-70x30x1',
+  'epozzy-on-metal-80x20x1',
+  'epozzy-on-metal-95x22x125',
+  'epozzy-pcb-metal-tag-36x13x27',
+  'epozzy-pcb-metal-tag-ht-48x35x7',
+  'epozzy-pin-tag-apparel',
+  'epozzy-rfid-tire-tag-patch',
+  'epozzy-round-head-silicone-wristband-hf',
+  'epozzy-round-head-silicone-wristband-uhf',
+  'epozzy-silicone-rfid-wristband',
+  'epozzy-silicone-rfid-wristband-classic',
+  'epozzy-tamper-proof-on-metal',
+  'epozzy-uhf-label-100x150',
+  'epozzy-uhf-label-4x2',
+  'epozzy-washable-textile-tag',
+].forEach(slug => localDatasheetSlugs.add(slug));
+
+Object.assign(localImageExtensions, {
+  'epozzy-fabric-tag': 'webp',
+  'epozzy-high-temp-metal-tag-48x35x7': 'webp',
+  'epozzy-jewellery-tag-standard': 'webp',
+  'epozzy-nfc-on-metal-30x30': 'webp',
+  'epozzy-ntag213-d25': 'webp',
+  'epozzy-on-metal-128x30x8': 'webp',
+  'epozzy-on-metal-136x43x10': 'webp',
+  'epozzy-on-metal-55x15x125': 'webp',
+  'epozzy-on-metal-60x25x1': 'webp',
+  'epozzy-on-metal-64x6x1': 'webp',
+  'epozzy-on-metal-70x30x1': 'webp',
+  'epozzy-on-metal-80x20x1': 'webp',
+  'epozzy-on-metal-95x22x125': 'webp',
+  'epozzy-pcb-metal-tag-36x13x27': 'webp',
+  'epozzy-pcb-metal-tag-ht-48x35x7': 'webp',
+  'epozzy-pin-tag-apparel': 'webp',
+  'epozzy-rfid-tire-tag-patch': 'webp',
+  'epozzy-round-head-silicone-wristband-hf': 'webp',
+  'epozzy-round-head-silicone-wristband-uhf': 'webp',
+  'epozzy-silicone-rfid-wristband': 'webp',
+  'epozzy-silicone-rfid-wristband-classic': 'webp',
+  'epozzy-tamper-proof-on-metal': 'webp',
+  'epozzy-uhf-label-100x150': 'webp',
+  'epozzy-uhf-label-4x2': 'webp',
+  'epozzy-washable-textile-tag': 'webp',
+});
+
+const firstSectionValue = (raw: any, labels: string[]) => {
+  for (const section of raw.sections || []) {
+    for (const label of labels) {
+      const value = section.items?.[label];
+      if (value) return value;
+    }
+  }
+  return '';
+};
+
+const fixMojibake = (input: string) => {
+  if (!/[ÃÄÅÂâ€]/.test(input)) return input;
+
+  try {
+    const repaired = Buffer.from(input, 'latin1').toString('utf8');
+    if (/[^\u0000-\u007f]/.test(repaired)) {
+      return repaired;
+    }
+  } catch {
+    // Fall through to targeted replacements below.
+  }
+
+  return input;
+};
+
+const normalizeText = (value: unknown) => fixMojibake(String(value || ''))
+  .replaceAll('Ã¼', 'ü')
+  .replaceAll('Ãœ', 'Ü')
+  .replaceAll('Ã¶', 'ö')
+  .replaceAll('Ã–', 'Ö')
+  .replaceAll('Ã§', 'ç')
+  .replaceAll('Ã‡', 'Ç')
+  .replaceAll('Ä±', 'ı')
+  .replaceAll('Ä°', 'İ')
+  .replaceAll('ÅŸ', 'ş')
+  .replaceAll('Åž', 'Ş')
+  .replaceAll('ÄŸ', 'ğ')
+  .replaceAll('Äž', 'Ğ')
+  .replaceAll('–', '-')
+  .replaceAll('–', '-')
+  .replaceAll('Â', '')
+  .replaceAll('Â', '')
+  .replace(/&#215;/g, 'x')
+  .replace(/&#8243;/g, '"')
+  .replace(/&quot;/g, '"')
+  .replace(/&amp;/g, '&')
+  .replace(/&nbsp;/g, ' ')
+  .trim();
+const rawSlug = (raw: any) => raw.slug || raw.id || '';
+const localDatasheet = (slug: string) => `/assets/products/${slug}/${slug}-datasheet.pdf`;
+const localImage = (slug: string) => localImageExtensions[slug] ? `/assets/products/${slug}/${slug}-1.${localImageExtensions[slug]}` : '';
+const localGallery = (slug: string) => {
+  const ext = localImageExtensions[slug];
+  if (!ext) return [];
+  const count = localGalleryCounts[slug] || 1;
+  return Array.from({ length: count }, (_, index) => `/assets/products/${slug}/${slug}-${index + 1}.${ext}`);
+};
+const rawImage = (raw: any) => typeof raw.image === 'string' ? raw.image : raw.image?.url || '';
+const rawProductUrl = (raw: any) => raw.productUrl || raw.source?.product_url || '';
+const rawDatasheet = (raw: any) => raw.datasheet || raw.source?.source_url || '';
+const translateSpecValue = (value: unknown) => normalizeText(value)
+  .replace(/^Yes$/i, 'Evet')
+  .replace(/^No$/i, 'Hayır')
+  .replace(/^Yes \(both surfaces\)$/i, 'Evet (iki yüzeyde de)')
+  .replace(/Up to /gi, '')
+  .replace(/([+-]?\d+°C) to ([+-]?\d+°C)/g, '$1 ile $2')
+  .replace(/\bbits?\b/gi, 'bit')
+  .replace(/\bEurope\b/gi, 'Avrupa')
+  .replace(/\bUSA\b/gi, 'ABD')
+  .replace(/\bhours?\b/gi, 'saat')
+  .replace(/\baccuracy\b/gi, 'hassasiyet')
+  .replace(/Temperature sensing/gi, 'Sıcaklık algılama')
+  .replace(/General/gi, 'Genel')
+  .replace(/Manufacturing/gi, 'Üretim')
+  .replace(/Healthcare/gi, 'Sağlık')
+  .replace(/Laboratory/gi, 'Laboratuvar')
+  .replace(/Warehousing/gi, 'Depolama')
+  .replace(/Transport & Logistics/gi, 'Taşıma ve Lojistik')
+  .replace(/Data\/Telecom/gi, 'Veri ve Telekom')
+  .replace(/^Non metal$/i, 'Metal dışı')
+  .replace(/^On metal$/i, 'Metal üstü')
+  .replace(/Up to 95% plastic-free/i, 'Yüzde 95e kadar plastiksiz')
+  .replace(/Pure aluminum/i, 'Saf alüminyum')
+  .replace(/traditional etching methods/i, 'geleneksel aşındırma yöntemleri')
+  .replace(/certified/i, 'sertifikalı');
+
+const translateExtraSpecValue = (value: string) => value
+  .replace(/^Adhesive$/i, 'Yapışkan')
+  .replace(/^On-metal$/i, 'Metal üstü')
+  .replace(/^Engineering plastics$/i, 'Mühendislik plastiği')
+  .replace(/^Paper \/ PET$/i, 'Kağıt / PET')
+  .replace(/^PET \/ Aluminum Foil \/ Foam$/i, 'PET / Alüminyum Folyo / Köpük')
+  .replace(/^Silicone$/i, 'Silikon')
+  .replace(/^Silicone, Spring$/i, 'Silikon, Yay')
+  .replace(/^Rubber$/i, 'Kauçuk')
+  .replace(/^3M adhesive or screw$/i, '3M yapışkan veya vida')
+  .replace(/^3M adhesive, screw, magnet, cable$/i, '3M yapışkan, vida, mıknatıs, kablo')
+  .replace(/^Vulcanizing agent \(outside tire sidewall\)$/i, 'Vulkanizasyon ajanı ile montaj (lastiğin dış yanak yüzeyi)')
+  .replace(/^Logo, serial number, barcode laser printing$/i, 'Logo, seri numarası ve barkod lazer baskısı')
+  .replace(/^Over 5 years in outdoor conditions$/i, 'Dış ortam koşullarında 5 yıldan fazla')
+  .replace(/^Blue, yellow, red and custom$/i, 'Mavi, sarı, kırmızı ve özel renkler')
+  .replace(/^Red, blue, yellow and custom$/i, 'Kırmızı, mavi, sarı ve özel renkler')
+  .replace(/^Red, blue, black and custom$/i, 'Kırmızı, mavi, siyah ve özel renkler')
+  .replace(/^Numbering, encoding, logo printing$/i, 'Numaralandırma, kodlama, logo baskısı')
+  .replace(/^500 pcs \/ roll, 76.2 mm \/ 3" reel core$/i, '500 adet / rulo, 76.2 mm / 3" rulo göbeği')
+  .replace(/^200 pcs \/ bag$/i, '200 adet / poşet')
+  .replace(/^100 pcs \/ bag$/i, '100 adet / poşet')
+  .replace(/^120 pcs \/ box$/i, '120 adet / kutu')
+  .replace(/^Reel$/i, 'Rulo')
+  .replace(/^All materials$/i, 'Tüm malzemeler')
+  .replace(/^Single$/i, 'Tekli')
+  .replace(/^Printable white PET; resin ribbon recommended$/i, 'Yazdırılabilir beyaz PET; resin ribon önerilir')
+  .replace(/^Permanent adhesive for General purpose$/i, 'Genel kullanım için kalıcı yapışkan')
+  .replace(/^Permanent adhesive for Genel purpose$/i, 'Genel kullanım için kalıcı yapışkan')
+  .replace(/^High quality engineering plastics$/i, 'Yüksek kaliteli mühendislik plastiği')
+  .replace(/^High performance acrylic adhesive \(metal and painted metal\)$/i, 'Yüksek performanslı akrilik yapışkan (metal ve boyalı metal)')
+  .replace(/^Tolerates industrial washing with standard solvents$/i, 'Standart solventlerle endüstriyel yıkamaya dayanır')
+  .replace(/^Years in normal operating conditions$/i, 'Normal çalışma koşullarında yıllarca kullanım')
+  .replace(/^Unique number encoded$/i, 'Benzersiz numara kodlanmış')
+  .replace(/^tested /i, 'test edildi: ')
+  .replace(/^Fabric$/i, 'Kumaş')
+  .replace(/^Fabric Base$/i, 'Kumaş tabanlı')
+  .replace(/^Sewing$/i, 'Dikilerek montaj')
+  .replace(/^Sewing or Insert$/i, 'Dikilerek veya içe yerleştirilerek montaj')
+  .replace(/^Company logo, barcode, number printing & encoding$/i, 'Firma logosu, barkod, numara baskısı ve kodlama')
+  .replace(/^Logo, barcode \/ QR code, number printing$/i, 'Logo, barkod / QR kod ve numara baskısı')
+  .replace(/^ABS plastic with rough coating$/i, 'Pürüzlü kaplamalı ABS plastik')
+  .replace(/^Metal piercing pin$/i, 'Metal delici iğne')
+  .replace(/^Apparel, retail garments$/i, 'Giyim ürünleri, perakende tekstil')
+  .replace(/^Retail garment tagging and anti-theft$/i, 'Perakende giyim etiketleme ve hırsızlık önleme')
+  .replace(/^Apparel, retail$/i, 'Giyim, perakende')
+  .replace(/^Inventory tracking, anti-shrink, brand anti-counterfeiting$/i, 'Envanter takibi, kayıp azaltma ve marka sahteciliğini önleme')
+  .replace(/^Flag tag$/i, 'Bayrak etiket')
+  .replace(/^Non-metal, liquid containers, cardboard$/i, 'Metal dışı yüzeyler, sıvı kapları, karton')
+  .replace(/^Product tracking on liquid-filled containers and cardboard$/i, 'Sıvı dolu kaplar ve karton üzerinde ürün takibi')
+  .replace(/^Logistics, supply chain, FMCG$/i, 'Lojistik, tedarik zinciri, hızlı tüketim ürünleri')
+  .replace(/^Metal, plastic, cardboard, wood$/i, 'Metal, plastik, karton, ahşap')
+  .replace(/^Metal surface$/i, 'Metal yüzey')
+  .replace(/^Adhesive [–-] tamper-evident on removal$/i, 'Söküldüğünde iz bırakan yapışkan')
+  .replace(/^IT asset security, industrial metal asset tracking$/i, 'BT varlık güvenliği, endüstriyel metal varlık takibi')
+  .replace(/^Tamper detection on removal$/i, 'Sökülme algılama')
+  .replace(/^Coated Paper \/ PET \/ Fragile Paper$/i, 'Kaplamalı kağıt / PET / kırılgan kağıt')
+  .replace(/^IP68 \(tested 5h at 1m depth\)$/i, 'IP68 (1 m derinlikte 5 saat test edildi)')
+  .replace(/^(-?\d+°C) to (\+?\d+°C)$/i, '$1 ile $2')
+  .replace(/^(\d+)% non-condensing$/i, 'Yoğuşmasız %$1')
+  .replace(/^> 10 years$/i, '10 yıldan fazla')
+  .replace(/^200 washing cycles or 3 years$/i, '200 yıkama çevrimi veya 3 yıl')
+  .replace(/^Detergent, Softener, Bleach \(Oxygen\/Chlorine\), Alkali$/i, 'Deterjan, yumuşatıcı, ağartıcı (oksijen/klor), alkali')
+  .replace(/^(\d+(?:\.\d+)?) m on metal$/i, 'Metal üzerinde $1 m')
+  .replace(/^Metal$/i, 'Metal')
+  .replace(/^Plastic$/i, 'Plastik')
+  .replace(/^Plastic and non-metallic substrates$/i, 'Plastik ve metal dışı yüzeyler')
+  .replace(/^Stainless steel with ceramic core$/i, 'Seramik çekirdekli paslanmaz çelik')
+  .replace(/^Steel strap or welded$/i, 'Çelik kelepçe veya kaynak')
+  .replace(/^Durable thermoplastic material$/i, 'Dayanıklı termoplastik malzeme')
+  .replace(/^Adhesive \(standard\)$/i, 'Yapışkan (standart)')
+  .replace(/^Thermoplastic cover$/i, 'Termoplastik kaplama')
+  .replace(/^Mechanical \(2 × 3mm holes, standard\)$/i, 'Mekanik montaj (2 × 3 mm delik, standart)')
+  .replace(/^Painted Black$/i, 'Siyah boyalı')
+  .replace(/^Film Adhesive \(included\)$/i, 'Film yapışkan (dahil)')
+  .replace(/^Ceramic$/i, 'Seramik')
+  .replace(/^Permanent liquid adhesive \(not included\) or film adhesive \(option\)$/i, 'Kalıcı sıvı yapışkan (dahil değil) veya film yapışkan (opsiyonel)')
+  .replace(/^High Temperature Synthetic Label$/i, 'Yüksek sıcaklığa dayanıklı sentetik etiket')
+  .replace(/^Holes for mechanical attachment$/i, 'Mekanik montaj için delikler')
+  .replace(/^1 roll \(1,020 labels\)$/i, '1 rulo (1.020 etiket)')
+  .replace(/^1,020 labels \(1 roll\)$/i, '1.020 etiket (1 rulo)')
+  .replace(/^Overmoulded durable, shock resistant TPE$/i, 'Dayanıklı, darbeye dirençli overmould TPE')
+  .replace(/^Mechanical \(std\), cable tie, magnet, foam adhesive$/i, 'Mekanik montaj (std), kablo bağı, mıknatıs, köpük yapışkan')
+  .replace(/^GPS, Accelerometer, Temperature$/i, 'GPS, ivmeölçer, sıcaklık')
+  .replace(/^Sealed prismatic battery, non-replaceable$/i, 'Mühürlü prizmatik pil, değiştirilemez')
+  .replace(/^3 years \(DBR 24h, 1 movement\/day\)$/i, '3 yıl (DBR 24 saat, günde 1 hareket)')
+  .replace(/^Bi-color LED$/i, 'Çift renkli LED')
+  .replace(/^2-part durable plastic case$/i, '2 parçalı dayanıklı plastik gövde')
+  .replace(/^3 variants: lanyard, belt clip or watch strap$/i, '3 varyant: boyun askısı, kemer klipsi veya saat kayışı')
+  .replace(/^Replaceable CR2032$/i, 'Değiştirilebilir CR2032')
+  .replace(/^6 months \(10h moving\/day \+ 14h stationary\/day\)$/i, '6 ay (günde 10 saat hareketli + 14 saat sabit)')
+  .replace(/^Sub 1 metre$/i, '1 metrenin altında')
+  .replace(/^868 MHz [–-] Europe \/ 915 MHz [–-] USA$/i, '868 MHz - Avrupa / 915 MHz - ABD')
+  .replace(/^CE, RoHS; optional ATEX\/IECEx, US&Canada C1D1\/D2$/i, 'CE, RoHS; opsiyonel ATEX/IECEx, ABD & Kanada C1D1/D2')
+  .replace(/^CE, RoHS, Ex; optional ATEX\/IECEx, US&Canada C1D1\/D2$/i, 'CE, RoHS, Ex; opsiyonel ATEX/IECEx, ABD & Kanada C1D1/D2')
+  .replace(/^CE, RoHS; optional ATEX\/IECEx$/i, 'CE, RoHS; opsiyonel ATEX/IECEx')
+  .replace(/^CE, FCC, RoHS, NFC, LoRa$/i, 'CE, FCC, RoHS, NFC, LoRa')
+  .replace(/^CE, FCC, RoHS, NFC, Bluetooth$/i, 'CE, FCC, RoHS, NFC, Bluetooth')
+  .replace(/^(\d+) layers$/i, '$1 katman')
+  .replace(/^(\d+)-(\d+) hours$/i, '$1-$2 saat')
+  .replace(/^(.+?) \((.+? accuracy)\)$/i, '$1 ($2)');
+const translateApplicationText = (value: string) => normalizeText(value)
+  .replace(/^Clothing$/i, 'Giyim')
+  .replace(/^Asset management$/i, 'Varlık yönetimi')
+  .replace(/^Logistics$/i, 'Lojistik')
+  .replace(/^Asset tagging$/i, 'Varlık etiketleme')
+  .replace(/^Industrial identification$/i, 'Endüstriyel kimliklendirme')
+  .replace(/^Library$/i, 'Kütüphane')
+  .replace(/^IT asset management$/i, 'BT varlık yönetimi')
+  .replace(/^Retail$/i, 'Perakende')
+  .replace(/^Theme parks$/i, 'Tema parkları')
+  .replace(/^Swimming pools$/i, 'Yüzme havuzları')
+  .replace(/^Access control$/i, 'Geçiş kontrolü')
+  .replace(/^Events$/i, 'Etkinlikler')
+  .replace(/^Healthcare$/i, 'Sağlık')
+  .replace(/^Leisure centers?$/i, 'EÄŸlence merkezleri')
+  .replace(/^Industrial$/i, 'Endüstriyel')
+  .replace(/^Vehicle identification$/i, 'Araç tanımlama');
+
+const translateMarketingTextToTr = (value: string) => normalizeText(value)
+  .replace(/^Ultra-slim flexible UHF RFID on-metal label/i, 'Ultra ince esnek UHF metal üstü RFID etiket')
+  .replace(/^Flexible printable UHF RFID on-metal label/i, 'Yazdırılabilir esnek UHF metal üstü RFID etiket')
+  .replace(/^High-performance flexible UHF RFID on-metal label/i, 'Yüksek performanslı esnek UHF metal üstü RFID etiket')
+  .replace(/^Rugged UHF RFID hard tag/i, 'Dayanıklı UHF RFID sert etiket')
+  .replace(/^High-protection UHF RFID metal tag/i, 'Yüksek korumalı UHF metal RFID etiket')
+  .replace(/^Rugged FR-4 PCB on-metal RFID tag/i, 'Dayanıklı FR-4 PCB metal üstü RFID etiket')
+  .replace(/^Large-format/i, 'Büyük ebatlı')
+  .replace(/^Passive UHF RFID label/i, 'Pasif UHF RFID etiket')
+  .replace(/^Compact 30×30 mm NFC tag designed to work directly on metallic surfaces\./i, '30×30 mm kompakt NFC etiket, metal yüzeylerde doğrudan çalışmak üzere tasarlanmıştır.')
+  .replace(/^25 mm diameter ICODE NFC dry inlay \/ label tag/i, '25 mm çaplı ICODE NFC dry inlay / etiket')
+  .replace(/^Durable rubber RFID patch tag designed to be vulcanized onto the sidewall of finished tires\./i, 'Dayanıklı kauçuk RFID yama etiket, tamamlanmış lastiklerin yanak kısmına vulkanize edilmek üzere tasarlanmıştır.')
+  .replace(/^Waterproof NFC silicone wristband with round head design/i, 'Yuvarlak başlıklı su geçirmez NFC silikon bileklik')
+  .replace(/^UHF RFID silicone wristband with round head design/i, 'Yuvarlak başlıklı UHF RFID silikon bileklik')
+  .replace(/^UHF RFID silicone wristband with spring mechanism/i, 'Yay mekanizmalı UHF RFID silikon bileklik')
+  .replace(/^UHF RFID adjustable silicone wristband with extended 2 m read range/i, '2 m\'ye kadar geniÅŸletilmiÅŸ okuma mesafesine sahip ayarlanabilir UHF RFID silikon bileklik')
+  .replace(/^Sewable UHF RFID fabric tag/i, 'Dikilebilir UHF RFID kumaÅŸ etiket')
+  .replace(/ operating at ([^.]+?) with ([^.]+?) chip/gi, ' $1 frekansında çalışan $2 çipli')
+  .replace(/ operating at ([^.]+?)\./gi, ' $1 frekansında çalışır.')
+  .replace(/ with read range up to ([^.]+?) on metal/gi, ', metal üzerinde $1\'ye kadar okuma mesafesi sunar')
+  .replace(/ with up to ([^.]+?) read range/gi, ', $1\'ye kadar okuma mesafesi sunar')
+  .replace(/Designed for /gi, '')
+  .replace(/ suitable for /gi, ' ')
+  .replace(/ compliant with /gi, ' uyumlu, ')
+  .replace(/ and /gi, ' ve ')
+  .replace(/ theme parks/gi, ' tema parkları')
+  .replace(/ swimming pools/gi, ' yüzme havuzları')
+  .replace(/ access control/gi, ' geçiş kontrolü')
+  .replace(/ events/gi, ' etkinlikler')
+  .replace(/ healthcare/gi, ' sağlık')
+  .replace(/ clothing/gi, ' giyim')
+  .replace(/ asset management/gi, ' varlık yönetimi')
+  .replace(/ logistics/gi, ' lojistik')
+  .replace(/ industrial identification/gi, ' endüstriyel kimliklendirme')
+  .replace(/ asset tagging/gi, ' varlık etiketleme')
+  .replace(/ library/gi, ' kütüphane')
+  .replace(/ retail applications/gi, ' perakende uygulamaları')
+  .replace(/ wearable identification/gi, ' giyilebilir kimliklendirme')
+  .replace(/ prevent theft and cloning/gi, ' hırsızlık ve kopyalamayı önleme')
+  .replace(/ for buses, trucks and trailers/gi, ' otobüs, kamyon ve treyler uygulamaları için')
+  .replace(/\s{2,}/g, ' ')
+  .trim();
+
+const translateSpecLabel = (label: string) => {
+  const normalized = normalizeText(label);
+  const directSection = sectionLabelMap[normalized];
+  if (directSection) return directSection;
+  const directSpec = specLabelMap[normalized];
+  if (directSpec) return directSpec;
+
+  return normalized
+    .replace(/^ENVIRONMENTAL RESISTANCE$/i, 'Çevresel Dayanım')
+    .replace(/^Operating Frequency [–-] ETSI$/i, 'Çalışma Frekansı – ETSI')
+    .replace(/^Operating Frequency [–-] FCC$/i, 'Çalışma Frekansı – FCC')
+    .replace(/^Memory \(Monza 4QT\)$/i, 'Hafıza (Monza 4QT)')
+    .replace(/^EPC Content$/i, 'EPC İçeriği')
+    .replace(/^Read Range [–-] on metal$/i, 'Metal üstü okuma mesafesi')
+    .replace(/^Read Range [–-] on metal \(FCC\)$/i, 'Metal üstü okuma mesafesi (FCC)')
+    .replace(/^Read Range [–-] on metal \(ETSI\)$/i, 'Metal üstü okuma mesafesi (ETSI)')
+    .replace(/^Read Range [–-] other materials$/i, 'Diğer yüzeylerde okuma mesafesi')
+    .replace(/^Read Range [–-] off metal \(FCC\)$/i, 'Metal dışı okuma mesafesi (FCC)')
+    .replace(/^Read Range [–-] on plastic \(FCC\)$/i, 'Plastik üzerinde okuma mesafesi (FCC)')
+    .replace(/^Read Range [–-] on metal pipe$/i, 'Metal boru üzerinde okuma mesafesi')
+    .replace(/^Read Range [–-] on plastic pipe$/i, 'Plastik boru üzerinde okuma mesafesi')
+    .replace(/^Applicable Surfaces$/i, 'Uygulanabilir Yüzeyler')
+    .replace(/^Tag Dimensions$/i, 'Etiket Ölçüleri')
+    .replace(/^Tag Materials$/i, 'Etiket Malzemeleri')
+    .replace(/^Material$/i, 'Malzeme')
+    .replace(/^Memory$/i, 'Hafıza')
+    .replace(/^Installation$/i, 'Montaj')
+    .replace(/^Supported Printers$/i, 'Desteklenen Yazıcılar')
+    .replace(/^Package$/i, 'Paketleme')
+    .replace(/^IP Classification$/i, 'IP Sınıfı')
+    .replace(/^Inlay Dimensions$/i, 'Inlay Ölçüleri')
+    .replace(/^IC Options$/i, 'Çip Seçenekleri')
+    .replace(/^Humidity$/i, 'Nem')
+    .replace(/^Customization$/i, 'Özelleştirme')
+    .replace(/^Designed Lifetime$/i, 'Tasarım Ömrü')
+    .replace(/^Reading Range$/i, 'Okuma Mesafesi')
+    .replace(/^Data Storage$/i, 'Veri Saklama Süresi')
+    .replace(/^Color Options$/i, 'Renk Seçenekleri')
+    .replace(/^Options$/i, 'Seçenekler')
+    .replace(/^Antenna Size$/i, 'Anten Boyutu')
+    .replace(/^Wet Inlay \/ Label Size$/i, 'Islak Inlay / Etiket Ölçüsü')
+    .replace(/^Label Material$/i, 'Etiket Malzemesi')
+    .replace(/^Adhesive$/i, 'Yapışkan')
+    .replace(/^Weight$/i, 'Ağırlık')
+    .replace(/^Amount in Box$/i, 'Kutu Adedi')
+    .replace(/^Amount per Reel$/i, 'Rulo Adedi')
+    .replace(/^Delivery Format$/i, 'Teslimat Formatı')
+    .replace(/^Storage Condition$/i, 'Saklama KoÅŸulu')
+    .replace(/^Water Resistance$/i, 'Su Dayanımı')
+    .replace(/^Washing Resistance$/i, 'Yıkama Dayanımı')
+    .replace(/^Chemical Resistance$/i, 'Kimyasal Dayanım')
+    .replace(/^Expected Lifetime$/i, 'Beklenen Kullanım Ömrü')
+    .replace(/^Dimensions \(150 mm\)$/i, 'Ölçüler (150 mm)')
+    .replace(/^Dimensions \(250 mm\)$/i, 'Ölçüler (250 mm)')
+    .replace(/^Reel Core Inner Diameter$/i, 'Rulo Göbeği İç Çapı')
+    .replace(/^Minimum Bending Diameter$/i, 'Minimum Bükülme Çapı')
+    .replace(/^Frequency Range [–-] EU$/i, 'Frekans Aralığı - AB')
+    .replace(/^Frequency Range [–-] US$/i, 'Frekans Aralığı - ABD')
+    .replace(/^Read Range [–-] Fixed Reader$/i, 'Okuma mesafesi - Sabit okuyucu')
+    .replace(/^Read Range [–-] Handheld Reader$/i, 'Okuma mesafesi - El terminali')
+    .replace(/^Location Accuracy$/i, 'Konum Hassasiyeti')
+    .replace(/^Size [–-] Lanyard\/Belt Clip$/i, 'Ölçüler - Yaka Kartı/Kemer Klipsi')
+    .replace(/^Size [–-] Watch Strap$/i, 'Ölçüler - Saat Kayışı');
+};
+
+function normalizeSections(raw: any, lang: 'tr' | 'en') {
+  if (!Array.isArray(raw.sections)) return undefined;
+  return raw.sections.map((section: any) => {
+    const items = Object.entries(section.items || {}).reduce<Record<string, string>>((acc, [key, value]) => {
+      const label = lang === 'tr' ? translateSpecLabel(key) : key;
+      acc[label] = lang === 'tr' ? translateExtraSpecValue(translateSpecValue(value)) : normalizeText(value);
+      return acc;
+    }, {});
+    return {
+      name: lang === 'tr' ? translateSpecLabel(section.name) : section.name,
+      items,
+    };
+  });
+}
+
+function normalizeTag(raw: any, lang: 'tr' | 'en'): RfidTag {
+  const slug = rawSlug(raw);
+  const brand = raw.brand || raw.display_brand || '';
+  const trCopy = confidexTurkishCopy[slug] || tagTurkishCopy[slug];
+  const fallbackTrSummary = brand === 'Epozzy'
+    ? translateMarketingTextToTr(normalizeText(raw.summary_en || raw.shortDesc_en || raw.shortDesc || raw.description_en || raw.description))
+    : '';
+  const fallbackTrDescription = brand === 'Epozzy'
+    ? translateMarketingTextToTr(normalizeText(raw.description_en || raw.summary_en || raw.description || raw.shortDesc))
+    : '';
+  const title = normalizeText(lang === 'en' ? (raw.title_en || raw.title) : (trCopy?.title || raw.title_tr || raw.title || raw.title_en));
+  const englishSummary = normalizeText(raw.summary_en || raw.shortDesc_en || raw.shortDesc || raw.description_en || raw.description);
+  const shortDesc = lang === 'tr'
+    ? (normalizeText(trCopy?.shortDesc) || normalizeText(raw.summary_tr || raw.shortDesc_tr) || fallbackTrSummary || normalizeText(raw.shortDesc || raw.summary_en))
+    : englishSummary;
+  const description = lang === 'tr'
+    ? (normalizeText(trCopy?.description || trCopy?.shortDesc) || normalizeText(raw.description_tr || raw.summary_tr) || fallbackTrDescription || normalizeText(raw.description || raw.summary_en || raw.shortDesc))
+    : normalizeText(raw.description_en || raw.summary_en || raw.description || raw.shortDesc);
+  const gallery = localGallery(slug);
+  const image = gallery[0] || localImage(slug) || rawImage(raw);
+  const datasheet = localDatasheetSlugs.has(slug) ? localDatasheet(slug) : rawDatasheet(raw);
+  const model = normalizeText(raw.model || raw.alt_code || title.replace(/^Avery Dennison |^Alien /, ''));
+  const sku = normalizeText(raw.sku || raw.alt_code || model);
+  const frequencyBand = normalizeText(raw.frequencyBand || firstSectionValue(raw, ['Operating Frequency', 'Frequency']));
+  const protocol = normalizeText(raw.protocol || firstSectionValue(raw, ['Protocol']));
+  const chip = normalizeText(raw.chip || firstSectionValue(raw, ['Integrated Circuit', 'IC', 'Chip']));
+  const sizeText = normalizeText(raw.sizeText || firstSectionValue(raw, ['Label Size', 'Inlay Width', 'Antenna Width']));
+  const formFactor = normalizeText(raw.formFactor || raw.product_group || raw.category || raw.subtitle || 'RFID Label / Inlay');
+  const onMetal = Boolean(raw.onMetal ?? /on[-_ ]?metal|metal/i.test(raw.surface || raw.category || raw.product_group || ''));
+  const applications = lang === 'tr'
+    ? ((raw.applications_tr || trCopy?.applications || raw.applications || []).map((item: string) => brand === 'Epozzy' ? translateApplicationText(item) : item))
+    : (raw.applications_en || tagEnglishApplications[slug] || raw.applications || []);
+  const tags = [
+    raw.frequency || (frequencyBand ? 'UHF' : ''),
+    formFactor,
+    chip,
+    onMetal ? (lang === 'tr' ? 'Metal Üstü' : 'On Metal') : (lang === 'tr' ? 'Metal Dışı' : 'Non Metal'),
+  ].filter(Boolean);
+
+  return {
+    slug,
+    title,
+    brand,
+    model,
+    sku,
+    subtitle: normalizeText(lang === 'en' ? (raw.subtitle || raw.product_group || raw.category) : (raw.product_group || raw.category || raw.subtitle)),
+    shortDesc,
+    description,
+    customerSummary: normalizeText(raw.customerSummary || shortDesc),
+    image,
+    gallery: gallery.length > 0 ? gallery : undefined,
+    datasheet,
+    productUrl: rawProductUrl(raw),
+    frequency: normalizeText(raw.frequency || (frequencyBand.includes('13.56') ? 'HF' : 'UHF')),
+    frequencyBand,
+    protocol,
+    chip,
+    surface: raw.surface || (onMetal ? 'metal' : 'non-metal'),
+    onMetal,
+    formFactor,
+    sizeText,
+    material: lang === 'tr'
+      ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.material || firstSectionValue(raw, ['Printable Surface', 'Material']))))
+      : normalizeText(raw.material || firstSectionValue(raw, ['Printable Surface', 'Material'])),
+    fixedReadRange: normalizeText(raw.fixedReadRange || ''),
+    handheldReadRange: normalizeText(raw.handheldReadRange || ''),
+    operatingTemp: normalizeText(raw.operatingTemp || firstSectionValue(raw, ['Operating Limits', 'Operating Temperature'])),
+    ipRating: normalizeText(raw.ipRating || ''),
+    applications,
+    industries: raw.industries || [],
+    tags,
+    sections: normalizeSections(raw, lang),
+  };
+}
+
+export const rfidTags = allRfidTags
+  .filter(tag => (tag.brand || tag.display_brand) !== 'RichRFID')
+  .map(tag => normalizeTag(tag, 'tr'))
+  .filter(tag => tag.slug);
+
+export const rfidTagsEn = allRfidTags
+  .filter(tag => (tag.brand || tag.display_brand) !== 'RichRFID')
+  .map(tag => normalizeTag(tag, 'en'))
+  .filter(tag => tag.slug);
 
 export const tagBrands = [...new Set(rfidTags.map(tag => tag.brand))].sort();
+export const tagBrandsEn = [...new Set(rfidTagsEn.map(tag => tag.brand))].sort();
 export const tagSurfaceTypes = [...new Set(rfidTags.map(tag => tag.onMetal ? 'On Metal' : 'Non Metal'))].sort();

@@ -73,7 +73,6 @@ const surfaceCounts = {
                 <div class="card-actions">
                   <a href={`/urunler/etiketler/${tag.slug}/`} class="btn btn-primary btn-sm">İncele</a>
                   <a href={`/iletisim/?urun=${encodeURIComponent(tag.title)}`} class="btn btn-outline btn-sm">Teklif Al</a>
-                  {tag.datasheet && <a href={tag.datasheet} class="btn btn-pdf btn-sm" target="_blank" rel="noopener">PDF</a>}
                 </div>
               </div>
             </article>
@@ -122,8 +121,6 @@ const surfaceCounts = {
 .tag { font-size: 10.5px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
 .card-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
 .card-actions .btn-outline { margin-left: 0; }
-.btn-pdf { background: #fff4f3; border: 1.5px solid #ffd7d3; color: #c62828; }
-.btn-pdf:hover { background: #c62828; border-color: #c62828; color: #fff; }
 @media (max-width: 600px) {
   .btn-outline { margin-left: 0; width: 100%; justify-content: center; }
 }

@@ -36,7 +36,6 @@ const displayTitle = (value: string) => value
   .replace(/Yazıcı/g, 'Printer')
   .replace(/El Terminali/g, 'Handheld Terminal');
 const displayTag = (value: string) => translateEnglishTags([value])[0];
-const englishDatasheet = (value?: string) => value?.replace(/\.pdf$/, '-en.pdf');
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -84,7 +83,6 @@ const schema = {
           <div class="card-actions">
             <a href={`${detailBase}${item.slug}/`} class="btn btn-primary btn-sm">View Product</a>
             <a href={`/en/contact/?product=${encodeURIComponent(displayTitle(item.title))}`} class="btn btn-outline btn-sm">Request Quote</a>
-            {item.datasheet && <a href={englishDatasheet(item.datasheet)} class="btn btn-pdf btn-sm" target="_blank" rel="noopener">PDF</a>}
           </div>
         </div>
       </article>
@@ -134,8 +132,6 @@ const schema = {
 .btn-sm { font-size: 13px; padding: 8px 16px; }
 .btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
 .btn-outline:hover { background: var(--primary); color: #fff; }
-.btn-pdf { background: #fff4f3; border: 1.5px solid #ffd7d3; color: #c62828; }
-.btn-pdf:hover { background: #c62828; border-color: #c62828; color: #fff; }
 .cta-strip { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); padding: 48px 0; }
 .cta-strip .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .cta-strip p { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0; }

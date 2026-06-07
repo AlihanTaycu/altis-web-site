@@ -80,9 +80,6 @@ const schema = {
                 <div class="card-actions">
                   <a href={`/urunler/yazicilar/${printer.slug}/`} class="btn btn-primary btn-sm">Ürünü İncele</a>
                   <a href={`/iletisim/?urun=${encodeURIComponent(printer.title)}`} class="btn btn-outline btn-sm">Fiyat Teklifi Al</a>
-                  {printer.datasheet && (
-                    <a href={printer.datasheet} class="btn btn-pdf btn-sm" target="_blank" rel="noopener">PDF</a>
-                  )}
                 </div>
               </div>
             </article>
@@ -246,16 +243,6 @@ const schema = {
 }
 .card-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
 .btn-sm { font-size: 13px; padding: 8px 16px; }
-.btn-pdf {
-  background: #fff4f3;
-  border: 1.5px solid #ffd7d3;
-  color: #c62828;
-}
-.btn-pdf:hover {
-  background: #c62828;
-  border-color: #c62828;
-  color: #fff;
-}
 .btn-outline {
   background: transparent;
   border: 1.5px solid var(--primary);
