@@ -22987,7 +22987,7 @@ const firstSectionValue = (raw: any, labels: string[]) => {
 };
 
 const fixMojibake = (input: string) => {
-  if (!/[ÃÄÅÂâ€]/.test(input)) return input;
+  if (!/[\u00c3\u00c4\u00c5\u00c2\u00e2\u20ac]/.test(input)) return input;
 
   try {
     const repaired = Buffer.from(input, 'latin1').toString('utf8');
@@ -23002,22 +23002,22 @@ const fixMojibake = (input: string) => {
 };
 
 const normalizeText = (value: unknown) => fixMojibake(String(value || ''))
-  .replaceAll('Ã¼', 'ü')
-  .replaceAll('Ãœ', 'Ü')
-  .replaceAll('Ã¶', 'ö')
-  .replaceAll('Ã–', 'Ö')
-  .replaceAll('Ã§', 'ç')
-  .replaceAll('Ã‡', 'Ç')
-  .replaceAll('Ä±', 'ı')
-  .replaceAll('Ä°', 'İ')
-  .replaceAll('ÅŸ', 'ş')
-  .replaceAll('Åž', 'Ş')
-  .replaceAll('ÄŸ', 'ğ')
-  .replaceAll('Äž', 'Ğ')
-  .replaceAll('–', '-')
-  .replaceAll('–', '-')
-  .replaceAll('Â', '')
-  .replaceAll('Â', '')
+  .replaceAll('\u00c3\u00bc', 'ü')
+  .replaceAll('\u00c3\u0153', 'Ü')
+  .replaceAll('\u00c3\u00b6', 'ö')
+  .replaceAll('\u00c3\u2013', 'Ö')
+  .replaceAll('\u00c3\u00a7', 'ç')
+  .replaceAll('\u00c3\u2021', 'Ç')
+  .replaceAll('\u00c4\u00b1', 'ı')
+  .replaceAll('\u00c4\u00b0', 'İ')
+  .replaceAll('\u00c5\u0178', 'ş')
+  .replaceAll('\u00c5\u017e', 'Ş')
+  .replaceAll('\u00c4\u0178', 'ğ')
+  .replaceAll('\u00c4\u017e', 'Ğ')
+  .replaceAll('\u2013', '-')
+  .replaceAll('\u2013', '-')
+  .replaceAll('\u00c2', '')
+  .replaceAll('\u00c2', '')
   .replace(/&#215;/g, 'x')
   .replace(/&#8243;/g, '"')
   .replace(/&quot;/g, '"')
