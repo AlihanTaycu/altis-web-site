@@ -44,6 +44,17 @@ test('vuzix hub links to all model detail pages and premium sections', async () 
   ]);
 });
 
+test('products hub uses the Vuzix marketing image instead of the placeholder SVG visual', async () => {
+  const source = await readSource('src/pages/urunler/index.astro');
+
+  assertIncludesAll(source, [
+    '/images/vuzix/vuzix-marketing.png',
+    'Vuzix M400, M4000 ve LX1 akıllı gözlük modelleri',
+  ]);
+  assert.doesNotMatch(source, /id="vx-bg"/);
+  await access(new URL('public/images/vuzix/vuzix-marketing.png', root));
+});
+
 test('vuzix dynamic detail page renders model content, specs, and related models', async () => {
   const source = await readSource('src/pages/urunler/akilli-gozluk/[slug].astro');
 

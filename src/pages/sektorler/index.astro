@@ -37,26 +37,15 @@ const schema = {
           title="Depo & Lojistik"
           desc="RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryolarıyla depo operasyonunu uçtan uca görünür kılar."
         >
-          <svg slot="visual" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="wh-bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#EEF3FF" />
-                <stop offset="1" stop-color="#E8FAFD" />
-              </linearGradient>
-            </defs>
-            <rect x="0" y="0" width="480" height="200" rx="10" fill="url(#wh-bg)" />
-            {[0, 1, 2].map(row => (
-              [0, 1, 2, 3, 4].map(col => (
-                <rect x={40 + col * 75} y={50 + row * 38} width="60" height="28" rx="3" fill="#fff" stroke="#D5DEF0" />
-              ))
-            ))}
-            <g transform="translate(420, 60)">
-              <rect x="0" y="0" width="40" height="100" rx="5" fill="#00125C" />
-              <circle cx="20" cy="30" r="8" fill="#18B7D6" />
-              <rect x="6" y="55" width="28" height="3" rx="1.5" fill="#fff" opacity=".6" />
-              <rect x="6" y="62" width="20" height="3" rx="1.5" fill="#fff" opacity=".4" />
-            </g>
-          </svg>
+          <img
+            slot="visual"
+            src="/images/pick-to-light/p2l-marketing.png"
+            alt="Pick-to-Light raf yönlendirme ile depo operatörü çalışma görseli"
+            width="1844"
+            height="921"
+            loading="lazy"
+            decoding="async"
+          />
         </HubCard>
 
         <div class="featured-small-stack">

@@ -51,3 +51,12 @@ test('retail textile page uses Astro layout routes instead of legacy html links'
   assert.match(pageSource, /\/sektorler\/uretim\//);
   assert.match(pageSource, /\/sektorler\/perakende-tekstil\//);
 });
+
+test('retail textile tunnel visual keeps readings and stats aligned in normal flow', () => {
+  assert.match(pageSource, /<div class="tunnel-scene">/);
+  assert.match(pageSource, /\.tunnel-stage\{[^}]*flex-direction:column/s);
+  assert.match(pageSource, /\.tunnel-readings\{[^}]*position:relative/s);
+  assert.doesNotMatch(pageSource, /\.tunnel-readings\{[^}]*bottom:-72px/s);
+  assert.match(pageSource, /\.tunnel-stats\{[^}]*position:relative/s);
+  assert.doesNotMatch(pageSource, /\.tunnel-stats\{[^}]*position:absolute/s);
+});

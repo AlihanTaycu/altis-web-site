@@ -278,19 +278,21 @@ const schema = {
         </ul>
       </div>
       <div class="tunnel-stage">
-        <div class="tunnel">
-          <div class="tunnel-frame">
-            <div class="tunnel-label">RFID Tunnel · Altis</div>
-            <div class="tunnel-antenna l1"></div>
-            <div class="tunnel-antenna l2"></div>
-            <div class="tunnel-antenna r1"></div>
-            <div class="tunnel-antenna r2"></div>
-            <div class="tunnel-carton">
-              <div class="label">CARTON-04812</div>
-              <div class="count">×64 SKU</div>
+        <div class="tunnel-scene">
+          <div class="tunnel">
+            <div class="tunnel-frame">
+              <div class="tunnel-label">RFID Tunnel · Altis</div>
+              <div class="tunnel-antenna l1"></div>
+              <div class="tunnel-antenna l2"></div>
+              <div class="tunnel-antenna r1"></div>
+              <div class="tunnel-antenna r2"></div>
+              <div class="tunnel-carton">
+                <div class="label">CARTON-04812</div>
+                <div class="count">×64 SKU</div>
+              </div>
             </div>
+            <div class="tunnel-conveyor"></div>
           </div>
-          <div class="tunnel-conveyor"></div>
           <div class="tunnel-readings">
             <span class="epc active">E2 80 11 60</span>
             <span class="epc active">E2 80 11 62</span>
@@ -758,15 +760,19 @@ section{padding:110px 0}
 
 /* RFID Tunnel visual */
 .tunnel-stage{
-  position:relative;background:#0F0F14;border-radius:var(--radius-lg);padding:48px 32px;
+  position:relative;background:#0F0F14;border-radius:var(--radius-lg);padding:52px 32px 28px;
   box-shadow:var(--shadow-lg);overflow:hidden;min-height:480px;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
 }
 .tunnel-stage::before{
   content:"";position:absolute;inset:0;
   background:
     radial-gradient(600px 300px at 50% 40%, rgba(142,63,115,.18), transparent 60%),
     repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 21px);
+}
+.tunnel-scene{
+  position:relative;z-index:1;width:100%;max-width:380px;
+  display:flex;flex-direction:column;align-items:center;gap:22px;
 }
 .tunnel{
   position:relative;width:100%;max-width:380px;height:220px;
@@ -831,7 +837,7 @@ section{padding:110px 0}
   border-radius:3px;
 }
 .tunnel-readings{
-  position:absolute;left:50%;bottom:-72px;transform:translateX(-50%);
+  position:relative;left:auto;bottom:auto;transform:none;
   display:flex;gap:4px;flex-wrap:wrap;justify-content:center;width:280px;
 }
 .tunnel-readings .epc{
@@ -841,7 +847,7 @@ section{padding:110px 0}
 }
 .tunnel-readings .epc.active{color:var(--sector);border-color:var(--sector);background:rgba(142,63,115,.15)}
 .tunnel-stats{
-  position:absolute;bottom:24px;left:32px;right:32px;
+  position:relative;z-index:1;width:100%;
   display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
 }
 .tunnel-stat{
