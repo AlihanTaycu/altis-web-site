@@ -56,10 +56,10 @@ for (const page of pages) {
 test('solutions hub uses the TrueScan marketing image instead of the placeholder SVG visual', async () => {
   const source = await readMaybe('../src/pages/cozumler/index.astro');
 
-  assert.match(source, /\/images\/truescan\/truescan-marketing\.png/);
+  assert.match(source, /\/images\/truescan\/truescan-marketing\.webp/);
   assert.match(source, /TrueScan endüstriyel kamera ile kirli barkod ve QR kod okuma görseli/);
   assert.doesNotMatch(source, /id="ts-bg"/);
-  await access(new URL('public/images/truescan/truescan-marketing.png', root));
+  await access(new URL('public/images/truescan/truescan-marketing.webp', root));
 });
 
 test('solutions hub uses the rendered TrueScan motion loop for the visual card', async () => {
@@ -76,28 +76,28 @@ test('solutions hub gives Pick-to-Light and Demirbaş Yönetimi cards their own 
   assert.doesNotMatch(source, /title="Asset Yönetimi"/);
   assert.match(source, /title="Demirbaş Yönetimi"/);
   assert.match(source, /class="p2l-card-visual"/);
-  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.png/);
+  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.webp/);
   assert.match(source, /class="asset-mini-visual"/);
   assert.match(source, /class="asset-qr"/);
-  await access(new URL('public/images/pick-to-light/p2l-marketing.png', root));
+  await access(new URL('public/images/pick-to-light/p2l-marketing.webp', root));
 });
 
 test('sectors hub uses the pick-to-light warehouse marketing image instead of the placeholder SVG visual', async () => {
   const source = await readMaybe('../src/pages/sektorler/index.astro');
 
-  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.png/);
+  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.webp/);
   assert.match(source, /Pick-to-Light raf yönlendirme ile depo operatörü çalışma görseli/);
   assert.doesNotMatch(source, /id="wh-bg"/);
-  await access(new URL('public/images/pick-to-light/p2l-marketing.png', root));
+  await access(new URL('public/images/pick-to-light/p2l-marketing.webp', root));
 });
 
 test('sectors hub gives retail textile and manufacturing cards their own visuals', async () => {
   const source = await readMaybe('../src/pages/sektorler/index.astro');
 
-  assert.match(source, /\/images\/sectors\/perakende-marketing\.png/);
-  assert.match(source, /\/images\/sectors\/uretim-marketing\.png/);
-  await access(new URL('public/images/sectors/perakende-marketing.png', root));
-  await access(new URL('public/images/sectors/uretim-marketing.png', root));
+  assert.match(source, /\/images\/sectors\/perakende-marketing\.webp/);
+  assert.match(source, /\/images\/sectors\/uretim-marketing\.webp/);
+  await access(new URL('public/images/sectors/perakende-marketing.webp', root));
+  await access(new URL('public/images/sectors/uretim-marketing.webp', root));
 });
 
 test('sectors hub uses a tidy equal three-up layout with aligned visuals', async () => {

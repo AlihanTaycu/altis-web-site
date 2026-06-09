@@ -11,6 +11,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "og": "node scripts/generate-og.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "video:studio": "npm --prefix remotion run dev",
     "video:render:web": "npm --prefix remotion run render:web",
     "video:render:social": "npm --prefix remotion run render:social"

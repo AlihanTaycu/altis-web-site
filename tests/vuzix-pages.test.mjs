@@ -48,11 +48,11 @@ test('products hub uses the Vuzix marketing image instead of the placeholder SVG
   const source = await readSource('src/pages/urunler/index.astro');
 
   assertIncludesAll(source, [
-    '/images/vuzix/vuzix-marketing.png',
+    '/images/vuzix/vuzix-marketing.webp',
     'Vuzix M400, M4000 ve LX1 akıllı gözlük modelleri',
   ]);
   assert.doesNotMatch(source, /id="vx-bg"/);
-  await access(new URL('public/images/vuzix/vuzix-marketing.png', root));
+  await access(new URL('public/images/vuzix/vuzix-marketing.webp', root));
 });
 
 test('vuzix dynamic detail page renders model content, specs, and related models', async () => {
