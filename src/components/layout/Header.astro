@@ -244,7 +244,10 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
           {/* ---------- Solutions mega ---------- */}
           {link.type === 'mega-solutions' && (
             <div class="mega-panel">
-              <div class="container mega-cards-grid">
+              <div class="container mega-panel-heading">
+                <div class="mega-eyebrow">{link.label}</div>
+              </div>
+              <div class="container mega-cards-grid mega-grid-with-heading">
                 {link.data.cards.map((it: any) => (
                   <a
                     href={it.href}
@@ -283,7 +286,10 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
           {/* ---------- Sectors mega ---------- */}
           {link.type === 'mega-sectors' && (
             <div class="mega-panel">
-              <div class="container mega-sectors-grid">
+              <div class="container mega-panel-heading">
+                <div class="mega-eyebrow">{link.label}</div>
+              </div>
+              <div class="container mega-sectors-grid mega-grid-with-heading">
                 {link.data.cards.map((it: any) => (
                   <a href={it.href} class="mega-card mega-card-sector">
                     <span class="mega-card-icon"><it.Icon size={22} stroke-width={1.7} /></span>
@@ -328,7 +334,10 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
           {/* ---------- Resources mega ---------- */}
           {link.type === 'mega-resources' && (
             <div class="mega-panel">
-              <div class="container mega-resources-grid">
+              <div class="container mega-panel-heading">
+                <div class="mega-eyebrow">{link.label}</div>
+              </div>
+              <div class="container mega-resources-grid mega-grid-with-heading">
                 {link.data.cards.map((it: any) => (
                   <a href={it.href} class="mega-card mega-card-resource">
                     <span class="mega-card-icon"><it.Icon size={20} stroke-width={1.7} /></span>
@@ -486,6 +495,12 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
   text-transform: uppercase;
   color: var(--text-faint);
   margin-bottom: 14px;
+}
+.mega-panel-heading {
+  padding: 28px 32px 0;
+}
+.mega-panel-heading .mega-eyebrow {
+  margin-bottom: 0;
 }
 .mega-items { display: grid; gap: 4px; }
 .mega-item {
@@ -697,6 +712,9 @@ const hamburgerLabel = lang === 'tr' ? 'Menüyü aç' : 'Open menu';
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   padding: 28px 32px;
+}
+.mega-grid-with-heading {
+  padding-top: 14px;
 }
 .mega-card-resource { grid-template-columns: 44px 1fr; }
 

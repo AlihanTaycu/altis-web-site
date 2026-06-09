@@ -1,0 +1,21 @@
+{
+  "name": "altis-motion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "render:web": "remotion render src/index.ts TrueScanWebLoop ../public/videos/truescan-web-loop.mp4 --codec h264 --overwrite",
+    "render:social": "remotion render src/index.ts TrueScanSocialPortrait ../public/videos/truescan-social-portrait.mp4 --codec h264 --overwrite"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.471",
+    "remotion": "^4.0.471",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3"
+  }
+}

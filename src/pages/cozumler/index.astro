@@ -10,19 +10,19 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Altis Çözümler",
-  "description": "Altis Teknoloji çözümleri: TrueScan, Pick-to-Light, Asset Yönetimi, RFID Perakende ve Tag&Trace."
+  "description": "Altis Teknoloji çözümleri: TrueScan, Pick-to-Light, Demirbaş Yönetimi, RFID Perakende ve Tag&Trace."
 };
 
 const metrics = [
   { value: '%99.5', label: 'barkod okuma doğruluğu', sub: 'TrueScan' },
   { value: '×2–3',  label: 'depo toplama hızı',      sub: 'Pick-to-Light' },
-  { value: '%80',   label: 'demirbaş verimlilik',     sub: 'Asset Yönetimi' },
+  { value: '%80',   label: 'demirbaş verimlilik',     sub: 'Demirbaş Yönetimi' },
 ];
 ---
 
 <Base
   title="Çözümler | Altis Teknoloji"
-  description="Depo, saha ve varlık operasyonları için Altis Teknoloji çözümleri: TrueScan, Pick-to-Light, Asset Yönetimi ve daha fazlası."
+  description="Depo, saha ve demirbaş operasyonları için Altis Teknoloji çözümleri: TrueScan, Pick-to-Light, Demirbaş Yönetimi ve daha fazlası."
   {schema}
   lang="tr"
   alternateUrl="https://www.altis.com.tr/en/solutions/"
@@ -51,7 +51,7 @@ const metrics = [
       </a>
       <a href="/cozumler/asset-yonetimi/" class="sol-pill">
         <QrCode size={14} stroke-width={2} />
-        Varlık Takibi
+        Demirbaş Takibi
       </a>
       <a href="/urunler/rfid-perakende/" class="sol-pill">
         <Store size={14} stroke-width={2} />
@@ -88,27 +88,20 @@ const metrics = [
         title="TrueScan"
         desc="Mevcut kameralara entegre AI okuma motoru ile metal parlama, kirli etiket ve düşük kontrast koşullarında %99.5 doğrulukla barkod ve 2D/QR okuma."
       >
-        <svg slot="visual" viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ts-bg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#EEF3FF" />
-              <stop offset="1" stop-color="#E8FAFD" />
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="480" height="240" rx="10" fill="url(#ts-bg)" />
-          <rect x="40" y="40" width="280" height="160" rx="8" fill="#fff" stroke="#D5DEF0" />
-          <g transform="translate(60, 70)">
-            {Array.from({ length: 14 }).map((_, i) => (
-              <rect x={i * 17} y="0" width={i % 3 === 0 ? 6 : 3} height="80" fill="#00125C" />
-            ))}
-          </g>
-          <rect x="58" y="160" width="244" height="22" rx="3" fill="#EEF3FF" />
-          <circle cx="380" cy="80" r="42" fill="#18B7D6" opacity=".18" />
-          <circle cx="380" cy="80" r="22" fill="#18B7D6" opacity=".35" />
-          <rect x="346" y="140" width="100" height="6" rx="3" fill="#00125C" opacity=".3" />
-          <rect x="346" y="156" width="76" height="6" rx="3" fill="#00125C" opacity=".18" />
-          <text x="346" y="190" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#18B7D6">99.5% ✓</text>
-        </svg>
+        <video
+          slot="visual"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/images/truescan/truescan-marketing.png"
+          aria-label="TrueScan endüstriyel kamera ile kirli barkod ve QR kod okuma görseli"
+          width="1844"
+          height="921"
+        >
+          <source src="/videos/truescan-web-loop.mp4" type="video/mp4" />
+        </video>
       </HubCard>
 
       <div class="featured-small-stack">
@@ -118,14 +111,40 @@ const metrics = [
           tag="Depo operasyonu"
           title="Pick-to-Light"
           desc="Işıklı yönlendirme ile toplama, ayrıştırma ve hat besleme süreçlerinde hız ve doğruluk."
-        />
+        >
+          <img
+            slot="visual"
+            class="p2l-card-visual"
+            src="/images/pick-to-light/p2l-marketing.png"
+            alt=""
+            width="1844"
+            height="921"
+            loading="lazy"
+            decoding="async"
+          />
+        </HubCard>
         <HubCard
           href="/cozumler/asset-yonetimi/"
           Icon={QrCode}
-          tag="Varlık takibi"
-          title="Asset Yönetimi"
-          desc="NFC, QR ve mobil uygulama ile ekipman, zimmet ve servis kayıtlarını sahadan yönet."
-        />
+          tag="Demirbaş takibi"
+          title="Demirbaş Yönetimi"
+          desc="NFC, QR ve mobil uygulama ile demirbaş, zimmet ve servis kayıtlarını sahadan yönet."
+        >
+          <div slot="visual" class="asset-mini-visual">
+            <div class="asset-panel">
+              <div class="asset-qr" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+              <div class="asset-list">
+                <div class="asset-row active"><span>EL TERMINALI</span><strong>ZIMMETTE</strong></div>
+                <div class="asset-row"><span>YAZICI</span><strong>BAKIM</strong></div>
+                <div class="asset-row"><span>TABLET</span><strong>SAHADA</strong></div>
+              </div>
+            </div>
+          </div>
+        </HubCard>
       </div>
     </div>
 
@@ -316,6 +335,101 @@ const metrics = [
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.featured-small-stack :global(.card-visual) {
+  margin-top: 2px;
+  border-radius: 8px;
+  background: #f6f9fc;
+  overflow: hidden;
+}
+.featured-small-stack :global(.card-visual img) {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: center;
+}
+.p2l-card-visual {
+  filter: saturate(.95) contrast(1.02);
+}
+.asset-mini-visual {
+  position: relative;
+  min-height: 132px;
+  padding: 16px;
+  border: 1px solid rgba(0, 18, 92, .08);
+  background:
+    radial-gradient(220px 120px at 88% 16%, rgba(24, 183, 214, .18), transparent 64%),
+    linear-gradient(135deg, #f8fbff 0%, #edf4f9 100%);
+  overflow: hidden;
+}
+.asset-mini-visual::before {
+  content: "";
+  position: absolute;
+  inset: auto -20px -46px auto;
+  width: 160px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 18, 92, .08);
+  transform: rotate(-18deg);
+}
+.asset-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  height: 100%;
+}
+.asset-qr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  aspect-ratio: 1;
+  padding: 9px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(0, 18, 92, .12);
+  box-shadow: 0 12px 26px rgba(0, 18, 92, .08);
+}
+.asset-qr span {
+  border-radius: 2px;
+  background: rgba(0, 18, 92, .78);
+}
+.asset-qr span:nth-child(2),
+.asset-qr span:nth-child(4),
+.asset-qr span:nth-child(9) {
+  background: rgba(24, 183, 214, .82);
+}
+.asset-list {
+  display: grid;
+  gap: 7px;
+}
+.asset-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 28px;
+  padding: 6px 8px;
+  border-radius: 7px;
+  color: rgba(0, 18, 92, .72);
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(0, 18, 92, .07);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+.asset-row strong {
+  color: rgba(0, 18, 92, .86);
+  font-size: 9px;
+}
+.asset-row.active {
+  color: var(--primary);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0, 18, 92, .08);
+}
+.asset-row.active strong {
+  color: var(--cyan);
 }
 
 @media (max-width: 1000px) {

@@ -131,6 +131,9 @@ const hasVisual = Astro.slots.has('visual');
   .hub-card-big p { font-size: 16px; max-width: 540px; }
   .card-visual { margin-top: 8px; border-radius: 10px; overflow: hidden; background: #fff; }
   .card-visual :global(svg) { width: 100%; height: auto; display: block; }
+.card-visual :global(img),
+.card-visual :global(video) { width: 100%; height: auto; display: block; }
+.card-visual :global(video) { object-fit: cover; }
 
   /* Dark variant */
   .hub-card-dark {

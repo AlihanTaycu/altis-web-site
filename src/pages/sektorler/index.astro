@@ -30,52 +30,59 @@ const schema = {
     <div class="container">
       <div class="featured-row" data-reveal>
         <HubCard
-          variant="big"
           href="/sektorler/depo-lojistik/"
           Icon={Warehouse}
           tag="Depo & Lojistik"
           title="Depo & Lojistik"
           desc="RFID kapı geçişi, palet doğrulama, WMS entegrasyonu ve hızlı sayım senaryolarıyla depo operasyonunu uçtan uca görünür kılar."
         >
-          <svg slot="visual" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="wh-bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#EEF3FF" />
-                <stop offset="1" stop-color="#E8FAFD" />
-              </linearGradient>
-            </defs>
-            <rect x="0" y="0" width="480" height="200" rx="10" fill="url(#wh-bg)" />
-            {[0, 1, 2].map(row => (
-              [0, 1, 2, 3, 4].map(col => (
-                <rect x={40 + col * 75} y={50 + row * 38} width="60" height="28" rx="3" fill="#fff" stroke="#D5DEF0" />
-              ))
-            ))}
-            <g transform="translate(420, 60)">
-              <rect x="0" y="0" width="40" height="100" rx="5" fill="#00125C" />
-              <circle cx="20" cy="30" r="8" fill="#18B7D6" />
-              <rect x="6" y="55" width="28" height="3" rx="1.5" fill="#fff" opacity=".6" />
-              <rect x="6" y="62" width="20" height="3" rx="1.5" fill="#fff" opacity=".4" />
-            </g>
-          </svg>
+          <img
+            slot="visual"
+            src="/images/pick-to-light/p2l-marketing.png"
+            alt="Pick-to-Light raf yönlendirme ile depo operatörü çalışma görseli"
+            width="1844"
+            height="921"
+            loading="lazy"
+            decoding="async"
+          />
         </HubCard>
 
-        <div class="featured-small-stack">
-          <HubCard
-            href="/sektorler/perakende-tekstil/"
-            Icon={Store}
-            tag="Perakende"
-            title="Perakende & Tekstil"
-            desc="Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu."
+        <HubCard
+          href="/sektorler/perakende-tekstil/"
+          Icon={Store}
+          tag="Perakende"
+          title="Perakende & Tekstil"
+          desc="Fabrikadan mağazaya kadar ürün izlenebilirliği, mağaza sayımı ve sezon devir optimizasyonu."
+        >
+          <img
+            slot="visual"
+            src="/images/sectors/perakende-marketing.png"
+            alt="RFID ile perakende ve tekstil stok takibi görseli"
+            width="1844"
+            height="921"
+            loading="lazy"
+            decoding="async"
           />
-          <HubCard
-            variant="dark"
-            href="/sektorler/uretim/"
-            Icon={Factory}
-            tag="Üretim"
-            title="Üretim"
-            desc="OEE, kestirimci bakım, enerji izleme ve SCADA/MES/ERP entegrasyonu ile akıllı fabrika zinciri."
+        </HubCard>
+
+        <HubCard
+          variant="dark"
+          href="/sektorler/uretim/"
+          Icon={Factory}
+          tag="Üretim"
+          title="Üretim"
+          desc="OEE, kestirimci bakım, enerji izleme ve SCADA/MES/ERP entegrasyonu ile akıllı fabrika zinciri."
+        >
+          <img
+            slot="visual"
+            src="/images/sectors/uretim-marketing.png"
+            alt="Endüstriyel IoT ve üretim hattı izleme görseli"
+            width="1844"
+            height="921"
+            loading="lazy"
+            decoding="async"
           />
-        </div>
+        </HubCard>
       </div>
     </div>
   </section>
@@ -93,20 +100,32 @@ const schema = {
 
   .featured-row {
     display: grid;
-    grid-template-columns: 1.55fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
   }
-  .featured-small-stack {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
+  /* Tüm kartlar eşit yükseklik; CTA satırı dipte hizalı */
+  .featured-row > :global(.hub-card) {
+    height: 100%;
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+  .featured-row :global(.card-visual) {
+    margin-top: 6px;
+    border-radius: 10px;
+    background: #f6f9fc;
+  }
+  .featured-row :global(.card-visual img) {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(.97) contrast(1.02);
   }
 
   @media (max-width: 1000px) {
-    .featured-row { grid-template-columns: 1fr; }
-    .featured-small-stack { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+    .featured-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-  @media (max-width: 760px) {
-    .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+  @media (max-width: 680px) {
+    .featured-row { grid-template-columns: 1fr; }
   }
 </style>

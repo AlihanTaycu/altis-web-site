@@ -14,6 +14,21 @@ test('header source declares mega-panel structure', () => {
   assert.match(headerSource, /mega-resources-grid/);
 });
 
+test('card based mega menus render an eyebrow heading like platform and products', () => {
+  const cardMegaSections = [
+    ['mega-solutions', 'mega-cards-grid'],
+    ['mega-sectors', 'mega-sectors-grid'],
+    ['mega-resources', 'mega-resources-grid'],
+  ];
+
+  for (const [type, gridClass] of cardMegaSections) {
+    const pattern = new RegExp(
+      `link\\.type === '${type}'[\\s\\S]*class="container mega-panel-heading"[\\s\\S]*class="mega-eyebrow">\\{link\\.label\\}</div>[\\s\\S]*class="container ${gridClass} mega-grid-with-heading"`,
+    );
+    assert.match(headerSource, pattern, `${type} should render a mega eyebrow heading`);
+  }
+});
+
 test('platform mega menu lists Tag&Trace and Predictivo platforms', () => {
   const platformLabels = ['Tag&Trace', 'Predictivo', 'Asset Tag & Trace'];
   for (const label of platformLabels) {
