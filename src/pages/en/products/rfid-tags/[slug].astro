@@ -11,9 +11,7 @@ export const getStaticPaths: GetStaticPaths = () => rfidTags.map(tag => ({
 const { tag } = Astro.props;
 const contactHref = `/en/contact/?product=${encodeURIComponent(tag.title)}`;
 const gallery = tag.gallery && tag.gallery.length > 0 ? tag.gallery : [tag.image].filter(Boolean);
-const datasheetHref = tag.datasheet?.startsWith('/assets/products/')
-  ? tag.datasheet.replace(/\.pdf$/, '-en.pdf')
-  : tag.datasheet;
+const datasheetHref = tag.datasheet;
 const related = rfidTags
   .filter(item => item.slug !== tag.slug && item.title && item.image && (item.brand === tag.brand || item.onMetal === tag.onMetal))
   .slice(0, 4);
