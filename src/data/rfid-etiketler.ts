@@ -1,3 +1,6 @@
+﻿import { existsSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+
 export type RfidTag = {
   slug: string;
   title: string;
@@ -19783,2520 +19786,3788 @@ const allRfidTags: any[] = [
     ]
   },
   {
-    "slug": "smartrac-belt-u8",
-    "title": "Smartrac Belt u8 RFID Paper Tag",
-    "brand": "Smartrac",
-    "model": "Belt u8",
-    "sku": "Belt u8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Mid-sized UHF RFID label for difficult-to-label materials in industrial and logistics applications",
-    "description": "Model: Belt u8. Brand: Smartrac. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Label. Mid-sized UHF RFID label for difficult-to-label materials in industrial and logistics applications",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Industrial asset management, Supply chain, Warehouse management, Retail inventory",
+    "id": "smartrac-belt-u8",
+    "display_brand": "Smartrac",
+    "category": "UHF RFID Paper Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Smartrac Belt U8 RFID Label",
+    "summary_en": "Compact UHF RFID label with NXP UCODE 8 for retail, apparel and industrial supply-chain applications.",
+    "feature_highlights_en": [
+      "NXP UCODE 8 with self-adjust for challenging environments",
+      "Compact 73 × 17 mm label on mid-gloss paper",
+      "ISO 18000-63 / EPC Class 1 Gen 2 compliant"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Protocol": "ISO 18000-63, EPC Class 1 Gen 2",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit (48-bit unique serial number)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "70 × 14 mm",
+          "Die-Cut Dimension": "73 × 17 mm",
+          "Inlay Substrate": "PET",
+          "Face Sheet": "Mid-gloss paper",
+          "Standard Pitch": "20 mm",
+          "Web Width": "80 mm",
+          "Core Size": "76 mm"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40 °C to 85 °C"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Industries": "Apparel, Industrial",
+          "Use Cases": "Brand protection, supply chain management, home essentials"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-belt-rfid-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-belt-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/smartrac-belt-u8-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO 18000-63 (EPC Class 1 Gen 2 V2)",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "73 x 17 mm",
-    "material": "Mid-gloss paper",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial asset management",
-      "Supply chain",
-      "Warehouse management",
-      "Retail inventory"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Industrial asset management",
-      "Supply chain"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Smartrac Belt U8 Product Data Sheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-belt-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/smartrac-belt-u8-rfid-etiketi/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "smartrac-dogbone-u8",
-    "title": "Smartrac Dogbone u8 RFID Paper Tag",
-    "brand": "Smartrac",
-    "model": "Dogbone u8",
-    "sku": "Dogbone u8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Paper-based RFID tag for supply chain, industrial, RTI and sports timing applications",
-    "description": "Model: Dogbone u8. Brand: Smartrac. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Label. Paper-based RFID tag for supply chain, industrial, RTI and sports timing applications",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Supply chain management, Industrial tracking, RTI, Sports timing",
+    "id": "smartrac-dogbone-u8",
+    "display_brand": "Smartrac",
+    "category": "UHF RFID Paper Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Smartrac Dogbone U8 RFID Label",
+    "summary_en": "Heavy-duty UHF RFID label with NXP UCODE 8 for automotive, sports timing and industrial tracking on difficult materials.",
+    "feature_highlights_en": [
+      "Excellent performance on plastic, glass and high-dielectric materials",
+      "97 × 27 mm label on opaque matt paper",
+      "ISO 18000-6C / EPC Class 1 Gen 2 — ISO 9001 & 14001 certified"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Protocol": "ISO 18000-6C, EPC Class 1 Gen 2",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit (48-bit unique serial number)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "94 × 24 mm",
+          "Die-Cut Dimension": "97 × 27 mm",
+          "Inlay Substrate": "PET",
+          "Face Sheet": "Opaque Matt Paper",
+          "Standard Pitch": "30 mm",
+          "Web Width": "100 mm",
+          "Core Size": "76 mm"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40 °C to 85 °C"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Industries": "Automotive, Industrial, Sports & Events",
+          "Use Cases": "Sports timing, glass and automobile tracking, inventory management"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-dogbone-rfid-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/smartrac-dogbone-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/smartrac-dogbone-u8-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO 18000-63, EPC Class 1 Gen 2",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "97 x 27 mm",
-    "material": "Opaque Matt Paper 79",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Supply chain management",
-      "Industrial tracking",
-      "RTI",
-      "Sports timing"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Supply chain management",
-      "Industrial tracking"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Smartrac Dogbone UCODE 8 Product Data Sheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/smartrac-dogbone-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/smartrac-dogbone-u8-rfid-etiketi/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "smartrac-miniweb-u8",
-    "title": "Smartrac Miniweb u8 RFID Paper Tag",
-    "brand": "Smartrac",
-    "model": "Miniweb u8",
-    "sku": "Miniweb u8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "Compact RFID label for retail, industrial and supply chain with self-tuning capability",
-    "description": "Model: Miniweb u8. Brand: Smartrac. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Label. Compact RFID label for retail, industrial and supply chain with self-tuning capability",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Retail, Industrial, Supply chain, Asset tracking",
+    "id": "smartrac-miniweb-u8",
+    "display_brand": "Smartrac",
+    "category": "UHF RFID Paper Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Smartrac Miniweb U8 RFID Label",
+    "summary_en": "Compact UHF RFID label with NXP UCODE 8, ideal for small apparel labels, logistics and healthcare applications.",
+    "feature_highlights_en": [
+      "Ultra-compact 45 × 18 mm size, ideal for small apparel labels",
+      "NXP UCODE 8 with self-adjust and improved read/write sensitivity",
+      "ARC certified — ISO 18000-6C / EPC Class 1 Gen 2"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Protocol": "ISO 18000-6C, EPC Class 1 Gen 2",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit (48-bit unique serial number)",
+          "Certifications": "ARC"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "42 × 16 mm",
+          "Die-Cut Dimension": "45 × 18 mm",
+          "Inlay Substrate": "PET",
+          "Face Sheet": "Mid-gloss paper",
+          "Standard Pitch": "20 mm",
+          "Web Width": "48 mm",
+          "Core Size": "76 mm"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40 °C to 85 °C"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Industries": "Apparel, Logistics, Healthcare",
+          "Use Cases": "Supply chain management, home essentials, inventory and logistics"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-mini-web-rfid-etiketi-1-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-miniweb-rfid-etiketi-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/smartrac-miniweb-u8-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO 18000-63, EPC Class 1 Gen 2",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "45 x 18 mm",
-    "material": "Mid-gloss paper",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Retail",
-      "Industrial",
-      "Supply chain",
-      "Asset tracking"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Retail",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Smartrac Miniweb U8 Product Data Sheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-miniweb-rfid-etiketi-datasheet.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/smartrac-miniweb-u8-rfid-etiketi/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "smartrac-sample-pack",
-    "title": "Smartrac RFID Tag Sample Pack",
-    "brand": "Smartrac",
-    "model": "Sample Pack",
-    "sku": "Sample Pack",
-    "subtitle": "Mixed (Belt, Dogbone, Miniweb, Web) RFID Tag",
-    "shortDesc": "Sample pack with 10 units each of Belt, Dogbone, Miniweb and Web Smartrac UHF RFID tags",
-    "description": "Model: Sample Pack. Brand: Smartrac. Frequency: 860-960 MHz. Surface: both. Form factor: Mixed (Belt, Dogbone, Miniweb, Web). Sample pack with 10 units each of Belt, Dogbone, Miniweb and Web Smartrac UHF RFID tags",
-    "customerSummary": "Mixed (Belt, Dogbone, Miniweb, Web) RFID Tag | UHF | Applications: Testing, Project evaluation, Multi-sector assessment",
+    "id": "smartrac-sample-pack",
+    "display_brand": "Smartrac",
+    "category": "UHF RFID Label Sample Pack",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Smartrac RFID Label Sample Pack",
+    "summary_en": "Evaluation kit with 10 units each of Belt, Dogbone, Miniweb and Web UHF RFID labels for testing and project assessment.",
+    "feature_highlights_en": [
+      "10 units each of Belt, Dogbone, Miniweb and Web labels",
+      "All labels equipped with NXP UCODE 8 chip",
+      "Ideal for multi-application testing and project evaluation"
+    ],
+    "sections": [
+      {
+        "name": "PACK CONTENTS",
+        "items": {
+          "Belt U8": "10 pcs — 73 × 17 mm, mid-gloss paper",
+          "Dogbone U8": "10 pcs — 97 × 27 mm, opaque matt paper",
+          "Miniweb U8": "10 pcs — 45 × 18 mm, mid-gloss paper",
+          "Web U8": "10 pcs — 54 × 33 mm, mid-gloss paper"
+        }
+      },
+      {
+        "name": "COMMON SPECIFICATIONS",
+        "items": {
+          "Chip": "NXP UCODE 8 (all labels)",
+          "Operating Frequency": "860–960 MHz",
+          "Protocol": "ISO 18000-6C / EPC Class 1 Gen 2",
+          "EPC Memory": "128-bit",
+          "Operating Temperature": "-40 °C to 85 °C"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Use Cases": "Testing, project evaluation, multi-sector assessment"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/02/smartrac-rfid-tag-sample-pack-p-600x427.webp",
-    "datasheet": "",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/smartrac-rfid-etiket-numune-paketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "EPC Gen 2",
-    "chip": "NXP UCode 8",
-    "surface": "both",
-    "onMetal": true,
-    "formFactor": "Mixed (Belt, Dogbone, Miniweb, Web)",
-    "sizeText": "Standard",
-    "material": "",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "Standard",
-    "ipRating": "",
-    "applications": [
-      "Testing",
-      "Project evaluation",
-      "Multi-sector assessment"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Mixed (Belt, Dogbone, Miniweb, Web)",
-      "On Metal",
-      "NXP UCode 8",
-      "Testing",
-      "Project evaluation"
-    ]
+    "source": {
+      "source_type": "manual",
+      "source_name": "Smartrac RFID Tag Sample Pack",
+      "source_url": "",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/smartrac-rfid-etiket-numune-paketi/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "smartrac-web-u8",
-    "title": "Smartrac Web u8 RFID Paper Tag",
-    "brand": "Smartrac",
-    "model": "Web u8",
-    "sku": "Web u8",
-    "subtitle": "Label RFID Tag",
-    "shortDesc": "UHF RFID label for retail and logistics with NXP UCode 8 chip",
-    "description": "Model: Web u8. Brand: Smartrac. Frequency: 860-960 MHz. Surface: non_metal. Form factor: Label. UHF RFID label for retail and logistics with NXP UCode 8 chip",
-    "customerSummary": "Label RFID Tag | UHF | Applications: Product-level retail, Logistics, Supply chain",
+    "id": "smartrac-web-u8",
+    "display_brand": "Smartrac",
+    "category": "UHF RFID Paper Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Smartrac Web U8 RFID Label",
+    "summary_en": "Optimized UHF RFID label with NXP UCODE 8 for apparel hang tags, retail, logistics and supply chain applications.",
+    "feature_highlights_en": [
+      "Compact 54 × 33 mm label optimized for apparel hang tags",
+      "ARC and GS1 TIPP certified for global retail deployment",
+      "Compliant with FCC, ETSI and Asia frequency regulations"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Chip": "NXP UCODE 8",
+          "Protocol": "ISO 18000-6C, EPC Class 1 Gen 2",
+          "Operating Frequency": "860–960 MHz",
+          "EPC Memory": "128-bit",
+          "TID Memory": "96-bit (48-bit unique serial number)"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Antenna Dimensions": "50 × 30 mm",
+          "Die-Cut Dimension": "54 × 33 mm",
+          "Inlay Substrate": "PET",
+          "Face Sheet": "Mid-gloss paper",
+          "Standard Pitch": "36 mm",
+          "Web Width": "60 mm",
+          "Core Size": "76 mm"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40 °C to 85 °C"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Industries": "Apparel, Logistics",
+          "Use Cases": "Supply chain management, home essentials, brand protection"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-web-rfid-etiketi-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-web-rfid-etiketi-datasheet-2.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/smartrac-web-u8-rfid-etiketi/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz",
-    "protocol": "ISO 18000-63, EPC Class 1 Gen 2",
-    "chip": "NXP UCode 8",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Label",
-    "sizeText": "54 x 33 mm",
-    "material": "Mid-gloss paper",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Product-level retail",
-      "Logistics",
-      "Supply chain"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Label",
-      "Non Metal",
-      "NXP UCode 8",
-      "Product-level retail",
-      "Logistics"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Smartrac Web U8 Product Data Sheet",
+      "source_url": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/smartrac-web-rfid-etiketi-datasheet-2.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/smartrac-web-u8-rfid-etiketi/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-cargo-trak-ii",
-    "title": "Xerafy Cargo Trak II",
-    "brand": "Xerafy",
-    "model": "Cargo Trak II",
-    "sku": "Cargo Trak II",
-    "subtitle": "Rigid polymer enclosure RFID Tag",
-    "shortDesc": "Industrial-grade RFID tag for outdoor and harsh environments with 10-year lifespan potential",
-    "description": "Model: Cargo Trak II. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Rigid polymer enclosure. Industrial-grade RFID tag for outdoor and harsh environments with 10-year lifespan potential",
-    "customerSummary": "Rigid polymer enclosure RFID Tag | UHF | Applications: Cargo tracking, Container management, Outdoor asset tracking, Industrial logistics",
+    "id": "xerafy-cargo-trak-ii",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Cargo Trak II",
+    "summary_en": "Xerafy Cargo Trak II is an industrial RFID tag with read range Up to 39.37 ft (12 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 39.37 ft (12 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Impinj M750",
+          "Memory": "96 bits EPC; 96 bits TID 32 bits user memory",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range On Metal": "Up to 39.37 ft (12 m)",
+          "Read Range Off Metal": "Up to 19.69 ft (6 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer, Stainless steel",
+          "Dimensions (mm)": "100 x 26 x 8.90",
+          "Dimensions (in)": "3.94 x 1.02 x 0.30",
+          "Weight": "0.62 oz (17.80 g)",
+          "Rivet Hole Diameter": "0.14 in (3.50 mm)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (48 hours) -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "29 psi (200 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "RTI inventory, Transportation and logistics, Yard management, Construction tools"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-cargo-trak-2-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-conteiner-trak-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-cargo-trak-ii/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rigid polymer enclosure",
-    "sizeText": "100 x 26 x 8.9 mm",
-    "material": "Anti-UV industrial grade polymer",
-    "fixedReadRange": "up to 12m on metal",
-    "handheldReadRange": "up to 6m off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Cargo tracking",
-      "Container management",
-      "Outdoor asset tracking",
-      "Industrial logistics"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rigid polymer enclosure",
-      "On Metal",
-      "Alien Higgs-3",
-      "Cargo tracking",
-      "Container management"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Cargo Trak II Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Cargo-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-cargo-trak-ii/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-cargo-outdoor",
-    "title": "Xerafy CARGO-OUTDOOR",
-    "brand": "Xerafy",
-    "model": "CARGO-OUTDOOR",
-    "sku": "CARGO-OUTDOOR",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: CARGO-OUTDOOR. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy CARGO series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-cargo-outdoor",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy CARGO-OUTDOOR",
+    "summary_en": "Xerafy CARGO-OUTDOOR is an industrial RFID tag with read range Up to 39.37 ft (12 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 39.37 ft (12 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Impinj M750",
+          "Memory": "96 bits EPC; 96 bits TID 32 bits user memory",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range On Metal": "Up to 39.37 ft (12 m)",
+          "Read Range Off Metal": "Up to 19.69 ft (6 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer, Stainless steel",
+          "Dimensions (mm)": "100 x 26 x 8.90",
+          "Dimensions (in)": "3.94 x 1.02 x 0.30",
+          "Weight": "0.62 oz (17.80 g)",
+          "Rivet Hole Diameter": "0.14 in (3.50 mm)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (48 hours) -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "29 psi (200 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "RTI inventory, Transportation and logistics, Yard management, Construction tools"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/06/Multi-Surface-Outdoor-RFID-Tag-Xerafy-Cargo-OUTDOOR.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "Standard",
-    "material": "Standard",
-    "fixedReadRange": "Up to 12m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy CARGO-OUTDOOR Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Cargo-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-container-outdoor",
-    "title": "Xerafy CONTAINER-OUTDOOR",
-    "brand": "Xerafy",
-    "model": "CONTAINER-OUTDOOR",
-    "sku": "CONTAINER-OUTDOOR",
-    "subtitle": "LONG-RANGE OUTDOOR RFID TAG",
-    "shortDesc": "Yard management, last-mile logistics",
-    "description": "SKU: CONTAINER-OUTDOOR. Supplier: Xerafy. Category: LONG-RANGE OUTDOOR RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Rugged Tag. Description: Extreme long-range tag for yard management and containers.",
-    "customerSummary": "LONG-RANGE OUTDOOR RFID TAG | Rugged Tag | Applications: Yard Management, Logistics",
+    "id": "xerafy-container-outdoor",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy CONTAINER-OUTDOOR",
+    "summary_en": "Xerafy CONTAINER-OUTDOOR is an industrial RFID tag with read range Up to 131.23 ft (40 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 131.23 ft (40 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range On Metal": "Up to 131.23 ft (40 m)",
+          "Read Range Off Metal": "Up to 82.02 ft (25 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "139 x 42.20 x 12",
+          "Dimensions (in)": "5.46 x 1.65 x 0.47",
+          "Weight": "1.76 oz (50 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (48 hours) -40°F to +185°F Container OUTDOOR",
+          "IP Rating": "IP68",
+          "Compression Strength": "29 psi (200 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Last-Mile logistics, Supply chain & inventory, management, Returnable transport packaging, (RTP), Yard management"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2025/06/Container-OUTDOOR-M830-logo-2.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Rugged Tag",
-    "sizeText": "Large form factor",
-    "material": "Industry grade polymer",
-    "fixedReadRange": "Up to 40m",
-    "handheldReadRange": "Up to 25m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Yard Management",
-      "Logistics"
-    ],
-    "industries": [
-      "Yard Management",
-      "Logistics"
-    ],
-    "tags": [
-      "UHF",
-      "Rugged Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Yard Management",
-      "Logistics"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy CONTAINER-OUTDOOR Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Container-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-container-trak",
-    "title": "Xerafy Container Trak",
-    "brand": "Xerafy",
-    "model": "Container Trak",
-    "sku": "Container Trak",
-    "subtitle": "Rectangular ruggedized tag with rivet holes RFID Tag",
-    "shortDesc": "Rugged RFID tag for container tracking with IP68 rating and up to 20m read range",
-    "description": "Model: Container Trak. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Rectangular ruggedized tag with rivet holes. Rugged RFID tag for container tracking with IP68 rating and up to 20m read range",
-    "customerSummary": "Rectangular ruggedized tag with rivet holes RFID Tag | UHF | Applications: Container tracking, Asset tracking, Outdoor inventory management",
+    "id": "xerafy-container-trak",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Container Trak",
+    "summary_en": "Xerafy Container Trak is an industrial RFID tag with read range Up to 131.23 ft (40 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 131.23 ft (40 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range On Metal": "Up to 131.23 ft (40 m)",
+          "Read Range Off Metal": "Up to 82.02 ft (25 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "139 x 42.20 x 12",
+          "Dimensions (in)": "5.46 x 1.65 x 0.47",
+          "Weight": "1.76 oz (50 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (48 hours) -40°F to +185°F Container OUTDOOR",
+          "IP Rating": "IP68",
+          "Compression Strength": "29 psi (200 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Last-Mile logistics, Supply chain & inventory, management, Returnable transport packaging, (RTP), Yard management"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-container-trak-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-conteiner-trak-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-container-trak/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Impinj Monza R6-P",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rectangular ruggedized tag with rivet holes",
-    "sizeText": "138.8 x 42 x 12 mm",
-    "material": "Anti-UV industrial grade polymer",
-    "fixedReadRange": "up to 20m on metal",
-    "handheldReadRange": "up to 15m off metal",
-    "operatingTemp": "-40C to 70C",
-    "ipRating": "IP68",
-    "applications": [
-      "Container tracking",
-      "Asset tracking",
-      "Outdoor inventory management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rectangular ruggedized tag with rivet holes",
-      "On Metal",
-      "Impinj Monza R6-P",
-      "Container tracking",
-      "Asset tracking"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Container Trak Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Container-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-container-trak/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-data-trak-ii",
-    "title": "Xerafy DATA-TRAK-II",
-    "brand": "Xerafy",
-    "model": "DATA-TRAK-II",
-    "sku": "DATA-TRAK-II",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: DATA-TRAK-II. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy DATA series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
-    "image": "https://xerafy.com/wp-content/uploads/2023/01/Xerafy-Logo.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "115 x 26 x 12 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 2.5m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
+    "id": "xerafy-data-trak-ii",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy DATA-TRAK-II",
+    "summary_en": "Xerafy DATA-TRAK-II is an industrial RFID tag with read range Up to 8.20 ft (2.50 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 8.20 ft (2.50 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
     ],
-    "industries": [
-      "Industrial"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "1 Impinj M4QT",
+          "Memory": "128 bits EPC; 96 bits TID 512 bits user memory",
+          "Read Range On Metal": "Up to 8.20 ft (2.50 m)",
+          "Read Range Off Metal": "Up to 5.91 ft (1.80 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "38 x 13 x 4",
+          "Dimensions (in)": "1.50 x 0.51 x 0.16",
+          "Weight": "0.08 oz (2.40 g)",
+          "Tethering Hole Diameter": "0.10 in"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "14.5 psi (100 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Off metalOn metal, Data centers, IT asset management, Manufacturing WIP, Automated inventory"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "image": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/54431/uploads/urunresimleri/buyuk/xerafy-data-trak-ii-5-4576.jpg",
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy DATA-TRAK-II Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Data-TRAK-II-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-global-trak",
-    "title": "Xerafy GLOBAL-TRAK",
-    "brand": "Xerafy",
-    "model": "GLOBAL-TRAK",
-    "sku": "GLOBAL-TRAK",
-    "subtitle": "LOGISTICS RFID TAG",
-    "shortDesc": "Global supply chain, logistics, e-commerce",
-    "description": "SKU: GLOBAL-TRAK. Supplier: Xerafy. Category: LOGISTICS RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Rugged Tag. Description: Optimized for global supply chain and logistics.",
-    "customerSummary": "LOGISTICS RFID TAG | Rugged Tag | Applications: Logistics, Supply Chain",
+    "id": "xerafy-global-trak",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy GLOBAL-TRAK",
+    "summary_en": "Xerafy GLOBAL-TRAK is an industrial RFID tag with read range Up to 8.20 ft(2.50 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 8.20 ft(2.50 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "1 Impinj M4QT",
+          "Memory": "128 bits EPC; 96 bits TID 512 bits user memory",
+          "Read Range On Metal": "Up to 8.20 ft(2.50 m)",
+          "Read Range Off Metal": "Up to 5.91 ft (1.80 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "38 x 13 x 4",
+          "Dimensions (in)": "1.50 x 0.51 x 0.16",
+          "Weight": "0.08 oz (2.40 g)",
+          "Tethering Hole Diameter": "0.10 in"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "14.5 psi (100 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Off metalOn metal, Global supply chain, Logistics, Datacenter servers, E-commerce"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/06/Xerafy-Global-TRAK-RFID-Tag-For-Global-Visibility.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/trak-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Rugged Tag",
-    "sizeText": "115 x 26 x 12 mm",
-    "material": "Industry grade polymer",
-    "fixedReadRange": "Up to 2.5m",
-    "handheldReadRange": "Up to 1.8m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Logistics",
-      "Supply Chain"
-    ],
-    "industries": [
-      "Logistics",
-      "Supply Chain"
-    ],
-    "tags": [
-      "UHF",
-      "Rugged Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Logistics",
-      "Supply Chain"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy GLOBAL-TRAK Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Global-TRAK-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/trak-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-delta",
-    "title": "Xerafy METAL-SKIN-DELTA",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-DELTA",
-    "sku": "METAL-SKIN-DELTA",
-    "subtitle": "DURABLE ON-METAL RFID LABEL",
-    "shortDesc": "IT asset tracking, curved surfaces",
-    "description": "SKU: METAL-SKIN-DELTA. Supplier: Xerafy. Category: DURABLE ON-METAL RFID LABEL. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Flexible Label. Description: Thin, flexible label for on-metal applications.",
-    "customerSummary": "DURABLE ON-METAL RFID LABEL | Flexible Label | Applications: IT Assets, Curved Surfaces",
+    "id": "xerafy-metal-skin-delta",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-DELTA",
+    "summary_en": "Xerafy METAL-SKIN-DELTA is an industrial RFID tag with read range Up to 11.48 ft (3.50 m) on metal Up to 8.20 ft (2.50 m) on plastic, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 11.48 ft (3.50 m) on metal Up to 8.20 ft (2.50 m) on plastic",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Impinj M830",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 11.48 ft (3.50 m) on metal Up to 8.20 ft (2.50 m) on plastic",
+          "Read Range (Handheld)": "Up to 6.56 ft (2 m) on metal Up to 4.92 ft (1.50 m) on plastic",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer",
+          "Dimensions (mm)": "70 x 30 x 0.4",
+          "Dimensions (in)": "2.76 x 1.18 x 0.02",
+          "Weight": "2.20 lbs (0.90 kg)",
+          "Reel Core": "76.2mm/3(in)",
+          "Packing Information": "500pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "50±15%RH",
+          "Printer Compatibility": "Zebra ZT410, ZT411R,",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "MRO parts and components, Automated warehouse, Electronic devices, IT assets, Data centers, Hospital equipment"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2025/06/Metal-Skin-Delta-M830-640x360-S.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/metal-skin-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Impinj M830",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Flexible Label",
-    "sizeText": "70 x 30 x 0.4 mm",
-    "material": "High-performance polymer",
-    "fixedReadRange": "Up to 4.5m",
-    "handheldReadRange": "Up to 2.5m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "IT Assets",
-      "Curved Surfaces"
-    ],
-    "industries": [
-      "IT Assets",
-      "Curved Surfaces"
-    ],
-    "tags": [
-      "UHF",
-      "Flexible Label",
-      "On Metal",
-      "Impinj M830",
-      "IT Assets",
-      "Curved Surfaces"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-DELTA Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/04/Xerafy-Metal-Skin-Delta-2025-Datasheet_260429.pdf",
+      "product_url": "https://xerafy.com/metal-skin-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-delta-u8",
-    "title": "Xerafy METAL-SKIN-DELTA-U8",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-DELTA-U8",
-    "sku": "METAL-SKIN-DELTA-U8",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: METAL-SKIN-DELTA-U8. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy METAL series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-metal-skin-delta-u8",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-DELTA-U8",
+    "summary_en": "Xerafy METAL-SKIN-DELTA-U8 is an industrial RFID tag with read range Up to 29.53 ft (9 m) on metal Up to 19.69 ft (5 m) off metal, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 29.53 ft (9 m) on metal Up to 19.69 ft (5 m) off metal",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "NXP UCODE 8",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 29.53 ft (9 m) on metal Up to 19.69 ft (5 m) off metal",
+          "Read Range (Handheld)": "Up to 16.40 ft (5 m) on metal Up to 13.12 ft (3 m) off metal",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer",
+          "Dimensions (mm)": "80 x 40 x 1",
+          "Dimensions (in)": "3.15 x 1.57 x 0.04",
+          "Weight": "1.76 lbs (0.80 kg)",
+          "Reel Core": "Cardboard",
+          "Packing Information": "300pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "355 psi (2,450 kPa)",
+          "Vibration": "MIL-STD-810G",
+          "Printer Compatibility": "Sato CL4NX; Postek",
+          "Warranty": "1 year"
+        }
+      }
+    ],
     "image": "https://cdn11.bigcommerce.com/s-ka7ofex/images/stencil/960w/products/4995/20759/Metal_Skin_Delta_NXP__88233.1727711979.png?c=2",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "80 x 40 x 1 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 11m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-DELTA-U8 Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Metal-Skin-Delta-U8-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-mercury",
-    "title": "Xerafy METAL-SKIN-MERCURY",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-MERCURY",
-    "sku": "METAL-SKIN-MERCURY",
-    "subtitle": "LONG-RANGE ON-METAL RFID LABEL",
-    "shortDesc": "Supply chain, logistics, datacenter servers",
-    "description": "SKU: METAL-SKIN-MERCURY. Supplier: Xerafy. Category: LONG-RANGE ON-METAL RFID LABEL. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Flexible Label. Description: High-performance label for warehouse and logistics.",
-    "customerSummary": "LONG-RANGE ON-METAL RFID LABEL | Flexible Label | Applications: Logistics, Datacenters",
-    "image": "ImageData/mercury metal skin.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/metal-skin-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "NXP UCODE 9",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Flexible Label",
-    "sizeText": "101.6 x 38 x 1 mm",
-    "material": "Thermal transfer face stock",
-    "fixedReadRange": "Up to 8m",
-    "handheldReadRange": "Up to 6m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Logistics",
-      "Datacenters"
+    "id": "xerafy-metal-skin-mercury",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-MERCURY",
+    "summary_en": "Xerafy METAL-SKIN-MERCURY is an industrial RFID tag with read range Up to 26.25 ft (8 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 26.25 ft (8 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
     ],
-    "industries": [
-      "Logistics",
-      "Datacenters"
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "1S0/IEC 18000-6C (EPC Gen2)",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU) NXP:",
+          "Chip": "NXP UCODE 9; Impinj Monza R6-P",
+          "Memory": "96 bits EPC, 96 bits TID; 128 bits EPC; 96 bits TID 32 bits user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years; 50 years",
+          "Read Range On Metal": "Up to 26.25 ft (8 m)",
+          "Read Range Off Metal": "Up to 19.69 ft (6 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer face stock NXP:",
+          "Dimensions (mm)": "101.60 x 38 x 1; 100 x 40 x 1",
+          "Dimensions (in)": "x 1.50 x 0.04; 3.94 x 1.57 x 0.04",
+          "Weight": "1.98 lbs (0.90 kg); 2.65 lbs (1.20 kg)",
+          "Packing Information": "300pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "92 psi (634 kPa)",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "50±15%RH",
+          "Printer Compatibility": "SATO CL4NX,",
+          "Warranty": "1 year"
+        }
+      }
     ],
-    "tags": [
-      "UHF",
-      "Flexible Label",
-      "On Metal",
-      "NXP UCODE 9",
-      "Logistics",
-      "Datacenters"
-    ]
+    "image": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/54431/uploads/urunresimleri/buyuk/xerafy-mercury-metal-skin--14f73.jpg",
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-MERCURY Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Metal-Skin-Mercury-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/metal-skin-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-mercury-86-max",
-    "title": "Xerafy METAL-SKIN-MERCURY-86-MAX",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-MERCURY-86-MAX",
-    "sku": "METAL-SKIN-MERCURY-86-MAX",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: METAL-SKIN-MERCURY-86-MAX. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy METAL series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-metal-skin-mercury-86-max",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-MERCURY-86-MAX",
+    "summary_en": "Xerafy METAL-SKIN-MERCURY-86-MAX is an industrial RFID tag with read range Up to 42.65 ft (13 m) on metal Up to 32.81 ft (10 m) off metal, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 42.65 ft (13 m) on metal Up to 32.81 ft (10 m) off metal",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Operating Frequency": "902-928 MHz (US)",
+          "Chip": "Impinj Monza R6-P",
+          "Memory": "128 bits EPC; 96 bits TID 32 bits user memory",
+          "Read Range (Fixed)": "Up to 42.65 ft (13 m) on metal Up to 32.81 ft (10 m) off metal",
+          "Read Range (Handheld)": "Up to 22.97 ft (7 m) on metal Up to 19.69 ft (6 m) off metal",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer face stock",
+          "Dimensions (mm)": "86 x 54 x 1.25",
+          "Dimensions (in)": "3.39 x 2.13 x 0.05",
+          "Weight": "1.65 lbs (0.75 kg)",
+          "Packing Information": "150pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "50±15%RH",
+          "Printer Compatibility": "SATO CL4NX,",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Actual read range may vary based upon use case and antenna power."
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/07/Mercury-86-Max-B.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "86 x 54 x 1.25 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 19m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-MERCURY-86-MAX Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/04/Xerafy-Metal-Skin-Mercury-86-Max-Datasheet_260429.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-mercury-95-max",
-    "title": "Xerafy METAL-SKIN-MERCURY-95-MAX",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-MERCURY-95-MAX",
-    "sku": "METAL-SKIN-MERCURY-95-MAX",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: METAL-SKIN-MERCURY-95-MAX. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy METAL series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-metal-skin-mercury-95-max",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-MERCURY-95-MAX",
+    "summary_en": "Xerafy METAL-SKIN-MERCURY-95-MAX is an industrial RFID tag with read range Up to 36.09 ft (11 m) on metal Up to 31.50 ft (9.60 m) off metal, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 36.09 ft (11 m) on metal Up to 31.50 ft (9.60 m) off metal",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "1S0/IEC 18000-6C (EPC Gen2)",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "NXP UCODE 8",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 36.09 ft (11 m) on metal Up to 31.50 ft (9.60 m) off metal",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer face stock",
+          "Dimensions (mm)": "95 x 22 x 1.25",
+          "Dimensions (in)": "3.74 x 0.87 x 0.04",
+          "Weight": "2.20 lbs (1 kg)",
+          "Packing Information": "500pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "50±15%RH",
+          "Printer Compatibility": "SATO CL4NX,",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Actual read range may vary based upon use case and antenna power."
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/07/Mercury-95-Max-B.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "95 x 22 x 1.25 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 16m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-MERCURY-95-MAX Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/04/Xerafy-Metal-Skin-Mercury-95-Max-Datasheet_260429.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-platinum-60-max",
-    "title": "Xerafy METAL-SKIN-PLATINUM-60-MAX",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-PLATINUM-60-MAX",
-    "sku": "METAL-SKIN-PLATINUM-60-MAX",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: METAL-SKIN-PLATINUM-60-MAX. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy METAL series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-metal-skin-platinum-60-max",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-PLATINUM-60-MAX",
+    "summary_en": "Xerafy METAL-SKIN-PLATINUM-60-MAX is an industrial RFID tag with IP68 protection.",
+    "feature_highlights_en": [
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F",
+      "NXP UCODE 8"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US)",
+          "Chip": "NXP UCODE 8",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer face stock",
+          "Dimensions (mm)": "60 x 25 x 1",
+          "Dimensions (in)": "2.36 x 0.98 x 0.04",
+          "Weight": "1.76 lbs (0.80 kg)",
+          "Packing Information": "500pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Vibration": "MIL-STD-810G",
+          "Printer Compatibility": "SATO CL4NX,",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Reusable packaging and containers, Automated warehouse, MRO parts and components, WIP inventory"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2026/03/Platinum-60-Max-2603.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "60 x 25 x 1 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 9.5m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-PLATINUM-60-MAX Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/04/Xerafy-Metal-Skin-Platinum-60-Max-Datasheet_260429.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-titanium-25-hf",
-    "title": "Xerafy METAL-SKIN-TITANIUM-25-HF",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-TITANIUM-25-HF",
-    "sku": "METAL-SKIN-TITANIUM-25-HF",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: METAL-SKIN-TITANIUM-25-HF. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy METAL series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-metal-skin-titanium-25-hf",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-TITANIUM-25-HF",
+    "summary_en": "Xerafy METAL-SKIN-TITANIUM-25-HF is an industrial RFID tag with read range Up to 0.16 ft (5 cm), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 0.16 ft (5 cm)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "ISO14443A",
+          "Operating Frequency": "13.56 MHz (HF)",
+          "Chip": "NTAG213",
+          "Memory": "7 bytes UID; 144 bytes user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 0.16 ft (5 cm)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer face stock",
+          "Dimensions (mm)": "ø 25 x 0.45",
+          "Dimensions (in)": "ø 0.98 x 0.02"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "50±15%RH",
+          "Printer Compatibility": "SATO CL4NX, Zebra",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "IT asset management, Warehouse management, Automotive components tracking, Equipment&device tracking"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/07/Titanium-25-HF-1.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "25 mm (round)",
-    "material": "Standard",
-    "fixedReadRange": "Up to 0.05m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-TITANIUM-25-HF Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/04/Xerafy-Metal-Skin-Titanium-25-HF-NTAG213-Datasheet_260429.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-metal-skin-titanium-25-lasso",
-    "title": "Xerafy METAL-SKIN-TITANIUM-25-LASSO",
-    "brand": "Xerafy",
-    "model": "METAL-SKIN-TITANIUM-25-LASSO",
-    "sku": "METAL-SKIN-TITANIUM-25-LASSO",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: METAL-SKIN-TITANIUM-25-LASSO. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy METAL series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-metal-skin-titanium-25-lasso",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Label",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy METAL-SKIN-TITANIUM-25-LASSO",
+    "summary_en": "Xerafy METAL-SKIN-TITANIUM-25-LASSO is an industrial RFID tag with read range Up to 26.25 ft (8 m) US on metal Up to 11.84 ft (3.50 m) EU on metal, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 26.25 ft (8 m) US on metal Up to 11.84 ft (3.50 m) EU on metal",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "NXP UCODE 9",
+          "Memory": "96 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 26.25 ft (8 m) US on metal Up to 11.84 ft (3.50 m) EU on metal",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "White thermal transfer face stock",
+          "Dimensions (mm)": "68 x 13 x 1",
+          "Dimensions (in)": "2.68 x 0.51 x 0.04",
+          "Weight": "4.28 lbs (1.94 kg)",
+          "Packing Information": "2500pcs/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "50±15%RH",
+          "Printer Compatibility": "SATO CL4NX,",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Jewelry management, High-value item tracking, Inventory management"
+        }
+      }
+    ],
     "image": "https://cdn11.bigcommerce.com/s-ka7ofex/images/stencil/960w/products/4992/20747/Titanium_25_Lasso__01550.1730382191.png?c=2",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "68 x 13 x 1 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 8m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy METAL-SKIN-TITANIUM-25-LASSO Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Metal-Skin-Titanium-25-Lasso-Datasheet_2600309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-micro-autoclavable",
-    "title": "Xerafy MICRO-AUTOCLAVABLE",
-    "brand": "Xerafy",
-    "model": "MICRO-AUTOCLAVABLE",
-    "sku": "MICRO-AUTOCLAVABLE",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: MICRO-AUTOCLAVABLE. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy MICRO series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-micro-autoclavable",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy MICRO-AUTOCLAVABLE",
+    "summary_en": "Xerafy MICRO-AUTOCLAVABLE is an industrial RFID tag with read range Up to 49.21 ft (15 m), IP69K protection.",
+    "feature_highlights_en": [
+      "Up to 49.21 ft (15 m)",
+      "IP69K",
+      "-40°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC; 96 bits TID; 752/384 bits user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 49.21 ft (15 m)",
+          "Read Range (Handheld)": "Up to 32.81 ft (10 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer 316L Stainless steel, Silicone",
+          "Dimensions (mm)": "55 x 36.20 x 7.50",
+          "Dimensions (in)": "2.01 x 1.43 x 0.30",
+          "Weight": "0.92 oz (26 g)",
+          "Packing Information": "76 pcs /one box"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-40°C to +150°C",
+          "High Temperature Cycle": "150°C",
+          "Chemical Resistance": ". MICRO Autoclave",
+          "IP Rating": "IP69K",
+          "Compression Strength": "181 psi (1250 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/02/MICRO-Autoclavable-1.webp",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "55 x 14 x 7.5 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy MICRO-AUTOCLAVABLE Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-MICRO-Autoclave-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-micro-industrial",
-    "title": "Xerafy MICRO-INDUSTRIAL",
-    "brand": "Xerafy",
-    "model": "MICRO-INDUSTRIAL",
-    "sku": "MICRO-INDUSTRIAL",
-    "subtitle": "INDUSTRIAL ON-METAL RFID TAG",
-    "shortDesc": "Pallets, containers, manufacturing equipment",
-    "description": "SKU: MICRO-INDUSTRIAL. Supplier: Xerafy. Category: INDUSTRIAL ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Rugged Tag. Description: High-performance tag for industrial asset management.",
-    "customerSummary": "INDUSTRIAL ON-METAL RFID TAG | Rugged Tag | Applications: Pallets, Containers",
+    "id": "xerafy-micro-industrial",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy MICRO-INDUSTRIAL",
+    "summary_en": "Xerafy MICRO-INDUSTRIAL is an industrial RFID tag with read range Up to 49.21 ft (15 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 49.21 ft (15 m)",
+      "IP68",
+      "-40°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902–928 MHz (US); 865–868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC; 96 bits TID; 752/384 bits user memory",
+          "Write Cycles": "100,000 cycles",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 49.21 ft (15 m)",
+          "Read Range (Handheld)": "Up to 32.81 ft (10 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer, 316L Stainless steel",
+          "Dimensions (mm)": "55 × 36.20 × 7.50",
+          "Dimensions (in)": "2.16 × 1.43 × 0.30",
+          "Weight": "0.92 oz (26 g)",
+          "Packing Information": "92 pcs /one box"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-40°C to +250°C",
+          "High Temperature Cycle": "250°C",
+          "IP Rating": "IP68",
+          "Compression Strength": "181 psi (1250 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "High temperature production, Work in process, Automotive assembly, RTI management"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/02/xerafy-MICRO-Industrial-1.webp",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Rugged Tag",
-    "sizeText": "55 x 14 x 7.5 mm",
-    "material": "Engineering Plastic",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 7m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Pallets",
-      "Containers"
-    ],
-    "industries": [
-      "Pallets",
-      "Containers"
-    ],
-    "tags": [
-      "UHF",
-      "Rugged Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Pallets",
-      "Containers"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy MICRO-INDUSTRIAL Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-MICRO-Industrial-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-micro-paint-shop",
-    "title": "Xerafy MICRO-PAINT-SHOP",
-    "brand": "Xerafy",
-    "model": "MICRO-PAINT-SHOP",
-    "sku": "MICRO-PAINT-SHOP",
-    "subtitle": "HIGH-TEMP ON-METAL RFID TAG",
-    "shortDesc": "Automotive paint shops, high-temp industrial",
-    "description": "SKU: MICRO-PAINT-SHOP. Supplier: Xerafy. Category: HIGH-TEMP ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Rugged Tag. Description: Designed to withstand high-temperature paint shop processes.",
-    "customerSummary": "HIGH-TEMP ON-METAL RFID TAG | Rugged Tag | Applications: Automotive, High-Temp",
+    "id": "xerafy-micro-paint-shop",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy MICRO-PAINT-SHOP",
+    "summary_en": "Xerafy MICRO-PAINT-SHOP is an industrial RFID tag with IP68 protection.",
+    "feature_highlights_en": [
+      "IP68",
+      "-40°C to +85°C",
+      "NXP UCODE 9xm"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902–928 MHz (US); 865–868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC; 96 bits TID; 752/384 bits user memory",
+          "Write Cycles": "100,000 cycles",
+          "Data Retention": "20 years",
+          "Read Range (Handheld)": "Up to 32.81 ft (10 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer 316L Stainless steel",
+          "Dimensions (mm)": "55 x 36.20 x 7.50",
+          "Dimensions (in)": "2.16 x 1.43 x 0.30",
+          "Weight": "0.92 oz (26 g)",
+          "Packing Information": "92 pcs /one box"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-40°C to +250°C",
+          "High Temperature Cycle": "250°C",
+          "Chemical Resistance": "4",
+          "IP Rating": "IP68",
+          "Compression Strength": "181 psi (1250 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment. Please contact Xerafy for further details on"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/02/MICRO-Paint-Shop-1.webp",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Rugged Tag",
-    "sizeText": "55 x 14 x 7.5 mm",
-    "material": "High-temp polymer",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Up to 7m",
-    "operatingTemp": "-40°C to +250°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Automotive",
-      "High-Temp"
-    ],
-    "industries": [
-      "Automotive",
-      "High-Temp"
-    ],
-    "tags": [
-      "UHF",
-      "Rugged Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Automotive",
-      "High-Temp"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy MICRO-PAINT-SHOP Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-MICRO-Paint-Shop-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-micro-power",
-    "title": "Xerafy MICRO-POWER",
-    "brand": "Xerafy",
-    "model": "MICRO-POWER",
-    "sku": "MICRO-POWER",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: MICRO-POWER. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy MICRO series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-micro-power",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy MICRO-POWER",
+    "summary_en": "Xerafy MICRO-POWER is an industrial RFID tag with read range Up to 13.12 ft (4 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 13.12 ft (4 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M750",
+          "Memory": "96 bits EPC; 96 bits TID 32 bits user memory",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 13.12 ft (4 m)",
+          "Read Range (Handheld)": "Up to 9.84 ft (3 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "32 x 10.80 x 6",
+          "Dimensions (in)": "1.25 x 0.43 x 0.24",
+          "Weight": "0.11 oz (3 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (4 hours) -40°F to +302°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "181 psi (1,250 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Power tool tracking, Automotive Post-Paint processes, Construction tools, Audio-Video equipment, Rental fleet management, RTI management"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/02/Xerafy-MICRO-Power-1.webp",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "31.7 x 12.8 x 4.8 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 6m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy MICRO-POWER Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-MICRO-Power-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-nano-x-ii",
-    "title": "Xerafy Nano X II",
-    "brand": "Xerafy",
-    "model": "Nano X II",
-    "sku": "Nano X II",
-    "subtitle": "Adhesive tag RFID Tag",
-    "shortDesc": "One of the world's smallest and most rugged metal-mount UHF RFID tags for industrial asset identification",
-    "description": "Model: Nano X II. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Adhesive tag. One of the world's smallest and most rugged metal-mount UHF RFID tags for industrial asset identification",
-    "customerSummary": "Adhesive tag RFID Tag | UHF | Applications: Industrial asset identification, Small metal objects, Harsh environments",
+    "id": "xerafy-nano-x-ii",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Nano X II",
+    "summary_en": "Xerafy Nano X II is an industrial RFID tag with read range Up to 32.81 ft (10 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 32.81 ft (10 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC, 96 bits TID, 752/384 bits user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 32.81 ft (10 m)",
+          "Read Range (Handheld)": "Up to 24.61 ft (7.50 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "31.70 x 12.80 x 4.97",
+          "Dimensions (in)": "1.25 x 0.51 x 0.20",
+          "Weight": "0.18 oz (5 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "167 psi (1,150 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "MRO tool tracking, Manufacturing WIP, IT asset management"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-nano-x-ii-2-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-nano-x-ii-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-nano-x-ii/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "NXP UCODE8",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Adhesive tag",
-    "sizeText": "31.7 x 12.8 x 4.8 mm",
-    "material": "Engineering Grade Nylon Polymer",
-    "fixedReadRange": "up to 6m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-30C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial asset identification",
-      "Small metal objects",
-      "Harsh environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Adhesive tag",
-      "On Metal",
-      "NXP UCODE8",
-      "Industrial asset identification",
-      "Small metal objects"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Nano X II Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-NANO-Plus-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-nano-x-ii/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-nano-x-ii-ht",
-    "title": "Xerafy Nano X-II HT",
-    "brand": "Xerafy",
-    "model": "Nano X-II HT",
-    "sku": "Nano X-II HT",
-    "subtitle": "Rigid rectangular tag RFID Tag",
-    "shortDesc": "High-performance metal-mountable RFID tag with exceptional read ranges up to 7m on metal",
-    "description": "Model: Nano X-II HT. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Rigid rectangular tag. High-performance metal-mountable RFID tag with exceptional read ranges up to 7m on metal",
-    "customerSummary": "Rigid rectangular tag RFID Tag | UHF | Applications: Asset tracking, Equipment identification, High-temperature industrial asset management",
+    "id": "xerafy-nano-x-ii-ht",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Nano X-II HT",
+    "summary_en": "Xerafy Nano X-II HT is an industrial RFID tag with read range Up to 32.81 ft (10 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 32.81 ft (10 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC, 96 bits TID, 752/384 bits user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 32.81 ft (10 m)",
+          "Read Range (Handheld)": "Up to 24.61 ft (7.50 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "31.70 x 12.80 x 4.97",
+          "Dimensions (in)": "1.25 x 0.51 x 0.20",
+          "Weight": "0.18 oz (5 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "167 psi (1,150 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "MRO tool tracking, Manufacturing WIP, IT asset management"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-nano-x-ii-ht-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-nano-x-ii-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-nano-x-ii-ht/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-4",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rigid rectangular tag",
-    "sizeText": "42 x 15 x 2.1 mm",
-    "material": "PTFE",
-    "fixedReadRange": "up to 7m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 150C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Equipment identification",
-      "High-temperature industrial asset management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rigid rectangular tag",
-      "On Metal",
-      "Alien Higgs-4",
-      "Asset tracking",
-      "Equipment identification"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Nano X-II HT Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-NANO-Plus-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-nano-x-ii-ht/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-nfc-rti-outdoor",
-    "title": "Xerafy NFC-RTI-OUTDOOR",
-    "brand": "Xerafy",
-    "model": "NFC-RTI-OUTDOOR",
-    "sku": "NFC-RTI-OUTDOOR",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: NFC-RTI-OUTDOOR. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy NFC series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-nfc-rti-outdoor",
+    "display_brand": "Xerafy",
+    "category": "NFC / UHF RFID Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy NFC-RTI-OUTDOOR",
+    "summary_en": "Xerafy NFC-RTI-OUTDOOR is an industrial RFID tag with read range HF3 Up to 0.03 ft (1 cm); UHF3 Up to 29.53 ft (9 m), IP68 protection.",
+    "feature_highlights_en": [
+      "HF3 Up to 0.03 ft (1 cm); UHF3 Up to 29.53 ft (9 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "13.56 MHz (HF) IC type (HF chip)1 NXP NTAG213; 902-928 MHz (US); 865-868 MHz (EU) IC type (UHF chip)1 Impinj R6-P",
+          "Memory": "(HF)2 7 bytes UID 144 bytes user memory; (UHF)2 128/96 bits EPC 96 bits TID; 32/64 bits user memory",
+          "Read Range": "HF3 Up to 0.03 ft (1 cm); UHF3 Up to 29.53 ft (9 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Anti-UV industry grade polymer",
+          "Dimensions (mm)": "73.30 x 22.80 x 8.65",
+          "Dimensions (in)": "2.88 x 0.90 x 0.34",
+          "Weight": "0.39 oz (11 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "26 psi (180 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "144 bytes user memory, IC type (UHF chip)1 Impinj R6-P, Legacy tracking systems, Oil and Gas assets, RTI management, Production logistics"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/07/NFC-RTI-OUTDOOR.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "73.3 x 22.8 x 8.65 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 8m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy NFC-RTI-OUTDOOR Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-NFC-RTI-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-in",
-    "title": "Xerafy PICO-IN",
-    "brand": "Xerafy",
-    "model": "PICO-IN",
-    "sku": "PICO-IN",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: PICO-IN. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy PICO series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-pico-in",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-IN",
+    "summary_en": "Xerafy PICO-IN is an industrial RFID tag with read range Up to 9.84 ft (3 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 9.84 ft (3 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 9.84 ft (3 m)",
+          "Read Range (Handheld)": "Up to 4.92 ft (1.50 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "in metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.80 x 7.08 x 3.08",
+          "Dimensions (in)": "ø 0.50 x 0.28 x 0.12",
+          "Weight": "0.05 oz (1.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "220°C (428°F)",
+          "IP Rating": "IP68",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools and equipments, Oil wells equipments, Injection molding"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2022/08/pico-in-plus-1-01-jpg.jpg",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "12.8 x 7.08 x 3.08 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 2m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-IN Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-In-M830-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-mini-100",
-    "title": "Xerafy PICO-MINI-100",
-    "brand": "Xerafy",
-    "model": "PICO-MINI-100",
-    "sku": "PICO-MINI-100",
-    "subtitle": "ULTRA-THIN ON-METAL RFID TAG",
-    "shortDesc": "Small hand tools, aerospace, nuclear",
-    "description": "SKU: PICO-MINI-100. Supplier: Xerafy. Category: ULTRA-THIN ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: PCB Tag. Description: Ultra-thin profile of just 1mm, designed specifically for metal tools.",
-    "customerSummary": "ULTRA-THIN ON-METAL RFID TAG | PCB Tag | Applications: Small Tools, Aerospace",
+    "id": "xerafy-pico-mini-100",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-MINI-100",
+    "summary_en": "Xerafy PICO-MINI-100 is an industrial RFID tag with read range PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up to 13.12 ft (4 m), IP68 protection.",
+    "feature_highlights_en": [
+      "PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up t...",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Class1 Gen2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP UCODE 8",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "100,000 Times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up to 13.12 ft (4 m)",
+          "Read Range (Handheld)": "PICO Mini 100: Up to 0.98 ft (0.30 m) PICO Mini 150: Up to 4.92 ft (1.50 m) PICO Mini 300: Up to 6.56 ft (2 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "FR4 (PCB)",
+          "Dimensions (mm)": "1",
+          "Color": "Black"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G; s, water",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "output power., Hand tools for manufacturing,, aerospace, railways, nuclear,, military, Oil & Gas, Weapon management, Data centers"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/05/PICO-Mini-X.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/pico-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "PCB Tag",
-    "sizeText": "10 x 3 x 1 mm",
-    "material": "FR4 (PCB)",
-    "fixedReadRange": "Up to 0.5m",
-    "handheldReadRange": "Up to 0.3m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Small Tools",
-      "Aerospace"
-    ],
-    "industries": [
-      "Small Tools",
-      "Aerospace"
-    ],
-    "tags": [
-      "UHF",
-      "PCB Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Small Tools",
-      "Aerospace"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-MINI-100 Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-Mini-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/pico-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-mini-150",
-    "title": "Xerafy PICO-MINI-150",
-    "brand": "Xerafy",
-    "model": "PICO-MINI-150",
-    "sku": "PICO-MINI-150",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: PICO-MINI-150. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy PICO series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-pico-mini-150",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-MINI-150",
+    "summary_en": "Xerafy PICO-MINI-150 is an industrial RFID tag with read range PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up to 13.12 ft (4 m), IP68 protection.",
+    "feature_highlights_en": [
+      "PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up t...",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Class1 Gen2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP UCODE 8",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "100,000 Times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up to 13.12 ft (4 m)",
+          "Read Range (Handheld)": "PICO Mini 100: Up to 0.98 ft (0.30 m) PICO Mini 150: Up to 4.92 ft (1.50 m) PICO Mini 300: Up to 6.56 ft (2 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "FR4 (PCB)",
+          "Dimensions (mm)": "1",
+          "Color": "Black"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G; s, water",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "output power., Hand tools for manufacturing,, aerospace, railways, nuclear,, military, Oil & Gas, Weapon management, Data centers"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/05/PICO-Mini-X.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "12 x 3 x 1 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 1.5m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-MINI-150 Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-Mini-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-mini-300",
-    "title": "Xerafy PICO-MINI-300",
-    "brand": "Xerafy",
-    "model": "PICO-MINI-300",
-    "sku": "PICO-MINI-300",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: PICO-MINI-300. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy PICO series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-pico-mini-300",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-MINI-300",
+    "summary_en": "Xerafy PICO-MINI-300 is an industrial RFID tag with read range PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up to 13.12 ft (4 m), IP68 protection.",
+    "feature_highlights_en": [
+      "PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up t...",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC Class1 Gen2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP UCODE 8",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "100,000 Times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "PICO Mini 100: Up to 1.64 ft (0.50 m) PICO Mini 150: Up to 9.84 ft (3 m) PICO Mini 300: Up to 13.12 ft (4 m)",
+          "Read Range (Handheld)": "PICO Mini 100: Up to 0.98 ft (0.30 m) PICO Mini 150: Up to 4.92 ft (1.50 m) PICO Mini 300: Up to 6.56 ft (2 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "FR4 (PCB)",
+          "Dimensions (mm)": "1",
+          "Color": "Black"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G; s, water",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "output power., Hand tools for manufacturing,, aerospace, railways, nuclear,, military, Oil & Gas, Weapon management, Data centers"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/05/PICO-Mini-X.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "17.7 x 13 x 1 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 3m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-MINI-300 Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-Mini-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-off",
-    "title": "Xerafy PICO-OFF",
-    "brand": "Xerafy",
-    "model": "PICO-OFF",
-    "sku": "PICO-OFF",
-    "subtitle": "RUGGED OFF-METAL RFID TAG",
-    "shortDesc": "Hand tools tracking, IT asset management",
-    "description": "SKU: PICO-OFF. Supplier: Xerafy. Category: RUGGED OFF-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). Non-metal surface application. Form factor: Ceramic Tag. Description: PICO Off is designed for small plastic tools and devices in tough industrial environments.",
-    "customerSummary": "RUGGED OFF-METAL RFID TAG | Ceramic Tag | Applications: Tool Tracking, IT Assets",
+    "id": "xerafy-pico-off",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-OFF",
+    "summary_en": "Xerafy PICO-OFF is an industrial RFID tag with read range Up to 6.56 ft (2 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 6.56 ft (2 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 6.56 ft (2 m)",
+          "Read Range (Handheld)": "Up to 3.28 ft (1 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "off metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.80 x 7.08 x 3.08",
+          "Dimensions (in)": "0.50 x 0.28 x 0.12",
+          "Weight": "0.05 oz (1.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F)",
+          "IP Rating": "IP68",
+          "Compression Strength": "170 psi (1,176 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "output power., Hand tools tracking, Scanners and readers, Electronic devices, IT asset management"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/08/Tracking-small-non-metal-tools-and-devices-Xerafy-PICO-Off.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/pico-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-9",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Ceramic Tag",
-    "sizeText": "12.8 x 7.08 x 3.08 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "Limited",
-    "handheldReadRange": "Up to 2m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Tool Tracking",
-      "IT Assets"
-    ],
-    "industries": [
-      "Tool Tracking",
-      "IT Assets"
-    ],
-    "tags": [
-      "UHF",
-      "Ceramic Tag",
-      "Non Metal",
-      "Alien Higgs-9",
-      "Tool Tracking",
-      "IT Assets"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-OFF Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-Off-M830-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/pico-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-on",
-    "title": "Xerafy PICO-ON",
-    "brand": "Xerafy",
-    "model": "PICO-ON",
-    "sku": "PICO-ON",
-    "subtitle": "RUGGED ON-METAL RFID TAG",
-    "shortDesc": "Hand tools for manufacturing, aerospace, military",
-    "description": "SKU: PICO-ON. Supplier: Xerafy. Category: RUGGED ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Ceramic Tag. Description: PICO On is a rugged RFID tag designed for tool tracking and equipment management in harsh environments.",
-    "customerSummary": "RUGGED ON-METAL RFID TAG | Ceramic Tag | Applications: Tool Tracking, Aerospace, Military",
+    "id": "xerafy-pico-on",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-ON",
+    "summary_en": "Xerafy PICO-ON is an industrial RFID tag with read range Up to 19.69 ft (6 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 19.69 ft (6 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 19.69 ft (6 m)",
+          "Read Range (Handheld)": "Up to 14.44 ft (4.40 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.80 x 7.08 x 3.08",
+          "Dimensions (in)": "0.50 x 0.28 x 0.12",
+          "Weight": "0.05 oz (1.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F)",
+          "IP Rating": "IP68",
+          "Compression Strength": "170 psi (1,176 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools for manufacturing,, aerospace, railways, nuclear,, military, Oil & Gas, Weapon management, Oilfield equipment, Data centers"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/08/Tracking-On-Metal-Small-Tools-and-Weapons-Xerafy-PICO-On.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/pico-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-9",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Ceramic Tag",
-    "sizeText": "12.8 x 7.08 x 3.08 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "Up to 3m",
-    "handheldReadRange": "Up to 2m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Tool Tracking",
-      "Aerospace",
-      "Military"
-    ],
-    "industries": [
-      "Tool Tracking",
-      "Aerospace",
-      "Military"
-    ],
-    "tags": [
-      "UHF",
-      "Ceramic Tag",
-      "On Metal",
-      "Alien Higgs-9",
-      "Tool Tracking",
-      "Aerospace"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-ON Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-On-M830-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/pico-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-plus",
-    "title": "Xerafy PICO-PLUS",
-    "brand": "Xerafy",
-    "model": "PICO-PLUS",
-    "sku": "PICO-PLUS",
-    "subtitle": "PACKAGED RUGGED ON-METAL RFID TAG",
-    "shortDesc": "Manufacturing tools, medical devices",
-    "description": "SKU: PICO-PLUS. Supplier: Xerafy. Category: PACKAGED RUGGED ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Polymer Tag. Description: Small and most rugged RFID on-metal tag for production applications.",
-    "customerSummary": "PACKAGED RUGGED ON-METAL RFID TAG | Polymer Tag | Applications: Manufacturing, Medical Devices",
+    "id": "xerafy-pico-plus",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy PICO-PLUS",
+    "summary_en": "Xerafy PICO-PLUS is an industrial RFID tag with read range Up to 19.69 ft (6 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 19.69 ft (6 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 19.69 ft (6 m)",
+          "Read Range (Handheld)": "Up to 14.44 ft (4.40 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "17.70 x 10.90 x 5",
+          "Dimensions (in)": "0.70 x 0.43 x 0.20",
+          "Weight": "0.07 oz (2 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F)",
+          "IP Rating": "IP68",
+          "Compression Strength": "170 psi (1,176 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "EPC and User Memory can be re-programmed, password protected, or permanently locked. TID is locked and unique at the point of, manufacturing., Manufacturing hand tools, and equipments, Construction tool tracking, Military equipments tracking"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2022/08/Pico-Plus-1.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/pico-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Polymer Tag",
-    "sizeText": "17.7 x 13 x 5 mm",
-    "material": "Industry grade polymer",
-    "fixedReadRange": "Up to 3m",
-    "handheldReadRange": "Up to 2m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Manufacturing",
-      "Medical Devices"
-    ],
-    "industries": [
-      "Manufacturing",
-      "Medical Devices"
-    ],
-    "tags": [
-      "UHF",
-      "Polymer Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Manufacturing",
-      "Medical Devices"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy PICO-PLUS Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-Plus-M830-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/pico-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-on-plus",
-    "title": "Xerafy Pico On Plus",
-    "brand": "Xerafy",
-    "model": "Pico On Plus",
-    "sku": "Pico On Plus",
-    "subtitle": "Small adhesive tag RFID Tag",
-    "shortDesc": "UHF RFID metal tag offering 10 ft read range in compact 12x7x3mm size",
-    "description": "Model: Pico On Plus. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Small adhesive tag. UHF RFID metal tag offering 10 ft read range in compact 12x7x3mm size",
-    "customerSummary": "Small adhesive tag RFID Tag | UHF | Applications: Asset tracking, IT asset management, Blade server tracking, Small metallic objects",
+    "id": "xerafy-pico-on-plus",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Pico On Plus",
+    "summary_en": "Xerafy Pico On Plus is an industrial RFID tag with read range Up to 19.69 ft (6 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 19.69 ft (6 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 19.69 ft (6 m)",
+          "Read Range (Handheld)": "Up to 14.44 ft (4.40 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.80 x 7.08 x 3.08",
+          "Dimensions (in)": "0.50 x 0.28 x 0.12",
+          "Weight": "0.05 oz (1.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F)",
+          "IP Rating": "IP68",
+          "Compression Strength": "170 psi (1,176 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools for manufacturing,, aerospace, railways, nuclear,, military, Oil & Gas, Weapon management, Oilfield equipment, Data centers"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-pico-on-plus.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-pico-on-plus-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-pico-on-plus/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Small adhesive tag",
-    "sizeText": "12.8 x 7.08 x 3.08 mm",
-    "material": "Engineering Grade Nylon Polymer / Ceramic",
-    "fixedReadRange": "up to 3m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-30C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "IT asset management",
-      "Blade server tracking",
-      "Small metallic objects"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Small adhesive tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Asset tracking",
-      "IT asset management"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Pico On Plus Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-On-M830-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-pico-on-plus/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-x-ii-plus",
-    "title": "Xerafy Pico X-II Plus",
-    "brand": "Xerafy",
-    "model": "Pico X-II Plus",
-    "sku": "Pico X-II Plus",
-    "subtitle": "Rigid tag RFID Tag",
-    "shortDesc": "Compact UHF RFID metal-mount tag offering read range performance twice its size",
-    "description": "Model: Pico X-II Plus. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Rigid tag. Compact UHF RFID metal-mount tag offering read range performance twice its size",
-    "customerSummary": "Rigid tag RFID Tag | UHF | Applications: Asset tracking, Small metal objects, Industrial identification",
+    "id": "xerafy-pico-x-ii-plus",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Pico X-II Plus",
+    "summary_en": "Xerafy Pico X-II Plus is an industrial RFID tag with read range Up to 19.69 ft (6 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 19.69 ft (6 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 19.69 ft (6 m)",
+          "Read Range (Handheld)": "Up to 14.44 ft (4.40 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "17.70 x 10.90 x 5",
+          "Dimensions (in)": "0.70 x 0.43 x 0.20",
+          "Weight": "0.07 oz (2 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F)",
+          "IP Rating": "IP68",
+          "Compression Strength": "170 psi (1,176 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "EPC and User Memory can be re-programmed, password protected, or permanently locked. TID is locked and unique at the point of, manufacturing., Manufacturing hand tools, and equipments, Construction tool tracking, Military equipments tracking"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-pico-x-2-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-pico-x-ii-plus-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-pico-x-ii-plus/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rigid tag",
-    "sizeText": "17.7 x 10.9 x 5 mm",
-    "material": "Engineering Grade Nylon Polymer / Ceramic",
-    "fixedReadRange": "Standard",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-30C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Small metal objects",
-      "Industrial identification"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rigid tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Asset tracking",
-      "Small metal objects"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Pico X-II Plus Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-Plus-M830-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-pico-x-ii-plus/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-pico-in-plus",
-    "title": "Xerafy Pico-iN Plus",
-    "brand": "Xerafy",
-    "model": "Pico-iN Plus",
-    "sku": "Pico-iN Plus",
-    "subtitle": "Ultra-compact embedded tag RFID Tag",
-    "shortDesc": "Ultra-compact UHF RFID metal tag for embedding in small metallic assets",
-    "description": "Model: Pico-iN Plus. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Ultra-compact embedded tag. Ultra-compact UHF RFID metal tag for embedding in small metallic assets",
-    "customerSummary": "Ultra-compact embedded tag RFID Tag | UHF | Applications: Aircraft components, Automotive parts, Firearms, Medical devices, Blade servers",
+    "id": "xerafy-pico-in-plus",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Pico-iN Plus",
+    "summary_en": "Xerafy Pico-iN Plus is an industrial RFID tag with read range Up to 9.84 ft (3 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 9.84 ft (3 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 9.84 ft (3 m)",
+          "Read Range (Handheld)": "Up to 4.92 ft (1.50 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "in metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.80 x 7.08 x 3.08",
+          "Dimensions (in)": "ø 0.50 x 0.28 x 0.12",
+          "Weight": "0.05 oz (1.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "220°C (428°F)",
+          "IP Rating": "IP68",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools and equipments, Oil wells equipments, Injection molding"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-pico-in-plus.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-pico-in-plus-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-pico-in-plus/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Ultra-compact embedded tag",
-    "sizeText": "12.8 x 7.08 x 3.08 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "up to 2m when embedded",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 150C",
-    "ipRating": "IP68",
-    "applications": [
-      "Aircraft components",
-      "Automotive parts",
-      "Firearms",
-      "Medical devices",
-      "Blade servers"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Ultra-compact embedded tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Aircraft components",
-      "Automotive parts"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Pico-iN Plus Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-PICO-In-M830-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-pico-in-plus/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-roswell",
-    "title": "Xerafy ROSWELL",
-    "brand": "Xerafy",
-    "model": "ROSWELL",
-    "sku": "ROSWELL",
-    "subtitle": "ULTRA-RUGGED ON-METAL RFID TAG",
-    "shortDesc": "Oil & Gas, heavy industry, food processing",
-    "description": "SKU: ROSWELL. Supplier: Xerafy. Category: ULTRA-RUGGED ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Heavy Duty Tag. Description: Stainless steel housing for extreme industrial environments.",
-    "customerSummary": "ULTRA-RUGGED ON-METAL RFID TAG | Heavy Duty Tag | Applications: Oil & Gas, Heavy Industry",
+    "id": "xerafy-roswell",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy ROSWELL",
+    "summary_en": "Xerafy ROSWELL is an industrial RFID tag with read range Up to 16.40 ft (5 m), IP68, IP69K protection.",
+    "feature_highlights_en": [
+      "Up to 16.40 ft (5 m)",
+      "IP68, IP69K",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Alien Higgs 9",
+          "Memory": "96 bits EPC; 96 bits TID 688 bits user memory",
+          "Read Range (Fixed)": "Up to 16.40 ft (5 m)",
+          "Read Range (Handheld)": "Up to 11.48 ft (3.50 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Stainless steel, High- performance engineered polymer",
+          "Dimensions (mm)": "48 x 28 x 13.50",
+          "Dimensions (in)": "1.89 x 1.10 x 0.53",
+          "Weight": "1.55 oz (44 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +250°C -40°F to +482°F",
+          "Chemical Resistance": "3 24h H2SO4 (10% sulfuric acid) 24h HNO3 (10% nitric acid) 24h H3PO4 (20% phosphoric acid) 24h H2O2 (25% hydrogen peroxide) 24h NaOH (10% sodium hydroxide) ROSWELL Autoclavable",
+          "IP Rating": "IP68, IP69K",
+          "Compression Strength": "1145 psi (7900 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Sterilizable surgical trays, Medical devices, Oil & Gas valve/wellhead, management, Food processing plants, Automotive manufacturing"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/06/Durable-Metal-RFID-Tag-Xerafy-ROSWELL-Autoclavable.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/roswell-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Heavy Duty Tag",
-    "sizeText": "48 x 48 x 16.3 mm",
-    "material": "Stainless Steel",
-    "fixedReadRange": "Up to 5m",
-    "handheldReadRange": "Up to 3m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP69K",
-    "applications": [
-      "Oil & Gas",
-      "Heavy Industry"
-    ],
-    "industries": [
-      "Oil & Gas",
-      "Heavy Industry"
-    ],
-    "tags": [
-      "UHF",
-      "Heavy Duty Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Oil & Gas",
-      "Heavy Industry"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy ROSWELL Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-ROSWELL-Autoclavable-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/roswell-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-roswell-autoclavable",
-    "title": "Xerafy Roswell – Autoclavable",
-    "brand": "Xerafy",
-    "model": "Roswell Autoclavable",
-    "sku": "Roswell Autoclavable",
-    "subtitle": "Cylindrical metal enclosure RFID Tag",
-    "shortDesc": "Patent-pending fully metal antenna RFID tag for high-temperature sterilization environments",
-    "description": "Model: Roswell Autoclavable. Brand: Xerafy. Frequency: 902-928 MHz (US) / 865-868 MHz (EU). Surface: on_metal. Form factor: Cylindrical metal enclosure. Patent-pending fully metal antenna RFID tag for high-temperature sterilization environments",
-    "customerSummary": "Cylindrical metal enclosure RFID Tag | UHF | Applications: Asset tracking, High-temperature environments, Autoclavable sterilization, Heavy-duty industrial",
+    "id": "xerafy-roswell-autoclavable",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Roswell – Autoclavable",
+    "summary_en": "Xerafy Roswell – Autoclavable is an industrial RFID tag with read range Up to 16.40 ft (5 m), IP68, IP69K protection.",
+    "feature_highlights_en": [
+      "Up to 16.40 ft (5 m)",
+      "IP68, IP69K",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Alien Higgs 9",
+          "Memory": "96 bits EPC; 96 bits TID 688 bits user memory",
+          "Read Range (Fixed)": "Up to 16.40 ft (5 m)",
+          "Read Range (Handheld)": "Up to 11.48 ft (3.50 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Stainless steel, High- performance engineered polymer",
+          "Dimensions (mm)": "48 x 28 x 13.50",
+          "Dimensions (in)": "1.89 x 1.10 x 0.53",
+          "Weight": "1.55 oz (44 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +250°C -40°F to +482°F",
+          "Chemical Resistance": "3 24h H2SO4 (10% sulfuric acid) 24h HNO3 (10% nitric acid) 24h H3PO4 (20% phosphoric acid) 24h H2O2 (25% hydrogen peroxide) 24h NaOH (10% sodium hydroxide) ROSWELL Autoclavable",
+          "IP Rating": "IP68, IP69K",
+          "Compression Strength": "1145 psi (7900 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Sterilizable surgical trays, Medical devices, Oil & Gas valve/wellhead, management, Food processing plants, Automotive manufacturing"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-autoclavable-roswell-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-autoclavable-roswell.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-roswell-autoclavable/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 865-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Cylindrical metal enclosure",
-    "sizeText": "48 x 28 x 13.5 mm",
-    "material": "Stainless steel / Aluminum 6061-T6",
-    "fixedReadRange": "up to 5m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 250C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "High-temperature environments",
-      "Autoclavable sterilization",
-      "Heavy-duty industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Cylindrical metal enclosure",
-      "On Metal",
-      "Alien Higgs-3",
-      "Asset tracking",
-      "High-temperature environments"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Roswell – Autoclavable Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-ROSWELL-Autoclavable-Datasheet_260309.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-roswell-autoclavable/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-rti-trak",
-    "title": "Xerafy RTI Trak",
-    "brand": "Xerafy",
-    "model": "RTI Trak",
-    "sku": "RTI Trak",
-    "subtitle": "Rectangular tag RFID Tag",
-    "shortDesc": "Linearly polarized RFID tag with Alien Higgs-3 chip, withstands 200 drop cycles at 3ft",
-    "description": "Model: RTI Trak. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Rectangular tag. Linearly polarized RFID tag with Alien Higgs-3 chip, withstands 200 drop cycles at 3ft",
-    "customerSummary": "Rectangular tag RFID Tag | UHF | Applications: Asset tracking, Real-time item identification, Durable environment deployments",
+    "id": "xerafy-rti-trak",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy RTI Trak",
+    "summary_en": "Xerafy RTI Trak is an industrial RFID tag with read range Up to 32.81 ft (10 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 32.81 ft (10 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP U9xe",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range On Metal": "Up to 32.81 ft (10 m)",
+          "Read Range Off Metal": "Up to 26.25 ft (8 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Anti-UV industry grade polymer",
+          "Dimensions (mm)": "73.30 x 22.80 x 8.65",
+          "Dimensions (in)": "2.88 x 0.90 x 0.34",
+          "Weight": "0.39 oz (11 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (48 hours) -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "26 psi (180 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Up to 32.81 ft (10 m), RTI management, LPG and gas cylinder, Production logistics, Yard management, Long-distance shipping"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-rti-trak.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-rti-trak-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-rti-trak/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Rectangular tag",
-    "sizeText": "73.3 x 22.8 x 8.3 mm",
-    "material": "Industrial polymer",
-    "fixedReadRange": "up to 8m on metal",
-    "handheldReadRange": "up to 4m off metal",
-    "operatingTemp": "-40C to 85C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Real-time item identification",
-      "Durable environment deployments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Rectangular tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Asset tracking",
-      "Real-time item identification"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy RTI Trak Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-RTI-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-rti-trak/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-rti-outdoor",
-    "title": "Xerafy RTI-OUTDOOR",
-    "brand": "Xerafy",
-    "model": "RTI-OUTDOOR",
-    "sku": "RTI-OUTDOOR",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: RTI-OUTDOOR. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy RTI series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-rti-outdoor",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy RTI-OUTDOOR",
+    "summary_en": "Xerafy RTI-OUTDOOR is an industrial RFID tag with read range Up to 32.81 ft (10 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 32.81 ft (10 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP U9xe",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range On Metal": "Up to 32.81 ft (10 m)",
+          "Read Range Off Metal": "Up to 26.25 ft (8 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Anti-UV industry grade polymer",
+          "Dimensions (mm)": "73.30 x 22.80 x 8.65",
+          "Dimensions (in)": "2.88 x 0.90 x 0.34",
+          "Weight": "0.39 oz (11 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (48 hours) -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "26 psi (180 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Up to 32.81 ft (10 m), RTI management, LPG and gas cylinder, Production logistics, Yard management, Long-distance shipping"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2025/03/RTI-OUTDOOR-U9xe-for-RTI-Visibility1.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "Standard",
-    "material": "Standard",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy RTI-OUTDOOR Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-RTI-OUTDOOR-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-slim-trak",
-    "title": "Xerafy SLIM-TRAK",
-    "brand": "Xerafy",
-    "model": "SLIM-TRAK",
-    "sku": "SLIM-TRAK",
-    "subtitle": "SLIM PROFILE RFID TAG",
-    "shortDesc": "IT asset management, weapon tracking",
-    "description": "SKU: SLIM-TRAK. Supplier: Xerafy. Category: SLIM PROFILE RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Slim Tag. Description: Slim profile for IT assets and military equipment.",
-    "customerSummary": "SLIM PROFILE RFID TAG | Slim Tag | Applications: IT Assets, Military",
+    "id": "xerafy-slim-trak",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy SLIM-TRAK",
+    "summary_en": "Xerafy SLIM-TRAK is an industrial RFID tag with read range Up to 6.56 ft (2 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 6.56 ft (2 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "Alien Higgs 9",
+          "Memory": "96 bits EPC; 96 bits TID 688 bits user memory",
+          "Read Range On Metal": "Up to 6.56 ft (2 m)",
+          "Read Range Off Metal": "Up to 4.92 ft (1.50 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "High temperature polymer",
+          "Dimensions (mm)": "56.50 x 5.95 x 1.30",
+          "Dimensions (in)": "2.22 x 0.23 x 0.05",
+          "Weight": "0.04 oz (1 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C -40°F to +302°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "106 psi (731 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "MRO tool tracking, IT asset management, Military asset & weapon tracking"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2023/02/Slim-Trak-H9-b.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/trak-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Slim Tag",
-    "sizeText": "56.5 x 13 x 5 mm",
-    "material": "High-temp polymer",
-    "fixedReadRange": "Up to 2m",
-    "handheldReadRange": "Up to 1.5m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "IT Assets",
-      "Military"
-    ],
-    "industries": [
-      "IT Assets",
-      "Military"
-    ],
-    "tags": [
-      "UHF",
-      "Slim Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "IT Assets",
-      "Military"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy SLIM-TRAK Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Slim-TRAK-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/trak-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-tex-50x12",
-    "title": "Xerafy TEX-50X12",
-    "brand": "Xerafy",
-    "model": "TEX-50X12",
-    "sku": "TEX-50X12",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: TEX-50X12. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy TEX series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-tex-50x12",
+    "display_brand": "Xerafy",
+    "category": "RFID Laundry Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy TEX-50X12",
+    "summary_en": "Xerafy TEX-50X12 is an industrial RFID tag with read range Up to 16.40 ft (5 m); Up to 19.69 ft (6 m).",
+    "feature_highlights_en": [
+      "Up to 16.40 ft (5 m); Up to 19.69 ft (6 m)",
+      "-40°C to +85°C -40°F to +185°F Washing: 90°С (194° F), 15 minutes Pre-drying: 180°С (356°F),...",
+      "NXP UCODE 9xe; Impinj M830"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "NXP UCODE 9xe; Impinj M830",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times; 10,000 times",
+          "Data Retention": "20 years; 10 years",
+          "Read Range (Fixed)": "Up to 16.40 ft (5 m); Up to 19.69 ft (6 m)",
+          "Read Range (Handheld)": "Up to 13.12 ft (4 m) Impinj; Up to 26.25 ft (4.80 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Textile",
+          "Dimensions (mm)": "50 x 12",
+          "Dimensions (in)": "1.97 x 0.47",
+          "Color": "White",
+          "Weight": "0.30 g"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F Washing: 90°С (194° F), 15 minutes Pre-drying: 180°С (356°F), 30 minutes Ironing: 185°C (365°F), 10 seconds Heat-sealing: 210°С (410°F), 20 seconds Sterilization process: 135°C (275°F), 20 minutes",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "8% - 95% RH",
+          "Warranty": "200 washing cycles or 3 years"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment. Please contact Xerafy for further details on, Medical scrubs, Hospital linens, Hotel linens, Uniforms, Rental costumes"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2026/03/TEX-50x12-EECC-logo-2603.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "50 x 12 x 0.66 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 6m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy TEX-50X12 Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-TEX-50x12-M830U9xe-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-tex-55x12-silicone",
-    "title": "Xerafy TEX-55X12-SILICONE",
-    "brand": "Xerafy",
-    "model": "TEX-55X12-SILICONE",
-    "sku": "TEX-55X12-SILICONE",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: TEX-55X12-SILICONE. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy TEX series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-tex-55x12-silicone",
+    "display_brand": "Xerafy",
+    "category": "RFID Laundry Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy TEX-55X12-SILICONE",
+    "summary_en": "Xerafy TEX-55X12-SILICONE is an industrial RFID tag with IP68 protection.",
+    "feature_highlights_en": [
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F",
+      "NXP UCODE 9"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "NXP UCODE 9",
+          "Memory": "96 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range Off Metal": "Up to 19.69 ft (6 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Silicone",
+          "Dimensions (mm)": "55 x 12 x 2.50",
+          "Dimensions (in)": "2.17 x 0.47 x 0.10",
+          "Color": "Gray",
+          "Weight": "0.07 oz (1.99 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "71.07 psi",
+          "Shock": "1 m to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "20% - 60% RH",
+          "Warranty": "200 washing cycles or 3 years"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment. Please contact Xerafy for further details on, Medical scrubs, Hospital linens, Hotel linens, Uniforms, Rental costumes"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2023/12/Silicone-laundry-logo-2.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "55 x 12 x 2.5 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 6m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy TEX-55X12-SILICONE Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-TEX-55x12-Silicone-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-tex-70x15",
-    "title": "Xerafy TEX-70X15",
-    "brand": "Xerafy",
-    "model": "TEX-70X15",
-    "sku": "TEX-70X15",
-    "subtitle": "LAUNDRY RFID TAG",
-    "shortDesc": "Medical scrubs, hospital linens, uniforms",
-    "description": "SKU: TEX-70X15. Supplier: Xerafy. Category: LAUNDRY RFID TAG. Frequency: UHF 860-960 MHz (Global). Non-metal surface application. Form factor: Textile Tag. Description: Textile tag for medical scrubs and linens.",
-    "customerSummary": "LAUNDRY RFID TAG | Textile Tag | Applications: Laundry, Healthcare",
+    "id": "xerafy-tex-70x15",
+    "display_brand": "Xerafy",
+    "category": "RFID Laundry Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy TEX-70X15",
+    "summary_en": "Xerafy TEX-70X15 is an industrial RFID tag with read range Up to 29.53 ft (9 m); Up to 32.81 ft (10 m).",
+    "feature_highlights_en": [
+      "Up to 29.53 ft (9 m); Up to 32.81 ft (10 m)",
+      "-40°C to +85°C -40°F to +185°F Washing: 90°С (194° F), 15 minutes Pre-drying: 180°С (356°F),...",
+      "NXP UCODE 9xe; Impinj M830"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "NXP UCODE 9xe; Impinj M830",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times; 10,000 times",
+          "Data Retention": "20 years; 10 years",
+          "Read Range (Fixed)": "Up to 29.53 ft (9 m); Up to 32.81 ft (10 m)",
+          "Read Range (Handheld)": "Up to 23.62 ft (7.20 m) Impinj; Up to 26.25 ft (8 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Textile",
+          "Dimensions (mm)": "70 x 15",
+          "Dimensions (in)": "2.76 x 0.59",
+          "Color": "White",
+          "Weight": "0.40 g"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F Washing: 90°С (194° F), 15 minutes Pre-drying: 180°С (356°F), 30 minutes Ironing: 185°C (365°F), 10 seconds Heat-sealing: 210°С (410°F), 20 seconds Sterilization process: 135°C (275°F), 20 minutes",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "8% - 95% RH",
+          "Warranty": "200 washing cycles or 3 years"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment. Please contact Xerafy for further details on, Medical scrubs, Hospital linens, Hotel linens, Uniforms, Rental costumes"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2026/03/TEX-70x15-EECC-logo-2603.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Impinj M830",
-    "surface": "non_metal",
-    "onMetal": false,
-    "formFactor": "Textile Tag",
-    "sizeText": "70 x 15 x 0.7 mm",
-    "material": "Textile",
-    "fixedReadRange": "Limited",
-    "handheldReadRange": "Up to 10m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Laundry",
-      "Healthcare"
-    ],
-    "industries": [
-      "Laundry",
-      "Healthcare"
-    ],
-    "tags": [
-      "UHF",
-      "Textile Tag",
-      "Non Metal",
-      "Impinj M830",
-      "Laundry",
-      "Healthcare"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy TEX-70X15 Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-TEX-70x15-M830U9xe-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-tex-70x22-roll",
-    "title": "Xerafy TEX-70X22-ROLL",
-    "brand": "Xerafy",
-    "model": "TEX-70X22-ROLL",
-    "sku": "TEX-70X22-ROLL",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: TEX-70X22-ROLL. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy TEX series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-tex-70x22-roll",
+    "display_brand": "Xerafy",
+    "category": "RFID Laundry Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy TEX-70X22-ROLL",
+    "summary_en": "Xerafy TEX-70X22-ROLL is an industrial RFID tag with read range Up to 19.69 ft (6 m) US Up to 16.40 ft (5 m) EU.",
+    "feature_highlights_en": [
+      "Up to 19.69 ft (6 m) US Up to 16.40 ft (5 m) EU",
+      "-20°C to +85°C -4°F to +185°F Washing: 90°С (194° F), 15 minutes Pre-drying: 180°С (356°F),...",
+      "NXP UCODE 9xe"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "NXP UCODE 9xe",
+          "Memory": "128 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 Times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 19.69 ft (6 m) US Up to 16.40 ft (5 m) EU",
+          "Read Range (Handheld)": "Up to 15.75 ft(4.80 m) US Up to 13.12 ft(4 m) EU",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Polyester",
+          "Dimensions (mm)": "70 x 22",
+          "Dimensions (in)": "2.76 x 0.87",
+          "Thickness": "1 0.65 mm,",
+          "Color": "White",
+          "Weight": "0.53kg/roll"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-20°C to +85°C -4°F to +185°F Washing: 90°С (194° F), 15 minutes Pre-drying: 180°С (356°F), 30 minutes Heat-sealing: 210°C (410°F), 20 seconds Ironing: 185°C (365°F), 10 seconds Sterilization process: 135°C (275°F), 20 minutes",
+          "Vibration": "MIL-STD-810G",
+          "Storage Humidity": "8% - 95% RH",
+          "Printer Compatibility": "TSC Printronix T6000e,",
+          "Warranty": "200 washing cycles or 3 years"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Zebra ZT610R, SATO CL4NX, Postek TX3r, etc., Medical scrubs, Hospital linens, Hotel linens, Uniforms, Rental costumes"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2026/03/70x22-Roll-EECC-logo-2603.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "70 x 22 x 0.65 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 6m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy TEX-70X22-ROLL Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-TEX-70x22-Roll-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-versa-trak",
-    "title": "Xerafy VERSA-TRAK",
-    "brand": "Xerafy",
-    "model": "VERSA-TRAK",
-    "sku": "VERSA-TRAK",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: VERSA-TRAK. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy VERSA series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-versa-trak",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy VERSA-TRAK",
+    "summary_en": "Xerafy VERSA-TRAK is an industrial RFID tag with read range Up to 29.53 ft (9 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 29.53 ft (9 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "Impinj M750",
+          "Memory": "96 bits EPC; 96 bits TID 32 bits user memory",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range On Metal": "Up to 29.53 ft (9 m)",
+          "Read Range Off Metal": "Up to 9.84 ft (3 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "50.30 x 17 x 5.30",
+          "Dimensions (in)": "1.98 x 0.67 x 0.21",
+          "Weight": "0.11 oz (3 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "26.1 psi (180 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Returnable transport item (RTI), management, Pallet logistics, Storage rack identification"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/06/Xerafy-Versa-TRAK-RFID-Tag-for-Versatile-Options-Tracking.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "Standard",
-    "material": "Standard",
-    "fixedReadRange": "Up to 9m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy VERSA-TRAK Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-Versa-TRAK-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xense-strain",
-    "title": "Xerafy XENSE-STRAIN",
-    "brand": "Xerafy",
-    "model": "XENSE-STRAIN",
-    "sku": "XENSE-STRAIN",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: XENSE-STRAIN. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy XENSE series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-xense-strain",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XENSE-STRAIN",
+    "summary_en": "Xerafy XENSE-STRAIN is an industrial RFID tag with read range Up to 4.92 ft (1.5 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 4.92 ft (1.5 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Asygn AS3213S",
+          "Memory": "192 bits EPC; 16 bits TID 96 bits user memory",
+          "Read Range (Fixed)": "Up to 4.92 ft (1.5 m)",
+          "Read Range (Handheld)": "Up to 3.28 ft (1 m) In concrete4 Up to 6.56 ft (2 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal",
+          "Sensing Features": "-40°C to +120°C",
+          "Accuracy": "± 1ºC"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "131.60 x 30.80 x 7.50",
+          "Dimensions (in)": "5.18 x 1.21 x 0.30",
+          "Weight": "1.48 oz (42 g)",
+          "Rivet Hole Diameter": "0.165 in +/-0.008"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +120°C -40°F to +248°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "8,700psi ( 60MPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "On metal"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2023/12/XENSE-Strain-Xerafy.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "131.6 x 30.8 x 7.5 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 1.5m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XENSE-STRAIN Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XENSE-Strain-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xense-temp",
-    "title": "Xerafy XENSE-TEMP",
-    "brand": "Xerafy",
-    "model": "XENSE-TEMP",
-    "sku": "XENSE-TEMP",
-    "subtitle": "PASSIVE TEMPERATURE SENSOR TAG",
-    "shortDesc": "Concrete curing, infrastructure monitoring",
-    "description": "SKU: XENSE-TEMP. Supplier: Xerafy. Category: PASSIVE TEMPERATURE SENSOR TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Sensor Tag. Description: Battery-free temperature monitoring for industrial assets.",
-    "customerSummary": "PASSIVE TEMPERATURE SENSOR TAG | Sensor Tag | Applications: Sensors, Infrastructure",
+    "id": "xerafy-xense-temp",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XENSE-TEMP",
+    "summary_en": "Xerafy XENSE-TEMP is an industrial RFID tag with read range Up to 6.56 ft (2 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 6.56 ft (2 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Asygn AS3211",
+          "Memory": "192 bits EPC; 48 bits TID 32 bits user memory Customizable sensing features Temperature; humidity; strain; ambient light; pressure; magnetic field (hall effect); electrical continuity",
+          "Read Range On Metal": "Up to 6.56 ft (2 m)",
+          "Read Range Off Metal": "Up to 9.84 ft (3 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer, Copper",
+          "Dimensions (mm)": "100 x 26 x 8.90",
+          "Dimensions (in)": "3.94 x 1.02 x 0.35",
+          "Weight": "0.68 oz (19.40 g)",
+          "Rivet Hole Diameter": "0.137 in +/-0.008"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C -40°F to +185°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "29 psi (200 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2022/08/Temp-Concrete-2.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/xense-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Asygn AS3211",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Sensor Tag",
-    "sizeText": "100 x 26 x 8.9 mm",
-    "material": "Industry grade polymer",
-    "fixedReadRange": "Up to 2m",
-    "handheldReadRange": "Up to 1.5m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Sensors",
-      "Infrastructure"
-    ],
-    "industries": [
-      "Sensors",
-      "Infrastructure"
-    ],
-    "tags": [
-      "UHF",
-      "Sensor Tag",
-      "On Metal",
-      "Asygn AS3211",
-      "Sensors",
-      "Infrastructure"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XENSE-TEMP Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XENSE-Temp-Concrete-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/xense-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xplate",
-    "title": "Xerafy XPLATE",
-    "brand": "Xerafy",
-    "model": "XPLATE",
-    "sku": "XPLATE",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: XPLATE. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy XPLATE series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-xplate",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XPLATE",
+    "summary_en": "Xerafy XPLATE is an industrial RFID tag with read range Up to 32.81 ft (10 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 32.81 ft (10 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Impinj M750",
+          "Memory": "96 bits EPC; 96 bits TID 32 bits user memory",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range On Metal": "Up to 32.81 ft (10 m)",
+          "Read Range Off Metal": "Up to 19.69 ft (6 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer, Aluminum or stainless steel plate",
+          "Dimensions (mm)": "85 x 59.30 x 15.40,",
+          "Dimensions (in)": "3.35 x 2.31 x 0.61,",
+          "Color": "Dark gray",
+          "Weight": "0.42 oz (11.80 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +85°C (168 hours) -40°F to +185°F",
+          "Peak Temperature": "100°C (212°F, 100 hours)",
+          "Chemical Resistance": "4",
+          "IP Rating": "IP68",
+          "Compression Strength": "181 psi (1250 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment. Please contact Xerafy for further details on"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/06/Smart-RFID-Nameplate-Xerafy-XPLATE.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "Standard",
-    "material": "Standard",
-    "fixedReadRange": "Up to 10m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XPLATE Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XPLATE-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xplorer-downhole",
-    "title": "Xerafy Xplorer Downhole",
-    "brand": "Xerafy",
-    "model": "Xplorer Downhole",
-    "sku": "Xplorer Downhole",
-    "subtitle": "Metal enclosure RFID Tag",
-    "shortDesc": "RFID tag designed for downhole operations in oil and gas wells, withstanding extreme conditions",
-    "description": "Model: Xplorer Downhole. Brand: Xerafy. Frequency: 902-928 MHz (US) / 865-868 MHz (EU). Surface: on_metal. Form factor: Metal enclosure. RFID tag designed for downhole operations in oil and gas wells, withstanding extreme conditions",
-    "customerSummary": "Metal enclosure RFID Tag | UHF | Applications: Downhole operations, Oil and gas well tracking, High-pressure environments",
+    "id": "xerafy-xplorer-downhole",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy Xplorer Downhole",
+    "summary_en": "Xerafy Xplorer Downhole is an industrial RFID tag with read range Up to 4.92 ft (1.50 m), IP68, IP69K protection.",
+    "feature_highlights_en": [
+      "Up to 4.92 ft (1.50 m)",
+      "IP68, IP69K",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Alien Higgs 3",
+          "Memory": "96/480 bits EPC; 96 bits TID; 512 bits user memory",
+          "Read Range (Fixed)": "Up to 4.92 ft (1.50 m)",
+          "Read Range (Handheld)": "Up to 3.28 ft (1 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Stainless steel 316L, High performance engineered polymer",
+          "Dimensions (mm)": "ø 28.30 x 8.50",
+          "Dimensions (in)": "ø 1.11 x 0.33",
+          "Weight": "0.89 oz (25.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-50°C to +250°C -58°F to +482°F",
+          "Chemical Resistance": "3 Withstand drilling ﬂuids and hydraulic ﬂuids including hydrogen sulphide.",
+          "IP Rating": "IP68, IP69K",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment.Please contact Xerafy for further details on, Withstand drilling ﬂuids and, hydraulic ﬂuids including hydrogen, sulphide."
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-xplorer-downhole-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-xplorer-downhole-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-xplorer-downhole/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 865-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Metal enclosure",
-    "sizeText": "28.3 x 8.5 mm",
-    "material": "Stainless steel",
-    "fixedReadRange": "up to 1.5m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 250C",
-    "ipRating": "IP69K",
-    "applications": [
-      "Downhole operations",
-      "Oil and gas well tracking",
-      "High-pressure environments"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Metal enclosure",
-      "On Metal",
-      "Alien Higgs-3",
-      "Downhole operations",
-      "Oil and gas well tracking"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy Xplorer Downhole Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XPLORER-Surface-Datasheet_260309.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-xplorer-downhole/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xplorer-screw",
-    "title": "Xerafy XPLORER-SCREW",
-    "brand": "Xerafy",
-    "model": "XPLORER-SCREW",
-    "sku": "XPLORER-SCREW",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: XPLORER-SCREW. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy XPLORER series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-xplorer-screw",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XPLORER-SCREW",
+    "summary_en": "Xerafy XPLORER-SCREW is an industrial RFID tag with read range Up to 16.40 ft (5 m), IP68, IP69K protection.",
+    "feature_highlights_en": [
+      "Up to 16.40 ft (5 m)",
+      "IP68, IP69K",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "NXP UCODE 9",
+          "Memory": "96 bits EPC; 96 bits TID",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 16.40 ft (5 m)",
+          "Read Range (Handheld)": "Up to 9.84 ft (3 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "in metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "High-performance engineered polymer",
+          "Dimensions (mm)": "ø 24 x 10.01, hole: ø 3",
+          "Dimensions (in)": "ø 0.94 x 0.39, hole: ø 0.12",
+          "Weight": "0.23 oz (6.60 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +250°C (100 hours) -40°F to +482°F",
+          "Chemical Resistance": "3 168h H2SO4 (10% sulfuric acid) 168h NaOH (10% sodium hydroxide)",
+          "IP Rating": "IP68, IP69K",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "output power., The chemical resistance is based on the concentration of solutions and application environment. Please contact Xerafy for further details on, 168h H2SO4 (10% sulfuric acid), 168h NaOH (10% sodium hydroxide)"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2025/08/XPLORER-Screw-600x600-1.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "17 mm (round)",
-    "material": "Standard",
-    "fixedReadRange": "Up to 5m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XPLORER-SCREW Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XPLORER-Screw-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xplorer-surface",
-    "title": "Xerafy XPLORER-SURFACE",
-    "brand": "Xerafy",
-    "model": "XPLORER-SURFACE",
-    "sku": "XPLORER-SURFACE",
-    "subtitle": "EMBEDDABLE DOWNHOLE RFID TAG",
-    "shortDesc": "Oil & Gas pipes, heavy equipment",
-    "description": "SKU: XPLORER-SURFACE. Supplier: Xerafy. Category: EMBEDDABLE DOWNHOLE RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Embeddable Tag. Description: Designed for oil and gas pipe management.",
-    "customerSummary": "EMBEDDABLE DOWNHOLE RFID TAG | Embeddable Tag | Applications: Oil & Gas, Mining",
+    "id": "xerafy-xplorer-surface",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XPLORER-SURFACE",
+    "summary_en": "Xerafy XPLORER-SURFACE is an industrial RFID tag with read range Up to 4.92 ft (1.50 m), IP68, IP69K protection.",
+    "feature_highlights_en": [
+      "Up to 4.92 ft (1.50 m)",
+      "IP68, IP69K",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 Alien Higgs 3",
+          "Memory": "96/480 bits EPC; 96 bits TID; 512 bits user memory",
+          "Read Range (Fixed)": "Up to 4.92 ft (1.50 m)",
+          "Read Range (Handheld)": "Up to 3.28 ft (1 m)",
+          "Polarization": "Linear"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Stainless steel 316L, High performance engineered polymer",
+          "Dimensions (mm)": "ø 28.30 x 8.50",
+          "Dimensions (in)": "ø 1.11 x 0.33",
+          "Weight": "0.89 oz (25.40 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-50°C to +250°C -58°F to +482°F",
+          "Chemical Resistance": "3 Withstand drilling ﬂuids and hydraulic ﬂuids including hydrogen sulphide.",
+          "IP Rating": "IP68, IP69K",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "The chemical resistance is based on the concentration of solutions and application environment.Please contact Xerafy for further details on, Withstand drilling ﬂuids and, hydraulic ﬂuids including hydrogen, sulphide."
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/08/Rugged-Embeddable-RFID-Tag-Xerafy-XPLORER-Surface.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Embeddable Tag",
-    "sizeText": "28.3 mm (round)",
-    "material": "Stainless steel 316L",
-    "fixedReadRange": "Up to 1.5m",
-    "handheldReadRange": "Up to 1m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Oil & Gas",
-      "Mining"
-    ],
-    "industries": [
-      "Oil & Gas",
-      "Mining"
-    ],
-    "tags": [
-      "UHF",
-      "Embeddable Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Oil & Gas",
-      "Mining"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XPLORER-SURFACE Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XPLORER-Surface-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xs-dash-on",
-    "title": "Xerafy XS Dash On",
-    "brand": "Xerafy",
-    "model": "XS Dash On",
-    "sku": "XS Dash On",
-    "subtitle": "Tag RFID Tag",
-    "shortDesc": "High-performance RFID metal tag for medical device tracking and FDA UDI compliance with ATEX certification",
-    "description": "Model: XS Dash On. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Tag. High-performance RFID metal tag for medical device tracking and FDA UDI compliance with ATEX certification",
-    "customerSummary": "Tag RFID Tag | UHF | Applications: Medical device tracking, FDA UDI compliance, Foreign object detection, Infection management",
+    "id": "xerafy-xs-dash-on",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XS Dash On",
+    "summary_en": "Xerafy XS Dash On is an industrial RFID tag with read range Up to 14.76 ft (4.50 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 14.76 ft (4.50 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 14.76 ft (4.50 m)",
+          "Read Range (Handheld)": "Up to 9.17 ft (2.80 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.30 x 3 x 2.20",
+          "Dimensions (in)": "0.48 x 0.12 x 0.09",
+          "Weight": "0.016 oz (0.44 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F, 24 hours)",
+          "IP Rating": "IP68",
+          "Compression Strength": "790 psi (5,447 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools and equipments, MRO tool control, Weapon management"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-dash-on-xs-3-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-xs-dash-on-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-xs-dash-on/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Tag",
-    "sizeText": "12.3 x 3 x 2.2 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "up to 2m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 150C",
-    "ipRating": "IP68",
-    "applications": [
-      "Medical device tracking",
-      "FDA UDI compliance",
-      "Foreign object detection",
-      "Infection management"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Medical device tracking",
-      "FDA UDI compliance"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XS Dash On Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XS-Dash-M830-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-xs-dash-on/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xs-dot-on",
-    "title": "Xerafy XS Dot On",
-    "brand": "Xerafy",
-    "model": "XS Dot On",
-    "sku": "XS Dot On",
-    "subtitle": "Circular disc RFID Tag",
-    "shortDesc": "World's smallest form factor RFID tag for critical industrial applications, ATEX certified and FDA approved",
-    "description": "Model: XS Dot On. Brand: Xerafy. Frequency: 902-928 MHz (US) / 866-868 MHz (EU). Surface: on_metal. Form factor: Circular disc. World's smallest form factor RFID tag for critical industrial applications, ATEX certified and FDA approved",
-    "customerSummary": "Circular disc RFID Tag | UHF | Applications: Small metallic device tracking, High-temperature environments, Industrial applications",
+    "id": "xerafy-xs-dot-on",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XS Dot On",
+    "summary_en": "Xerafy XS Dot On is an industrial RFID tag with read range Up to 13.12 ft (4 m) US Up to 9.84 ft (3 m) EU, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 13.12 ft (4 m) US Up to 9.84 ft (3 m) EU",
+      "IP68",
+      "-40°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902–928 MHz (US); 865–868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC, 96 bits TID, 752/384 bits user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 13.12 ft (4 m) US Up to 9.84 ft (3 m) EU",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "ø 6 x 2.50",
+          "Dimensions (in)": "ø 0.24 x 0.10",
+          "Weight": "0.012 oz (0.34 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-40°C to +150°C (168 hours)",
+          "Peak Temperature": "200°C (minutes)",
+          "IP Rating": "IP68",
+          "Compression Strength": "790 psi (5,447 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools and equipments, MRO tool control, Weapon management"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-xs-dot-on-1-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-xs-dot-on-datasheet.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-xs-dot-on/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 866-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Circular disc",
-    "sizeText": "6 x 2.5 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "up to 1.5m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40C to 150C",
-    "ipRating": "IP68",
-    "applications": [
-      "Small metallic device tracking",
-      "High-temperature environments",
-      "Industrial applications"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Circular disc",
-      "On Metal",
-      "Alien Higgs-3",
-      "Small metallic device tracking",
-      "High-temperature environments"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XS Dot On Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XS-Dot-U9xm-Datasheet_250310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-xs-dot-on/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xs-dot-wedge",
-    "title": "Xerafy XS Dot Wedge",
-    "brand": "Xerafy",
-    "model": "XS Dot Wedge",
-    "sku": "XS Dot Wedge",
-    "subtitle": "Wedge RFID Tag",
-    "shortDesc": "High-performance polymer RFID tag for extreme environments with exceptional chemical and UV resistance",
-    "description": "Model: XS Dot Wedge. Brand: Xerafy. Frequency: 902-928 MHz (US) / 865-868 MHz (EU). Surface: on_metal. Form factor: Wedge. High-performance polymer RFID tag for extreme environments with exceptional chemical and UV resistance",
-    "customerSummary": "Wedge RFID Tag | UHF | Applications: Asset tracking, Industrial environments, High-temperature applications",
+    "id": "xerafy-xs-dot-wedge",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XS Dot Wedge",
+    "summary_en": "Xerafy XS Dot Wedge is an industrial RFID tag with read range Up to 4.59 ft (1.40 m) US Up to 3.28 ft (1 m) EU, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 4.59 ft (1.40 m) US Up to 3.28 ft (1 m) EU",
+      "IP68",
+      "-40°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC, 96 bits TID, 752/384 bits user memory",
+          "Read Range (Fixed)": "Up to 4.59 ft (1.40 m) US Up to 3.28 ft (1 m) EU",
+          "Polarization": "Linear; direction is parallel with the; direction forms an angle with",
+          "Radiation Pattern": "in metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "ø 10.30x 4.60",
+          "Dimensions (in)": "ø 0.41 x 0.18",
+          "Weight": "0.28 oz (8 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-50°C to +220°C (168 hours)",
+          "Peak Temperature": "250°C (2 hours)",
+          "Chemical Resistance": "3 24h H2SO4 (10% sulfuric acid) 24h HNO3 (10% nitric acid) 24h H3PO4 (20% phosphoric acid) 24h H2O2 (25% hydrogen peroxide) 24h NaOH (10% sodium hydroxide)",
+          "IP Rating": "IP68",
+          "Compression Strength": "10,100 psi (70 MPa)",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Up to 4.59 ft (1.40 m) US, Up to 3.28 ft (1 m) EU, Onshore and offshore pipes, Heavy equipment and tools, Automotive manufacturing, Industrial molds"
+        }
+      }
+    ],
     "image": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-dot-on-wedge-600x400.webp",
-    "datasheet": "https://www.altis.com.tr/store/wp-content/uploads/2022/01/xerafy-xs-dot-wedge.pdf",
-    "productUrl": "https://www.altis.com.tr/store/tr/urun/xerafy-xs-dot-wedge/",
-    "frequency": "UHF",
-    "frequencyBand": "902-928 MHz (US) / 865-868 MHz (EU)",
-    "protocol": "EPC global Class 1 Gen2",
-    "chip": "Alien Higgs-3",
-    "surface": "on_metal",
-    "onMetal": true,
-    "formFactor": "Wedge",
-    "sizeText": "10.3 x 4.6 mm",
-    "material": "High Performance Engineering Polymer",
-    "fixedReadRange": "up to 1m on metal",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-50C to 220C",
-    "ipRating": "IP68",
-    "applications": [
-      "Asset tracking",
-      "Industrial environments",
-      "High-temperature applications"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Wedge",
-      "On Metal",
-      "Alien Higgs-3",
-      "Asset tracking",
-      "Industrial environments"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XS Dot Wedge Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XS-Wedge-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://www.altis.com.tr/store/tr/urun/xerafy-xs-dot-wedge/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xs-dash",
-    "title": "Xerafy XS-DASH",
-    "brand": "Xerafy",
-    "model": "XS-DASH",
-    "sku": "XS-DASH",
-    "subtitle": "WORLD SMALLEST ON-METAL RFID TAG",
-    "shortDesc": "Hand tools, weapon management",
-    "description": "SKU: XS-DASH. Supplier: Xerafy. Category: WORLD SMALLEST ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Ceramic Tag. Description: One of the world's smallest rugged RFID tags for small metal assets.",
-    "customerSummary": "WORLD SMALLEST ON-METAL RFID TAG | Ceramic Tag | Applications: Hand Tools, Weapon Management",
+    "id": "xerafy-xs-dash",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XS-DASH",
+    "summary_en": "Xerafy XS-DASH is an industrial RFID tag with read range Up to 14.76 ft (4.50 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 14.76 ft (4.50 m)",
+      "IP68",
+      "-40°C to +85°C -40°F to +185°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "Impinj M830",
+          "Memory": "128 bits EPC, 96 bits TID",
+          "Write Cycles": "10,000 times",
+          "Data Retention": "10 years",
+          "Read Range (Fixed)": "Up to 14.76 ft (4.50 m)",
+          "Read Range (Handheld)": "Up to 9.17 ft (2.80 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "12.30 x 3 x 2.20",
+          "Dimensions (in)": "0.48 x 0.12 x 0.09",
+          "Weight": "0.016 oz (0.44 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C -40°F to +185°F",
+          "Survival Temperature": "-40°C to +150°C (168 hours) -40°F to +302°F",
+          "Peak Temperature": "200°C (392°F, 24 hours)",
+          "IP Rating": "IP68",
+          "Compression Strength": "790 psi (5,447 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools and equipments, MRO tool control, Weapon management"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2024/08/Smaller-Rugged-RFID-Tag-For-Critical-Tools-Xerafy-XS-Dash.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/xs-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Ceramic Tag",
-    "sizeText": "12.3 x 3 x 2.2 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "Up to 2m",
-    "handheldReadRange": "Up to 1.5m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Hand Tools",
-      "Weapon Management"
-    ],
-    "industries": [
-      "Hand Tools",
-      "Weapon Management"
-    ],
-    "tags": [
-      "UHF",
-      "Ceramic Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Hand Tools",
-      "Weapon Management"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XS-DASH Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XS-Dash-M830-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/xs-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xs-dot",
-    "title": "Xerafy XS-DOT",
-    "brand": "Xerafy",
-    "model": "XS-DOT",
-    "sku": "XS-DOT",
-    "subtitle": "SMALLEST ROUND ON-METAL RFID TAG",
-    "shortDesc": "Small tools, MRO tool control",
-    "description": "SKU: XS-DOT. Supplier: Xerafy. Category: SMALLEST ROUND ON-METAL RFID TAG. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Ceramic Tag. Description: Round form factor for discreet placement on small tools.",
-    "customerSummary": "SMALLEST ROUND ON-METAL RFID TAG | Ceramic Tag | Applications: Small Tools, MRO",
+    "id": "xerafy-xs-dot",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XS-DOT",
+    "summary_en": "Xerafy XS-DOT is an industrial RFID tag with read range Up to 13.12 ft (4 m) US Up to 9.84 ft (3 m) EU, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 13.12 ft (4 m) US Up to 9.84 ft (3 m) EU",
+      "IP68",
+      "-40°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902–928 MHz (US); 865–868 MHz (EU)",
+          "Chip": "NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC, 96 bits TID, 752/384 bits user memory",
+          "Write Cycles": "100,000 times",
+          "Data Retention": "20 years",
+          "Read Range (Fixed)": "Up to 13.12 ft (4 m) US Up to 9.84 ft (3 m) EU",
+          "Polarization": "Linear",
+          "Radiation Pattern": "on metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Ceramic",
+          "Dimensions (mm)": "ø 6 x 2.50",
+          "Dimensions (in)": "ø 0.24 x 0.10",
+          "Weight": "0.012 oz (0.34 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-40°C to +150°C (168 hours)",
+          "Peak Temperature": "200°C (minutes)",
+          "IP Rating": "IP68",
+          "Compression Strength": "790 psi (5,447 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Hand tools and equipments, MRO tool control, Weapon management"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2022/08/XS-Dot.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/xs-series/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Ceramic Tag",
-    "sizeText": "6 x 6 x 4 mm",
-    "material": "Ceramic",
-    "fixedReadRange": "Up to 1.5m",
-    "handheldReadRange": "Up to 1m",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Small Tools",
-      "MRO"
-    ],
-    "industries": [
-      "Small Tools",
-      "MRO"
-    ],
-    "tags": [
-      "UHF",
-      "Ceramic Tag",
-      "On Metal",
-      "Alien Higgs-3",
-      "Small Tools",
-      "MRO"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XS-DOT Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XS-Dot-U9xm-Datasheet_250310.pdf",
+      "product_url": "https://xerafy.com/xs-series/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xs-wedge",
-    "title": "Xerafy XS-WEDGE",
-    "brand": "Xerafy",
-    "model": "XS-WEDGE",
-    "sku": "XS-WEDGE",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: XS-WEDGE. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy XS series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-xs-wedge",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XS-WEDGE",
+    "summary_en": "Xerafy XS-WEDGE is an industrial RFID tag with read range Up to 4.59 ft (1.40 m) US Up to 3.28 ft (1 m) EU, IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 4.59 ft (1.40 m) US Up to 3.28 ft (1 m) EU",
+      "IP68",
+      "-40°C to +85°C"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "902-928 MHz (US); 865-868 MHz (EU)",
+          "Chip": "1 NXP UCODE 9xm",
+          "Memory": "128/496 bits EPC, 96 bits TID, 752/384 bits user memory",
+          "Read Range (Fixed)": "Up to 4.59 ft (1.40 m) US Up to 3.28 ft (1 m) EU",
+          "Polarization": "Linear; direction is parallel with the; direction forms an angle with",
+          "Radiation Pattern": "in metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Industry grade polymer",
+          "Dimensions (mm)": "ø 10.30x 4.60",
+          "Dimensions (in)": "ø 0.41 x 0.18",
+          "Weight": "0.28 oz (8 g)"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +85°C",
+          "Survival Temperature": "-50°C to +220°C (168 hours)",
+          "Peak Temperature": "250°C (2 hours)",
+          "Chemical Resistance": "3 24h H2SO4 (10% sulfuric acid) 24h HNO3 (10% nitric acid) 24h H3PO4 (20% phosphoric acid) 24h H2O2 (25% hydrogen peroxide) 24h NaOH (10% sodium hydroxide)",
+          "IP Rating": "IP68",
+          "Compression Strength": "10,100 psi (70 MPa)",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "Up to 4.59 ft (1.40 m) US, Up to 3.28 ft (1 m) EU, Onshore and offshore pipes, Heavy equipment and tools, Automotive manufacturing, Industrial molds"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2022/08/XS-Wedge.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "10.3 mm (round)",
-    "material": "Standard",
-    "fixedReadRange": "Up to 1m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XS-WEDGE Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XS-Wedge-U9xm-Datasheet_260310.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xskin-gamma",
-    "title": "Xerafy XSKIN-GAMMA",
-    "brand": "Xerafy",
-    "model": "XSKIN-GAMMA",
-    "sku": "XSKIN-GAMMA",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: XSKIN-GAMMA. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy XSKIN series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-xskin-gamma",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XSKIN-GAMMA",
+    "summary_en": "Xerafy XSKIN-GAMMA is an industrial RFID tag with read range Up to 52.49 ft (16 m), US Up to 19.68 ft (6 m), EU.",
+    "feature_highlights_en": [
+      "Up to 52.49 ft (16 m), US Up to 19.68 ft (6 m), EU",
+      "10°C to +40°C",
+      "Kiloway"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "Kiloway",
+          "Memory": "128 bits EPC (configurable from 96 to 240 bits), 96 bits TID, 1312 bits User Memory",
+          "Read Range (Fixed)": "Up to 52.49 ft (16 m), US Up to 19.68 ft (6 m), EU",
+          "Read Range (Handheld)": "Up to 31.50 ft (9.60 m), US Up to 8.20 ft (2.50 m), EU",
+          "Polarization": "Linear",
+          "Radiation Pattern": "off metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "Printable white paper",
+          "Dimensions (mm)": "73 x 20 x 0.16",
+          "Dimensions (in)": "2.87 x 0.79 x 0.01",
+          "Reel Core": ": Cardboard"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "10°C to +40°C",
+          "Survival Temperature": "-40°C to +85°C",
+          "Vibration": "MIL-STD-810G",
+          "Printer Compatibility": "Zebra ZD500R, ZT600",
+          "Warranty": "1 year"
+        }
+      },
+      {
+        "name": "APPLICATIONS",
+        "items": {
+          "Applications": "supplies, Pharmaceuticals and cold-chain, Food processing, Mining and assaying operations, Industrial components and material, inspections"
+        }
+      }
+    ],
     "image": "https://xerafy.com/wp-content/uploads/2025/06/Xerafy-XSKIN-Gamma-RFID-Label-s.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "73 x 20 x 0.16 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 16m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XSKIN-GAMMA Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2025/07/Xerafy-XSKIN-Gamma-73x20-Datasheet_250714.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   },
   {
-    "slug": "xerafy-xskin-theta",
-    "title": "Xerafy XSKIN-THETA",
-    "brand": "Xerafy",
-    "model": "XSKIN-THETA",
-    "sku": "XSKIN-THETA",
-    "subtitle": "RFID TAG/LABEL VARIATION",
-    "shortDesc": "Industrial tracking",
-    "description": "SKU: XSKIN-THETA. Supplier: Xerafy. Category: RFID TAG/LABEL VARIATION. Frequency: UHF 860-960 MHz (Global). On-metal surface application. Form factor: Standard. Description: Variation of Xerafy XSKIN series.",
-    "customerSummary": "RFID TAG/LABEL VARIATION | Standard | Applications: Industrial",
+    "id": "xerafy-xskin-theta",
+    "display_brand": "Xerafy",
+    "category": "UHF RFID On-Metal Tag",
+    "product_group": "RFID Label / Tag",
+    "title_en": "Xerafy XSKIN-THETA",
+    "summary_en": "Xerafy XSKIN-THETA is an industrial RFID tag with read range Up to 29.53 ft (9 m), IP68 protection.",
+    "feature_highlights_en": [
+      "Up to 29.53 ft (9 m)",
+      "IP68",
+      "-40°C to +100°C -40°F to +212°F"
+    ],
+    "sections": [
+      {
+        "name": "RFID SPECIFICATION",
+        "items": {
+          "Protocol": "EPC global Class 1 Gen 2",
+          "Operating Frequency": "860-960 MHz (Global)",
+          "Chip": "Alien Higgs 3",
+          "Memory": "96/480 bits EPC; 96 bits TID; 512 bits user memory",
+          "Read Range (Fixed)": "Up to 29.53 ft (9 m)",
+          "Read Range (Handheld)": "Up to 16.40 ft (5 m)",
+          "Polarization": "Linear",
+          "Radiation Pattern": "off metal"
+        }
+      },
+      {
+        "name": "PHYSICAL SPECIFICATION",
+        "items": {
+          "Material": "FPC",
+          "Dimensions (mm)": "71 x 11 x 0.13",
+          "Dimensions (in)": "2.80 x 0.43 x 0.005",
+          "Weight": "0.20 g",
+          "Format": "Dry inlay"
+        }
+      },
+      {
+        "name": "ENVIRONMENTAL RESISTANCE",
+        "items": {
+          "Operating Temperature": "-40°C to +100°C -40°F to +212°F",
+          "Survival Temperature": "-40°C to +230°C (24 hours) -40°F to +446°F",
+          "IP Rating": "IP68",
+          "Compression Strength": "142 psi (980 kPa)",
+          "Shock": "3 ft (1 m) to concrete/granite",
+          "Vibration": "MIL-STD-810G",
+          "Warranty": "1 year"
+        }
+      }
+    ],
     "image": "https://www.barcodefactory.com/images/product/large/xerafy-theta-inlay.png",
-    "datasheet": "",
-    "productUrl": "https://xerafy.com/rfid-tags-and-labels/",
-    "frequency": "UHF",
-    "frequencyBand": "860-960 MHz (Global)",
-    "protocol": "EPC Class 1 Gen 2",
-    "chip": "Alien Higgs-3",
-    "surface": "metal",
-    "onMetal": true,
-    "formFactor": "Standard",
-    "sizeText": "71 x 11 x 0.13 mm",
-    "material": "Standard",
-    "fixedReadRange": "Up to 9m",
-    "handheldReadRange": "Standard",
-    "operatingTemp": "-40°C to +85°C",
-    "ipRating": "IP68",
-    "applications": [
-      "Industrial"
-    ],
-    "industries": [
-      "Industrial"
-    ],
-    "tags": [
-      "UHF",
-      "Standard",
-      "On Metal",
-      "Alien Higgs-3",
-      "Industrial"
-    ]
+    "source": {
+      "source_type": "pdf_extraction",
+      "source_name": "Xerafy XSKIN-THETA Datasheet",
+      "source_url": "https://xerafy.com/wp-content/uploads/2026/03/Xerafy-XSKIN-Theta-Datasheet_260309.pdf",
+      "product_url": "https://xerafy.com/rfid-tags-and-labels/",
+      "last_updated": "2026-06-07"
+    }
   }
 ];
 
@@ -22545,7 +23816,7 @@ const tagTurkishCopy: Record<string, { title?: string; shortDesc: string; descri
     applications: ['Tedarik zinciri', 'Lojistik', 'Giyim', 'Envanter'],
   },
   'avery-dennison-ad-sample-pack': {
-    shortDesc: 'AD-238u8, AD-324u8 ve AD-385u8 Gen2 UHF RFID inlay modellerinden oluÅŸan deÄŸerlendirme numune paketi.',
+    shortDesc: 'AD-238u8, AD-324u8 ve AD-385u8 Gen2 UHF RFID inlay modellerinden oluşan değerlendirme numune paketi.',
     applications: ['Ürün testi', 'Proje değerlendirme', 'Numune çalışması', 'RFID performans karşılaştırması'],
   },
   'brady-tht-nfc-pet-25x25': {
@@ -22709,6 +23980,26 @@ const tagTurkishCopy: Record<string, { title?: string; shortDesc: string; descri
   'omni-id-sense-shield': {
     shortDesc: 'Quuppa teknolojili giyilebilir BLE beacon; personel takibi, sosyal mesafe izleme ve çalışan güvenliği uyarıları için depo, hastane, liman ve şantiye ortamlarına uygundur.',
   },
+  'smartrac-belt-u8': {
+    shortDesc: 'NXP UCODE 8 çipli kompakt UHF RFID etiket; perakende, giyim ve endüstriyel tedarik zinciri uygulamalarında güvenilir performans sunar.',
+    applications: ['Perakende', 'Giyim', 'Endüstriyel tedarik zinciri', 'Marka koruma'],
+  },
+  'smartrac-dogbone-u8': {
+    shortDesc: 'NXP UCODE 8 çipli yüksek performanslı UHF RFID etiket; plastik, cam ve yüksek dielektrik yüzeylerde otomotiv, spor zamanlama ve endüstriyel takip için uygundur.',
+    applications: ['Otomotiv', 'Spor zamanlama', 'Cam ve plastik yüzeyler', 'Envanter yönetimi'],
+  },
+  'smartrac-miniweb-u8': {
+    shortDesc: 'Küçük etiket alanları için geliştirilen kompakt UHF RFID etiket; giyim, lojistik ve sağlık uygulamalarında yüksek okuma-yazma hassasiyeti sağlar.',
+    applications: ['Giyim', 'Lojistik', 'Sağlık', 'Küçük ürün takibi'],
+  },
+  'smartrac-sample-pack': {
+    shortDesc: 'Belt, Dogbone, Miniweb ve Web UHF RFID etiketlerinden oluşan numune paketi; test, proje değerlendirme ve farklı kullanım senaryolarını karşılaştırmak için hazırlanmıştır.',
+    applications: ['Ürün testi', 'Proje değerlendirme', 'Numune çalışması', 'Karşılaştırmalı performans testi'],
+  },
+  'smartrac-web-u8': {
+    shortDesc: 'NXP UCODE 8 çipli optimize edilmiş UHF RFID etiket; giyim askı kartları, perakende, lojistik ve tedarik zinciri uygulamaları için tasarlanmıştır.',
+    applications: ['Giyim askı kartları', 'Perakende', 'Lojistik', 'Tedarik zinciri'],
+  },
 };
 
 const tagEnglishApplications: Record<string, string[]> = {
@@ -22748,6 +24039,8 @@ const sectionLabelMap: Record<string, string> = {
   'LABEL DIMENSIONS': 'Etiket Ölçüleri',
   'PHYSICAL SPECIFICATION': 'Fiziksel Özellikler',
   APPLICATIONS: 'Uygulamalar',
+  'PACK CONTENTS': 'Paket İçeriği',
+  'COMMON SPECIFICATIONS': 'Ortak Özellikler',
   ENVIRONMENTAL: 'Çevresel Özellikler',
   SUSTAINABILITY: 'Sürdürülebilirlik',
   'RF SPECIFICATION': 'RFID Özellikleri',
@@ -22766,11 +24059,11 @@ const specLabelMap: Record<string, string> = {
   'Access Password': 'Erişim Şifresi',
   'Kill Password': 'Kill Şifresi',
   'Label Size': 'Etiket Ölçüsü',
-  'Antenna Width': 'Anten GeniÅŸliÄŸi',
-  'Antenna Length': 'Anten UzunluÄŸu',
-  'Inlay Width': 'Inlay GeniÅŸliÄŸi',
-  'Inlay Length': 'Inlay UzunluÄŸu',
-  'Web Width': 'Web GeniÅŸliÄŸi',
+  'Antenna Width': 'Anten Genişliği',
+  'Antenna Length': 'Anten Uzunluğu',
+  'Inlay Width': 'Inlay Genişliği',
+  'Inlay Length': 'Inlay Uzunluğu',
+  'Web Width': 'Web Genişliği',
   'Web Pitch': 'Web Aralığı',
   'Inlays per Roll': 'Rulo Başına Inlay',
   'Maximum Roll OD': 'Maksimum Rulo Dış Çapı',
@@ -22793,6 +24086,7 @@ const specLabelMap: Record<string, string> = {
   'ESD Limit (HBM / CDM)': 'ESD Limiti (HBM / CDM)',
   Chip: 'Çip',
   'IC Attachment Technology': 'IC Bağlantı Teknolojisi',
+  Certificate: 'Sertifika',
   Standard: 'Standart',
   'Frequency Band': 'Frekans Bandı',
   'EPC Memory': 'EPC Hafızası',
@@ -22816,13 +24110,40 @@ const specLabelMap: Record<string, string> = {
   'Wet Inlay (IL-607854)': 'Islak Inlay (IL-607854)',
   'Label (IL-612802)': 'Etiket (IL-612802)',
   'Core Size': 'Kovan Ölçüsü',
+  'Core Size (Dry)': 'Kovan Ölçüsü (Kuru)',
+  'Core Size (Wet Label)': 'Kovan Ölçüsü (Islak Etiket)',
   'Operating Temperature': 'Çalışma Sıcaklığı',
   'Plastic-Free Content': 'Plastiksiz İçerik',
   'Antenna Material': 'Anten Malzemesi',
   'Carbon Footprint Savings': 'Karbon Ayak İzi Tasarrufu',
   'EU Recyclability': 'AB Geri Dönüştürülebilirlik',
   'US Recyclability': 'ABD Geri Dönüştürülebilirlik',
+  Industries: 'Sektörler',
+  'Use Cases': 'Kullanım Alanları',
+  'Primary Use': 'Temel Kullanım',
+  Features: 'Özellikler',
+  Certifications: 'Sertifikalar',
+  'Face Sheet': 'Yüzey Katmanı',
+  'Label Sticker': 'Etiket',
+  'Label Paper': 'Kağıt Etiket',
+  'Inlay Substrate': 'Inlay Taşıyıcı',
+  'Standard Pitch': 'Standart Aralık',
+  'Frequency Range': 'Frekans Aralığı',
+  'Radio Protocol': 'Radyo Protokolü',
+  'IC Type (Chip)': 'Çip Tipi',
+  'Optimized For': 'Optimize Edildiği Yüzey',
+  Layers: 'Katman Sayısı',
+  Attachment: 'Montaj',
+  Size: 'Ölçüler',
 };
+
+const titleCaseLabel = (value: string) => normalizeText(value)
+  .toLowerCase()
+  .replace(/[_/]+/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim()
+  .replace(/\b(rfid|uhf|hf|nfc|ble|gps|lora|iot|epc|tid|ip|fcc|etsi|gs1|arc|qr|eu|us|ic|ab|abd)\b/gi, token => token.toUpperCase())
+  .replace(/(^|[\s(])([a-zçğıöşü])/g, (_, prefix, char) => `${prefix}${char.toLocaleUpperCase('tr-TR')}`);
 
 Object.assign(sectionLabelMap, {
   'ENVIRONMENTAL RESISTANCE': 'Çevresel Dayanım',
@@ -22842,12 +24163,34 @@ Object.assign(specLabelMap, {
   'Read Range – on metal pipe': 'Metal boru üzerinde okuma mesafesi',
   'Read Range – on plastic pipe': 'Plastik boru üzerinde okuma mesafesi',
   'Read Range (2W ERP FCC)': 'Okuma mesafesi (2W ERP FCC)',
+  'Read Range (2W ERP)': 'Okuma mesafesi (2W ERP)',
   'Max Read Range (2W ERP FCC)': 'Maksimum okuma mesafesi (2W ERP FCC)',
+  'UHF Frequency': 'UHF Frekansı',
+  'HF NFC Frequency': 'HF NFC Frekansı',
+  'UHF Read Range': 'UHF Okuma Mesafesi',
+  'NFC Read Range (Mobile)': 'NFC Okuma Mesafesi (Mobil)',
+  'NFC Read Range (Fixed)': 'NFC Okuma Mesafesi (Sabit)',
+  'Read Range - Mobile Phone': 'Okuma Mesafesi - Cep Telefonu',
+  'Read Range - On Plastic': 'Plastik Üzerinde Okuma Mesafesi',
+  'Read Range - Off Metal': 'Metal Dışı Okuma Mesafesi',
+  'Read Range On Glass (ETSI)': 'Cam Üzerinde Okuma Mesafesi (ETSI)',
+  'Read Range On Glass (FCC)': 'Cam Üzerinde Okuma Mesafesi (FCC)',
+  'Read Range - ETSI On Glass': 'Cam Üzerinde Okuma Mesafesi (ETSI)',
+  'Read Range - FCC On Glass': 'Cam Üzerinde Okuma Mesafesi (FCC)',
+  'Read Range - ETSI On Metal': 'Metal Üzerinde Okuma Mesafesi (ETSI)',
+  'Read Range - FCC On Metal': 'Metal Üzerinde Okuma Mesafesi (FCC)',
+  'Read Range - Global On Metal (ETSI)': 'Metal Üzerinde Global Okuma Mesafesi (ETSI)',
+  'Read Range - ETSI On Cardboard': 'Karton Üzerinde Okuma Mesafesi (ETSI)',
+  'Read Range - FCC On Cardboard': 'Karton Üzerinde Okuma Mesafesi (FCC)',
   'Applicable Surfaces': 'Uygulanabilir Yüzeyler',
   'Tag Dimensions': 'Etiket Ölçüleri',
   'Tag Materials': 'Etiket Malzemeleri',
+  'Tag Surface': 'Etiket Yüzeyi',
   Material: 'Malzeme',
   Memory: 'Hafıza',
+  'Memory (M4QT)': 'Hafıza (M4QT)',
+  'Memory (M4E)': 'Hafıza (M4E)',
+  'Memory (Monza 4E)': 'Hafıza (Monza 4E)',
   Installation: 'Montaj',
   'Supported Printers': 'Desteklenen Yazıcılar',
   Package: 'Paketleme',
@@ -22864,12 +24207,15 @@ Object.assign(specLabelMap, {
   'Antenna Size': 'Anten Boyutu',
   'Wet Inlay / Label Size': 'Islak Inlay / Etiket Ölçüsü',
   'Label Material': 'Etiket Malzemesi',
+  'EPC Memory Options': 'EPC Hafıza Seçenekleri',
+  'User Memory Options': 'Kullanıcı Hafızası Seçenekleri',
+  'Asset Types': 'Varlık Tipleri',
   Adhesive: 'Yapışkan',
   Weight: 'Ağırlık',
   'Amount in Box': 'Kutu Adedi',
   'Amount per Reel': 'Rulo Adedi',
   'Delivery Format': 'Teslimat Formatı',
-  'Storage Condition': 'Saklama KoÅŸulu',
+  'Storage Condition': 'Saklama Koşulu',
   'Water Resistance': 'Su Dayanımı',
   'Washing Resistance': 'Yıkama Dayanımı',
   'Chemical Resistance': 'Kimyasal Dayanım',
@@ -22896,12 +24242,21 @@ Object.assign(specLabelMap, {
   'Read Range – Fixed Reader': 'Okuma mesafesi - Sabit okuyucu',
   'Read Range – Handheld Reader': 'Okuma mesafesi - El terminali',
   'Optimized For': 'Optimize Edildiği Yüzey',
-  'Material Compatibility': 'Malzeme UyumluluÄŸu',
+  'Material Compatibility': 'Malzeme Uyumluluğu',
   Size: 'Ölçüler',
   Layers: 'Katman Sayısı',
   Attachment: 'Montaj',
+  'Attachment Methods': 'Montaj Yöntemleri',
+  'Attachment Options': 'Montaj Seçenekleri',
+  'Ambient Temperature': 'Ortam Sıcaklığı',
+  'Pressure Resistance': 'Basınç Dayanımı',
+  'Vibration Resistance': 'Titreşim Dayanımı',
+  'UV Resistance': 'UV Dayanımı',
+  'Peak Temperature (168h)': 'Maksimum Sıcaklık (168 saat)',
+  'Peak Temperature (3h)': 'Maksimum Sıcaklık (3 saat)',
+  'Peak Temperature (10min)': 'Maksimum Sıcaklık (10 dakika)',
   'IP Rating': 'IP Sınıfı',
-  'Shock & Vibration': 'Darbe ve TitreÅŸim',
+  'Shock & Vibration': 'Darbe ve Titreşim',
   Certifications: 'Sertifikalar',
   'Short Term Max Temperature': 'Kısa Süreli Maksimum Sıcaklık',
   'Max Temperature Exposure': 'Maksimum Sıcaklık Maruziyeti',
@@ -22917,6 +24272,29 @@ Object.assign(specLabelMap, {
   'Visual Indicator': 'Görsel Göstergeler',
   'Size – Lanyard/Belt Clip': 'Ölçüler - Yaka Kartı/Kemer Klipsi',
   'Size – Watch Strap': 'Ölçüler - Saat Kayışı',
+  'Read Range (Fixed)': 'Okuma Mesafesi (Sabit)',
+  'Read Range (Handheld)': 'Okuma Mesafesi (El Terminali)',
+  'Read Range - FCC (2W ERP)': 'Okuma Mesafesi - FCC (2W ERP)',
+  'Read Range - ETSI (2W ERP)': 'Okuma Mesafesi - ETSI (2W ERP)',
+  'Storage Humidity': 'Saklama Nemi',
+  'High Temperature Cycle': 'Yüksek Sıcaklık Çevrimi',
+  'Reel Core': 'Rulo Göbeği',
+  'Pitch on Reel': 'Ruloda Aralık',
+  'Tethering Hole Diameter': 'Bağlama Deliği Çapı',
+  'Interleaf Material': 'Ara Katman Malzemesi',
+  'Interleaf Width': 'Ara Katman Genişliği',
+  'Shelf Life (Dry)': 'Raf Ömrü (Kuru)',
+  'Shelf Life (Wet)': 'Raf Ömrü (Islak)',
+  'Web Width (Dry)': 'Web Genişliği (Kuru)',
+  'Web Width (Wet)': 'Web Genişliği (Islak)',
+  'Web Width (-FR Unslit)': 'Web Genişliği (-FR Yarıksız)',
+  'Web Width (-FSR Slit)': 'Web Genişliği (-FSR Yarıklı)',
+  'Chip Options': 'Çip Seçenekleri',
+  Surface: 'Yüzey',
+  Thickness: 'Kalınlık',
+  'Primary Application': 'Birincil Uygulama',
+  'Standard Compliancy': 'Standart Uyumluluk',
+  'Operational Shock': 'Çalışma Darbesi',
 });
 
 [
@@ -22946,6 +24324,11 @@ Object.assign(specLabelMap, {
   'epozzy-uhf-label-100x150',
   'epozzy-uhf-label-4x2',
   'epozzy-washable-textile-tag',
+  'smartrac-belt-u8',
+  'smartrac-dogbone-u8',
+  'smartrac-miniweb-u8',
+  'smartrac-sample-pack',
+  'smartrac-web-u8',
 ].forEach(slug => localDatasheetSlugs.add(slug));
 
 Object.assign(localImageExtensions, {
@@ -22974,6 +24357,11 @@ Object.assign(localImageExtensions, {
   'epozzy-uhf-label-100x150': 'webp',
   'epozzy-uhf-label-4x2': 'webp',
   'epozzy-washable-textile-tag': 'webp',
+  'smartrac-belt-u8': 'webp',
+  'smartrac-dogbone-u8': 'webp',
+  'smartrac-miniweb-u8': 'webp',
+  'smartrac-sample-pack': 'webp',
+  'smartrac-web-u8': 'webp',
 });
 
 const firstSectionValue = (raw: any, labels: string[]) => {
@@ -23011,11 +24399,11 @@ const normalizeText = (value: unknown) => fixMojibake(String(value || ''))
   .replaceAll('\u00c4\u00b1', 'ı')
   .replaceAll('\u00c4\u00b0', 'İ')
   .replaceAll('\u00c5\u0178', 'ş')
-  .replaceAll('\u00c5\u017e', 'Ş')
+  .replaceAll('\u00c5\u017d', 'Ş')
   .replaceAll('\u00c4\u0178', 'ğ')
-  .replaceAll('\u00c4\u017e', 'Ğ')
-  .replaceAll('\u2013', '-')
-  .replaceAll('\u2013', '-')
+  .replaceAll('\u00c4\u017d', 'Ğ')
+  .replaceAll('–', '-')
+  .replaceAll('–', '-')
   .replaceAll('\u00c2', '')
   .replaceAll('\u00c2', '')
   .replace(/&#215;/g, 'x')
@@ -23025,29 +24413,174 @@ const normalizeText = (value: unknown) => fixMojibake(String(value || ''))
   .replace(/&nbsp;/g, ' ')
   .trim();
 const rawSlug = (raw: any) => raw.slug || raw.id || '';
-const localDatasheet = (slug: string) => `/assets/products/${slug}/${slug}-datasheet.pdf`;
-const localImage = (slug: string) => localImageExtensions[slug] ? `/assets/products/${slug}/${slug}-1.${localImageExtensions[slug]}` : '';
-const localGallery = (slug: string) => {
-  const ext = localImageExtensions[slug];
-  if (!ext) return [];
-  const count = localGalleryCounts[slug] || 1;
-  return Array.from({ length: count }, (_, index) => `/assets/products/${slug}/${slug}-${index + 1}.${ext}`);
+const productAssetDir = (slug: string) => join(process.cwd(), 'public', 'assets', 'products', slug);
+const detectLocalImageInfo = (slug: string) => {
+  const extFromMap = localImageExtensions[slug];
+  const countFromMap = localGalleryCounts[slug] || 1;
+  const dir = productAssetDir(slug);
+
+  if (!existsSync(dir)) {
+    return extFromMap ? { ext: extFromMap, count: countFromMap } : null;
+  }
+
+  const matches = readdirSync(dir)
+    .map(name => {
+      const match = name.match(new RegExp(`^${slug}-(\\d+)\\.(png|jpe?g|webp)$`, 'i'));
+      return match ? { index: Number(match[1]), ext: match[2].toLowerCase() } : null;
+    })
+    .filter((item): item is { index: number; ext: string } => Boolean(item))
+    .sort((a, b) => a.index - b.index);
+
+  if (matches.length === 0) {
+    return extFromMap ? { ext: extFromMap, count: countFromMap } : null;
+  }
+
+  return { ext: matches[0].ext, count: matches.length };
 };
-const rawImage = (raw: any) => typeof raw.image === 'string' ? raw.image : raw.image?.url || '';
+const hasLocalDatasheet = (slug: string, lang: 'tr' | 'en') => existsSync(join(productAssetDir(slug), `${slug}-datasheet${lang === 'en' ? '-en' : ''}.pdf`));
+const localDatasheet = (slug: string, lang: 'tr' | 'en') => `/assets/products/${slug}/${slug}-datasheet${lang === 'en' ? '-en' : ''}.pdf`;
+const localImage = (slug: string) => {
+  const info = detectLocalImageInfo(slug);
+  return info ? `/assets/products/${slug}/${slug}-1.${info.ext}` : '';
+};
+const localGallery = (slug: string) => {
+  const info = detectLocalImageInfo(slug);
+  if (!info) return [];
+  return Array.from({ length: info.count }, (_, index) => `/assets/products/${slug}/${slug}-${index + 1}.${info.ext}`);
+};const rawImage = (raw: any) => typeof raw.image === 'string' ? raw.image : raw.image?.url || '';
 const rawProductUrl = (raw: any) => raw.productUrl || raw.source?.product_url || '';
 const rawDatasheet = (raw: any) => raw.datasheet || raw.source?.source_url || '';
 const translateSpecValue = (value: unknown) => normalizeText(value)
   .replace(/^Yes$/i, 'Evet')
   .replace(/^No$/i, 'Hayır')
   .replace(/^Yes \(both surfaces\)$/i, 'Evet (iki yüzeyde de)')
+  .replace(/\bDirect Chip Attach\b/gi, 'Doğrudan çip bağlantısı')
+  .replace(/\bStrap Attach\b/gi, 'Strap bağlantı')
+  .replace(/\bDual Frequency\b/gi, 'çift frekans')
+  .replace(/\bSelf Adjust\b/gi, 'Kendini ayarlama')
+  .replace(/\bEpcglobal Certificate\b/gi, 'EPCglobal sertifikası')
+  .replace(/\bCertificate\b/gi, 'Sertifika')
+  .replace(/\bEU Directive\b/gi, 'AB Direktifi')
+  .replace(/\bDirective \(EU\)/gi, 'Direktif (AB)')
+  .replace(/\bCompliant\b/gi, 'uyumlu')
+  .replace(/\bPET substrate\b/gi, 'PET taşıyıcı')
+  .replace(/\bPaper substrate\b/gi, 'kağıt taşıyıcı')
+  .replace(/\bInlay substrate\b/gi, 'inlay taşıyıcı')
+  .replace(/\bface sheet\b/gi, 'yüzey katmanı')
+  .replace(/\bface stock\b/gi, 'yüzey katmanı')
+  .replace(/\boverlaminate\b/gi, 'üst laminasyon')
+  .replace(/\bOpaque PET\b/gi, 'opak PET')
+  .replace(/\bOpaque Matt Paper\b/gi, 'opak mat kağıt')
+  .replace(/\bWhite BOPP\b/gi, 'beyaz BOPP')
+  .replace(/\bPolypropylene\b/gi, 'polipropilen')
+  .replace(/\bPolyester\b/gi, 'polyester')
+  .replace(/\bPrintable white synthetic face layer\b/gi, 'yazdırılabilir beyaz sentetik yüzey katmanı')
+  .replace(/\bPrintable matt coated paper\b/gi, 'yazdırılabilir mat kaplamalı kağıt')
+  .replace(/\bPrintable white PET\b/gi, 'yazdırılabilir beyaz PET')
+  .replace(/\bPrintable\b/gi, 'yazdırılabilir')
+  .replace(/\bwhite\b/gi, 'beyaz')
+  .replace(/\bmatt coated\b/gi, 'mat kaplamalı')
+  .replace(/\bPermanent acrylic adhesive\b/gi, 'kalıcı akrilik yapışkan')
+  .replace(/\bPermanent adhesive\b/gi, 'kalıcı yapışkan')
+  .replace(/\bAcrylic adhesive\b/gi, 'akrilik yapışkan')
+  .replace(/\bAcrylic foam adhesive\b/gi, 'akrilik köpük yapışkan')
+  .replace(/\bHigh performance acrylic adhesive\b/gi, 'yüksek performanslı akrilik yapışkan')
+  .replace(/\bWater-soluble adhesive\b/gi, 'suda çözünebilen yapışkan')
+  .replace(/\badhesive\b/gi, 'yapışkan')
+  .replace(/\bstructural adhesive\b/gi, 'yapısal yapışkan')
+  .replace(/\bpolyurethane\/epoxy adhesives\b/gi, 'poliüretan/epoksi yapışkanlar')
+  .replace(/\bsilicone sealants\b/gi, 'silikon sızdırmazlık malzemeleri')
+  .replace(/\bscrews\b/gi, 'vidalar')
+  .replace(/\bscrew\b/gi, 'vida')
+  .replace(/\bpop rivets\b/gi, 'pop perçinler')
+  .replace(/\brivet\b/gi, 'perçin')
+  .replace(/\brivets\b/gi, 'perçinler')
+  .replace(/\bwelding bracket\b/gi, 'kaynak braketi')
+  .replace(/\bcable tie\b/gi, 'kablo bağı')
+  .replace(/\bhanging with tethering string\b/gi, 'bağlama ipiyle asma')
+  .replace(/\bthrough hole\b/gi, 'delikten')
+  .replace(/\bholes\b/gi, 'delikler')
+  .replace(/\bincluded\b/gi, 'dahil')
+  .replace(/\boptional\b/gi, 'opsiyonel')
+  .replace(/\bcompression limiters\b/gi, 'sıkıştırma sınırlayıcılar')
+  .replace(/\bPaper\b/gi, 'kağıt')
+  .replace(/\bWhite PET\b/gi, 'beyaz PET')
+  .replace(/\bBright White\b/gi, 'parlak beyaz')
+  .replace(/\bWhite TT Printable White Film\b/gi, 'beyaz TT baskıya uygun film')
+  .replace(/\bTT Printable\b/gi, 'TT baskıya uygun')
+  .replace(/\bdie-cut\b/gi, 'kesim')
+  .replace(/\bpcs\/reel\b/gi, 'adet/rulo')
+  .replace(/\bpc\/reel\b/gi, 'adet/rulo')
+  .replace(/\bpitch\b/gi, 'aralık')
+  .replace(/\bweb\b/gi, 'web genişliği')
+  .replace(/\bMAX OD\b/gi, 'maks. dış çap')
+  .replace(/\bmax OD\b/gi, 'maks. dış çap')
+  .replace(/\bcore\b/gi, 'kovan')
+  .replace(/\bLabel Sticker\b/gi, 'Etiket')
+  .replace(/\bAdhesive label\b/gi, 'Yapışkan etiket')
+  .replace(/\bAsset Types\b/gi, 'Varlık tipleri')
   .replace(/Up to /gi, '')
-  .replace(/([+-]?\d+°C) to ([+-]?\d+°C)/g, '$1 ile $2')
+  .replace(/([+-]?\d+\s*°C)\s*to\s*([+-]?\d+\s*°C)/g, '$1 ile $2')
   .replace(/\bbits?\b/gi, 'bit')
   .replace(/\bEurope\b/gi, 'Avrupa')
   .replace(/\bUSA\b/gi, 'ABD')
+  .replace(/\bLabel \/ Inlay\b/gi, 'Etiket / Inlay')
+  .replace(/\bLabel \/ Tag\b/gi, 'Etiket / Tag')
+  .replace(/\bWet Inlay\b/gi, 'Islak Inlay')
+  .replace(/\bDry Inlay\b/gi, 'Kuru Inlay')
+  .replace(/\bSample Pack\b/gi, 'Numune Paketi')
+  .replace(/\bGeneral purpose\b/gi, 'Genel kullanım')
   .replace(/\bhours?\b/gi, 'saat')
   .replace(/\baccuracy\b/gi, 'hassasiyet')
   .replace(/Temperature sensing/gi, 'Sıcaklık algılama')
+  .replace(/Cryptographic authentication/gi, 'Kriptografik kimlik doğrulama')
+  .replace(/industrial RFID tag/gi, 'endüstriyel RFID etiketi')
+  .replace(/IP68 protection/gi, 'IP68 koruması')
+  .replace(/read range/gi, 'okuma mesafesi')
+  .replace(/Transportation and logistics/gi, 'Taşıma ve lojistik')
+  .replace(/Yard management/gi, 'Saha yönetimi')
+  .replace(/Construction tools/gi, 'İnşaat ekipmanları')
+  .replace(/Last-Mile logistics/gi, 'Son kilometre lojistiği')
+  .replace(/Supply chain/gi, 'Tedarik zinciri')
+  .replace(/KLT small load carriers/gi, 'KLT küçük yük taşıyıcıları')
+  .replace(/KLT small load carrier tracking/gi, 'KLT küçük yük taşıyıcı takibi')
+  .replace(/KLT boxes/gi, 'KLT kutuları')
+  .replace(/plastic dollies/gi, 'plastik dollyler')
+  .replace(/returnable containers/gi, 'geri dönüşlü kaplar')
+  .replace(/returnable plastic containers/gi, 'geri dönüşlü plastik kaplar')
+  .replace(/returnable transport items?/gi, 'geri dönüşlü taşıma birimleri')
+  .replace(/Returnable transport packaging/gi, 'Geri dönüşlü taşıma ambalajları')
+  .replace(/Data centers/gi, 'Veri merkezleri')
+  .replace(/IT asset management/gi, 'BT varlık yönetimi')
+  .replace(/Manufacturing WIP/gi, 'Üretim içi proses takibi')
+  .replace(/Automated inventory/gi, 'Otomatik envanter')
+  .replace(/Industry grade polymer/gi, 'Endüstriyel sınıf polimer')
+  .replace(/Stainless steel/gi, 'Paslanmaz çelik')
+  .replace(/Aluminum/gi, 'Alüminyum')
+  .replace(/\bor\b/gi, 'veya')
+  .replace(/plate/gi, 'plaka')
+  .replace(/Warranty/gi, 'Garanti')
+  .replace(/Survival Temperature/gi, 'Dayanım sıcaklığı')
+  .replace(/Peak Temperature/gi, 'Maksimum sıcaklık')
+  .replace(/Data Retention/gi, 'Veri saklama süresi')
+  .replace(/Radiation Pattern/gi, 'Işınım deseni')
+  .replace(/Rivet Hole Diameter/gi, 'Perçin deliği çapı')
+  .replace(/Read Range On Metal/gi, 'Metal üstü okuma mesafesi')
+  .replace(/Read Range Off Metal/gi, 'Metal dışı okuma mesafesi')
+  .replace(/Polarization/gi, 'Polarizasyon')
+  .replace(/Color/gi, 'Renk')
+  .replace(/Dark gray/gi, 'Koyu gri')
+  .replace(/Linear/gi, 'Lineer')
+  .replace(/Compression Strength/gi, 'Basınç dayanımı')
+  .replace(/Shock/gi, 'Darbe dayanımı')
+  .replace(/Vibration/gi, 'Titreşim dayanımı')
+  .replace(/\byears?\b/gi, 'yıl')
+  .replace(/\btimes\b/gi, 'kez')
+  .replace(/to concrete\/granite/gi, 'beton/granit zemine')
+  .replace(/\bUS on metal\b/gi, 'ABD metal üstü')
+  .replace(/\bEU on metal\b/gi, 'AB metal üstü')
+  .replace(/\boff metal\b/gi, 'metal dışı')
+  .replace(/\bon metal\b/gi, 'metal üstü')
   .replace(/General/gi, 'Genel')
   .replace(/Manufacturing/gi, 'Üretim')
   .replace(/Healthcare/gi, 'Sağlık')
@@ -23055,14 +24588,144 @@ const translateSpecValue = (value: unknown) => normalizeText(value)
   .replace(/Warehousing/gi, 'Depolama')
   .replace(/Transport & Logistics/gi, 'Taşıma ve Lojistik')
   .replace(/Data\/Telecom/gi, 'Veri ve Telekom')
+  .replace(/Apparel/gi, 'Giyim')
+  .replace(/Retail/gi, 'Perakende')
+  .replace(/Industrial/gi, 'Endüstriyel')
+  .replace(/Automotive/gi, 'Otomotiv')
+  .replace(/Sports & Events/gi, 'Spor ve Etkinlikler')
+  .replace(/Healthcare/gi, 'Sağlık')
+  .replace(/Logistics/gi, 'Lojistik')
+  .replace(/Brand protection/gi, 'Marka koruma')
+  .replace(/Supply chain management/gi, 'Tedarik zinciri yönetimi')
+  .replace(/Inventory management/gi, 'Envanter yönetimi')
+  .replace(/Home essentials/gi, 'Ev yaşam ürünleri')
+  .replace(/Sports timing/gi, 'Spor zamanlama')
+  .replace(/glass and automobile tracking/gi, 'cam ve araç takibi')
+  .replace(/Testing/gi, 'Test')
+  .replace(/project evaluation/gi, 'proje değerlendirme')
+  .replace(/multi-sector assessment/gi, 'çok sektörlü değerlendirme')
+  .replace(/Mid-gloss paper/gi, 'Yarı parlak kağıt')
+  .replace(/Opaque Matt Paper/gi, 'Opak mat kağıt')
+  .replace(/unique serial number/gi, 'benzersiz seri numarası')
+  .replace(/\ball labels\b/gi, 'tüm etiketler')
   .replace(/^Non metal$/i, 'Metal dışı')
   .replace(/^On metal$/i, 'Metal üstü')
+  .replace(/\bNon-metal\b/gi, 'metal dışı')
+  .replace(/\bnon-metallic\b/gi, 'metal dışı')
+  .replace(/\bLSE plastics\b/gi, 'düşük yüzey enerjili plastikler')
+  .replace(/\bPlastic\b/gi, 'plastik')
+  .replace(/\bCardboard\b/gi, 'karton')
+  .replace(/\bGlass\b/gi, 'cam')
+  .replace(/\bLiquid\b/gi, 'sıvı')
+  .replace(/\bCurved surfaces\b/gi, 'kavisli yüzeyler')
+  .replace(/\bwindshield\b/gi, 'ön cam')
+  .replace(/\bAll surfaces\b/gi, 'tüm yüzeyler')
+  .replace(/\bAll materials including metal\b/gi, 'metal dahil tüm malzemeler')
+  .replace(/\bAll materials\b/gi, 'tüm malzemeler')
+  .replace(/\bon plastic\b/gi, 'plastik üzerinde')
+  .replace(/\bon cardboard\b/gi, 'karton üzerinde')
+  .replace(/\bon glass\b/gi, 'cam üzerinde')
+  .replace(/\bon metal\b/gi, 'metal üzerinde')
+  .replace(/\boff metal\b/gi, 'metal dışında')
+  .replace(/\bETSI On\b/gi, 'ETSI')
+  .replace(/\bFCC On\b/gi, 'FCC')
+  .replace(/\bMobile Phone\b/gi, 'cep telefonu')
+  .replace(/\b6 months shelf life at \+20°C \/ 45% RH \(original sealed package\)\b/gi, 'Orijinal kapalı ambalajında +20°C / %45 bağıl nemde 6 ay raf ömrü')
+  .replace(/\b6 months shelf life at \+20°C \/ 45% bağıl nem \(original sealed package\)/gi, 'Orijinal kapalı ambalajında +20°C / %45 bağıl nemde 6 ay raf ömrü')
+  .replace(/\bnormal operating conditions\b/gi, 'normal çalışma koşulları')
+  .replace(/\bat \+20°C \/ 50% RH\b/gi, '+20°C / %50 bağıl nemde')
+  .replace(/\bRH\b/gi, 'bağıl nem')
+  .replace(/\bface material\b/gi, 'yüzey malzemesi')
+  .replace(/\bplastic-free\b/gi, 'plastiksiz')
+  .replace(/Label is sensitive to environmental humidity; store in plastic sealed packages/gi, 'Etiket ortam nemine duyarlıdır; plastik sızdırmaz ambalajlarda saklayın')
   .replace(/Up to 95% plastic-free/i, 'Yüzde 95e kadar plastiksiz')
   .replace(/Pure aluminum/i, 'Saf alüminyum')
   .replace(/traditional etching methods/i, 'geleneksel aşındırma yöntemleri')
-  .replace(/certified/i, 'sertifikalı');
+  .replace(/certified/i, 'sertifikalı')
+  .replace(/\bEPC global\b/g, 'EPCglobal')
+  .replace(/(EXPLORER|PIONEER|VOYAGER) FAMILY RAIN RFID INLAY/gi, (_m, fam) => `${fam} Serisi RAIN RFID Inlay`)
+  .replace(/Actual (?:read range|okuma mesafesi) may vary based upon use case and antenna power\.?/gi, 'Gerçek okuma mesafesi kullanım senaryosuna ve anten gücüne göre değişebilir.')
+  .replace(/custom sizes available on demand/gi, 'talep üzerine özel ölçüler')
+  .replace(/\bavailable on demand\b/gi, 'talep üzerine mevcut')
+  .replace(/EPC and User Memory can be re-programmed, password protected,?\s*(?:veya|or) permanently locked\.?/gi, 'EPC ve Kullanıcı Hafızası yeniden programlanabilir, şifre korumalı veya kalıcı olarak kilitlenebilir.')
+  .replace(/TID is locked and unique at the point of[, ]*(?:Üretim|manufacture|production)\.?/gi, 'TID üretim aşamasında kilitlenir ve benzersizdir.')
+  .replace(/The chemical resistance is based on the concentration of solutions and application environment\.?\s*Please contact Xerafy for further details(?: on)?\.?/gi, 'Kimyasal dayanım, çözelti konsantrasyonuna ve uygulama ortamına bağlıdır. Ayrıntılar için lütfen Xerafy ile iletişime geçin.')
+  .replace(/\bFiberboard\b/gi, 'Mukavva')
+  .replace(/\bwashing cycles\b/gi, 'yıkama çevrimi')
+  .replace(/\bwash cycles\b/gi, 'yıkama çevrimi')
+  .replace(/\buser memory\b/gi, 'kullanıcı hafızası')
+  .replace(/\bsalt water\b/gi, 'tuzlu su')
+  .replace(/\bmotor oil\b/gi, 'motor yağı')
+  .replace(/\bsulfuric acid\b/gi, 'sülfürik asit')
+  .replace(/\bdrilling ﬂuids\b/gi, 'sondaj sıvıları')
+  .replace(/\bdrilling fluids\b/gi, 'sondaj sıvıları')
+  .replace(/\bhydraulic ﬂuids\b/gi, 'hidrolik sıvılar')
+  .replace(/\bhydraulic fluids\b/gi, 'hidrolik sıvılar')
+  .replace(/\bhydrogen sulphide\b/gi, 'hidrojen sülfür')
+  .replace(/\bhydrogen sulfide\b/gi, 'hidrojen sülfür')
+  .replace(/\bWithstand\b/gi, 'Dayanır:')
+  .replace(/\bceramic\b/gi, 'seramik')
+  .replace(/\btransparent\b/gi, 'şeffaf')
+  .replace(/pcs\s*\/\s*roll/gi, 'adet/rulo')
+  .replace(/pcs\s*\/\s*box/gi, 'adet/kutu')
+  .replace(/pcs\s*\/\s*bag/gi, 'adet/poşet')
+  .replace(/\/\s*one box\b/gi, '/ kutu')
+  .replace(/pcs\b/gi, 'adet')
+  .replace(/\breel\b/gi, 'rulo')
+  .replace(/^in metal$/i, 'metal üstü')
+  .replace(/\bUser (\d)/g, 'Kullanıcı $1')
+  .replace(/\bBlack\b/gi, 'siyah')
+  .replace(/\bBlue\b/gi, 'mavi')
+  .replace(/\bRed\b/gi, 'kırmızı')
+  .replace(/\bYellow\b/gi, 'sarı')
+  .replace(/\bGreen\b/gi, 'yeşil')
+  .replace(/\bGr[ae]y\b/gi, 'gri')
+  .replace(/\bcustom\b/gi, 'özel')
+  .replace(/\bPermanent\b/gi, 'kalıcı')
+  .replace(/\band\b/gi, 've')
+  .replace(/\bwith\b/gi, 'ile');
 
 const translateExtraSpecValue = (value: string) => value
+  .replace(/6 months shelf life at \+20.?C \/ 45% .+? \(original sealed package\)/gi, 'Orijinal kapalı ambalajında +20°C / %45 bağıl nemde 6 ay raf ömrü')
+  .replace(/^RFID Etiket \/ Tag$/i, 'RFID Etiket')
+  .replace(/^RFID Label \/ Tag$/i, 'RFID Etiket')
+  .replace(/^yıl in normal operating conditions$/i, 'Normal çalışma koşullarında yıllarca kullanım')
+  .replace(/^yıllar in normal operating conditions$/i, 'Normal çalışma koşullarında yıllarca kullanım')
+  .replace(/^years in normal çalışma koşulları$/i, 'Normal çalışma koşullarında yıllarca kullanım')
+  .replace(/^yıl in normal çalışma koşulları$/i, 'Normal çalışma koşullarında yıllarca kullanım')
+  .replace(/^yıl in normal conditions; designed for paint shop drying cycles$/i, 'Normal koşullarda yıllarca kullanım; boya kurutma çevrimleri için tasarlanmıştır')
+  .replace(/^years in normal conditions; designed for paint shop drying cycles$/i, 'Normal koşullarda yıllarca kullanım; boya kurutma çevrimleri için tasarlanmıştır')
+  .replace(/^Printable beyaz PET$/i, 'Yazdırılabilir beyaz PET')
+  .replace(/^yazdırılabilir beyaz PET$/i, 'Yazdırılabilir beyaz PET')
+  .replace(/^Endüstriyel laundry up to 60°C$/i, '60°Cye kadar endüstriyel yıkama')
+  .replace(/^Endüstriyel laundry 60°C$/i, '60°C endüstriyel yıkama')
+  .replace(/^Endüstriyel laundry - repeated wash cycles$/i, 'Endüstriyel çamaşırhane - tekrarlanan yıkama döngüleri')
+  .replace(/^Industrial laundry up to 60°C$/i, '60°Cye kadar endüstriyel yıkama')
+  .replace(/^Industrial laundry 60°C$/i, '60°C endüstriyel yıkama')
+  .replace(/^Industrial laundry [–-] repeated wash cycles$/i, 'Endüstriyel çamaşırhane - tekrarlanan yıkama döngüleri')
+  .replace(/^PP back \+ PP front \(yazdırılabilir\)$/i, 'PP arka yüzey + PP ön yüzey (yazdırılabilir)')
+  .replace(/^PP back \+ PP front \(printable\)$/i, 'PP arka yüzey + PP ön yüzey (yazdırılabilir)')
+  .replace(/^Special polymer designed for high temperatures$/i, 'Yüksek sıcaklıklar için tasarlanmış özel polimer')
+  .replace(/^Special epoxy-based engineering composite for extreme temperatures$/i, 'Aşırı sıcaklıklar için özel epoksi bazlı mühendislik kompoziti')
+  .replace(/^High quality engineering plastics; surface thermoplastic elastomer$/i, 'Yüksek kaliteli mühendislik plastiği; yüzeyi termoplastik elastomer')
+  .replace(/^High quality engineering plastics$/i, 'Yüksek kaliteli mühendislik plastiği')
+  .replace(/^Unique 96 bit EPC in every tag$/i, 'Her etikette benzersiz 96 bit EPC')
+  .replace(/^High performance akrilik yapışkan \(metal and painted metal\)$/i, 'Yüksek performanslı akrilik yapışkan (metal ve boyalı metal)')
+  .replace(/^High performance akrilik yapışkan \(dahil\)$/i, 'Yüksek performanslı akrilik yapışkan (dahil)')
+  .replace(/^High performance acrylic adhesive \(metal and painted metal\)$/i, 'Yüksek performanslı akrilik yapışkan (metal ve boyalı metal)')
+  .replace(/^High performance acrylic adhesive \(included\)$/i, 'Yüksek performanslı akrilik yapışkan (dahil)')
+  .replace(/\bstructural yapışkan\b/gi, 'yapısal yapışkan')
+  .replace(/\bwith sıkıştırma sınırlayıcılar\b/gi, 'sıkıştırma sınırlayıcılarıyla')
+  .replace(/\bthrough tag\b/gi, 'etiket üzerinden')
+  .replace(/\bthrough Ø?(\d+(?:\.\d+)?) mm delikler\b/gi, 'Ø$1 mm deliklerden')
+  .replace(/\bTop:\s*/gi, 'Üst: ')
+  .replace(/\bBack:\s*/gi, 'Arka: ')
+  .replace(/\bwith anti-corrosion coating\b/gi, 'korozyon önleyici kaplamalı')
+  .replace(/\bTolerates Endüstriyel washing with standard solvents\b/gi, 'Standart solventlerle endüstriyel yıkamaya dayanır')
+  .replace(/\b6 months shelf life at \+20°C \/ 45% bağıl nem \(original sealed package\)\b/gi, 'Orijinal kapalı ambalajında +20°C / %45 bağıl nemde 6 ay raf ömrü')
+  .replace(/\bLabel is sensitive to environmental humidity; store in plastik sealed packages\b/gi, 'Etiket ortam nemine duyarlıdır; plastik sızdırmaz ambalajlarda saklayın')
+  .replace(/\byapışkan shelf life\b/gi, 'yapışkan raf ömrü')
+  .replace(/\bEngineering plastics with synthetic face layer\b/gi, 'Sentetik yüzey katmanlı mühendislik plastiği')
   .replace(/^Adhesive$/i, 'Yapışkan')
   .replace(/^On-metal$/i, 'Metal üstü')
   .replace(/^Engineering plastics$/i, 'Mühendislik plastiği')
@@ -23161,7 +24824,51 @@ const translateExtraSpecValue = (value: string) => value
   .replace(/^CE, FCC, RoHS, NFC, Bluetooth$/i, 'CE, FCC, RoHS, NFC, Bluetooth')
   .replace(/^(\d+) layers$/i, '$1 katman')
   .replace(/^(\d+)-(\d+) hours$/i, '$1-$2 saat')
-  .replace(/^(.+?) \((.+? accuracy)\)$/i, '$1 ($2)');
+  .replace(/^(.+?) \((.+? accuracy)\)$/i, '$1 ($2)')
+  .replace(/^Standard$/i, 'Standart')
+  .replace(/^Fiberboard$/i, 'Mukavva')
+  .replace(/\bHand tools and equipments\b/gi, 'El aletleri ve ekipmanları')
+  .replace(/\bHand tools\b/gi, 'El aletleri')
+  .replace(/\bWeapon management\b/gi, 'Silah yönetimi')
+  .replace(/\bMRO tool control\b/gi, 'MRO alet kontrolü')
+  .replace(/\bOil & Gas\b/gi, 'Petrol ve Gaz')
+  .replace(/\bOil wells equipments\b/gi, 'Petrol kuyusu ekipmanları')
+  .replace(/\bOilfield equipment\b/gi, 'Petrol sahası ekipmanı')
+  .replace(/\bInjection molding\b/gi, 'Enjeksiyon kalıplama')
+  .replace(/\bEndüstriyel molds\b/gi, 'Endüstriyel kalıplar')
+  .replace(/\bHeavy equipment and tools\b/gi, 'Ağır ekipman ve aletler')
+  .replace(/\bConstruction tool tracking\b/gi, 'İnşaat aleti takibi')
+  .replace(/\bMedical scrubs\b/gi, 'Tıbbi önlükler')
+  .replace(/\bHospital linens\b/gi, 'Hastane tekstilleri')
+  .replace(/\bHotel linens\b/gi, 'Otel tekstilleri')
+  .replace(/\bRental costumes\b/gi, 'Kiralık kıyafetler')
+  .replace(/\bUniforms\b/gi, 'Üniformalar')
+  .replace(/\baerospace\b/gi, 'havacılık')
+  .replace(/\brailways\b/gi, 'demiryolları')
+  .replace(/\bnuclear\b/gi, 'nükleer')
+  .replace(/\bmilitary\b/gi, 'askeri')
+  .replace(/\bOnshore and offshore pipes\b/gi, 'Kara ve deniz boru hatları')
+  .replace(/\bLPG and gas cylinder\b/gi, 'LPG ve gaz tüpü')
+  .replace(/\bLong-distance shipping\b/gi, 'Uzun mesafe taşımacılık')
+  .replace(/^RFID Tag \/ Label$/i, 'RFID Etiket')
+  .replace(/^RFID Inlay \/ Label$/i, 'RFID Inlay / Etiket')
+  .replace(/^beyaz TT yazdırılabilir beyaz Film$/i, 'Beyaz TT baskıya uygun film')
+  .replace(/^yapışkan label$/i, 'Yapışkan etiket')
+  .replace(/^delikler for mechanical attachment$/i, 'Mekanik montaj için delikler')
+  .replace(/^Alüminyum antenna; şeffaf PET front$/i, 'Alüminyum anten; şeffaf PET ön yüzey')
+  .replace(/^IP68 \(tested 5h in 1m deep water\)$/i, 'IP68 (1 m derin suda 5 saat test edildi)')
+  .replace(/^Tolerates Endüstriyel washing ile standard solvents$/i, 'Standart solventlerle endüstriyel yıkamaya dayanır')
+  .replace(/^7 m \(fixed portal\)$/i, '7 m (sabit portal)')
+  .replace(/^metal dışı \/ plastik optimized$/i, 'metal dışı / plastik için optimize')
+  .replace(/\bsubstrates?\b/gi, 'yüzeyler')
+  .replace(/\bcycles\b/gi, 'çevrim')
+  .replace(/\bantenna\b/gi, 'anten')
+  .replace(/\bnon-condensing\b/gi, 'yoğuşmasız')
+  .replace(/([+-]?\d+\s*°F)\s*to\s*([+-]?\d+\s*°F)/g, '$1 ile $2')
+  .replace(/\bmin\b/gi, 'dakika')
+  .replace(/\s+at\s+([+-]?\d+\s*°[CF])/gi, ' $1')
+  .replace(/\bfor (\d+\s*(?:saat|dakika|years?|yıl))/gi, '$1')
+  .replace(/\bOperational Shock\b/gi, 'Çalışma darbesi');
 const translateApplicationText = (value: string) => normalizeText(value)
   .replace(/^Clothing$/i, 'Giyim')
   .replace(/^Asset management$/i, 'Varlık yönetimi')
@@ -23176,9 +24883,18 @@ const translateApplicationText = (value: string) => normalizeText(value)
   .replace(/^Access control$/i, 'Geçiş kontrolü')
   .replace(/^Events$/i, 'Etkinlikler')
   .replace(/^Healthcare$/i, 'Sağlık')
-  .replace(/^Leisure centers?$/i, 'EÄŸlence merkezleri')
+  .replace(/^Leisure centers?$/i, 'Eğlence merkezleri')
   .replace(/^Industrial$/i, 'Endüstriyel')
-  .replace(/^Vehicle identification$/i, 'Araç tanımlama');
+  .replace(/^Vehicle identification$/i, 'Araç tanımlama')
+  .replace(/^Transportation and logistics$/i, 'Taşıma ve lojistik')
+  .replace(/^Yard management$/i, 'Saha yönetimi')
+  .replace(/^Construction tools$/i, 'İnşaat ekipmanları')
+  .replace(/^Data centers$/i, 'Veri merkezleri')
+  .replace(/^Manufacturing WIP$/i, 'Üretim içi proses takibi')
+  .replace(/^Automated inventory$/i, 'Otomatik envanter')
+  .replace(/^Last-Mile logistics$/i, 'Son kilometre lojistiği')
+  .replace(/^Returnable transport packaging.*$/i, 'Geri dönüşlü taşıma ambalajları')
+  .replace(/^RTI inventory$/i, 'RTI envanteri');
 
 const translateMarketingTextToTr = (value: string) => normalizeText(value)
   .replace(/^Ultra-slim flexible UHF RFID on-metal label/i, 'Ultra ince esnek UHF metal üstü RFID etiket')
@@ -23195,8 +24911,10 @@ const translateMarketingTextToTr = (value: string) => normalizeText(value)
   .replace(/^Waterproof NFC silicone wristband with round head design/i, 'Yuvarlak başlıklı su geçirmez NFC silikon bileklik')
   .replace(/^UHF RFID silicone wristband with round head design/i, 'Yuvarlak başlıklı UHF RFID silikon bileklik')
   .replace(/^UHF RFID silicone wristband with spring mechanism/i, 'Yay mekanizmalı UHF RFID silikon bileklik')
-  .replace(/^UHF RFID adjustable silicone wristband with extended 2 m read range/i, '2 m\'ye kadar geniÅŸletilmiÅŸ okuma mesafesine sahip ayarlanabilir UHF RFID silikon bileklik')
-  .replace(/^Sewable UHF RFID fabric tag/i, 'Dikilebilir UHF RFID kumaÅŸ etiket')
+  .replace(/^UHF RFID adjustable silicone wristband with extended 2 m read range/i, '2 m\'ye kadar genişletilmiş okuma mesafesine sahip ayarlanabilir UHF RFID silikon bileklik')
+  .replace(/^Sewable UHF RFID fabric tag/i, 'Dikilebilir UHF RFID kumaş etiket')
+  .replace(/^(Xerafy .+?) is an industrial RFID tag with read range (.+?),\s*(IP[\dA-Z, ]+ protection)\.?$/i, (_m, product, range, protection) => `${product}, ${String(range).replace(/^Up to\s+/i, '')} okuma mesafesi ve ${protection.replace(/protection/gi, 'koruması')} sunan endüstriyel RFID etiketidir`)
+  .replace(/^(Xerafy .+?) is an industrial RFID tag with\s*(IP[\dA-Z, ]+ protection)\.?$/i, (_m, product, protection) => `${product}, ${protection.replace(/protection/gi, 'koruması')} sunan endüstriyel RFID etiketidir`)
   .replace(/ operating at ([^.]+?) with ([^.]+?) chip/gi, ' $1 frekansında çalışan $2 çipli')
   .replace(/ operating at ([^.]+?)\./gi, ' $1 frekansında çalışır.')
   .replace(/ with read range up to ([^.]+?) on metal/gi, ', metal üzerinde $1\'ye kadar okuma mesafesi sunar')
@@ -23225,16 +24943,61 @@ const translateMarketingTextToTr = (value: string) => normalizeText(value)
 
 const translateSpecLabel = (label: string) => {
   const normalized = normalizeText(label);
+  const looseLabel = normalized
+    .replace(/[–—]/g, '-')
+    .replace(/[/]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (/^Read Range \(2W ERP\)$/i.test(looseLabel)) return 'Okuma Mesafesi (2W ERP)';
+  if (/^Read Range \(2W ERP FCC\)$/i.test(looseLabel)) return 'Okuma Mesafesi (2W ERP FCC)';
+  if (/^HF NFC Frequency$/i.test(looseLabel)) return 'HF NFC Frekansı';
+  if (/^Off-metal Read Range$/i.test(looseLabel)) return 'Metal Dışı Okuma Mesafesi';
+  if (/^Read Range - Mobile Phone$/i.test(looseLabel)) return 'Okuma Mesafesi - Cep Telefonu';
+  if (/^Read Range - On Plastic$/i.test(looseLabel)) return 'Plastik Üzerinde Okuma Mesafesi';
+  if (/^Read Range - Off Metal$/i.test(looseLabel)) return 'Metal Dışı Okuma Mesafesi';
+  if (/^Read Range On Glass \(ETSI\)$/i.test(looseLabel)) return 'Cam Üzerinde Okuma Mesafesi (ETSI)';
+  if (/^Read Range On Glass \(FCC\)$/i.test(looseLabel)) return 'Cam Üzerinde Okuma Mesafesi (FCC)';
+  const readRangeMatch = looseLabel.match(/^Read Range - (ETSI|FCC|Global) On (Glass|Metal|Cardboard)(?: \(ETSI\))?$/i);
+  if (readRangeMatch) {
+    const band = readRangeMatch[1].toUpperCase() === 'GLOBAL' ? 'Global' : readRangeMatch[1].toUpperCase();
+    const surface = { glass: 'Cam', metal: 'Metal', cardboard: 'Karton' }[readRangeMatch[2].toLowerCase()] || readRangeMatch[2];
+    return `${surface} Üzerinde ${band} Okuma Mesafesi`;
+  }
+  if (/^Epcglobal Certificate$/i.test(normalized)) return 'EPCglobal Sertifikası';
+  if (/^Dry Inlay \((.+)\)$/i.test(normalized)) return normalized.replace(/^Dry Inlay \((.+)\)$/i, 'Kuru Inlay ($1)');
+  if (/^Wet Inlay \((.+)\)$/i.test(normalized)) return normalized.replace(/^Wet Inlay \((.+)\)$/i, 'Islak Inlay ($1)');
+  if (/^Label \/ Sticker \((.+)\)$/i.test(normalized)) return normalized.replace(/^Label \/ Sticker \((.+)\)$/i, 'Etiket ($1)');
+  if (/^Label Sticker \((.+)\)$/i.test(normalized)) return normalized.replace(/^Label Sticker \((.+)\)$/i, 'Etiket ($1)');
+  if (/^Label Paper \((.+)\)$/i.test(normalized)) return normalized.replace(/^Label Paper \((.+)\)$/i, 'Kağıt Etiket ($1)');
+  if (/^Label \((.+)\)$/i.test(normalized)) return normalized.replace(/^Label \((.+)\)$/i, 'Etiket ($1)');
+  if (/^Core Size \((.+)\)$/i.test(normalized)) return normalized.replace(/^Core Size \((.+)\)$/i, (_m, inner) => `Kovan Ölçüsü (${inner.replace(/\bDry\b/gi, 'Kuru').replace(/\bWet\b/gi, 'Islak').replace(/\bLabel\b/gi, 'Etiket')})`);
+  if (/^Label PET \((.+)\)$/i.test(normalized)) return normalized.replace(/^Label PET \((.+)\)$/i, 'Etiket PET ($1)');
   const directSection = sectionLabelMap[normalized];
   if (directSection) return directSection;
   const directSpec = specLabelMap[normalized];
   if (directSpec) return directSpec;
 
-  return normalized
+  return titleCaseLabel(normalized
     .replace(/^ENVIRONMENTAL RESISTANCE$/i, 'Çevresel Dayanım')
     .replace(/^Operating Frequency [–-] ETSI$/i, 'Çalışma Frekansı – ETSI')
     .replace(/^Operating Frequency [–-] FCC$/i, 'Çalışma Frekansı – FCC')
     .replace(/^Memory \(Monza 4QT\)$/i, 'Hafıza (Monza 4QT)')
+    .replace(/^Data Retention$/i, 'Veri saklama süresi')
+    .replace(/^Survival Temperature$/i, 'Dayanım sıcaklığı')
+    .replace(/^Read Range On Metal$/i, 'Metal üstü okuma mesafesi')
+    .replace(/^Read Range Off Metal$/i, 'Metal dışı okuma mesafesi')
+    .replace(/^Radiation Pattern$/i, 'Işınım deseni')
+    .replace(/^Rivet Hole Diameter$/i, 'Perçin deliği çapı')
+    .replace(/^Warranty$/i, 'Garanti')
+    .replace(/^Polarization$/i, 'Polarizasyon')
+    .replace(/^Compression Strength$/i, 'Basınç dayanımı')
+    .replace(/^Shock$/i, 'Darbe dayanımı')
+    .replace(/^Vibration$/i, 'Titreşim dayanımı')
+    .replace(/^Color$/i, 'Renk')
+    .replace(/^Dimensions \(Mm\)$/i, 'Ölçüler (mm)')
+    .replace(/^Dimensions \(In\)$/i, 'Ölçüler (inç)')
+    .replace(/^Peak Temperature$/i, 'Maksimum sıcaklık')
+    .replace(/^Applications$/i, 'Uygulamalar')
     .replace(/^EPC Content$/i, 'EPC İçeriği')
     .replace(/^Read Range [–-] on metal$/i, 'Metal üstü okuma mesafesi')
     .replace(/^Read Range [–-] on metal \(FCC\)$/i, 'Metal üstü okuma mesafesi (FCC)')
@@ -23270,7 +25033,7 @@ const translateSpecLabel = (label: string) => {
     .replace(/^Amount in Box$/i, 'Kutu Adedi')
     .replace(/^Amount per Reel$/i, 'Rulo Adedi')
     .replace(/^Delivery Format$/i, 'Teslimat Formatı')
-    .replace(/^Storage Condition$/i, 'Saklama KoÅŸulu')
+    .replace(/^Storage Condition$/i, 'Saklama Koşulu')
     .replace(/^Water Resistance$/i, 'Su Dayanımı')
     .replace(/^Washing Resistance$/i, 'Yıkama Dayanımı')
     .replace(/^Chemical Resistance$/i, 'Kimyasal Dayanım')
@@ -23285,12 +25048,30 @@ const translateSpecLabel = (label: string) => {
     .replace(/^Read Range [–-] Handheld Reader$/i, 'Okuma mesafesi - El terminali')
     .replace(/^Location Accuracy$/i, 'Konum Hassasiyeti')
     .replace(/^Size [–-] Lanyard\/Belt Clip$/i, 'Ölçüler - Yaka Kartı/Kemer Klipsi')
-    .replace(/^Size [–-] Watch Strap$/i, 'Ölçüler - Saat Kayışı');
+    .replace(/^Size [–-] Watch Strap$/i, 'Ölçüler - Saat Kayışı')
+    .replace(/^Dry Inlay \((.+)\)$/i, 'Kuru Inlay ($1)')
+    .replace(/^Wet Inlay \((.+)\)$/i, 'Islak Inlay ($1)')
+    .replace(/^Label Sticker \((.+)\)$/i, 'Etiket ($1)')
+    .replace(/^Label Paper \((.+)\)$/i, 'Kağıt Etiket ($1)')
+    .replace(/^Label \((.+)\)$/i, 'Etiket ($1)')
+    .replace(/^Die[- ]Cut Dimension$/i, 'Kesim Ölçüsü')
+    .replace(/^Core Size \((.+)\)$/i, 'Kovan Ölçüsü ($1)'));
 };
 
 function normalizeSections(raw: any, lang: 'tr' | 'en') {
   if (!Array.isArray(raw.sections)) return undefined;
   return raw.sections.map((section: any) => {
+    const translatedApplications = (raw.applications_tr || raw.applications || [])
+      .map((item: string) => lang === 'tr' ? translateApplicationText(item) : normalizeText(item))
+      .filter(Boolean);
+    if (/^applications$/i.test(normalizeText(section.name)) && translatedApplications.length > 0) {
+      return {
+        name: lang === 'tr' ? 'Uygulamalar' : 'Applications',
+        items: {
+          [lang === 'tr' ? 'Kullanım alanları' : 'Use cases']: translatedApplications.join(', '),
+        },
+      };
+    }
     const items = Object.entries(section.items || {}).reduce<Record<string, string>>((acc, [key, value]) => {
       const label = lang === 'tr' ? translateSpecLabel(key) : key;
       acc[label] = lang === 'tr' ? translateExtraSpecValue(translateSpecValue(value)) : normalizeText(value);
@@ -23307,12 +25088,8 @@ function normalizeTag(raw: any, lang: 'tr' | 'en'): RfidTag {
   const slug = rawSlug(raw);
   const brand = raw.brand || raw.display_brand || '';
   const trCopy = confidexTurkishCopy[slug] || tagTurkishCopy[slug];
-  const fallbackTrSummary = brand === 'Epozzy'
-    ? translateMarketingTextToTr(normalizeText(raw.summary_en || raw.shortDesc_en || raw.shortDesc || raw.description_en || raw.description))
-    : '';
-  const fallbackTrDescription = brand === 'Epozzy'
-    ? translateMarketingTextToTr(normalizeText(raw.description_en || raw.summary_en || raw.description || raw.shortDesc))
-    : '';
+  const fallbackTrSummary = translateMarketingTextToTr(normalizeText(raw.summary_en || raw.shortDesc_en || raw.shortDesc || raw.description_en || raw.description));
+  const fallbackTrDescription = translateMarketingTextToTr(normalizeText(raw.description_en || raw.summary_en || raw.description || raw.shortDesc));
   const title = normalizeText(lang === 'en' ? (raw.title_en || raw.title) : (trCopy?.title || raw.title_tr || raw.title || raw.title_en));
   const englishSummary = normalizeText(raw.summary_en || raw.shortDesc_en || raw.shortDesc || raw.description_en || raw.description);
   const shortDesc = lang === 'tr'
@@ -23323,17 +25100,25 @@ function normalizeTag(raw: any, lang: 'tr' | 'en'): RfidTag {
     : normalizeText(raw.description_en || raw.summary_en || raw.description || raw.shortDesc);
   const gallery = localGallery(slug);
   const image = gallery[0] || localImage(slug) || rawImage(raw);
-  const datasheet = localDatasheetSlugs.has(slug) ? localDatasheet(slug) : rawDatasheet(raw);
+  const datasheet = hasLocalDatasheet(slug, lang) ? localDatasheet(slug, lang) : (localDatasheetSlugs.has(slug) ? localDatasheet(slug, lang) : rawDatasheet(raw));
   const model = normalizeText(raw.model || raw.alt_code || title.replace(/^Avery Dennison |^Alien /, ''));
   const sku = normalizeText(raw.sku || raw.alt_code || model);
   const frequencyBand = normalizeText(raw.frequencyBand || firstSectionValue(raw, ['Operating Frequency', 'Frequency']));
-  const protocol = normalizeText(raw.protocol || firstSectionValue(raw, ['Protocol']));
-  const chip = normalizeText(raw.chip || firstSectionValue(raw, ['Integrated Circuit', 'IC', 'Chip']));
-  const sizeText = normalizeText(raw.sizeText || firstSectionValue(raw, ['Label Size', 'Inlay Width', 'Antenna Width']));
-  const formFactor = normalizeText(raw.formFactor || raw.product_group || raw.category || raw.subtitle || 'RFID Label / Inlay');
+  const protocol = lang === 'tr'
+    ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.protocol || firstSectionValue(raw, ['Protocol']))))
+    : normalizeText(raw.protocol || firstSectionValue(raw, ['Protocol']));
+  const chip = lang === 'tr'
+    ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.chip || firstSectionValue(raw, ['Integrated Circuit', 'IC', 'Chip']))))
+    : normalizeText(raw.chip || firstSectionValue(raw, ['Integrated Circuit', 'IC', 'Chip']));
+  const sizeText = lang === 'tr'
+    ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.sizeText || firstSectionValue(raw, ['Label Size', 'Inlay Width', 'Antenna Width']))))
+    : normalizeText(raw.sizeText || firstSectionValue(raw, ['Label Size', 'Inlay Width', 'Antenna Width']));
+  const formFactor = lang === 'tr'
+    ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.formFactor || raw.product_group || raw.category || raw.subtitle || 'RFID Label / Inlay')))
+    : normalizeText(raw.formFactor || raw.product_group || raw.category || raw.subtitle || 'RFID Label / Inlay');
   const onMetal = Boolean(raw.onMetal ?? /on[-_ ]?metal|metal/i.test(raw.surface || raw.category || raw.product_group || ''));
   const applications = lang === 'tr'
-    ? ((raw.applications_tr || trCopy?.applications || raw.applications || []).map((item: string) => brand === 'Epozzy' ? translateApplicationText(item) : item))
+    ? ((raw.applications_tr || trCopy?.applications || raw.applications || []).map((item: string) => translateApplicationText(item)))
     : (raw.applications_en || tagEnglishApplications[slug] || raw.applications || []);
   const tags = [
     raw.frequency || (frequencyBand ? 'UHF' : ''),
@@ -23348,7 +25133,9 @@ function normalizeTag(raw: any, lang: 'tr' | 'en'): RfidTag {
     brand,
     model,
     sku,
-    subtitle: normalizeText(lang === 'en' ? (raw.subtitle || raw.product_group || raw.category) : (raw.product_group || raw.category || raw.subtitle)),
+    subtitle: lang === 'tr'
+      ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.product_group || raw.category || raw.subtitle)))
+      : normalizeText(raw.subtitle || raw.product_group || raw.category),
     shortDesc,
     description,
     customerSummary: normalizeText(raw.customerSummary || shortDesc),
@@ -23367,10 +25154,18 @@ function normalizeTag(raw: any, lang: 'tr' | 'en'): RfidTag {
     material: lang === 'tr'
       ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.material || firstSectionValue(raw, ['Printable Surface', 'Material']))))
       : normalizeText(raw.material || firstSectionValue(raw, ['Printable Surface', 'Material'])),
-    fixedReadRange: normalizeText(raw.fixedReadRange || ''),
-    handheldReadRange: normalizeText(raw.handheldReadRange || ''),
-    operatingTemp: normalizeText(raw.operatingTemp || firstSectionValue(raw, ['Operating Limits', 'Operating Temperature'])),
-    ipRating: normalizeText(raw.ipRating || ''),
+    fixedReadRange: lang === 'tr'
+      ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.fixedReadRange || '')))
+      : normalizeText(raw.fixedReadRange || ''),
+    handheldReadRange: lang === 'tr'
+      ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.handheldReadRange || '')))
+      : normalizeText(raw.handheldReadRange || ''),
+    operatingTemp: lang === 'tr'
+      ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.operatingTemp || firstSectionValue(raw, ['Operating Limits', 'Operating Temperature']))))
+      : normalizeText(raw.operatingTemp || firstSectionValue(raw, ['Operating Limits', 'Operating Temperature'])),
+    ipRating: lang === 'tr'
+      ? translateExtraSpecValue(translateSpecValue(normalizeText(raw.ipRating || '')))
+      : normalizeText(raw.ipRating || ''),
     applications,
     industries: raw.industries || [],
     tags,
@@ -23378,16 +25173,30 @@ function normalizeTag(raw: any, lang: 'tr' | 'en'): RfidTag {
   };
 }
 
+function hasRenderableTagContent(tag: RfidTag): boolean {
+  return Boolean(
+    tag.slug &&
+    tag.title &&
+    tag.brand &&
+    tag.image &&
+    (tag.shortDesc || tag.description)
+  );
+}
+
 export const rfidTags = allRfidTags
   .filter(tag => (tag.brand || tag.display_brand) !== 'RichRFID')
   .map(tag => normalizeTag(tag, 'tr'))
-  .filter(tag => tag.slug);
+  .filter(hasRenderableTagContent);
 
 export const rfidTagsEn = allRfidTags
   .filter(tag => (tag.brand || tag.display_brand) !== 'RichRFID')
   .map(tag => normalizeTag(tag, 'en'))
-  .filter(tag => tag.slug);
+  .filter(hasRenderableTagContent);
 
-export const tagBrands = [...new Set(rfidTags.map(tag => tag.brand))].sort();
-export const tagBrandsEn = [...new Set(rfidTagsEn.map(tag => tag.brand))].sort();
+export const tagBrands = [...new Set(rfidTags.map(tag => tag.brand).filter(Boolean))].sort();
+export const tagBrandsEn = [...new Set(rfidTagsEn.map(tag => tag.brand).filter(Boolean))].sort();
 export const tagSurfaceTypes = [...new Set(rfidTags.map(tag => tag.onMetal ? 'On Metal' : 'Non Metal'))].sort();
+
+
+
+
