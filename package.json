@@ -11,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "export:notebooklm": "node scripts/export-pages-to-md.mjs",
     "og": "node scripts/generate-og.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "video:studio": "npm --prefix remotion run dev",

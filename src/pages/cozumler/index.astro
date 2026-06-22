@@ -34,7 +34,8 @@ const metrics = [
   <div class="sol-glow-tl" aria-hidden="true"></div>
   <div class="sol-glow-br" aria-hidden="true"></div>
 
-  <div class="container sol-inner">
+  <div class="container">
+    <div class="sol-inner">
     <div class="eyebrow sol-eyebrow">Çözümler</div>
     <h1>Sahadaki işi hızlandıran, doğrulayan ve kayda alan uygulamalar.</h1>
     <p class="sol-lead">Altis çözümleri belirli operasyon problemlerine odaklanır — toplama hatasını azaltmak, varlıkları izlemek, okumayı güvenilir kılmak ve saha ekiplerine net iş akışı vermek.</p>
@@ -57,10 +58,6 @@ const metrics = [
         <Store size={14} stroke-width={2} />
         Perakende
       </a>
-      <a href="/platformlar/tag-trace/" class="sol-pill">
-        <Tag size={14} stroke-width={2} />
-        RFID & Auto-ID
-      </a>
     </div>
 
     <!-- Sonuç metrikleri -->
@@ -73,44 +70,22 @@ const metrics = [
         </div>
       ))}
     </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== Çözüm kartları ===== -->
 <section class="hub-list">
   <div class="container">
-    <div class="featured-row" data-reveal>
-      <HubCard
-        variant="big"
-        href="/cozumler/goruntu-isleme/"
-        Icon={Camera}
-        tag="Görüntü işleme"
-        title="TrueScan"
-        desc="Mevcut kameralara entegre AI okuma motoru ile metal parlama, kirli etiket ve düşük kontrast koşullarında %99.5 doğrulukla barkod ve 2D/QR okuma."
-      >
-        <video
-          slot="visual"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="/images/truescan/truescan-marketing.webp"
-          aria-label="TrueScan endüstriyel kamera ile kirli barkod ve QR kod okuma görseli"
-          width="1844"
-          height="921"
-        >
-          <source src="/videos/truescan-web-loop.mp4" type="video/mp4" />
-        </video>
-      </HubCard>
-
-      <div class="featured-small-stack">
+    <div class="solutions-grid" data-reveal>
+      <div class="solution-tile solution-main">
         <HubCard
+          variant="big"
           href="/cozumler/pick-to-light/"
           Icon={Lightbulb}
           tag="Depo operasyonu"
           title="Pick-to-Light"
-          desc="Işıklı yönlendirme ile toplama, ayrıştırma ve hat besleme süreçlerinde hız ve doğruluk."
+          desc="Işıklı raf göstergeleriyle toplama, ayrıştırma ve hat besleme adımlarını operatöre tek tek gösterir — toplama hızını 2–3 katına çıkarır, hatayı en aza indirir."
         >
           <img
             slot="visual"
@@ -123,6 +98,34 @@ const metrics = [
             decoding="async"
           />
         </HubCard>
+      </div>
+
+      <div class="solution-tile solution-side">
+        <HubCard
+          href="/cozumler/goruntu-isleme/"
+          Icon={Camera}
+          tag="Görüntü işleme"
+          title="TrueScan"
+          desc="Mevcut kameralara entegre AI okuma motoruyla kirli etiket ve düşük kontrastta %99.5 doğrulukla barkod ve 2D/QR okuma."
+        >
+          <video
+            slot="visual"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/images/truescan/truescan-marketing.webp"
+            aria-label="TrueScan endüstriyel kamera ile kirli barkod ve QR kod okuma görseli"
+            width="1844"
+            height="921"
+          >
+            <source src="/videos/truescan-web-loop.mp4" type="video/mp4" />
+          </video>
+        </HubCard>
+      </div>
+
+      <div class="solution-tile solution-side">
         <HubCard
           href="/cozumler/asset-yonetimi/"
           Icon={QrCode}
@@ -146,43 +149,22 @@ const metrics = [
           </div>
         </HubCard>
       </div>
-    </div>
 
-    <div class="row-three" data-reveal data-reveal-delay="120">
-      <HubCard
-        href="/urunler/rfid-perakende/"
-        Icon={Store}
-        tag="Perakende"
-        title="RFID Perakende"
-        desc="Mağaza, tünel, kasa ve sevkiyat senaryolarına özel RFID çözümleri ve entegre donanım."
-      />
-      <HubCard
-        href="/platformlar/tag-trace/"
-        Icon={Tag}
-        tag="Platform"
-        title="Tag&Trace"
-        desc="RFID, barkod ve saha cihazlarını tek merkezden orkestre eden uçtan uca izlenebilirlik platformu."
-      />
-      <HubCard
-        variant="dark"
-        href="https://roxcard.com.tr"
-        external
-        Icon={CreditCard}
-        tag="Dijital Kimlik"
-        title="Rox Card"
-        desc="NFC ve QR teknolojisiyle çalışan yeni nesil dijital kartvizit platformu. Tek dokunuşla paylaş, panelden yönet."
-        cta="roxcard.com.tr"
-      />
+      <div class="solution-tile solution-banner">
+        <HubCard
+          variant="dark"
+          href="https://roxcard.com.tr"
+          external
+          Icon={CreditCard}
+          tag="Dijital Kimlik"
+          title="Rox Card"
+          desc="NFC ve QR teknolojisiyle çalışan yeni nesil dijital kartvizit platformu. Tek dokunuşla paylaş, panelden yönet."
+          cta="roxcard.com.tr"
+        />
+      </div>
     </div>
   </div>
 </section>
-
-<CTABanner
-  heading="Operasyonunuza uygun çözümü birlikte seçelim"
-  description="İhtiyacınızı dinleyip doğru çözüm ve pilot kapsamı öneren uzman ekibimizle tanışın."
-  secondaryLabel="Platformları İncele"
-  secondaryHref="/platformlar/tag-trace/"
-/>
 </Base>
 
 <style>
@@ -320,30 +302,55 @@ const metrics = [
 /* ===== Cards section ===== */
 .hub-list { padding: 40px 0 80px; }
 
-.featured-row {
+.solutions-grid {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 20px;
-  margin-bottom: 20px;
+  align-items: start;
 }
-.featured-small-stack {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
+.solution-tile {
+  min-width: 0;
 }
-.row-three {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+.solution-tile:not(.solution-main) :global(.hub-card) {
+  height: 100%;
+}
+.solution-main {
+  grid-column: 1 / 9;
+  grid-row: span 2;
+  align-self: start;
+}
+.solution-side {
+  grid-column: 9 / 13;
+}
+.solution-banner {
+  grid-column: 1 / -1;
+}
+/* Rox banner — yatay düzen: metin solda, CTA sağda ortalı */
+.solution-banner :global(.hub-card) {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 40px;
+  padding: 30px 34px;
+}
+.solution-banner :global(.card-head) { grid-area: 1 / 1 / 2 / 2; margin-bottom: 0; }
+.solution-banner :global(.hub-card h2) { grid-area: 2 / 1 / 3 / 2; }
+.solution-banner :global(.hub-card p) { grid-area: 3 / 1 / 4 / 2; max-width: 640px; }
+.solution-banner :global(.card-link) {
+  grid-area: 1 / 2 / 4 / 3;
+  align-self: center;
+  justify-self: end;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.featured-small-stack :global(.card-visual) {
+.solution-side :global(.card-visual) {
   margin-top: 2px;
   border-radius: 8px;
   background: #f6f9fc;
   overflow: hidden;
 }
-.featured-small-stack :global(.card-visual img) {
+.solution-side :global(.card-visual img),
+.solution-side :global(.card-visual video) {
   width: 100%;
   aspect-ratio: 16 / 7;
   object-fit: cover;
@@ -433,16 +440,38 @@ const metrics = [
 }
 
 @media (max-width: 1000px) {
-  .featured-row { grid-template-columns: 1fr; }
-  .featured-small-stack { grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; grid-auto-flow: column; }
-  .row-three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .solution-main,
+  .solution-side,
+  .solution-banner {
+    grid-column: span 6;
+    grid-row: auto;
+  }
+  .solution-main,
+  .solution-banner {
+    grid-column: 1 / -1;
+  }
 }
 @media (max-width: 760px) {
   .sol-hero { padding: 72px 0 52px; }
   .sol-metrics { flex-direction: column; gap: 20px; }
   .sol-metric { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 0 0 20px; margin: 0; }
   .sol-metric:last-child { border-bottom: none; padding-bottom: 0; }
-  .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; grid-auto-flow: row; }
-  .row-three { grid-template-columns: 1fr; }
+  .solution-main,
+  .solution-side,
+  .solution-banner {
+    grid-column: 1 / -1;
+  }
+  /* Banner mobilde dikey istif */
+  .solution-banner :global(.hub-card) {
+    grid-template-columns: 1fr;
+  }
+  .solution-banner :global(.card-head),
+  .solution-banner :global(.hub-card h2),
+  .solution-banner :global(.hub-card p),
+  .solution-banner :global(.card-link) {
+    grid-area: auto;
+  }
+  .solution-banner :global(.hub-card p) { max-width: 100%; }
+  .solution-banner :global(.card-link) { justify-self: start; align-self: start; }
 }
 </style>

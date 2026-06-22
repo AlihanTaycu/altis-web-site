@@ -63,15 +63,15 @@ const hasVisual = Astro.slots.has('visual');
     display: grid;
     gap: 12px;
     padding: 26px;
-    border: 1px solid var(--border);
+    border: 1px solid transparent;
     border-radius: var(--radius);
     background: #fff;
     color: var(--text);
     align-content: start;
-    transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+    transition: box-shadow var(--dur-fast), transform var(--dur-fast);
   }
   .hub-card:hover {
-    border-color: var(--cyan);
+    border-color: transparent;
     box-shadow: 0 24px 50px -28px rgba(0, 18, 92, .28);
     transform: translateY(-2px);
   }
@@ -126,14 +126,17 @@ const hasVisual = Astro.slots.has('visual');
   .hub-card:hover .card-link { gap: 9px; }
 
   /* Big variant */
-  .hub-card-big { padding: 32px; gap: 14px; }
+  .hub-card-big {
+    padding: 32px;
+    gap: 14px;
+  }
   .hub-card-big h2 { font-size: 32px; }
   .hub-card-big p { font-size: 16px; max-width: 540px; }
   .card-visual { margin-top: 8px; border-radius: 10px; overflow: hidden; background: #fff; }
   .card-visual :global(svg) { width: 100%; height: auto; display: block; }
-.card-visual :global(img),
-.card-visual :global(video) { width: 100%; height: auto; display: block; }
-.card-visual :global(video) { object-fit: cover; }
+  .card-visual :global(img),
+  .card-visual :global(video) { width: 100%; height: auto; display: block; }
+  .card-visual :global(video) { object-fit: cover; }
 
   /* Dark variant */
   .hub-card-dark {
@@ -142,7 +145,7 @@ const hasVisual = Astro.slots.has('visual');
     color: #fff;
   }
   .hub-card-dark:hover {
-    border-color: var(--cyan);
+    border-color: transparent;
     box-shadow: 0 24px 60px -28px rgba(24, 183, 214, .55);
   }
   .hub-card-dark h2 { color: #fff; }

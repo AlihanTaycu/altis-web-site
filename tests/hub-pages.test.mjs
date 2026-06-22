@@ -110,3 +110,35 @@ test('sectors hub uses a tidy equal three-up layout with aligned visuals', async
   assert.match(source, /align-items:\s*stretch/);
   assert.match(source, /\.featured-row\s*:global\(\.card-visual img\)[\s\S]*aspect-ratio:\s*16 \/ 9/);
 });
+
+test('solutions hub does not stretch the hero card beyond its visual content', async () => {
+  const source = await readMaybe('../src/pages/cozumler/index.astro');
+
+  assert.match(source, /\.solutions-grid\s*\{[^}]*align-items:\s*start/s);
+  assert.match(source, /\.solution-main\s*\{[^}]*align-self:\s*start/s);
+  assert.doesNotMatch(source, /\.solution-main\s*:global\(\.hub-card\)[^}]*height:\s*100%/s);
+});
+
+test('solutions hub uses an editorial twelve column card grid', async () => {
+  const source = await readMaybe('../src/pages/cozumler/index.astro');
+
+  assert.match(source, /class="solutions-grid"/);
+  assert.match(source, /class="solution-tile solution-main"/);
+  assert.match(source, /class="solution-tile solution-side"/);
+  assert.match(source, /class="solution-tile solution-banner"/);
+  assert.match(source, /\.solutions-grid\s*\{[^}]*grid-template-columns:\s*repeat\(12,\s*minmax\(0,\s*1fr\)\)/s);
+  assert.match(source, /\.solution-main\s*\{[^}]*grid-column:\s*1 \/ 9/s);
+  assert.match(source, /\.solution-side\s*\{[^}]*grid-column:\s*9 \/ 13/s);
+  assert.match(source, /\.solution-banner\s*\{[^}]*grid-column:\s*1 \/ -1/s);
+  assert.doesNotMatch(source, /class="featured-small-stack"/);
+  assert.doesNotMatch(source, /class="row-three"/);
+});
+
+test('hub cards do not render visible outer outline borders', async () => {
+  const source = await readMaybe('../src/components/sections/HubCard.astro');
+
+  assert.match(source, /\.hub-card\s*\{[^}]*border:\s*1px solid transparent/s);
+  assert.match(source, /\.hub-card:hover\s*\{[^}]*border-color:\s*transparent/s);
+  assert.doesNotMatch(source, /\.hub-card\s*\{[^}]*border:\s*1px solid var\(--border\)/s);
+  assert.doesNotMatch(source, /\.hub-card:hover\s*\{[^}]*border-color:\s*var\(--cyan\)/s);
+});
