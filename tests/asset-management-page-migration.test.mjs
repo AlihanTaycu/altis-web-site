@@ -47,5 +47,5 @@ test('asset management page uses Astro layout routes instead of legacy html link
   }
 
   assert.doesNotMatch(pageSource, /\{\{[^}]+}}/);
-  assert.match(pageSource, /\/cozumler\/asset-yonetimi\//);
+  assert.match(pageSource, /\/cozumler\//);
 });

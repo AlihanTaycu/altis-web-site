@@ -38,3 +38,6 @@ Altis Gate Products/
 ImageData/
 Data/
 PDF/
+
+# generated NotebookLM markdown export
+docs/notebooklm/pages-md/

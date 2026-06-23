@@ -29,7 +29,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'RFID Akıllı Geçit Sistemi',
     image: '/assets/products/r-overheadr/r-overheadr-1.jpg',
-    listImage: '/assets/products/r-overheadr/main.png',
+    listImage: '/assets/products/r-overheadr/main.webp',
     gallery: [
       '/assets/products/r-overheadr/r-overheadr-1.jpg',
       '/assets/products/r-overheadr/r-overheadr-2.jpg',
@@ -92,7 +92,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'Gömülü UHF RFID Tünel Okuyucu',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/11/ADH.jpg',
-    listImage: '/assets/products/r-inbasketreader/main.png',
+    listImage: '/assets/products/r-inbasketreader/main.webp',
     datasheet: '/assets/products/r-inbasketreader/r-inbasketreader-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/11/ADH.jpg',
@@ -164,7 +164,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'UHF Perakende RFID Okuyucu',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/11/RGRG.jpg',
-    listImage: '/assets/products/r-basketreader/main.png',
+    listImage: '/assets/products/r-basketreader/main.webp',
     datasheet: '/assets/products/r-basketreader/r-basketreader-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/11/RGRG.jpg',
@@ -237,7 +237,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'UHF RFID İş İstasyonu',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/04/WEDHGC.jpg',
-    listImage: '/assets/products/r-shieldedbox/main.png',
+    listImage: '/assets/products/r-shieldedbox/main.webp',
     datasheet: '/assets/products/r-shieldedbox/r-shieldedbox-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/04/WEDHGC.jpg',
@@ -315,7 +315,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'UHF Konveyör Tünel Okuyucu',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/05/DTGH.jpg',
-    listImage: '/assets/products/r-widetunnel/main.png',
+    listImage: '/assets/products/r-widetunnel/main.webp',
     datasheet: '/assets/products/r-widetunnel/r-widetunnel-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/05/DTGH.jpg',
@@ -396,7 +396,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'Endüstriyel Envanter RFID Kanal Makinesi',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/05/SDAFGH.jpg',
-    listImage: '/assets/products/r-boxtunnel/main.png',
+    listImage: '/assets/products/r-boxtunnel/main.webp',
     datasheet: '/assets/products/r-boxtunnel/r-boxtunnel-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/05/SDAFGH.jpg',
@@ -473,7 +473,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'UHF RFID Kütüphane İş İstasyonu',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/04/FH.jpg',
-    listImage: '/assets/products/r-visiondeskomni/main.png',
+    listImage: '/assets/products/r-visiondeskomni/main.webp',
     datasheet: '/assets/products/r-visiondeskomni/r-visiondeskomni-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/04/FH.jpg',
@@ -551,7 +551,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'UHF RFID Okur/Yazar İş İstasyonu',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/04/djfg.jpg',
-    listImage: '/assets/products/r-visiondeskmini/main.png',
+    listImage: '/assets/products/r-visiondeskmini/main.webp',
     datasheet: '/assets/products/r-visiondeskmini/r-visiondeskmini-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/04/djfg.jpg',
@@ -630,7 +630,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'RFID Envanter Tüneli Sistemi',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/05/SAGD.jpg',
-    listImage: '/assets/products/r-aerotunnel/main.png',
+    listImage: '/assets/products/r-aerotunnel/main.webp',
     datasheet: '/assets/products/r-aerotunnel/r-aerotunnel-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/05/SAGD.jpg',
@@ -705,7 +705,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'RFID Depo Tüneli Sistemi',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/05/tyghk.jpg',
-    listImage: '/assets/products/r-minitunnel/main.png',
+    listImage: '/assets/products/r-minitunnel/main.webp',
     datasheet: '/assets/products/r-minitunnel/r-minitunnel-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/05/tyghk.jpg',
@@ -783,7 +783,7 @@ export const retailProducts: RetailProduct[] = [
     isAltisOwn: true,
     category: 'RFID Depo Envanter Takip Sistemi',
     image: 'https://www.cykeorfid.com/wp-content/uploads/2025/05/SAETH.jpg',
-    listImage: '/assets/products/r-protunnel/main.png',
+    listImage: '/assets/products/r-protunnel/main.webp',
     datasheet: '/assets/products/r-protunnel/r-protunnel-datasheet.pdf',
     gallery: [
       'https://www.cykeorfid.com/wp-content/uploads/2025/05/SAETH.jpg',

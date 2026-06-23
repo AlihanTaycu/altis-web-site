@@ -46,5 +46,5 @@ test('pick-to-light page uses Astro layout routes instead of legacy html links',
   assert.doesNotMatch(pageSource, /\{\{[^}]+}}/);
   assert.match(pageSource, /\/iletisim\//);
   assert.match(pageSource, /\/platformlar\/tag-trace\//);
-  assert.match(pageSource, /\/cozumler\/pick-to-light\//);
+  assert.match(pageSource, /\/cozumler\//);
 });

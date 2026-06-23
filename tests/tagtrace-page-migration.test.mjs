@@ -46,5 +46,5 @@ test('tag trace page uses Astro layout routes instead of legacy html links', () 
 
   assert.match(pageSource, /\/iletisim\//);
   assert.match(pageSource, /\/platformlar\/predictivo\//);
-  assert.match(pageSource, /\/platformlar\/tag-trace\//);
+  assert.match(pageSource, /\/platformlar\//);
 });

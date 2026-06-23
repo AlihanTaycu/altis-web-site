@@ -56,10 +56,10 @@ for (const page of pages) {
 test('solutions hub uses the TrueScan marketing image instead of the placeholder SVG visual', async () => {
   const source = await readMaybe('../src/pages/cozumler/index.astro');
 
-  assert.match(source, /\/images\/truescan\/truescan-marketing\.png/);
+  assert.match(source, /\/images\/truescan\/truescan-marketing\.webp/);
   assert.match(source, /TrueScan endüstriyel kamera ile kirli barkod ve QR kod okuma görseli/);
   assert.doesNotMatch(source, /id="ts-bg"/);
-  await access(new URL('public/images/truescan/truescan-marketing.png', root));
+  await access(new URL('public/images/truescan/truescan-marketing.webp', root));
 });
 
 test('solutions hub uses the rendered TrueScan motion loop for the visual card', async () => {
@@ -76,28 +76,28 @@ test('solutions hub gives Pick-to-Light and Demirbaş Yönetimi cards their own 
   assert.doesNotMatch(source, /title="Asset Yönetimi"/);
   assert.match(source, /title="Demirbaş Yönetimi"/);
   assert.match(source, /class="p2l-card-visual"/);
-  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.png/);
+  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.webp/);
   assert.match(source, /class="asset-mini-visual"/);
   assert.match(source, /class="asset-qr"/);
-  await access(new URL('public/images/pick-to-light/p2l-marketing.png', root));
+  await access(new URL('public/images/pick-to-light/p2l-marketing.webp', root));
 });
 
 test('sectors hub uses the pick-to-light warehouse marketing image instead of the placeholder SVG visual', async () => {
   const source = await readMaybe('../src/pages/sektorler/index.astro');
 
-  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.png/);
+  assert.match(source, /\/images\/pick-to-light\/p2l-marketing\.webp/);
   assert.match(source, /Pick-to-Light raf yönlendirme ile depo operatörü çalışma görseli/);
   assert.doesNotMatch(source, /id="wh-bg"/);
-  await access(new URL('public/images/pick-to-light/p2l-marketing.png', root));
+  await access(new URL('public/images/pick-to-light/p2l-marketing.webp', root));
 });
 
 test('sectors hub gives retail textile and manufacturing cards their own visuals', async () => {
   const source = await readMaybe('../src/pages/sektorler/index.astro');
 
-  assert.match(source, /\/images\/sectors\/perakende-marketing\.png/);
-  assert.match(source, /\/images\/sectors\/uretim-marketing\.png/);
-  await access(new URL('public/images/sectors/perakende-marketing.png', root));
-  await access(new URL('public/images/sectors/uretim-marketing.png', root));
+  assert.match(source, /\/images\/sectors\/perakende-marketing\.webp/);
+  assert.match(source, /\/images\/sectors\/uretim-marketing\.webp/);
+  await access(new URL('public/images/sectors/perakende-marketing.webp', root));
+  await access(new URL('public/images/sectors/uretim-marketing.webp', root));
 });
 
 test('sectors hub uses a tidy equal three-up layout with aligned visuals', async () => {
@@ -109,4 +109,36 @@ test('sectors hub uses a tidy equal three-up layout with aligned visuals', async
   assert.match(source, /grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/);
   assert.match(source, /align-items:\s*stretch/);
   assert.match(source, /\.featured-row\s*:global\(\.card-visual img\)[\s\S]*aspect-ratio:\s*16 \/ 9/);
+});
+
+test('solutions hub does not stretch the hero card beyond its visual content', async () => {
+  const source = await readMaybe('../src/pages/cozumler/index.astro');
+
+  assert.match(source, /\.solutions-grid\s*\{[^}]*align-items:\s*start/s);
+  assert.match(source, /\.solution-main\s*\{[^}]*align-self:\s*start/s);
+  assert.doesNotMatch(source, /\.solution-main\s*:global\(\.hub-card\)[^}]*height:\s*100%/s);
+});
+
+test('solutions hub uses an editorial twelve column card grid', async () => {
+  const source = await readMaybe('../src/pages/cozumler/index.astro');
+
+  assert.match(source, /class="solutions-grid"/);
+  assert.match(source, /class="solution-tile solution-main"/);
+  assert.match(source, /class="solution-tile solution-side"/);
+  assert.match(source, /class="solution-tile solution-banner"/);
+  assert.match(source, /\.solutions-grid\s*\{[^}]*grid-template-columns:\s*repeat\(12,\s*minmax\(0,\s*1fr\)\)/s);
+  assert.match(source, /\.solution-main\s*\{[^}]*grid-column:\s*1 \/ 9/s);
+  assert.match(source, /\.solution-side\s*\{[^}]*grid-column:\s*9 \/ 13/s);
+  assert.match(source, /\.solution-banner\s*\{[^}]*grid-column:\s*1 \/ -1/s);
+  assert.doesNotMatch(source, /class="featured-small-stack"/);
+  assert.doesNotMatch(source, /class="row-three"/);
+});
+
+test('hub cards do not render visible outer outline borders', async () => {
+  const source = await readMaybe('../src/components/sections/HubCard.astro');
+
+  assert.match(source, /\.hub-card\s*\{[^}]*border:\s*1px solid transparent/s);
+  assert.match(source, /\.hub-card:hover\s*\{[^}]*border-color:\s*transparent/s);
+  assert.doesNotMatch(source, /\.hub-card\s*\{[^}]*border:\s*1px solid var\(--border\)/s);
+  assert.doesNotMatch(source, /\.hub-card:hover\s*\{[^}]*border-color:\s*var\(--cyan\)/s);
 });

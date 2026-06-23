@@ -1,184 +1,150 @@
-# Altis Web — Stajyer Onboarding
+# Altis Web - Developer Onboarding
 
-Altis Teknoloji kurumsal web sitesi. Astro 6 tabanlı statik site.
+## Purpose
 
-## Kurulum
+This repository contains the Altis Teknoloji corporate website and B2B quote-oriented product catalog. The business goal is to improve customer acquisition through clearer positioning, stronger lead flows and a reliable RFID/IoT product catalog.
+
+Read these first:
+
+1. `PLAN.md` - active business and implementation priorities
+2. `HANDOFF.md` - current technical state and known risks
+3. This file - setup and development workflow
+
+## Setup
 
 ```powershell
-# Repo'yu klonla
 git clone <repo-url>
 cd altis-web
-
-# Bağımlılıkları yükle
 npm.cmd install
-
-# Dev server'ı başlat
 npm.cmd run dev
-# → http://127.0.0.1:4321
 ```
 
-> **Not:** Windows'ta `npm` yerine `npm.cmd` kullan (PowerShell execution policy).
+Local dev server defaults to Astro's dev URL, usually:
 
----
-
-## Proje Yapısı
-
+```text
+http://localhost:4321
 ```
+
+On Windows PowerShell, use `npm.cmd` instead of `npm`.
+
+## Project Structure
+
+```text
 altis-web/
-├── src/
-│   ├── data/               ← Ürün veri dosyaları (.ts)
-│   ├── pages/
-│   │   └── urunler/        ← Ürün sayfaları
-│   │       ├── el-terminalleri/[slug].astro  ← Dinamik detay sayfası
-│   │       ├── yazicilar/[slug].astro
-│   │       └── okuyucular/[slug].astro
-│   ├── components/layout/  ← Header, Footer
-│   └── layouts/Base.astro  ← Tüm sayfalarda kullanılan wrapper
-├── altis_brain/urunler/store/  ← Ham ürün verileri (kaynak)
-└── HANDOFF.md              ← Proje geçmişi
+|-- src/
+|   |-- components/
+|   |   |-- layout/       # Header, Footer, CookieBanner
+|   |   |-- sections/     # Shared section components
+|   |   `-- seo/          # Head metadata component
+|   |-- data/             # Product and partner data
+|   |-- layouts/          # Base page layout
+|   |-- pages/            # Astro file-based routes
+|   `-- styles/           # Global CSS
+|-- public/               # Static assets, product images, datasheets, videos
+|-- tests/                # Node test suite
+|-- docs/                 # Backlogs, specs, plans and working notes
+|-- PLAN.md               # Active project priorities
+|-- HANDOFF.md            # Technical handoff
+`-- package.json
 ```
 
----
+## Page Pattern
 
-## Tamamlanan Sayfalar
-
-| Kategori | Dosya | Ürün sayısı |
-|---|---|---|
-| El Terminalleri | `src/data/el-terminalleri.ts` | 14 |
-| RFID Yazıcılar | `src/data/rfid-yazicilar.ts` | 8 |
-| RFID Okuyucular | `src/data/rfid-okuyucular.ts` | 33 |
-
----
-
-## Senin Görevlerin
-
-### 1. RFID Etiketler Sayfaları
-
-**Kaynak veriler:** `C:\Users\aliha\OneDrive - Altis Teknoloji\Desktop\altis_brain\urunler\store\`
-
-Alt kategoriler ve ürün sayıları:
-
-| Klasör | Kategori | Ürün |
-|---|---|---|
-| `pasif-uhf-etiketler/` | Pasif UHF Etiketler | 25 |
-| `metal-ustu-etiketler/` | Metal Üstü Etiketler | 67 |
-| `hf-nfc-etiketler/` | HF / NFC Etiketler | 7 |
-| `yikanabilir-etiketler/` | Yıkanabilir Etiketler | 2 |
-| `ozel-etiketler/` | Özel Etiketler | 10 |
-
-**Nasıl yapılır:**
-
-Mevcut örüntüyü takip et — `src/data/el-terminalleri.ts` dosyasına bak:
-
-```typescript
-// src/data/pasif-uhf-etiketler.ts
-export type Tag = {
-  slug: string;
-  title: string;
-  brand: string;
-  image: string;       // altis.com.tr/store'dan
-  shortDesc: string;   // Türkçe, 1-2 cümle
-  description: string; // Türkçe, 3-5 cümle
-  storeUrl: string;
-  tags: string[];
-};
-
-export const tags: Tag[] = [ ... ];
-```
-
-Her alt kategori için:
-1. `src/data/<kategori-adı>.ts` oluştur
-2. `src/pages/urunler/<kategori-adı>.astro` — liste sayfası
-3. `src/pages/urunler/<kategori-slug>/[slug].astro` — detay sayfası
-
-**Referans olarak bak:**
-- `src/data/rfid-yazicilar.ts` — veri yapısı örneği
-- `src/pages/urunler/rfid-yazicilar.astro` — kategori liste sayfası
-- `src/pages/urunler/yazicilar/[slug].astro` — detay sayfası
-
-**Önemli notlar:**
-- Açıklamaları Türkçeye çevir (kaynak dosyalar İngilizce)
-- `image` URL'leri aynen kullan — `altis.com.tr/store` hâlâ canlı
-- `slug` URL dostu olmalı: küçük harf, tire ile ayrılmış, Türkçe karakter yok
-
----
-
-### 2. RFID Perakende Ürünler Sayfası
-
-Şu an `/urunler/rfid-perakende/` sayfası placeholder. İçeriği doldurmak için:
-
-**Seçenekler:**
-- `altis_brain/urunler/store/diger/` klasöründeki Vuzix akıllı gözlükleri ekle
-- Yıkanabilir etiketler ve konfeksiyon etiketlerini "perakende" çerçevesinde sun
-- Müdürünüzle hangi ürünlerin bu sayfaya gireceğini netleştir
-
----
-
-### 3. Türkçe İçerik İyileştirmesi
-
-Mevcut bazı ürün açıklamaları İngilizce kaynak metinden direkt alındı. Düzeltilmesi gerekenler:
-
-- `src/data/el-terminalleri.ts` içindeki açıklamaları gözden geçir
-- `src/data/rfid-okuyucular.ts` içindeki Nordic ID variant açıklamaları çok benzer — farklılaştır
-
----
-
-## Çalışma Akışı
-
-```powershell
-# 1. Yeni bir branch aç
-git checkout -b feature/rfid-etiketler
-
-# 2. Değişikliklerini yap, test et
-npm.cmd run build   # hata yoksa devam
-npm.cmd test        # mevcut testler geçmeli
-
-# 3. Commit at
-git add src/data/pasif-uhf-etiketler.ts src/pages/urunler/...
-git commit -m "feat: pasif UHF etiket sayfaları (25 ürün)"
-
-# 4. Push et ve PR aç
-git push origin feature/rfid-etiketler
-```
-
-Her alt kategori için ayrı PR açman daha kolay review sağlar.
-
----
-
-## Bileşen Şablonu
-
-Yeni bir sayfa eklerken Base.astro layout kullan:
+Use the shared base layout for new pages:
 
 ```astro
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../layouts/Base.astro';
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Sayfa Başlığı",
-  "description": "Açıklama",
-  "url": "https://www.altis.com.tr/urunler/..."
+  "name": "Page name",
+  "description": "Page description",
+  "url": "https://www.altis.com.tr/path/"
 };
 ---
 
 <Base
-  title="Başlık — Altis Teknoloji"
-  description="Açıklama"
+  title="Page Title - Altis Teknoloji"
+  description="Short SEO description."
   {schema}
   lang="tr"
-  alternateUrl="https://www.altis.com.tr/en/..."
+  alternateUrl="https://www.altis.com.tr/en/path/"
 >
-  <!-- İçerik -->
+  <!-- Page content -->
 </Base>
 ```
 
----
+Route examples:
 
-## Yardım
+- `src/pages/platformlar/tag-trace.astro` -> `/platformlar/tag-trace/`
+- `src/pages/urunler/etiketler/[slug].astro` -> `/urunler/etiketler/<slug>/`
+- `src/pages/en/products/rfid-tags/[slug].astro` -> `/en/products/rfid-tags/<slug>/`
 
-Sıkışırsan `HANDOFF.md` dosyasını oku — projenin tüm geçmişi orada.
+## Product Catalog Rules
 
-Renk sistemi:
-- Navy (ana renk): `#00125C` → `var(--primary)`
-- Cyan (vurgu): `#18B7D6` → `var(--cyan)`
+The current catalog is a B2B quote catalog.
+
+- Do not add cart or checkout behavior without a separate plan.
+- Quote CTAs should route users toward contact or quote request flows.
+- Product facts should live in `src/data/*.ts`.
+- Datasheets belong under `public/assets/products/<product-slug>/`.
+- Keep category pages decision-oriented: help users understand which product family fits which scenario.
+- Keep detail pages balanced: commercial use case first, technical specs second, datasheet/quote CTA clearly visible.
+
+## Copy And Claims
+
+Altis sells industrial systems where trust matters. Avoid unsupported absolute claims.
+
+Use safer phrasing:
+
+- "pilot kapsaminda olculen"
+- "saha kosullarina gore dogrulanir"
+- "proje kapsaminda netlestirilir"
+- "manuel isi azaltmaya yardimci olur"
+- "stok gorunurlugunu artirir"
+
+Avoid unsupported phrasing:
+
+- exact percentages without source context
+- guaranteed uptime/SLA claims without contract context
+- "kesin", "her kosulda", "tam dogruluk" style absolutes
+
+If RFID is the preferred public term, avoid introducing "Auto-ID" in new copy unless the page intentionally discusses a broader category.
+
+## Current Priority Areas
+
+Follow `PLAN.md`, currently:
+
+1. Fix English navigation/page gaps.
+2. Improve home/contact lead flow.
+3. Reframe performance and success claims.
+4. Clarify the B2B catalog experience.
+5. Later: real form backend/CRM/e-mail integration.
+
+## Verification
+
+Run before handing work off:
+
+```powershell
+npm.cmd test
+npm.cmd run build
+```
+
+Targeted checks that are often useful:
+
+```powershell
+rg -n 'Auto-ID|Auto ID|AutoID' src
+rg -n '%99|%80|99\.97|uptime|SLA' src/pages src/components src/data
+rg -n '<form|onsubmit|method=|action=' src/pages src/components
+```
+
+## Workflow
+
+1. Check `git status -sb` before editing.
+2. Do not overwrite unrelated user changes.
+3. Keep edits scoped to the active priority.
+4. Add or update tests when behavior changes.
+5. Run the verification commands.
+6. Summarize changed files and any remaining risk.
