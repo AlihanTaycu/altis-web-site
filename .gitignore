@@ -36,3 +36,5 @@ astro-*.log
 # local source/import assets
 Altis Gate Products/
 ImageData/
+Data/
+PDF/

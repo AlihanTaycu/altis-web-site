@@ -1,0 +1,1033 @@
+﻿---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Asset Tag & Trace",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "description": "Cloud-based fixed asset and asset management system supporting barcode, QR, NFC, and RFID",
+  "offers": {
+    "@type": "Offer",
+    "price": "49",
+    "priceCurrency": "USD",
+    "description": "First 30 days free, annual starter package"
+  }
+};
+---
+
+<Base
+  title="Asset Tag & Trace - Asset Management System | Altis Technology"
+  description="Asset Tag & Trace is a cloud-based asset management system that works with barcode, QR, NFC, and RFID, usable on iOS, Android, and the web."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/cozumler/asset-yonetimi/"
+>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/solutions/asset-management/">Products</a>
+      <span class="sep">/</span>
+      <span style="color:var(--att-deep);font-weight:600">Asset Tag &amp; Trace</span>
+    </div>
+    <div class="hero-inner">
+      <div>
+        <div class="platform-pill">
+          <span class="pill-tag">Product</span>
+          <span>SaaS · Web + iOS + Android · Cloud-Based</span>
+        </div>
+        <div class="product-name">Asset Tag <span class="amp">&amp;</span> Trace</div>
+        <h1 class="product-tag">Asset management — no handheld terminal needed, your phone is enough.</h1>
+        <p class="hero-sub">You no longer need special hardware to know where your assets are. Asset Tag &amp; Trace is a cloud-based asset management system compatible with <strong style="color:var(--text);font-weight:600">barcode, QR, NFC, and RFID</strong> technologies. Manage maintenance, fault, and transfer processes from your phone, tablet, or computer with up to 80% efficiency gains in inventory.</p>
+        <div class="hero-cta">
+          <a class="btn btn-att btn-lg" href="#pricing">Try Free for 15 Days
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#features">How It Works</a>
+        </div>
+        <div class="app-badges">
+          <span class="lbl">Download:</span>
+          <a class="app-badge" href="https://apps.apple.com/tr/app/tagandtrace-asset/id6737413510" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/></svg>
+            <div>
+              <div class="top">App Store</div>
+              <div class="bot">iOS</div>
+            </div>
+          </a>
+          <a class="app-badge" href="https://play.google.com/store/apps/details?id=com.tagandtrace.inventory.web.tagandtraceinventorymobile" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.62c-.39.4-.6.99-.6 1.73v17.3c0 .74.21 1.33.6 1.73l.07.07L13.4 12.07v-.13L3.67 1.55l-.07.07m12.81 12.71-3.27-3.27v-.13l3.27-3.27.07.04L20.4 9.5c1.13.64 1.13 1.69 0 2.33l-3.92 2.43-.07.07m-3.27-3.27-9.54 9.54c.37.4.97.45 1.66.04l11.27-6.4-3.39-3.18m3.39-9.79L5.26 4.16c-.69-.4-1.29-.35-1.66.04l9.54 9.54 3.39-3.18-.04.04"/></svg>
+            <div>
+              <div class="top">Google Play</div>
+              <div class="bot">Android</div>
+            </div>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="v" data-count>80%</div><div class="l">efficiency gain</div></div>
+          <div class="hero-stat"><div class="v" data-count>4</div><div class="l">technologies supported</div></div>
+          <div class="hero-stat"><div class="v" data-count>15 days</div><div class="l">free trial</div></div>
+        </div>
+      </div>
+
+      <!-- Hero showcase: laptop + phone -->
+      <div class="showcase">
+        <div class="laptop">
+          <div class="laptop-screen">
+            <div class="laptop-head">
+              <div class="tabs">
+                <span class="tab active">Inventory</span>
+                <span class="tab">Maintenance</span>
+                <span class="tab">Fault</span>
+                <span class="tab">Movement</span>
+              </div>
+              <div class="ctrl">1 487 / 5 000</div>
+            </div>
+            <div class="laptop-body">
+              <div class="att-kpi">
+                <div class="l">Total Assets</div>
+                <div class="v">1 487</div>
+                <div class="meta" style="color:var(--att-deep)">▲ 24 this month</div>
+              </div>
+              <div class="att-kpi">
+                <div class="l">Active Maintenance</div>
+                <div class="v warn" data-count>8</div>
+                <div class="meta">3 upcoming</div>
+              </div>
+              <div class="att-kpi">
+                <div class="l">Count Accuracy</div>
+                <div class="v ok" data-count>99.4%</div>
+                <div class="meta">last count: today</div>
+              </div>
+              <div class="asset-table">
+                <h6>Recent movements</h6>
+                <div class="asset-row" data-reveal data-reveal-delay="0">
+                  <span class="id">AST-04812</span>
+                  <span class="nm">Dell Latitude 7430</span>
+                  <span class="loc">Office-2 · F3</span>
+                  <span class="st ok">ACTIVE</span>
+                </div>
+                <div class="asset-row" data-reveal data-reveal-delay="80">
+                  <span class="id">AST-04821</span>
+                  <span class="nm">Forklift Linde H30</span>
+                  <span class="loc">Warehouse-A</span>
+                  <span class="st warn">MAINTENANCE</span>
+                </div>
+                <div class="asset-row" data-reveal data-reveal-delay="160">
+                  <span class="id">AST-04832</span>
+                  <span class="nm">RFID Reader Impinj R700</span>
+                  <span class="loc">Gate-B</span>
+                  <span class="st move">TRANSFER</span>
+                </div>
+                <div class="asset-row" data-reveal data-reveal-delay="240">
+                  <span class="id">AST-04877</span>
+                  <span class="nm">Projector Epson EB-L</span>
+                  <span class="loc">Meeting-3</span>
+                  <span class="st ok">ACTIVE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-head">
+              <div class="t">Scan &amp; Count</div>
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+              </div>
+            </div>
+            <div class="scan-card">
+              <div class="scan-frame">
+                <div class="scan-line"></div>
+                <svg class="scan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM21 14h-3M14 21h3v-3"/></svg>
+              </div>
+              <div class="scan-meta">
+                <strong>AST-04832</strong>
+                NFC · RFID · QR · Barkod
+              </div>
+            </div>
+            <div class="phone-tabs">
+              <div class="ptab active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                Scan
+              </div>
+              <div class="ptab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>
+                List
+              </div>
+              <div class="ptab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/></svg>
+                Count
+              </div>
+              <div class="ptab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 16 0v1"/></svg>
+                Profile
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modules -->
+<section class="modules">
+  <div class="container">
+    <SectionHead
+      eyebrow="Three Core Modules"
+      heading="Dedicated modules for your assets"
+      description="Asset Tag &amp; Trace is built on three core modules: maintenance planning, fault tracking, and movement management. Every module is integrated, from a single interface."
+    />
+    <div class="mod-grid" data-reveal data-reveal-delay="100">
+      <div class="mod-card">
+        <div class="tag">01 · MAINTENANCE</div>
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1 0 5.4l-7 7a4 4 0 1 1-5.4-5.4l7-7a4 4 0 0 1 5.4 0M21 12l-7 7M16 7l5 5"/></svg>
+        </div>
+        <h3>Maintenance Module</h3>
+        <p>Struggling to track when and how to service your assets? Define periodic maintenance plans and receive automatic reminders. Don't let your assets go neglected and unmaintained.</p>
+      </div>
+      <div class="mod-card">
+        <div class="tag">02 · FAULT</div>
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 16v6M5 12H1m22 0h-4M5.6 5.6l2.8 2.8m11.2 11.2-2.8-2.8m-8.4 0-2.8 2.8m11.2-11.2-2.8 2.8"/></svg>
+        </div>
+        <h3>Fault Module</h3>
+        <p>Can't track your assets sent in or out for repair? Open fault records, follow the service process, and run root-cause analysis from past faults.</p>
+      </div>
+      <div class="mod-card">
+        <div class="tag">03 · MOVEMENT</div>
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7M5 19l3-3-3-3"/></svg>
+        </div>
+        <h3>Movement Module</h3>
+        <p>Track your assets' movements step by step with the transfer module. Location change, department transfer, custody handover — every step is digitally recorded.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features quick grid -->
+<section class="features" id="features">
+  <div class="container">
+    <SectionHead
+      eyebrow="Next-Generation Asset Management"
+      heading="Your inventory always under control"
+    />
+    <div class="feat-grid" data-reveal data-reveal-delay="100">
+      <div class="feat-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h4>Easy and Fast Inventory Management</h4>
+        <p>Upload asset records via Excel; fast setup and easy use thanks to full compatibility with barcode, QR, and NFC.</p>
+      </div>
+      <div class="feat-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        <h4>Flexible Use That Fits Your Needs</h4>
+        <p>No handheld terminal required — manage your entire inventory effortlessly with your phone, tablet, or computer.</p>
+      </div>
+      <div class="feat-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h4>Real-Time Monitoring</h4>
+        <p>Know the location and status of your assets in real time; get notified on threshold breaches or out-of-zone movement.</p>
+      </div>
+      <div class="feat-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05M12 22.08V12"/></svg></div>
+        <h4>Full Compatibility With All Devices</h4>
+        <p>Android, iOS, or web — count, manage, and transfer your assets from a handheld terminal, mobile phone, or tablet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Deep dive blocks -->
+<section class="deep">
+  <div class="container">
+    <SectionHead
+      eyebrow="Capabilities · In Depth"
+      heading="No matter how large your business, you stay in control"
+    />
+
+    <!-- Multi-location -->
+    <div class="deep-block">
+      <div class="copy">
+        <span class="badge">Multi-Location</span>
+        <h3>All your assets, across all locations</h3>
+        <p>Manage all your assets separately across different locations, buildings, or campuses. Reflect your organizational structure with department, location, and user assignment. Transfers from one campus to another in a single click.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Location · building · floor · room hierarchy</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Department and user assignment</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Location-based reporting</li>
+        </ul>
+      </div>
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Location Management</span>
+          <span class="right">4 locations · 1 487 assets</span>
+        </div>
+        <div class="surface-body">
+          <div class="loc-grid" data-reveal>
+            <div class="loc-card">
+              <div class="h">
+                <span class="nm">Headquarters · Ümraniye</span>
+                <span class="cnt">487</span>
+              </div>
+              <div class="bar"><div style="width:78%"></div></div>
+              <div class="meta"><span>78% capacity</span><span>4 floors · 22 rooms</span></div>
+            </div>
+            <div class="loc-card">
+              <div class="h">
+                <span class="nm">Manufacturing · Hadımköy</span>
+                <span class="cnt">612</span>
+              </div>
+              <div class="bar"><div style="width:92%"></div></div>
+              <div class="meta"><span>92% capacity</span><span>3 lines · 8 sections</span></div>
+            </div>
+            <div class="loc-card">
+              <div class="h">
+                <span class="nm">Warehouse · Tuzla</span>
+                <span class="cnt">312</span>
+              </div>
+              <div class="bar"><div style="width:55%"></div></div>
+              <div class="meta"><span>55% capacity</span><span>2 blocks</span></div>
+            </div>
+            <div class="loc-card">
+              <div class="h">
+                <span class="nm">Office · Ankara</span>
+                <span class="cnt">76</span>
+              </div>
+              <div class="bar"><div style="width:34%"></div></div>
+              <div class="meta"><span>34% capacity</span><span>1 floor</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counting tasks -->
+    <div class="deep-block flip">
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Counting Tasks · March 2026</span>
+          <span class="right">3 tasks · 1 active</span>
+        </div>
+        <div class="surface-body">
+          <div class="task-list">
+            <div class="task-row" data-reveal data-reveal-delay="0">
+              <div class="num">01</div>
+              <div class="body">
+                <strong>Q1 General Count — Production Line 2</strong>
+                <div class="meta">assigned: Ayşe Yıldız · 312 assets · last March 12</div>
+              </div>
+              <span class="status done">Completed</span>
+            </div>
+            <div class="task-row" data-reveal data-reveal-delay="90">
+              <div class="num">02</div>
+              <div class="body">
+                <strong>Office IT Equipment Verification</strong>
+                <div class="meta">assigned: Mehmet Şahin · 87 / 142 scanned</div>
+              </div>
+              <span class="status prog">In progress</span>
+            </div>
+            <div class="task-row" data-reveal data-reveal-delay="180">
+              <div class="num">03</div>
+              <div class="body">
+                <strong>Warehouse Monthly Count</strong>
+                <div class="meta">assigned: Warehouse Team · scheduled: March 30</div>
+              </div>
+              <span class="status todo">Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <span class="badge">Count Orders</span>
+        <h3>Counting processes and task assignments</h3>
+        <p>Plan counting processes, assign tasks to team members, and manage the process digitally from start to finish. Operators scan from the mobile app; the manager monitors live progress.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Periodic or one-time count orders</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Employee / team-based task assignment</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Real-time progress tracking · variance report</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Smart reporting -->
+    <div class="deep-block">
+      <div class="copy">
+        <span class="badge">Smart Reporting</span>
+        <h3>Turn data into insight</h3>
+        <p>Count results, asset movements, maintenance and fault history… Asset Tag &amp; Trace turns all your data into meaningful reports, simplifying your decision-making. Presenting to management with Excel/PDF outputs is now far easier.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Count accuracy · variance report</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Maintenance plan and completion rate</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Excel and PDF output · management presentation</li>
+        </ul>
+      </div>
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Q1 2026 Asset Report</span>
+          <span class="right">PDF · Excel</span>
+        </div>
+        <div class="surface-body" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div class="rep-box" data-reveal>
+            <h6>Count Accuracy</h6>
+            <div class="donut donut-acc">
+              <svg width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border-soft)" stroke-width="10"/>
+                <circle class="ring-fg" cx="40" cy="40" r="30" fill="none" stroke="var(--att)" stroke-width="10" stroke-dasharray="188.5" style="--t:11.3" stroke-linecap="round"/>
+              </svg>
+              <div class="info">
+                <div class="v" data-count>99.4%</div>
+                <div class="l">last count</div>
+              </div>
+            </div>
+          </div>
+          <div class="rep-box">
+            <h6>Status Distribution</h6>
+            <div class="donut" style="gap:10px">
+              <svg width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="30" fill="none" stroke="var(--att)" stroke-width="10" stroke-dasharray="120 188.5" stroke-dashoffset="0"/>
+                <circle cx="40" cy="40" r="30" fill="none" stroke="var(--cyan)" stroke-width="10" stroke-dasharray="40 188.5" stroke-dashoffset="-120"/>
+                <circle cx="40" cy="40" r="30" fill="none" stroke="var(--warn)" stroke-width="10" stroke-dasharray="20 188.5" stroke-dashoffset="-160"/>
+                <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border)" stroke-width="10" stroke-dasharray="8 188.5" stroke-dashoffset="-180"/>
+              </svg>
+              <div class="info" style="font-size:11px">
+                <div class="donut-leg">
+                  <span class="lg1">Active · 1 247</span>
+                  <span class="lg2">Transfer · 142</span>
+                  <span class="lg3">Maintenance · 78</span>
+                  <span class="lg4">Idle · 20</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rep-box" style="grid-column:1/-1">
+            <h6>Highlights this month</h6>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-top:4px">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--navy-800);font-weight:700">24 new assets</div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:2px">8 transfers · 3 idle status</div>
+              </div>
+              <a class="btn btn-att" style="padding:8px 14px;font-size:12px" href="mailto:assettracking@altis.com.tr?subject=Asset%20Tag%20%26%20Trace%20report%20request">Request Report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech compatibility strip -->
+<section style="padding:90px 0;background:var(--bg-soft)">
+  <div class="container">
+    <SectionHead
+      eyebrow="Technology Compatibility"
+      heading="RFID, Barcode, NFC, QR — with all of them"
+      description="Choose the right technology based on your existing labeling infrastructure. Asset Tag &amp; Trace works with all four at the same time."
+    />
+    <div class="tech-row">
+      <div class="tech-chip">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></div>
+        RFID
+      </div>
+      <div class="tech-chip">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2v16H3zM7 4h1v16H7zM10 4h2v16h-2zM14 4h1v16h-1zM17 4h2v16h-2z"/></svg></div>
+        Barkod
+      </div>
+      <div class="tech-chip">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM21 14h-3M14 21h3v-3"/></svg></div>
+        QR Code
+      </div>
+      <div class="tech-chip">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a14 14 0 0 1 20 0M5 11.5a9 9 0 0 1 14 0M8 15a4 4 0 0 1 8 0"/><circle cx="12" cy="19" r="1.5"/></svg></div>
+        NFC
+      </div>
+      <div class="tech-chip">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        Excel Import
+      </div>
+      <div class="tech-chip">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10a8 8 0 0 0-15.4-3M22 16a8 8 0 0 1-15.4 3M6 18h-4v4M18 6h4V2"/></svg></div>
+        Cloud Sync
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <SectionHead
+      eyebrow="Onboarding Process"
+      heading="Get started right away, whatever your setup"
+      description="Asset Tag &amp; Trace is deployed in 5 simple steps. Phone, tablet, or computer — start with whichever you have."
+    />
+    <div class="process-steps" data-reveal data-reveal-delay="100">
+      <div class="process-step">
+        <div class="num">01</div>
+        <h4>Needs Analysis</h4>
+        <p>Hardware suitability and labeling needs are assessed. If you don't have a label printer, we prepare and ship one.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">02</div>
+        <h4>Setup &amp; Integration</h4>
+        <p>Create an account, download the app, bulk-upload your inventory via Excel — ready within minutes.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">03</div>
+        <h4>Learn to Use It</h4>
+        <p>User-friendly interface; get to know the modules and personalize your home screen to your needs.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">04</div>
+        <h4>Real-Time Management</h4>
+        <p>Define your units, start counts, and instantly access detailed reports.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">05</div>
+        <h4>Ongoing Support</h4>
+        <p>Stay up to date, request extra modules; our team is always by your side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <SectionHead
+      eyebrow="Subscription Plans"
+      heading="A plan that fits your needs"
+      description="First 30 days free. Scales with the size of your business; a discount applies if you choose to upgrade your plan."
+    />
+    <div class="price-grid" data-reveal data-reveal-delay="100">
+      <div class="price-card">
+        <div class="price-name">Discovery</div>
+        <div class="price-amount">$49<span class="per">/ year</span></div>
+        <div class="price-trial">First 30 days free</div>
+        <div class="price-divider"></div>
+        <ul class="price-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>500 asset records</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>1 asset manager</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>2D scanning (QR + Barcode)</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Free setup &amp; training</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Excel &amp; PDF reporting</li>
+        </ul>
+        <a class="btn btn-secondary" href="https://www.altis.com.tr/store/tr/odeme/?buy-now=7420" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="badge">Best Seller</div>
+        <div class="price-name">Gold</div>
+        <div class="price-amount">$79<span class="per">/ year</span></div>
+        <div class="price-trial">First 30 days free · 10% upgrade discount</div>
+        <div class="price-divider"></div>
+        <ul class="price-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>1 500 asset records</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>3 asset managers</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>2D scanning + NFC</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Detailed reporting module</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Transfer module</li>
+        </ul>
+        <a class="btn btn-att" href="https://www.altis.com.tr/store/tr/odeme/?buy-now=7443" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Platinum</div>
+        <div class="price-amount">$99<span class="per">/ year</span></div>
+        <div class="price-trial">First 30 days free · 15% upgrade discount</div>
+        <div class="price-divider"></div>
+        <ul class="price-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>5 000 asset records</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>10 asset managers</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>QR + Barcode + NFC + RFID</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Excel &amp; PDF reporting</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Maintenance · fault · transfer modules</li>
+        </ul>
+        <a class="btn btn-secondary" href="https://www.altis.com.tr/store/tr/odeme/?buy-now=7446" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Premium</div>
+        <div class="price-amount" style="font-size:24px">Let's Talk</div>
+        <div class="price-trial">Tailored package</div>
+        <div class="price-divider"></div>
+        <ul class="price-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Unlimited asset records</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Unlimited managers</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>QR + Barcode + NFC + RFID</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Detailed PDF &amp; Excel reporting</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>All current + future modules</li>
+        </ul>
+        <a class="btn btn-secondary" href="mailto:assettracking@altis.com.tr">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Download CTA -->
+<section class="dl">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;display:inline-flex">Download the App</div>
+    <h2 style="margin-top:18px">Your inventory in your pocket — get started now</h2>
+    <p>Scan, count, and transfer from your phone or tablet with our iOS and Android apps. Cloud-based; your data stays up to date wherever you are.</p>
+    <div class="dl-buttons">
+      <a class="app-badge" style="padding:14px 22px" href="https://apps.apple.com/tr/app/tagandtrace-asset/id6737413510" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/></svg>
+        <div>
+          <div class="top">App Store</div>
+          <div class="bot" style="font-size:15px">iOS App</div>
+        </div>
+      </a>
+      <a class="app-badge" style="padding:14px 22px" href="https://play.google.com/store/apps/details?id=com.tagandtrace.inventory.web.tagandtraceinventorymobile" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.62c-.39.4-.6.99-.6 1.73v17.3c0 .74.21 1.33.6 1.73l.07.07L13.4 12.07v-.13L3.67 1.55l-.07.07m12.81 12.71-3.27-3.27v-.13l3.27-3.27.07.04L20.4 9.5c1.13.64 1.13 1.69 0 2.33l-3.92 2.43-.07.07m-3.27-3.27-9.54 9.54c.37.4.97.45 1.66.04l11.27-6.4-3.39-3.18m3.39-9.79L5.26 4.16c-.69-.4-1.29-.35-1.66.04l9.54 9.54 3.39-3.18-.04.04"/></svg>
+        <div>
+          <div class="top">Google Play</div>
+          <div class="bot" style="font-size:15px">Android App</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="eyebrow">Information &amp; Demo</div>
+    <h2>15 days free, get started now</h2>
+    <p>Schedule a demo call with our team. Let's determine the right plan for your inventory size together; setup and training are free.</p>
+    <div class="hero-cta">
+      <a class="btn btn-att btn-lg" href="#pricing">Explore Plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="mailto:assettracking@altis.com.tr">Write to Us</a>
+    </div>
+    <div class="cta-contact">
+      <div><a href="tel:+902164158255">+90 216 415 82 55</a> · Monday-Friday 09:00-18:00</div>
+      <div><a href="mailto:assettracking@altis.com.tr">assettracking@altis.com.tr</a></div>
+    </div>
+  </div>
+</section>
+</Base>
+
+<style>
+:root{
+  /* Asset Tag & Trace emerald accent tokens */
+  --att:#10A968;
+  --att-deep:#0B7C4D;
+  --att-soft:#E3F7EC;
+  --att-glow:rgba(16,169,104,.25);
+  --ok:#15a06b;--warn:#c47700;--crit:#d64545;
+}
+/* Emerald eyebrow override */
+.eyebrow{color:var(--att-deep)}
+.eyebrow::before{background:var(--att)}
+/* Emerald accent button */
+.btn-att{background:var(--att);color:#fff;box-shadow:0 6px 20px -10px var(--att-glow)}
+.btn-att:hover{background:var(--att-deep);transform:translateY(-1px);box-shadow:0 10px 26px -10px var(--att-glow)}
+
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:48px 0 120px;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 80% -100px, rgba(16,169,104,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:32px}
+.platform-pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;flex-wrap:wrap;white-space:normal;line-height:1.35;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.platform-pill .pill-tag{background:var(--att);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
+.product-name{
+  font-size:clamp(44px,5.5vw,72px);font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#0B7C4D 55%,#10A968 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 14px;padding-bottom:0.12em;
+}
+.product-name .amp{
+  font-weight:400;opacity:.75;font-size:.7em;
+  background:linear-gradient(135deg,#00125C 0%,#0B7C4D 55%,#10A968 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1.product-tag{font-size:clamp(24px,2.4vw,34px);font-weight:700;line-height:1.25;color:var(--navy-800);letter-spacing:-.01em}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:540px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;align-items:center}
+.app-badges{display:flex;gap:8px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border-soft);max-width:540px}
+.app-badges .lbl{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-right:6px;align-self:center}
+.app-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;
+  background:#000;color:#fff;border-radius:10px;font-size:12px;font-weight:500;
+  transition:transform .2s;
+}
+.app-badge:hover{transform:translateY(-1px)}
+.app-badge svg{flex-shrink:0}
+.app-badge .top{font-size:9px;opacity:.7;text-transform:uppercase;letter-spacing:.04em}
+.app-badge .bot{font-size:13px;font-weight:600;line-height:1}
+
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:28px;max-width:540px}
+.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.hero-stat .l{font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+/* Hero visual — laptop + phone showcase */
+.showcase{max-width:100%;min-width:0;position:relative;min-height:520px}
+.laptop{
+  position:absolute;left:0;right:60px;top:60px;
+  background:#1a1a22;border-radius:14px 14px 4px 4px;padding:14px 14px 18px;
+  box-shadow:var(--shadow-lg);
+}
+.laptop::after{
+  content:"";position:absolute;left:-30px;right:-30px;bottom:-12px;
+  height:8px;background:linear-gradient(180deg,#2a2a35,#0a0a0e);
+  border-radius:0 0 14px 14px;
+}
+.laptop-screen{
+  background:#fff;border-radius:6px;overflow:hidden;
+}
+.laptop-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid var(--border-soft);background:#FAFBFE;
+}
+.laptop-head .tabs{display:flex;gap:4px}
+.laptop-head .tab{font-size:10.5px;padding:4px 9px;border-radius:5px;color:var(--text-muted);font-weight:600}
+.laptop-head .tab.active{background:var(--att-soft);color:var(--att-deep)}
+.laptop-head .ctrl{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint)}
+.laptop-body{padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.att-kpi{background:#fff;border:1px solid var(--border-soft);border-radius:8px;padding:10px 12px}
+.att-kpi .l{font-size:9.5px;color:var(--text-faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.att-kpi .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--navy-800);margin-top:3px}
+.att-kpi .v.ok{color:var(--att-deep)}
+.att-kpi .v.warn{color:var(--warn)}
+.att-kpi .meta{font-size:10px;color:var(--text-muted);margin-top:2px}
+
+.asset-table{grid-column:1/-1;background:#fff;border:1px solid var(--border-soft);border-radius:8px;overflow:hidden}
+.asset-table h6{padding:9px 14px;font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin:0;border-bottom:1px solid var(--border-soft);background:#FAFBFE}
+.asset-row{display:grid;grid-template-columns:90px 1fr 90px 80px;gap:10px;padding:9px 14px;align-items:center;font-size:11.5px;border-bottom:1px dashed var(--border-soft)}
+.asset-row:last-child{border-bottom:none}
+.asset-row .id{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--navy-800);font-weight:600}
+.asset-row .nm{color:var(--slate);font-weight:500}
+.asset-row .loc{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-muted)}
+.asset-row .st{font-size:10px;padding:2px 7px;border-radius:5px;font-weight:600;text-align:center;font-family:"JetBrains Mono",monospace}
+.asset-row .st.ok{background:var(--att-soft);color:var(--att-deep)}
+.asset-row .st.warn{background:#FEF6E7;color:#8a5500}
+.asset-row .st.move{background:var(--bg-blue);color:var(--primary)}
+
+.phone{
+  position:absolute;right:0;bottom:0;width:200px;height:400px;
+  background:#1a1a22;border-radius:32px;padding:8px;
+  box-shadow:0 30px 50px -20px rgba(0,0,0,.4),0 0 40px var(--att-glow);
+}
+.phone::before{
+  content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);
+  width:60px;height:18px;background:#000;border-radius:12px;z-index:3;
+}
+.phone-screen{
+  width:100%;height:100%;background:linear-gradient(160deg,#fff,#F4FAF7);
+  border-radius:25px;overflow:hidden;padding:48px 14px 14px;
+  display:flex;flex-direction:column;
+}
+.phone-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.phone-head .t{font-size:13px;font-weight:700;color:var(--navy-800)}
+.phone-head .ic{width:24px;height:24px;border-radius:6px;background:var(--att-soft);color:var(--att-deep);display:flex;align-items:center;justify-content:center}
+.scan-card{
+  background:#1a1a22;border-radius:12px;padding:18px;color:#fff;
+  display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;
+  position:relative;overflow:hidden;
+}
+.scan-card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at center, var(--att-glow), transparent 70%);
+}
+.scan-frame{
+  position:relative;width:110px;height:110px;border-radius:12px;border:2px solid var(--att);
+  display:flex;align-items:center;justify-content:center;
+}
+.scan-frame::before,.scan-frame::after{
+  content:"";position:absolute;width:18px;height:18px;
+  border:3px solid var(--att);
+}
+.scan-frame::before{top:-2px;left:-2px;border-right:none;border-bottom:none;border-radius:8px 0 0 0}
+.scan-frame::after{bottom:-2px;right:-2px;border-left:none;border-top:none;border-radius:0 0 8px 0}
+.scan-line{
+  position:absolute;left:8%;right:8%;height:2px;background:var(--att);
+  box-shadow:0 0 8px var(--att);animation:scanline 2s ease-in-out infinite;
+}
+@keyframes scanline{
+  0%,100%{top:15%}50%{top:75%}
+}
+.scan-icon{color:var(--att);width:36px;height:36px}
+.scan-meta{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:rgba(255,255,255,.6);text-align:center;letter-spacing:.05em;position:relative;z-index:2}
+.scan-meta strong{color:var(--att);display:block;font-size:11px;margin-bottom:2px}
+.phone-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:12px}
+.ptab{background:#fff;border:1px solid var(--border-soft);border-radius:7px;padding:6px;text-align:center;font-size:9px;color:var(--text-muted);font-weight:600}
+.ptab svg{display:block;margin:0 auto 2px;color:var(--att-deep);width:14px;height:14px}
+.ptab.active{background:var(--att);color:#fff;border-color:var(--att)}
+.ptab.active svg{color:#fff}
+
+/* Sections */
+section{padding:110px 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+/* Modules */
+.modules{background:var(--bg-soft)}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mod-card{
+  background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:36px 32px;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;
+}
+.mod-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--att)}
+.mod-card .tag{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--att-deep);font-weight:700;
+  letter-spacing:.1em;margin-bottom:18px;
+}
+.mod-card .ic{width:54px;height:54px;border-radius:14px;background:var(--att-soft);color:var(--att-deep);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.mod-card h3{font-size:22px;margin-bottom:12px}
+.mod-card p{font-size:14.5px;line-height:1.6}
+
+/* Features grid (4 in row) */
+.features{padding:110px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.feat-card{display:flex;flex-direction:column;gap:14px}
+.feat-card .ic{width:48px;height:48px;border-radius:12px;background:var(--att-soft);color:var(--att-deep);display:flex;align-items:center;justify-content:center}
+.feat-card h4{font-size:16px;line-height:1.3}
+.feat-card p{font-size:13.5px;line-height:1.55}
+
+/* Big feature blocks alternating */
+.deep{background:#fff}
+.deep-block{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;margin-bottom:120px}
+.deep-block:last-child{margin-bottom:0}
+.deep-block.flip{grid-template-columns:1.1fr 1fr}
+.deep-block.flip .copy{order:2}
+.deep-block .badge{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--att-deep);padding:5px 10px;background:var(--att-soft);border-radius:6px}
+.deep-block h3{font-size:30px;margin-top:18px;margin-bottom:16px}
+.deep-block p{font-size:16px;line-height:1.65}
+.deep-block ul.kv{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.deep-block ul.kv li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--slate)}
+.deep-block ul.kv li svg{color:var(--att);flex-shrink:0;margin-top:3px}
+
+/* Surfaces */
+.surface{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+.surface-head{padding:14px 18px;border-bottom:1px solid var(--border-soft);background:#FAFBFE;display:flex;align-items:center;justify-content:space-between}
+.surface-head .ttl{font-size:13px;font-weight:600;color:var(--navy-800)}
+.surface-head .right{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint)}
+.surface-body{padding:20px}
+
+/* Multi-location visual */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.loc-card{
+  background:#fff;border:1px solid var(--border-soft);border-radius:10px;
+  padding:14px;position:relative;
+}
+.loc-card .h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.loc-card .nm{font-size:13px;font-weight:600;color:var(--navy-800)}
+.loc-card .cnt{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--att-deep);background:var(--att-soft);padding:2px 8px;border-radius:5px;font-weight:700}
+.loc-card .bar{height:5px;background:var(--border-soft);border-radius:3px;overflow:hidden}
+.loc-card .bar > div{height:100%;background:linear-gradient(90deg,var(--att-deep),var(--att));border-radius:3px}
+.loc-card .meta{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint);margin-top:6px;display:flex;justify-content:space-between}
+
+/* Counting task */
+.task-list{display:flex;flex-direction:column;gap:10px}
+.task-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  padding:14px;background:#fff;border:1px solid var(--border-soft);border-radius:10px;
+}
+.task-row .num{
+  width:36px;height:36px;border-radius:50%;background:var(--att-soft);color:var(--att-deep);
+  display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:13px;
+}
+.task-row .body strong{display:block;font-size:14px;color:var(--navy-800);font-weight:600;margin-bottom:2px}
+.task-row .body .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint)}
+.task-row .status{font-size:11px;padding:4px 10px;border-radius:6px;font-weight:600}
+.task-row .status.done{background:var(--att-soft);color:var(--att-deep)}
+.task-row .status.prog{background:#FEF6E7;color:#8a5500}
+.task-row .status.todo{background:var(--bg-soft);color:var(--text-muted)}
+
+/* Reports widget */
+.rep-box{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:16px}
+.rep-box h6{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin:0 0 12px}
+.donut{display:flex;align-items:center;gap:18px}
+.donut svg{flex-shrink:0;transform:rotate(-90deg)}
+.donut .info{flex:1}
+.donut .info .v{font-family:"JetBrains Mono",monospace;font-size:24px;font-weight:700;color:var(--navy-800)}
+.donut .info .l{font-size:12px;color:var(--text-muted);margin-top:2px}
+.donut-leg{display:grid;gap:6px;margin-top:14px;font-size:11.5px}
+.donut-leg span{display:flex;align-items:center;gap:8px;color:var(--slate)}
+.donut-leg span::before{content:"";width:9px;height:9px;border-radius:2px}
+.donut-leg .lg1::before{background:var(--att)}
+.donut-leg .lg2::before{background:var(--cyan)}
+.donut-leg .lg3::before{background:var(--warn)}
+.donut-leg .lg4::before{background:var(--border)}
+
+/* ---- Asset motion layer (subtle; default state = final/visible) ---- */
+.donut-acc .ring-fg{stroke-dashoffset:var(--t);transition:stroke-dashoffset 1s var(--ease,ease-out)}
+@media (prefers-reduced-motion: no-preference){
+  /* Location capacity bars grow on view, lightly staggered */
+  .loc-card .bar > div{transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease,ease-out)}
+  .loc-grid.is-revealed .loc-card .bar > div{transform:scaleX(1)}
+  .loc-grid.is-revealed .loc-card:nth-child(2) .bar > div{transition-delay:.1s}
+  .loc-grid.is-revealed .loc-card:nth-child(3) .bar > div{transition-delay:.2s}
+  .loc-grid.is-revealed .loc-card:nth-child(4) .bar > div{transition-delay:.3s}
+  /* Accuracy donut sweeps from empty to its value on view */
+  .rep-box:not(.is-revealed) .donut-acc .ring-fg{stroke-dashoffset:188.5}
+  /* In-progress task status soft pulse */
+  .task-row .status.prog{animation:attTaskPulse 1.9s ease-in-out infinite}
+  @keyframes attTaskPulse{0%,100%{box-shadow:0 0 0 0 rgba(196,119,0,0)}50%{box-shadow:0 0 0 3px rgba(196,119,0,.16)}}
+}
+
+/* Tech compatibility */
+.tech-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}
+.tech-chip{
+  display:flex;align-items:center;gap:10px;padding:12px 20px;
+  background:#fff;border:1.5px solid var(--border);border-radius:12px;
+  font-weight:600;font-size:14.5px;color:var(--navy-800);
+  transition:all .2s;
+}
+.tech-chip:hover{border-color:var(--att);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.tech-chip .ic{
+  width:32px;height:32px;border-radius:8px;background:var(--att-soft);color:var(--att-deep);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+/* Process steps */
+.process{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
+.process::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+.process .container{position:relative}
+.process h2{color:#fff}
+.process .section-head p{color:rgba(255,255,255,.7)}
+.process .eyebrow{color:var(--att)}
+.process .eyebrow::before{background:var(--att)}
+.process-steps{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.process-step{padding:0 18px;text-align:center;position:relative}
+.process-step:not(:last-child)::after{
+  content:"";position:absolute;top:30px;right:-12px;width:24px;height:24px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310A968' stroke-width='2.4'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;z-index:2;
+}
+.process-step .num{
+  width:60px;height:60px;border-radius:50%;background:rgba(16,169,104,.15);border:1.5px solid var(--att);
+  color:var(--att);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:18px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+}
+.process-step h4{font-size:15px;color:#fff;margin-bottom:8px}
+.process-step p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+
+/* Pricing */
+.pricing{padding:110px 0}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.price-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);
+  padding:32px 26px;display:flex;flex-direction:column;position:relative;
+  transition:transform .2s,box-shadow .2s;
+}
+.price-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.price-card.featured{border-color:var(--att);background:linear-gradient(180deg,var(--att-soft) 0%,#fff 30%)}
+.price-card .badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--att);color:#fff;font-size:10.5px;font-weight:700;
+  padding:4px 12px;border-radius:6px;text-transform:uppercase;letter-spacing:.06em;
+}
+.price-name{font-size:14px;font-weight:700;color:var(--att-deep);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.price-amount{font-family:"JetBrains Mono",monospace;font-size:32px;font-weight:700;color:var(--navy-800);line-height:1;letter-spacing:-.02em}
+.price-amount .per{font-size:14px;color:var(--text-muted);font-weight:500;margin-left:6px}
+.price-trial{font-size:11.5px;color:var(--att-deep);font-weight:600;margin-top:6px;line-height:1.4}
+.price-divider{height:1px;background:var(--border-soft);margin:20px 0}
+.price-feats{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.price-feats li{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--slate)}
+.price-feats li svg{color:var(--att);flex-shrink:0;margin-top:2px}
+.price-card .btn{margin-top:auto;justify-content:center}
+
+/* Download CTA */
+.dl{background:linear-gradient(180deg,#fff,#FAFBFE);padding:90px 0;text-align:center}
+.dl h2{margin-bottom:18px}
+.dl p{font-size:17px;max-width:600px;margin:0 auto 36px}
+.dl-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* CTA */
+.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 80% 50%, rgba(16,169,104,.18), transparent 60%)}
+.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.cta-inner .eyebrow{color:var(--att)}
+.cta-inner .eyebrow::before{background:var(--att)}
+.cta-inner h2{color:#fff;margin-top:18px}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
+.cta-inner .hero-cta{justify-content:center;margin-top:36px}
+.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25);background:transparent}
+.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
+.cta-contact{display:flex;justify-content:center;gap:32px;margin-top:48px;flex-wrap:wrap;font-size:13.5px;color:rgba(255,255,255,.75)}
+.cta-contact a{color:var(--att);font-weight:600}
+.cta-contact a:hover{text-decoration:underline}
+
+/* Footer */
+footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.foot-inner img{height:24px;filter:brightness(0) invert(1);opacity:.85}
+.foot-links{display:flex;gap:24px}
+.foot-links a:hover{color:var(--att)}
+
+@media (max-width:1240px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .showcase{min-height:auto}
+  .laptop{position:relative;left:auto;right:auto;top:auto;max-width:680px;margin:0 auto}
+  .phone{position:relative;right:auto;bottom:auto;margin:24px auto 0}
+}
+@media (max-width:1100px){
+  .deep-block,.deep-block.flip{grid-template-columns:1fr;gap:48px}
+  .deep-block.flip .copy{order:0}
+  .mod-grid,.feat-grid{grid-template-columns:repeat(2,1fr)}
+  .price-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .process-steps{grid-template-columns:repeat(2,1fr);gap:24px}
+  .process-step::after{display:none}
+}
+@media (max-width:720px){
+  .container{padding:0 20px}
+  .nav-links{display:none}
+  section{padding:72px 0}
+  .hero{overflow:hidden}
+  .hero-inner{grid-template-columns:minmax(0,1fr);max-width:100%;overflow:hidden}
+  .hero-inner > *{min-width:0;max-width:calc(100vw - 40px);width:min(100%, calc(100vw - 40px))}
+  .product-name{font-size:clamp(38px,11vw,48px)}
+  .hero h1.product-tag{font-size:clamp(24px,8vw,30px)}
+  .hero-sub{max-width:100%;font-size:16px;overflow-wrap:break-word}
+  .platform-pill{border-radius:14px;align-items:flex-start}
+  .platform-pill > span:last-child{min-width:0;overflow-wrap:anywhere}
+  .hero-cta{max-width:100%;width:100%}
+  .hero-cta .btn{width:100%}
+  .app-badges{max-width:100%;flex-wrap:wrap}
+  .mod-grid,.feat-grid,.price-grid,.process-steps{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr;gap:18px}
+  .showcase{overflow:hidden}
+  .laptop{width:100%;padding:10px}
+  .laptop::after{left:0;right:0}
+  .laptop-body{grid-template-columns:1fr}
+  .laptop-head{align-items:flex-start;gap:10px;flex-wrap:wrap}
+  .laptop-head .tabs{flex-wrap:wrap}
+  .asset-row{grid-template-columns:1fr;gap:4px}
+  .phone{width:min(200px,100%)}
+  .tech-chip{padding:10px 14px;font-size:13px}
+}
+</style>

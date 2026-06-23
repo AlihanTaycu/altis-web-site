@@ -1,0 +1,746 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
+import { partnerLogos } from '../../../data/partner-logos';
+
+const heroTrustLogos = partnerLogos.filter(l => ['Zebra','Honeywell','Datalogic','SATO','Nordic ID'].includes(l.name));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TrueScan",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "An image-processing solution that turns standard industrial cameras smart with an AI-based reading engine, targeting up to 99.5% 2D/QR/barcode reading performance under pilot conditions.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+  "provider": { "@type": "Organization", "name": "Altis Technology" }
+};
+---
+
+<Base
+  title="TrueScan – Industrial Image Processing | Altis Technology"
+  description="TrueScan targets up to 99.5% reading performance with AI under pilot conditions, where standard readers struggle in tough field conditions like metal glare, dirty labels, and low contrast."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/cozumler/goruntu-isleme/"
+>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/solutions/">Solutions</a>
+      <span class="sep">/</span>
+      <span style="color:var(--primary);font-weight:600">TrueScan</span>
+    </div>
+    <div class="hero-inner" style="margin-top:32px">
+      <div>
+        <div class="solution-pill">
+          <span class="pill-tag">Solution</span>
+          <span>Image Processing · Artificial Intelligence · Barcode / 2D / QR</span>
+        </div>
+        <div class="product-name" style="margin: 24px 0 14px">TrueScan</div>
+        <h1 class="product-tag">Software reads what hardware can't.</h1>
+        <p class="hero-sub">Metal glare, dirty labels, low contrast, perspective distortion — where standard readers struggle, TrueScan makes your existing cameras smart with AI and measurably improves reading performance.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/en/contact/">Request Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#nasil-calisar">How It Works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="v" data-count>99.5%</div><div class="l">pilot target accuracy</div></div>
+          <div class="hero-stat"><div class="v">2D · QR</div><div class="l">supported code types</div></div>
+          <div class="hero-stat"><div class="v">Existing</div><div class="l">camera infrastructure</div></div>
+        </div>
+        <p class="hero-note">Pilot results may vary depending on camera, lighting, label, line, and field conditions.</p>
+        <div class="hero-trust">
+          <span class="hero-trust-label">Our hardware solution partners</span>
+          <div class="hero-trust-logos">
+            {heroTrustLogos.map(logo => (
+              <img src={logo.src} alt={`${logo.name} logo`} width="100" height="32" loading="lazy" />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison mockup -->
+      <div class="compare-card">
+        <div class="compare-head">
+          <span class="ttl">True Scan</span>
+        </div>
+        <div class="compare-body">
+          <div class="scan-anim" aria-label="TrueScan demo">
+            <svg class="scan-base" viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#D5DEF0" />
+                  <stop offset=".5" stop-color="#EEF1F7" />
+                  <stop offset="1" stop-color="#C5CFE3" />
+                </linearGradient>
+                <linearGradient id="glare-static" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                  <stop offset=".42" stop-color="#fff" stop-opacity=".7" />
+                  <stop offset=".58" stop-color="#fff" stop-opacity=".7" />
+                  <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                </linearGradient>
+                <pattern id="noise" patternUnits="userSpaceOnUse" width="3" height="3">
+                  <rect width="3" height="3" fill="rgba(0,0,0,0)" />
+                  <circle cx="1" cy="1" r=".4" fill="rgba(0,0,0,.08)" />
+                </pattern>
+              </defs>
+              <rect x="0" y="0" width="360" height="140" fill="url(#metal)" />
+              <rect x="0" y="0" width="360" height="140" fill="url(#noise)" />
+              {/* Dirty / damaged barcode — deterministic pattern */}
+              <g transform="translate(46, 28)" opacity=".88">
+                {[2,4,2,3,5,2,4,3,2,5,3,2,4,3,5,2,3,4,2,5,3,2,4,3,5,2,3,5,2,4,3,2,5,3,4,2,5,3].map((w, i, arr) => {
+                  const x = arr.slice(0, i).reduce((a, b) => a + b, 0) * 1.85;
+                  const dim = (i === 5 || i === 12 || i === 19 || i === 27) ? .25 : (i % 3 === 0 ? .55 : .85);
+                  return <rect x={x} y={i % 4 === 0 ? 2 : 0} width={w * .9} height={i % 4 === 0 ? 64 : 66} fill="#0a1f3a" opacity={dim} />;
+                })}
+              </g>
+              <rect x="40" y="20" width="280" height="80" fill="url(#glare-static)" opacity=".6" />
+              {/* Dirt smudge */}
+              <ellipse cx="240" cy="58" rx="22" ry="14" fill="#5F6675" opacity=".18" />
+              <ellipse cx="120" cy="68" rx="18" ry="9" fill="#5F6675" opacity=".14" />
+              <text x="50" y="120" font-family="JetBrains Mono, monospace" font-size="8" fill="#475569" opacity=".5">1234 5••• ••12 ••56</text>
+            </svg>
+
+            {/* Phase 1 — red standard scan */}
+            <div class="scan-line scan-line-red" aria-hidden="true"></div>
+            <div class="scan-badge scan-badge-1">STANDARD · SCANNING</div>
+            <div class="scan-fail" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+              <span>READ FAILED</span>
+            </div>
+
+            {/* Phase 2 — AI corners + cyan scan */}
+            <div class="scan-corners" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="scan-line scan-line-cyan" aria-hidden="true"></div>
+            <div class="scan-badge scan-badge-2">AI · TRUESCAN STARTED</div>
+
+            {/* Phase 3 — success + extracted data */}
+            <div class="scan-success" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
+              <span>99.5% PILOT TARGET</span>
+            </div>
+            <div class="scan-extracted" aria-hidden="true">
+              <span class="se-label">EPC ⟶</span>
+              <span class="se-data">3034 ABF1 02C8 6E91</span>
+            </div>
+          </div>
+          <div class="scan-cap">FIELD · METAL SURFACE · HIGH GLARE · DIRTY LABEL</div>
+
+          <div class="compare-row fail">
+            <div class="compare-label">
+              <div class="dot dot-fail"></div>
+              <span>Standard Hardware</span>
+            </div>
+            <div class="compare-result">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+              <span>Read failed</span>
+            </div>
+          </div>
+          <div class="compare-row pass">
+            <div class="compare-label">
+              <div class="dot dot-pass"></div>
+              <span>TrueScan</span>
+            </div>
+            <div class="compare-result">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2.5 4-5"></path></svg>
+              <span>99.5% in pilot measurement</span>
+            </div>
+          </div>
+          <div class="extracted">
+            <span class="ext-label">extracted data</span>
+            <code>EPC <strong>3034 ABF1 02C8 6E91</strong> · LOT <strong>YL-2025-08-A4</strong></code>
+          </div>
+          <div class="condition-tags">
+            <span class="ctag">Metal glare</span>
+            <span class="ctag">Dirty label</span>
+            <span class="ctag">Low contrast</span>
+            <span class="ctag">Perspective distortion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem">
+  <div class="container">
+    <SectionHead
+      eyebrow="Problem"
+      heading="Barcode reading looks easy in theory, but becomes a bottleneck in the field"
+      description="Standard industrial readers are designed for ideal conditions. The real production floor, however, is not ideal."
+    />
+    <div class="problem-grid" data-reveal data-reveal-delay="100">
+      <div class="problem-group">
+        <div class="problem-group-label">Field Conditions</div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+          <div>
+            <strong>Metal Glare</strong>
+            <p>Surface reflections blind the view of standard sensors.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <div>
+            <strong>Variable Lighting</strong>
+            <p>Low contrast and insufficient lighting trigger read errors.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"></path></svg>
+          <div>
+            <strong>Dynamic Environment</strong>
+            <p>Moving lines and vibration create focusing problems.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-group">
+        <div class="problem-group-label">Label Condition</div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 18 18M9 9c-.9.9-1.5 2.2-1.5 3.5 0 2.8 2.2 5 5 5 1.3 0 2.6-.5 3.5-1.5"></path><path d="M14.5 9.5A3.5 3.5 0 0 0 9.5 14.5"></path><path d="m21 3-9 9"></path></svg>
+          <div>
+            <strong>Dirty and Damaged</strong>
+            <p>Oil, dirt, and physical scratches break barcode integrity.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 2 20 20M7 7H4l-1 5h14M7 7V4h10v3M7 7h10M12 7v4"></path></svg>
+          <div>
+            <strong>Perspective Loss</strong>
+            <p>Tilted angles and deformation lead to geometric distortion.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"></rect><path d="M6 9V5h12v4"></path></svg>
+          <div>
+            <strong>Poor Printing</strong>
+            <p>Faded and low-resolution prints stop standard readers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-impact">
+        <div class="impact-label">Critical Losses</div>
+        <div class="impact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+          <span>Operational slowdown</span>
+        </div>
+        <div class="impact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+          <span>Increased manual intervention</span>
+        </div>
+        <div class="impact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>
+          <span>High hardware cost</span>
+        </div>
+        <blockquote>"Barcode reading that looks easy in theory becomes a bottleneck in the field."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="approach" id="nasil-calisar">
+  <div class="container">
+    <SectionHead
+      eyebrow="Approach"
+      heading="Software wins, not hardware"
+      description="Instead of expensive, specialized hardware, we make existing standard industrial cameras smart with an AI-based reading engine. Investment is protected, capacity is increased."
+    />
+    <div class="approach-grid" data-reveal data-reveal-delay="100">
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6M9 12h6M9 15h4"></path></svg>
+        </div>
+        <h3>Software-First Architecture</h3>
+        <p>A flexible reading engine integrated onto existing standard cameras. Works independently of the hardware brand.</p>
+      </div>
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path><circle cx="18" cy="6" r="4" fill="currentColor" opacity=".2" stroke="currentColor"></circle><path d="m16 6 2 2 4-4"></path></svg>
+        </div>
+        <h3>AI-Based Analysis</h3>
+        <p>Instead of merely scanning the image, reading is done with deep learning models that interpret every pixel.</p>
+      </div>
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <h3>Cost Efficiency</h3>
+        <p>Make existing infrastructure smart without needing expensive AI-integrated cameras. Investment is protected.</p>
+      </div>
+      <div class="approach-card">
+        <div class="ac-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
+        <h3>Flexible Integration</h3>
+        <p>Independent of the hardware brand, fast adaptation to any production line and enterprise system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TrueScan capabilities -->
+<section class="capabilities">
+  <div class="container">
+    <SectionHead
+      eyebrow="TrueScan Technology"
+      heading="Four algorithms to make sense of the image"
+      description="Every field condition creates a different problem. TrueScan solves these four critical problems with separate algorithms."
+    />
+    <div class="cap-grid" data-reveal data-reveal-delay="100">
+      <div class="cap-card">
+        <div class="cap-num">01</div>
+        <h3>Perspective Correction</h3>
+        <p>Corrects images coming from tilted angles in real time. By removing geometric distortion, it brings the barcode to the ideal reading angle.</p>
+        <div class="cap-tag">Real-time</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">02</div>
+        <h3>Glare Tolerance</h3>
+        <p>Filters out light bursts on metal surfaces. With dynamic thresholding algorithms, it recovers the data beneath the glare.</p>
+        <div class="cap-tag">Dynamic thresholding</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">03</div>
+        <h3>Low-Contrast Reading</h3>
+        <p>Analyzes faded prints and labels under insufficient light. It enables reading with pixel-level enhancement using AI.</p>
+        <div class="cap-tag">Pixel-level AI</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">04</div>
+        <h3>Damage Analysis</h3>
+        <p>Completes missing data on dirty, scratched, or torn labels with error-correction codes and pattern recognition.</p>
+        <div class="cap-tag">Pattern recognition</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case study: Yeşilyurt -->
+<section class="casestudy">
+  <div class="container">
+    <div class="cs-grid" data-reveal>
+      <div class="cs-copy">
+        <div class="eyebrow">Reference Project</div>
+        <h2 style="margin-top:18px">Yeşilyurt Demir Çelik</h2>
+        <p style="font-size:17px;margin-top:16px;line-height:1.65">At the production site of Yeşilyurt Demir Çelik, one of Turkey's largest industrial enterprises, faded, low-contrast, and deformed barcodes made it hard for standard industrial readers to produce stable reads. This increased the need for manual checks and re-scanning.</p>
+        <p style="font-size:17px;margin-top:14px;line-height:1.65">In the TrueScan pilot, images were enhanced at the software layer, and readable data was transferred to the system more reliably.</p>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <div class="cs-v">99.5%</div>
+            <div class="cs-l">Pilot accuracy</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-v">Reduced</div>
+            <div class="cs-l">Manual checks</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-v">ISO 500</div>
+            <div class="cs-l">Top 100 / 750+ employees</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-results">
+        <div class="cs-result-head">Project Gains</div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Stable Reading</strong>
+            <span>Reading stability was improved on problematic barcode samples.</span>
+          </div>
+        </div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Minimal Intervention</strong>
+            <span>The need for manual checks and re-scanning was reduced, supporting staff productivity.</span>
+          </div>
+        </div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>High Confidence</strong>
+            <span>Error rates were measurably reduced and data integrity was strengthened.</span>
+          </div>
+        </div>
+        <div class="cs-result-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"></path></svg>
+          <div>
+            <strong>Faster Flow</strong>
+            <span>Reducing read-related stoppages was targeted, and cycle times became trackable.</span>
+          </div>
+        </div>
+        <div class="cs-quote">"Before buying specialized hardware, evaluating existing image data with software is the more accurate first step on most sites."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <SectionHead
+      eyebrow="How do we start?"
+      heading="Go live in three steps"
+      description="We start with a single-line pilot and roll out once the measured result is satisfactory."
+    />
+    <div class="process-grid" data-reveal data-reveal-delay="100">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <div class="process-time">15–30 min</div>
+        <h3>Online discovery</h3>
+        <p>We review your existing camera infrastructure, label type, and field conditions via screen sharing. Same-day response.</p>
+        <ul class="process-list">
+          <li>Existing hardware inventory</li>
+          <li>Read-failure samples</li>
+          <li>Expected success rate</li>
+        </ul>
+      </div>
+      <div class="process-card process-card-mid">
+        <div class="process-num">02</div>
+        <div class="process-time">2–4 weeks</div>
+        <h3>Field pilot</h3>
+        <p>The TrueScan engine is installed on a single line. Existing cameras work unchanged, and the result is measured on site.</p>
+        <ul class="process-list">
+          <li>Existing camera infrastructure preserved</li>
+          <li>Live accuracy report</li>
+          <li>Integrated with existing software</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <div class="process-time">Phase plan</div>
+        <h3>Rollout</h3>
+        <p>If pilot results are approved, gradual rollout to other lines and facilities. Operations continue uninterrupted.</p>
+        <ul class="process-list">
+          <li>Line-based phase plan</li>
+          <li>Remote monitoring</li>
+          <li>SLA support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="eyebrow">Demo &amp; Discovery</div>
+    <h2>Let's see TrueScan on your own production line</h2>
+    <p>Share the environment where you have reading problems and your existing camera infrastructure. Our team will get back to you the same day with an actionable roadmap.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="/en/contact/">Request Demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/en/solutions/">Other Solutions</a>
+    </div>
+    <div class="cta-channels">
+      <a href="tel:+902164158255" class="ch-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span><strong>Phone</strong>+90 216 415 82 55</span>
+      </a>
+      <a href="mailto:info@altis.com.tr" class="ch-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><strong>Email</strong>info@altis.com.tr</span>
+      </a>
+      <a href="https://wa.me/902164158255" target="_blank" rel="noopener" class="ch-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span><strong>WhatsApp</strong>Fast reply</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style>
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px}
+.breadcrumb a{color:var(--text-muted)}.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:64px 0 120px;overflow:hidden;
+  background:radial-gradient(900px 500px at 80% -100px, rgba(24,183,214,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(0,18,92,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+          mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.solution-pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;flex-wrap:wrap;white-space:normal;line-height:1.35;padding:7px 14px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.solution-pill .pill-tag{background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.product-name{
+  font-size:clamp(52px,7vw,88px);font-weight:800;letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#1E2F8C 60%,#18B7D6 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.product-tag{font-size:clamp(24px,2.4vw,34px);font-weight:700;line-height:1.2;color:var(--navy-800)}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:520px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);max-width:520px}
+.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.hero-stat .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+.hero-note{max-width:520px;margin-top:14px;font-size:12px;line-height:1.5;color:var(--text-faint)}
+
+/* Compare card */
+.compare-card{max-width:100%;min-width:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.compare-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border-soft);background:#FCFCFE}
+.compare-head .ttl{font-size:13px;font-weight:600;color:var(--navy-800)}
+.badge-live{background:#E6F7EE;color:#15a06b;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.04em}
+.compare-body{padding:28px}
+.compare-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-radius:10px;margin-bottom:12px}
+.compare-row.fail{background:#FEF2F2;border:1px solid #FCA5A5}
+.compare-row.pass{background:#E6F7EE;border:1px solid #86EFAC}
+.compare-label{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text)}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot-fail{background:#EF4444}
+.dot-pass{background:#15a06b}
+.compare-result{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700}
+.compare-row.fail .compare-result{color:#DC2626}
+.compare-row.pass .compare-result{color:#15a06b}
+.condition-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.ctag{font-size:11.5px;padding:4px 10px;background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:6px;color:var(--text-muted);font-weight:500}
+
+/* Problem */
+.problem{background:var(--bg-soft)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr 280px;gap:20px;align-items:start}
+.problem-group{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:28px;display:grid;gap:20px}
+.problem-group-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-bottom:12px;border-bottom:1px solid var(--border-soft)}
+.problem-item{display:flex;gap:14px;align-items:flex-start}
+.problem-item svg{color:var(--primary);flex-shrink:0;margin-top:3px}
+.problem-item strong{display:block;font-size:14px;color:var(--text);margin-bottom:4px}
+.problem-item p{font-size:13.5px;line-height:1.55}
+.problem-impact{background:var(--navy-800);border-radius:var(--radius-lg);padding:28px;display:grid;gap:14px;align-content:start}
+.impact-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1)}
+.impact-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.85)}
+.impact-item svg{color:#EF4444;flex-shrink:0}
+.problem-impact blockquote{margin:8px 0 0;padding:14px;border-left:3px solid var(--cyan);background:rgba(255,255,255,.05);border-radius:0 8px 8px 0;font-size:13px;font-style:italic;color:rgba(255,255,255,.7);line-height:1.55}
+
+/* Approach */
+.approach{background:#fff}
+.approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.approach-card{padding:28px;border:1px solid var(--border-soft);border-radius:var(--radius-lg);transition:all .25s}
+.approach-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--primary)}
+.ac-icon{width:48px;height:48px;border-radius:12px;background:var(--bg-blue);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.approach-card h3{font-size:17px;margin-bottom:10px}
+.approach-card p{font-size:14px;line-height:1.6}
+
+/* Capabilities */
+.capabilities{background:var(--navy-800)}
+.capabilities .section-head{color:#fff}
+.capabilities h2{color:#fff}
+.capabilities .section-head p{color:rgba(255,255,255,.7)}
+.capabilities .eyebrow{color:var(--cyan)}
+.capabilities .eyebrow::before{background:var(--cyan)}
+.cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cap-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:28px;transition:all .25s}
+.cap-card:hover{background:rgba(255,255,255,.09);border-color:var(--cyan)}
+.cap-num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--cyan);letter-spacing:.1em;font-weight:700;margin-bottom:14px}
+.cap-card h3{font-size:18px;color:#fff;margin-bottom:12px}
+.cap-card p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.65)}
+.cap-tag{display:inline-flex;margin-top:18px;font-size:11px;font-weight:600;padding:4px 10px;background:rgba(24,183,214,.15);border-radius:6px;color:var(--cyan);letter-spacing:.04em}
+
+/* Case study */
+.casestudy{background:var(--bg-soft)}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border-soft)}
+.cs-v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--primary)}
+.cs-l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:4px}
+.cs-results{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:grid;gap:18px}
+.cs-result-head{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-bottom:14px;border-bottom:1px solid var(--border-soft)}
+.cs-result-item{display:flex;gap:12px;align-items:flex-start;font-size:14.5px}
+.cs-result-item svg{color:var(--accent);flex-shrink:0;margin-top:3px}
+.cs-result-item strong{display:block;color:var(--text);font-weight:600;margin-bottom:2px}
+.cs-result-item span{color:var(--text-muted);font-size:13.5px}
+.cs-quote{margin-top:4px;padding:16px;background:var(--bg-soft);border-left:3px solid var(--primary);border-radius:0 8px 8px 0;font-size:13.5px;font-style:italic;color:var(--text-muted);line-height:1.55}
+
+/* CTA */
+.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 80% 50%,rgba(24,183,214,.15),transparent 60%)}
+.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.cta-inner .eyebrow{color:var(--cyan)}
+.cta-inner .eyebrow::before{background:var(--cyan)}
+.cta-inner h2{color:#fff;margin-top:18px}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
+.cta-inner .hero-cta{justify-content:center;margin-top:36px}
+.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25)}
+.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+/* Hero trust strip */
+.hero-trust{margin-top:32px;padding-top:24px;border-top:1px dashed var(--border);max-width:520px}
+.hero-trust-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);display:block;margin-bottom:14px}
+.hero-trust-logos{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-trust-logos img{max-height:24px;width:auto;opacity:.55;filter:grayscale(100%);transition:opacity .2s,filter .2s}
+.hero-trust-logos img:hover{opacity:1;filter:grayscale(0)}
+
+/* ============ Scan narrative animation ============ */
+.scan-anim{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--border-soft);background:#C5CFE3;aspect-ratio:360/140}
+.scan-base{display:block;width:100%;height:100%}
+.scan-cap{margin:8px 0 16px;font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--text-faint);text-align:center}
+
+/* Master timing: 6s loop, 4 phases */
+/* Phase 1: 0-30% = standart fail */
+/* Phase 2: 30-58% = AI scan */
+/* Phase 3: 58-92% = success + data */
+/* Phase 4: 92-100% = reset */
+
+.scan-line{position:absolute;left:0;right:0;height:2px;pointer-events:none;will-change:transform,opacity;box-shadow:0 0 16px currentColor}
+.scan-line-red{color:#EF4444;background:currentColor;animation:scanLineRed 6s infinite ease-in-out}
+.scan-line-cyan{color:#18B7D6;background:currentColor;animation:scanLineCyan 6s infinite ease-in-out;opacity:0}
+
+@keyframes scanLineRed{
+  0%{top:100%;opacity:0}
+  3%{opacity:1}
+  25%{top:0;opacity:1}
+  28%{top:0;opacity:0}
+  100%{top:0;opacity:0}
+}
+@keyframes scanLineCyan{
+  0%,30%{top:100%;opacity:0}
+  32%{opacity:1}
+  55%{top:0;opacity:1}
+  58%{top:0;opacity:0}
+  100%{opacity:0}
+}
+
+.scan-badge{position:absolute;top:10px;left:10px;font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.1em;padding:5px 10px;border-radius:4px;display:inline-flex;align-items:center;gap:6px;will-change:opacity,transform}
+.scan-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;animation:badgePulse 1.2s infinite}
+.scan-badge-1{background:rgba(239,68,68,.95);color:#fff;animation:phase1Badge 6s infinite}
+.scan-badge-2{background:rgba(24,183,214,.95);color:#fff;opacity:0;animation:phase2Badge 6s infinite}
+.scan-badge-1::before{background:#fff}
+.scan-badge-2::before{background:#fff}
+
+@keyframes badgePulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes phase1Badge{
+  0%{opacity:0;transform:translateY(-4px)}
+  4%,25%{opacity:1;transform:translateY(0)}
+  28%,100%{opacity:0;transform:translateY(0)}
+}
+@keyframes phase2Badge{
+  0%,28%{opacity:0;transform:translateY(-4px)}
+  32%,55%{opacity:1;transform:translateY(0)}
+  58%,100%{opacity:0}
+}
+
+/* Fail X */
+.scan-fail{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.6);color:#EF4444;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0;will-change:opacity,transform;animation:scanFail 6s infinite}
+.scan-fail span{font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:800;letter-spacing:.12em;background:#EF4444;color:#fff;padding:3px 8px;border-radius:4px}
+@keyframes scanFail{
+  0%,24%{opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-8deg)}
+  27%{opacity:1;transform:translate(-50%,-50%) scale(1.15) rotate(0)}
+  29%,30%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}
+  31%,100%{opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(0)}
+}
+
+/* AI Detection Corners */
+.scan-corners{position:absolute;top:14px;left:30px;right:30px;bottom:18px;pointer-events:none;opacity:0;animation:cornersIn 6s infinite}
+.scan-corners span{position:absolute;width:18px;height:18px;border:2px solid #18B7D6;box-shadow:0 0 12px rgba(24,183,214,.7);animation:cornerPulse 1.4s infinite ease-in-out}
+.scan-corners span:nth-child(1){top:0;left:0;border-right:none;border-bottom:none;border-top-left-radius:2px}
+.scan-corners span:nth-child(2){top:0;right:0;border-left:none;border-bottom:none;border-top-right-radius:2px}
+.scan-corners span:nth-child(3){bottom:0;left:0;border-right:none;border-top:none;border-bottom-left-radius:2px}
+.scan-corners span:nth-child(4){bottom:0;right:0;border-left:none;border-top:none;border-bottom-right-radius:2px}
+@keyframes cornersIn{
+  0%,29%{opacity:0;transform:scale(1.1)}
+  32%,92%{opacity:1;transform:scale(1)}
+  95%,100%{opacity:0}
+}
+@keyframes cornerPulse{0%,100%{box-shadow:0 0 12px rgba(24,183,214,.7)}50%{box-shadow:0 0 20px rgba(24,183,214,1)}}
+
+/* Success badge */
+.scan-success{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.7);display:flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(16,160,107,.95);color:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(16,160,107,.4);opacity:0;will-change:opacity,transform;animation:scanSuccess 6s infinite}
+.scan-success span{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:800;letter-spacing:.1em}
+@keyframes scanSuccess{
+  0%,58%{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+  62%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}
+  66%,88%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  92%,100%{opacity:0;transform:translate(-50%,-50%) scale(1)}
+}
+
+/* Extracted data */
+.scan-extracted{position:absolute;bottom:10px;left:10px;right:10px;display:flex;align-items:center;gap:8px;padding:7px 12px;background:rgba(10,31,58,.92);backdrop-filter:blur(6px);border:1px solid rgba(24,183,214,.4);border-radius:6px;font-family:"JetBrains Mono",monospace;opacity:0;will-change:opacity,transform;animation:scanExtracted 6s infinite}
+.se-label{font-size:9px;font-weight:700;letter-spacing:.1em;color:#18B7D6}
+.se-data{font-size:11px;font-weight:700;color:#fff;letter-spacing:.04em}
+@keyframes scanExtracted{
+  0%,62%{opacity:0;transform:translateY(6px)}
+  66%,88%{opacity:1;transform:translateY(0)}
+  92%,100%{opacity:0;transform:translateY(0)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .scan-line,.scan-badge,.scan-fail,.scan-corners,.scan-corners span,.scan-success,.scan-extracted{animation:none !important;opacity:1 !important}
+  .scan-line-red{display:none}
+  .scan-badge-1{display:none}
+  .scan-fail{display:none}
+}
+.extracted{margin-top:10px;padding:10px 14px;border:1px solid #86EFAC;background:#F0FDF4;border-radius:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ext-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#15a06b}
+.extracted code{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--navy-800);background:none}
+.extracted code strong{color:#0F766E;font-weight:700}
+
+/* Process section */
+.process{background:#fff}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.process-card{position:relative;padding:32px;border:1px solid var(--border-soft);border-radius:var(--radius-lg);background:#fff;transition:all .25s;display:grid;gap:14px;align-content:start}
+.process-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--accent)}
+.process-card-mid{background:linear-gradient(180deg,#F6F8FC 0%,#fff 100%);border-color:var(--border)}
+.process-num{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--accent)}
+.process-time{display:inline-flex;width:fit-content;padding:4px 10px;background:var(--bg-blue);color:var(--primary);font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px}
+.process-card h3{font-size:22px;font-weight:800;color:var(--primary);letter-spacing:-.01em;line-height:1.15}
+.process-card p{font-size:14.5px;line-height:1.55;color:var(--text-muted);margin:0}
+.process-list{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.process-list li{position:relative;padding-left:20px;font-size:13.5px;color:var(--text)}
+.process-list li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--cyan-soft);border:1.5px solid var(--cyan)}
+
+/* CTA channels strip */
+.cta-channels{display:flex;justify-content:center;gap:18px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);flex-wrap:wrap}
+.ch-link{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);border-radius:12px;color:#fff;font-size:13px;line-height:1.2;transition:background .15s,border-color .15s}
+.ch-link:hover{background:rgba(255,255,255,.08);border-color:var(--cyan)}
+.ch-link svg{color:var(--cyan);flex-shrink:0}
+.ch-link span{display:grid;gap:2px}
+.ch-link strong{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+@media (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .problem-grid{grid-template-columns:1fr 1fr}
+  .problem-impact{grid-column:1/-1}
+  .approach-grid,.cap-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-grid{grid-template-columns:1fr;gap:36px}
+  .process-grid{grid-template-columns:1fr;gap:14px}
+}
+@media (max-width:720px){
+  .container{padding:0 20px}
+  section{padding:72px 0}
+  .hero{overflow:hidden}
+  .hero-inner{grid-template-columns:minmax(0,1fr);max-width:100%;overflow:hidden}
+  .hero-inner > *{min-width:0;max-width:calc(100vw - 40px);width:min(100%, calc(100vw - 40px))}
+  .product-name{font-size:clamp(42px,13vw,52px)}
+  .product-tag{font-size:clamp(24px,8vw,30px)}
+  .hero-sub{max-width:100%;font-size:16px;overflow-wrap:break-word}
+  .solution-pill{border-radius:14px;align-items:flex-start}
+  .solution-pill > span:last-child{min-width:0;overflow-wrap:anywhere}
+  .hero-cta{max-width:100%;width:100%}
+  .hero-cta .btn{width:100%}
+  .problem-grid,.approach-grid,.cap-grid{grid-template-columns:1fr}
+  .cs-metrics{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{grid-template-columns:1fr;gap:18px}
+  .compare-head,.compare-row{align-items:flex-start;gap:10px;flex-wrap:wrap}
+  .compare-body{padding:20px}
+}
+</style>

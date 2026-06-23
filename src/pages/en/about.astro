@@ -1,0 +1,529 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/sections/SectionHead.astro';
+import LogoMarquee from '../../components/sections/LogoMarquee.astro';
+import StatStrip from '../../components/sections/StatStrip.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import { partnerLogos } from '../../data/partner-logos';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Altis Technology",
+  "description": "Since 2003, Altis Technology has operated as a system integrator and software developer in RFID, IoT, Auto-ID, and industrial automation.",
+  "url": "https://www.altis.com.tr/en/about/"
+};
+---
+
+<Base
+  title="About — Altis Technology"
+  description="Since 2003, Altis Technology has operated as a system integrator and software developer in RFID, IoT, Auto-ID, and industrial automation. Turkey's fastest-growing IT company."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/hakkimizda/"
+>
+
+<!-- ===== Hero ===== -->
+<section class="about-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="eyebrow about-eyebrow">About Us</div>
+    <h1>We connect physical operations to digital decision systems.</h1>
+    <p class="hero-sub">We turn our experience in RFID, IoT, Auto-ID, and industrial integration into practical products that work in warehouse, retail, textile, and manufacturing fields. Since 2003 — with more than 20 years of field and software experience.</p>
+    <StatStrip
+      variant="on-dark"
+      stats={[
+        { value: '23+', label: 'Years of Experience' },
+        { value: '5', label: 'Own Products' },
+        { value: '#1', label: 'Bilişim 500' },
+        { value: '4', label: 'Technology Areas' },
+      ]}
+    />
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="/en/contact/">Talk to Us</a>
+      <a class="btn btn-secondary btn-lg" href="#hikaye">Read Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Şirket Hikayesi ===== -->
+<section class="story" id="hikaye">
+  <div class="container">
+    <div class="story-layout" data-reveal>
+      <div class="story-text">
+        <div class="eyebrow">Our Founding</div>
+        <h2>Since 2003 — field experience, software strength</h2>
+        <p>Altis Technology provides RFID system integration, software, and hardware development services to large national and international companies. For more than 20 years, we have handled every project with a sculptor's care; we fully understand our customers' goals and develop site-specific solutions.</p>
+        <p>Our field-reality-first approach covers the entire process, from reader and sensor to ERP integration, from pilot project to full-scale operation. We design software and hardware not separately, but as a whole.</p>
+      </div>
+      <div class="milestones">
+        <div class="milestone">
+          <div class="ms-year">2003</div>
+          <div class="ms-body">
+            <h3>Founded</h3>
+            <p>Founded in Istanbul, Altis Technology began its journey with RFID project integration and software development.</p>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="ms-year">2019</div>
+          <div class="ms-body">
+            <h3>Bilişim 500 First Place</h3>
+            <p>Named Turkey's fastest-growing IT company according to the 2020 Bilişim 500 study.</p>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="ms-year">2024</div>
+          <div class="ms-body">
+            <h3>5 Platforms, 4 Technology Areas</h3>
+            <p>A complete ecosystem with the Tag&amp;Trace, Predictivo, Pick-to-Light, Asset Tag&amp;Trace, and Rox Card platforms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Yaklaşımımız ===== -->
+<section class="principles">
+  <div class="container">
+    <SectionHead
+      eyebrow="Our Approach"
+      heading="We build working operation systems, not just technology"
+    />
+    <div class="principles-grid" data-reveal data-reveal-delay="100">
+      <article class="principle-card">
+        <div class="pc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Field Reality</h3>
+        <p>We design our solutions not just as a dashboard, but together with the reader, sensor, label, operator, and existing ERP/WMS/MES flow. No software is written before field conditions are understood.</p>
+      </article>
+      <article class="principle-card">
+        <div class="pc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Integration Discipline</h3>
+        <p>We position RFID and IoT data as a controlled, measurable orchestration layer without changing existing systems. We don't copy data, we establish real-time connections.</p>
+      </article>
+      <article class="principle-card">
+        <div class="pc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Measurable Value</h3>
+        <p>We define pilot scope with clear metrics like inventory accuracy, counting speed, OEE, energy consumption, and downtime. Success is measured in the field.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Bilişim 500 ===== -->
+<section class="award-section">
+  <div class="container">
+    <div class="award-inner" data-reveal>
+      <div class="award-text">
+        <div class="eyebrow award-eyebrow">Our Achievements · 2020</div>
+        <h2>Turkey's Fastest-Growing IT Company</h2>
+        <p>According to the 2020 Bilişim 500 Plus Study, Altis Technology earned the title of Turkey's fastest-growing IT company in 2019. It ranked at the top in the system integration, hardware, and service categories.</p>
+        <p class="award-source">Source: Bilişim 500 Plus Study, 2020</p>
+      </div>
+      <div class="award-cards">
+        <div class="award-card">
+          <div class="rank">#1</div>
+          <div class="cat">Fastest-Growing Companies</div>
+        </div>
+        <div class="award-card">
+          <div class="rank">#107</div>
+          <div class="cat">System Integrator &amp; Partner</div>
+        </div>
+        <div class="award-card">
+          <div class="rank">#87</div>
+          <div class="cat">Hardware Category</div>
+        </div>
+        <div class="award-card">
+          <div class="rank">#79</div>
+          <div class="cat">Service Category</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Teknoloji Alanları ===== -->
+<section class="tech-areas">
+  <div class="container">
+    <SectionHead
+      eyebrow="Uzmanlık Alanlarımız"
+      heading="RFID'den IoT'ye, Auto-ID'den RTLS'e — tek çatı altında"
+    />
+    <div class="tech-tags">
+      <span class="tech-tag tech-tag--primary">RFID</span>
+      <span class="tech-tag">Auto-ID</span>
+      <span class="tech-tag">IoT · IIoT</span>
+      <span class="tech-tag">RTLS</span>
+      <span class="tech-tag">Pick-to-Light</span>
+      <span class="tech-tag">Endüstri 4.0</span>
+      <span class="tech-tag">Edge Computing</span>
+      <span class="tech-tag">Barkod</span>
+      <span class="tech-tag">BLE</span>
+      <span class="tech-tag">UWB</span>
+      <span class="tech-tag">SCADA</span>
+      <span class="tech-tag">PLC Entegrasyonu</span>
+      <span class="tech-tag">ERP / SAP</span>
+      <span class="tech-tag">WMS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Partnerler ===== -->
+<section class="partners">
+  <div class="container">
+    <SectionHead
+      eyebrow="Çözüm Ortaklarımız"
+      heading="Küresel markalarla, yerel uzmanlıkla"
+      description="Dünyanın önde gelen teknoloji markalarının Türkiye resmi iş ortağı olarak en güncel çözümleri sahaya taşıyoruz."
+    />
+    <div class="partners-grid" data-reveal data-reveal-delay="100">
+
+      <article class="partner-card">
+        <div class="partner-header">
+          <div class="partner-badge" style="background:#004990">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <div class="partner-brand">Stanley Healthcare</div>
+            <div class="partner-role">Türkiye Resmi Çözüm Ortağı</div>
+          </div>
+        </div>
+        <p>Hastane ve sağlık tesislerinde RTLS (Gerçek Zamanlı Konum Sistemi) ve bebek güvenlik sistemleri alanında Türkiye çözüm ortağıyız.</p>
+        <div class="partner-tags">
+          <span>RTLS</span>
+          <span>Bebek Koruma</span>
+          <span>Hastane</span>
+          <span>Konum Takibi</span>
+        </div>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-header">
+          <div class="partner-badge" style="background:#e04e0a">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div>
+            <div class="partner-brand">Banner Engineering</div>
+            <div class="partner-role">Türkiye Resmi Distribütörü</div>
+          </div>
+        </div>
+        <p>IIoT sensör ve kablosuz otomasyon teknolojilerinde dünya lideri Banner Engineering'in Snap Signal çözümlerini Türkiye'de sunuyoruz.</p>
+        <div class="partner-tags">
+          <span>IIoT Sensör</span>
+          <span>Snap Signal</span>
+          <span>IO-Link</span>
+          <span>Endüstriyel Otomasyon</span>
+        </div>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-header">
+          <div class="partner-badge" style="background:#0073cf">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div>
+            <div class="partner-brand">Vuzix</div>
+            <div class="partner-role">Türkiye Resmi Distribütörü</div>
+          </div>
+        </div>
+        <p>Depo, üretim ve saha operasyonlarına yönelik Vuzix akıllı gözlüklerini (Blade 2, M400, M4000) Türkiye'de tedarik ediyoruz.</p>
+        <div class="partner-tags">
+          <span>Akıllı Gözlük</span>
+          <span>Hands-free AR</span>
+          <span>Depo</span>
+          <span>Üretim</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Referanslar ===== -->
+<section class="refs">
+  <div class="container">
+    <LogoMarquee logos={partnerLogos} label="Çözüm Ortakları &amp; Tedarikçiler" />
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<CTABanner
+  heading="Projenizi birlikte değerlendirelim"
+  description="RFID, IoT, RTLS veya saha otomasyon projeniz için Altis Teknoloji ekibiyle tanışın."
+  secondaryLabel="Platformları İncele"
+  secondaryHref="/platformlar/tag-trace/"
+/>
+
+</Base>
+
+<style>
+/* ===== Hero ===== */
+.about-hero {
+  position: relative;
+  padding: 110px 0 90px;
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%);
+  overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.about-eyebrow { color: var(--cyan); }
+.about-eyebrow::before { background: var(--cyan); }
+.about-hero h1 {
+  max-width: 860px;
+  font-size: clamp(32px, 4.2vw, 58px);
+  line-height: 1.13;
+  color: #fff;
+  margin: 0 0 20px;
+}
+.hero-sub {
+  max-width: 680px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 44px;
+}
+.about-hero :global(.stat-strip) { max-width: 640px; margin-bottom: 40px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ===== Story ===== */
+.story { background: #fff; }
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.story-text .eyebrow { margin-bottom: 16px; }
+.story-text h2 {
+  font-size: clamp(22px, 2.4vw, 34px);
+  color: var(--primary);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+.story-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.story-text p:last-child { margin-bottom: 0; }
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+}
+.milestone {
+  position: relative;
+  padding: 0 0 36px 28px;
+}
+.milestone:last-child { padding-bottom: 0; }
+.milestone::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cyan);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+.ms-year {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.ms-body h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.ms-body p { font-size: 13.5px; line-height: 1.65; color: var(--text-muted); margin: 0; }
+
+/* ===== Principles ===== */
+.principles { background: var(--bg-soft, #f6f8fc); }
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.principle-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--cyan);
+  border-radius: 10px;
+  padding: 28px 26px;
+}
+.pc-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-blue, #eef3ff);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.principle-card h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+.principle-card p { font-size: 14px; line-height: 1.75; color: var(--text-muted); margin: 0; }
+
+/* ===== Award ===== */
+.award-section {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%);
+}
+.award-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.award-eyebrow { color: var(--cyan); }
+.award-eyebrow::before { background: var(--cyan); }
+.award-text h2 {
+  color: #fff;
+  font-size: clamp(24px, 2.8vw, 40px);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.award-text p { color: rgba(255,255,255,.75); font-size: 15px; line-height: 1.75; margin-bottom: 12px; }
+.award-source { font-size: 11.5px !important; color: rgba(255,255,255,.38) !important; font-family: "JetBrains Mono", monospace; margin-bottom: 0 !important; }
+.award-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.award-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 22px 18px;
+  text-align: center;
+  transition: background .2s;
+}
+.award-card:hover { background: rgba(255,255,255,.12); }
+.award-card .rank {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.award-card .cat {
+  font-size: 11.5px;
+  color: rgba(255,255,255,.65);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* ===== Tech Areas ===== */
+.tech-areas { background: #fff; }
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.tech-tag {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 24px;
+  background: var(--bg-soft, #f6f8fc);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  transition: background .15s, color .15s, border-color .15s;
+  cursor: default;
+}
+.tech-tag:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.tech-tag--primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* ===== Partners ===== */
+.partners { background: var(--bg-soft, #f6f8fc); }
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.partner-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 26px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow .2s, transform .2s;
+}
+.partner-card:hover { box-shadow: 0 8px 24px rgba(0,18,92,.09); transform: translateY(-3px); }
+.partner-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.partner-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.partner-brand { font-size: 15px; font-weight: 700; color: var(--primary); line-height: 1.25; margin-bottom: 4px; }
+.partner-role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.partner-card > p { font-size: 13.5px; line-height: 1.7; color: var(--text-muted); margin: 0; flex: 1; }
+.partner-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.partner-tags span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--bg-blue, #eef3ff);
+  border: 1px solid rgba(0,18,92,.1);
+  padding: 3px 9px;
+  border-radius: 5px;
+}
+
+/* ===== Refs ===== */
+.refs { padding: 60px 0; background: #fff; text-align: center; }
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .story-layout { grid-template-columns: 1fr; gap: 48px; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .award-inner { grid-template-columns: 1fr; gap: 44px; }
+  .partners-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .award-cards { grid-template-columns: 1fr 1fr; }
+}
+</style>

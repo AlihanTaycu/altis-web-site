@@ -1,0 +1,35 @@
+---
+import Base from '../../../layouts/Base.astro';
+---
+
+<Base title="Manufacturing | Altis Technology" description="OEE, energy, predictive maintenance, and production visibility for manufacturing teams." lang="en" alternateUrl="https://www.altis.com.tr/sektorler/uretim/">
+  <section class="sector-hero">
+    <div class="container sector-grid">
+      <div>
+        <p class="eyebrow">Sector</p>
+        <h1>Manufacturing</h1>
+        <p class="lead">OEE, predictive maintenance, energy monitoring, production traceability, SCADA/MES/ERP integration, and operational dashboards for manufacturing teams.</p>
+        <a class="btn btn-primary btn-lg" href="/en/contact/">Talk to an Expert</a>
+      </div>
+      <img src="/images/sectors/uretim-marketing.png" alt="Industrial IoT and manufacturing monitoring" width="1844" height="921" loading="eager" />
+    </div>
+  </section>
+  <section class="container content-grid">
+    <article><h2>Production visibility</h2><p>Collect machine, line, operator, and product data to create traceable production records and dashboards.</p></article>
+    <article><h2>Maintenance intelligence</h2><p>Use IoT and operational data to support predictive maintenance, alarms, and faster intervention workflows.</p></article>
+    <article><h2>Enterprise integration</h2><p>Connect production data with MES, ERP, SCADA, quality, and reporting systems for clearer decision making.</p></article>
+  </section>
+</Base>
+
+<style>
+  .sector-hero{padding:88px 0;background:linear-gradient(180deg,#fff,var(--bg-soft))}
+  .sector-grid{display:grid;grid-template-columns:1fr minmax(320px,.9fr);gap:40px;align-items:center}
+  .eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  h1{color:var(--primary);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin:12px 0 16px}
+  .lead{max-width:760px;color:var(--text-muted);font-size:1.12rem;line-height:1.75;margin-bottom:28px}
+  img{width:100%;border-radius:12px;border:1px solid var(--border);background:#fff}
+  .content-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:64px 0 88px}
+  article{padding:24px;border:1px solid var(--border);border-radius:12px;background:#fff}
+  h2{color:var(--primary);font-size:1.15rem} article p{color:var(--text-muted);line-height:1.65}
+  @media(max-width:900px){.sector-grid,.content-grid{grid-template-columns:1fr}}
+</style>

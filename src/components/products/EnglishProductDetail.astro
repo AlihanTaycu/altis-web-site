@@ -9,6 +9,7 @@ type Item = {
   image: string;
   gallery?: string[];
   datasheet?: string;
+  datasheetEn?: string | null;
   shortDesc: string;
   description?: string;
   tags: string[];
@@ -30,10 +31,16 @@ const displayTitle = (value: string) => value
   .replace(/Okuyucu/g, 'Reader')
   .replace(/RFID Yazıcı/g, 'RFID Printer')
   .replace(/Yazıcı/g, 'Printer')
+  .replace(/Metal Yüzey/g, 'On-Metal')
   .replace(/El Terminali/g, 'Handheld Terminal');
 const displayTag = (value: string) => translateEnglishTags([value])[0];
 const productTitle = displayTitle(item.title);
-const englishDatasheet = (value?: string) => value?.includes('-datasheet-en.pdf') ? value : value?.replace(/\.pdf$/, '-en.pdf');
+const englishDatasheet = (product: Item) => {
+  if (product.datasheetEn === null) return undefined;
+  if (product.datasheetEn) return product.datasheetEn;
+  return product.datasheet?.includes('-datasheet-en.pdf') ? product.datasheet : product.datasheet?.replace(/\.pdf$/, '-en.pdf');
+};
+const datasheetHref = englishDatasheet(item);
 const gallery = item.gallery && item.gallery.length > 0 ? item.gallery : [item.image];
 const contactHref = `/en/contact/?product=${encodeURIComponent(productTitle)}`;
 const description = `${productTitle} is part of Altis Technology's RFID product portfolio. Review gallery images, open the technical datasheet, and request project-based pricing for configuration and delivery details.`;
@@ -76,8 +83,8 @@ const schema = {
           ))}
         </div>
       )}
-      {item.datasheet && (
-        <a href={englishDatasheet(item.datasheet)} class="datasheet-card" target="_blank" rel="noopener">
+      {datasheetHref && (
+        <a href={datasheetHref} class="datasheet-card" target="_blank" rel="noopener">
           <span class="datasheet-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 2h8l4 4v16H6V2Z" fill="currentColor" opacity=".14"/><path d="M14 2v5h5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 2h8l5 5v15H6V2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.4 15.8h7.2M8.4 18.2h5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           </span>

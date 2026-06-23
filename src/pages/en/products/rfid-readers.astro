@@ -6,6 +6,10 @@ const displayTitle = (value: string) => value
   .replace(/RFID Okuyucu/g, 'RFID Reader')
   .replace(/Okuyucu/g, 'Reader');
 
+const displayPorts = (value: string) => value
+  .replace(/(\d+)['’]ye kadar genişletilebilir/g, 'expandable up to $1')
+  .replace(/\bveya\b/g, 'or');
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -46,7 +50,7 @@ const schema = {
         {brand}
       </a>
     ))}
-    <a href="/iletisim/" class="btn btn-outline btn-sm">Request Bulk Quote</a>
+    <a href="/en/contact/" class="btn btn-outline btn-sm">Request Bulk Quote</a>
   </section>
 
   {brands.map(brand => {
@@ -68,7 +72,7 @@ const schema = {
               </a>
               <div class="card-body">
                 <span class="brand-label">{reader.brand}</span>
-                {reader.ports && <span class="port-badge">{reader.ports} Port</span>}
+                {reader.ports && <span class="port-badge">{displayPorts(reader.ports)} Port</span>}
                 <h3><a href={`/en/products/rfid-readers/${reader.slug}/`}>{displayTitle(reader.title)}</a></h3>
                 <p class="short-desc">Explore gallery images, technical datasheet, and quote options for {displayTitle(reader.title)}.</p>
                 {reader.connectivity && (
@@ -78,7 +82,7 @@ const schema = {
                 )}
                 <div class="card-actions">
                   <a href={`/en/products/rfid-readers/${reader.slug}/`} class="btn btn-primary btn-sm">View Product</a>
-                  <a href={`/iletisim/?urun=${encodeURIComponent(displayTitle(reader.title))}`} class="btn btn-outline btn-sm">Request Quote</a>
+                  <a href={`/en/contact/?product=${encodeURIComponent(displayTitle(reader.title))}`} class="btn btn-outline btn-sm">Request Quote</a>
                 </div>
               </div>
             </article>
@@ -91,7 +95,7 @@ const schema = {
   <section class="cta-strip">
     <div class="container">
       <p>Need help choosing the right RFID reader for your project?</p>
-      <a href="/iletisim/" class="btn btn-primary">Talk to an Expert</a>
+      <a href="/en/contact/" class="btn btn-primary">Talk to an Expert</a>
     </div>
   </section>
 </Base>

@@ -13,6 +13,8 @@ interface Props {
   external?: boolean;
 }
 
+const isEnglish = Astro.url.pathname.startsWith('/en');
+
 const {
   href,
   title,
@@ -20,7 +22,7 @@ const {
   tag,
   variant = 'default',
   Icon,
-  cta = 'İncele',
+  cta = isEnglish ? 'Explore' : 'İncele',
   external = false,
 } = Astro.props;
 
