@@ -12,6 +12,7 @@ export type Reader = {
   ports?: string;
   connectivity?: string[];
   datasheet?: string;
+  datasheetEn?: string | null;
 };
 
 export const readers: Reader[] = [
@@ -194,6 +195,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar62-lanpoe',
     datasheet: '/assets/products/nordic-id-ar62-lanpoe/nordic-id-ar62-lanpoe-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npf00007-eu.pdf',
     title: 'Nordic ID AR62 4 Port RFID Okuyucu (LAN&PoE)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar62-lanpoe/nordic-id-ar62-lanpoe-1.webp',
@@ -210,6 +212,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar62-lanpoe-wlan',
     datasheet: '/assets/products/nordic-id-ar62-lanpoe-wlan/nordic-id-ar62-lanpoe-wlan-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npf00008-eu.pdf',
     title: 'Nordic ID AR62 4 Port RFID Okuyucu (LAN&PoE&WLAN)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar62-lanpoe-wlan/nordic-id-ar62-lanpoe-wlan-1.webp',
@@ -226,6 +229,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar62-lanpoe-wlan-3g',
     datasheet: '/assets/products/nordic-id-ar62-lanpoe-wlan-3g/nordic-id-ar62-lanpoe-wlan-3g-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npf00009-eu.pdf',
     title: 'Nordic ID AR62 4 Port RFID Okuyucu (LAN&PoE&WLAN/3G)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar62-lanpoe-wlan-3g/nordic-id-ar62-lanpoe-wlan-3g-1.webp',
@@ -244,6 +248,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar82-lanpoe',
     datasheet: '/assets/products/nordic-id-ar82-lanpoe/nordic-id-ar82-lanpoe-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npf00003-eu.pdf',
     title: 'Nordic ID AR82 16 Port RFID Okuyucu (LAN&PoE)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar82-lanpoe/nordic-id-ar82-lanpoe-1.webp',
@@ -260,6 +265,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar82-lanpoe-wlan',
     datasheet: '/assets/products/nordic-id-ar82-lanpoe-wlan/nordic-id-ar82-lanpoe-wlan-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npf00004-eu.pdf',
     title: 'Nordic ID AR82 16 Port RFID Okuyucu (LAN&PoE/WLAN)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar82-lanpoe-wlan/nordic-id-ar82-lanpoe-wlan-1.webp',
@@ -276,6 +282,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar82-lanpoe-wlan-3g',
     datasheet: '/assets/products/nordic-id-ar82-lanpoe-wlan-3g/nordic-id-ar82-lanpoe-wlan-3g-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npf00005-eu.pdf',
     title: 'Nordic ID AR82 16 Port RFID Okuyucu (LAN&PoE&WLAN/3G)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar82-lanpoe-wlan-3g/nordic-id-ar82-lanpoe-wlan-3g-1.webp',
@@ -294,6 +301,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar85-beam-lanpoe',
     datasheet: '/assets/products/nordic-id-ar85-beam-lanpoe/nordic-id-ar85-beam-lanpoe-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npd00003-eu.pdf',
     title: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar85-beam-lanpoe/nordic-id-ar85-beam-lanpoe-1.webp',
@@ -309,6 +317,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar85-beam-lanpoe-wlan',
     datasheet: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan/nordic-id-ar85-beam-lanpoe-wlan-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npd00004-eu.pdf',
     title: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE/WLAN)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan/nordic-id-ar85-beam-lanpoe-wlan-1.webp',
@@ -324,6 +333,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-ar85-beam-lanpoe-wlan-3g',
     datasheet: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan-3g/nordic-id-ar85-beam-lanpoe-wlan-3g-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npd00005-eu.pdf',
     title: 'Nordic ID AR85 Beam Okuyucu (LAN&PoE&WLAN/3G)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-ar85-beam-lanpoe-wlan-3g/nordic-id-ar85-beam-lanpoe-wlan-3g-1.webp',
@@ -341,6 +351,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-exa21-ble-usb',
     datasheet: '/assets/products/nordic-id-exa21-ble-usb/nordic-id-exa21-ble-usb-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/iwc00001-eu.pdf',
     title: 'Nordic ID EXA21 UHF RFID Okuyucu (BLE/USB)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-exa21-ble-usb/nordic-id-exa21-ble-usb-1.webp',
@@ -355,6 +366,7 @@ export const readers: Reader[] = [
   },
   {
     slug: 'nordic-id-exa31-ble-2d',
+    datasheetEn: null,
     title: 'Nordic ID EXA31 UHF RFID Okuyucu (BLE/2D)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-exa31-ble-2d/nordic-id-exa31-ble-2d-1.webp',
@@ -370,6 +382,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s1-usb',
     datasheet: '/assets/products/nordic-id-sampo-s1-usb/nordic-id-sampo-s1-usb-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npa00001-eu.pdf',
     title: 'Nordic ID Sampo S1 UHF RFID Okuyucu (USB)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s1-usb/nordic-id-sampo-s1-usb-1.webp',
@@ -385,6 +398,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s1-usb-3xaux',
     datasheet: '/assets/products/nordic-id-sampo-s1-usb-3xaux/nordic-id-sampo-s1-usb-3xaux-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npa00013-eu.pdf',
     title: 'Nordic ID Sampo S1 UHF RFID Okuyucu (USB/3xAUX)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s1-usb-3xaux/nordic-id-sampo-s1-usb-3xaux-1.webp',
@@ -400,6 +414,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s2-one',
     datasheet: '/assets/products/nordic-id-sampo-s2-one/nordic-id-sampo-s2-one-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npg00006-eu.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu One',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s2-one/nordic-id-sampo-s2-one-1.webp',
@@ -415,6 +430,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s2-one-wlan',
     datasheet: '/assets/products/nordic-id-sampo-s2-one-wlan/nordic-id-sampo-s2-one-wlan-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npg00007-eu.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu One (WLAN)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s2-one-wlan/nordic-id-sampo-s2-one-wlan-1.webp',
@@ -430,6 +446,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s2-one-wlan-3g',
     datasheet: '/assets/products/nordic-id-sampo-s2-one-wlan-3g/nordic-id-sampo-s2-one-wlan-3g-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npg00008-eu.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu One (WLAN/3G)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s2-one-wlan-3g/nordic-id-sampo-s2-one-wlan-3g-1.webp',
@@ -445,6 +462,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s2-usblan',
     datasheet: '/assets/products/nordic-id-sampo-s2-usblan/nordic-id-sampo-s2-usblan-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npg00003-eu.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu (USB&LAN)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s2-usblan/nordic-id-sampo-s2-usblan-1.webp',
@@ -460,6 +478,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s2-usblan-3g',
     datasheet: '/assets/products/nordic-id-sampo-s2-usblan-3g/nordic-id-sampo-s2-usblan-3g-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npg00004-eu.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu (USB&LAN/3G)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s2-usblan-3g/nordic-id-sampo-s2-usblan-3g-1.webp',
@@ -475,6 +494,7 @@ export const readers: Reader[] = [
   {
     slug: 'nordic-id-sampo-s2-usblanpoe',
     datasheet: '/assets/products/nordic-id-sampo-s2-usblanpoe/nordic-id-sampo-s2-usblanpoe-datasheet.pdf',
+    datasheetEn: '/PDF/EN/READER_DATASHEET/Nordic%20ID/npg00005-eu.pdf',
     title: 'Nordic ID Sampo S2 UHF RFID Okuyucu (USB&LAN&PoE)',
     brand: 'Nordic ID',
     image: '/assets/products/nordic-id-sampo-s2-usblanpoe/nordic-id-sampo-s2-usblanpoe-1.webp',

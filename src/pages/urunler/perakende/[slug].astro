@@ -88,8 +88,22 @@ const schema = {
       <p class="description">{product.shortDesc}</p>
 
       <div class="cta-group">
-        <a href={contactHref} class="btn btn-primary">Fiyat Teklifi Al</a>
-        <a href="/iletisim/" class="btn btn-outline">Uzmanla Konuş</a>
+        <a
+          href={contactHref}
+          class="btn btn-primary"
+          data-quote-trigger
+          data-product-slug={product.slug}
+          data-product-title={product.title}
+          data-product-category={product.category}
+          data-product-datasheet={product.datasheet}
+        >Fiyat Teklifi Al</a>
+        <a
+          href="/iletisim/"
+          class="btn btn-outline"
+          data-expert-trigger
+          data-product-slug={product.slug}
+          data-product-title={product.title}
+        >Uzmanla Konuş</a>
       </div>
 
       <div class="trust-row">
@@ -183,7 +197,15 @@ const schema = {
   <section class="cta-strip">
     <div class="container">
       <p>Bu ürün hakkında daha fazla bilgi almak ister misiniz?</p>
-      <a href={contactHref} class="btn btn-primary">Fiyat Teklifi Al</a>
+      <a
+        href={contactHref}
+        class="btn btn-primary"
+        data-quote-trigger
+        data-product-slug={product.slug}
+        data-product-title={product.title}
+        data-product-category={product.category}
+        data-product-datasheet={product.datasheet}
+      >Fiyat Teklifi Al</a>
     </div>
   </section>
 
@@ -354,6 +376,34 @@ const schema = {
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       items.forEach((el) => io.observe(el));
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('[data-quote-trigger]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          if (!window.AikosChat || typeof window.AikosChat.openQuoteFlow !== 'function') return;
+          e.preventDefault();
+          window.AikosChat.openQuoteFlow({
+            slug: el.dataset.productSlug || '',
+            title: el.dataset.productTitle || '',
+            category: el.dataset.productCategory || '',
+            datasheet: el.dataset.productDatasheet || '',
+          });
+        });
+      });
+
+      document.querySelectorAll('[data-expert-trigger]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          if (!window.AikosChat || typeof window.AikosChat.openExpertFlow !== 'function') return;
+          e.preventDefault();
+          window.AikosChat.openExpertFlow({
+            slug: el.dataset.productSlug || '',
+            title: el.dataset.productTitle || '',
+          });
+        });
+      });
     })();
   </script>
 </Base>

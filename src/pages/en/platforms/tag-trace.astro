@@ -1,0 +1,961 @@
+﻿---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
+import CTABanner from '../../../components/sections/CTABanner.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tag&Trace",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "RFID orchestration platform for managing operations from a single center",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
+};
+---
+
+<Base
+  title="Tag&Trace - RFID Orchestration Platform | Altis Technology"
+  description="Tag&Trace is an RFID orchestration platform that connects RFID readers, printers, barcode systems, PLCs, sensors, and enterprise systems."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/platformlar/tag-trace/"
+>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/platforms/tag-trace/">Platforms</a>
+      <span class="sep">/</span>
+      <span style="color:var(--primary);font-weight:600">Tag&amp;Trace</span>
+    </div>
+    <div class="hero-inner" style="margin-top:32px">
+      <div>
+        <div class="platform-pill">
+          <span class="pill-tag">Platform</span>
+          <span>RFID and Auto-ID Orchestration · Edge Framework</span>
+        </div>
+        <div class="product-name" style="background-position: center center; background-size: cover; margin: 24px 0px 14px;">Tag<span class="amp" style=""><span style="color: rgba(0, 0, 0, 0.808);">&nbsp;&amp;&nbsp;</span></span>Trace</div>
+        <h1 class="product-tag">Manage your RFID devices with confidence.</h1>
+        <p class="hero-sub">A powerful orchestration and edge framework platform for RFID readers, printers, barcode systems, PLCs, sensors, and enterprise systems. Manage RFID hardware from one center, process data at the source, and transfer it reliably to your business systems.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/en/contact/">Request Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#capabilities">Explore Capabilities</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="v" data-count>50+</div><div class="l">supported hardware</div></div>
+          <div class="hero-stat"><div class="v" data-count>9</div><div class="l">protocols</div></div>
+          <div class="hero-stat"><div class="v">7×24</div><div class="l">edge continuity</div></div>
+        </div>
+      </div>
+
+      <!-- Live EPC stream panel -->
+      <div class="hero-panel">
+        <div class="panel-head">
+          <span class="ttl">EPC Stream · Live</span>
+          <span class="right"><span class="live-dot"></span>RDR-01 · Dispatch Door A</span>
+        </div>
+        <div class="epc-stream">
+          <div class="epc-row new">
+            <span class="ts">14:32:07.841</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 02 1F</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+          <div class="epc-row new">
+            <span class="ts">14:32:07.839</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 02 1E</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+          <div class="epc-row">
+            <span class="ts">14:32:07.612</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 02 1D</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+          <div class="epc-row">
+            <span class="ts">14:32:06.204</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 01 A2</span></span>
+            <span class="ev warn">⚠ MISSING</span>
+          </div>
+          <div class="epc-row">
+            <span class="ts">14:32:05.991</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 01 A1</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+          <div class="epc-row">
+            <span class="ts">14:32:05.440</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 01 A0</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+          <div class="epc-row">
+            <span class="ts">14:32:04.118</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 00 F9</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+          <div class="epc-row dim">
+            <span class="ts">14:32:03.882</span>
+            <span class="epc">E2 80 11 60 <span class="hi">60 00 00 F8</span></span>
+            <span class="ev ok">✓ MATCH</span>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <span>ORDER-78912 · 7/8 matched</span>
+          <span style="color:#15a06b;font-weight:600">→ SAP confirmed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trusted by -->
+<div class="logos-strip">
+  <div class="container">
+    <div class="lbl">— Field-tested and integrated with enterprise systems —</div>
+    <div class="logos-row">
+      <div class="logo-box">Zebra</div>
+      <div class="logo-box">Impinj</div>
+      <div class="logo-box">Honeywell</div>
+      <div class="logo-box">Nordic ID</div>
+      <div class="logo-box">SATO</div>
+      <div class="logo-box">Datalogic</div>
+    </div>
+  </div>
+</div>
+
+<!-- Three Pillars -->
+<section class="pillars" id="capabilities">
+  <div class="container">
+    <SectionHead
+      eyebrow="Three Core Capabilities"
+      heading="Manage devices, process data, connect systems"
+      description="Tag&amp;Trace is built around three core capabilities that turn complex RFID hardware deployments into a standard operating interface."
+    />
+    <div class="pillar-grid" data-reveal data-reveal-delay="100">
+      <div class="pillar">
+        <div class="pn">01 · DEVICES</div>
+        <h3>Vendor-independent device management</h3>
+        <p>RFID readers, printers, barcode systems, PLCs, and sensors are registered, configured, and monitored from one center. Different brands and models are abstracted into a standard device object.</p>
+        <ul>
+          <li>Reader antenna, power, and session management</li>
+          <li>Printer templates and print queue</li>
+          <li>Device health and uptime monitoring</li>
+          <li>Bulk configuration profiles</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pn">02 · DATA</div>
+        <h3>Visual rule engine and edge processing</h3>
+        <p>Field reads are processed in a visual flow editor. Filtering, matching, validation, and action rules are designed without code and run locally on edge nodes.</p>
+        <ul>
+          <li>In / Process / Out nodes</li>
+          <li>Local edge execution</li>
+          <li>Offline-first resilience</li>
+          <li>Rule versioning &amp; deploy</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pn">03 · INTEGRATION</div>
+        <h3>Enterprise system integration</h3>
+        <p>Reliable two-way data flow is established with ERP, WMS, SAP, MES, and other enterprise systems. Industry-standard protocols connect every system.</p>
+        <ul>
+          <li>REST API · MQTT · OPC UA</li>
+          <li>SAP / ERP / WMS adapters</li>
+          <li>TCP Socket · Modbus · HTTP/S</li>
+          <li>Audit log &amp; data lineage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature deep dives -->
+<section>
+  <div class="container">
+    <SectionHead
+      eyebrow="Capabilities · Deep Dive"
+      heading="What does Tag&amp;Trace do?"
+    />
+
+    <!-- Feature 0: Rule Engine -->
+    <div class="feature-block flip">
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Rule · Dispatch Verification</span>
+          <span class="right">flow active · dispatch-verification</span>
+        </div>
+        <div class="surface-body" style="padding:0">
+          <div class="rule-flow">
+            <div class="rnode trig" style="left:10px;top:30px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></div>
+              <div class="body">RFID Reader In<span class="meta">RDR-01 · port 5</span></div>
+            </div>
+            <div class="rnode trig" style="left:10px;top:140px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5"/></svg></div>
+              <div class="body">MQTT In<span class="meta">topic: erp/ship</span></div>
+            </div>
+            <div class="rnode cond" style="left:200px;top:90px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83"/></svg></div>
+              <div class="body">Validate &amp; Match<span class="meta">epc → order</span></div>
+            </div>
+            <div class="rnode act" style="left:380px;top:30px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></div>
+              <div class="body">HTTP → SAP<span class="meta">POST /sap/ship</span></div>
+            </div>
+            <div class="rnode act" style="left:380px;top:140px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4"/></svg></div>
+              <div class="body">Printer Out<span class="meta">PRN-03 · ZPL</span></div>
+            </div>
+            <div class="rnode act" style="left:380px;top:250px">
+              <div class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+              <div class="body">Alert: Missing<span class="meta">ops@altis</span></div>
+            </div>
+            <svg class="rflow-edge" viewBox="0 0 520 320">
+              <path d="M150,46 C180,46 180,106 200,106"/>
+              <path d="M150,156 C180,156 180,116 200,116"/>
+              <path d="M340,106 C360,106 360,46 380,46"/>
+              <path d="M340,106 C360,106 360,156 380,156"/>
+              <path d="M340,106 C360,106 360,266 380,266"/>
+            </svg>
+            <svg class="rflow-pulse" viewBox="0 0 520 320" aria-hidden="true">
+              <path pathLength="100" d="M150,46 C180,46 180,106 200,106"/>
+              <path pathLength="100" d="M150,156 C180,156 180,116 200,116"/>
+              <path pathLength="100" d="M340,106 C360,106 360,46 380,46"/>
+              <path pathLength="100" d="M340,106 C360,106 360,156 380,156"/>
+              <path pathLength="100" d="M340,106 C360,106 360,266 380,266"/>
+            </svg>
+          </div>
+          <div class="re-footer">last 30 days: 1,240 dispatches · 18 errors caught · <span style="color:#15a06b">● active</span></div>
+        </div>
+      </div>
+      <div class="copy">
+        <span class="badge">Visual Rule Engine</span>
+        <h3>Design field rules without writing code</h3>
+        <p>Data from RFID reads is processed in a visual flow editor. Which read triggers under which condition, which system it matches, and which action it creates are all defined in a drag-and-drop interface and run locally on edge nodes.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>In / Process / Out nodes</strong><span>Source, processing, and output steps are modeled with separate node types.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Local execution at the edge</strong><span>Rules keep running in the field even if the internet connection is interrupted.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Rule versioning &amp; deploy</strong><span>New rule versions are approved in a test environment and deployed to the field.</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 1: Device manager -->
+    <div class="feature-block">
+      <div class="copy">
+        <span class="badge">Device Management</span>
+        <h3>All Auto-ID hardware in one inventory</h3>
+        <p>RFID readers, printers, barcode systems, and sensors are inventoried in the same interface regardless of brand or model. Field teams see the real device name, location, last read time, and health status instead of vague device codes.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Auto-discovery</strong><span>Devices connected to the network are automatically detected and registered.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Health and uptime</strong><span>Live status, last read, ping, and error counters for every device.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Bulk configuration</strong><span>Bulk updates by profile, location, or tag.</span></div></li>
+        </ul>
+      </div>
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Device inventory</span>
+          <span class="right">182 devices · 24 locations</span>
+        </div>
+        <div class="surface-body" style="padding:0 4px">
+          <table class="devtable">
+            <thead>
+              <tr><th style="padding-left:18px">ID</th><th>Device</th><th>Type</th><th>Location</th><th style="padding-right:18px">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr data-reveal data-reveal-delay="0"><td style="padding-left:18px"><span class="id">RDR-01</span></td><td>Impinj R700</td><td><span class="devtype">READER</span></td><td>Dispatch Door A</td><td style="padding-right:18px"><span class="dev-status ok"><span class="d"></span>Running</span></td></tr>
+              <tr data-reveal data-reveal-delay="70"><td style="padding-left:18px"><span class="id">PRN-03</span></td><td>Zebra ZT411</td><td><span class="devtype">PRINTER</span></td><td>Labeling</td><td style="padding-right:18px"><span class="dev-status ok"><span class="d"></span>Ready</span></td></tr>
+              <tr data-reveal data-reveal-delay="140"><td style="padding-left:18px"><span class="id">RDR-07</span></td><td>Zebra FX9600</td><td><span class="devtype">READER</span></td><td>Production Line 2</td><td style="padding-right:18px"><span class="dev-status warn"><span class="d"></span>Maintenance</span></td></tr>
+              <tr data-reveal data-reveal-delay="210"><td style="padding-left:18px"><span class="id">SNS-12</span></td><td>Temperature</td><td><span class="devtype">SENSOR</span></td><td>Cold Storage</td><td style="padding-right:18px"><span class="dev-status ok"><span class="d"></span>Running</span></td></tr>
+              <tr data-reveal data-reveal-delay="280"><td style="padding-left:18px"><span class="id">BCR-04</span></td><td>Honeywell</td><td><span class="devtype">BARCODE</span></td><td>Packing</td><td style="padding-right:18px"><span class="dev-status ok"><span class="d"></span>Running</span></td></tr>
+              <tr data-reveal data-reveal-delay="350"><td style="padding-left:18px"><span class="id">PLC-02</span></td><td>Siemens S7</td><td><span class="devtype">PLC</span></td><td>Conveyor 1</td><td style="padding-right:18px"><span class="dev-status ok"><span class="d"></span>Running</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Reader config -->
+    <div class="feature-block flip">
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">RDR-01 · Antenna configuration</span>
+          <span class="right">Impinj R700 · v3.2</span>
+        </div>
+        <div class="surface-body">
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:var(--slate);margin-bottom:4px">Antenna 1 — Power (dBm)</div>
+            <div class="slider-mock"><span class="dot"></span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:4px"><span>10</span><span style="color:var(--navy-800);font-weight:600">27.5 dBm</span><span>33</span></div>
+          </div>
+          <div class="config-panel">
+            <div>
+              <div class="cfg-row"><span class="k">Read mode</span><span class="v">Autonomous</span></div>
+              <div class="cfg-row"><span class="k">Session</span><span class="v">S1</span></div>
+              <div class="cfg-row"><span class="k">Search mode</span><span class="v">Single Target</span></div>
+              <div class="cfg-row"><span class="k">Q parameter</span><span class="v">4</span></div>
+            </div>
+            <div>
+              <div class="cfg-row"><span class="k">Frequency</span><span class="v">865-868 MHz</span></div>
+              <div class="cfg-row"><span class="k">Trigger</span><span class="v">GPI Input</span></div>
+              <div class="cfg-row"><span class="k">Filter</span><span class="v">EPC prefix</span></div>
+              <div class="cfg-row"><span class="k">Connection</span><span class="v">TCP · 14150</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <span class="badge">Reader Control</span>
+        <h3>Reader profiles for field conditions</h3>
+        <p>All reader parameters such as antenna power, read mode, session, frequency, and trigger mode are managed centrally. Separate profiles can be defined for dispatch gates and production lines, so field staff only select the right scenario profile.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Profile-based management</strong><span>Configuration per scenario with one-click switching.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>GPI / GPO support</strong><span>Photoelectric cells, light barriers, and door sensors can be used as triggers.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>EPC filtering</strong><span>Prefix and mask filters read only the relevant tags.</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 3: Label templates -->
+    <div class="feature-block">
+      <div class="copy">
+        <span class="badge">Labels &amp; Printers</span>
+        <h3>ZPL templates with dynamic printing from ERP data</h3>
+        <p>Label templates are designed with a visual editor or ZPL. They are dynamically filled with order, product, and dispatch data from ERP or WMS, then routed to the correct printer. Print queues are monitored and reprints are automated when errors occur.</p>
+        <ul class="kv">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>ZPL support</strong><span>Industry-standard compatibility with Zebra, Honeywell, and SATO.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>Dynamic data binding</strong><span>&#123;&#123;order.id&#125;&#125;, &#123;&#123;sku&#125;&#125;, &#123;&#123;shipDate&#125;&#125; fields are filled automatically.</span></div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><div><strong>RFID encoding</strong><span>EPC encoding, locking, and post-print read verification.</span></div></li>
+        </ul>
+      </div>
+      <div class="surface">
+        <div class="surface-head">
+          <span class="ttl">Template: SHIP-LABEL-A4</span>
+          <span class="right">RFID + Barcode + QR</span>
+        </div>
+        <div class="surface-body">
+          <div class="label-mock">
+            <div class="label-inner">
+              <div>
+                <div class="label-meta"><div class="big">ALTIS</div>SKU-44821 · ORDER-78912</div>
+                <div class="barcode" style="margin-top:14px">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="label-meta" style="margin-top:8px">044821-78912-2025</div>
+              </div>
+              <div class="qr-mock">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint)">
+            <span>EPC: <span style="color:var(--navy-800)">E2 80 11 60 60 00 02 09 84 22</span></span>
+            <span>PRN-03 · queue 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Architecture -->
+<section class="arch">
+  <div class="container">
+    <SectionHead
+      eyebrow="Architecture"
+      heading="From field to enterprise system in four layers"
+      description="Tag&amp;Trace provides a standard connection model across device, edge, platform, and enterprise layers. Each layer scales independently and every boundary communicates securely."
+    />
+    <div class="arch-diagram">
+      <div class="arch-cols">
+        <div class="arch-col">
+          <div class="lyr">L1 · DEVICE</div>
+          <h4>Field Devices</h4>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path></svg>RFID Readers</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"></rect></svg>RFID Printers</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2v16H3zM8 4h2v16H8zM13 4h2v16h-2zM18 4h1v16h-1z"></path></svg>Barcode / 2D</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect></svg>PLC / Sensor</div>
+        </div>
+        <div class="arch-col">
+          <div class="lyr">L2 · EDGE</div>
+          <h4>Edge Framework</h4>
+          <div class="arch-node core">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"></path></svg>
+            Tag&amp;Trace Edge Node
+          </div>
+          <div class="arch-node">Local rule eval</div>
+          <div class="arch-node">Offline buffer</div>
+          <div class="arch-node">Device drivers</div>
+        </div>
+        <div class="arch-col">
+          <div class="lyr">L3 · PLATFORM</div>
+          <h4>Orchestration Core</h4>
+          <div class="arch-node core">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg>
+            Tag&amp;Trace Core
+          </div>
+          <div class="arch-node">Rule engine</div>
+          <div class="arch-node">Device registry</div>
+          <div class="arch-node">RBAC · audit</div>
+        </div>
+        <div class="arch-col">
+          <div class="lyr">L4 · ENTERPRISE</div>
+          <h4>Enterprise Systems</h4>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"></path></svg>SAP / ERP</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 3v18"></path></svg>WMS</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9 9 4 9 9z"></path></svg>MES / SCADA</div>
+          <div class="arch-node"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3"></path></svg>3rd-party API</div>
+        </div>
+      </div>
+      <div class="arch-flow">
+        <span class="ln"></span>
+        <span>Field</span>
+        <span class="ln"></span>
+        <span>Edge</span>
+        <span class="ln"></span>
+        <span style="color:var(--cyan)">Platform</span>
+        <span class="ln"></span>
+        <span>Enterprise</span>
+        <span class="ln"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hardware matrix -->
+<section class="matrix">
+  <div class="container">
+    <SectionHead
+      eyebrow="Hardware Compatibility"
+      heading="Vendor-independent and compatible with your existing hardware"
+      description="Tag&amp;Trace is compatible with widely used RFID, barcode, sensor, and automation hardware. Your existing investment is preserved, and the right hardware options are selected together when new equipment is needed."
+    />
+    <div class="matrix-grid" data-reveal data-reveal-delay="100">
+      <div class="matrix-card">
+        <h5>RFID Reader</h5>
+        <div class="items">
+          <span class="chip">Impinj</span>
+          <span class="chip">Zebra</span>
+          <span class="chip">Honeywell</span>
+          <span class="chip">Alien</span>
+          <span class="chip">Nordic ID</span>
+          <span class="chip">CAEN</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>RFID / Label Printer</h5>
+        <div class="items">
+          <span class="chip">Zebra</span>
+          <span class="chip">SATO</span>
+          <span class="chip">Honeywell</span>
+          <span class="chip">Printronix</span>
+          <span class="chip">TSC</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Barcode / 2D Scanner</h5>
+        <div class="items">
+          <span class="chip">Zebra</span>
+          <span class="chip">Honeywell</span>
+          <span class="chip">Datalogic</span>
+          <span class="chip">Cognex</span>
+          <span class="chip">Newland</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>PLC / Automation</h5>
+        <div class="items">
+          <span class="chip">Siemens S7</span>
+          <span class="chip">Allen-Bradley</span>
+          <span class="chip">Mitsubishi</span>
+          <span class="chip">Beckhoff</span>
+          <span class="chip">OMRON</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Sensor &amp; IoT</h5>
+        <div class="items">
+          <span class="chip">Modbus</span>
+          <span class="chip">OPC UA</span>
+          <span class="chip">MQTT</span>
+          <span class="chip">LoRaWAN</span>
+          <span class="chip">BLE Beacons</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Handheld / Mobile</h5>
+        <div class="items">
+          <span class="chip">Zebra Android</span>
+          <span class="chip">Honeywell CT</span>
+          <span class="chip">CipherLab</span>
+          <span class="chip">Chainway</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>Enterprise System</h5>
+        <div class="items">
+          <span class="chip">SAP</span>
+          <span class="chip">Oracle</span>
+          <span class="chip">Netsuite</span>
+          <span class="chip">Logo</span>
+          <span class="chip">Custom ERP</span>
+        </div>
+      </div>
+      <div class="matrix-card">
+        <h5>WMS</h5>
+        <div class="items">
+          <span class="chip">SAP EWM</span>
+          <span class="chip">Manhattan</span>
+          <span class="chip">Blue Yonder</span>
+          <span class="chip">Custom WMS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use cases -->
+<section class="usecase-deep">
+  <div class="container">
+    <SectionHead
+      eyebrow="Use Cases"
+      heading="Where is Tag&amp;Trace used?"
+      description="In any operation that needs RFID technology, Tag&amp;Trace acts as a project-specific orchestration layer."
+    />
+    <div class="uc-grid" data-reveal data-reveal-delay="100">
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M3 9 5 4h14l2 5M9 13h6"></path></svg></div>
+        <h3>Dispatch Verification</h3>
+        <p>At RFID gate transitions, order-based product verification is performed instantly. Missing or incorrect products create live alerts, and dispatch approval or errors are sent back to ERP.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">~99.5%</div><div class="l">read accuracy</div></div>
+          <div class="uc-m"><div class="v">&lt;200ms</div><div class="l">action time</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></div>
+        <h3>Asset &amp; Fixed Asset Tracking</h3>
+        <p>Enterprise assets such as laptops, equipment, furniture, and vehicle-mounted assets are tagged with RFID or NFC; counting, assignment, and location processes drop from hours to minutes.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">×10</div><div class="l">counting speed</div></div>
+          <div class="uc-m"><div class="v">100%</div><div class="l">traceability</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"></rect><path d="M6 9V5h12v4M6 18v2h12v-2"></path></svg></div>
+        <h3>Smart Labeling</h3>
+        <p>RFID and barcode labels are printed automatically from ERP or WMS order data; EPC encoding, verification, and queue management run on the platform side.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">0</div><div class="l">manual copying</div></div>
+          <div class="uc-m"><div class="v">ZPL</div><div class="l">standard template</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10"></path><circle cx="18" cy="20" r="2"></circle></svg></div>
+        <h3>Production Traceability</h3>
+        <p>RFID reads are captured at every station on the production line; quality, process step, and operator data are sent to MES or enterprise systems.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">Trace</div><div class="l">station → product</div></div>
+          <div class="uc-m"><div class="v">Auto</div><div class="l">quality record</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+        <h3>Warehouse Location Tracking</h3>
+        <p>Pallet, case, and product locations are monitored in real time with fixed antennas or handheld terminals. Stock counting, location checks, and picking processes become faster.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">RT</div><div class="l">live location</div></div>
+          <div class="uc-m"><div class="v">WMS</div><div class="l">two-way sync</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
+        <h3>Retail &amp; Store</h3>
+        <p>For RFID counting, loss prevention, store-warehouse tracking, and customer experience scenarios, the entire chain from tag to POS is orchestrated through one platform.</p>
+        <div class="uc-metrics">
+          <div class="uc-m"><div class="v">×20</div><div class="l">counting speed</div></div>
+          <div class="uc-m"><div class="v">↓ Loss</div><div class="l">stock loss</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Integration -->
+<section class="integr">
+  <div class="container">
+    <div class="integr-grid" data-reveal data-reveal-delay="100">
+      <div>
+        <div class="eyebrow">Enterprise Integration</div>
+        <h2 style="margin-top:18px">Real integration with your existing systems</h2>
+        <p style="font-size:17px;margin-top:18px;line-height:1.6">Tag&amp;Trace is often chosen for its deep enterprise integration capability. The goal is not to copy data, but to create a two-way, auditable, real-time connection with ERP, WMS, SAP, and MES systems.</p>
+        <ul class="kv" style="margin-top:32px;display:grid;gap:14px;list-style:none;padding:0">
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:14.5px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="m5 12 5 5 9-11"></path></svg>
+            <div><strong style="color:var(--text);font-weight:600;display:block;margin-bottom:2px">Two-way synchronization</strong><span style="color:var(--text-muted)">Orders come from ERP; verification, status, and delivery updates return from the field.</span></div>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:14.5px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="m5 12 5 5 9-11"></path></svg>
+            <div><strong style="color:var(--text);font-weight:600;display:block;margin-bottom:2px">Standard adapters</strong><span style="color:var(--text-muted)">Ready connectors for SAP, Logo, Netsuite, Manhattan, and Blue Yonder.</span></div>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:14.5px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="m5 12 5 5 9-11"></path></svg>
+            <div><strong style="color:var(--text);font-weight:600;display:block;margin-bottom:2px">Custom to your systems</strong><span style="color:var(--text-muted)">Integration can be built with REST, MQTT, OPC UA, or direct database connections.</span></div>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:14.5px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="m5 12 5 5 9-11"></path></svg>
+            <div><strong style="color:var(--text);font-weight:600;display:block;margin-bottom:2px">Audit &amp; data lineage</strong><span style="color:var(--text-muted)">Where data came from, who processed it, and when it was processed remain traceable.</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="integr-visual">
+        <div class="integr-ring">
+          <div class="integr-pin" style="top:6%;left:50%;transform:translateX(-50%)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"></path></svg>
+            SAP
+          </div>
+          <div class="integr-pin" style="top:25%;right:2%">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 3v18"></path></svg>
+            WMS
+          </div>
+          <div class="integr-pin" style="bottom:25%;right:2%">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3"></path></svg>
+            REST API
+          </div>
+          <div class="integr-pin" style="bottom:6%;left:50%;transform:translateX(-50%)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5"></path></svg>
+            MQTT
+          </div>
+          <div class="integr-pin" style="bottom:25%;left:2%">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect></svg>
+            OPC UA
+          </div>
+          <div class="integr-pin" style="top:25%;left:2%">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9 9 4 9 9z"></path></svg>
+            MES
+          </div>
+          <div class="integr-center">
+            Tag&amp;Trace
+            <span class="sm">Core</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<CTABanner
+  variant="dark"
+  eyebrow="Demo &amp; Discovery"
+  heading="See Tag&amp;Trace in your own operation"
+  description="Schedule a discovery session with our team. We will review your field setup, existing hardware inventory, and goals, then return with an actionable roadmap and live demo."
+  secondaryLabel="Go to Predictivo"
+  secondaryHref="/en/platforms/predictivo/"
+/>
+</Base>
+
+<style>
+.mono{font-family:"JetBrains Mono",monospace}
+
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:64px 0 120px;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 80% -100px, rgba(24,183,214,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.platform-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.platform-pill .pill-tag{background:var(--primary);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
+.product-name{
+  font-size:clamp(56px,7vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(135deg,#00125C 0%,#1E2F8C 60%,#18B7D6 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:24px 0 14px;padding-bottom:0.12em;
+}
+.product-name .amp{font-weight:400;opacity:.75}
+.hero h1.product-tag{font-size:clamp(28px,2.6vw,38px);font-weight:700;line-height:1.2;color:var(--navy-800)}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:520px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);max-width:520px}
+.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:24px;font-weight:700;color:var(--navy-800)}
+.hero-stat .l{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+
+/* Hero visual — EPC stream panel */
+.hero-panel{
+  background:#0B1120;border:1px solid rgba(24,183,214,.25);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg),0 0 40px -10px rgba(24,183,214,.12);overflow:hidden;
+}
+.panel-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);
+}
+.panel-head .ttl{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;color:rgba(255,255,255,.9)}
+.panel-head .right{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:6px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#15a06b;box-shadow:0 0 6px #15a06b;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.epc-stream{padding:6px 0}
+.epc-row{
+  display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:10px;
+  padding:9px 18px;border-bottom:1px solid rgba(255,255,255,.04);
+  font-family:"JetBrains Mono",monospace;font-size:11px;
+  transition:background .15s;
+}
+.epc-row.new{background:rgba(24,183,214,.06);border-left:2px solid var(--cyan)}
+.epc-row.dim{opacity:.35}
+.epc-row .ts{color:rgba(255,255,255,.3);font-size:10px}
+.epc-row .epc{color:rgba(255,255,255,.55)}
+.epc-row .epc .hi{color:rgba(255,255,255,.9)}
+.epc-row .ev{font-size:10.5px;font-weight:700;letter-spacing:.04em}
+.epc-row .ev.ok{color:#15a06b}
+.epc-row .ev.warn{color:#f59e0b}
+.panel-footer{
+  padding:10px 18px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07);
+  display:flex;justify-content:space-between;
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;color:rgba(255,255,255,.35);
+}
+
+/* Rule engine flow mock */
+.rule-flow{
+  padding:24px;
+  background:repeating-radial-gradient(circle at center,rgba(0,18,92,.05) 1px,transparent 1px) 0 0 / 18px 18px,#FAFBFE;
+  position:relative;height:340px;
+}
+.rnode{position:absolute;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;font-size:11.5px;font-weight:600;color:var(--slate);display:flex;align-items:center;gap:8px;min-width:130px;box-shadow:0 4px 12px -4px rgba(0,18,92,.12)}
+.rnode .meta{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--text-faint);font-weight:500;display:block;margin-top:1px}
+.rnode.trig{border-color:var(--primary)}
+.rnode.cond{border-color:var(--cyan)}
+.rnode.act{border-color:#16a34a}
+.rnode .ic{width:22px;height:22px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rnode.trig .ic{background:var(--bg-blue);color:var(--primary)}
+.rnode.cond .ic{background:var(--cyan-soft);color:#0c7d94}
+.rnode.act .ic{background:#E6F7EE;color:#0c6b3f}
+.rnode .body{display:flex;flex-direction:column;line-height:1.2}
+.rflow-edge{position:absolute;left:0;top:0;width:520px;height:320px;pointer-events:none;overflow:visible}
+.rflow-edge path{stroke:var(--cyan);stroke-width:2;fill:none;stroke-dasharray:5 4;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-18}}
+/* Glowing packet sliding along each edge (decorative; off by default, plays only with motion) */
+.rflow-pulse{position:absolute;left:0;top:0;width:520px;height:320px;pointer-events:none;overflow:visible;opacity:0}
+.rflow-pulse path{fill:none;stroke:#18B7D6;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:2 98;filter:drop-shadow(0 0 4px rgba(24,183,214,.85))}
+@media (prefers-reduced-motion: no-preference){
+  .rflow-pulse{opacity:1}
+  .rflow-pulse path{animation:packet 2.6s linear infinite}
+  .rflow-pulse path:nth-child(2){animation-delay:.45s}
+  .rflow-pulse path:nth-child(3){animation-delay:1.3s}
+  .rflow-pulse path:nth-child(4){animation-delay:1.6s}
+  .rflow-pulse path:nth-child(5){animation-delay:1.9s}
+  @keyframes packet{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+  /* Nodes glow softly in flow order */
+  .rule-flow .rnode:nth-of-type(1){animation:nodeGlow 3.4s ease-in-out infinite}
+  .rule-flow .rnode:nth-of-type(2){animation:nodeGlow 3.4s ease-in-out .3s infinite}
+  .rule-flow .rnode:nth-of-type(3){animation:nodeGlow 3.4s ease-in-out .8s infinite}
+  .rule-flow .rnode:nth-of-type(4){animation:nodeGlow 3.4s ease-in-out 1.2s infinite}
+  .rule-flow .rnode:nth-of-type(5){animation:nodeGlow 3.4s ease-in-out 1.4s infinite}
+  .rule-flow .rnode:nth-of-type(6){animation:nodeGlow 3.4s ease-in-out 1.6s infinite}
+  @keyframes nodeGlow{0%,100%{box-shadow:0 4px 12px -4px rgba(0,18,92,.12)}45%{box-shadow:0 4px 12px -4px rgba(0,18,92,.12),0 0 0 2px rgba(24,183,214,.16)}}
+  /* Operational status dots breathe */
+  .dev-status.ok .d{animation:dotBreathe 2.2s ease-in-out infinite}
+  @keyframes dotBreathe{0%,100%{box-shadow:0 0 0 0 rgba(21,160,107,0)}50%{box-shadow:0 0 0 3px rgba(21,160,107,.18)}}
+}
+.re-footer{padding:10px 20px;background:#FAFBFE;border-top:1px solid var(--border-soft);font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint)}
+
+/* Section base */
+section{padding:110px 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+/* Logos strip */
+.logos-strip{padding:48px 0;background:#fff;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)}
+.logos-strip .lbl{text-align:center;font-size:12px;color:var(--text-faint);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+.logos-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.logo-box{height:56px;border:1px dashed var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);background:#FAFBFE}
+
+/* Pillars */
+.pillars{background:var(--bg-soft)}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pillar{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:36px 32px;transition:transform .25s,box-shadow .25s}
+.pillar:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.pillar .pn{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);letter-spacing:.1em;font-weight:600;margin-bottom:14px}
+.pillar h3{font-size:22px;margin-bottom:12px}
+.pillar p{font-size:14.5px;line-height:1.6;margin-bottom:18px}
+.pillar ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.pillar li{font-size:13px;color:var(--slate);display:flex;align-items:center;gap:8px}
+.pillar li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* Feature deep blocks */
+.feature-block{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;margin-bottom:130px}
+.feature-block:last-child{margin-bottom:0}
+.feature-block.flip{grid-template-columns:1.1fr 1fr}
+.feature-block.flip .copy{order:2}
+.feature-block .badge{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding:5px 10px;background:var(--cyan-soft);border-radius:6px}
+.feature-block h3{font-size:32px;margin-top:18px;margin-bottom:18px}
+.feature-block .copy > p{font-size:16.5px;line-height:1.65;margin-bottom:20px}
+.feature-block ul.kv{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+.feature-block ul.kv li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px}
+.feature-block ul.kv li svg{color:var(--accent);flex-shrink:0;margin-top:3px}
+.feature-block ul.kv strong{color:var(--text);font-weight:600;display:block;margin-bottom:2px}
+.feature-block ul.kv span{color:var(--text-muted)}
+
+/* Mock surfaces (per-feature) */
+.surface{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+.surface-head{padding:14px 18px;border-bottom:1px solid var(--border-soft);background:#FCFCFE;display:flex;align-items:center;justify-content:space-between}
+.surface-head .ttl{font-size:13px;font-weight:600;color:var(--navy-800)}
+.surface-head .right{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint)}
+.surface-body{padding:20px}
+
+/* Device manager mock */
+.devtable{width:100%;border-collapse:collapse;font-size:13px}
+.devtable th{text-align:left;font-size:10.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;padding:8px 10px;border-bottom:1px solid var(--border-soft)}
+.devtable td{padding:12px 10px;border-bottom:1px solid var(--border-soft);color:var(--slate)}
+.devtable tr:last-child td{border-bottom:none}
+.devtable .id{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--navy-800)}
+.dev-status{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600}
+.dev-status.ok{color:#15a06b}
+.dev-status.warn{color:#c47700}
+.dev-status .d{width:7px;height:7px;border-radius:50%;background:currentColor}
+.devtype{font-size:10.5px;background:var(--bg-blue);color:var(--primary);padding:3px 8px;border-radius:5px;font-weight:600;font-family:"JetBrains Mono",monospace}
+
+/* Reader config mock */
+.config-panel{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cfg-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed var(--border-soft);font-size:13px}
+.cfg-row:last-child{border-bottom:none}
+.cfg-row .k{color:var(--text-muted)}
+.cfg-row .v{font-family:"JetBrains Mono",monospace;color:var(--navy-800);font-weight:600}
+.slider-mock{height:6px;background:var(--border-soft);border-radius:3px;position:relative;margin-top:6px}
+.slider-mock::after{content:"";position:absolute;left:0;top:0;height:100%;width:75%;background:linear-gradient(90deg,var(--primary),var(--cyan));border-radius:3px}
+.slider-mock .dot{position:absolute;left:75%;top:50%;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--primary);transform:translate(-50%,-50%);box-shadow:var(--shadow-sm)}
+
+/* Label template mock */
+.label-mock{
+  background:#fff;border:2px dashed var(--border);border-radius:8px;padding:18px;
+  background-image:repeating-linear-gradient(45deg,transparent,transparent 8px,#FAFBFE 8px,#FAFBFE 9px);
+  position:relative;
+}
+.label-inner{background:#fff;border:1px solid var(--slate);padding:14px;border-radius:4px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.barcode{display:flex;gap:1px;height:50px;align-items:end}
+.barcode span{background:#000;width:2px;height:100%}
+.barcode span:nth-child(odd){width:1px}
+.barcode span:nth-child(3n){height:90%}
+.barcode span:nth-child(5n){width:3px}
+.label-meta{font-family:"JetBrains Mono",monospace;font-size:10px;color:#000}
+.label-meta .big{font-size:14px;font-weight:700;color:#000}
+.qr-mock{width:60px;height:60px;background:#000;display:grid;grid-template-columns:repeat(6,1fr);gap:1px;padding:4px}
+.qr-mock span{background:#fff}
+.qr-mock span:nth-child(2n){background:#000}
+.qr-mock span:nth-child(7),.qr-mock span:nth-child(13),.qr-mock span:nth-child(19){background:#fff}
+
+/* Architecture diagram */
+.arch{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
+.arch::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+.arch .container{position:relative}
+.arch h2{color:#fff}
+.arch .section-head p{color:rgba(255,255,255,.7)}
+.arch .eyebrow{color:var(--cyan)}
+.arch .eyebrow::before{background:var(--cyan)}
+.arch-diagram{
+  margin-top:48px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:48px;
+  position:relative;
+}
+.arch-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;align-items:stretch}
+.arch-col{position:relative;display:flex;flex-direction:column;gap:10px}
+.arch-col .lyr{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--cyan);letter-spacing:.1em;font-weight:600;margin-bottom:8px}
+.arch-col h4{color:#fff;font-size:17px;margin-bottom:14px}
+.arch-node{padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;font-size:13px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:10px}
+.arch-node svg{color:var(--cyan);flex-shrink:0}
+.arch-node.core{background:linear-gradient(135deg,rgba(24,183,214,.2),rgba(0,18,92,.4));border-color:var(--cyan);font-weight:600;color:#fff;padding:18px;font-size:14px}
+.arch-flow{display:flex;align-items:center;justify-content:center;margin-top:32px;font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(255,255,255,.5);gap:14px;letter-spacing:.12em;text-transform:uppercase}
+.arch-flow .ln{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+
+/* Hardware matrix */
+.matrix{padding:110px 0}
+.matrix-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.matrix-card{border:1px solid var(--border-soft);border-radius:var(--radius);padding:22px;background:#fff;transition:all .25s}
+.matrix-card:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+.matrix-card h5{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin:0 0 14px}
+.matrix-card .items{display:flex;flex-wrap:wrap;gap:6px}
+.matrix-card .chip{font-size:11.5px;padding:4px 9px;background:var(--bg-soft);border-radius:5px;color:var(--slate);font-family:"JetBrains Mono",monospace;font-weight:500}
+
+/* Use cases */
+.usecase-deep{background:var(--bg-soft)}
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.uc-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
+.uc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.uc-card .ic{width:44px;height:44px;border-radius:11px;background:var(--bg-blue);color:var(--primary);display:flex;align-items:center;justify-content:center}
+.uc-card h3{font-size:18px}
+.uc-card p{font-size:14px;line-height:1.55}
+.uc-metrics{display:flex;gap:18px;margin-top:auto;padding-top:18px;border-top:1px dashed var(--border-soft)}
+.uc-m .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--primary)}
+.uc-m .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px}
+
+/* Integration */
+.integr{padding:110px 0}
+.integr-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.integr-visual{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow);position:relative}
+.integr-center{
+  position:relative;margin:0 auto;width:140px;height:140px;border-radius:50%;
+  background:var(--navy-800);color:#fff;display:flex;align-items:center;justify-content:center;
+  text-align:center;font-weight:700;font-size:14px;letter-spacing:-.01em;flex-direction:column;
+}
+.integr-center .sm{font-size:10px;opacity:.6;font-weight:500;margin-top:4px;font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.integr-ring{
+  position:relative;width:420px;height:420px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+}
+.integr-ring::before{content:"";position:absolute;inset:30px;border:1.5px dashed var(--border);border-radius:50%}
+.integr-ring::after{content:"";position:absolute;inset:80px;border:1px dashed var(--cyan);border-radius:50%;opacity:.5}
+.integr-pin{
+  position:absolute;background:#fff;border:1px solid var(--border);border-radius:10px;
+  padding:8px 12px;font-size:12px;font-weight:600;color:var(--slate);
+  display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-sm);
+}
+.integr-pin svg{color:var(--primary)}
+
+/* Footer (slim) */
+footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.foot-inner img{height:24px;filter:brightness(0) invert(1);opacity:.85}
+.foot-links{display:flex;gap:24px}
+.foot-links a:hover{color:var(--cyan)}
+
+@media (max-width:1100px){
+  .hero-inner,.feature-block,.feature-block.flip,.integr-grid{grid-template-columns:1fr;gap:48px}
+  .feature-block.flip .copy{order:0}
+  .pillar-grid,.uc-grid,.matrix-grid{grid-template-columns:repeat(2,1fr)}
+  .arch-cols{grid-template-columns:repeat(2,1fr);gap:24px}
+
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+  section{padding:72px 0}
+  .pillar-grid,.uc-grid,.matrix-grid{grid-template-columns:1fr}
+  .arch-cols{grid-template-columns:1fr}
+  .logos-row{grid-template-columns:repeat(3,1fr)}
+  .hero-stats{grid-template-columns:repeat(2,auto)}
+}
+</style>

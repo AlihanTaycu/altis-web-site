@@ -1,0 +1,448 @@
+---
+import Base from '../../../layouts/Base.astro';
+import HubCard from '../../../components/sections/HubCard.astro';
+import CTABanner from '../../../components/sections/CTABanner.astro';
+import {
+  Camera, Lightbulb, QrCode, Store, Tag, CreditCard, ArrowRight,
+} from '@lucide/astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Altis Solutions",
+  "description": "Altis Technology solutions: TrueScan, Pick-to-Light, Asset Management, RFID Retail, and Tag&Trace."
+};
+
+const metrics = [
+  { value: '99.5%', label: 'barcode reading accuracy', sub: 'TrueScan' },
+  { value: '×2–3',  label: 'warehouse picking speed',  sub: 'Pick-to-Light' },
+  { value: '80%',   label: 'asset efficiency',          sub: 'Asset Management' },
+];
+---
+
+<Base
+  title="Solutions | Altis Technology"
+  description="Altis Technology solutions for warehouse, field, and asset operations: TrueScan, Pick-to-Light, Asset Management, and more."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/cozumler/"
+>
+
+<!-- ===== Hero ===== -->
+<section class="sol-hero">
+  <div class="sol-grid-bg" aria-hidden="true"></div>
+  <div class="sol-glow-tl" aria-hidden="true"></div>
+  <div class="sol-glow-br" aria-hidden="true"></div>
+
+  <div class="container sol-inner">
+    <div class="eyebrow sol-eyebrow">Solutions</div>
+    <h1>Applications that speed up, verify, and record the work in the field.</h1>
+    <p class="sol-lead">Altis solutions focus on specific operational problems — reducing picking errors, tracking assets, making reading reliable, and giving field teams a clear workflow.</p>
+
+    <!-- Category pills -->
+    <div class="sol-pills" data-reveal>
+      <a href="/en/solutions/image-processing/" class="sol-pill">
+        <Camera size={14} stroke-width={2} />
+        Image Processing
+      </a>
+      <a href="/en/solutions/pick-to-light/" class="sol-pill">
+        <Lightbulb size={14} stroke-width={2} />
+        Warehouse Operations
+      </a>
+      <a href="/en/solutions/asset-management/" class="sol-pill">
+        <QrCode size={14} stroke-width={2} />
+        Asset Tracking
+      </a>
+      <a href="/en/products/rfid-retail/" class="sol-pill">
+        <Store size={14} stroke-width={2} />
+        Retail
+      </a>
+      <a href="/en/platforms/tag-trace/" class="sol-pill">
+        <Tag size={14} stroke-width={2} />
+        RFID & Auto-ID
+      </a>
+    </div>
+
+    <!-- Result metrics -->
+    <div class="sol-metrics" data-reveal data-reveal-delay="120">
+      {metrics.map(m => (
+        <div class="sol-metric">
+          <span class="sol-metric-val" data-count={m.value}>{m.value}</span>
+          <span class="sol-metric-label">{m.label}</span>
+          <span class="sol-metric-sub">{m.sub}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Solution cards ===== -->
+<section class="hub-list">
+  <div class="container">
+    <div class="featured-row" data-reveal>
+      <HubCard
+        variant="big"
+        href="/en/solutions/image-processing/"
+        Icon={Camera}
+        tag="Image processing"
+        title="TrueScan"
+        desc="Barcode and 2D/QR reading at 99.5% accuracy under metal glare, dirty label, and low-contrast conditions with an AI reading engine integrated into existing cameras."
+      >
+        <video
+          slot="visual"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/images/truescan/truescan-marketing.png"
+          aria-label="TrueScan reading dirty barcodes and QR codes with an industrial camera"
+          width="1844"
+          height="921"
+        >
+          <source src="/videos/truescan-web-loop.mp4" type="video/mp4" />
+        </video>
+      </HubCard>
+
+      <div class="featured-small-stack">
+        <HubCard
+          href="/en/solutions/pick-to-light/"
+          Icon={Lightbulb}
+          tag="Warehouse operations"
+          title="Pick-to-Light"
+          desc="Speed and accuracy in picking, sorting, and line-feeding processes with light-guided direction."
+        >
+          <img
+            slot="visual"
+            class="p2l-card-visual"
+            src="/images/pick-to-light/p2l-marketing.png"
+            alt=""
+            width="1844"
+            height="921"
+            loading="lazy"
+            decoding="async"
+          />
+        </HubCard>
+        <HubCard
+          href="/en/solutions/asset-management/"
+          Icon={QrCode}
+          tag="Asset tracking"
+          title="Asset Management"
+          desc="Manage assets, custody, and service records from the field with NFC, QR, and a mobile app."
+        >
+          <div slot="visual" class="asset-mini-visual">
+            <div class="asset-panel">
+              <div class="asset-qr" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+              <div class="asset-list">
+                <div class="asset-row active"><span>HANDHELD</span><strong>ASSIGNED</strong></div>
+                <div class="asset-row"><span>PRINTER</span><strong>MAINTENANCE</strong></div>
+                <div class="asset-row"><span>TABLET</span><strong>IN FIELD</strong></div>
+              </div>
+            </div>
+          </div>
+        </HubCard>
+      </div>
+    </div>
+
+    <div class="row-three" data-reveal data-reveal-delay="120">
+      <HubCard
+        href="/en/products/rfid-retail/"
+        Icon={Store}
+        tag="Retail"
+        title="RFID Retail"
+        desc="RFID solutions and integrated hardware tailored to store, tunnel, checkout, and dispatch scenarios."
+      />
+      <HubCard
+        href="/en/platforms/tag-trace/"
+        Icon={Tag}
+        tag="Platform"
+        title="Tag&Trace"
+        desc="An end-to-end traceability platform that orchestrates RFID, barcode, and field devices from one center."
+      />
+      <HubCard
+        variant="dark"
+        href="https://roxcard.com.tr"
+        external
+        Icon={CreditCard}
+        tag="Digital Identity"
+        title="Rox Card"
+        desc="Next-generation digital business card platform powered by NFC and QR. Share with one tap, manage from a panel."
+        cta="roxcard.com.tr"
+      />
+    </div>
+  </div>
+</section>
+
+<CTABanner
+  heading="Let's choose the right solution for your operation together"
+  description="Meet our expert team, who listen to your needs and recommend the right solution and pilot scope."
+  secondaryLabel="Explore Platforms"
+  secondaryHref="/en/platforms/tag-trace/"
+/>
+</Base>
+
+<style>
+/* ===== Hero ===== */
+.sol-hero {
+  position: relative;
+  padding: 96px 0 72px;
+  background:
+    radial-gradient(900px 500px at 80% -80px, rgba(24, 183, 214, .10), transparent 60%),
+    linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
+  overflow: hidden;
+}
+.sol-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    linear-gradient(rgba(0, 18, 92, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 18, 92, .05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, #000 40%, transparent 100%);
+          mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, #000 40%, transparent 100%);
+}
+.sol-glow-tl {
+  position: absolute;
+  top: -120px;
+  right: -60px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: rgba(24, 183, 214, .18);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.sol-glow-br {
+  position: absolute;
+  bottom: -100px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(0, 18, 92, .06);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.sol-inner { position: relative; max-width: 860px; }
+.sol-eyebrow { color: var(--cyan); }
+.sol-eyebrow::before { background: var(--cyan); }
+
+.sol-hero h1 {
+  max-width: 780px;
+  margin-top: 18px;
+  font-size: clamp(36px, 4.8vw, 62px);
+  line-height: 1.08;
+}
+.sol-lead {
+  max-width: 640px;
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Category pills */
+.sol-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+}
+.sol-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur-fast), color var(--dur-fast), transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.sol-pill :global(svg) { color: var(--cyan); flex-shrink: 0; }
+.sol-pill:hover {
+  border-color: var(--cyan);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+/* Metrics */
+.sol-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-soft);
+  max-width: 680px;
+}
+.sol-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 36px 0 0;
+  margin-right: 36px;
+  border-right: 1px solid var(--border);
+}
+.sol-metric:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+.sol-metric-val {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.sol-metric-label {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.sol-metric-sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ===== Cards section ===== */
+.hub-list { padding: 40px 0 80px; }
+
+.featured-row {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.featured-small-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.row-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.featured-small-stack :global(.card-visual) {
+  margin-top: 2px;
+  border-radius: 8px;
+  background: #f6f9fc;
+  overflow: hidden;
+}
+.featured-small-stack :global(.card-visual img) {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: center;
+}
+.p2l-card-visual {
+  filter: saturate(.95) contrast(1.02);
+}
+.asset-mini-visual {
+  position: relative;
+  min-height: 132px;
+  padding: 16px;
+  border: 1px solid rgba(0, 18, 92, .08);
+  background:
+    radial-gradient(220px 120px at 88% 16%, rgba(24, 183, 214, .18), transparent 64%),
+    linear-gradient(135deg, #f8fbff 0%, #edf4f9 100%);
+  overflow: hidden;
+}
+.asset-mini-visual::before {
+  content: "";
+  position: absolute;
+  inset: auto -20px -46px auto;
+  width: 160px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 18, 92, .08);
+  transform: rotate(-18deg);
+}
+.asset-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  height: 100%;
+}
+.asset-qr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  aspect-ratio: 1;
+  padding: 9px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(0, 18, 92, .12);
+  box-shadow: 0 12px 26px rgba(0, 18, 92, .08);
+}
+.asset-qr span {
+  border-radius: 2px;
+  background: rgba(0, 18, 92, .78);
+}
+.asset-qr span:nth-child(2),
+.asset-qr span:nth-child(4),
+.asset-qr span:nth-child(9) {
+  background: rgba(24, 183, 214, .82);
+}
+.asset-list {
+  display: grid;
+  gap: 7px;
+}
+.asset-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 28px;
+  padding: 6px 8px;
+  border-radius: 7px;
+  color: rgba(0, 18, 92, .72);
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(0, 18, 92, .07);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+.asset-row strong {
+  color: rgba(0, 18, 92, .86);
+  font-size: 9px;
+}
+.asset-row.active {
+  color: var(--primary);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0, 18, 92, .08);
+}
+.asset-row.active strong {
+  color: var(--cyan);
+}
+
+@media (max-width: 1000px) {
+  .featured-row { grid-template-columns: 1fr; }
+  .featured-small-stack { grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; grid-auto-flow: column; }
+  .row-three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .sol-hero { padding: 72px 0 52px; }
+  .sol-metrics { flex-direction: column; gap: 20px; }
+  .sol-metric { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 0 0 20px; margin: 0; }
+  .sol-metric:last-child { border-bottom: none; padding-bottom: 0; }
+  .featured-small-stack { grid-template-columns: 1fr; grid-template-rows: auto auto; grid-auto-flow: row; }
+  .row-three { grid-template-columns: 1fr; }
+}
+</style>

@@ -3,6 +3,7 @@ import Head from '../components/seo/Head.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import CookieBanner from '../components/layout/CookieBanner.astro';
+import ProductChatWidget from '../components/layout/ProductChatWidget.astro';
 import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 
@@ -49,12 +50,13 @@ const currentPath = Astro.url.pathname;
   </noscript>
 </head>
 <body>
-  <Header {lang} {currentPath} />
+  <Header {lang} {currentPath} {alternateUrl} />
   <main>
     <slot />
   </main>
   <Footer {lang} />
-  <CookieBanner />
+  <CookieBanner {lang} />
+  <ProductChatWidget {lang} />
   <Analytics />
 
   <script>

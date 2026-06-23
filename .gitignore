@@ -36,6 +36,8 @@ astro-*.log
 # local source/import assets
 Altis Gate Products/
 ImageData/
+Data/
+PDF/
 
 # generated NotebookLM markdown export
 docs/notebooklm/pages-md/

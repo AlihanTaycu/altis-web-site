@@ -1,20 +1,37 @@
 ---
-// KVKK & Cookie consent banner — shown once, stored in localStorage
+interface Props {
+  lang?: 'tr' | 'en';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isEnglish = lang === 'en';
+const privacyHref = isEnglish ? '/en/privacy/' : '/gizlilik/';
+const ariaLabel = isEnglish ? 'Cookie notice' : 'Çerez bildirimi';
+const title = isEnglish ? 'Cookie Policy' : 'Çerez Politikası';
+const intro = isEnglish
+  ? 'We use cookies to improve your experience on our website.'
+  : 'Web sitemizde deneyiminizi iyileştirmek için çerezler kullanıyoruz.';
+const linkLabel = isEnglish ? 'Privacy Policy' : 'Gizlilik Politikası';
+const suffix = isEnglish
+  ? 'for more information.'
+  : '\'nı inceleyerek daha fazla bilgi alabilirsiniz.';
+const rejectLabel = isEnglish ? 'Reject' : 'Reddet';
+const acceptLabel = isEnglish ? 'Accept' : 'Kabul Et';
 ---
 
-<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Çerez bildirimi" hidden>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label={ariaLabel} hidden>
   <div class="cb-inner">
     <div class="cb-text">
-      <strong>Çerez Politikası</strong>
+      <strong>{title}</strong>
       <p>
-        Web sitemizde deneyiminizi iyileştirmek için çerezler kullanıyoruz.
-        <a href="/gizlilik/" class="cb-link">Gizlilik Politikası</a>'nı
-        inceleyerek daha fazla bilgi alabilirsiniz.
+        {intro}
+        <a href={privacyHref} class="cb-link">{linkLabel}</a>
+        {suffix}
       </p>
     </div>
     <div class="cb-actions">
-      <button id="cookie-reject" class="cb-btn cb-btn--ghost">Reddet</button>
-      <button id="cookie-accept" class="cb-btn cb-btn--accept">Kabul Et</button>
+      <button id="cookie-reject" class="cb-btn cb-btn--ghost">{rejectLabel}</button>
+      <button id="cookie-accept" class="cb-btn cb-btn--accept">{acceptLabel}</button>
     </div>
   </div>
 </div>

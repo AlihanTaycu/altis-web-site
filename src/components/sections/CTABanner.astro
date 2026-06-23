@@ -10,12 +10,14 @@ interface Props {
   variant?: 'soft' | 'dark';
 }
 
+const isEnglish = Astro.url.pathname.startsWith('/en');
+
 const {
   heading,
   description,
   eyebrow,
-  primaryLabel = 'Demo Talep Et',
-  primaryHref = '/iletisim/',
+  primaryLabel = isEnglish ? 'Request Demo' : 'Demo Talep Et',
+  primaryHref = isEnglish ? '/en/contact/' : '/iletisim/',
   secondaryLabel,
   secondaryHref,
   variant = 'soft',

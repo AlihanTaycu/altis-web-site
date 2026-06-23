@@ -1,0 +1,61 @@
+---
+import Base from '../../../layouts/Base.astro';
+import HubHero from '../../../components/sections/HubHero.astro';
+import HubCard from '../../../components/sections/HubCard.astro';
+import CTABanner from '../../../components/sections/CTABanner.astro';
+import { Warehouse, Store, Factory } from '@lucide/astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Altis Sectors',
+  description: 'Altis Technology sector solutions for warehouse, logistics, retail, textile, and manufacturing operations.',
+};
+---
+
+<Base
+  title="Sectors | Altis Technology"
+  description="RFID, IoT, and operational intelligence solutions for warehouse, logistics, retail, textile, and manufacturing."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/sektorler/"
+>
+  <HubHero
+    eyebrow="Sectors"
+    heading="Not the same technology for every sector: the right operating model."
+    description="Altis designs RFID and IoT infrastructure around the sector: dispatch verification in warehouses, stock visibility in stores, and OEE or maintenance intelligence in factories."
+  />
+
+  <section class="hub-list">
+    <div class="container">
+      <div class="featured-row" data-reveal>
+        <HubCard href="/en/sectors/warehouse-logistics/" Icon={Warehouse} tag="Warehouse & Logistics" title="Warehouse & Logistics" desc="RFID gate reads, pallet verification, WMS integration, and fast counting scenarios make warehouse operations visible end to end.">
+          <img slot="visual" src="/images/pick-to-light/p2l-marketing.png" alt="Warehouse operator workflow with pick-to-light guidance" width="1844" height="921" loading="lazy" decoding="async" />
+        </HubCard>
+        <HubCard href="/en/sectors/retail-textile/" Icon={Store} tag="Retail" title="Retail & Textile" desc="Product traceability from factory to store, fast store counting, loss prevention, and seasonal stock transfer optimization.">
+          <img slot="visual" src="/images/sectors/perakende-marketing.png" alt="Retail and textile RFID inventory tracking visual" width="1844" height="921" loading="lazy" decoding="async" />
+        </HubCard>
+        <HubCard variant="dark" href="/en/sectors/manufacturing/" Icon={Factory} tag="Manufacturing" title="Manufacturing" desc="Smart factory workflows with OEE, predictive maintenance, energy monitoring, and SCADA/MES/ERP integration.">
+          <img slot="visual" src="/images/sectors/uretim-marketing.png" alt="Industrial IoT and manufacturing line monitoring visual" width="1844" height="921" loading="lazy" decoding="async" />
+        </HubCard>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    heading="Let us design the operating model for your sector"
+    description="Warehouse, retail, or manufacturing: we can shape the right RFID and IoT setup around your field needs."
+    secondaryLabel="Explore Solutions"
+    secondaryHref="/en/solutions/"
+  />
+</Base>
+
+<style>
+  .hub-list { padding: 40px 0 80px; }
+  .featured-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
+  .featured-row > :global(.hub-card) { height: 100%; grid-template-rows: auto auto 1fr auto auto; }
+  .featured-row :global(.card-visual) { margin-top: 6px; border-radius: 10px; background: #f6f9fc; }
+  .featured-row :global(.card-visual img) { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; filter: saturate(.97) contrast(1.02); }
+  @media (max-width: 1000px) { .featured-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 680px) { .featured-row { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,268 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  title="Privacy Policy - Altis Technology"
+  description="Learn how Altis Technology processes personal data, uses cookies, and handles privacy requests."
+  canonical="https://www.altis.com.tr/en/privacy/"
+  alternateUrl="https://www.altis.com.tr/gizlilik/"
+  lang="en"
+>
+  <section class="privacy-hero">
+    <div class="container">
+      <p class="eyebrow">Legal Notice</p>
+      <h1>Privacy Policy</h1>
+      <p class="hero-meta">Last updated: June 2025 · Prepared with reference to Turkish personal data protection law.</p>
+    </div>
+  </section>
+
+  <section class="privacy-body section--tight">
+    <div class="container">
+      <div class="prose">
+
+        <h2>1. Data Controller</h2>
+        <p>
+          This website is operated by <strong>Altis Technology Software Consulting</strong> ("Altis", "Company", "we", or "us").
+          Personal data may be processed by Altis as the data controller under applicable data protection rules, including Turkish Law No. 6698 on the Protection of Personal Data where relevant.
+        </p>
+        <ul>
+          <li><strong>Address:</strong> Natoyolu Cad. İlkyaz Sok. Kartal Plaza No: 24-28 Kat: 1 D: 1, Ümraniye / Istanbul, Turkey</li>
+          <li><strong>Email:</strong> <a href="mailto:info@altis.com.tr">info@altis.com.tr</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+902164158255">+90 216 415 82 55</a></li>
+        </ul>
+
+        <h2>2. Data We Collect</h2>
+        <p>When you visit our website or use our contact forms, the following categories of data may be collected:</p>
+        <ul>
+          <li><strong>Contact data:</strong> name, surname, email address, phone number, and company name when submitted through a form</li>
+          <li><strong>Technical data:</strong> IP address, browser type, operating system, visited pages, and visit duration</li>
+          <li><strong>Cookie data:</strong> session cookies and preference cookies, as explained below</li>
+        </ul>
+
+        <h2>3. Purposes of Processing</h2>
+        <p>Your data may be processed for the following purposes:</p>
+        <ul>
+          <li>Responding to contact requests and managing demo or quotation processes</li>
+          <li>Providing website functionality and security</li>
+          <li>Creating anonymous usage statistics to improve our services</li>
+          <li>Complying with legal obligations</li>
+        </ul>
+
+        <h2>4. Legal Basis</h2>
+        <p>Personal data may be processed based on the following legal grounds:</p>
+        <ul>
+          <li>Processing necessary for establishing or performing a contract, such as responding to contact requests</li>
+          <li>Legitimate interests of the data controller, such as website security and service improvement</li>
+          <li>Consent, where required for cookies or similar technologies</li>
+        </ul>
+
+        <h2>5. Cookies</h2>
+        <p>Our website uses the following types of cookies and similar technologies:</p>
+
+        <div class="cookie-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Cookie Name</th>
+                <th>Type</th>
+                <th>Purpose</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>altis_cookie_consent</code></td>
+                <td>Required</td>
+                <td>Stores your cookie preference</td>
+                <td>1 year</td>
+              </tr>
+              <tr>
+                <td>Vercel Analytics</td>
+                <td>Analytics</td>
+                <td>Anonymous visitor statistics; IP addresses are not stored by Altis</td>
+                <td>Session</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>You can disable or delete cookies from your browser settings. Some website functionality may be affected if cookies are disabled.</p>
+
+        <h2>6. Data Transfers</h2>
+        <p>
+          Personal data is not shared with third parties unless required by law, necessary for service delivery, or based on your consent.
+          We use Vercel Inc. for analytics and hosting-related services; such processing is handled within the scope of applicable data protection requirements.
+        </p>
+
+        <h2>7. Retention Period</h2>
+        <p>
+          Contact form data is retained for up to <strong>3 years</strong> after your request has been handled, unless a longer retention period is legally required.
+          Technical log data is retained for up to <strong>90 days</strong>.
+        </p>
+
+        <h2>8. Your Rights</h2>
+        <p>Subject to applicable law, you may have the right to:</p>
+        <ul>
+          <li>Learn whether your personal data is being processed</li>
+          <li>Request information about processed personal data</li>
+          <li>Learn the purpose of processing and whether data is used in line with that purpose</li>
+          <li>Know the third parties to whom data is transferred, if any</li>
+          <li>Request correction of incomplete or inaccurate data</li>
+          <li>Request deletion or destruction of personal data where legally applicable</li>
+          <li>Object to outcomes created solely through automated processing</li>
+          <li>Request compensation if you suffer damage due to unlawful processing</li>
+        </ul>
+        <p>
+          To exercise your rights, contact us at <a href="mailto:info@altis.com.tr">info@altis.com.tr</a>.
+          We will respond to applicable requests within the legally required period.
+        </p>
+
+        <h2>9. Changes</h2>
+        <p>
+          This policy may be updated from time to time. For material changes, the update date at the top of this page will be revised.
+          Continued use of the website means you acknowledge the current version of this policy.
+        </p>
+
+        <div class="privacy-contact">
+          <p>For questions:</p>
+          <a href="mailto:info@altis.com.tr" class="btn btn-primary">info@altis.com.tr</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .privacy-hero {
+    background: var(--navy);
+    padding: 72px 0 56px;
+    color: #fff;
+  }
+
+  .privacy-hero .eyebrow {
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .privacy-hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .hero-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
+    margin: 0;
+  }
+
+  .prose {
+    max-width: 760px;
+  }
+
+  .prose h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 48px 0 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .prose h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .prose p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .prose ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  .prose li {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 6px;
+  }
+
+  .prose strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--navy-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose a:hover {
+    color: var(--cyan);
+  }
+
+  .prose code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: var(--bg-blue);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .cookie-table-wrapper {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  th {
+    background: var(--bg-blue);
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .privacy-contact {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--bg-blue);
+    border-radius: var(--radius-lg);
+  }
+
+  .privacy-contact p {
+    margin-bottom: 12px;
+    color: var(--text);
+    font-weight: 600;
+  }
+</style>

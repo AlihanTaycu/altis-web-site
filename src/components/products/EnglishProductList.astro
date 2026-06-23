@@ -34,6 +34,7 @@ const displayTitle = (value: string) => value
   .replace(/Okuyucu/g, 'Reader')
   .replace(/RFID Yazıcı/g, 'RFID Printer')
   .replace(/Yazıcı/g, 'Printer')
+  .replace(/Metal Yüzey/g, 'On-Metal')
   .replace(/El Terminali/g, 'Handheld Terminal');
 const displayTag = (value: string) => translateEnglishTags([value])[0];
 const schema = {

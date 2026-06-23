@@ -1,18 +1,397 @@
 ---
-import EnglishProductList from '../../../components/products/EnglishProductList.astro';
-import { retailProducts } from '../../../data/rfid-perakende';
+import Base from '../../../layouts/Base.astro';
+import { retailProducts, type RetailProduct } from '../../../data/rfid-perakende';
 import { withEnglishRetailCopy } from '../../../data/english-product-copy';
 
-const englishRetailProducts = retailProducts.map(withEnglishRetailCopy);
+const englishRetailProducts = retailProducts.map(withEnglishRetailCopy) as RetailProduct[];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'RFID Retail & Logistics Products - Altis Technology',
+  description: 'Altis Technology RFID hardware line for goods receiving, shipping, and palletized inventory control on the factory and warehouse floor: smart gate, tunnel/conveyor, counter reader, and workstation models.',
+  url: 'https://www.altis.com.tr/en/products/rfid-retail/',
+};
+
+const categories = [
+  {
+    id: 'gate-eas',
+    eyebrow: 'Smart Gate Systems',
+    heading: 'Automatic EAS control at the shipping dock.',
+    lead: 'The R-OverHeadR detects unscanned or unbilled outbound goods at warehouse and factory exit doors within seconds. With read distance up to 5 meters and an integrated audio/visual alarm, outbound goods control no longer depends on manual checks.',
+    image: '/images/rfid-perakende/gate-eas.webp',
+    imageAlt: 'RFID smart gate system at a shipping dock',
+    stats: [
+      { value: '5 m', label: 'read distance' },
+      { value: '0.3 s', label: 'read speed' },
+      { value: 'EAS', label: 'audio/visual alarm' },
+    ],
+    reverse: false,
+    slugs: ['r-overheadr'],
+  },
+  {
+    id: 'tunnel-conveyor',
+    eyebrow: 'Tunnel & Conveyor Systems',
+    heading: 'Count palletized and boxed goods in seconds.',
+    lead: 'Tunnel-type RFID systems read thousands of tags on boxes and pallets moving through the conveyor line in a single pass, eliminating manual counting at goods-receiving, shipping, and warehouse inventory checkpoints.',
+    image: '/images/rfid-perakende/tunnel-conveyor.webp',
+    imageAlt: 'RFID tunnel reader on a warehouse conveyor line',
+    stats: [
+      { value: '400+', label: 'items / 3 s' },
+      { value: '5', label: 'model options' },
+      { value: 'Impinj R2000', label: 'RF chip' },
+    ],
+    reverse: true,
+    slugs: ['r-widetunnel', 'r-boxtunnel', 'r-aerotunnel', 'r-minitunnel', 'r-protunnel'],
+    compare: {
+      heading: 'Which tunnel/conveyor model fits your facility?',
+      lead: 'All five use the same Impinj R2000 RF chip; the difference is reading capacity, mounting scenario, and added features.',
+      recommended: 'r-minitunnel',
+      rows: [
+        { label: 'Ideal Use', values: ['High-volume goods in/out control', 'Tool room and workshop inventory', 'Automated identification on conveyor line', 'Fast bulk reading in warehouse tunnel', 'Belt-type warehouse inventory tracking'] },
+        { label: 'Reading Capacity', values: ['800+ tags', '1000 items', '400+ items', '1000 items', '1000 items'] },
+        { label: 'Reading/Recognition Time', values: ['3-5 s', '1-5 s', '3 s', '1-5 s', '1-5 s'] },
+        { label: 'Display', values: ['10"', '10.1"', '10.1"', '10.1"', '14" (21" optional)'] },
+        { label: 'Key Differentiator', values: ['3 independent conveyor sections', 'Automatic shutter door', '50 kg carrying capacity', 'Real-time warehouse sync', 'UHF + HF optional reading'] },
+      ],
+    },
+  },
+  {
+    id: 'counter-station',
+    eyebrow: 'Counter & Workbench Readers',
+    heading: 'Bulk verification at the packing station.',
+    lead: 'Countertop readers verify the contents of a crate or box in a single pass, reading 30+ tags in 5 seconds — built for speed and accuracy on packing and quality-control lines.',
+    image: '/images/rfid-perakende/counter-station.webp',
+    imageAlt: 'RFID counter reader at a packing station',
+    stats: [
+      { value: '30+', label: 'items / 5 s' },
+      { value: '20 cm', label: 'interference shielding' },
+      { value: 'Impinj R2000', label: 'RF chip' },
+    ],
+    reverse: false,
+    slugs: ['r-inbasketreader', 'r-basketreader'],
+  },
+  {
+    id: 'workstation-kiosk',
+    eyebrow: 'Workstations & Self-Service Kiosks',
+    heading: 'Reading, writing, and registration at the desk.',
+    lead: 'Touchscreen workstations combine tag read/write, card operations, and self-service registration workflows in a single device, improving operator throughput in warehouse and service environments.',
+    image: '/images/rfid-perakende/workstation-kiosk.webp',
+    imageAlt: 'RFID workstation in a warehouse setting',
+    stats: [
+      { value: '21.5"', label: 'touchscreen' },
+      { value: 'Read & Write', label: 'RFID function' },
+      { value: 'Self-Service', label: 'workflow' },
+    ],
+    reverse: true,
+    slugs: ['r-shieldedbox', 'r-visiondeskomni', 'r-visiondeskmini'],
+  },
+];
+
+const categorySections = categories.map(cat => ({
+  ...cat,
+  products: cat.slugs
+    .map(slug => englishRetailProducts.find(p => p.slug === slug))
+    .filter((p): p is RetailProduct => p !== undefined),
+}));
 ---
 
-<EnglishProductList
-  title="RFID Retail Products - Altis Technology"
-  description="Altis RFID retail systems for item-level reading and store operations."
-  eyebrow="Retail RFID"
-  heading="RFID Retail Products"
-  lead="Browse Altis RFID retail gates, tunnels, readers, and counters for store and item-level automation."
-  items={englishRetailProducts}
-  detailBase="/en/products/rfid-retail/"
+<Base
+  title="RFID Retail & Logistics Products - Altis Technology"
+  description="Altis Technology RFID hardware line for goods receiving, shipping, and palletized inventory control on the factory and warehouse floor: smart gate, tunnel/conveyor, counter reader, and workstation models."
+  {schema}
+  lang="en"
   alternateUrl="https://www.altis.com.tr/urunler/rfid-perakende/"
-/>
+>
+  <section class="hero">
+    <div class="container">
+      <a href="/en/products/" class="breadcrumb">← Products</a>
+      <p class="eyebrow">Retail & Logistics RFID Hardware</p>
+      <h1>From goods receiving to shipping, count palletized products in seconds.</h1>
+      <p class="lead">
+        Smart gate, tunnel/conveyor, counter reader, and self-service workstation models bring
+        accurate, fast inventory control to the warehouse and factory floor. Altis Technology's
+        own line of {retailProducts.length} RFID hardware models.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><strong>{retailProducts.length}</strong><span>Models</span></div>
+        <div class="stat"><strong>{categorySections.length}</strong><span>Categories</span></div>
+        <div class="stat"><strong>Impinj R2000</strong><span>RF Chip</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-nav container">
+    {categorySections.map(cat => (
+      <a href={`#${cat.id}`} class="category-nav-link">{cat.eyebrow}</a>
+    ))}
+    <a href="/en/contact/" class="btn btn-outline btn-sm">Request Bulk Quote</a>
+  </section>
+
+  {categorySections.map((cat, i) => {
+    const bandClasses = ['category-band', i % 2 === 1 ? 'category-band--alt' : null].filter(Boolean).join(' ');
+    const gridClasses = ['category-grid', cat.reverse ? 'reverse' : null].filter(Boolean).join(' ');
+    return (
+      <section class={bandClasses} id={cat.id}>
+        <div class="container">
+          <div class={gridClasses}>
+            <div class="category-copy">
+              <p class="eyebrow">{cat.eyebrow}</p>
+              <h2>{cat.heading}</h2>
+              <p class="category-lead">{cat.lead}</p>
+              <div class="category-stats">
+                {cat.stats.map(stat => (
+                  <div>
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div class="category-image">
+              <img src={cat.image} alt={cat.imageAlt} width="800" height="500" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="product-strip">
+            {cat.products.map(product => (
+              <article class="product-chip">
+                <a href={`/en/products/rfid-retail/${product.slug}/`} class="chip-media">
+                  <img src={product.listImage || product.image} alt={product.title} loading="lazy" width="320" height="240" />
+                </a>
+                <div class="chip-body">
+                  <span class="chip-badge">{product.category}</span>
+                  <h3><a href={`/en/products/rfid-retail/${product.slug}/`}>{product.title}</a></h3>
+                  <p>{product.shortDesc}</p>
+                  <a href={`/en/products/rfid-retail/${product.slug}/`} class="chip-link">View Product</a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {cat.compare && (
+            <div class="compare-wrap">
+              <div class="compare-head">
+                <p class="eyebrow">Compare</p>
+                <h3>{cat.compare.heading}</h3>
+                <p class="compare-lead">{cat.compare.lead}</p>
+              </div>
+              <div class="compare-table-scroll">
+                <table class="compare-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      {cat.products.map(product => (
+                        <th class={product.slug === cat.compare!.recommended ? 'recommended-col' : undefined}>
+                          {product.slug === cat.compare!.recommended && <span class="recommended-badge">Recommended</span>}
+                          <a href={`/en/products/rfid-retail/${product.slug}/`}>{product.title}</a>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cat.compare.rows.map(row => (
+                      <tr>
+                        <th>{row.label}</th>
+                        {row.values.map((value, idx) => (
+                          <td class={cat.products[idx]?.slug === cat.compare!.recommended ? 'recommended-col' : undefined}>{value}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="altis-value">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Why Altis Technology</p>
+        <h2>Not just hardware, a facility-ready solution.</h2>
+      </div>
+      <div class="value-grid">
+        <article>
+          <h3>Site survey and deployment</h3>
+          <p>Mount points, gate/tunnel placement, and read-range planning are defined together with a site survey.</p>
+        </article>
+        <article>
+          <h3>WMS/ERP integration</h3>
+          <p>We integrate RFID read data with your existing warehouse management and ERP systems.</p>
+        </article>
+        <article>
+          <h3>Pilot and go-live</h3>
+          <p>We plan the pilot zone, performance testing, and go-live steps together, and train your operators.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-sectors">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Related Industries</p>
+        <h2>Where is this hardware used in practice?</h2>
+      </div>
+      <div class="sectors-grid">
+        <a href="/en/sectors/warehouse-logistics/" class="sector-card">
+          <span class="sector-eyebrow">Warehouse & Logistics</span>
+          <h3>Real-time stock accuracy, dispatch speed, and warehouse visibility.</h3>
+          <span class="sector-link">View Industry →</span>
+        </a>
+        <a href="/en/sectors/retail-textile/" class="sector-card">
+          <span class="sector-eyebrow">Retail & Textile</span>
+          <h3>From factory to store — every item traceable at every point.</h3>
+          <span class="sector-link">View Industry →</span>
+        </a>
+        <a href="/en/sectors/manufacturing/" class="sector-card">
+          <span class="sector-eyebrow">Manufacturing</span>
+          <h3>See line efficiency, machine health, and energy on one screen.</h3>
+          <span class="sector-link">View Industry →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow">Quote & Site Survey</p>
+        <h2>Let's define the right RFID hardware for your facility.</h2>
+      </div>
+      <a href="/en/contact/" class="btn btn-primary btn-lg">Request Quote</a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.category-nav-link'));
+  const sections = navLinks
+    .map(link => document.getElementById(link.getAttribute('href')!.slice(1)))
+    .filter((el): el is HTMLElement => el !== null);
+
+  if (sections.length) {
+    const setActive = (id: string) => {
+      navLinks.forEach(link => {
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-140px 0px -70% 0px', threshold: 0 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  }
+</script>
+
+<style>
+.hero { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); color: #fff; padding: 72px 0 60px; }
+.breadcrumb { display: inline-block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.65); margin-bottom: 20px; transition: color .2s; }
+.breadcrumb:hover { color: #fff; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+.hero h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.15; }
+.lead { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 660px; line-height: 1.7; margin-bottom: 36px; }
+.hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat strong { font-size: 1.5rem; font-weight: 800; color: var(--cyan); line-height: 1; }
+.stat span { font-size: 12px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .06em; }
+
+.category-nav { position: sticky; top: 76px; z-index: 40; display: flex; align-items: center; gap: 8px; padding: 14px 32px; flex-wrap: wrap; background: #fff; border-bottom: 1px solid var(--border-soft); }
+.category-nav-link { display: inline-flex; align-items: center; font-size: 13px; font-weight: 700; color: var(--primary); background: rgba(0,18,92,.06); border: 1px solid rgba(0,18,92,.15); padding: 6px 14px; border-radius: 20px; transition: background .2s, color .2s, border-color .2s; }
+.category-nav-link:hover { background: var(--primary); color: #fff; }
+.category-nav-link.is-active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.category-nav .btn-outline { margin-left: auto; }
+
+.category-band { padding: 56px 0; background: #fff; }
+.category-band--alt { background: var(--bg-soft); }
+.category-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; margin-bottom: 36px; }
+.category-grid.reverse { grid-template-columns: 1.1fr .9fr; }
+.category-grid.reverse .category-copy { order: 2; }
+.category-grid.reverse .category-image { order: 1; }
+.category-copy h2 { margin: 14px 0; font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.category-lead { font-size: 16px; line-height: 1.75; color: var(--text-muted); }
+.category-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; }
+.category-stats strong { display: block; color: var(--primary); font-size: 15px; }
+.category-stats span { display: block; color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.category-image img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 20px; }
+
+.product-strip { display: flex; gap: 22px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.product-chip { flex: 0 0 300px; scroll-snap-align: start; background: #fff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,18,92,.06); transition: box-shadow .2s, transform .2s; }
+.product-chip:hover { box-shadow: 0 12px 30px rgba(0,18,92,.12); transform: translateY(-2px); }
+.chip-media { display: grid; place-items: center; min-height: 190px; padding: 28px; background: #fff; }
+.chip-media img { width: 100%; height: 150px; object-fit: contain; transition: transform .25s; }
+.product-chip:hover .chip-media img { transform: scale(1.035); }
+.chip-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.chip-badge { display: inline-flex; color: var(--cyan); font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.chip-body h3 { font-size: 17px; font-weight: 700; line-height: 1.3; margin: 2px 0 0; }
+.chip-body h3 a { color: var(--primary); transition: color .2s; }
+.chip-body h3 a:hover { color: var(--cyan); }
+.chip-body p { font-size: 13px; color: var(--text-muted); line-height: 1.65; margin: 0; flex: 1; }
+.chip-link { color: var(--primary); font-weight: 800; font-size: 13.5px; margin-top: 6px; }
+.chip-link:hover { color: var(--cyan); }
+
+.compare-wrap { margin-top: 32px; }
+.compare-head { max-width: 640px; margin-bottom: 22px; }
+.compare-head h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); margin: 8px 0 8px; color: var(--primary); }
+.compare-lead { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin: 0; }
+.compare-table-scroll { overflow-x: auto; border-radius: 16px; background: #fff; box-shadow: 0 2px 10px rgba(0,18,92,.06); }
+.compare-table { width: 100%; min-width: 820px; border-collapse: collapse; }
+.compare-table th, .compare-table td { padding: 16px 20px; text-align: left; font-size: 13.5px; border-bottom: 1px solid var(--border-soft); }
+.compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: none; }
+.compare-table thead th { color: var(--primary); font-size: 14px; background: #fff; }
+.compare-table thead th a { color: var(--primary); }
+.compare-table thead th a:hover { color: var(--cyan); }
+.compare-table tbody th { color: var(--text-muted); font-weight: 700; width: 190px; background: #fafbfe; }
+.compare-table td { color: var(--text); }
+.compare-table th:first-child { position: sticky; left: 0; z-index: 2; box-shadow: 2px 0 6px rgba(0,18,92,.05); }
+.recommended-col { background: rgba(24,183,214,.07); }
+.compare-table thead th.recommended-col { background: rgba(24,183,214,.1); }
+.recommended-badge { display: block; width: fit-content; font-size: 9.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--cyan); padding: 3px 9px; border-radius: 20px; margin-bottom: 6px; }
+
+.related-sectors { background: var(--bg-soft); padding: 64px 0; }
+.sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.sector-card { display: flex; flex-direction: column; gap: 10px; background: #fff; border-radius: 16px; padding: 26px; box-shadow: 0 2px 10px rgba(0,18,92,.06); transition: box-shadow .2s, transform .2s; }
+.sector-card:hover { box-shadow: 0 12px 30px rgba(0,18,92,.12); transform: translateY(-2px); }
+.sector-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); }
+.sector-card h3 { font-size: 16px; font-weight: 700; color: var(--primary); line-height: 1.4; margin: 0; }
+.sector-link { font-size: 13px; font-weight: 800; color: var(--primary); margin-top: auto; }
+.sector-card:hover .sector-link { color: var(--cyan); }
+
+.section-head { max-width: 640px; margin: 0 auto 36px; text-align: center; }
+.section-head h2 { margin-top: 10px; }
+
+.altis-value { background: #fff; padding: 64px 0; }
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.value-grid article { border-radius: 16px; padding: 28px; background: var(--bg-soft); }
+.value-grid h3 { font-size: 19px; margin-bottom: 12px; }
+.value-grid p { font-size: 14.5px; line-height: 1.75; }
+
+.cta-section { background: var(--primary); padding: 76px 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.cta-inner .eyebrow { color: var(--cyan); }
+.cta-inner h2 { color: #fff; max-width: 760px; margin-top: 14px; }
+
+@media (max-width: 980px) {
+  .category-grid { grid-template-columns: 1fr; }
+  .category-grid.reverse .category-copy,
+  .category-grid.reverse .category-image { order: initial; }
+  .value-grid { grid-template-columns: 1fr; }
+  .product-chip { flex-basis: 270px; }
+  .sectors-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .category-nav .btn-outline { margin-left: 0; width: 100%; justify-content: center; }
+  .category-stats { grid-template-columns: 1fr; }
+  .cta-inner { flex-direction: column; align-items: flex-start; text-align: left; }
+}
+</style>

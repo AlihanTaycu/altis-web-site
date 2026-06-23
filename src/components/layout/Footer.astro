@@ -3,7 +3,33 @@ interface Props {
   lang?: 'tr' | 'en';
 }
 const { lang = 'tr' } = Astro.props;
-const base = lang === 'en' ? '/en' : '';
+const paths = lang === 'en'
+  ? {
+      platforms: '/en/platforms/',
+      tagTrace: '/en/platforms/tag-trace/',
+      predictivo: '/en/platforms/predictivo/',
+      solutions: '/en/solutions/',
+      pickToLight: '/en/solutions/pick-to-light/',
+      assetManagement: '/en/solutions/asset-management/',
+      warehouseLogistics: '/en/sectors/warehouse-logistics/',
+      manufacturing: '/en/sectors/manufacturing/',
+      about: '/en/about/',
+      contact: '/en/contact/',
+      privacy: '/en/privacy/',
+    }
+  : {
+      platforms: '/platformlar/',
+      tagTrace: '/platformlar/tag-trace/',
+      predictivo: '/platformlar/predictivo/',
+      solutions: '/cozumler/',
+      pickToLight: '/cozumler/pick-to-light/',
+      assetManagement: '/cozumler/asset-yonetimi/',
+      warehouseLogistics: '/sektorler/depo-lojistik/',
+      manufacturing: '/sektorler/uretim/',
+      about: '/hakkimizda/',
+      contact: '/iletisim/',
+      privacy: '/gizlilik/',
+    };
 ---
 
 <footer>
@@ -21,42 +47,42 @@ const base = lang === 'en' ? '/en' : '';
         </p>
       </div>
 
-      <!-- Ürünler / Products -->
+      <!-- Products -->
       <div class="foot-col">
         <h5>{lang === 'tr' ? 'Ürünler' : 'Products'}</h5>
         <ul>
-          <li><a href={`${base}/platformlar/tag-trace/`}>Tag&amp;Trace</a></li>
-          <li><a href={`${base}/platformlar/predictivo/`}>Predictivo</a></li>
-          <li><a href={`${base}/cozumler/pick-to-light/`}>Pick-to-Light</a></li>
-          <li><a href={`${base}/cozumler/asset-yonetimi/`}>Asset Tag &amp; Trace</a></li>
+          <li><a href={paths.tagTrace}>Tag&amp;Trace</a></li>
+          <li><a href={paths.predictivo}>Predictivo</a></li>
+          <li><a href={paths.pickToLight}>Pick-to-Light</a></li>
+          <li><a href={paths.assetManagement}>Asset Tag &amp; Trace</a></li>
           <li><a href="https://roxcard.com.tr" target="_blank" rel="noopener">Rox Card ↗</a></li>
         </ul>
       </div>
 
-      <!-- Çözümler / Solutions -->
+      <!-- Solutions -->
       <div class="foot-col">
         <h5>{lang === 'tr' ? 'Çözümler' : 'Solutions'}</h5>
         <ul>
-          <li><a href={`${base}/cozumler/`}>{lang === 'tr' ? 'RFID ve Auto-ID' : 'RFID & Auto-ID'}</a></li>
-          <li><a href={`${base}/cozumler/`}>{lang === 'tr' ? 'IoT ve Sensör' : 'IoT & Sensors'}</a></li>
-          <li><a href={`${base}/cozumler/`}>{lang === 'tr' ? 'RTLS / Konum' : 'RTLS / Location'}</a></li>
-          <li><a href={`${base}/sektorler/depo-lojistik/`}>{lang === 'tr' ? 'Depo & Lojistik' : 'Warehouse & Logistics'}</a></li>
-          <li><a href={`${base}/sektorler/uretim/`}>{lang === 'tr' ? 'Üretim & Bakım' : 'Manufacturing & Maintenance'}</a></li>
-          <li><a href={`${base}/cozumler/asset-yonetimi/`}>{lang === 'tr' ? 'Varlık Yönetimi' : 'Asset Management'}</a></li>
+          <li><a href={paths.solutions}>{lang === 'tr' ? 'RFID ve Auto-ID' : 'RFID & Auto-ID'}</a></li>
+          <li><a href={paths.solutions}>{lang === 'tr' ? 'IoT ve Sensör' : 'IoT & Sensors'}</a></li>
+          <li><a href={paths.solutions}>{lang === 'tr' ? 'RTLS / Konum' : 'RTLS / Location'}</a></li>
+          <li><a href={paths.warehouseLogistics}>{lang === 'tr' ? 'Depo & Lojistik' : 'Warehouse & Logistics'}</a></li>
+          <li><a href={paths.manufacturing}>{lang === 'tr' ? 'Üretim & Bakım' : 'Manufacturing & Maintenance'}</a></li>
+          <li><a href={paths.assetManagement}>{lang === 'tr' ? 'Varlık Yönetimi' : 'Asset Management'}</a></li>
         </ul>
       </div>
 
-      <!-- Şirket / Company -->
+      <!-- Company -->
       <div class="foot-col">
         <h5>{lang === 'tr' ? 'Şirket' : 'Company'}</h5>
         <ul>
-          <li><a href={`${base}/hakkimizda/`}>{lang === 'tr' ? 'Hakkımızda' : 'About Us'}</a></li>
-          <li><a href={`${base}/hakkimizda/`}>{lang === 'tr' ? 'Referanslar' : 'References'}</a></li>
-          <li><a href={`${base}/iletisim/`}>{lang === 'tr' ? 'İletişim' : 'Contact'}</a></li>
+          <li><a href={paths.about}>{lang === 'tr' ? 'Hakkımızda' : 'About Us'}</a></li>
+          <li><a href={paths.about}>{lang === 'tr' ? 'Referanslar' : 'References'}</a></li>
+          <li><a href={paths.contact}>{lang === 'tr' ? 'İletişim' : 'Contact'}</a></li>
         </ul>
       </div>
 
-      <!-- İletişim / Contact -->
+      <!-- Contact -->
       <div class="foot-col">
         <h5>{lang === 'tr' ? 'İletişim' : 'Contact'}</h5>
         <ul>
@@ -85,7 +111,7 @@ const base = lang === 'en' ? '/en' : '';
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
-          <a href="https://www.altis.com.tr" target="_blank" rel="noopener" aria-label="Web sitesi">
+          <a href="https://www.altis.com.tr" target="_blank" rel="noopener" aria-label={lang === 'tr' ? 'Web sitesi' : 'Website'}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="9"/>
               <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
@@ -116,9 +142,9 @@ const base = lang === 'en' ? '/en' : '';
     </div>
 
     <div class="foot-bottom">
-      <div>© 2003–2026 Altis Teknoloji ve Yazılım. {lang === 'tr' ? 'Tüm hakları saklıdır.' : 'All rights reserved.'}</div>
+      <div>© 2003–2026 {lang === 'tr' ? 'Altis Teknoloji ve Yazılım' : 'Altis Technology'}. {lang === 'tr' ? 'Tüm hakları saklıdır.' : 'All rights reserved.'}</div>
       <div class="foot-legal">
-        <a href={`${base}/gizlilik/`}>{lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy'}</a>
+        <a href={paths.privacy}>{lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy'}</a>
         <span>{lang === 'tr' ? 'Dijital Dönüşümde Güvenilir Partneriniz' : 'Your Trusted Partner in Digital Transformation'}</span>
       </div>
     </div>

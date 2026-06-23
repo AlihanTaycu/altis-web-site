@@ -1,0 +1,2107 @@
+---
+interface Props {
+  lang?: 'tr' | 'en';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isEnglish = lang === 'en';
+
+const labels = {
+  bubble: isEnglish ? 'Product Assistant' : 'Ürün Asistanı',
+  title: isEnglish ? 'Altis Product Assistant' : 'Altis Ürün Asistanı',
+  subtitle: isEnglish
+    ? 'Ask about RFID tags, printers, readers and handhelds.'
+    : 'RFID etiket, yazıcı, okuyucu ve el terminalleri hakkında sorabilirsiniz.',
+  placeholder: isEnglish ? 'Type your question…' : 'Sorunuzu yazın…',
+  send: isEnglish ? 'Send' : 'Gönder',
+  newSession: isEnglish ? 'New session' : 'Yeni oturum',
+  greeting: isEnglish
+    ? 'Hello! I can help you with our RFID products. What would you like to know?'
+    : 'Merhaba! Altis RFID ürünleri hakkında size yardımcı olabilirim. Ne öğrenmek istersiniz?',
+  error: isEnglish
+    ? 'Something went wrong. Please try again.'
+    : 'Bir şeyler ters gitti. Lütfen tekrar deneyin.',
+};
+
+const suggestions = isEnglish
+  ? [
+      'I am looking for an RFID tag.',
+      'Can I get information about Xerafy Cargo Outdoor?',
+      'I need a 10 m RFID tag for metal surfaces.',
+    ]
+  : [
+      'RFID etiket arıyorum.',
+      'Xerafy Cargo Outdoor hakkında bilgi alabilir miyim?',
+      'Metal yüzey için 10 metre okuyan etiket lazım.',
+    ];
+
+const apiUrl = import.meta.env.PUBLIC_AIKOS_API_URL || 'http://localhost:8000';
+---
+
+<div id="product-chat-widget" class="pcw" data-lang={lang}>
+  <button id="pcw-toggle" class="pcw-toggle" aria-expanded="false" aria-controls="pcw-panel">
+    <img class="pcw-toggle-avatar pcw-icon--chat" src="/assets/aikos-assistant.png" alt="" width="34" height="34" loading="lazy" />
+    <svg class="pcw-icon pcw-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    <span class="pcw-toggle-label">{labels.bubble}</span>
+  </button>
+
+  <div id="pcw-panel" class="pcw-panel" hidden>
+    <header class="pcw-header">
+      <div class="pcw-agent" aria-hidden="true">
+        <img src="/assets/aikos-assistant.png" alt="" width="74" height="74" loading="lazy" />
+      </div>
+      <div>
+        <span class="pcw-status"><i></i>{isEnglish ? 'AIKOS online' : 'AIKOS hazır'}</span>
+        <strong>{labels.title}</strong>
+        <p>{labels.subtitle}</p>
+      </div>
+      <button id="pcw-new-session" class="pcw-new-session" type="button" aria-label={labels.newSession} title={labels.newSession}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.1-6.6"/><path d="M21 3v6h-6"/><path d="M21 12a9 9 0 0 1-15.1 6.6"/><path d="M3 21v-6h6"/></svg>
+      </button>
+    </header>
+
+    <div id="pcw-messages" class="pcw-messages" aria-live="polite"></div>
+
+    <form id="pcw-form" class="pcw-form">
+      <input id="pcw-input" class="pcw-input" type="text" placeholder={labels.placeholder} autocomplete="off" />
+      <button type="submit" class="pcw-send" aria-label={labels.send}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script define:vars={{ greeting: labels.greeting, errorText: labels.error, AIKOS_API_URL: apiUrl, suggestions, isEnglish }}>
+  const ROLE = 'website_ai';
+
+  const t = (en, tr) => (isEnglish ? en : tr);
+
+  const widget = document.getElementById('product-chat-widget');
+  const toggle = document.getElementById('pcw-toggle');
+  const newSessionButton = document.getElementById('pcw-new-session');
+  const panel = document.getElementById('pcw-panel');
+  const messages = document.getElementById('pcw-messages');
+  const form = document.getElementById('pcw-form');
+  const input = document.getElementById('pcw-input');
+
+  let sessionId = createSessionId();
+  let greeted = false;
+  let quoteFlow = null;
+  let expertContext = null;
+
+  const QUOTE_STEPS = [
+    {
+      key: 'location_count',
+      question: t('How many locations are you considering this for?', 'Kaç mağaza/lokasyon için düşünüyorsunuz?'),
+      type: 'choice',
+      options: [
+        { value: '1', label: '1' },
+        { value: '2-5', label: '2-5' },
+        { value: '5+', label: '5+' },
+      ],
+    },
+    {
+      key: 'install_site',
+      question: t('Where will this be installed?', 'Bu ürünü nereye kuracaksınız?'),
+      type: 'choice',
+      options: [
+        { value: 'store_entrance', label: t('Store entrance', 'Mağaza girişi') },
+        { value: 'warehouse', label: t('Warehouse', 'Depo') },
+        { value: 'checkout_counter', label: t('Checkout / counter', 'Kasa / Tezgah') },
+        { value: 'other', label: t('Other', 'Diğer') },
+      ],
+    },
+    {
+      key: 'existing_infra',
+      question: t('Do you already have RFID/EAS infrastructure in place?', 'Mevcut bir RFID/EAS altyapınız var mı?'),
+      type: 'choice',
+      options: [
+        { value: 'existing', label: t('Yes, will integrate', 'Var, entegre edilecek') },
+        { value: 'new', label: t('No, starting fresh', 'Yok, sıfırdan') },
+      ],
+    },
+    {
+      key: 'contact_name',
+      question: t('Who should we prepare the quote for? Your name, please.', 'Teklifi kime hazırlayalım? Ad soyad alabilir miyim?'),
+      type: 'text',
+    },
+    {
+      key: 'company_name',
+      question: t('Which company is this for?', 'Hangi şirket için olduğunu öğrenebilir miyim?'),
+      type: 'text',
+    },
+    {
+      key: 'contact_phone_or_email',
+      question: t('A phone number or email where we can reach you?', 'Size dönüş yapabilmemiz için bir telefon ya da e-posta alabilir miyim?'),
+      type: 'text',
+    },
+  ];
+
+  function createSessionId() {
+    if (window.crypto?.randomUUID) {
+      return window.crypto.randomUUID();
+    }
+    return `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function renderMarkdownLinks(text) {
+    const escaped = escapeHtml(text);
+    return escaped.replace(/\[([^\]]+)\]\(((?:https?:\/\/|mailto:|tel:|\/)[^)\s]+)\)/g, (_match, label, url) => {
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    });
+  }
+
+  function addMessage(role, text, options = {}) {
+    const bubble = document.createElement('div');
+    bubble.className = `pcw-msg pcw-msg--${role}`;
+    if (options.html) {
+      bubble.innerHTML = text;
+    } else {
+      bubble.textContent = text;
+    }
+    messages.appendChild(bubble);
+    return bubble;
+  }
+
+  function addBotAnswer(text) {
+    return addMessage('bot', renderMarkdownLinks(text), { html: true });
+  }
+
+  function wait(ms) {
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
+
+  function scrollToMessage(message, block = 'end') {
+    if (!message) return;
+    requestAnimationFrame(() => {
+      message.scrollIntoView({ block, inline: 'nearest', behavior: 'smooth' });
+    });
+  }
+
+  function scrollToMessageStart(message) {
+    scrollToMessage(message, 'start');
+  }
+
+  function removeSuggestions() {
+    messages.querySelector('.pcw-suggestions')?.remove();
+  }
+
+  function renderSuggestions() {
+    if (!Array.isArray(suggestions) || suggestions.length === 0) return;
+    removeSuggestions();
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pcw-suggestions';
+
+    for (const suggestion of suggestions) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.innerHTML = `<span aria-hidden="true">${getSuggestionIcon(suggestion)}</span>${escapeHtml(suggestion)}`;
+      button.addEventListener('click', async () => {
+        removeSuggestions();
+        await sendQuestion(suggestion);
+      });
+      wrap.appendChild(button);
+    }
+
+    messages.appendChild(wrap);
+  }
+
+  function getSuggestionIcon(value) {
+    const text = String(value || '').toLocaleLowerCase(isEnglish ? 'en' : 'tr');
+    if (text.includes('printer') || text.includes('yazıcı')) return '▤';
+    if (text.includes('reader') || text.includes('okuyucu')) return '⌁';
+    if (text.includes('terminal') || text.includes('handheld')) return '▣';
+    return '◇';
+  }
+
+  function summarizeRequirements(values) {
+    const parts = [];
+    if (values.read_range_m) parts.push(`${t('read distance', 'okuma mesafesi')}: ${values.read_range_m}`);
+    if (values.surface_type === 'on_metal') parts.push(t('surface: metal', 'yüzey: metal'));
+    if (values.surface_type === 'off_metal') parts.push(t('surface: non-metal', 'yüzey: metal olmayan'));
+    if (values.surface_type === 'both') parts.push(t("surface: doesn't matter", 'yüzey: fark etmez'));
+    if (Array.isArray(values.application) && values.application.length) parts.push(`${t('application', 'kullanım')}: ${values.application.join(', ')}`);
+    else if (values.application) parts.push(`${t('application', 'kullanım')}: ${values.application}`);
+    if (values.size_requirement) parts.push(`${t('size', 'boyut')}: ${values.size_requirement}`);
+    return parts.length
+      ? `${t('My RFID tag criteria', 'RFID etiket kriterlerim')}: ${parts.join(', ')}`
+      : t('I would like an RFID tag recommendation.', 'RFID etiket önerisi istiyorum.');
+  }
+
+  function summarizePrinterRequirements(values) {
+    const parts = [];
+    if (Array.isArray(values.application) && values.application.length) parts.push(`${t('application', 'kullanım')}: ${values.application.join(', ')}`);
+    else if (values.application) parts.push(`${t('application', 'kullanım')}: ${values.application}`);
+    if (values.daily_volume) parts.push(`${t('print volume', 'baskı hacmi')}: ${values.daily_volume}`);
+    if (values.printer_type) parts.push(`${t('printer type', 'yazıcı tipi')}: ${values.printer_type}`);
+    if (values.label_type) parts.push(`${t('label', 'etiket')}: ${values.label_type}`);
+    if (values.connectivity) parts.push(`${t('connectivity', 'bağlantı')}: ${values.connectivity}`);
+    return parts.length
+      ? `${t('My printer criteria', 'Yazıcı kriterlerim')}: ${parts.join(', ')}`
+      : t('I would like a printer recommendation.', 'Yazıcı önerisi istiyorum.');
+  }
+
+  function summarizeReaderRequirements(values) {
+    const parts = [];
+    if (Array.isArray(values.application) && values.application.length) parts.push(`${t('application', 'kullanım')}: ${values.application.join(', ')}`);
+    else if (values.application) parts.push(`${t('application', 'kullanım')}: ${values.application}`);
+    if (values.reader_type) parts.push(`${t('reader type', 'okuyucu tipi')}: ${values.reader_type}`);
+    if (values.read_range) parts.push(`${t('read distance', 'okuma mesafesi')}: ${values.read_range}`);
+    if (values.tag_density) parts.push(`${t('tag density', 'etiket yoğunluğu')}: ${values.tag_density}`);
+    if (Array.isArray(values.environment_connectivity) && values.environment_connectivity.length) {
+      parts.push(`${t('environment/connectivity', 'ortam/bağlantı')}: ${values.environment_connectivity.join(', ')}`);
+    } else if (values.environment_connectivity) {
+      parts.push(`${t('environment/connectivity', 'ortam/bağlantı')}: ${values.environment_connectivity}`);
+    }
+    return parts.length
+      ? `${t('My RFID reader criteria', 'RFID okuyucu kriterlerim')}: ${parts.join(', ')}`
+      : t('I would like an RFID reader recommendation.', 'RFID okuyucu önerisi istiyorum.');
+  }
+
+  function createProductImageFallback(product) {
+    const fallback = document.createElement('div');
+    fallback.className = 'pcw-product-image pcw-product-image--fallback';
+    fallback.innerHTML = `
+      <img src="/assets/altis-logo.png" alt="" loading="lazy" />
+      <span>${escapeHtml(product.category || product.brand || 'RFID Ürün')}</span>
+    `;
+    return fallback;
+  }
+
+  function renderProductCards(products, ui = {}) {
+    if (!Array.isArray(products) || products.length === 0) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pcw-product-list';
+
+    for (const product of products) {
+      const card = document.createElement('article');
+      card.className = 'pcw-product-card';
+      const media = document.createElement('div');
+      media.className = 'pcw-product-media';
+
+      if (product.image_url) {
+        const image = document.createElement('img');
+        image.className = 'pcw-product-image';
+        image.src = product.image_url;
+        image.dataset.originalSrc = product.image_url;
+        image.alt = product.title || product.sku || 'Ürün';
+        image.loading = 'lazy';
+        image.addEventListener('error', () => {
+          const fallbackIndex = Number(image.dataset.fallbackIndex || 0);
+          const originalSrc = image.dataset.originalSrc || image.src;
+          const fallbacks = [
+            originalSrc.replace(/-1\.(?:webp|png|jpg|jpeg)(?:\?.*)?$/, '-1.png'),
+            originalSrc.replace(/-1\.(?:webp|png|jpg|jpeg)(?:\?.*)?$/, '-1.jpg'),
+          ].filter((url, index, all) => url && url !== image.src && all.indexOf(url) === index);
+          if (fallbacks[fallbackIndex]) {
+            image.dataset.fallbackIndex = String(fallbackIndex + 1);
+            image.src = fallbacks[fallbackIndex];
+            return;
+          }
+          image.replaceWith(createProductImageFallback(product));
+        });
+        media.appendChild(image);
+      } else {
+        media.appendChild(createProductImageFallback(product));
+      }
+      card.appendChild(media);
+
+      if (product.brand) {
+        const brand = document.createElement('span');
+        brand.className = 'pcw-product-brand';
+        brand.textContent = product.brand;
+        card.appendChild(brand);
+      }
+
+      const title = document.createElement('strong');
+      title.textContent = product.title || product.sku || t('Product', 'Ürün');
+      card.appendChild(title);
+
+      const meta = [
+        product.sku ? `SKU: ${product.sku}` : null,
+        product.read_range ? `${t('Read', 'Okuma')}: ${product.read_range}` : null,
+        product.surface,
+        product.size ? `${t('Size', 'Boyut')}: ${product.size}` : null,
+        product.printer_type ? `${t('Type', 'Tip')}: ${product.printer_type}` : null,
+        product.reader_type ? `${t('Type', 'Tip')}: ${product.reader_type}` : null,
+        product.ip_rating,
+        product.antenna_ports ? `${product.antenna_ports} ${t('antenna ports', 'anten portu')}` : null,
+        Array.isArray(product.resolution_dpi) && product.resolution_dpi.length ? `${product.resolution_dpi.join('/')} dpi` : null,
+        product.max_print_width_mm ? `${t('Print width', 'Baskı genişliği')}: ${product.max_print_width_mm} mm` : null,
+        Array.isArray(product.connectivity) && product.connectivity.length ? `${t('Connectivity', 'Bağlantı')}: ${product.connectivity.join(', ')}` : null,
+      ].filter(Boolean);
+
+      if (meta.length) {
+        const info = document.createElement('div');
+        info.className = 'pcw-product-meta';
+        for (const item of meta.slice(0, 4)) {
+          const chip = document.createElement('span');
+          chip.textContent = item;
+          info.appendChild(chip);
+        }
+        card.appendChild(info);
+      }
+
+      if (Array.isArray(product.links) && product.links.length) {
+        const actions = document.createElement('div');
+        actions.className = 'pcw-product-actions';
+        for (const link of product.links) {
+          if (!link.url) continue;
+          const anchor = document.createElement('a');
+          anchor.href = link.url;
+          anchor.target = '_blank';
+          anchor.rel = 'noopener noreferrer';
+          anchor.className = 'pcw-product-primary-link';
+          anchor.textContent = link.label || 'Ürüne Git';
+          actions.appendChild(anchor);
+        }
+        card.appendChild(actions);
+      }
+
+      wrap.appendChild(card);
+    }
+
+    const block = document.createElement('div');
+    block.className = 'pcw-product-block';
+    block.appendChild(wrap);
+
+    if (ui?.catalog_url) {
+      const moreLink = document.createElement('a');
+      moreLink.className = 'pcw-product-more';
+      moreLink.href = ui.catalog_url;
+      moreLink.target = '_blank';
+      moreLink.rel = 'noopener noreferrer';
+      moreLink.innerHTML = `${escapeHtml(ui.catalog_label || 'Daha fazla ürünü gör')} <span aria-hidden="true">↗</span>`;
+      block.appendChild(moreLink);
+    }
+
+    messages.appendChild(block);
+  }
+
+  function renderRfidForm(ui) {
+    const card = document.createElement('form');
+    card.className = 'pcw-rfid-form';
+    const values = ui?.values || {};
+    const missingSlots = Array.isArray(ui?.missing_slots) ? ui.missing_slots : [];
+    card.innerHTML = `
+      <div class="pcw-rfid-form-title">${escapeHtml(ui?.title || t('RFID tag requirements', 'RFID etiket ihtiyacı'))}</div>
+      <p class="pcw-rfid-form-helper">${escapeHtml(ui?.helper_text || t('You can also fill in these fields by typing.', 'İsterseniz bu alanları yazı yazarak da doldurabilirsiniz.'))}</p>
+      <label class="${missingSlots.includes('read_range_m') ? 'is-missing' : ''}">
+        <span>${t('Read distance', 'Okuma mesafesi')}</span>
+        <input name="read_range_m" type="text" placeholder="${t('e.g. 2 m, 5 m, 10 m', 'Örn. 2 m, 5 m, 10 m')}" value="${escapeHtml(values.read_range_m || '')}" />
+      </label>
+      <label class="${missingSlots.includes('surface_type') ? 'is-missing' : ''}">
+        <span>${t('Surface type', 'Kullanılacak yüzey')}</span>
+        <select name="surface_type">
+          <option value="">${t('Select', 'Seçiniz')}</option>
+          <option value="on_metal">${t('Metal', 'Metal')}</option>
+          <option value="off_metal">${t('Non-metal', 'Metal olmayan')}</option>
+          <option value="both">${t("Doesn't matter", 'Fark etmez')}</option>
+        </select>
+      </label>
+      <label class="${missingSlots.includes('application') ? 'is-missing' : ''}">
+        <span>${t('Application area', 'Kullanım alanı')}</span>
+        <input name="application" type="text" placeholder="${t('e.g. warehouse, manufacturing, logistics', 'Örn. depo, üretim, lojistik')}" value="${escapeHtml(values.application || '')}" />
+      </label>
+      <label class="${missingSlots.includes('size_requirement') ? 'is-missing' : ''}">
+        <span>${t('Size expectation', 'Boyut beklentisi')}</span>
+        <input name="size_requirement" type="text" placeholder="${t('e.g. 50 x 20 x 5 mm or no preference', 'Örn. 50 x 20 x 5 mm veya fark etmez')}" value="${escapeHtml(values.size_requirement || '')}" />
+      </label>
+      <button type="submit">${escapeHtml(ui?.submit_label || t('Recommend products', 'Ürünleri öner'))}</button>
+    `;
+
+    const surfaceSelect = card.querySelector('select[name="surface_type"]');
+    if (surfaceSelect && values.surface_type) {
+      surfaceSelect.value = values.surface_type;
+    }
+
+    card.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(card);
+      const requirements = {
+        read_range_m: String(formData.get('read_range_m') || '').trim() || null,
+        surface_type: String(formData.get('surface_type') || '').trim() || null,
+        application: String(formData.get('application') || '').trim() || null,
+        size_requirement: String(formData.get('size_requirement') || '').trim() || null,
+      };
+
+      card.querySelectorAll('input, select, button').forEach((el) => {
+        el.disabled = true;
+      });
+
+      await sendQuestion(summarizeRequirements(requirements), { rfid_requirements: requirements });
+    });
+
+    messages.appendChild(card);
+  }
+
+  function renderGenericRequirementForm(ui, payloadKey, summaryBuilder) {
+    const fields = Array.isArray(ui?.fields) ? ui.fields : [];
+    if (!fields.length) return;
+
+    const card = document.createElement('form');
+    card.className = 'pcw-rfid-form';
+    const values = ui?.values || {};
+    const missingSlots = Array.isArray(ui?.missing_slots) ? ui.missing_slots : [];
+
+    const fieldHtml = fields.map((field) => {
+      const name = field?.name || '';
+      const currentValue = values[name] || '';
+      const isMissing = missingSlots.includes(name);
+      const label = escapeHtml(field?.label || name);
+      if (field?.type === 'select') {
+        const options = [
+          `<option value="">${t('Select', 'Seçiniz')}</option>`,
+          ...((field.options || []).map((option) => {
+            const value = option?.value || '';
+            const selected = String(value) === String(currentValue) ? ' selected' : '';
+            return `<option value="${escapeHtml(value)}"${selected}>${escapeHtml(option?.label || value)}</option>`;
+          })),
+        ].join('');
+        return `
+          <label class="${isMissing ? 'is-missing' : ''}">
+            <span>${label}</span>
+            <select name="${escapeHtml(name)}">${options}</select>
+          </label>
+        `;
+      }
+      return `
+        <label class="${isMissing ? 'is-missing' : ''}">
+          <span>${label}</span>
+          <input name="${escapeHtml(name)}" type="text" placeholder="${escapeHtml(field?.placeholder || '')}" value="${escapeHtml(currentValue)}" />
+        </label>
+      `;
+    }).join('');
+
+    card.innerHTML = `
+      <div class="pcw-rfid-form-title">${escapeHtml(ui?.title || t('Requirement details', 'İhtiyaç bilgileri'))}</div>
+      <p class="pcw-rfid-form-helper">${escapeHtml(ui?.helper_text || t('You can also fill in these fields by typing.', 'İsterseniz bu alanları yazı yazarak da doldurabilirsiniz.'))}</p>
+      ${fieldHtml}
+      <button type="submit">${escapeHtml(ui?.submit_label || t('Recommend products', 'Ürünleri öner'))}</button>
+    `;
+
+    card.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(card);
+      const requirements = {};
+      for (const field of fields) {
+        const name = field?.name;
+        if (!name) continue;
+        const value = String(formData.get(name) || '').trim();
+        requirements[name] = value || null;
+      }
+
+      card.querySelectorAll('input, select, button').forEach((el) => {
+        el.disabled = true;
+      });
+
+      await sendQuestion(summaryBuilder(requirements), { [payloadKey]: requirements });
+    });
+
+    messages.appendChild(card);
+  }
+
+  function renderChoiceRequirementForm(ui, payloadKey, summaryBuilder) {
+    const fields = Array.isArray(ui?.fields) ? ui.fields : [];
+    if (!fields.length) return;
+
+    const card = document.createElement('form');
+    card.className = 'pcw-choice-form';
+    const values = ui?.values || {};
+    const missingSlots = Array.isArray(ui?.missing_slots) ? ui.missing_slots : [];
+    const requirements = {};
+    let activeIndex = 0;
+    let query = '';
+
+    for (const field of fields) {
+      const name = field?.name;
+      if (!name) continue;
+      requirements[name] = values[name] || null;
+    }
+
+    const filledIndex = fields.findIndex((field) => requirements[field?.name]);
+    if (filledIndex >= 0) activeIndex = filledIndex;
+
+    function render(focusSearch = false) {
+      const field = fields[activeIndex] || fields[0];
+      const name = field?.name || '';
+      const options = Array.isArray(field?.options) ? field.options : [];
+      const isMultiple = Boolean(field?.multiple);
+      const usefulOptions = options.filter((option) => option?.value !== '');
+      const filteredOptions = usefulOptions.filter((option) => {
+        if (!query) return true;
+        return String(option?.label || option?.value || '').toLowerCase().includes(query.toLowerCase());
+      });
+      const currentValue = requirements[name] || '';
+      const currentValues = Array.isArray(currentValue) ? currentValue : (currentValue ? [currentValue] : []);
+
+      card.innerHTML = `
+        <div class="pcw-choice-head">
+          <div>
+            <div class="pcw-choice-title">${escapeHtml(ui?.title || t('Printer requirements', 'Yazıcı ihtiyacı'))}</div>
+            <p>${escapeHtml(ui?.helper_text || t('You can leave missing fields blank.', 'İsterseniz eksik alanları boş bırakabilirsiniz.'))}</p>
+          </div>
+        </div>
+        <div class="pcw-choice-steps">
+          ${fields.map((step, index) => {
+            const stepName = step?.name || '';
+            const stepValue = requirements[stepName];
+            const isDone = Array.isArray(stepValue) ? stepValue.length > 0 : Boolean(stepValue);
+            const isMissing = missingSlots.includes(stepName);
+            return `
+              <button class="${index === activeIndex ? 'is-active' : ''} ${isDone ? 'is-done' : ''} ${isMissing ? 'is-missing' : ''}" type="button" data-step="${index}">
+                <span>${escapeHtml(step?.label || stepName)}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        <div class="pcw-choice-stage">
+          ${field?.type === 'select' ? `
+            <label class="pcw-choice-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="search" value="${escapeHtml(query)}" placeholder="${escapeHtml(field?.placeholder || t(`Search ${field?.label || name}...`, `${field?.label || name} ara...`))}" />
+            </label>
+          ` : ''}
+          <div class="pcw-choice-grid">
+            ${field?.type === 'select' ? filteredOptions.map((option) => {
+              const value = option?.value || '';
+              const selected = currentValues.map(String).includes(String(value));
+              return `
+                <button class="${selected ? 'is-selected' : ''}" type="button" data-value="${escapeHtml(value)}">
+                  ${escapeHtml(option?.label || value)}
+                </button>
+              `;
+            }).join('') : `
+              <input class="pcw-choice-text" name="${escapeHtml(name)}" type="text" value="${escapeHtml(currentValue)}" placeholder="${escapeHtml(field?.placeholder || '')}" />
+            `}
+          </div>
+        </div>
+        <div class="pcw-choice-foot">
+          <button class="pcw-choice-unknown" type="button">${t("I don't know", 'Bilmiyorum')}</button>
+          <button class="pcw-choice-submit" type="submit">${escapeHtml(ui?.submit_label || t('Recommend printers', 'Yazıcıları öner'))}</button>
+        </div>
+      `;
+
+      card.querySelectorAll('[data-step]').forEach((button) => {
+        button.addEventListener('click', () => {
+          activeIndex = Number(button.dataset.step || 0);
+          query = '';
+          render();
+        });
+      });
+
+      const searchInput = card.querySelector('.pcw-choice-search input');
+      if (focusSearch && searchInput) {
+        searchInput.focus();
+        searchInput.setSelectionRange(searchInput.value.length, searchInput.value.length);
+      }
+      searchInput?.addEventListener('input', (event) => {
+        query = event.currentTarget.value;
+        render(true);
+      });
+
+      card.querySelectorAll('[data-value]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const selectedValue = button.dataset.value || null;
+          if (isMultiple) {
+            const nextValues = Array.isArray(requirements[name]) ? [...requirements[name]] : [];
+            const existingIndex = nextValues.map(String).indexOf(String(selectedValue));
+            if (existingIndex >= 0) {
+              nextValues.splice(existingIndex, 1);
+            } else if (selectedValue) {
+              nextValues.push(selectedValue);
+            }
+            requirements[name] = nextValues.length ? nextValues : null;
+          } else {
+            requirements[name] = selectedValue;
+            activeIndex = Math.min(activeIndex + 1, fields.length - 1);
+          }
+          query = '';
+          render();
+        });
+      });
+
+      card.querySelector('.pcw-choice-text')?.addEventListener('input', (event) => {
+        requirements[name] = event.currentTarget.value.trim() || null;
+      });
+
+      card.querySelector('.pcw-choice-unknown')?.addEventListener('click', () => {
+        requirements[name] = isMultiple ? [] : null;
+        query = '';
+        activeIndex = Math.min(activeIndex + 1, fields.length - 1);
+        render();
+      });
+    }
+
+    card.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const activeField = fields[activeIndex];
+      const textInput = card.querySelector('.pcw-choice-text');
+      if (activeField?.name && textInput) {
+        requirements[activeField.name] = textInput.value.trim() || null;
+      }
+
+      card.querySelectorAll('input, button').forEach((el) => {
+        el.disabled = true;
+      });
+
+      await sendQuestion(summaryBuilder(requirements), { [payloadKey]: requirements });
+    });
+
+    render();
+    messages.appendChild(card);
+  }
+
+  function renderSequentialTagRequirementForm(ui) {
+    const rawFields = Array.isArray(ui?.fields) ? ui.fields : [];
+    const tagFieldOrder = ['application', 'read_range_m', 'surface_type', 'size_requirement'];
+    const fields = [...rawFields].sort((a, b) => {
+      const aIndex = tagFieldOrder.indexOf(a?.name || '');
+      const bIndex = tagFieldOrder.indexOf(b?.name || '');
+      return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+    });
+    if (!fields.length) return;
+
+    const values = ui?.values || {};
+    const missingSlots = Array.isArray(ui?.missing_slots) ? ui.missing_slots : [];
+    const requirements = {};
+
+    for (const field of fields) {
+      const name = field?.name;
+      if (!name) continue;
+      requirements[name] = values[name] || null;
+    }
+
+    const firstEmptyIndex = fields.findIndex((field) => {
+      const value = requirements[field?.name];
+      return Array.isArray(value) ? value.length === 0 : !value;
+    });
+    const startIndex = firstEmptyIndex >= 0 ? firstEmptyIndex : fields.length - 1;
+
+    function optionLabel(field, value) {
+      if (Array.isArray(value)) {
+        return value.map((item) => optionLabel(field, item)).filter(Boolean).join(', ');
+      }
+      if (!value) return '';
+      const option = (field?.options || []).find((item) => String(item?.value || '') === String(value));
+      return option?.label || value;
+    }
+
+    function hasFieldValue(field) {
+      const value = requirements[field?.name];
+      return Array.isArray(value) ? value.length > 0 : Boolean(value);
+    }
+
+    function questionForField(field, index) {
+      const label = field?.label || field?.name || t('this field', 'bu alan');
+      if (field?.type === 'select') {
+        return isEnglish
+          ? `Please select ${label.toLocaleLowerCase('en')}:`
+          : `Lütfen ${label.toLocaleLowerCase('tr')} seçin:`;
+      }
+      return isEnglish
+        ? `Please enter ${label.toLocaleLowerCase('en')}:`
+        : `Lütfen ${label.toLocaleLowerCase('tr')} yazın:`;
+    }
+
+    function disableStepCard(card) {
+      card.classList.add('is-complete');
+      card.querySelectorAll('input, button').forEach((el) => {
+        el.disabled = true;
+      });
+    }
+
+    function nextIndexAfter(index) {
+      const next = fields.findIndex((field, fieldIndex) => fieldIndex > index && !hasFieldValue(field));
+      return next >= 0 ? next : index + 1;
+    }
+
+    async function completeStep(card, index, field, value, label) {
+      const name = field?.name || '';
+      requirements[name] = value;
+      const displayValue = label || optionLabel(field, value) || t("I don't know", 'Bilmiyorum');
+      disableStepCard(card);
+      addMessage('user', displayValue);
+
+      const nextIndex = nextIndexAfter(index);
+      if (nextIndex < fields.length) {
+        const prompt = addBotAnswer(questionForField(fields[nextIndex], nextIndex));
+        appendStepCard(nextIndex);
+        scrollToMessageStart(prompt);
+        return;
+      }
+
+      await sendQuestion(
+        summarizeRequirements(requirements),
+        { rfid_requirements: requirements },
+        { showUserMessage: false },
+      );
+    }
+
+    function appendStepCard(activeIndex) {
+      const card = document.createElement('form');
+      card.className = 'pcw-choice-form pcw-step-form';
+      let query = '';
+
+      function render(focusSearch = false) {
+        const field = fields[activeIndex] || fields[0];
+      const name = field?.name || '';
+      const options = Array.isArray(field?.options) ? field.options : [];
+      const isMultiple = Boolean(field?.multiple);
+      const usefulOptions = options.filter((option) => option?.value !== '');
+      const filteredOptions = usefulOptions.filter((option) => {
+        if (!query) return true;
+        return String(option?.label || option?.value || '').toLowerCase().includes(query.toLowerCase());
+      });
+      const currentValue = requirements[name] || '';
+      const currentValues = Array.isArray(currentValue) ? currentValue : (currentValue ? [currentValue] : []);
+      const isLastStep = activeIndex === fields.length - 1;
+        const canContinue = hasFieldValue(field);
+
+      card.innerHTML = `
+        <div class="pcw-choice-head">
+          <div>
+            <div class="pcw-choice-title">${escapeHtml(ui?.title || t('RFID tag requirements', 'RFID etiket ihtiyacı'))}</div>
+            <p>${escapeHtml(ui?.helper_text || t('Answer step by step, then get matching products.', 'Adım adım cevaplayın, sonunda uygun ürünleri önerelim.'))}</p>
+          </div>
+        </div>
+        <div class="pcw-step-track" aria-label="${escapeHtml(t('Requirement steps', 'İhtiyaç adımları'))}">
+          ${fields.map((step, index) => {
+            const stepName = step?.name || '';
+            const stepValue = requirements[stepName];
+            const isDone = Array.isArray(stepValue) ? stepValue.length > 0 : Boolean(stepValue);
+            const isMissing = missingSlots.includes(stepName);
+              const isLocked = index !== activeIndex;
+            return `
+              <button class="${index === activeIndex ? 'is-active' : ''} ${isDone ? 'is-done' : ''} ${isMissing ? 'is-missing' : ''} ${isLocked ? 'is-locked' : ''}" type="button" data-step="${index}" ${isLocked ? 'disabled' : ''}>
+                <span>${escapeHtml(step?.label || stepName)}</span>
+              </button>
+              ${index < fields.length - 1 ? '<i aria-hidden="true">›</i>' : ''}
+            `;
+          }).join('')}
+        </div>
+        <div class="pcw-step-question">
+          <span>${escapeHtml(t('Question', 'Soru'))} ${activeIndex + 1}/${fields.length}</span>
+          <strong>${escapeHtml(field?.label || name)}</strong>
+        </div>
+        <div class="pcw-choice-stage">
+          ${field?.type === 'select' ? `
+            <label class="pcw-choice-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="search" value="${escapeHtml(query)}" placeholder="${escapeHtml(field?.placeholder || t(`Search ${field?.label || name}...`, `${field?.label || name} ara...`))}" />
+            </label>
+          ` : ''}
+          <div class="pcw-choice-grid">
+            ${field?.type === 'select' ? filteredOptions.map((option) => {
+              const value = option?.value || '';
+              const selected = currentValues.map(String).includes(String(value));
+              return `
+                <button class="${selected ? 'is-selected' : ''}" type="button" data-value="${escapeHtml(value)}">
+                  ${escapeHtml(option?.label || value)}
+                </button>
+              `;
+            }).join('') : `
+              <input class="pcw-choice-text" name="${escapeHtml(name)}" type="text" value="${escapeHtml(currentValue)}" placeholder="${escapeHtml(field?.placeholder || '')}" />
+            `}
+          </div>
+        </div>
+        <div class="pcw-choice-foot">
+            <button class="pcw-choice-unknown" type="button">${t("I don't know", 'Bilmiyorum')}</button>
+          <button class="pcw-choice-submit" type="${isLastStep ? 'submit' : 'button'}" ${canContinue ? '' : 'disabled'}>
+            ${escapeHtml(isLastStep ? (ui?.submit_label || t('Recommend products', 'Ürünleri öner')) : t('Continue', 'Devam'))}
+          </button>
+        </div>
+      `;
+
+      const searchInput = card.querySelector('.pcw-choice-search input');
+      if (focusSearch && searchInput) {
+        searchInput.focus();
+        searchInput.setSelectionRange(searchInput.value.length, searchInput.value.length);
+      }
+      searchInput?.addEventListener('input', (event) => {
+        query = event.currentTarget.value;
+        render(true);
+      });
+
+      card.querySelectorAll('[data-value]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const selectedValue = button.dataset.value || null;
+            const selectedLabel = button.textContent?.trim() || optionLabel(field, selectedValue);
+          if (isMultiple) {
+            const nextValues = Array.isArray(requirements[name]) ? [...requirements[name]] : [];
+            const existingIndex = nextValues.map(String).indexOf(String(selectedValue));
+            if (existingIndex >= 0) {
+              nextValues.splice(existingIndex, 1);
+            } else if (selectedValue) {
+              nextValues.push(selectedValue);
+            }
+            requirements[name] = nextValues.length ? nextValues : null;
+            render();
+          } else {
+              completeStep(card, activeIndex, field, selectedValue, selectedLabel);
+          }
+        });
+      });
+
+      card.querySelector('.pcw-choice-text')?.addEventListener('input', (event) => {
+        requirements[name] = event.currentTarget.value.trim() || null;
+        const submitButton = card.querySelector('.pcw-choice-submit');
+          if (submitButton) submitButton.disabled = !hasFieldValue(field);
+      });
+
+        card.querySelector('.pcw-choice-unknown')?.addEventListener('click', () => {
+          completeStep(card, activeIndex, field, isMultiple ? [] : null, t("I don't know", 'Bilmiyorum'));
+        });
+
+      const nextButton = card.querySelector('.pcw-choice-submit[type="button"]');
+      nextButton?.addEventListener('click', () => {
+        const textInput = card.querySelector('.pcw-choice-text');
+        if (textInput) requirements[name] = textInput.value.trim() || null;
+          completeStep(card, activeIndex, field, requirements[name], optionLabel(field, requirements[name]) || requirements[name]);
+      });
+
+        if (isMultiple) {
+          const submitButton = card.querySelector('.pcw-choice-submit');
+          if (submitButton) {
+            submitButton.disabled = !hasFieldValue(field);
+          }
+        }
+      }
+
+      card.addEventListener('submit', async (event) => {
+      event.preventDefault();
+        const activeField = fields[activeIndex];
+      const textInput = card.querySelector('.pcw-choice-text');
+      if (activeField?.name && textInput) {
+        requirements[activeField.name] = textInput.value.trim() || null;
+      }
+
+        await completeStep(
+          card,
+          activeIndex,
+          activeField,
+          requirements[activeField?.name],
+          optionLabel(activeField, requirements[activeField?.name]) || requirements[activeField?.name],
+        );
+      });
+
+      render();
+      messages.appendChild(card);
+    }
+
+    const firstPrompt = addBotAnswer(questionForField(fields[startIndex], startIndex));
+    appendStepCard(startIndex);
+    scrollToMessageStart(firstPrompt);
+  }
+
+  function renderUi(ui) {
+    if (!ui || typeof ui !== 'object') return;
+    if (ui.type === 'rfid_tag_requirements') {
+      if (Array.isArray(ui.fields) && ui.fields.length) {
+        renderSequentialTagRequirementForm(ui);
+      } else {
+        renderRfidForm(ui);
+      }
+      return;
+    }
+    if (ui.type === 'printer_requirements') {
+      renderChoiceRequirementForm(ui, 'printer_requirements', summarizePrinterRequirements);
+      return;
+    }
+    if (ui.type === 'reader_requirements') {
+      renderChoiceRequirementForm(ui, 'reader_requirements', summarizeReaderRequirements);
+      return;
+    }
+    if (ui.type === 'product_recommendations') {
+      renderProductCards(ui.products, ui);
+    }
+  }
+
+  function removeQuickReplies() {
+    messages.querySelector('.pcw-quick-replies')?.remove();
+  }
+
+  function renderQuickReplies(options, onPick) {
+    removeQuickReplies();
+    const wrap = document.createElement('div');
+    wrap.className = 'pcw-quick-replies';
+    const allOptions = [...options, { value: null, label: t('Skip', 'Atla'), skip: true }];
+
+    for (const option of allOptions) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = option.skip ? 'pcw-quick-reply pcw-quick-reply--skip' : 'pcw-quick-reply';
+      button.textContent = option.label;
+      button.addEventListener('click', () => {
+        removeQuickReplies();
+        onPick(option.value, option.label);
+      });
+      wrap.appendChild(button);
+    }
+
+    messages.appendChild(wrap);
+    scrollToMessage(wrap, 'end');
+  }
+
+  function askQuoteStep() {
+    const step = QUOTE_STEPS[quoteFlow.stepIndex];
+    if (!step) {
+      finishQuoteFlow();
+      return;
+    }
+    const questionText = step.type === 'choice'
+      ? `${step.question} ${t('(You can also just type your answer.)', '(İsterseniz yazarak da belirtebilirsiniz.)')}`
+      : step.question;
+    const prompt = addBotAnswer(questionText);
+    renderQuickReplies(step.type === 'choice' ? step.options : [], (value, label) => {
+      completeQuoteStep(step.key, value, label);
+    });
+    scrollToMessageStart(prompt);
+  }
+
+  function addTypingIndicator() {
+    const bubble = document.createElement('div');
+    bubble.className = 'pcw-msg pcw-msg--bot pcw-msg--typing-indicator';
+    bubble.innerHTML = '<span class="pcw-typing-dot" aria-hidden="true"></span><span class="pcw-typing-dot" aria-hidden="true"></span><span class="pcw-typing-dot" aria-hidden="true"></span>';
+    messages.appendChild(bubble);
+    scrollToMessage(bubble, 'end');
+    return bubble;
+  }
+
+  async function completeQuoteStep(key, value, label) {
+    if (!quoteFlow) return;
+    quoteFlow.answers[key] = value;
+    addMessage('user', label);
+    quoteFlow.stepIndex += 1;
+
+    const typing = addTypingIndicator();
+    await wait(600);
+    typing.remove();
+
+    askQuoteStep();
+  }
+
+  async function finishQuoteFlow() {
+    const context = quoteFlow?.context || {};
+    const answers = quoteFlow?.answers || {};
+    input.disabled = true;
+
+    await wait(200);
+    const typing = addTypingIndicator();
+
+    try {
+      const [data] = await Promise.all([
+        fetch(`${AIKOS_API_URL}/quote-lead`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            session_id: sessionId,
+            product_slug: context.slug || null,
+            product_title: context.title || null,
+            product_category: context.category || null,
+            location_count: answers.location_count || null,
+            install_site: answers.install_site || null,
+            existing_infra: answers.existing_infra || null,
+            contact_name: answers.contact_name || null,
+            company_name: answers.company_name || null,
+            contact_phone_or_email: answers.contact_phone_or_email || null,
+          }),
+        }).then((res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        }),
+        wait(500),
+      ]);
+
+      typing.remove();
+      const answer = addBotAnswer(data.message || errorText);
+      if (context.datasheet) {
+        addBotAnswer(`[${t('View technical datasheet', 'Teknik dökümanı gör')}](${context.datasheet})`);
+      }
+      scrollToMessageStart(answer);
+    } catch (err) {
+      typing.remove();
+      const answer = addMessage('bot', errorText);
+      scrollToMessageStart(answer);
+    } finally {
+      quoteFlow = null;
+      input.disabled = false;
+      input.focus();
+    }
+  }
+
+  function startQuoteFlow(context) {
+    quoteFlow = { context: context || {}, stepIndex: 0, answers: {} };
+    expertContext = null;
+    greeted = true;
+    sessionId = createSessionId();
+    messages.replaceChildren();
+    setOpen(true);
+    const productLabel = (context && context.title) || t('this product', 'bu ürün');
+    addMessage(
+      'bot',
+      t(
+        `Hi! Let's put together a price quote for ${productLabel}. I'll just ask a few quick questions first.`,
+        `Merhaba! ${productLabel} için fiyat teklifinizi hazırlayalım. Önce size birkaç kısa soru sorabilir miyim?`,
+      ),
+    );
+    askQuoteStep();
+  }
+
+  function startExpertFlow(context) {
+    quoteFlow = null;
+    expertContext = context || {};
+    greeted = true;
+    sessionId = createSessionId();
+    messages.replaceChildren();
+    setOpen(true);
+    const productLabel = expertContext.title || t('this product', 'bu ürün');
+    addMessage(
+      'bot',
+      t(
+        `Hi! Ask me anything about the ${productLabel}.`,
+        `Merhaba! ${productLabel} hakkında merak ettiğiniz her şeyi sorabilirsiniz.`,
+      ),
+    );
+    input.focus();
+  }
+
+  function setOpen(open) {
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    widget.classList.toggle('is-open', open);
+    if (open && !greeted) {
+      greeted = true;
+      addMessage('bot', greeting);
+      renderSuggestions();
+    }
+    if (open) {
+      requestAnimationFrame(() => input?.focus());
+    }
+  }
+
+  toggle?.addEventListener('click', () => {
+    setOpen(panel.hidden);
+  });
+
+  newSessionButton?.addEventListener('click', () => {
+    sessionId = createSessionId();
+    greeted = true;
+    messages.replaceChildren();
+    addMessage('bot', greeting);
+    renderSuggestions();
+    input.value = '';
+    input.disabled = false;
+    input.focus();
+  });
+
+  async function sendQuestion(question, extraPayload = {}, options = {}) {
+    removeSuggestions();
+    let userMessage = null;
+    if (options.showUserMessage !== false) {
+      userMessage = addMessage('user', question);
+      scrollToMessage(userMessage, 'end');
+    }
+    input.disabled = true;
+
+    await wait(300);
+    const typing = addMessage('bot', '…');
+    typing.classList.add('pcw-msg--typing');
+    scrollToMessage(typing, 'end');
+
+    try {
+      const [data] = await Promise.all([
+        fetch(`${AIKOS_API_URL}/ask`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            question,
+            role: ROLE,
+            session_id: sessionId,
+            ...extraPayload,
+          }),
+        }).then((res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        }),
+        wait(1100),
+      ]);
+
+      typing.remove();
+      const answer = addBotAnswer(data.answer || errorText);
+      renderUi(data.ui);
+      scrollToMessageStart(answer);
+    } catch (err) {
+      typing.remove();
+      const answer = addMessage('bot', errorText);
+      scrollToMessageStart(answer);
+    } finally {
+      input.disabled = false;
+      input.focus();
+    }
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    input.value = '';
+
+    if (quoteFlow) {
+      const step = QUOTE_STEPS[quoteFlow.stepIndex];
+      if (step) {
+        removeQuickReplies();
+        completeQuoteStep(step.key, question, question);
+      }
+      return;
+    }
+
+    await sendQuestion(question, expertContext ? { product_context: { slug: expertContext.slug } } : {});
+  });
+
+  window.AikosChat = {
+    open: () => setOpen(true),
+    openQuoteFlow: startQuoteFlow,
+    openExpertFlow: startExpertFlow,
+  };
+</script>
+
+<style>
+  .pcw {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9998;
+    font-family: inherit;
+  }
+
+  .pcw-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary, #00125C);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 24px rgba(0, 18, 92, 0.28);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .pcw-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 18, 92, 0.34);
+  }
+
+  .pcw-toggle-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1.18);
+    transform-origin: center;
+  }
+
+  .pcw-icon--close { display: none; }
+  .pcw.is-open .pcw-icon--chat { display: none; }
+  .pcw.is-open .pcw-icon--close { display: block; }
+  .pcw.is-open .pcw-toggle-label { display: none; }
+
+  .pcw-panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12px);
+    width: min(470px, calc(100vw - 40px));
+    height: min(720px, calc(100vh - 104px));
+    background: #fff;
+    border-radius: var(--radius-lg, 22px);
+    box-shadow: 0 18px 56px rgba(0, 10, 58, 0.22);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border, #E3E8F2);
+  }
+
+  .pcw-panel[hidden] {
+    display: none;
+  }
+
+  .pcw-header {
+    position: relative;
+    background:
+      radial-gradient(circle at 16% 18%, rgba(24, 183, 214, 0.42), transparent 26%),
+      linear-gradient(135deg, #07155f 0%, var(--primary, #00125C) 52%, #051044 100%);
+    color: #fff;
+    padding: 12px 16px 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  .pcw-header::after {
+    content: "";
+    position: absolute;
+    right: -54px;
+    top: -72px;
+    width: 160px;
+    height: 160px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+  }
+
+  .pcw-agent {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 auto;
+    border: none;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: none;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.22));
+  }
+
+  .pcw-agent img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.18);
+    transform-origin: center;
+  }
+
+  .pcw-header strong {
+    display: block;
+    font-size: 17px;
+    line-height: 1.15;
+    margin-bottom: 5px;
+  }
+
+  .pcw-header p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.76);
+    max-width: 250px;
+  }
+
+  .pcw-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 22px;
+    margin-bottom: 5px;
+    padding: 3px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .pcw-status i {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #37E27A;
+    box-shadow: 0 0 0 4px rgba(55, 226, 122, 0.16);
+  }
+
+  .pcw-new-session {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .pcw-new-session:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .pcw-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background:
+      linear-gradient(180deg, #F8FAFE 0%, #F3F6FB 100%);
+  }
+
+  .pcw-form {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    border-top: 1px solid var(--border, #E3E8F2);
+    background: #fff;
+  }
+
+  .pcw-input {
+    flex: 1;
+    border: 1px solid #DDE5F1;
+    border-radius: 16px;
+    padding: 10px 13px;
+    font-size: 13.5px;
+    font-family: inherit;
+    outline: none;
+  }
+
+  .pcw-input:focus {
+    border-color: var(--accent, #18B7D6);
+    box-shadow: 0 0 0 4px rgba(24, 183, 214, 0.16);
+  }
+
+  .pcw-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary, #00125C), #071E7A);
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .pcw-send:hover {
+    background: var(--navy-700, #0A1E75);
+  }
+
+  @media (max-width: 480px) {
+    .pcw {
+      right: 12px;
+      bottom: 12px;
+    }
+    .pcw-toggle-label { display: none; }
+    .pcw-panel {
+      width: calc(100vw - 18px);
+      height: min(720px, calc(100vh - 92px));
+    }
+  }
+</style>
+
+<style is:global>
+  /* Mesaj balonlari JS ile sonradan eklendigi icin scoped CSS'e dahil olmuyor */
+  #product-chat-widget .pcw-msg {
+    max-width: 85%;
+    padding: 11px 14px;
+    border-radius: 16px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  #product-chat-widget .pcw-msg--bot {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #DDE5F1;
+    color: var(--text, #111827);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 18, 92, 0.05);
+  }
+
+  #product-chat-widget .pcw-msg--user {
+    background: linear-gradient(135deg, #18B7D6, #0877B8);
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 10px 24px rgba(8, 119, 184, 0.16);
+  }
+
+  #product-chat-widget .pcw-msg--typing {
+    color: var(--text-faint, #8A93A5);
+  }
+
+  #product-chat-widget .pcw-msg a {
+    color: var(--primary, #00125C);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  #product-chat-widget .pcw-suggestions {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 4px 0 6px;
+  }
+
+  #product-chat-widget .pcw-suggestions button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #DDE5F1;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--primary, #00125C);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    line-height: 1.35;
+    padding: 10px 12px;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 18, 92, 0.06);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  #product-chat-widget .pcw-suggestions button span {
+    width: 26px;
+    height: 26px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    background: #EAF7FB;
+    color: #0877B8;
+    font-size: 15px;
+  }
+
+  #product-chat-widget .pcw-suggestions button:hover {
+    transform: translateY(-1px);
+    background: #fff;
+    border-color: rgba(24, 183, 214, 0.5);
+    box-shadow: 0 12px 24px rgba(0, 18, 92, 0.1);
+  }
+
+  #product-chat-widget .pcw-quick-replies {
+    align-self: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 2px 0 6px;
+  }
+
+  #product-chat-widget .pcw-quick-reply {
+    border: 1px solid #DDE5F1;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary, #00125C);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    line-height: 1.3;
+    padding: 8px 14px;
+    box-shadow: 0 6px 16px rgba(0, 18, 92, 0.05);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  #product-chat-widget .pcw-quick-reply:hover {
+    transform: translateY(-1px);
+    background: #fff;
+    border-color: rgba(24, 183, 214, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 18, 92, 0.08);
+  }
+
+  #product-chat-widget .pcw-quick-reply--skip {
+    color: var(--text-muted, #5B6475);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  #product-chat-widget .pcw-quick-reply--skip:hover {
+    background: #F5F7FB;
+    border-color: #E3E8F2;
+    box-shadow: none;
+  }
+
+  #product-chat-widget .pcw-msg--typing-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 13px 16px;
+  }
+
+  #product-chat-widget .pcw-typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary, #00125C);
+    opacity: 0.3;
+    animation: pcw-typing-bounce 1s ease-in-out infinite;
+  }
+
+  #product-chat-widget .pcw-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+  #product-chat-widget .pcw-typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes pcw-typing-bounce {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-3px); }
+  }
+
+  #product-chat-widget .pcw-rfid-form {
+    align-self: center;
+    width: min(100%, 420px);
+    display: grid;
+    gap: 10px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--border, #E3E8F2);
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(0, 18, 92, 0.06);
+  }
+
+  #product-chat-widget .pcw-rfid-form-title {
+    color: var(--primary, #00125C);
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  #product-chat-widget .pcw-rfid-form-helper {
+    margin: -2px 0 2px;
+    color: var(--text-muted, #5B6475);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  #product-chat-widget .pcw-rfid-form label {
+    display: grid;
+    gap: 5px;
+  }
+
+  #product-chat-widget .pcw-rfid-form span {
+    color: var(--text-muted, #5B6475);
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+
+  #product-chat-widget .pcw-rfid-form input,
+  #product-chat-widget .pcw-rfid-form select {
+    width: 100%;
+    border: 1px solid var(--border, #E3E8F2);
+    border-radius: 6px;
+    padding: 9px 10px;
+    color: var(--text, #111827);
+    font: inherit;
+    font-size: 13px;
+    background: #fff;
+    outline: none;
+  }
+
+  #product-chat-widget .pcw-rfid-form input:focus,
+  #product-chat-widget .pcw-rfid-form select:focus {
+    border-color: var(--accent, #18B7D6);
+  }
+
+  #product-chat-widget .pcw-rfid-form label.is-missing input,
+  #product-chat-widget .pcw-rfid-form label.is-missing select {
+    border-color: #F59E0B;
+    background: #FFFBEB;
+  }
+
+  #product-chat-widget .pcw-rfid-form button {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 12px;
+    background: var(--primary, #00125C);
+    color: #fff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #product-chat-widget .pcw-rfid-form button:disabled {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  #product-chat-widget .pcw-choice-form {
+    align-self: center;
+    width: min(100%, 420px);
+    display: grid;
+    gap: 9px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--border, #E3E8F2);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 18, 92, 0.08);
+  }
+
+  #product-chat-widget .pcw-choice-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  #product-chat-widget .pcw-choice-title {
+    color: var(--text, #111827);
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+
+  #product-chat-widget .pcw-choice-head p {
+    margin: 3px 0 0;
+    color: var(--text-muted, #5B6475);
+    font-size: 11.5px;
+    line-height: 1.25;
+  }
+
+  #product-chat-widget .pcw-choice-steps {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  #product-chat-widget .pcw-choice-steps button {
+    flex: 0 0 auto;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: #8A93A3;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 850;
+    padding: 6px 9px;
+  }
+
+  #product-chat-widget .pcw-choice-steps button.is-active {
+    background: #EAF2FF;
+    color: #1C5DDB;
+  }
+
+  #product-chat-widget .pcw-choice-steps button.is-done {
+    color: var(--primary, #00125C);
+  }
+
+  #product-chat-widget .pcw-choice-steps button.is-missing:not(.is-done) {
+    color: #B7791F;
+  }
+
+  #product-chat-widget .pcw-step-form {
+    gap: 8px;
+  }
+
+  #product-chat-widget .pcw-step-track {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow-x: auto;
+    padding: 0 1px 3px;
+    scrollbar-width: none;
+  }
+
+  #product-chat-widget .pcw-step-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #product-chat-widget .pcw-step-track button {
+    flex: 0 0 auto;
+    min-width: 0;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: #929AA8;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font: inherit;
+    font-size: 11.5px;
+    font-weight: 850;
+    line-height: 1;
+    max-width: 104px;
+    padding: 4px 6px;
+    text-align: center;
+  }
+
+  #product-chat-widget .pcw-step-track button::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: currentColor;
+    flex: 0 0 auto;
+    opacity: 0.7;
+  }
+
+  #product-chat-widget .pcw-step-track button span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #product-chat-widget .pcw-step-track button.is-active {
+    background: #EAF2FF;
+    color: #1C5DDB;
+    padding-inline: 8px;
+  }
+
+  #product-chat-widget .pcw-step-track button.is-done:not(.is-active) {
+    color: #128043;
+  }
+
+  #product-chat-widget .pcw-step-track button.is-done:not(.is-active)::before {
+    content: "✓";
+    width: 12px;
+    height: 12px;
+    display: inline-grid;
+    place-items: center;
+    background: #E8F7EF;
+    color: #128043;
+    font-size: 10px;
+    opacity: 1;
+  }
+
+  #product-chat-widget .pcw-step-track button.is-locked {
+    cursor: default;
+    opacity: 0.68;
+  }
+
+  #product-chat-widget .pcw-step-track i {
+    color: #C6CDD8;
+    flex: 0 0 auto;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1;
+  }
+
+  #product-chat-widget .pcw-step-question {
+    display: grid;
+    gap: 1px;
+    border: 1px solid rgba(24, 183, 214, 0.22);
+    border-radius: 8px;
+    background: #F5FBFE;
+    padding: 7px 9px;
+  }
+
+  #product-chat-widget .pcw-step-question span {
+    color: #0877B8;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  #product-chat-widget .pcw-step-question strong {
+    color: var(--text, #111827);
+    font-size: 12.5px;
+    line-height: 1.25;
+  }
+
+  #product-chat-widget .pcw-choice-stage {
+    display: grid;
+    gap: 8px;
+  }
+
+  #product-chat-widget .pcw-choice-search {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--border, #E3E8F2);
+    border-radius: 8px;
+    background: #F8FAFD;
+    color: #9AA3B2;
+    padding: 7px 9px;
+  }
+
+  #product-chat-widget .pcw-choice-search svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+  }
+
+  #product-chat-widget .pcw-choice-search input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--text, #111827);
+    font: inherit;
+    font-size: 12.5px;
+    outline: none;
+  }
+
+  #product-chat-widget .pcw-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 2px;
+  }
+
+  #product-chat-widget .pcw-choice-grid button {
+    min-height: 38px;
+    border: 1px solid var(--border, #E3E8F2);
+    border-radius: 8px;
+    background: #fff;
+    color: #374151;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 8px 9px;
+    text-align: left;
+  }
+
+  #product-chat-widget .pcw-choice-grid button:hover,
+  #product-chat-widget .pcw-choice-grid button.is-selected {
+    border-color: #1C5DDB;
+    background: #F0F6FF;
+    color: #0F3FA6;
+  }
+
+  #product-chat-widget .pcw-choice-text {
+    grid-column: 1 / -1;
+    border: 1px solid var(--border, #E3E8F2);
+    border-radius: 8px;
+    color: var(--text, #111827);
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+    padding: 10px;
+  }
+
+  #product-chat-widget .pcw-choice-foot {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 7px;
+    border-top: 1px solid var(--border, #E3E8F2);
+    margin: 1px -12px -12px;
+    padding: 8px 12px 12px;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  #product-chat-widget .pcw-choice-foot button {
+    min-height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 900;
+  }
+
+  #product-chat-widget .pcw-choice-unknown {
+    border: 1px solid transparent;
+    background: #F5F7FB;
+    color: #6B7280;
+  }
+
+  #product-chat-widget .pcw-choice-back {
+    border: 1px solid transparent;
+    background: #F5F7FB;
+    color: #6B7280;
+  }
+
+  #product-chat-widget .pcw-choice-submit {
+    border: none;
+    background: #28A947;
+    color: #fff;
+  }
+
+  #product-chat-widget .pcw-choice-form button:disabled,
+  #product-chat-widget .pcw-choice-form input:disabled {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  #product-chat-widget .pcw-product-list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 2px 4px 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  #product-chat-widget .pcw-product-block {
+    align-self: center;
+    width: min(100%, 420px);
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  #product-chat-widget .pcw-product-card {
+    flex: 0 0 min(302px, 86%);
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    gap: 10px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #DDE5F1;
+    border-radius: 16px;
+    box-shadow: 0 14px 34px rgba(0, 18, 92, 0.1);
+  }
+
+  #product-chat-widget .pcw-product-media {
+    height: 146px;
+    padding: 12px;
+    border: 1px solid #E2E8F3;
+    border-radius: 13px;
+    background:
+      radial-gradient(circle at 50% 8%, rgba(24, 183, 214, 0.14), transparent 45%),
+      linear-gradient(180deg, #fff, #F6F9FD);
+    display: grid;
+    place-items: center;
+  }
+
+  #product-chat-widget .pcw-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  #product-chat-widget .pcw-product-image--fallback {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 8px;
+    padding: 16px;
+    border: none;
+    background: transparent;
+  }
+
+  #product-chat-widget .pcw-product-image--fallback img {
+    width: 82px;
+    max-height: 32px;
+    object-fit: contain;
+    opacity: 0.86;
+  }
+
+  #product-chat-widget .pcw-product-image--fallback span {
+    color: var(--text-muted, #5B6475);
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  #product-chat-widget .pcw-product-brand {
+    width: fit-content;
+    color: #0877B8;
+    background: #EAF7FB;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  #product-chat-widget .pcw-product-card strong {
+    color: var(--primary, #00125C);
+    font-size: 16.5px;
+    line-height: 1.25;
+  }
+
+  #product-chat-widget .pcw-product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-content: start;
+  }
+
+  #product-chat-widget .pcw-product-meta span {
+    max-width: 100%;
+    border: 1px solid #E2E8F3;
+    border-radius: 999px;
+    background: #F7F9FC;
+    color: var(--text-muted, #5B6475);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.25;
+    padding: 5px 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #product-chat-widget .pcw-product-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+
+  #product-chat-widget .pcw-product-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: var(--bg-soft, #F7F9FC);
+    color: var(--primary, #00125C);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  #product-chat-widget .pcw-product-actions a.pcw-product-primary-link:first-child {
+    width: 100%;
+    min-height: 38px;
+    background: linear-gradient(135deg, #28A947, #198D36);
+    color: #fff;
+    font-size: 14px;
+  }
+
+  #product-chat-widget .pcw-product-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    border: 1px solid rgba(8, 119, 184, 0.26);
+    border-radius: 10px;
+    background: #fff;
+    color: #0877B8;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.2;
+    padding: 10px 14px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  #product-chat-widget .pcw-product-more:hover {
+    background: #F0F8FF;
+    border-color: rgba(8, 119, 184, 0.46);
+  }
+</style>

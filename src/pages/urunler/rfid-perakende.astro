@@ -1,19 +1,101 @@
-﻿---
+---
 import Base from '../../layouts/Base.astro';
-import { retailProducts, brands } from '../../data/rfid-perakende';
+import { retailProducts, type RetailProduct } from '../../data/rfid-perakende';
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "RFID Perakende Ürünler — Altis Teknoloji",
-  "description": "Perakende operasyonlarına özel RFID çözümler. EAS alarm, envanter sayımı ve müşteri deneyimi için entegre donanım.",
+  "name": "RFID Perakende & Lojistik Ürünler — Altis Teknoloji",
+  "description": "Depo ve fabrika sahasında mal kabul, sevkiyat ve paletli ürün doğrulaması için Altis Teknoloji RFID donanım hattı: akıllı geçit, tünel/konveyör, tezgah okuyucu ve iş istasyonu modelleri.",
   "url": "https://www.altis.com.tr/urunler/rfid-perakende/"
 };
+
+const categories = [
+  {
+    id: 'gecit-eas',
+    eyebrow: 'Akıllı Geçit Sistemleri',
+    heading: 'Sevkiyat kapısında otomatik EAS kontrolü.',
+    lead: 'R-OverHeadR, depo ve fabrika çıkış kapılarında okunmamış veya faturalanmamış ürün hareketini saniyeler içinde tespit eder. 5 metreye kadar okuma mesafesi ve entegre sesli/görsel alarm ile mal çıkışı operatör hatasına bırakılmaz.',
+    image: '/images/rfid-perakende/gate-eas.webp',
+    imageAlt: 'Sevkiyat kapısında RFID akıllı geçit sistemi',
+    stats: [
+      { value: '5 m', label: 'okuma mesafesi' },
+      { value: '0.3 s', label: 'okuma hızı' },
+      { value: 'EAS', label: 'sesli/görsel alarm' },
+    ],
+    reverse: false,
+    slugs: ['r-overheadr'],
+  },
+  {
+    id: 'tunel-konveyor',
+    eyebrow: 'Tünel & Konveyör Sistemleri',
+    heading: 'Paletli ve koli halindeki ürünleri saniyeler içinde sayın.',
+    lead: 'Konveyör hattından geçen koli ve paletlerdeki binlerce etiketi tek seferde okuyan tünel tipi RFID sistemleri; mal kabul, sevkiyat ve depo envanter doğrulamasında manuel sayımı ortadan kaldırır.',
+    image: '/images/rfid-perakende/tunnel-conveyor.webp',
+    imageAlt: 'Depo konveyör hattında RFID tünel okuyucu',
+    stats: [
+      { value: '400+', label: 'ürün / 3 sn' },
+      { value: '5', label: 'model seçeneği' },
+      { value: 'Impinj R2000', label: 'RF çip' },
+    ],
+    reverse: true,
+    slugs: ['r-widetunnel', 'r-boxtunnel', 'r-aerotunnel', 'r-minitunnel', 'r-protunnel'],
+    compare: {
+      heading: 'Hangi tünel/konveyör modeli size uygun?',
+      lead: 'Beşi de aynı Impinj R2000 RF çipini kullanır; aralarındaki fark okuma kapasitesi, montaj senaryosu ve ek özelliklerde.',
+      recommended: 'r-minitunnel',
+      rows: [
+        { label: 'İdeal Kullanım', values: ['Yüksek hacimli mal giriş/çıkış kontrolü', 'Alet odası ve atölye envanteri', 'Konveyör hattında otomatik tanımlama', 'Depo tünelinde hızlı toplu okuma', 'Bant tipi depo envanter takibi'] },
+        { label: 'Okuma Kapasitesi', values: ['800+ etiket', '1000 ürün', '400+ ürün', '1000 ürün', '1000 ürün'] },
+        { label: 'Okuma/Tanıma Süresi', values: ['3-5 sn', '1-5 sn', '3 sn', '1-5 sn', '1-5 sn'] },
+        { label: 'Ekran', values: ['10"', '10.1"', '10.1"', '10.1"', '14" (21" opsiyonel)'] },
+        { label: 'Öne Çıkan Fark', values: ['3 bağımsız konveyör bölümü', 'Otomatik kepenk kapısı', '50 kg taşıma kapasitesi', 'Gerçek zamanlı depo senkronizasyonu', 'UHF + HF opsiyonel okuma'] },
+      ],
+    },
+  },
+  {
+    id: 'kasa-tezgah',
+    eyebrow: 'Kasa & Tezgah Okuyucular',
+    heading: 'Paketleme istasyonunda toplu doğrulama.',
+    lead: 'Tezgah tipi okuyucular; bir kasa veya kutu içindeki ürünleri tek hareketle 5 saniyede 30’dan fazla etiket okuyarak doğrular, paketleme ve kalite kontrol hatlarında hız ve doğruluk sağlar.',
+    image: '/images/rfid-perakende/counter-station.webp',
+    imageAlt: 'Paketleme istasyonunda RFID tezgah okuyucu',
+    stats: [
+      { value: '30+', label: 'ürün / 5 sn' },
+      { value: '20 cm', label: 'parazit önleme' },
+      { value: 'Impinj R2000', label: 'RF çip' },
+    ],
+    reverse: false,
+    slugs: ['r-inbasketreader', 'r-basketreader'],
+  },
+  {
+    id: 'is-istasyonu',
+    eyebrow: 'İş İstasyonları & Self-Servis Kiosklar',
+    heading: 'Masaüstünde okuma, yazma ve kayıt.',
+    lead: 'Dokunmatik ekranlı iş istasyonları; etiket okuma/yazma, kart işlemleri ve self-servis kayıt iş akışlarını tek cihazda birleştirir, depo ve servis ortamlarında operatör verimliliğini artırır.',
+    image: '/images/rfid-perakende/workstation-kiosk.webp',
+    imageAlt: 'Depoda RFID iş istasyonu kullanımı',
+    stats: [
+      { value: '21.5"', label: 'dokunmatik ekran' },
+      { value: 'Oku & Yaz', label: 'RFID işlevi' },
+      { value: 'Self-Servis', label: 'iş akışı' },
+    ],
+    reverse: true,
+    slugs: ['r-shieldedbox', 'r-visiondeskomni', 'r-visiondeskmini'],
+  },
+];
+
+const categorySections = categories.map(cat => ({
+  ...cat,
+  products: cat.slugs
+    .map(slug => retailProducts.find(p => p.slug === slug))
+    .filter((p): p is RetailProduct => p !== undefined),
+}));
 ---
 
 <Base
-  title="RFID Perakende Ürünler — Altis Teknoloji"
-  description="Perakende operasyonlarına özel RFID çözümler. EAS alarm, envanter sayımı ve müşteri deneyimi için entegre donanım."
+  title="RFID Perakende & Lojistik Ürünler — Altis Teknoloji"
+  description="Depo ve fabrika sahasında mal kabul, sevkiyat ve paletli ürün doğrulaması için Altis Teknoloji RFID donanım hattı: akıllı geçit, tünel/konveyör, tezgah okuyucu ve iş istasyonu modelleri."
   {schema}
   lang="tr"
   alternateUrl="https://www.altis.com.tr/en/products/rfid-retail/"
@@ -21,216 +103,292 @@ const schema = {
   <section class="hero">
     <div class="container">
       <a href="/urunler/" class="breadcrumb">← Ürünler</a>
-      <p class="eyebrow">RFID Donanım</p>
-      <h1>RFID Perakende Ürünler</h1>
+      <p class="eyebrow">Perakende & Lojistik RFID Donanımı</p>
+      <h1>Mal kabulden sevkiyata, paletli ürünü saniyeler içinde sayın.</h1>
       <p class="lead">
-        Perakende operasyonlarına özel RFID geçit ve alarm sistemleri.
-        EAS koruması, envanter sayımı ve mağaza yönetimi entegrasyonu için
-        {retailProducts.length} ürün.
+        Akıllı geçit, tünel/konveyör, tezgah okuyucu ve self-servis iş istasyonu modelleriyle
+        depo ve fabrika sahasında envanteri doğru ve hızlı yönetin. Altis Teknoloji'nin kendi
+        geliştirdiği {retailProducts.length} modellik RFID donanım hattı.
       </p>
       <div class="hero-stats">
         <div class="stat"><strong>{retailProducts.length}</strong><span>Model</span></div>
-        <div class="stat"><strong>{brands.length}</strong><span>Marka</span></div>
-        <div class="stat"><strong>5 m</strong><span>Okuma Mesafesi</span></div>
+        <div class="stat"><strong>{categorySections.length}</strong><span>Kategori</span></div>
+        <div class="stat"><strong>Impinj R2000</strong><span>RF Çip</span></div>
       </div>
     </div>
   </section>
 
-  <section class="brand-nav container">
-    {brands.map(brand => (
-      <a href={`#brand-${brand.toLowerCase().replace(/\s/g, '-')}`} class:list={['brand-btn', { 'brand-btn--own': brand === 'Altis' }]}>
-        {brand === 'Altis' && <span class="own-dot" aria-label="Altis ürünü" />}
-        {brand}
-      </a>
+  <section class="category-nav container">
+    {categorySections.map(cat => (
+      <a href={`#${cat.id}`} class="category-nav-link">{cat.eyebrow}</a>
     ))}
     <a href="/iletisim/" class="btn btn-outline btn-sm">Toplu Teklif İste</a>
   </section>
 
-  {brands.map(brand => {
-    const group = retailProducts.filter(p => p.brand === brand);
+  {categorySections.map((cat, i) => {
+    const bandClasses = ['category-band', i % 2 === 1 ? 'category-band--alt' : null].filter(Boolean).join(' ');
+    const gridClasses = ['category-grid', cat.reverse ? 'reverse' : null].filter(Boolean).join(' ');
     return (
-      <section class="brand-section container" id={`brand-${brand.toLowerCase().replace(/\s/g, '-')}`}>
-        <div class="brand-header">
-          <h2 class:list={['brand-title', { 'brand-title--own': brand === 'Altis' }]}>
-            {brand === 'Altis' && <span class="own-badge">Altis Markası</span>}
-            {brand} <span class="count">({group.length} ürün)</span>
-          </h2>
-        </div>
-        <div class="products-grid">
-          {group.map(product => (
-            <article class:list={['product-card', { 'product-card--own': product.isAltisOwn }]}>
-              <a href={`/urunler/perakende/${product.slug}/`} class="card-image-link">
-                <img src={product.listImage || product.image} alt={product.title} loading="lazy" width="400" height="300" />
-                {product.isAltisOwn && <span class="own-ribbon">Kendi Ürünümüz</span>}
-              </a>
-              <div class="card-body">
-                <span class="brand-label">{product.brand}</span>
-                <span class="category-badge">{product.category}</span>
-                <h3><a href={`/urunler/perakende/${product.slug}/`}>{product.title}</a></h3>
-                <p class="short-desc">{product.shortDesc}</p>
-                <div class="connectivity">
-                  {product.connectivity.slice(0, 4).map(c => <span class="conn-tag">{c}</span>)}
-                </div>
-                <div class="card-actions">
-                  <a href={`/urunler/perakende/${product.slug}/`} class="btn btn-primary btn-sm">İncele</a>
-                  <a href={`/iletisim/?urun=${encodeURIComponent(product.title)}`} class="btn btn-outline btn-sm">Teklif Al</a>
-                </div>
+      <section class={bandClasses} id={cat.id}>
+        <div class="container">
+          <div class={gridClasses}>
+            <div class="category-copy">
+              <p class="eyebrow">{cat.eyebrow}</p>
+              <h2>{cat.heading}</h2>
+              <p class="category-lead">{cat.lead}</p>
+              <div class="category-stats">
+                {cat.stats.map(stat => (
+                  <div>
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </div>
+                ))}
               </div>
-            </article>
-          ))}
+            </div>
+            <div class="category-image">
+              <img src={cat.image} alt={cat.imageAlt} width="800" height="500" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="product-strip">
+            {cat.products.map(product => (
+              <article class="product-chip">
+                <a href={`/urunler/perakende/${product.slug}/`} class="chip-media">
+                  <img src={product.listImage || product.image} alt={product.title} loading="lazy" width="320" height="240" />
+                </a>
+                <div class="chip-body">
+                  <span class="chip-badge">{product.category}</span>
+                  <h3><a href={`/urunler/perakende/${product.slug}/`}>{product.title}</a></h3>
+                  <p>{product.shortDesc}</p>
+                  <a href={`/urunler/perakende/${product.slug}/`} class="chip-link">İncele</a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {cat.compare && (
+            <div class="compare-wrap">
+              <div class="compare-head">
+                <p class="eyebrow">Karşılaştır</p>
+                <h3>{cat.compare.heading}</h3>
+                <p class="compare-lead">{cat.compare.lead}</p>
+              </div>
+              <div class="compare-table-scroll">
+                <table class="compare-table">
+                  <thead>
+                    <tr>
+                      <th>Özellik</th>
+                      {cat.products.map(product => (
+                        <th class={product.slug === cat.compare!.recommended ? 'recommended-col' : undefined}>
+                          {product.slug === cat.compare!.recommended && <span class="recommended-badge">Önerilen</span>}
+                          <a href={`/urunler/perakende/${product.slug}/`}>{product.title}</a>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cat.compare.rows.map(row => (
+                      <tr>
+                        <th>{row.label}</th>
+                        {row.values.map((value, idx) => (
+                          <td class={cat.products[idx]?.slug === cat.compare!.recommended ? 'recommended-col' : undefined}>{value}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     );
   })}
 
-  <section class="cta-strip">
+  <section class="altis-value">
     <div class="container">
-      <p>Mağazanıza en uygun RFID çözümü birlikte belirleyelim.</p>
-      <a href="/iletisim/" class="btn btn-primary">Uzmanla Konuşun</a>
+      <div class="section-head">
+        <p class="eyebrow">Neden Altis Teknoloji</p>
+        <h2>Donanım değil, sahada çalışan çözüm.</h2>
+      </div>
+      <div class="value-grid">
+        <article>
+          <h3>Saha keşfi ve uygulama</h3>
+          <p>Montaj noktası, geçit/tünel yerleşimi ve okuma mesafesi planlaması saha keşfiyle birlikte yapılır.</p>
+        </article>
+        <article>
+          <h3>WMS/ERP entegrasyonu</h3>
+          <p>RFID okuma verisini mevcut depo yönetim ve ERP sistemlerinize entegre ederiz.</p>
+        </article>
+        <article>
+          <h3>Pilot ve devreye alma</h3>
+          <p>Pilot bölge, performans testi ve canlıya geçiş adımlarını birlikte planlar, operatör eğitimini veririz.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-sectors">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">İlgili Sektörler</p>
+        <h2>Bu donanımlar hangi operasyonlarda kullanılıyor?</h2>
+      </div>
+      <div class="sectors-grid">
+        <a href="/sektorler/depo-lojistik/" class="sector-card">
+          <span class="sector-eyebrow">Depo & Lojistik</span>
+          <h3>Stok doğruluğu, sevkiyat hızı ve depo görünürlüğü — gerçek zamanlı.</h3>
+          <span class="sector-link">Sektörü Gör →</span>
+        </a>
+        <a href="/sektorler/perakende-tekstil/" class="sector-card">
+          <span class="sector-eyebrow">Perakende & Tekstil</span>
+          <h3>Fabrikadan mağazaya — her ürün, her noktada izlenebilir.</h3>
+          <span class="sector-link">Sektörü Gör →</span>
+        </a>
+        <a href="/sektorler/uretim/" class="sector-card">
+          <span class="sector-eyebrow">Üretim</span>
+          <h3>Hat verimliliğini, makine sağlığını ve enerjiyi aynı ekranda görün.</h3>
+          <span class="sector-link">Sektörü Gör →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow">Teklif ve Saha Keşfi</p>
+        <h2>Tesisinize uygun RFID donanımını birlikte belirleyelim.</h2>
+      </div>
+      <a href="/iletisim/" class="btn btn-primary btn-lg">Fiyat Teklifi Al</a>
     </div>
   </section>
 </Base>
 
+<script>
+  const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.category-nav-link'));
+  const sections = navLinks
+    .map(link => document.getElementById(link.getAttribute('href')!.slice(1)))
+    .filter((el): el is HTMLElement => el !== null);
+
+  if (sections.length) {
+    const setActive = (id: string) => {
+      navLinks.forEach(link => {
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-140px 0px -70% 0px', threshold: 0 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  }
+</script>
+
 <style>
-.hero {
-  background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%);
-  color: #fff;
-  padding: 72px 0 60px;
-}
+.hero { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); color: #fff; padding: 72px 0 60px; }
 .breadcrumb { display: inline-block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.65); margin-bottom: 20px; transition: color .2s; }
 .breadcrumb:hover { color: #fff; }
 .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
 .hero h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.15; }
-.lead { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 640px; line-height: 1.7; margin-bottom: 36px; }
-.hero-stats { display: flex; gap: 40px; }
+.lead { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 660px; line-height: 1.7; margin-bottom: 36px; }
+.hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
 .stat { display: flex; flex-direction: column; gap: 2px; }
 .stat strong { font-size: 1.5rem; font-weight: 800; color: var(--cyan); line-height: 1; }
 .stat span { font-size: 12px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .06em; }
 
-.brand-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-top: 28px;
-  padding-bottom: 12px;
-  flex-wrap: wrap;
-}
-.brand-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--primary);
-  background: rgba(0,18,92,.06);
-  border: 1px solid rgba(0,18,92,.15);
-  padding: 6px 14px;
-  border-radius: 20px;
-  transition: background .2s, color .2s;
-}
-.brand-btn:hover { background: var(--primary); color: #fff; }
-.brand-btn--own { background: var(--cyan); color: #fff; border-color: var(--cyan); }
-.brand-btn--own:hover { background: #0fa5c0; border-color: #0fa5c0; }
-.own-dot { width: 7px; height: 7px; background: #fff; border-radius: 50%; flex-shrink: 0; }
-.btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); margin-left: auto; }
-.btn-outline:hover { background: var(--primary); color: #fff; }
-.btn-sm { font-size: 13px; padding: 7px 14px; }
+.category-nav { position: sticky; top: 76px; z-index: 40; display: flex; align-items: center; gap: 8px; padding: 14px 32px; flex-wrap: wrap; background: #fff; border-bottom: 1px solid var(--border-soft); }
+.category-nav-link { display: inline-flex; align-items: center; font-size: 13px; font-weight: 700; color: var(--primary); background: rgba(0,18,92,.06); border: 1px solid rgba(0,18,92,.15); padding: 6px 14px; border-radius: 20px; transition: background .2s, color .2s, border-color .2s; }
+.category-nav-link:hover { background: var(--primary); color: #fff; }
+.category-nav-link.is-active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.category-nav .btn-outline { margin-left: auto; }
 
-.brand-section { padding-top: 44px; padding-bottom: 16px; }
-.brand-header { margin-bottom: 20px; }
-.brand-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--border-soft);
-}
-.brand-title--own { border-bottom-color: var(--cyan); }
-.own-badge {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--cyan);
-  padding: 3px 10px;
-  border-radius: 20px;
-}
-.count { font-size: 14px; font-weight: 500; color: var(--text-muted); }
+.category-band { padding: 56px 0; background: #fff; }
+.category-band--alt { background: var(--bg-soft); }
+.category-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; margin-bottom: 36px; }
+.category-grid.reverse { grid-template-columns: 1.1fr .9fr; }
+.category-grid.reverse .category-copy { order: 2; }
+.category-grid.reverse .category-image { order: 1; }
+.category-copy h2 { margin: 14px 0; font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.category-lead { font-size: 16px; line-height: 1.75; color: var(--text-muted); }
+.category-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; }
+.category-stats strong { display: block; color: var(--primary); font-size: 15px; }
+.category-stats span { display: block; color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.category-image img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 20px; }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-.product-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow .2s, border-color .2s, transform .2s;
-}
-.product-card:hover { border-color: var(--primary); box-shadow: 0 8px 28px rgba(0,18,92,.09); transform: translateY(-2px); }
-.product-card--own { border-color: rgba(24,183,214,.3); }
-.product-card--own:hover { border-color: var(--cyan); }
-.card-image-link {
-  display: block;
-  background: #f8f9fb;
-  padding: 24px;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  position: relative;
-}
-.card-image-link img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
-.product-card:hover .card-image-link img { transform: scale(1.04); }
-.own-ribbon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--cyan);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 6px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(0,18,92,.15);
-}
-.card-body { padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.brand-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
-.category-badge {
-  display: inline-block;
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--primary);
-  background: rgba(0,18,92,.07);
-  border: 1px solid rgba(0,18,92,.12);
-  padding: 2px 8px;
-  border-radius: 4px;
-  align-self: flex-start;
-}
-.card-body h3 { font-size: 15px; font-weight: 700; line-height: 1.35; margin: 0; }
-.card-body h3 a { color: var(--primary); transition: color .2s; }
-.card-body h3 a:hover { color: var(--cyan); }
-.short-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; flex: 1; margin: 0; }
-.connectivity { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
-.conn-tag { font-size: 10.5px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
-.card-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-.card-actions .btn-outline { margin-left: 0; }
+.product-strip { display: flex; gap: 22px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.product-chip { flex: 0 0 300px; scroll-snap-align: start; background: #fff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,18,92,.06); transition: box-shadow .2s, transform .2s; }
+.product-chip:hover { box-shadow: 0 12px 30px rgba(0,18,92,.12); transform: translateY(-2px); }
+.chip-media { display: grid; place-items: center; min-height: 190px; padding: 28px; background: #fff; }
+.chip-media img { width: 100%; height: 150px; object-fit: contain; transition: transform .25s; }
+.product-chip:hover .chip-media img { transform: scale(1.035); }
+.chip-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.chip-badge { display: inline-flex; color: var(--cyan); font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.chip-body h3 { font-size: 17px; font-weight: 700; line-height: 1.3; margin: 2px 0 0; }
+.chip-body h3 a { color: var(--primary); transition: color .2s; }
+.chip-body h3 a:hover { color: var(--cyan); }
+.chip-body p { font-size: 13px; color: var(--text-muted); line-height: 1.65; margin: 0; flex: 1; }
+.chip-link { color: var(--primary); font-weight: 800; font-size: 13.5px; margin-top: 6px; }
+.chip-link:hover { color: var(--cyan); }
 
-.cta-strip { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); padding: 48px 0; margin-top: 40px; }
-.cta-strip .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.cta-strip p { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0; }
+.compare-wrap { margin-top: 32px; }
+.compare-head { max-width: 640px; margin-bottom: 22px; }
+.compare-head h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); margin: 8px 0 8px; color: var(--primary); }
+.compare-lead { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin: 0; }
+.compare-table-scroll { overflow-x: auto; border-radius: 16px; background: #fff; box-shadow: 0 2px 10px rgba(0,18,92,.06); }
+.compare-table { width: 100%; min-width: 820px; border-collapse: collapse; }
+.compare-table th, .compare-table td { padding: 16px 20px; text-align: left; font-size: 13.5px; border-bottom: 1px solid var(--border-soft); }
+.compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: none; }
+.compare-table thead th { color: var(--primary); font-size: 14px; background: #fff; }
+.compare-table thead th a { color: var(--primary); }
+.compare-table thead th a:hover { color: var(--cyan); }
+.compare-table tbody th { color: var(--text-muted); font-weight: 700; width: 190px; background: #fafbfe; }
+.compare-table td { color: var(--text); }
+.compare-table th:first-child { position: sticky; left: 0; z-index: 2; box-shadow: 2px 0 6px rgba(0,18,92,.05); }
+.recommended-col { background: rgba(24,183,214,.07); }
+.compare-table thead th.recommended-col { background: rgba(24,183,214,.1); }
+.recommended-badge { display: block; width: fit-content; font-size: 9.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--cyan); padding: 3px 9px; border-radius: 20px; margin-bottom: 6px; }
 
+.related-sectors { background: var(--bg-soft); padding: 64px 0; }
+.sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.sector-card { display: flex; flex-direction: column; gap: 10px; background: #fff; border-radius: 16px; padding: 26px; box-shadow: 0 2px 10px rgba(0,18,92,.06); transition: box-shadow .2s, transform .2s; }
+.sector-card:hover { box-shadow: 0 12px 30px rgba(0,18,92,.12); transform: translateY(-2px); }
+.sector-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); }
+.sector-card h3 { font-size: 16px; font-weight: 700; color: var(--primary); line-height: 1.4; margin: 0; }
+.sector-link { font-size: 13px; font-weight: 800; color: var(--primary); margin-top: auto; }
+.sector-card:hover .sector-link { color: var(--cyan); }
+
+.section-head { max-width: 640px; margin: 0 auto 36px; text-align: center; }
+.section-head h2 { margin-top: 10px; }
+
+.altis-value { background: #fff; padding: 64px 0; }
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.value-grid article { border-radius: 16px; padding: 28px; background: var(--bg-soft); }
+.value-grid h3 { font-size: 19px; margin-bottom: 12px; }
+.value-grid p { font-size: 14.5px; line-height: 1.75; }
+
+.cta-section { background: var(--primary); padding: 76px 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.cta-inner .eyebrow { color: var(--cyan); }
+.cta-inner h2 { color: #fff; max-width: 760px; margin-top: 14px; }
+
+@media (max-width: 980px) {
+  .category-grid { grid-template-columns: 1fr; }
+  .category-grid.reverse .category-copy,
+  .category-grid.reverse .category-image { order: initial; }
+  .value-grid { grid-template-columns: 1fr; }
+  .product-chip { flex-basis: 270px; }
+  .sectors-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 600px) {
-  .brand-nav { gap: 6px; }
-  .btn-outline { margin-left: 0; width: 100%; justify-content: center; }
-  .cta-strip .container { flex-direction: column; text-align: center; }
+  .category-nav .btn-outline { margin-left: 0; width: 100%; justify-content: center; }
+  .category-stats { grid-template-columns: 1fr; }
+  .cta-inner { flex-direction: column; align-items: flex-start; text-align: left; }
 }
 </style>
