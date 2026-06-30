@@ -35,8 +35,7 @@ const schema = {
     <div class="hero-inner" style="margin-top:32px">
       <div>
         <div class="platform-pill">
-          <span class="pill-tag">Platform</span>
-          <span>Industrial IoT · Dashboard · Rule Engine · Reports</span>
+          <span>Industrial IoT &nbsp;·&nbsp; Dashboard &nbsp;·&nbsp; Rule Engine &nbsp;·&nbsp; Reports</span>
         </div>
         <div class="product-name">Predictivo</div>
         <h1 class="product-tag">Operasyonel verilerinizi karar destek sistemine dönüştürün.</h1>
@@ -47,145 +46,46 @@ const schema = {
           </a>
           <a class="btn btn-secondary btn-lg" href="#capabilities">Yetenekleri İncele</a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="v" data-count>12+</div><div class="l">protokol desteği</div></div>
-          <div class="hero-stat"><div class="v">∞</div><div class="l">sensör ölçeklenmesi</div></div>
-          <div class="hero-stat"><div class="v">RT</div><div class="l">canlı dashboard</div></div>
-        </div>
       </div>
 
-      <!-- Live dashboard mockup -->
-      <div class="dash">
-        <div class="dash-head">
-          <div class="tabs">
-            <span class="tab active">Operasyon</span>
-          </div>
-          <div class="ctrl">
-            <span class="live-dot"></span>
-            <span>canlı · son 24s</span>
-          </div>
-        </div>
-        <div class="dash-body">
-          <!-- KPIs -->
-          <div class="kpi-row">
-            <div class="kpi">
-              <div class="l">OEE</div>
-              <div class="v"><span data-count>82.4</span><span class="u">%</span></div>
-              <div class="trend up">↑ 3.2 dün</div>
-            </div>
-            <div class="kpi">
-              <div class="l">Enerji</div>
-              <div class="v"><span data-count>142</span><span class="u">kWh</span></div>
-              <div class="trend dn">↓ -8% hedef</div>
-            </div>
-            <div class="kpi">
-              <div class="l">Aktif Alarm</div>
-              <div class="v" style="color:var(--warn)" data-count>3</div>
-              <div class="trend up" style="color:var(--text-faint)">2 kritik · 1 uyarı</div>
-            </div>
-            <div class="kpi">
-              <div class="l">Cihaz</div>
-              <div class="v"><span data-count>248</span><span class="u">/250</span></div>
-              <div class="trend up">99.2% online</div>
-            </div>
-          </div>
+      <!-- Real dashboard screenshot -->
+      <div class="hero-visual">
+        <img src="/images/Predictivo-transperent.png" alt="Predictivo Dashboard - Gerçek Ekran Görüntüsü" class="hero-img"/>
+      </div>
+    </div>
 
-          <!-- Energy chart -->
-          <div class="dash-card chart-card" data-reveal data-reveal-delay="120">
-            <div class="ttl"><h5>Enerji Tüketimi · Hat 2</h5><span class="meta">kWh · son 12s</span></div>
-            <div class="chart">
-              <svg viewBox="0 0 300 96" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0F8FA8" stop-opacity=".35"/>
-                    <stop offset="100%" stop-color="#0F8FA8" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <g class="grid">
-                  <line x1="0" y1="24" x2="300" y2="24"/>
-                  <line x1="0" y1="48" x2="300" y2="48"/>
-                  <line x1="0" y1="72" x2="300" y2="72"/>
-                </g>
-                <path class="area" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24 L300,96 L0,96 Z"/>
-                <path class="line" pathLength="1" d="M0,70 L25,55 L50,60 L75,40 L100,48 L125,30 L150,38 L175,22 L200,32 L225,18 L250,28 L275,14 L300,24"/>
-                <circle class="point" cx="300" cy="24" r="3.5"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Machine health gauges -->
-          <div class="dash-card gauge-card" data-reveal data-reveal-delay="200">
-            <div class="ttl"><h5>Makine Sağlığı</h5><span class="meta">4/5 sağlıklı</span></div>
-            <div class="gauges">
-              <div class="gauge">
-                <div class="ring">
-                  <svg viewBox="0 0 60 60">
-                    <circle class="bg" cx="30" cy="30" r="24"/>
-                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--ok)" stroke-dasharray="150.8" style="--t:22.6"/>
-                  </svg>
-                  <div class="v"><span data-count>85</span><small>SAĞLIK</small></div>
-                </div>
-                <div class="lbl">CNC-01</div>
-              </div>
-              <div class="gauge">
-                <div class="ring">
-                  <svg viewBox="0 0 60 60">
-                    <circle class="bg" cx="30" cy="30" r="24"/>
-                    <circle class="fg" cx="30" cy="30" r="24" stroke="var(--warn)" stroke-dasharray="150.8" style="--t:75.4"/>
-                  </svg>
-                  <div class="v"><span data-count>50</span><small>SAĞLIK</small></div>
-                </div>
-                <div class="lbl">CNC-02</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Alarms -->
-          <div class="dash-card">
-            <div class="ttl"><h5>Aktif Alarmlar</h5><span class="meta">3</span></div>
-            <div class="alarm-list">
-              <div class="alarm crit" data-reveal data-reveal-delay="60">
-                <div class="sev"></div>
-                <div class="body">Titreşim eşik aşımı<span class="sub">CNC-02 · X axis · 4.8mm/s</span></div>
-                <div class="t">14:22</div>
-              </div>
-              <div class="alarm warn" data-reveal data-reveal-delay="140">
-                <div class="sev"></div>
-                <div class="body">Enerji hedefi aşıldı<span class="sub">Hat 2 · +12% trend</span></div>
-                <div class="t">13:50</div>
-              </div>
-              <div class="alarm info" data-reveal data-reveal-delay="220">
-                <div class="sev"></div>
-                <div class="body">Sensör kalibrasyon önerisi<span class="sub">TEMP-12 · sapma yakın</span></div>
-                <div class="t">12:08</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mini RTLS map -->
-          <div class="dash-card">
-            <div class="ttl"><h5>RTLS · Depo Konumları</h5><span class="meta">42 etiket</span></div>
-            <div class="map-mini">
-              <div class="map-zone" style="left:8%;top:14%;width:32%;height:28%"></div>
-              <div class="map-zone" style="left:52%;top:14%;width:40%;height:28%"></div>
-              <div class="map-zone" style="left:8%;top:54%;width:60%;height:34%"></div>
-              <div class="map-zone" style="left:74%;top:54%;width:18%;height:34%"></div>
-              <span class="map-label" style="left:10%;top:6%">Zone A</span>
-              <span class="map-label" style="left:54%;top:6%">Zone B</span>
-              <span class="map-label" style="left:10%;top:46%">Üretim</span>
-              <span class="map-label" style="left:76%;top:46%">Sevkiyat</span>
-              <div class="map-pin" style="left:18%;top:28%"></div>
-              <div class="map-pin" style="left:30%;top:32%"></div>
-              <div class="map-pin b" style="left:62%;top:26%"></div>
-              <div class="map-pin" style="left:78%;top:34%"></div>
-              <div class="map-pin" style="left:24%;top:70%"></div>
-              <div class="map-pin c" style="left:42%;top:64%"></div>
-              <div class="map-pin" style="left:55%;top:74%"></div>
-              <div class="map-pin" style="left:80%;top:70%"></div>
-            </div>
-          </div>
-
-        </div>
+    <!-- Stats marquee -->
+    <div class="stats-marquee">
+      <div class="stats-track">
+        <div class="hero-stat"><div class="v">SAP</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">7×24</div><div class="l">kesintisiz izleme</div></div>
+        <div class="hero-stat"><div class="v">WMS</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">RT</div><div class="l">gerçek zamanlı veri</div></div>
+        <div class="hero-stat"><div class="v">MQTT</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">500+</div><div class="l">bağlanabilir sensör tipi</div></div>
+        <div class="hero-stat"><div class="v">Otomatik</div><div class="l">alarm</div></div>
+        <div class="hero-stat"><div class="v">ERP</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">∞</div><div class="l">ölçeklenebilir mimari</div></div>
+        <div class="hero-stat"><div class="v">Web Servis</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">20+</div><div class="l">desteklenen protokol</div></div>
+        <div class="hero-stat"><div class="v">5dk</div><div class="l">kurulum süresi</div></div>
+        <div class="hero-stat"><div class="v">REST API</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">Otomatik</div><div class="l">rapor</div></div>
+        <!-- duplicate for seamless loop -->
+        <div class="hero-stat"><div class="v">SAP</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">7×24</div><div class="l">kesintisiz izleme</div></div>
+        <div class="hero-stat"><div class="v">WMS</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">RT</div><div class="l">gerçek zamanlı veri</div></div>
+        <div class="hero-stat"><div class="v">MQTT</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">500+</div><div class="l">bağlanabilir sensör tipi</div></div>
+        <div class="hero-stat"><div class="v">Otomatik</div><div class="l">alarm</div></div>
+        <div class="hero-stat"><div class="v">ERP</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">∞</div><div class="l">ölçeklenebilir mimari</div></div>
+        <div class="hero-stat"><div class="v">Web Servis</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">20+</div><div class="l">desteklenen protokol</div></div>
+        <div class="hero-stat"><div class="v">5dk</div><div class="l">kurulum süresi</div></div>
+        <div class="hero-stat"><div class="v">REST API</div><div class="l">entegrasyon</div></div>
+        <div class="hero-stat"><div class="v">Otomatik</div><div class="l">rapor</div></div>
       </div>
     </div>
   </div>
@@ -194,13 +94,13 @@ const schema = {
 <!-- Trusted by -->
 <div class="logos-strip">
   <div class="container">
-    <div class="lbl">— Sahada test edilmiş, kurumsal sistemlerle entegre çalışan —</div>
+    <div class="lbl">Sahada test edilmiş, kurumsal sistemlerle entegre çalışan</div>
     <div class="logos-row">
+      <div class="logo-box">SICK</div>
+      <div class="logo-box">Çimtaş</div>
+      <div class="logo-box">THY</div>
       <div class="logo-box">Siemens</div>
       <div class="logo-box">Turck</div>
-      <div class="logo-box">SICK</div>
-      <div class="logo-box">Honeywell</div>
-      <div class="logo-box">Datalogic</div>
       <div class="logo-box">Stanley Healthcare</div>
     </div>
   </div>
@@ -211,7 +111,7 @@ const schema = {
   <div class="container">
     <SectionHead
       eyebrow="Beş Adımda Veri Aksiyona Dönüşür"
-      heading="Bağlan · İşle · Görselleştir · Harekete Geç · Raporla"
+      heading="Bağlan. İşle. Görselleştir. Harekete Geç. Raporla."
       description="Predictivo'nun beş temel yeteneği, sahadan gelen ham veriyi yönetilebilir operasyona dönüştüren tutarlı bir veri yaşam döngüsü oluşturur."
     />
     <div class="flow5-steps">
@@ -219,35 +119,35 @@ const schema = {
         <div class="num">01 · CONNECT</div>
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg></div>
         <h4>Bağlan</h4>
-        <p>Sensör, makine, sayaç, beacon, SCADA, gateway ve üçüncü parti sistemlerden veri alın.</p>
+        <p>Sensör, makine, SCADA ve üçüncü parti sistemlerden veri alın.</p>
         <div class="ex">MQTT · HTTP · OPC UA · Modbus · LoRaWAN</div>
       </div>
       <div class="flow5-step">
         <div class="num">02 · PROCESS</div>
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51"/></svg></div>
         <h4>İşle</h4>
-        <p>Gelen veriyi filtreleyin, eşik değerleri tanımlayın, kural motoru ile iş akışları kurun.</p>
+        <p>Veriyi filtreleyin, eşikler tanımlayın, kural motoru ile akışlar kurun.</p>
         <div class="ex">filter · aggregate · threshold · derive</div>
       </div>
       <div class="flow5-step">
         <div class="num">03 · VISUALIZE</div>
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>
         <h4>Görselleştir</h4>
-        <p>Dashboard'lar, grafikler, sayaçlar, haritalar ve operasyon panelleriyle veriyi anlamlı hale getirin.</p>
+        <p>Canlı dashboard'lar, grafikler ve haritalarla veriyi anlamlı hale getirin.</p>
         <div class="ex">widgets · drag &amp; drop · responsive</div>
       </div>
       <div class="flow5-step">
         <div class="num">04 · ACT</div>
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
         <h4>Harekete Geç</h4>
-        <p>Alarm, bildirim, cihaz tetikleme ve operasyon aksiyonlarıyla veriyi iş sonucuna dönüştürün.</p>
+        <p>Alarm ve bildirimlerle veriyi anında iş sonucuna dönüştürün.</p>
         <div class="ex">alert · email · webhook · device</div>
       </div>
       <div class="flow5-step">
         <div class="num">05 · REPORT</div>
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
         <h4>Raporla</h4>
-        <p>Periyodik PDF raporlarla performans, trend ve riskleri yönetim ve operasyon ekipleriyle paylaşın.</p>
+        <p>Günlük, haftalık, aylık PDF raporlarla performansı ekiplerle paylaşın.</p>
         <div class="ex">günlük · haftalık · aylık · PDF</div>
       </div>
     </div>
@@ -723,19 +623,11 @@ const schema = {
 /* Hero */
 .hero{
   position:relative;padding:64px 0 120px;overflow:hidden;
-  background:
-    radial-gradient(900px 500px at 80% -100px, rgba(15,143,168,.10), transparent 60%),
-    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+  background:#fff;
 }
-.hero-grid-bg{
-  position:absolute;inset:0;pointer-events:none;opacity:.4;
-  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
-  background-size:64px 64px;
-  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
-          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
-}
-.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
-.platform-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.hero-grid-bg{display:none}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.platform-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;font-weight:600;color:var(--text-muted)}
 .platform-pill .pill-tag{background:var(--predicto);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
 .product-name{
   font-size:clamp(56px,7vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1;
@@ -746,110 +638,16 @@ const schema = {
 .hero h1.product-tag{font-size:clamp(28px,2.6vw,38px);font-weight:700;line-height:1.2;color:var(--navy-800)}
 .hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:520px;line-height:1.6}
 .hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
-.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);max-width:520px}
-.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:24px;font-weight:700;color:var(--navy-800)}
-.hero-stat .l{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+.stats-marquee{margin-top:64px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.stats-track{display:flex;width:max-content;animation:marquee 48s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-stat{padding:24px 48px;text-align:center;flex-shrink:0}
+.hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
+.hero-stat .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.07em;font-weight:600;margin-top:6px}
 
-/* Hero visual — live dashboard */
-.dash{
-  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
-  box-shadow:var(--shadow-lg);padding:0;overflow:hidden;position:relative;
-}
-.dash-head{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 20px;border-bottom:1px solid var(--border-soft);background:#FCFCFE;
-}
-.dash-head .tabs{display:flex;gap:6px}
-.dash-head .tab{font-size:11.5px;padding:5px 10px;border-radius:6px;color:var(--text-muted);font-weight:600}
-.dash-head .tab.active{background:var(--cyan-soft);color:var(--predicto)}
-.dash-head .ctrl{display:flex;gap:10px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint)}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(21,160,107,.5);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(21,160,107,.5)}70%{box-shadow:0 0 0 8px rgba(21,160,107,0)}100%{box-shadow:0 0 0 0 rgba(21,160,107,0)}}
-.dash-body{padding:18px;display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:14px;background:#FAFBFE}
-
-.kpi-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.kpi{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:12px 14px}
-.kpi .l{font-size:10.5px;color:var(--text-faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.kpi .v{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:700;color:var(--navy-800);margin-top:4px;display:flex;align-items:baseline;gap:6px}
-.kpi .u{font-size:10px;color:var(--text-faint);font-weight:600}
-.kpi .trend{font-size:10.5px;font-weight:600;margin-top:2px;display:inline-flex;gap:3px;align-items:center}
-.kpi .trend.up{color:var(--ok)}
-.kpi .trend.dn{color:var(--crit)}
-
-.dash-card{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:14px;display:flex;flex-direction:column}
-.dash-card .ttl{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.dash-card .ttl h5{font-size:12px;color:var(--slate);font-weight:600;margin:0}
-.dash-card .ttl .meta{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint)}
-
-/* Energy chart */
-.chart{height:96px;position:relative}
-.chart svg{width:100%;height:100%;display:block}
-.chart .grid line{stroke:var(--border-soft);stroke-width:1}
-.chart .area{fill:url(#area-grad)}
-.chart .line{fill:none;stroke:var(--predicto);stroke-width:2}
-.chart .point{fill:#fff;stroke:var(--predicto);stroke-width:2}
-
-/* Alarms */
-.alarm-list{display:flex;flex-direction:column;gap:8px}
-.alarm{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;background:#FAFBFE;border-radius:8px;font-size:12px}
-.alarm .sev{width:7px;height:24px;border-radius:3px}
-.alarm.crit .sev{background:var(--crit)}
-.alarm.warn .sev{background:var(--warn)}
-.alarm.info .sev{background:var(--predicto)}
-.alarm .body{color:var(--slate);font-weight:500}
-.alarm .body .sub{font-family:"JetBrains Mono",monospace;color:var(--text-faint);font-size:10px;display:block;margin-top:1px}
-.alarm .t{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint)}
-
-/* Health gauge */
-.gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;align-items:center}
-.gauge{display:flex;flex-direction:column;align-items:center;gap:4px}
-.gauge .ring{position:relative;width:78px;height:78px}
-.gauge .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
-.gauge .ring .bg{fill:none;stroke:var(--border-soft);stroke-width:8}
-.gauge .ring .fg{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .6s}
-.gauge .v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-weight:700;color:var(--navy-800);font-size:16px;line-height:1}
-.gauge .v small{font-size:8px;color:var(--text-faint);font-weight:600;margin-top:2px}
-.gauge .lbl{font-size:11px;color:var(--text-muted);font-weight:500;text-align:center}
-
-/* Map */
-.map-mini{position:relative;height:160px;background:#F1F4FA;border-radius:8px;overflow:hidden}
-.map-mini::before{
-  content:"";position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(0,18,92,.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,18,92,.06) 1px,transparent 1px);
-  background-size:18px 18px;
-}
-.map-zone{position:absolute;border:1px dashed rgba(15,143,168,.4);border-radius:6px}
-.map-pin{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--predicto);box-shadow:0 0 0 4px rgba(15,143,168,.2)}
-.map-pin.b{background:var(--warn);box-shadow:0 0 0 4px rgba(196,119,0,.2)}
-.map-pin.c{background:var(--crit);box-shadow:0 0 0 4px rgba(214,69,69,.2)}
-.map-label{position:absolute;font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--slate);background:rgba(255,255,255,.85);padding:1px 5px;border-radius:3px;font-weight:600}
-
-/* ---- Dashboard motion layer (subtle; default state = final/visible) ---- */
-/* Gauge fill: default already at target value; emptied only before reveal when motion allowed */
-.gauge .ring .fg{stroke-dashoffset:var(--t)}
-@media (prefers-reduced-motion: no-preference){
-  /* Energy chart line draws on view */
-  .chart-card .chart .line{stroke-dasharray:1;stroke-dashoffset:1}
-  .chart-card.is-revealed .chart .line{animation:chartDraw 1.3s var(--ease,ease-out) forwards}
-  @keyframes chartDraw{to{stroke-dashoffset:0}}
-  /* Area gradient fades in just behind the line */
-  .chart-card .chart .area{opacity:0}
-  .chart-card.is-revealed .chart .area{animation:chartArea .9s ease .5s forwards}
-  @keyframes chartArea{to{opacity:1}}
-  /* Live data point gentle glow */
-  .chart-card.is-revealed .chart .point{animation:pointGlow 2.4s ease-in-out 1.4s infinite}
-  @keyframes pointGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(15,143,168,0))}50%{filter:drop-shadow(0 0 4px rgba(15,143,168,.75))}}
-  /* Gauge rings sweep up from empty to target */
-  .gauge-card:not(.is-revealed) .gauge .ring .fg{stroke-dashoffset:150.8}
-  /* Critical alarm severity bar soft pulse */
-  .alarm.crit .sev{animation:sevPulse 1.9s ease-in-out infinite}
-  @keyframes sevPulse{0%,100%{box-shadow:0 0 0 0 rgba(214,69,69,0)}50%{box-shadow:0 0 8px 0 rgba(214,69,69,.6)}}
-  /* RTLS warning pin ping */
-  .map-pin.b::after{content:"";position:absolute;inset:0;border-radius:50%;animation:pinPing 2.6s ease-out infinite}
-  @keyframes pinPing{0%{box-shadow:0 0 0 0 rgba(196,119,0,.45)}70%{box-shadow:0 0 0 10px rgba(196,119,0,0)}100%{box-shadow:0 0 0 0 rgba(196,119,0,0)}}
-}
+/* Hero visual — real screenshot */
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-img{width:100%;border-radius:var(--radius-lg)}
 
 /* Section base */
 section{padding:110px 0}
@@ -859,21 +657,21 @@ section{padding:110px 0}
 .section-head p{font-size:18px;margin-top:18px}
 
 /* Logos strip */
-.logos-strip{padding:48px 0;background:#fff;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)}
-.logos-strip .lbl{text-align:center;font-size:12px;color:var(--text-faint);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
-.logos-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.logo-box{height:56px;border:1px dashed var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);background:#FAFBFE}
+.logos-strip{padding:48px 0;background:#fff}
+.logos-strip .lbl{text-align:center;font-size:13px;color:var(--text-muted);font-weight:500;margin-bottom:32px}
+.logos-row{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.logo-box{font-size:18px;font-weight:700;color:var(--navy-800);letter-spacing:-.01em}
 
 /* Five-step flow (Connect → Process → Visualize → Act → Report) */
 .flow5{background:var(--bg-soft);padding:120px 0}
-.flow5-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:48px;position:relative}
-.flow5-step{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:24px 22px;position:relative;display:flex;flex-direction:column;gap:12px;transition:transform .25s,box-shadow .25s}
+.flow5-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:28px;margin-top:48px;position:relative}
+.flow5-step{background:#fff;border-radius:var(--radius);padding:32px 28px;position:relative;display:flex;flex-direction:column;gap:12px;transition:transform .25s,box-shadow .25s}
 .flow5-step:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .flow5-step .num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--predicto);font-weight:600;letter-spacing:.1em}
 .flow5-step .ic{width:42px;height:42px;border-radius:11px;background:var(--cyan-soft);color:var(--predicto);display:flex;align-items:center;justify-content:center}
 .flow5-step h4{font-size:18px;color:var(--navy-800);margin:0}
 .flow5-step p{font-size:13px;line-height:1.55;color:var(--text-muted)}
-.flow5-step .ex{font-size:11px;color:var(--text-faint);font-family:"JetBrains Mono",monospace;border-top:1px dashed var(--border-soft);padding-top:10px;margin-top:auto;letter-spacing:.02em}
+.flow5-step .ex{font-size:11px;color:var(--text-faint);font-family:"JetBrains Mono",monospace;padding-top:10px;margin-top:auto;letter-spacing:.02em}
 
 /* Feature deep blocks */
 .feature-block{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;margin-bottom:130px}
@@ -942,35 +740,23 @@ section{padding:110px 0}
 .rep-foot{padding:10px 20px;background:#FAFBFE;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint);display:flex;justify-content:space-between;border-top:1px solid var(--border-soft)}
 
 /* Architecture */
-.arch{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
-.arch::before{
-  content:"";position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size:48px 48px;
-  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
-          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
-}
-.arch .container{position:relative}
-.arch h2{color:#fff}
-.arch .section-head p{color:rgba(255,255,255,.7)}
-.arch .eyebrow{color:var(--cyan)}
-.arch .eyebrow::before{background:var(--cyan)}
-.arch-diagram{margin-top:48px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:48px}
+.arch{background:#fff;position:relative}
+.arch-diagram{margin-top:48px;border-radius:18px;padding:48px 0}
 .arch-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;align-items:stretch}
 .arch-col{display:flex;flex-direction:column;gap:10px}
-.arch-col .lyr{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--cyan);letter-spacing:.1em;font-weight:600;margin-bottom:8px}
-.arch-col h4{color:#fff;font-size:17px;margin-bottom:14px}
-.arch-node{padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;font-size:13px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:10px}
-.arch-node svg{color:var(--cyan);flex-shrink:0}
-.arch-node.core{background:linear-gradient(135deg,rgba(24,183,214,.2),rgba(0,18,92,.4));border-color:var(--cyan);font-weight:600;color:#fff;padding:18px;font-size:14px}
-.arch-flow{display:flex;align-items:center;justify-content:center;margin-top:32px;font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(255,255,255,.5);gap:14px;letter-spacing:.12em;text-transform:uppercase}
-.arch-flow .ln{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.arch-col .lyr{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--predicto);letter-spacing:.1em;font-weight:600;margin-bottom:8px}
+.arch-col h4{color:var(--navy-800);font-size:17px;margin-bottom:14px}
+.arch-node{padding:12px 14px;background:var(--bg-soft);border-radius:9px;font-size:13px;color:var(--slate);display:flex;align-items:center;gap:10px}
+.arch-node svg{color:var(--predicto);flex-shrink:0}
+.arch-node.core{background:linear-gradient(135deg,var(--cyan-soft),#EEF4FF);font-weight:600;color:var(--navy-800);padding:18px;font-size:14px;border-left:3px solid var(--predicto)}
+.arch-flow{display:flex;align-items:center;justify-content:center;margin-top:32px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint);gap:14px;letter-spacing:.12em;text-transform:uppercase}
+.arch-flow .ln{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--predicto),transparent)}
 
 /* Sensor matrix */
 .matrix{padding:110px 0}
 .matrix-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.matrix-card{border:1px solid var(--border-soft);border-radius:var(--radius);padding:22px;background:#fff;transition:all .25s}
-.matrix-card:hover{border-color:var(--predicto);box-shadow:var(--shadow)}
+.matrix-card{border-radius:var(--radius);padding:22px;background:#fff;transition:all .25s}
+.matrix-card:hover{box-shadow:var(--shadow)}
 .matrix-card h5{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin:0 0 14px}
 .matrix-card .items{display:flex;flex-wrap:wrap;gap:6px}
 .matrix-card .chip{font-size:11.5px;padding:4px 9px;background:var(--bg-soft);border-radius:5px;color:var(--slate);font-family:"JetBrains Mono",monospace;font-weight:500}
@@ -978,12 +764,12 @@ section{padding:110px 0}
 /* Use cases */
 .usecase-deep{background:var(--bg-soft)}
 .uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.uc-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
+.uc-card{background:#fff;border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
 .uc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .uc-card .ic{width:44px;height:44px;border-radius:11px;background:var(--cyan-soft);color:var(--predicto);display:flex;align-items:center;justify-content:center}
 .uc-card h3{font-size:18px}
 .uc-card p{font-size:14px;line-height:1.55}
-.uc-metrics{display:flex;gap:18px;margin-top:auto;padding-top:18px;border-top:1px dashed var(--border-soft)}
+.uc-metrics{display:flex;gap:18px;margin-top:auto;padding-top:18px;border-top:1px solid var(--border-soft)}
 .uc-m .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--predicto)}
 .uc-m .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px}
 
