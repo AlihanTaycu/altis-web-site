@@ -1,18 +1,774 @@
 ---
-import EnglishProductList from '../../../components/products/EnglishProductList.astro';
-import { products as handhelds } from '../../../data/el-terminalleri';
+import Base from '../../../layouts/Base.astro';
+import { products } from '../../../data/el-terminalleri';
 import { withEnglishProductCopy } from '../../../data/english-product-copy';
 
-const englishHandhelds = handhelds.map(withEnglishProductCopy);
+const englishHandhelds = products.map(withEnglishProductCopy);
+type EnProduct = typeof englishHandhelds[number];
+
+const DISPLAY_EXCLUDE = new Set([
+  'RFID Reader', 'Barcode Scanner', 'Handheld Terminal',
+  'Brady', 'Honeywell', 'Hopeland', 'Nordic ID', 'Zebra', 'UHF',
+]);
+
+const specFilters = [
+  { id: 'ip65',      label: 'IP65 Certified',       tags: ['IP65'] },
+  { id: '4g',        label: '4G / LTE',             tags: ['4G', '4G LTE'] },
+  { id: 'wlan',      label: 'WLAN',                 tags: ['WLAN'] },
+  { id: 'bluetooth', label: 'Bluetooth',            tags: ['Bluetooth'] },
+  { id: 'nfc',       label: 'NFC',                  tags: ['NFC'] },
+  { id: 'hotswap',   label: 'Swappable Battery',    tags: ['Swappable Battery'] },
+  { id: 'longbat',   label: '18h Battery',          tags: ['18h Battery'] },
+  { id: 'android10', label: 'Android 10',           tags: ['Android 10'] },
+];
+
+function getSpecIds(product: EnProduct): string[] {
+  return specFilters
+    .filter(sf => sf.tags.some(t => (product.tags || []).includes(t)))
+    .map(sf => sf.id);
+}
+
+function getTechId(product: EnProduct): string {
+  return (product.tags || []).includes('Barcode Scanner') ? 'barcode' : 'rfid';
+}
+
+function getDisplayTags(product: EnProduct): string[] {
+  return (product.tags || []).filter((t: string) => !DISPLAY_EXCLUDE.has(t)).slice(0, 4);
+}
+
+const brands = [...new Set(englishHandhelds.map(p => p.brand))].sort();
+
+const brandCounts = Object.fromEntries(
+  brands.map(b => [b, englishHandhelds.filter(p => p.brand === b).length])
+);
+const specCounts = Object.fromEntries(
+  specFilters.map(sf => [sf.id, englishHandhelds.filter(p => getSpecIds(p).includes(sf.id)).length])
+);
+const techCounts = {
+  rfid:    englishHandhelds.filter(p => getTechId(p) === 'rfid').length,
+  barcode: englishHandhelds.filter(p => getTechId(p) === 'barcode').length,
+};
+const specLabels = Object.fromEntries(specFilters.map(sf => [sf.id, sf.label]));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'RFID Handheld Terminals — Altis Technology',
+  description: 'Brady, Honeywell, Nordic ID, Hopeland and Zebra RFID handheld terminals for warehouse, manufacturing and field operations.',
+  url: 'https://www.altis.com.tr/en/products/rfid-handhelds/',
+};
 ---
 
-<EnglishProductList
-  title="RFID Handheld Terminals - Altis Technology"
-  description="Mobile RFID handheld terminals supplied by Altis Technology."
-  eyebrow="Mobile RFID"
-  heading="RFID Handheld Terminals"
-  lead="Browse handheld RFID terminals for inventory, field operations, and enterprise mobility projects."
-  items={englishHandhelds}
-  detailBase="/en/products/rfid-handhelds/"
+<Base
+  title="RFID Handheld Terminals — Altis Technology"
+  description="Brady, Honeywell, Nordic ID, Hopeland and Zebra RFID handheld terminals for warehouse, manufacturing and field operations."
+  {schema}
+  lang="en"
   alternateUrl="https://www.altis.com.tr/urunler/rfid-el-terminalleri/"
-/>
+>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/en/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/en/products/">Products</a>
+        <span aria-hidden="true">›</span>
+        <span>RFID Handhelds</span>
+      </nav>
+      <div class="page-hdr-body">
+        <div class="page-hdr-copy">
+          <h1>RFID Handheld Terminals</h1>
+          <p>Professional handheld terminals for inventory accuracy in warehouse, manufacturing and field operations.</p>
+        </div>
+        <div class="page-hdr-stats">
+          <div class="hstat"><strong>{englishHandhelds.length}</strong><span>Models</span></div>
+          <div class="hstat"><strong>{brands.length}</strong><span>Brands</span></div>
+          <div class="hstat"><strong>In Stock</strong><span>Ready to Ship</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="catalog-area">
+  <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="catalog-layout container">
+
+    <aside class="catalog-sidebar" id="catalog-sidebar" aria-label="Filters">
+      <div class="sidebar-top">
+        <span class="sidebar-title">Filters</span>
+        <div class="sidebar-actions">
+          <button class="clear-all-btn" id="clear-all" type="button">Clear</button>
+          <button class="sidebar-close-btn" id="sidebar-close" type="button" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="active-chips" id="active-chips"></div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="true" data-target="grp-brand">
+          Brand
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-brand">
+          {brands.map(brand => (
+            <label class="foption">
+              <input type="checkbox" name="brand" value={brand} />
+              <span class="foption-label">{brand}</span>
+              <span class="foption-count">{brandCounts[brand]}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="true" data-target="grp-tech">
+          Technology
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-tech">
+          <label class="foption">
+            <input type="checkbox" name="tech" value="rfid" />
+            <span class="foption-label">UHF RFID</span>
+            <span class="foption-count">{techCounts.rfid}</span>
+          </label>
+          <label class="foption">
+            <input type="checkbox" name="tech" value="barcode" />
+            <span class="foption-label">Barcode</span>
+            <span class="foption-count">{techCounts.barcode}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="true" data-target="grp-spec">
+          Features
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-spec">
+          {specFilters.filter(sf => specCounts[sf.id] > 0).map(sf => (
+            <label class="foption">
+              <input type="checkbox" name="spec" value={sf.id} />
+              <span class="foption-label">{sf.label}</span>
+              <span class="foption-count">{specCounts[sf.id]}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </aside>
+
+    <div class="catalog-main">
+      <div class="catalog-toolbar">
+        <button class="mobile-filter-btn" id="mobile-filter-btn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="16" y2="12"/><line x1="4" y1="18" x2="12" y2="18"/></svg>
+          Filter
+          <span class="filter-badge" id="filter-badge" style="display:none">0</span>
+        </button>
+        <p class="result-count"><span id="result-count">{englishHandhelds.length}</span> products</p>
+        <div class="sort-row">
+          <span class="sort-label">Sort:</span>
+          <select id="sort-select" class="sort-select">
+            <option value="default">Default</option>
+            <option value="brand-az">Brand A-Z</option>
+            <option value="name-az">Name A-Z</option>
+            <option value="name-za">Name Z-A</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        {englishHandhelds.map(product => (
+          <article
+            class="product-card"
+            data-brand={product.brand}
+            data-tech={getTechId(product)}
+            data-specs={getSpecIds(product).join('|')}
+            data-name={(product.title || '').toLowerCase()}
+          >
+            <a href={`/en/products/rfid-handhelds/${product.slug}/`} class="card-img-wrap">
+              <span class={`tech-badge tech-badge--${getTechId(product)}`}>
+                {getTechId(product) === 'rfid' ? 'UHF RFID' : 'Barcode'}
+              </span>
+              <img src={product.image} alt={product.title} loading="lazy" width="400" height="300" />
+            </a>
+            <div class="card-body">
+              <h2><a href={`/en/products/rfid-handhelds/${product.slug}/`}>{product.title}</a></h2>
+              <p class="card-desc">{product.shortDesc}</p>
+              {getDisplayTags(product).length > 0 && (
+                <div class="card-pills">
+                  {getDisplayTags(product).map((tag: string) => <span class="spec-pill">{tag}</span>)}
+                </div>
+              )}
+              <a href={`/en/products/rfid-handhelds/${product.slug}/`} class="card-cta">View Product</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="empty-state" id="empty-state" style="display:none">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--border)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No products match the selected filters.</p>
+        <button type="button" id="empty-clear">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow eyebrow--on-dark">Expert Support</p>
+        <h2>Let's find the right handheld terminal<br />for your project together.</h2>
+      </div>
+      <a href="/en/contact/" class="btn-white-lg">Talk to an Expert</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+/* Page Header */
+.page-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 28px 0 24px;
+}
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 20px;
+}
+.breadcrumb-nav a { color: var(--text-muted); transition: color .15s; }
+.breadcrumb-nav a:hover { color: var(--primary); }
+.breadcrumb-nav span:last-child { color: var(--primary); font-weight: 600; }
+.page-hdr-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.page-hdr-copy h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.page-hdr-copy p { font-size: 15px; color: var(--text-muted); max-width: 560px; }
+.page-hdr-stats { display: flex; gap: 32px; }
+.hstat { display: flex; flex-direction: column; align-items: flex-end; }
+.hstat strong { font-size: 1.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+.hstat span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-faint); margin-top: 2px; }
+
+/* Catalog Area */
+.catalog-area { background: #F2F4F9; }
+
+/* Catalog Layout */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-top: 28px;
+  padding-bottom: 80px;
+}
+.catalog-layout.container { padding-left: 16px; }
+
+/* Sidebar */
+.catalog-sidebar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,18,92,.06), 0 0 0 1px rgba(0,18,92,.04);
+  padding: 18px;
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 108px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.sidebar-title { font-size: 13px; font-weight: 800; color: var(--primary); letter-spacing: .06em; text-transform: uppercase; }
+.sidebar-actions { display: flex; align-items: center; gap: 8px; }
+.clear-all-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color .15s;
+}
+.clear-all-btn:hover { color: var(--primary); }
+.sidebar-close-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-soft);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.sidebar-close-btn:hover { background: var(--border); }
+
+.active-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.active-chips:empty { margin-bottom: 0; }
+.active-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(0,18,92,.07);
+  border: 1px solid rgba(0,18,92,.15);
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  line-height: 1.3;
+}
+.active-chip:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.filter-group { border-bottom: 1px solid var(--border-soft); padding: 14px 0; }
+.filter-group:last-child { border-bottom: none; padding-bottom: 0; }
+.fgroup-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.fgroup-toggle .chevron { flex-shrink: 0; transition: transform .2s; color: var(--text-faint); }
+.fgroup-toggle[aria-expanded="false"] .chevron { transform: rotate(-90deg); }
+.fgroup-body { display: flex; flex-direction: column; }
+.foption {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background .1s;
+}
+.foption:hover { background: var(--bg-soft); }
+.foption input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+.foption-label { flex: 1; font-size: 13.5px; color: var(--text); line-height: 1.3; }
+.foption-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: var(--bg-soft);
+  border-radius: 10px;
+  padding: 1px 6px;
+  min-width: 22px;
+  text-align: center;
+}
+
+/* Toolbar */
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  min-height: 38px;
+}
+.mobile-filter-btn {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--primary);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 13px;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.mobile-filter-btn:hover { border-color: var(--primary); }
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 9px;
+  padding: 0 4px;
+}
+.result-count { font-size: 14px; color: var(--text-muted); flex: 1; }
+.result-count span { font-weight: 700; color: var(--primary); }
+.sort-row { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.sort-label { font-size: 13px; color: var(--text-faint); white-space: nowrap; }
+.sort-select {
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color .15s;
+}
+.sort-select:focus { border-color: var(--primary); }
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+/* Card */
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(0,18,92,.06);
+  transition: box-shadow .2s, transform .2s;
+}
+.product-card:hover {
+  box-shadow: 0 12px 30px rgba(0,18,92,.12);
+  transform: translateY(-2px);
+}
+
+.card-img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-bottom: 1px solid var(--border-soft);
+  overflow: hidden;
+  height: 190px;
+  padding: 20px;
+}
+.card-img-wrap img {
+  max-width: 100%;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform .25s;
+}
+.product-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+.tech-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 4px;
+  z-index: 1;
+  line-height: 1.4;
+}
+.tech-badge--rfid { background: rgba(0,18,92,.08); color: var(--primary); }
+.tech-badge--barcode { background: rgba(24,183,214,.12); color: #0994b0; }
+
+.card-body {
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+}
+.card-body h2 { font-size: 14.5px; font-weight: 700; line-height: 1.4; margin: 0; }
+.card-body h2 a { color: var(--primary); transition: color .15s; text-decoration: none; }
+.card-body h2 a:hover { color: var(--cyan); }
+.card-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.spec-pill {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(0,18,92,.06);
+  border-radius: 4px;
+  padding: 2px 7px;
+  line-height: 1.4;
+}
+.card-cta {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color .15s;
+}
+.card-cta:hover { color: var(--cyan); }
+
+/* Empty State */
+.empty-state {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 72px 0;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+.empty-state p { font-size: 15px; color: var(--text-muted); }
+.empty-state button {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(0,18,92,.06);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.empty-state button:hover { background: rgba(0,18,92,.1); }
+
+/* CTA Section */
+.cta-section { background: var(--primary); padding: 76px 0; }
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-inner h2 { color: #fff; font-size: clamp(1.3rem, 2.4vw, 1.8rem); margin-top: 14px; }
+.btn-white-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 14px 30px;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background .2s, color .2s;
+}
+.btn-white-lg:hover { background: var(--cyan); color: #fff; }
+
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 199;
+}
+.sidebar-backdrop.is-visible { display: block; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .catalog-layout { grid-template-columns: 1fr; }
+  .catalog-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(300px, 85vw);
+    max-height: 100%;
+    z-index: 200;
+    border-radius: 0;
+    border: none;
+    top: 0;
+    transform: translateX(-110%);
+    transition: transform .3s cubic-bezier(.4,0,.2,1);
+    box-shadow: 4px 0 32px rgba(0,18,92,.18);
+  }
+  .catalog-sidebar.is-open { transform: translateX(0); }
+  .sidebar-close-btn { display: flex; }
+  .mobile-filter-btn { display: flex; }
+}
+
+@media (max-width: 600px) {
+  .page-hdr-body { flex-direction: column; align-items: flex-start; }
+  .page-hdr-stats { align-self: stretch; justify-content: flex-start; gap: 24px; }
+  .hstat { align-items: flex-start; }
+  .cta-inner { flex-direction: column; align-items: flex-start; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+@media (max-width: 360px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script define:vars={{ specLabels }}>
+  const grid = document.getElementById('product-grid');
+  const countEl = document.getElementById('result-count');
+  const emptyEl = document.getElementById('empty-state');
+  const chipsEl = document.getElementById('active-chips');
+  const badge = document.getElementById('filter-badge');
+  const sortSelect = document.getElementById('sort-select');
+  const sidebar = document.getElementById('catalog-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+
+  const allCards = grid ? [...grid.querySelectorAll('.product-card')] : [];
+  const originalOrder = [...allCards];
+
+  const brandSet = new Set();
+  const techSet  = new Set();
+  const specSet  = new Set();
+
+  function applyFilters() {
+    let visible = 0;
+    for (const card of allCards) {
+      const b  = card.getAttribute('data-brand') || '';
+      const t  = card.getAttribute('data-tech')  || '';
+      const ss = (card.getAttribute('data-specs') || '').split('|').filter(Boolean);
+
+      const ok = (brandSet.size === 0 || brandSet.has(b)) &&
+                 (techSet.size  === 0 || techSet.has(t))  &&
+                 (specSet.size  === 0 || [...specSet].some(s => ss.includes(s)));
+
+      card.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+    }
+
+    if (countEl) countEl.textContent = String(visible);
+    if (emptyEl) emptyEl.style.display = visible === 0 ? 'flex' : 'none';
+
+    const totalActive = brandSet.size + techSet.size + specSet.size;
+    if (badge) {
+      badge.textContent = String(totalActive);
+      badge.style.display = totalActive > 0 ? '' : 'none';
+    }
+
+    renderChips();
+    applySort();
+  }
+
+  function applySort() {
+    if (!grid || !sortSelect) return;
+    const val = sortSelect.value;
+    if (val === 'default') {
+      for (const c of originalOrder) grid.appendChild(c);
+      return;
+    }
+    const visible = allCards.filter(c => c.style.display !== 'none');
+    visible.sort((a, b) => {
+      if (val === 'brand-az') return (a.getAttribute('data-brand') || '').localeCompare(b.getAttribute('data-brand') || '', 'en');
+      if (val === 'name-az')  return (a.getAttribute('data-name')  || '').localeCompare(b.getAttribute('data-name')  || '', 'en');
+      if (val === 'name-za')  return (b.getAttribute('data-name')  || '').localeCompare(a.getAttribute('data-name')  || '', 'en');
+      return 0;
+    });
+    for (const c of visible) grid.appendChild(c);
+  }
+
+  function renderChips() {
+    if (!chipsEl) return;
+    const chips = [];
+    for (const v of brandSet) chips.push({ type: 'brand', value: v, label: String(v) });
+    for (const v of techSet)  chips.push({ type: 'tech',  value: v, label: v === 'rfid' ? 'UHF RFID' : 'Barcode' });
+    for (const v of specSet)  chips.push({ type: 'spec',  value: v, label: specLabels[v] || String(v) });
+    chipsEl.innerHTML = chips.map(c =>
+      `<button class="active-chip" data-type="${c.type}" data-value="${c.value}" type="button">${c.label} x</button>`
+    ).join('');
+  }
+
+  function clearAll() {
+    document.querySelectorAll('.foption input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+    brandSet.clear(); techSet.clear(); specSet.clear();
+    if (sortSelect) sortSelect.value = 'default';
+    applyFilters();
+  }
+
+  document.querySelectorAll('.foption input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const name = cb.getAttribute('name');
+      const val  = cb.value;
+      const on   = cb.checked;
+      if      (name === 'brand') { on ? brandSet.add(val) : brandSet.delete(val); }
+      else if (name === 'tech')  { on ? techSet.add(val)  : techSet.delete(val); }
+      else if (name === 'spec')  { on ? specSet.add(val)  : specSet.delete(val); }
+      applyFilters();
+    });
+  });
+
+  chipsEl?.addEventListener('click', e => {
+    const chip = e.target?.closest?.('.active-chip');
+    if (!chip) return;
+    const t = chip.getAttribute('data-type');
+    const v = chip.getAttribute('data-value');
+    if      (t === 'brand') brandSet.delete(v);
+    else if (t === 'tech')  techSet.delete(v);
+    else if (t === 'spec')  specSet.delete(v);
+    const cb = document.querySelector(`.foption input[name="${t}"][value="${v}"]`);
+    if (cb) cb.checked = false;
+    applyFilters();
+  });
+
+  document.getElementById('clear-all')?.addEventListener('click', clearAll);
+  document.getElementById('empty-clear')?.addEventListener('click', clearAll);
+  sortSelect?.addEventListener('change', applySort);
+
+  document.querySelectorAll('.fgroup-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const body = document.getElementById(btn.dataset.target || '');
+      if (body) body.style.display = expanded ? 'none' : '';
+    });
+  });
+
+  function openSidebar()  { sidebar?.classList.add('is-open'); backdrop?.classList.add('is-visible'); document.body.style.overflow = 'hidden'; }
+  function closeSidebar() { sidebar?.classList.remove('is-open'); backdrop?.classList.remove('is-visible'); document.body.style.overflow = ''; }
+  document.getElementById('mobile-filter-btn')?.addEventListener('click', openSidebar);
+  backdrop?.addEventListener('click', closeSidebar);
+  document.getElementById('sidebar-close')?.addEventListener('click', closeSidebar);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
+</script>
