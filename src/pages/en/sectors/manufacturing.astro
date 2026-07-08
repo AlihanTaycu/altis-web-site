@@ -1,35 +1,906 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Manufacturing IoT and Operational Intelligence Solutions",
+  "provider": { "@type": "Organization", "name": "Altis Technology" },
+  "serviceType": "Manufacturing IoT and operational intelligence",
+  "areaServed": "TR",
+  "description": "OEE, predictive maintenance, energy monitoring, production traceability, SCADA, MES, and ERP integration solutions for manufacturing facilities"
+};
 ---
 
-<Base title="Manufacturing | Altis Technology" description="OEE, energy, predictive maintenance, and production visibility for manufacturing teams." lang="en" alternateUrl="https://www.altis.com.tr/sektorler/uretim/">
-  <section class="sector-hero">
-    <div class="container sector-grid">
-      <div>
-        <p class="eyebrow">Sector</p>
-        <h1>Manufacturing</h1>
-        <p class="lead">OEE, predictive maintenance, energy monitoring, production traceability, SCADA/MES/ERP integration, and operational dashboards for manufacturing teams.</p>
-        <a class="btn btn-primary btn-lg" href="/en/contact/">Talk to an Expert</a>
-      </div>
-      <img src="/images/sectors/uretim-marketing.png" alt="Industrial IoT and manufacturing monitoring" width="1844" height="921" loading="eager" />
+<Base
+  title="IoT and Operational Intelligence Solutions for Manufacturing | Altis Technology"
+  description="Live OEE, predictive maintenance, energy monitoring, production traceability, SCADA/MES/ERP integration, and operational intelligence solutions for manufacturing facilities."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/sektorler/uretim/"
+>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/sectors/manufacturing/">Sectors</a>
+      <span class="sep">/</span>
+      <span style="color:var(--sector);font-weight:600">Manufacturing</span>
     </div>
-  </section>
-  <section class="container content-grid">
-    <article><h2>Production visibility</h2><p>Collect machine, line, operator, and product data to create traceable production records and dashboards.</p></article>
-    <article><h2>Maintenance intelligence</h2><p>Use IoT and operational data to support predictive maintenance, alarms, and faster intervention workflows.</p></article>
-    <article><h2>Enterprise integration</h2><p>Connect production data with MES, ERP, SCADA, quality, and reporting systems for clearer decision making.</p></article>
-  </section>
+    <div class="hero-inner">
+      <div>
+        <div class="sector-pill">
+          <span class="pill-tag">Sector</span>
+          <span>Factory · Production Line · Maintenance · Energy</span>
+        </div>
+        <h1>See line efficiency, machine health, and energy — <em>on the same screen</em>.</h1>
+        <p class="hero-sub">Data from sensors, PLCs, SCADA, and energy meters comes together in Predictivo's single operational intelligence layer. OEE scores, predictive maintenance alerts, line performance, and energy consumption are monitored in real time; alarms and actions are automated with a visual rule engine.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/en/contact/">Request a Factory Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#use-cases">Explore Scenarios</a>
+        </div>
+        <div class="hero-platforms">
+          <span class="lbl">Platforms used:</span>
+          <a href="/en/platforms/predictivo/" class="plat-chip pr">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            Predictivo
+          </a>
+          <a href="/en/platforms/tag-trace/" class="plat-chip tt">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/></svg>
+            Tag&amp;Trace
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero visual: factory line dashboard -->
+      <div class="factory">
+        <div class="fac-head">
+          <div class="ttl">Facility · Line 02 · Shift B</div>
+          <div class="meta">
+            <span class="live">live</span>
+            <span>08:14 · 4h 14m</span>
+          </div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-kpi">
+            <div class="l">OEE</div>
+            <div class="v ok">82.4%</div>
+            <div class="trend up">▲ 3.2 vs yesterday</div>
+          </div>
+          <div class="fac-kpi">
+            <div class="l">Output / hour</div>
+            <div class="v">412</div>
+            <div class="trend up">target 400</div>
+          </div>
+          <div class="fac-kpi">
+            <div class="l">Active Alarms</div>
+            <div class="v warn">2</div>
+            <div class="trend dn">1 critical · 1 warning</div>
+          </div>
+
+          <!-- Production line stations -->
+          <div class="fac-line">
+            <div class="head">
+              <span>Line 02 · Station Health</span>
+              <span class="right">live · vibration · heat · OEE</span>
+            </div>
+            <div class="fac-stations">
+              <div class="station ok">
+                <div class="name">CNC-01</div>
+                <div class="ring">
+                  <svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="16"/></svg>
+                  <div class="pct">86</div>
+                </div>
+                <div class="label">Machining</div>
+              </div>
+              <div class="belt-arrow"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h14M11 2l5 5-5 5"/></svg></div>
+              <div class="station warn">
+                <div class="name">CNC-02</div>
+                <div class="ring">
+                  <svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="56"/></svg>
+                  <div class="pct">50</div>
+                </div>
+                <div class="label">Vibration ↑</div>
+              </div>
+              <div class="belt-arrow"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h14M11 2l5 5-5 5"/></svg></div>
+              <div class="station crit">
+                <div class="name">WELD-03</div>
+                <div class="ring">
+                  <svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="85"/></svg>
+                  <div class="pct">25</div>
+                </div>
+                <div class="label">Maintenance suggested</div>
+              </div>
+              <div class="belt-arrow"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h14M11 2l5 5-5 5"/></svg></div>
+              <div class="station ok">
+                <div class="name">QC-04</div>
+                <div class="ring">
+                  <svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="11"/></svg>
+                  <div class="pct">90</div>
+                </div>
+                <div class="label">Quality</div>
+              </div>
+              <div class="belt-arrow"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h14M11 2l5 5-5 5"/></svg></div>
+              <div class="station ok">
+                <div class="name">PACK-05</div>
+                <div class="ring">
+                  <svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="22"/></svg>
+                  <div class="pct">80</div>
+                </div>
+                <div class="label">Packaging</div>
+              </div>
+              <div class="belt-arrow"><svg width="14" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h14M11 2l5 5-5 5"/></svg></div>
+            </div>
+          </div>
+
+          <!-- Energy chart -->
+          <div class="fac-chart">
+            <div class="head">
+              <h5>Energy Consumption · last 12 hours</h5>
+              <span class="meta">142 kWh · ▼ 7%</span>
+            </div>
+            <svg viewBox="0 0 320 60" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="g-energy" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0F8FA8" stop-opacity=".4"/>
+                  <stop offset="100%" stop-color="#0F8FA8" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,45 L26,38 L52,40 L78,25 L104,32 L130,18 L156,24 L182,12 L208,22 L234,8 L260,18 L286,10 L320,16 L320,60 L0,60 Z" fill="url(#g-energy)"/>
+              <path d="M0,45 L26,38 L52,40 L78,25 L104,32 L130,18 L156,24 L182,12 L208,22 L234,8 L260,18 L286,10 L320,16" stroke="#0F8FA8" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="320" cy="16" r="3" fill="#fff" stroke="#0F8FA8" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <!-- Alarm strip -->
+          <div class="alarm-strip">
+            <span class="sev">Critical</span>
+            <span class="txt"><strong>WELD-03</strong> · Vibration threshold exceeded 4.8 mm/s — work order created</span>
+            <span class="t">2m ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain points -->
+<section class="pains">
+  <div class="container">
+    <SectionHead
+      eyebrow="In Manufacturing Operations"
+      heading="Sound familiar?"
+      description="On modern production lines, data is everywhere — but it doesn't reach the right person at the right time. This disconnect turns into unplanned downtime, quality issues, and wasted energy."
+    />
+    <div class="pain-grid" data-reveal data-reveal-delay="100">
+      <div class="pain-card">
+        <div class="qty">∼ 30%</div>
+        <h3>Invisible OEE loss</h3>
+        <p>When availability, performance, and quality aren't measured together, real efficiency stays hidden in reports; improvement becomes guesswork.</p>
+      </div>
+      <div class="pain-card">
+        <div class="qty">× Hours</div>
+        <h3>Unexpected downtime</h3>
+        <p>Machine vibration, heat, or current signals trouble a day in advance, but no one sees it. The failure erupts mid-shift when it could have been scheduled for planned maintenance.</p>
+      </div>
+      <div class="pain-card">
+        <div class="qty">↑ kWh</div>
+        <h3>Opaque energy use</h3>
+        <p>The monthly bill tells you the total amount; it doesn't show how much energy was consumed by which line, which shift, or per unit produced.</p>
+      </div>
+      <div class="pain-card">
+        <div class="qty">~ Manual</div>
+        <h3>Records written into Excel</h3>
+        <p>The operator enters data into Excel at the end of the shift; the report comes out a day later. By the time a problem is noticed, it's already too late to act.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution mapping -->
+<section class="solution">
+  <div class="container">
+    <SectionHead
+      eyebrow="Solution Map"
+      heading="In manufacturing, every data source has the right platform"
+      description="Different data sources in the manufacturing ecosystem require different capabilities. Predictivo handles the IoT and operational intelligence side; Tag&amp;Trace handles product traceability on the production line."
+    />
+    <div class="sol-map">
+      <div class="sol-col">
+        <h4>Need</h4>
+        <div class="group">
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>OEE &amp; line performance</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><circle cx="12" cy="12" r="4"/></svg>Machine health &amp; predictive maintenance</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>Energy monitoring &amp; efficiency</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg>Ambient sensing (temperature, humidity, CO₂)</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10"/><circle cx="18" cy="20" r="2"/></svg>Production traceability</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg>Management dashboards &amp; reports</div>
+        </div>
+      </div>
+      <div class="sol-col sol-platform">
+        <div class="plat-card">
+          <div class="nm">Predictivo</div>
+          <div class="role">Industrial IoT &amp; Operational Intelligence</div>
+          <ul>
+            <li>Live monitoring of OEE, machine health, energy</li>
+            <li>Visual rule engine · alarms &amp; notifications</li>
+            <li>MQTT · OPC UA · Modbus · SCADA connectivity</li>
+            <li>Automated PDF reports · shift comparison</li>
+          </ul>
+        </div>
+        <div class="plat-card tt">
+          <div class="nm">Tag&amp;Trace</div>
+          <div class="role">Product traceability &amp; line orchestration</div>
+          <ul>
+            <li>Station-based RFID / barcode reading</li>
+            <li>Operator, part, and lot traceability</li>
+            <li>Automatic logging to MES / ERP</li>
+            <li>Label printing · product → quality chain</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sol-col">
+        <h4>Result</h4>
+        <div class="group">
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Live OEE &amp; performance</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Failures detected in advance</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Line / product-level energy</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Lot ↔ quality traceability</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Shift comparison</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>MES / ERP parity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use cases -->
+<section class="uc" id="use-cases">
+  <div class="container">
+    <SectionHead
+      eyebrow="Manufacturing Scenarios"
+      heading="6 actionable solutions for the factory"
+      description="The scenarios below can start with a pilot line or a group of machines; once validated, they roll out across the entire facility."
+    />
+    <div class="uc-grid" data-reveal data-reveal-delay="100">
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>Live OEE &amp; Line Performance</h3>
+        <p>A live OEE score calculated from the Availability · Performance · Quality triad. Comparable by shift, line, and product; daily lost minutes become transparent.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">RT</div><div class="l">live score</div></div>
+          <div class="m"><div class="v">×N</div><div class="l">shift comparison</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>
+        <h3>Predictive Maintenance</h3>
+        <p>Vibration, temperature, current, and runtime data are analyzed to detect failure risk early. When a threshold is exceeded, a work order is created automatically and an SMS is sent to the maintenance team.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">↓ Downtime</div><div class="l">unplanned failures</div></div>
+          <div class="m"><div class="v">Auto</div><div class="l">work order</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3>Energy Monitoring &amp; Efficiency</h3>
+        <p>Electricity, gas, steam, and compressed air consumption become transparent per line, shift, and product. Above-target consumption instantly alerts the manager.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">↓ 15%</div><div class="l">typical savings</div></div>
+          <div class="m"><div class="v">SKU</div><div class="l">cost per unit</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10"/><circle cx="18" cy="20" r="2"/></svg></div>
+        <h3>Production Traceability</h3>
+        <p>Every product's journey on the line — station, operator, lot, quality check — is tracked with RFID or barcode. Recalls and root-cause analysis take seconds.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">Lot</div><div class="l">full traceability</div></div>
+          <div class="m"><div class="v">Auto</div><div class="l">quality record</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Ambient Monitoring</h3>
+        <p>Temperature, humidity, CO₂, and air quality are continuously monitored across production areas; critical processes keep automatic, regulation-compliant records.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">7×24</div><div class="l">continuous logging</div></div>
+          <div class="m"><div class="v">Audit</div><div class="l">traceable log</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+        <h3>Management Reports</h3>
+        <p>Daily operations, weekly performance, and monthly energy and maintenance reports are shared automatically as PDFs with management and operations teams.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">Auto</div><div class="l">PDF · scheduled</div></div>
+          <div class="m"><div class="v">Role</div><div class="l">based distribution</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Operations flow -->
+<section class="opflow">
+  <div class="container">
+    <SectionHead
+      eyebrow="Data Flow"
+      heading="From the sensor on the floor to the management screen, in five steps"
+      description="The path a vibration sensor's reading takes to reach the KPI screen in a management meeting. At every step: the right device, the right protocol, the right decision."
+    />
+    <div class="op-steps">
+      <div class="op-step">
+        <div class="step-num">01</div>
+        <h4>Sensor Data</h4>
+        <p>Real-time measurement from a vibration, temperature, current, or energy meter.</p>
+        <span class="device">MQTT · Modbus</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">02</div>
+        <h4>Gateway / Edge</h4>
+        <p>Data is collected and pre-processed locally; nothing is lost even on an offline network.</p>
+        <span class="device">Edge Gateway</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">03</div>
+        <h4>Predictivo Core</h4>
+        <p>Stored as time series; passes through the rule engine, threshold breaches are processed.</p>
+        <span class="device">Rule Engine</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">04</div>
+        <h4>Action</h4>
+        <p>Alarms, email, SMS, work orders, or device triggers fire automatically.</p>
+        <span class="device">Webhook · CMMS</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">05</div>
+        <h4>Dashboard &amp; Report</h4>
+        <p>Management, production, and maintenance teams see it live on role-based dashboards.</p>
+        <span class="device">Web · PDF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="roi">
+  <div class="container">
+    <SectionHead
+      eyebrow="Expected Impact"
+      heading="When data becomes visible, the factory learns"
+      description="Typical operational improvements observed in pilot projects. Results vary by field conditions, machine age, and existing operational maturity."
+    />
+    <div class="roi-grid" data-reveal data-reveal-delay="100">
+      <div class="roi-card">
+        <div class="b">+10%<sup></sup></div>
+        <div class="lbl">OEE increase</div>
+        <div class="meta">Visibility plus early intervention brings line efficiency closer to the target level.</div>
+      </div>
+      <div class="roi-card">
+        <div class="b">↓ 35%<sup></sup></div>
+        <div class="lbl">Unplanned downtime</div>
+        <div class="meta">Predictive maintenance alerts move failures to planned maintenance.</div>
+      </div>
+      <div class="roi-card">
+        <div class="b">↓ 15%<sup></sup></div>
+        <div class="lbl">Energy consumption</div>
+        <div class="meta">Line / shift / SKU-level transparency exposes idle consumption and waste.</div>
+      </div>
+      <div class="roi-card">
+        <div class="b">×N<sup></sup></div>
+        <div class="lbl">Faster root-cause</div>
+        <div class="meta">With lot traceability, quality issues are narrowed down to the relevant station and operator in seconds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integration -->
+<section class="integ">
+  <div class="container">
+    <div class="integ-grid" data-reveal data-reveal-delay="100">
+      <div>
+        <div class="eyebrow">SCADA &amp; MES &amp; ERP Integration</div>
+        <h2 style="margin-top:18px">Works with your existing automation infrastructure</h2>
+        <p style="font-size:17px;margin-top:18px;line-height:1.6">Predictivo isn't designed to replace your existing PLC, SCADA, and MES systems — it's designed to make sense of and surface their data. Data flows both ways; the automation team stays in place, while management and maintenance teams gain a decision-support layer.</p>
+        <div class="integ-list">
+          <div class="integ-row">
+            <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+            <div>
+              <strong>PLC / SCADA connectivity</strong>
+              <span>Siemens S7, Allen-Bradley, Mitsubishi, Beckhoff, OMRON, and any OPC UA-supported SCADA.</span>
+            </div>
+          </div>
+          <div class="integ-row">
+            <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+            <div>
+              <strong>IoT &amp; sensors</strong>
+              <span>Sensors and meters connect directly to the platform via MQTT, LoRaWAN, NB-IoT, and Modbus.</span>
+            </div>
+          </div>
+          <div class="integ-row">
+            <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></div>
+            <div>
+              <strong>MES / ERP integration</strong>
+              <span>Production orders, status, lot, and quality records; two-way with SAP, Oracle, Logo, and custom systems.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="integ-visual">
+        <div class="integ-chain">
+          <div class="chain-step">
+            <div class="left">
+              <strong>Vibration Sensor</strong>
+              <div class="meta">WELD-03 · 4.8 mm/s</div>
+            </div>
+            <div class="center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </div>
+            <div class="right">
+              <strong>Threshold exceeded</strong>
+              <div class="meta">&gt; 4 mm/s · 15 min</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>Predictivo Core</strong>
+              <div class="meta">rule engine · v2</div>
+            </div>
+            <div class="center" style="border-color:var(--cyan);color:var(--cyan)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+            </div>
+            <div class="right">
+              <strong>Alarm triggered</strong>
+              <div class="meta">critical · maintenance channel</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>CMMS / Work order</strong>
+              <div class="meta">webhook</div>
+            </div>
+            <div class="center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+            </div>
+            <div class="right">
+              <strong>Automatic record</strong>
+              <div class="meta">WO-44821 · opened</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>SMS / Email</strong>
+              <div class="meta">maintenance engineer</div>
+            </div>
+            <div class="center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="m3 5 9 8 9-8"/></svg>
+            </div>
+            <div class="right">
+              <strong>Notification delivered</strong>
+              <div class="meta">within 30-min SLA</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>Management Dashboard</strong>
+              <div class="meta">live dashboard</div>
+            </div>
+            <div class="center" style="border-color:var(--sector-deep);color:var(--sector-deep)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg>
+            </div>
+            <div class="right">
+              <strong>OEE impact tracked</strong>
+              <div class="meta">downtime · planned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Buyer-specific FAQ -->
+<section class="buyer">
+  <div class="container">
+    <SectionHead
+      eyebrow="Which questions do we answer?"
+      heading="By decision-maker profile"
+      description="Factory digitalization isn't one person's decision — it's a team's. Each role asks different questions; our answers speak clearly to each one."
+    />
+    <div class="buyer-grid" data-reveal data-reveal-delay="100">
+      <div class="buyer-card">
+        <span class="role-tag">Production &amp; Maintenance</span>
+        <h3>How does it affect operations?</h3>
+        <p class="q">"Is this another system on the floor? Will operators use it? Will it interfere with automation?"</p>
+        <div class="ans">Predictivo doesn't touch your existing PLC/SCADA; it reads data via OPC UA or Modbus. There's no extra logging workload for operators — in fact, start- and end-of-shift reports become automatic. Pilots start with a single machine or a single line.</div>
+      </div>
+      <div class="buyer-card">
+        <span class="role-tag">IT &amp; OT</span>
+        <h3>Security &amp; integration architecture?</h3>
+        <p class="q">"Can we get data without touching the OT network? Is there RBAC, audit, on-prem support?"</p>
+        <div class="ans">The edge gateway can connect to the OT network in read-only mode; data flows one-way through a DMZ. The whole system runs on token-based RBAC, audit logging, and TLS. On-premise, private cloud, or hybrid deployment is supported.</div>
+      </div>
+      <div class="buyer-card">
+        <span class="role-tag">General Manager / CFO</span>
+        <h3>What's the return on investment?</h3>
+        <p class="q">"If we apply it to one line, how much difference will we see? How do we scale after the pilot?"</p>
+        <div class="ans">Pilots typically start with one line or one group of machines; OEE, unplanned downtime, and energy consumption are measured before and after. Typical payback is 12-18 months; after that it scales across the whole facility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="eyebrow">Factory Demo &amp; Discovery</div>
+    <h2>Let's measure it together at your facility</h2>
+    <p>Let's look at your existing automation infrastructure, number of lines, and goals together. We'll come back with a scalable roadmap that starts with one line.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="/en/contact/">Request a Factory Demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/en/platforms/predictivo/">Predictivo Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- Related -->
+<section class="related">
+  <div class="container">
+    <div class="ttl">— Other sector solutions —</div>
+    <div class="related-row">
+      <a class="related-tile" href="/en/sectors/warehouse-logistics/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9 5 4h14l2 5"/></svg></div>
+        <span>Warehouse &amp; Logistics</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="related-tile" href="/en/sectors/retail-textile/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/></svg></div>
+        <span>Retail &amp; Textile</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="related-tile" href="/en/solutions/asset-management/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1 0 5.4l-7 7a4 4 0 1 1-5.4-5.4l7-7a4 4 0 0 1 5.4 0"/></svg></div>
+        <span>Maintenance &amp; Technical</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="related-tile" href="/en/sectors/manufacturing/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <span>All Sectors</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
 </Base>
 
 <style>
-  .sector-hero{padding:88px 0;background:linear-gradient(180deg,#fff,var(--bg-soft))}
-  .sector-grid{display:grid;grid-template-columns:1fr minmax(320px,.9fr);gap:40px;align-items:center}
-  .eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-  h1{color:var(--primary);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin:12px 0 16px}
-  .lead{max-width:760px;color:var(--text-muted);font-size:1.12rem;line-height:1.75;margin-bottom:28px}
-  img{width:100%;border-radius:12px;border:1px solid var(--border);background:#fff}
-  .content-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:64px 0 88px}
-  article{padding:24px;border:1px solid var(--border);border-radius:12px;background:#fff}
-  h2{color:var(--primary);font-size:1.15rem} article p{color:var(--text-muted);line-height:1.65}
-  @media(max-width:900px){.sector-grid,.content-grid{grid-template-columns:1fr}}
+:root{
+  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;
+  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
+  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
+  --border:#E3E8F2;--border-soft:#EEF1F7;
+  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
+  --steel:#8B95A5;--slate:#334155;
+  --ok:#15a06b;--warn:#c47700;--crit:#d64545;
+  --primary:var(--navy-800);
+  /* Manufacturing sector — petrol/teal, aligns with Predictivo */
+  --sector:#0F8FA8;
+  --sector-deep:#0A6A7E;
+  --sector-soft:#E3F5FA;
+  --sector-glow:rgba(15,143,168,.18);
+  --radius:14px;--radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
+  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
+  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
+  --container:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sector-deep);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--sector)}
+h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(40px,5vw,68px);font-weight:700}
+h2{font-size:clamp(30px,3.2vw,44px);font-weight:700;letter-spacing:-.025em}
+h3{font-size:20px;font-weight:600}
+h4{font-size:16px;font-weight:600}
+p{margin:0;color:var(--text-muted);text-wrap:pretty}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:14.5px;color:var(--text);font-weight:500}
+.nav-links a:hover{color:var(--primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--bg-soft)}
+.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
+
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:48px 0 120px;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 80% -100px, rgba(15,143,168,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr 1.05fr;gap:56px;align-items:center;margin-top:32px}
+.sector-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.sector-pill .pill-tag{background:var(--sector);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
+.hero h1{margin-top:24px}
+.hero h1 em{color:var(--sector);font-style:normal}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:540px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-platforms{display:flex;gap:8px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);align-items:center;max-width:540px;flex-wrap:wrap}
+.hero-platforms .lbl{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-right:6px}
+.plat-chip{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:7px;display:inline-flex;align-items:center;gap:6px}
+.plat-chip.pr{background:var(--sector-soft);color:var(--sector-deep)}
+.plat-chip.tt{background:var(--bg-blue);color:var(--primary)}
+
+/* Hero visual — production line dashboard */
+.factory{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);overflow:hidden;position:relative;
+}
+.fac-head{padding:14px 18px;border-bottom:1px solid var(--border-soft);background:#FCFCFE;display:flex;justify-content:space-between;align-items:center}
+.fac-head .ttl{font-weight:600;font-size:13px;color:var(--navy-800)}
+.fac-head .meta{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint);display:flex;gap:10px;align-items:center}
+.fac-head .live{display:inline-flex;align-items:center;gap:5px;color:var(--ok);font-weight:600}
+.fac-head .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(21,160,107,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(21,160,107,.5)}70%{box-shadow:0 0 0 8px rgba(21,160,107,0)}100%{box-shadow:0 0 0 0 rgba(21,160,107,0)}}
+
+.fac-body{padding:18px;background:linear-gradient(180deg,#FAFBFE,#fff);display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;gap:12px}
+.fac-kpi{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:12px 14px}
+.fac-kpi .l{font-size:10px;color:var(--text-faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.fac-kpi .v{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:700;color:var(--navy-800);margin-top:3px}
+.fac-kpi .v.ok{color:var(--ok)}
+.fac-kpi .v.warn{color:var(--warn)}
+.fac-kpi .trend{font-size:10px;color:var(--text-muted);margin-top:2px;font-weight:600}
+.fac-kpi .trend.up{color:var(--ok)}
+.fac-kpi .trend.dn{color:var(--crit)}
+
+.fac-line{grid-column:1/-1;background:#0F0F14;border-radius:10px;padding:18px;position:relative}
+.fac-line .head{display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:11px;margin-bottom:14px;font-weight:600}
+.fac-line .head .right{font-family:"JetBrains Mono",monospace;color:rgba(255,255,255,.5);font-size:10px;font-weight:500}
+.fac-stations{position:relative;display:grid;grid-template-columns:repeat(5,1fr) 28px;gap:8px;align-items:center}
+.station{
+  background:linear-gradient(180deg,#1a1a22,#0a0a0e);border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;padding:10px;text-align:center;position:relative;
+}
+.station .name{font-family:"JetBrains Mono",monospace;font-size:10px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.04em}
+.station .ring{position:relative;width:42px;height:42px;margin:8px auto 4px}
+.station .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.station .ring .bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:5}
+.station .ring .fg{fill:none;stroke-width:5;stroke-linecap:round}
+.station .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;color:#fff}
+.station.ok .ring .fg{stroke:#7ED957}
+.station.ok .pct{color:#7ED957}
+.station.warn .ring .fg{stroke:#FFB94A}
+.station.warn .pct{color:#FFB94A}
+.station.crit .ring .fg{stroke:#FF6B6B}
+.station.crit .pct{color:#FF6B6B}
+.station.crit::after{
+  content:"";position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FF6B6B;
+  box-shadow:0 0 8px #FF6B6B;animation:pulse-r 1.2s infinite;
+}
+@keyframes pulse-r{0%,100%{opacity:1}50%{opacity:.4}}
+.station .label{font-size:9px;color:rgba(255,255,255,.5);font-weight:500;margin-top:2px}
+.belt-arrow{color:var(--sector);font-size:18px;text-align:center;font-weight:bold;display:flex;align-items:center;justify-content:center;height:100%}
+.belt-arrow svg{animation:slide 1.6s linear infinite}
+@keyframes slide{0%{opacity:.4;transform:translateX(-4px)}50%{opacity:1}100%{opacity:.4;transform:translateX(4px)}}
+
+.fac-chart{
+  grid-column:1/-1;background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:14px;
+}
+.fac-chart .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.fac-chart .head h5{font-size:12px;font-weight:600;color:var(--slate);margin:0}
+.fac-chart .head .meta{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--text-faint)}
+.fac-chart svg{width:100%;height:60px;display:block}
+
+.alarm-strip{grid-column:1/-1;background:#FFF7F0;border:1px solid #FFE4D6;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:12px;font-size:12.5px}
+.alarm-strip .sev{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;background:#FFB377;color:#7d3a00;border-radius:5px}
+.alarm-strip .txt{flex:1;color:var(--slate);font-weight:500}
+.alarm-strip .txt strong{color:var(--navy-800)}
+.alarm-strip .t{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint)}
+
+/* Sections */
+section{padding:110px 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+/* Pain points */
+.pains{background:var(--bg-soft)}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pain-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:30px 26px;transition:all .25s;position:relative;overflow:hidden}
+.pain-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.pain-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--sector);opacity:0;transition:opacity .25s}
+.pain-card:hover::before{opacity:1}
+.pain-card .qty{font-family:"JetBrains Mono",monospace;font-size:32px;font-weight:700;color:var(--sector);line-height:1;margin-bottom:14px}
+.pain-card h3{font-size:17px;margin-bottom:10px}
+.pain-card p{font-size:13.5px;line-height:1.6}
+
+/* Solution mapping */
+.solution{position:relative;background:#fff}
+.sol-map{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:40px;align-items:stretch;background:linear-gradient(180deg,#FFF,#FAFBFE);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.sol-col h4{font-size:11px;font-family:"JetBrains Mono",monospace;color:var(--text-faint);letter-spacing:.1em;font-weight:600;margin-bottom:18px;text-transform:uppercase}
+.sol-col .group{display:flex;flex-direction:column;gap:10px}
+.sol-tile{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:12px 14px;font-size:13.5px;font-weight:500;color:var(--slate);display:flex;align-items:center;gap:10px}
+.sol-tile svg{color:var(--sector);flex-shrink:0}
+.sol-platform{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.plat-card{background:#fff;border:1.5px solid var(--sector);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)}
+.plat-card.tt{border-color:var(--primary)}
+.plat-card .nm{font-size:20px;font-weight:700;color:var(--sector-deep);letter-spacing:-.01em;margin-bottom:6px}
+.plat-card.tt .nm{color:var(--primary)}
+.plat-card .role{font-size:12px;color:var(--text-muted);font-weight:500}
+.plat-card ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:6px}
+.plat-card li{font-size:12.5px;color:var(--slate);display:flex;align-items:center;gap:8px}
+.plat-card li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sector)}
+.plat-card.tt li::before{background:var(--primary)}
+
+/* Use cases */
+.uc{background:var(--bg-soft)}
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.uc-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
+.uc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.uc-card .ic{width:44px;height:44px;border-radius:11px;background:var(--sector-soft);color:var(--sector-deep);display:flex;align-items:center;justify-content:center}
+.uc-card h3{font-size:18px}
+.uc-card p{font-size:14px;line-height:1.55}
+.uc-impact{margin-top:auto;padding-top:18px;border-top:1px dashed var(--border-soft);display:flex;gap:18px}
+.uc-impact .m .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--sector-deep)}
+.uc-impact .m .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px}
+
+/* Operations flow */
+.opflow{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
+.opflow::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+.opflow .container{position:relative}
+.opflow h2{color:#fff}
+.opflow .section-head p{color:rgba(255,255,255,.7)}
+.opflow .eyebrow{color:var(--sector)}
+.opflow .eyebrow::before{background:var(--sector)}
+.op-steps{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.op-step{padding:0 18px;text-align:center;position:relative}
+.op-step:not(:last-child)::after{
+  content:"";position:absolute;top:30px;right:-12px;width:24px;height:24px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230F8FA8' stroke-width='2.4'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+  z-index:2;
+}
+.op-step .step-num{
+  width:60px;height:60px;border-radius:50%;background:rgba(15,143,168,.15);border:1.5px solid var(--sector);
+  color:var(--sector);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:18px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+}
+.op-step h4{font-size:15px;color:#fff;margin-bottom:8px}
+.op-step p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.op-step .device{display:inline-block;margin-top:12px;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--cyan);background:rgba(24,183,214,.1);padding:3px 8px;border-radius:5px;letter-spacing:.04em}
+
+/* ROI */
+.roi{background:#fff;padding:110px 0}
+.roi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.roi-card{background:linear-gradient(180deg,#fff,#FAFBFE);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;position:relative;overflow:hidden}
+.roi-card::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle, var(--sector-soft) 0%, transparent 70%)}
+.roi-card .b{position:relative;font-family:"JetBrains Mono",monospace;font-size:48px;font-weight:700;color:var(--navy-800);line-height:1;letter-spacing:-.04em}
+.roi-card .b sup{font-size:18px;color:var(--sector-deep);font-weight:700;vertical-align:super;margin-left:2px}
+.roi-card .lbl{position:relative;font-size:14px;color:var(--slate);font-weight:600;margin-top:14px}
+.roi-card .meta{position:relative;font-size:12px;color:var(--text-muted);margin-top:6px;line-height:1.5}
+
+/* Integration */
+.integ{background:var(--bg-soft)}
+.integ-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.integ-list{display:grid;gap:14px;margin-top:32px}
+.integ-row{display:flex;gap:14px;align-items:flex-start;padding:18px;background:#fff;border:1px solid var(--border-soft);border-radius:12px}
+.integ-row .ic{width:38px;height:38px;border-radius:9px;background:var(--sector-soft);color:var(--sector-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.integ-row strong{color:var(--text);font-weight:600;font-size:14.5px;display:block}
+.integ-row span{color:var(--text-muted);font-size:13.5px;display:block;margin-top:2px;line-height:1.5}
+
+.integ-visual{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow)}
+.integ-chain{display:flex;flex-direction:column;gap:14px}
+.chain-step{display:flex;align-items:center;gap:18px}
+.chain-step .left{flex:1;text-align:right;font-size:13px;color:var(--slate)}
+.chain-step .left strong{color:var(--navy-800);font-size:14px;display:block;font-weight:600}
+.chain-step .left .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);margin-top:2px}
+.chain-step .center{width:42px;height:42px;border-radius:11px;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--sector-deep);flex-shrink:0;box-shadow:var(--shadow-sm)}
+.chain-step .right{flex:1;font-size:13px;color:var(--slate)}
+.chain-step .right strong{color:var(--navy-800);font-size:14px;display:block;font-weight:600}
+.chain-step .right .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);margin-top:2px}
+.chain-link{width:42px;height:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto}
+.chain-link::before{content:"";width:2px;height:18px;background:repeating-linear-gradient(180deg,var(--sector),var(--sector) 3px,transparent 3px,transparent 6px);border-radius:1px}
+
+/* Buyer guide */
+.buyer{padding:110px 0}
+.buyer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.buyer-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:12px;transition:all .25s}
+.buyer-card:hover{border-color:var(--sector)}
+.buyer-card .role-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sector-deep);background:var(--sector-soft);padding:5px 10px;border-radius:6px;align-self:flex-start}
+.buyer-card h3{font-size:18px}
+.buyer-card .q{font-size:14.5px;color:var(--slate);font-weight:500;line-height:1.55;margin-top:6px}
+.buyer-card .ans{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-top:auto;padding-top:14px;border-top:1px dashed var(--border-soft)}
+
+/* CTA */
+.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 80% 50%, rgba(15,143,168,.18), transparent 60%)}
+.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.cta-inner .eyebrow{color:var(--cyan)}
+.cta-inner .eyebrow::before{background:var(--cyan)}
+.cta-inner h2{color:#fff;margin-top:18px}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
+.cta-inner .hero-cta{justify-content:center;margin-top:36px}
+.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25);background:transparent}
+.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+/* Related */
+.related{padding:80px 0;background:var(--bg-soft)}
+.related .ttl{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;font-weight:600;text-align:center;margin-bottom:24px}
+.related-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.related-tile{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:18px;display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:500;color:var(--slate);transition:all .2s}
+.related-tile:hover{border-color:var(--sector);color:var(--navy-800);transform:translateX(2px)}
+.related-tile .ic{width:34px;height:34px;border-radius:8px;background:var(--bg-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.related-tile .arrow{margin-left:auto;color:var(--text-faint);font-size:14px}
+
+/* Footer */
+footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.foot-inner img{height:24px;filter:brightness(0) invert(1);opacity:.85}
+.foot-links{display:flex;gap:24px}
+.foot-links a:hover{color:var(--cyan)}
+
+@media (max-width:1100px){
+  .hero-inner,.integ-grid{grid-template-columns:1fr;gap:48px}
+  .pain-grid,.uc-grid,.roi-grid,.buyer-grid{grid-template-columns:repeat(2,1fr)}
+  .op-steps{grid-template-columns:repeat(2,1fr);gap:24px}
+  .op-step::after{display:none}
+  .sol-map{grid-template-columns:1fr;gap:24px;padding:32px}
+  .related-row{grid-template-columns:repeat(2,1fr)}
+  .fac-body{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+  section{padding:72px 0}
+  .pain-grid,.uc-grid,.roi-grid,.buyer-grid,.op-steps,.related-row,.fac-body{grid-template-columns:1fr}
+  .chain-step .left,.chain-step .right{font-size:12px}
+  .fac-stations{grid-template-columns:repeat(3,1fr);gap:6px}
+}
 </style>

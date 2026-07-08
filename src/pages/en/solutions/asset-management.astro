@@ -1,4 +1,4 @@
-﻿---
+---
 import Base from '../../../layouts/Base.astro';
 import SectionHead from '../../../components/sections/SectionHead.astro';
 
@@ -32,7 +32,7 @@ const schema = {
     <div class="breadcrumb">
       <a href="/en/">Home</a>
       <span class="sep">/</span>
-      <a href="/en/solutions/asset-management/">Products</a>
+      <a href="/en/solutions/">Solutions</a>
       <span class="sep">/</span>
       <span style="color:var(--att-deep);font-weight:600">Asset Tag &amp; Trace</span>
     </div>
@@ -44,134 +44,74 @@ const schema = {
         </div>
         <div class="product-name">Asset Tag <span class="amp">&amp;</span> Trace</div>
         <h1 class="product-tag">Asset management — no handheld terminal needed, your phone is enough.</h1>
-        <p class="hero-sub">You no longer need special hardware to know where your assets are. Asset Tag &amp; Trace is a cloud-based asset management system compatible with <strong style="color:var(--text);font-weight:600">barcode, QR, NFC, and RFID</strong> technologies. Manage maintenance, fault, and transfer processes from your phone, tablet, or computer with up to 80% efficiency gains in inventory.</p>
+        <p class="hero-sub">You no longer need special hardware to know where your assets are. Asset Tag &amp; Trace is a cloud-based asset management system compatible with <strong style="color:var(--text);font-weight:600">Barcode, QR, NFC, and RFID</strong> technologies. Manage maintenance, fault, and transfer processes from your phone, tablet, or computer with up to 80% efficiency gains in inventory.</p>
         <div class="hero-cta">
           <a class="btn btn-att btn-lg" href="#pricing">Try Free for 15 Days
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a class="btn btn-secondary btn-lg" href="#features">How It Works</a>
-        </div>
-        <div class="app-badges">
-          <span class="lbl">Download:</span>
-          <a class="app-badge" href="https://apps.apple.com/tr/app/tagandtrace-asset/id6737413510" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/></svg>
-            <div>
-              <div class="top">App Store</div>
-              <div class="bot">iOS</div>
-            </div>
-          </a>
-          <a class="app-badge" href="https://play.google.com/store/apps/details?id=com.tagandtrace.inventory.web.tagandtraceinventorymobile" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.62c-.39.4-.6.99-.6 1.73v17.3c0 .74.21 1.33.6 1.73l.07.07L13.4 12.07v-.13L3.67 1.55l-.07.07m12.81 12.71-3.27-3.27v-.13l3.27-3.27.07.04L20.4 9.5c1.13.64 1.13 1.69 0 2.33l-3.92 2.43-.07.07m-3.27-3.27-9.54 9.54c.37.4.97.45 1.66.04l11.27-6.4-3.39-3.18m3.39-9.79L5.26 4.16c-.69-.4-1.29-.35-1.66.04l9.54 9.54 3.39-3.18-.04.04"/></svg>
-            <div>
-              <div class="top">Google Play</div>
-              <div class="bot">Android</div>
-            </div>
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="v" data-count>80%</div><div class="l">efficiency gain</div></div>
-          <div class="hero-stat"><div class="v" data-count>4</div><div class="l">technologies supported</div></div>
-          <div class="hero-stat"><div class="v" data-count>15 days</div><div class="l">free trial</div></div>
+          <a class="btn btn-secondary btn-lg" href="#features">How It Works?</a>
         </div>
       </div>
 
-      <!-- Hero showcase: laptop + phone -->
-      <div class="showcase">
-        <div class="laptop">
-          <div class="laptop-screen">
-            <div class="laptop-head">
-              <div class="tabs">
-                <span class="tab active">Inventory</span>
-                <span class="tab">Maintenance</span>
-                <span class="tab">Fault</span>
-                <span class="tab">Movement</span>
-              </div>
-              <div class="ctrl">1 487 / 5 000</div>
-            </div>
-            <div class="laptop-body">
-              <div class="att-kpi">
-                <div class="l">Total Assets</div>
-                <div class="v">1 487</div>
-                <div class="meta" style="color:var(--att-deep)">▲ 24 this month</div>
-              </div>
-              <div class="att-kpi">
-                <div class="l">Active Maintenance</div>
-                <div class="v warn" data-count>8</div>
-                <div class="meta">3 upcoming</div>
-              </div>
-              <div class="att-kpi">
-                <div class="l">Count Accuracy</div>
-                <div class="v ok" data-count>99.4%</div>
-                <div class="meta">last count: today</div>
-              </div>
-              <div class="asset-table">
-                <h6>Recent movements</h6>
-                <div class="asset-row" data-reveal data-reveal-delay="0">
-                  <span class="id">AST-04812</span>
-                  <span class="nm">Dell Latitude 7430</span>
-                  <span class="loc">Office-2 · F3</span>
-                  <span class="st ok">ACTIVE</span>
-                </div>
-                <div class="asset-row" data-reveal data-reveal-delay="80">
-                  <span class="id">AST-04821</span>
-                  <span class="nm">Forklift Linde H30</span>
-                  <span class="loc">Warehouse-A</span>
-                  <span class="st warn">MAINTENANCE</span>
-                </div>
-                <div class="asset-row" data-reveal data-reveal-delay="160">
-                  <span class="id">AST-04832</span>
-                  <span class="nm">RFID Reader Impinj R700</span>
-                  <span class="loc">Gate-B</span>
-                  <span class="st move">TRANSFER</span>
-                </div>
-                <div class="asset-row" data-reveal data-reveal-delay="240">
-                  <span class="id">AST-04877</span>
-                  <span class="nm">Projector Epson EB-L</span>
-                  <span class="loc">Meeting-3</span>
-                  <span class="st ok">ACTIVE</span>
-                </div>
-              </div>
-            </div>
+      <!-- Hero visual -->
+      <div class="hero-visual">
+        <img src="/images/asset-vitrin.png" alt="Asset Tag & Trace - Real Screenshot" class="hero-img"/>
+      </div>
+    </div>
+
+    <!-- App badges full width -->
+    <div class="app-badges-wrap">
+      <div class="app-badges">
+        <span class="lbl">Download:</span>
+        <a class="app-badge" href="https://apps.apple.com/tr/app/tagandtrace-asset/id6737413510" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/></svg>
+          <div>
+            <div class="top">App Store</div>
+            <div class="bot">iOS</div>
           </div>
-        </div>
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="phone-head">
-              <div class="t">Scan &amp; Count</div>
-              <div class="ic">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
-              </div>
-            </div>
-            <div class="scan-card">
-              <div class="scan-frame">
-                <div class="scan-line"></div>
-                <svg class="scan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM21 14h-3M14 21h3v-3"/></svg>
-              </div>
-              <div class="scan-meta">
-                <strong>AST-04832</strong>
-                NFC · RFID · QR · Barkod
-              </div>
-            </div>
-            <div class="phone-tabs">
-              <div class="ptab active">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-                Scan
-              </div>
-              <div class="ptab">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>
-                List
-              </div>
-              <div class="ptab">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/></svg>
-                Count
-              </div>
-              <div class="ptab">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 16 0v1"/></svg>
-                Profile
-              </div>
-            </div>
+        </a>
+        <a class="app-badge" href="https://play.google.com/store/apps/details?id=com.tagandtrace.inventory.web.tagandtraceinventorymobile" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.62c-.39.4-.6.99-.6 1.73v17.3c0 .74.21 1.33.6 1.73l.07.07L13.4 12.07v-.13L3.67 1.55l-.07.07m12.81 12.71-3.27-3.27v-.13l3.27-3.27.07.04L20.4 9.5c1.13.64 1.13 1.69 0 2.33l-3.92 2.43-.07.07m-3.27-3.27-9.54 9.54c.37.4.97.45 1.66.04l11.27-6.4-3.39-3.18m3.39-9.79L5.26 4.16c-.69-.4-1.29-.35-1.66.04l9.54 9.54 3.39-3.18-.04.04"/></svg>
+          <div>
+            <div class="top">Google Play</div>
+            <div class="bot">Android</div>
           </div>
-        </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats marquee -->
+    <div class="stats-marquee">
+      <div class="stats-track">
+        <div class="hero-stat"><div class="v">80%</div><div class="l">efficiency gain</div></div>
+        <div class="hero-stat"><div class="v">Maintenance</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">NFC</div><div class="l">supported</div></div>
+        <div class="hero-stat"><div class="v">Transfer</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">QR/Barcode</div><div class="l">supported</div></div>
+        <div class="hero-stat"><div class="v">Fault</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">RFID</div><div class="l">supported</div></div>
+        <div class="hero-stat"><div class="v">15 Days</div><div class="l">free trial</div></div>
+        <div class="hero-stat"><div class="v">Counting</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">Cloud</div><div class="l">based</div></div>
+        <div class="hero-stat"><div class="v">iOS &amp; Android</div><div class="l">app</div></div>
+        <div class="hero-stat"><div class="v">Transfer</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">4</div><div class="l">technologies supported</div></div>
+        <div class="hero-stat"><div class="v">Offline</div><div class="l">operation</div></div>
+        <!-- duplicate -->
+        <div class="hero-stat"><div class="v">80%</div><div class="l">efficiency gain</div></div>
+        <div class="hero-stat"><div class="v">Maintenance</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">NFC</div><div class="l">supported</div></div>
+        <div class="hero-stat"><div class="v">Transfer</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">QR/Barcode</div><div class="l">supported</div></div>
+        <div class="hero-stat"><div class="v">Fault</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">RFID</div><div class="l">supported</div></div>
+        <div class="hero-stat"><div class="v">15 Days</div><div class="l">free trial</div></div>
+        <div class="hero-stat"><div class="v">Counting</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">Cloud</div><div class="l">based</div></div>
+        <div class="hero-stat"><div class="v">iOS &amp; Android</div><div class="l">app</div></div>
+        <div class="hero-stat"><div class="v">Transfer</div><div class="l">module</div></div>
+        <div class="hero-stat"><div class="v">4</div><div class="l">technologies supported</div></div>
+        <div class="hero-stat"><div class="v">Offline</div><div class="l">operation</div></div>
       </div>
     </div>
   </div>
@@ -183,7 +123,7 @@ const schema = {
     <SectionHead
       eyebrow="Three Core Modules"
       heading="Dedicated modules for your assets"
-      description="Asset Tag &amp; Trace is built on three core modules: maintenance planning, fault tracking, and movement management. Every module is integrated, from a single interface."
+      description="Asset Tag &amp; Trace is built on three core modules: maintenance planning, fault tracking, and movement management. Every module is integrated, all from a single interface."
     />
     <div class="mod-grid" data-reveal data-reveal-delay="100">
       <div class="mod-card">
@@ -192,7 +132,7 @@ const schema = {
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1 0 5.4l-7 7a4 4 0 1 1-5.4-5.4l7-7a4 4 0 0 1 5.4 0M21 12l-7 7M16 7l5 5"/></svg>
         </div>
         <h3>Maintenance Module</h3>
-        <p>Struggling to track when and how to service your assets? Define periodic maintenance plans and receive automatic reminders. Don't let your assets go neglected and unmaintained.</p>
+        <p>Can't keep track of when and how to service your assets? Define periodic maintenance plans and get automatic reminders. Keep your fixed assets from going unattended.</p>
       </div>
       <div class="mod-card">
         <div class="tag">02 · FAULT</div>
@@ -200,7 +140,7 @@ const schema = {
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 16v6M5 12H1m22 0h-4M5.6 5.6l2.8 2.8m11.2 11.2-2.8-2.8m-8.4 0-2.8 2.8m11.2-11.2-2.8 2.8"/></svg>
         </div>
         <h3>Fault Module</h3>
-        <p>Can't track your assets sent in or out for repair? Open fault records, follow the service process, and run root-cause analysis from past faults.</p>
+        <p>Struggling to track assets under in-house or external repair? Open fault records, follow the service process, and run root-cause analysis on past faults.</p>
       </div>
       <div class="mod-card">
         <div class="tag">03 · MOVEMENT</div>
@@ -208,7 +148,7 @@ const schema = {
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7M5 19l3-3-3-3"/></svg>
         </div>
         <h3>Movement Module</h3>
-        <p>Track your assets' movements step by step with the transfer module. Location change, department transfer, custody handover — every step is digitally recorded.</p>
+        <p>Track your fixed assets' movements step by step with the Transfer module. Location changes, department transfers, custody handovers — every step logged digitally.</p>
       </div>
     </div>
   </div>
@@ -219,28 +159,28 @@ const schema = {
   <div class="container">
     <SectionHead
       eyebrow="Next-Generation Asset Management"
-      heading="Your inventory always under control"
+      heading="Your inventory, always under control"
     />
     <div class="feat-grid" data-reveal data-reveal-delay="100">
       <div class="feat-card">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
         <h4>Easy and Fast Inventory Management</h4>
-        <p>Upload asset records via Excel; fast setup and easy use thanks to full compatibility with barcode, QR, and NFC.</p>
+        <p>Upload asset records with Excel; fully compatible with Barcode, QR, and NFC for quick setup and easy use.</p>
       </div>
       <div class="feat-card">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-        <h4>Flexible Use That Fits Your Needs</h4>
-        <p>No handheld terminal required — manage your entire inventory effortlessly with your phone, tablet, or computer.</p>
+        <h4>Flexible Use for Your Needs</h4>
+        <p>Manage your entire inventory effortlessly with your phone, tablet, or computer — no handheld terminal required.</p>
       </div>
       <div class="feat-card">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h4>Real-Time Monitoring</h4>
-        <p>Know the location and status of your assets in real time; get notified on threshold breaches or out-of-zone movement.</p>
+        <h4>Real-Time Tracking</h4>
+        <p>Learn your assets' location and status in real time; get notified for threshold breaches or out-of-area movement.</p>
       </div>
       <div class="feat-card">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05M12 22.08V12"/></svg></div>
-        <h4>Full Compatibility With All Devices</h4>
-        <p>Android, iOS, or web — count, manage, and transfer your assets from a handheld terminal, mobile phone, or tablet.</p>
+        <h4>Full Compatibility Across Devices</h4>
+        <p>Android, iOS, or web — count, manage, and transfer your assets from a handheld terminal, phone, or tablet.</p>
       </div>
     </div>
   </div>
@@ -251,7 +191,7 @@ const schema = {
   <div class="container">
     <SectionHead
       eyebrow="Capabilities · In Depth"
-      heading="No matter how large your business, you stay in control"
+      heading="No matter how large your business grows, you stay in control"
     />
 
     <!-- Multi-location -->
@@ -259,7 +199,7 @@ const schema = {
       <div class="copy">
         <span class="badge">Multi-Location</span>
         <h3>All your assets, across all locations</h3>
-        <p>Manage all your assets separately across different locations, buildings, or campuses. Reflect your organizational structure with department, location, and user assignment. Transfers from one campus to another in a single click.</p>
+        <p>Manage all your fixed assets separately across different locations, buildings, or campuses. Reflect your organizational structure with department, location, and user assignment. Transfer from one campus to another in a single click.</p>
         <ul class="kv">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Location · building · floor · room hierarchy</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Department and user assignment</li>
@@ -269,7 +209,7 @@ const schema = {
       <div class="surface">
         <div class="surface-head">
           <span class="ttl">Location Management</span>
-          <span class="right">4 locations · 1 487 assets</span>
+          <span class="right">4 locations · 1,487 assets</span>
         </div>
         <div class="surface-body">
           <div class="loc-grid" data-reveal>
@@ -323,7 +263,7 @@ const schema = {
               <div class="num">01</div>
               <div class="body">
                 <strong>Q1 General Count — Production Line 2</strong>
-                <div class="meta">assigned: Ayşe Yıldız · 312 assets · last March 12</div>
+                <div class="meta">assigned: Ayşe Yıldız · 312 assets · finished Mar 12</div>
               </div>
               <span class="status done">Completed</span>
             </div>
@@ -338,8 +278,8 @@ const schema = {
             <div class="task-row" data-reveal data-reveal-delay="180">
               <div class="num">03</div>
               <div class="body">
-                <strong>Warehouse Monthly Count</strong>
-                <div class="meta">assigned: Warehouse Team · scheduled: March 30</div>
+                <strong>Monthly Warehouse Count</strong>
+                <div class="meta">assigned: Warehouse Team · scheduled: Mar 30</div>
               </div>
               <span class="status todo">Pending</span>
             </div>
@@ -347,13 +287,13 @@ const schema = {
         </div>
       </div>
       <div class="copy">
-        <span class="badge">Count Orders</span>
-        <h3>Counting processes and task assignments</h3>
-        <p>Plan counting processes, assign tasks to team members, and manage the process digitally from start to finish. Operators scan from the mobile app; the manager monitors live progress.</p>
+        <span class="badge">Counting Orders</span>
+        <h3>Counting workflows and task assignments</h3>
+        <p>Plan counting workflows, assign tasks to team members, and manage the entire process digitally from start to finish. Operators scan from the mobile app; managers watch progress live.</p>
         <ul class="kv">
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Periodic or one-time count orders</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Periodic or one-off counting orders</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Employee / team-based task assignment</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Real-time progress tracking · variance report</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Live progress tracking · variance report</li>
         </ul>
       </div>
     </div>
@@ -363,11 +303,11 @@ const schema = {
       <div class="copy">
         <span class="badge">Smart Reporting</span>
         <h3>Turn data into insight</h3>
-        <p>Count results, asset movements, maintenance and fault history… Asset Tag &amp; Trace turns all your data into meaningful reports, simplifying your decision-making. Presenting to management with Excel/PDF outputs is now far easier.</p>
+        <p>Counting results, asset movements, maintenance and fault history… Asset Tag &amp; Trace turns all this data into meaningful reports to simplify your decision-making. Presenting to management is now much easier with Excel/PDF exports.</p>
         <ul class="kv">
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Count accuracy · variance report</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Counting accuracy · variance report</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Maintenance plan and completion rate</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Excel and PDF output · management presentation</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>Excel and PDF export · management presentation</li>
         </ul>
       </div>
       <div class="surface">
@@ -377,7 +317,7 @@ const schema = {
         </div>
         <div class="surface-body" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
           <div class="rep-box" data-reveal>
-            <h6>Count Accuracy</h6>
+            <h6>Counting Accuracy</h6>
             <div class="donut donut-acc">
               <svg width="80" height="80" viewBox="0 0 80 80">
                 <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border-soft)" stroke-width="10"/>
@@ -400,7 +340,7 @@ const schema = {
               </svg>
               <div class="info" style="font-size:11px">
                 <div class="donut-leg">
-                  <span class="lg1">Active · 1 247</span>
+                  <span class="lg1">Active · 1,247</span>
                   <span class="lg2">Transfer · 142</span>
                   <span class="lg3">Maintenance · 78</span>
                   <span class="lg4">Idle · 20</span>
@@ -409,7 +349,7 @@ const schema = {
             </div>
           </div>
           <div class="rep-box" style="grid-column:1/-1">
-            <h6>Highlights this month</h6>
+            <h6>This month's highlights</h6>
             <div style="display:flex;justify-content:space-between;align-items:center;padding-top:4px">
               <div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--navy-800);font-weight:700">24 new assets</div>
@@ -429,8 +369,8 @@ const schema = {
   <div class="container">
     <SectionHead
       eyebrow="Technology Compatibility"
-      heading="RFID, Barcode, NFC, QR — with all of them"
-      description="Choose the right technology based on your existing labeling infrastructure. Asset Tag &amp; Trace works with all four at the same time."
+      heading="RFID, Barcode, NFC, QR — all of them"
+      description="Choose the right technology based on your existing tagging infrastructure. Asset Tag &amp; Trace works with all four at once."
     />
     <div class="tech-row">
       <div class="tech-chip">
@@ -439,7 +379,7 @@ const schema = {
       </div>
       <div class="tech-chip">
         <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2v16H3zM7 4h1v16H7zM10 4h2v16h-2zM14 4h1v16h-1zM17 4h2v16h-2z"/></svg></div>
-        Barkod
+        Barcode
       </div>
       <div class="tech-chip">
         <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM21 14h-3M14 21h3v-3"/></svg></div>
@@ -466,29 +406,29 @@ const schema = {
   <div class="container">
     <SectionHead
       eyebrow="Onboarding Process"
-      heading="Get started right away, whatever your setup"
-      description="Asset Tag &amp; Trace is deployed in 5 simple steps. Phone, tablet, or computer — start with whichever you have."
+      heading="Get started right away, on any device"
+      description="Asset Tag &amp; Trace is deployed in 5 simple steps. Phone, tablet, or computer — start with whichever you have on hand."
     />
     <div class="process-steps" data-reveal data-reveal-delay="100">
       <div class="process-step">
         <div class="num">01</div>
-        <h4>Needs Analysis</h4>
-        <p>Hardware suitability and labeling needs are assessed. If you don't have a label printer, we prepare and ship one.</p>
+        <h4>Needs Assessment</h4>
+        <p>We evaluate hardware readiness and tag requirements. If you don't have a label printer, we prepare and ship one.</p>
       </div>
       <div class="process-step">
         <div class="num">02</div>
         <h4>Setup &amp; Integration</h4>
-        <p>Create an account, download the app, bulk-upload your inventory via Excel — ready within minutes.</p>
+        <p>Create an account, download the app, bulk-upload inventory via Excel — ready within minutes.</p>
       </div>
       <div class="process-step">
         <div class="num">03</div>
-        <h4>Learn to Use It</h4>
-        <p>User-friendly interface; get to know the modules and personalize your home screen to your needs.</p>
+        <h4>Learn the Ropes</h4>
+        <p>User-friendly interface; explore the modules and personalize your home screen to your needs.</p>
       </div>
       <div class="process-step">
         <div class="num">04</div>
         <h4>Real-Time Management</h4>
-        <p>Define your units, start counts, and instantly access detailed reports.</p>
+        <p>Define your units, start counting, and access detailed reports instantly.</p>
       </div>
       <div class="process-step">
         <div class="num">05</div>
@@ -504,8 +444,8 @@ const schema = {
   <div class="container">
     <SectionHead
       eyebrow="Subscription Plans"
-      heading="A plan that fits your needs"
-      description="First 30 days free. Scales with the size of your business; a discount applies if you choose to upgrade your plan."
+      heading="The right plan for your needs"
+      description="First 30 days free. Scales with your business size; discounts apply if you choose to upgrade your plan."
     />
     <div class="price-grid" data-reveal data-reveal-delay="100">
       <div class="price-card">
@@ -530,7 +470,7 @@ const schema = {
         <div class="price-trial">First 30 days free · 10% upgrade discount</div>
         <div class="price-divider"></div>
         <ul class="price-feats">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>1 500 asset records</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>1,500 asset records</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>3 asset managers</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>2D scanning + NFC</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Detailed reporting module</li>
@@ -545,7 +485,7 @@ const schema = {
         <div class="price-trial">First 30 days free · 15% upgrade discount</div>
         <div class="price-divider"></div>
         <ul class="price-feats">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>5 000 asset records</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>5,000 asset records</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>10 asset managers</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>QR + Barcode + NFC + RFID</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Excel &amp; PDF reporting</li>
@@ -557,14 +497,14 @@ const schema = {
       <div class="price-card">
         <div class="price-name">Premium</div>
         <div class="price-amount" style="font-size:24px">Let's Talk</div>
-        <div class="price-trial">Tailored package</div>
+        <div class="price-trial">Custom plan for your needs</div>
         <div class="price-divider"></div>
         <ul class="price-feats">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Unlimited asset records</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Unlimited managers</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>QR + Barcode + NFC + RFID</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>Detailed PDF &amp; Excel reporting</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>All current + future modules</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11"/></svg>All current and future modules</li>
         </ul>
         <a class="btn btn-secondary" href="mailto:assettracking@altis.com.tr">Contact Us</a>
       </div>
@@ -577,7 +517,7 @@ const schema = {
   <div class="container">
     <div class="eyebrow" style="justify-content:center;display:inline-flex">Download the App</div>
     <h2 style="margin-top:18px">Your inventory in your pocket — get started now</h2>
-    <p>Scan, count, and transfer from your phone or tablet with our iOS and Android apps. Cloud-based; your data stays up to date wherever you are.</p>
+    <p>Scan, count, and transfer from your phone or tablet with our iOS and Android apps. Cloud-based; your data stays current wherever you are.</p>
     <div class="dl-buttons">
       <a class="app-badge" style="padding:14px 22px" href="https://apps.apple.com/tr/app/tagandtrace-asset/id6737413510" target="_blank" rel="noopener">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/></svg>
@@ -600,11 +540,11 @@ const schema = {
 <!-- CTA -->
 <section class="cta-section">
   <div class="container cta-inner">
-    <div class="eyebrow">Information &amp; Demo</div>
-    <h2>15 days free, get started now</h2>
-    <p>Schedule a demo call with our team. Let's determine the right plan for your inventory size together; setup and training are free.</p>
+    <div class="eyebrow">Info &amp; Demo</div>
+    <h2>Free for 15 days, get started now</h2>
+    <p>Schedule a demo with our team. Let's find the right plan for the size of your inventory together; setup and training are free.</p>
     <div class="hero-cta">
-      <a class="btn btn-att btn-lg" href="#pricing">Explore Plans
+      <a class="btn btn-att btn-lg" href="#pricing">View Plans
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
       <a class="btn btn-secondary btn-lg" href="mailto:assettracking@altis.com.tr">Write to Us</a>
@@ -653,7 +593,9 @@ const schema = {
   -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
           mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
-.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:32px}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center;margin-top:32px}
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-img{width:100%;border-radius:var(--radius-lg)}
 .platform-pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;flex-wrap:wrap;white-space:normal;line-height:1.35;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
 .platform-pill .pill-tag{background:var(--att);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
 .product-name{
@@ -670,7 +612,8 @@ const schema = {
 .hero h1.product-tag{font-size:clamp(24px,2.4vw,34px);font-weight:700;line-height:1.25;color:var(--navy-800);letter-spacing:-.01em}
 .hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:540px;line-height:1.6}
 .hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;align-items:center}
-.app-badges{display:flex;gap:8px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border-soft);max-width:540px}
+.app-badges-wrap{display:flex;justify-content:center;margin-top:32px}
+.app-badges{display:flex;gap:8px;align-items:center}
 .app-badges .lbl{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-right:6px;align-self:center}
 .app-badge{
   display:inline-flex;align-items:center;gap:8px;padding:8px 12px;
@@ -682,9 +625,12 @@ const schema = {
 .app-badge .top{font-size:9px;opacity:.7;text-transform:uppercase;letter-spacing:.04em}
 .app-badge .bot{font-size:13px;font-weight:600;line-height:1}
 
-.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-top:28px;max-width:540px}
+.stats-marquee{margin-top:64px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.stats-track{display:flex;width:max-content;animation:marquee 48s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-stat{padding:24px 48px;text-align:center;flex-shrink:0}
 .hero-stat .v{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:700;color:var(--navy-800)}
-.hero-stat .l{font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:4px}
+.hero-stat .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.07em;font-weight:600;margin-top:6px}
 
 /* Hero visual — laptop + phone showcase */
 .showcase{max-width:100%;min-width:0;position:relative;min-height:520px}
@@ -898,30 +844,17 @@ section{padding:110px 0}
 .tech-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}
 .tech-chip{
   display:flex;align-items:center;gap:10px;padding:12px 20px;
-  background:#fff;border:1.5px solid var(--border);border-radius:12px;
   font-weight:600;font-size:14.5px;color:var(--navy-800);
   transition:all .2s;
 }
-.tech-chip:hover{border-color:var(--att);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.tech-chip:hover{transform:translateY(-2px)}
 .tech-chip .ic{
   width:32px;height:32px;border-radius:8px;background:var(--att-soft);color:var(--att-deep);
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 
 /* Process steps */
-.process{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
-.process::before{
-  content:"";position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size:48px 48px;
-  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
-          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
-}
-.process .container{position:relative}
-.process h2{color:#fff}
-.process .section-head p{color:rgba(255,255,255,.7)}
-.process .eyebrow{color:var(--att)}
-.process .eyebrow::before{background:var(--att)}
+.process{background:var(--bg-soft);position:relative}
 .process-steps{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
 .process-step{padding:0 18px;text-align:center;position:relative}
 .process-step:not(:last-child)::after{
@@ -929,12 +862,12 @@ section{padding:110px 0}
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310A968' stroke-width='2.4'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;z-index:2;
 }
 .process-step .num{
-  width:60px;height:60px;border-radius:50%;background:rgba(16,169,104,.15);border:1.5px solid var(--att);
+  width:60px;height:60px;border-radius:50%;background:rgba(16,169,104,.12);border:1.5px solid var(--att);
   color:var(--att);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:18px;
   display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
 }
-.process-step h4{font-size:15px;color:#fff;margin-bottom:8px}
-.process-step p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.process-step h4{font-size:15px;color:var(--navy-800);margin-bottom:8px}
+.process-step p{font-size:13px;color:var(--text-muted);line-height:1.5}
 
 /* Pricing */
 .pricing{padding:110px 0}

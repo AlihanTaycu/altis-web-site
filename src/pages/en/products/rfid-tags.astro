@@ -1,126 +1,602 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { rfidTagsEn as rfidTags, tagBrandsEn as tagBrands } from '../../../data/rfid-etiketler';
+import { rfidTagsEn as rfidTags, tagBrandsEn as tagBrands, type RfidTag } from '../../../data/rfid-etiketler';
+import { partnerLogos } from '../../../data/partner-logos';
+
+const brands = tagBrands;
+
+const brandCounts = Object.fromEntries(
+  brands.map(b => [b, rfidTags.filter(t => t.brand === b).length])
+);
+
+const metalCount    = rfidTags.filter(t => t.onMetal).length;
+const nonMetalCount = rfidTags.filter(t => !t.onMetal).length;
+
+const uniqueFreqs = [...new Set(rfidTags.map(t => t.frequency).filter(Boolean))].sort();
+const freqCounts  = Object.fromEntries(
+  uniqueFreqs.map(f => [f, rfidTags.filter(t => t.frequency === f).length])
+);
+
+const uniqueForms = [...new Set(rfidTags.map(t => t.formFactor).filter(Boolean))].sort();
+const formCounts  = Object.fromEntries(
+  uniqueForms.map(f => [f, rfidTags.filter(t => t.formFactor === f).length])
+);
+
+const uniqueChips = [...new Set(rfidTags.map(t => t.chip).filter(Boolean))].sort();
+const chipCounts  = Object.fromEntries(
+  uniqueChips.map(c => [c, rfidTags.filter(t => t.chip === c).length])
+);
+
+function normalizeIp(ip: string): string {
+  return ip.replace(/\s*\(.*\)/, '').trim();
+}
+const uniqueIps = [...new Set(rfidTags.map(t => normalizeIp(t.ipRating)).filter(Boolean))].sort();
+const ipCounts  = Object.fromEntries(
+  uniqueIps.map(ip => [ip, rfidTags.filter(t => normalizeIp(t.ipRating) === ip).length])
+);
+
+function getFreqLabel(f: string) {
+  if (f === 'UHF') return 'UHF RFID (860–960 MHz)';
+  if (f === 'HF')  return 'HF / NFC (13.56 MHz)';
+  return f;
+}
+
+function getDisplayPills(tag: RfidTag): string[] {
+  return [tag.formFactor, tag.chip].filter(Boolean).slice(0, 2) as string[];
+}
+
+const brandGroups = brands.map(brand => ({
+  brand,
+  items: rfidTags.filter(t => t.brand === brand),
+}));
+
+const brandLogos = brands.map(brand => ({
+  brand,
+  logo: partnerLogos.find(item => item.name === brand),
+  count: brandCounts[brand],
+}));
+
+const selectionCriteria = [
+  'Surface: on-metal, plastic, glass, textile, or carton',
+  'Performance: fixed reader / handheld read range',
+  'Durability: temperature, washing, chemicals, outdoor use, and IP rating',
+  'Operation: printing, encoding, volume, roll format, and application method',
+];
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'RFID Tags - Altis Technology',
-  description: 'UHF, HF, on-metal, and non-metal RFID tag products supplied by Altis Technology.',
+  name: 'RFID Tags — Altis Technology',
+  description: `UHF, HF, on-metal, and non-metal RFID tags. ${rfidTags.length} products, ${brands.length} brands.`,
   url: 'https://www.altis.com.tr/en/products/rfid-tags/',
-};
-
-const surfaceCounts = {
-  onMetal: rfidTags.filter(tag => tag.onMetal).length,
-  nonMetal: rfidTags.filter(tag => !tag.onMetal).length,
 };
 ---
 
 <Base
-  title="RFID Tags - Altis Technology"
+  title="RFID Tags — Altis Technology"
   description="UHF, HF, on-metal, and non-metal RFID tags for textile, logistics, manufacturing, asset tracking, and retail projects."
   {schema}
   lang="en"
   alternateUrl="https://www.altis.com.tr/urunler/rfid-etiketler/"
 >
-  <section class="hero">
+  <div class="page-header">
     <div class="container">
-      <a href="/en/products/" class="breadcrumb">&larr; Products</a>
-      <p class="eyebrow">RFID Consumables</p>
-      <h1>RFID Tags</h1>
-      <p class="lead">
-        UHF, HF, on-metal, and non-metal RFID tags for different field conditions.
-        {rfidTags.length} products across {tagBrands.length} brands.
-      </p>
-      <div class="hero-stats">
-        <div class="stat"><strong>{rfidTags.length}</strong><span>Products</span></div>
-        <div class="stat"><strong>{tagBrands.length}</strong><span>Brands</span></div>
-        <div class="stat"><strong>{surfaceCounts.onMetal}</strong><span>On Metal</span></div>
-        <div class="stat"><strong>{surfaceCounts.nonMetal}</strong><span>Non Metal</span></div>
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/en/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/en/products/">Products</a>
+        <span aria-hidden="true">›</span>
+        <span>RFID Tags</span>
+      </nav>
+      <div class="page-hdr-body">
+        <div class="page-hdr-copy">
+          <h1>RFID Tags</h1>
+          <p>On-metal and non-metal RFID tags for textile, logistics, manufacturing, and asset tracking.</p>
+        </div>
+        <div class="page-hdr-stats">
+          <div class="hstat"><strong>{rfidTags.length}</strong><span>Models</span></div>
+          <div class="hstat"><strong>{brands.length}</strong><span>Brands</span></div>
+          <div class="hstat"><strong>{metalCount}</strong><span>On-Metal</span></div>
+          <div class="hstat"><strong>{nonMetalCount}</strong><span>Non-Metal</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="brand-showcase">
+    <div class="container">
+      <div class="label-guide-grid">
+        <div class="brand-logo-panel">
+          <p class="eyebrow">Brands</p>
+          <div class="brand-logo-rail" aria-label="RFID tag brands">
+            {brandLogos.map(item => (
+              <button class="brand-logo-pill" type="button" data-brand-filter={item.brand}>
+                <span class="brand-logo-mark">
+                  {item.logo
+                    ? <img src={item.logo.src} alt={`${item.brand} logo`} width="150" height="56" loading="lazy" />
+                    : <span>{item.brand}</span>}
+                </span>
+                <span>{item.count} models</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div class="selection-notes" aria-label="RFID tag selection criteria">
+          <p>Selection Criteria</p>
+          <ul>
+            {selectionCriteria.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="brand-nav container">
-    {tagBrands.map(brand => (
-      <a href={`#brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="brand-btn">{brand}</a>
-    ))}
-    <a href="/en/contact/" class="btn btn-outline btn-sm">Request Bulk Quote</a>
-  </section>
+  <div class="catalog-area">
+  <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
 
-  {tagBrands.map(brand => {
-    const group = rfidTags.filter(tag => tag.brand === brand);
-    return (
-      <section class="brand-section container" id={`brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-        <div class="brand-header">
-          <h2 class="brand-title">{brand} <span class="count">({group.length} products)</span></h2>
+  <div class="catalog-layout container">
+
+    <aside class="catalog-sidebar" id="catalog-sidebar" aria-label="Filters">
+      <div class="sidebar-top">
+        <span class="sidebar-title">Filters</span>
+        <div class="sidebar-actions">
+          <button class="clear-all-btn" id="clear-all" type="button">Clear</button>
+          <button class="sidebar-close-btn" id="sidebar-close" type="button" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
         </div>
-        <div class="products-grid">
-          {group.map(tag => (
-            <article class="product-card">
-              <a href={`/en/products/rfid-tags/${tag.slug}/`} class="card-image-link">
-                <img src={tag.image} alt={tag.title} loading="lazy" width="400" height="300" />
-                <span class:list={['surface-ribbon', { metal: tag.onMetal }]}>{tag.onMetal ? 'On Metal' : 'Non Metal'}</span>
-              </a>
-              <div class="card-body">
-                <span class="brand-label">{tag.brand}</span>
-                <h3><a href={`/en/products/rfid-tags/${tag.slug}/`}>{tag.title}</a></h3>
-                <p class="short-desc">{tag.shortDesc}</p>
-                <div class="tag-row">
-                  {[tag.frequency, tag.formFactor, tag.chip].filter(Boolean).slice(0, 3).map(item => <span class="tag">{item}</span>)}
-                </div>
-                <div class="card-actions">
-                  <a href={`/en/products/rfid-tags/${tag.slug}/`} class="btn btn-primary btn-sm">View Product</a>
-                  <a href={`/en/contact/?product=${encodeURIComponent(tag.title)}`} class="btn btn-outline btn-sm">Request Quote</a>
-                </div>
-              </div>
-            </article>
+      </div>
+
+      <div class="active-chips" id="active-chips"></div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="true" data-target="grp-brand">
+          Brand
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-brand">
+          {brands.map(brand => (
+            <label class="foption">
+              <input type="checkbox" name="brand" value={brand} />
+              <span class="foption-label">{brand}</span>
+              <span class="foption-count">{brandCounts[brand]}</span>
+            </label>
           ))}
         </div>
-      </section>
-    );
-  })}
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="true" data-target="grp-surface">
+          Surface
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-surface">
+          <label class="foption">
+            <input type="checkbox" name="surface" value="metal" />
+            <span class="foption-label">On-Metal</span>
+            <span class="foption-count">{metalCount}</span>
+          </label>
+          <label class="foption">
+            <input type="checkbox" name="surface" value="nonmetal" />
+            <span class="foption-label">Non-Metal</span>
+            <span class="foption-count">{nonMetalCount}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="true" data-target="grp-freq">
+          Frequency
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-freq">
+          {uniqueFreqs.map(f => (
+            <label class="foption">
+              <input type="checkbox" name="freq" value={f} />
+              <span class="foption-label">{getFreqLabel(f)}</span>
+              <span class="foption-count">{freqCounts[f]}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="false" data-target="grp-form">
+          Form Factor
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-form" style="display:none">
+          {uniqueForms.map(f => (
+            <label class="foption">
+              <input type="checkbox" name="form" value={f} />
+              <span class="foption-label">{f}</span>
+              <span class="foption-count">{formCounts[f]}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="false" data-target="grp-chip">
+          Chip
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-chip" style="display:none">
+          {uniqueChips.map(c => (
+            <label class="foption">
+              <input type="checkbox" name="chip" value={c} />
+              <span class="foption-label">{c}</span>
+              <span class="foption-count">{chipCounts[c]}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="fgroup-toggle" type="button" aria-expanded="false" data-target="grp-ip">
+          IP Rating
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fgroup-body" id="grp-ip" style="display:none">
+          {uniqueIps.map(ip => (
+            <label class="foption">
+              <input type="checkbox" name="ip" value={ip} />
+              <span class="foption-label">{ip}</span>
+              <span class="foption-count">{ipCounts[ip]}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </aside>
+
+    <div class="catalog-main" id="tag-catalog">
+      <p class="catalog-label eyebrow">Product Catalog</p>
+      <div class="catalog-toolbar">
+        <button class="mobile-filter-btn" id="mobile-filter-btn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="16" y2="12"/><line x1="4" y1="18" x2="12" y2="18"/></svg>
+          Filter
+          <span class="filter-badge" id="filter-badge" style="display:none">0</span>
+        </button>
+        <p class="result-count"><span id="result-count">{rfidTags.length}</span> products</p>
+      </div>
+
+      <div id="brands-container">
+        {brandGroups.map(({ brand, items }) => (
+          <div class="brand-section" data-brand-section={brand}>
+            <div class="brand-header">
+              <h2>{brand}</h2>
+              <span class="brand-count">{items.length} models</span>
+            </div>
+            <div class="product-grid">
+              {items.map(tag => (
+                <article
+                  class="product-card"
+                  data-brand={tag.brand}
+                  data-surface={tag.onMetal ? 'metal' : 'nonmetal'}
+                  data-freq={tag.frequency}
+                  data-form={tag.formFactor}
+                  data-chip={tag.chip}
+                  data-ip={normalizeIp(tag.ipRating)}
+                  data-name={tag.title.toLowerCase()}
+                >
+                  <a href={`/en/products/rfid-tags/${tag.slug}/`} class="card-img-wrap">
+                    <span class={`surface-badge ${tag.onMetal ? 'surface-badge--metal' : 'surface-badge--nonmetal'}`}>
+                      {tag.onMetal ? 'On-Metal' : 'Non-Metal'}
+                    </span>
+                    <img src={tag.image} alt={tag.title} loading="lazy" width="400" height="300" />
+                  </a>
+                  <div class="card-body">
+                    <h3><a href={`/en/products/rfid-tags/${tag.slug}/`}>{tag.title}</a></h3>
+                    <p class="card-desc">{tag.shortDesc}</p>
+                    {getDisplayPills(tag).length > 0 && (
+                      <div class="card-pills">
+                        {getDisplayPills(tag).map(pill => <span class="spec-pill">{pill}</span>)}
+                      </div>
+                    )}
+                    <a href={`/en/products/rfid-tags/${tag.slug}/`} class="card-cta">View Product</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="empty-state" id="empty-state" style="display:none">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--border)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No products match the selected filters.</p>
+        <button type="button" id="empty-clear">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow eyebrow--on-dark">Expert Support</p>
+        <h2>Let's find the right RFID tag<br />for your project together.</h2>
+      </div>
+      <a href="/en/contact/" class="btn-white-lg">Talk to an Expert</a>
+    </div>
+  </section>
 </Base>
 
 <style>
-.hero { background: linear-gradient(135deg, var(--primary) 0%, #0a2a8c 100%); color: #fff; padding: 72px 0 60px; }
-.breadcrumb { display: inline-block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.7); margin-bottom: 20px; }
-.breadcrumb:hover { color: #fff; }
-.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
-.hero h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.15; }
-.lead { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 720px; line-height: 1.7; margin-bottom: 36px; }
-.hero-stats { display: flex; gap: 34px; flex-wrap: wrap; }
-.stat { display: flex; flex-direction: column; gap: 2px; }
-.stat strong { font-size: 1.5rem; font-weight: 800; color: var(--cyan); line-height: 1; }
-.stat span { font-size: 12px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .06em; }
-.brand-nav { display: flex; align-items: center; gap: 8px; padding-top: 28px; padding-bottom: 12px; flex-wrap: wrap; }
-.brand-btn { display: inline-flex; align-items: center; font-size: 13px; font-weight: 700; color: var(--primary); background: rgba(0,18,92,.06); border: 1px solid rgba(0,18,92,.15); padding: 6px 14px; border-radius: 20px; transition: background .2s, color .2s; }
-.brand-btn:hover { background: var(--primary); color: #fff; }
-.btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); margin-left: auto; }
-.btn-outline:hover { background: var(--primary); color: #fff; }
-.btn-sm { font-size: 13px; padding: 7px 14px; }
-.brand-section { padding-top: 44px; padding-bottom: 16px; }
-.brand-header { margin-bottom: 20px; }
-.brand-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); padding-bottom: 10px; border-bottom: 2px solid var(--border-soft); }
-.count { font-size: 14px; font-weight: 500; color: var(--text-muted); }
-.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
-.product-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, border-color .2s, transform .2s; }
-.product-card:hover { border-color: var(--primary); box-shadow: 0 8px 28px rgba(0,18,92,.09); transform: translateY(-2px); }
-.card-image-link { display: block; background: #f8f9fb; padding: 20px; aspect-ratio: 4/3; overflow: hidden; position: relative; }
-.card-image-link img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
-.product-card:hover .card-image-link img { transform: scale(1.04); }
-.surface-ribbon { position: absolute; top: 12px; right: 12px; background: #eef3ff; color: var(--primary); border: 1px solid rgba(0,18,92,.12); font-size: 10.5px; font-weight: 800; padding: 4px 9px; border-radius: 999px; }
-.surface-ribbon.metal { background: #fff4f3; color: #c62828; border-color: #ffd7d3; }
-.card-body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
-.brand-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
-.card-body h3 { font-size: 13.5px; font-weight: 700; line-height: 1.35; margin: 0; }
-.card-body h3 a { color: var(--primary); }
-.short-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; flex: 1; margin: 0; }
-.tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
-.tag { font-size: 10.5px; font-weight: 600; color: var(--text-muted); background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
-.card-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-.card-actions .btn-outline { margin-left: 0; }
+.page-header { background: #fff; border-bottom: 1px solid var(--border-soft); padding: 28px 0 24px; }
+.breadcrumb-nav { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-faint); margin-bottom: 20px; }
+.breadcrumb-nav a { color: var(--text-muted); transition: color .15s; }
+.breadcrumb-nav a:hover { color: var(--primary); }
+.breadcrumb-nav span:last-child { color: var(--primary); font-weight: 600; }
+.page-hdr-body { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.page-hdr-copy h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.page-hdr-copy p { font-size: 15px; color: var(--text-muted); max-width: 560px; }
+.page-hdr-stats { display: flex; gap: 32px; }
+.hstat { display: flex; flex-direction: column; align-items: flex-end; }
+.hstat strong { font-size: 1.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+.hstat span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-faint); margin-top: 2px; }
+
+.brand-showcase { background: #fff; padding: 42px 0 30px; }
+.label-guide-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 42px; align-items: start; }
+.brand-logo-panel { min-width: 0; }
+.brand-logo-panel > .eyebrow { margin-bottom: 14px; }
+.selection-notes { border-left: 2px solid rgba(24,183,214,.32); padding-left: 22px; }
+.selection-notes p { color: var(--primary); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; }
+.selection-notes ul { list-style: none; display: grid; gap: 10px; margin: 0; padding: 0; }
+.selection-notes li { color: var(--text-muted); font-size: 13.5px; line-height: 1.45; position: relative; padding-left: 16px; }
+.selection-notes li::before { content: ""; position: absolute; left: 0; top: .65em; width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); }
+.brand-logo-rail { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 8px; }
+.brand-logo-pill { min-height: 52px; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--border-soft); border-radius: 7px; padding: 8px 10px; cursor: pointer; transition: border-color .15s, background .15s; }
+.brand-logo-pill:hover { background: #FAFBFE; border-color: rgba(24,183,214,.35); }
+.brand-logo-mark { width: 100%; height: 28px; min-width: 0; display: flex; align-items: center; justify-content: flex-start; }
+.brand-logo-mark img { max-width: 92px; max-height: 25px; width: auto; height: auto; object-fit: contain; filter: saturate(.9); }
+.brand-logo-mark > span { color: var(--primary); font-size: 11px; font-weight: 800; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
+.brand-logo-pill > span:last-child { color: var(--text-muted); font-size: 11px; font-weight: 700; white-space: nowrap; justify-self: end; }
+
+.catalog-area { background: #F2F4F9; }
+.catalog-layout { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; padding-top: 28px; padding-bottom: 80px; }
+.catalog-layout.container { padding-left: 16px; }
+.catalog-label { margin: 0 0 12px; }
+
+.catalog-sidebar { background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,18,92,.06), 0 0 0 1px rgba(0,18,92,.04); padding: 18px; position: sticky; top: 92px; max-height: calc(100vh - 108px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.sidebar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.sidebar-title { font-size: 13px; font-weight: 800; color: var(--primary); letter-spacing: .06em; text-transform: uppercase; }
+.sidebar-actions { display: flex; align-items: center; gap: 8px; }
+.clear-all-btn { font-size: 12px; font-weight: 600; color: var(--text-faint); background: none; border: none; cursor: pointer; padding: 0; transition: color .15s; }
+.clear-all-btn:hover { color: var(--primary); }
+.sidebar-close-btn { display: none; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--bg-soft); border: none; border-radius: 6px; cursor: pointer; color: var(--text-muted); transition: background .15s; flex-shrink: 0; }
+.sidebar-close-btn:hover { background: var(--border); }
+
+.active-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.active-chips:empty { margin-bottom: 0; }
+.active-chip { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 600; color: var(--primary); background: rgba(0,18,92,.07); border: 1px solid rgba(0,18,92,.15); border-radius: 20px; padding: 4px 10px; cursor: pointer; transition: background .15s, color .15s; line-height: 1.3; }
+.active-chip:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.filter-group { border-bottom: 1px solid var(--border-soft); padding: 14px 0; }
+.filter-group:last-child { border-bottom: none; padding-bottom: 0; }
+.fgroup-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; font-size: 13px; font-weight: 700; color: var(--text); background: none; border: none; cursor: pointer; padding: 0; margin-bottom: 10px; }
+.fgroup-toggle .chevron { flex-shrink: 0; transition: transform .2s; color: var(--text-faint); }
+.fgroup-toggle[aria-expanded="false"] .chevron { transform: rotate(-90deg); }
+.fgroup-body { display: flex; flex-direction: column; }
+.foption { display: flex; align-items: center; gap: 9px; padding: 5px 4px; cursor: pointer; border-radius: 6px; transition: background .1s; }
+.foption:hover { background: var(--bg-soft); }
+.foption input[type="checkbox"] { width: 15px; height: 15px; flex-shrink: 0; accent-color: var(--primary); cursor: pointer; }
+.foption-label { flex: 1; font-size: 13px; color: var(--text); line-height: 1.3; }
+.foption-count { font-size: 11px; font-weight: 600; color: var(--text-faint); background: var(--bg-soft); border-radius: 10px; padding: 1px 6px; min-width: 22px; text-align: center; }
+
+.catalog-toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; min-height: 38px; }
+.mobile-filter-btn { display: none; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 600; color: var(--primary); background: #fff; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 13px; cursor: pointer; transition: border-color .15s; }
+.mobile-filter-btn:hover { border-color: var(--primary); }
+.filter-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; font-size: 11px; font-weight: 700; color: #fff; background: var(--primary); border-radius: 9px; padding: 0 4px; }
+.result-count { font-size: 14px; color: var(--text-muted); flex: 1; }
+.result-count span { font-weight: 700; color: var(--primary); }
+
+#brands-container { display: flex; flex-direction: column; gap: 22px; }
+.brand-header { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid rgba(0,18,92,.08); }
+.brand-header h2 { font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 800; color: var(--primary); margin: 0; line-height: 1.2; overflow-wrap: anywhere; }
+.brand-count { font-size: 13px; color: var(--text-faint); font-weight: 500; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.product-card { background: #fff; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,18,92,.06); transition: box-shadow .2s, transform .2s; min-width: 0; }
+.product-card:hover { box-shadow: 0 12px 30px rgba(0,18,92,.12); transform: translateY(-2px); }
+
+.card-img-wrap { position: relative; display: flex; align-items: center; justify-content: center; background: #fff; border-bottom: 1px solid var(--border-soft); overflow: hidden; height: 190px; padding: 20px; }
+.card-img-wrap img { max-width: 100%; max-height: 150px; width: auto; height: auto; object-fit: contain; transition: transform .25s; }
+.product-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+.surface-badge { position: absolute; top: 10px; right: 10px; font-size: 9.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; z-index: 1; line-height: 1.4; }
+.surface-badge--metal { background: #fff0f0; color: #c62828; }
+.surface-badge--nonmetal { background: rgba(0,18,92,.07); color: var(--primary); }
+
+.card-body { padding: 16px 16px 18px; display: flex; flex-direction: column; flex: 1; gap: 5px; }
+.card-body h3 { font-size: 14px; font-weight: 700; line-height: 1.4; margin: 0; overflow-wrap: anywhere; }
+.card-body h3 a { color: var(--primary); transition: color .15s; text-decoration: none; }
+.card-body h3 a:hover { color: var(--cyan); }
+.card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.spec-pill { font-size: 10.5px; font-weight: 600; color: var(--text-muted); background: rgba(0,18,92,.06); border-radius: 4px; padding: 2px 7px; line-height: 1.4; max-width: 100%; overflow-wrap: anywhere; }
+.card-cta { font-size: 13.5px; font-weight: 700; color: var(--primary); text-decoration: none; margin-top: 4px; transition: color .15s; }
+.card-cta:hover { color: var(--cyan); }
+
+.empty-state { flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 72px 0; text-align: center; }
+.empty-state p { font-size: 15px; color: var(--text-muted); }
+.empty-state button { font-size: 14px; font-weight: 600; color: var(--primary); background: rgba(0,18,92,.06); border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; transition: background .15s; }
+.empty-state button:hover { background: rgba(0,18,92,.1); }
+
+.cta-section { background: var(--primary); padding: 76px 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.cta-inner h2 { color: #fff; font-size: clamp(1.3rem, 2.4vw, 1.8rem); margin-top: 14px; }
+.btn-white-lg { display: inline-flex; align-items: center; justify-content: center; background: #fff; color: var(--primary); font-size: 16px; font-weight: 700; border-radius: 10px; padding: 14px 30px; white-space: nowrap; text-decoration: none; flex-shrink: 0; transition: background .2s, color .2s; }
+.btn-white-lg:hover { background: var(--cyan); color: #fff; }
+
+.sidebar-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 199; }
+.sidebar-backdrop.is-visible { display: block; }
+
+@media (max-width: 960px) {
+  .catalog-layout { grid-template-columns: 1fr; }
+  .catalog-sidebar { position: fixed; inset: 0 auto 0 0; width: min(300px, 85vw); max-height: 100%; z-index: 200; border-radius: 0; border: none; top: 0; transform: translateX(-110%); transition: transform .3s cubic-bezier(.4,0,.2,1); box-shadow: 4px 0 32px rgba(0,18,92,.18); }
+  .catalog-sidebar.is-open { transform: translateX(0); }
+  .sidebar-close-btn { display: flex; }
+  .mobile-filter-btn { display: flex; }
+  .label-guide-grid { grid-template-columns: 1fr; gap: 24px; }
+  .selection-notes { border-left: 0; border-top: 1px solid var(--border-soft); padding: 18px 0 0; }
+}
 @media (max-width: 600px) {
-  .btn-outline { margin-left: 0; width: 100%; justify-content: center; }
+  .brand-showcase { padding-top: 34px; }
+  .brand-logo-rail { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-hdr-body { flex-direction: column; align-items: flex-start; }
+  .page-hdr-stats { align-self: stretch; justify-content: flex-start; gap: 12px; flex-wrap: wrap; }
+  .hstat { align-items: flex-start; }
+  .cta-inner { flex-direction: column; align-items: flex-start; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  #brands-container { gap: 16px; }
+  .catalog-layout.container { padding-left: 16px; padding-right: 16px; }
+  .card-img-wrap { height: 150px; padding: 16px; }
+  .card-img-wrap img { max-height: 112px; }
+  .card-body { padding: 13px; }
+}
+@media (max-width: 360px) {
+  .product-grid { grid-template-columns: 1fr; }
 }
 </style>
+
+<script>
+  const allCards = [...document.querySelectorAll('.product-card')] as HTMLElement[];
+  const brandSections = [...document.querySelectorAll('[data-brand-section]')] as HTMLElement[];
+  const countEl  = document.getElementById('result-count');
+  const emptyEl  = document.getElementById('empty-state');
+  const chipsEl  = document.getElementById('active-chips');
+  const badge    = document.getElementById('filter-badge');
+  const sidebar  = document.getElementById('catalog-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+
+  const brandSet   = new Set<string>();
+  const surfaceSet = new Set<string>();
+  const freqSet    = new Set<string>();
+  const formSet    = new Set<string>();
+  const chipSet    = new Set<string>();
+  const ipSet      = new Set<string>();
+
+  const surfaceLabels: Record<string, string> = { metal: 'On-Metal', nonmetal: 'Non-Metal' };
+  const freqLabels:    Record<string, string> = { UHF: 'UHF RFID', HF: 'HF / NFC' };
+  const escapeAttr = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  function applyFilters() {
+    let visible = 0;
+    for (const card of allCards) {
+      const b  = card.getAttribute('data-brand')   || '';
+      const s  = card.getAttribute('data-surface') || '';
+      const f  = card.getAttribute('data-freq')    || '';
+      const ff = card.getAttribute('data-form')    || '';
+      const ch = card.getAttribute('data-chip')    || '';
+      const ip = card.getAttribute('data-ip')      || '';
+
+      const ok = (brandSet.size   === 0 || brandSet.has(b))   &&
+                 (surfaceSet.size === 0 || surfaceSet.has(s))  &&
+                 (freqSet.size    === 0 || freqSet.has(f))     &&
+                 (formSet.size    === 0 || formSet.has(ff))    &&
+                 (chipSet.size    === 0 || chipSet.has(ch))    &&
+                 (ipSet.size      === 0 || ipSet.has(ip));
+
+      card.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+    }
+
+    for (const section of brandSections) {
+      const sectionCards = [...section.querySelectorAll('.product-card')] as HTMLElement[];
+      const anyVisible = sectionCards.some(c => c.style.display !== 'none');
+      section.style.display = anyVisible ? '' : 'none';
+    }
+
+    if (countEl) countEl.textContent = String(visible);
+    if (emptyEl) emptyEl.style.display = visible === 0 ? 'flex' : 'none';
+
+    const total = brandSet.size + surfaceSet.size + freqSet.size + formSet.size + chipSet.size + ipSet.size;
+    if (badge) { badge.textContent = String(total); badge.style.display = total > 0 ? '' : 'none'; }
+
+    renderChips();
+  }
+
+  function renderChips() {
+    if (!chipsEl) return;
+    const chips: { type: string; value: string; label: string }[] = [];
+    for (const v of brandSet)   chips.push({ type: 'brand',   value: v, label: v });
+    for (const v of surfaceSet) chips.push({ type: 'surface', value: v, label: surfaceLabels[v] || v });
+    for (const v of freqSet)    chips.push({ type: 'freq',    value: v, label: freqLabels[v]    || v });
+    for (const v of formSet)    chips.push({ type: 'form',    value: v, label: v });
+    for (const v of chipSet)    chips.push({ type: 'chip',    value: v, label: v });
+    for (const v of ipSet)      chips.push({ type: 'ip',      value: v, label: v });
+    chipsEl.innerHTML = chips.map(c =>
+      `<button class="active-chip" data-type="${c.type}" data-value="${escapeAttr(c.value)}" type="button">${escapeAttr(c.label)} ×</button>`
+    ).join('');
+  }
+
+  function clearAll() {
+    document.querySelectorAll<HTMLInputElement>('.foption input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+    brandSet.clear(); surfaceSet.clear(); freqSet.clear(); formSet.clear(); chipSet.clear(); ipSet.clear();
+    applyFilters();
+  }
+
+  document.querySelectorAll<HTMLInputElement>('.foption input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const name = cb.getAttribute('name');
+      const val  = cb.value;
+      const on   = cb.checked;
+      if      (name === 'brand')   { on ? brandSet.add(val)   : brandSet.delete(val); }
+      else if (name === 'surface') { on ? surfaceSet.add(val) : surfaceSet.delete(val); }
+      else if (name === 'freq')    { on ? freqSet.add(val)    : freqSet.delete(val); }
+      else if (name === 'form')    { on ? formSet.add(val)    : formSet.delete(val); }
+      else if (name === 'chip')    { on ? chipSet.add(val)    : chipSet.delete(val); }
+      else if (name === 'ip')      { on ? ipSet.add(val)      : ipSet.delete(val); }
+      applyFilters();
+    });
+  });
+
+  chipsEl?.addEventListener('click', e => {
+    const chip = (e.target as HTMLElement)?.closest?.('.active-chip') as HTMLElement | null;
+    if (!chip) return;
+    const t = chip.getAttribute('data-type')!;
+    const v = chip.getAttribute('data-value')!;
+    if      (t === 'brand')   brandSet.delete(v);
+    else if (t === 'surface') surfaceSet.delete(v);
+    else if (t === 'freq')    freqSet.delete(v);
+    else if (t === 'form')    formSet.delete(v);
+    else if (t === 'chip')    chipSet.delete(v);
+    else if (t === 'ip')      ipSet.delete(v);
+    const cb = document.querySelector<HTMLInputElement>(`.foption input[name="${t}"][value="${CSS.escape(v)}"]`);
+    if (cb) cb.checked = false;
+    applyFilters();
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-brand-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const brand = btn.dataset.brandFilter || '';
+      if (!brand) return;
+      clearAll();
+      brandSet.add(brand);
+      const cb = document.querySelector<HTMLInputElement>(`.foption input[name="brand"][value="${CSS.escape(brand)}"]`);
+      if (cb) cb.checked = true;
+      applyFilters();
+      document.getElementById('tag-catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  document.getElementById('clear-all')?.addEventListener('click', clearAll);
+  document.getElementById('empty-clear')?.addEventListener('click', clearAll);
+
+  document.querySelectorAll('.fgroup-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const body = document.getElementById((btn as HTMLElement).dataset.target || '');
+      if (body) body.style.display = expanded ? 'none' : '';
+    });
+  });
+
+  function openSidebar()  { sidebar?.classList.add('is-open'); backdrop?.classList.add('is-visible'); document.body.style.overflow = 'hidden'; }
+  function closeSidebar() { sidebar?.classList.remove('is-open'); backdrop?.classList.remove('is-visible'); document.body.style.overflow = ''; }
+  document.getElementById('mobile-filter-btn')?.addEventListener('click', openSidebar);
+  backdrop?.addEventListener('click', closeSidebar);
+  document.getElementById('sidebar-close')?.addEventListener('click', closeSidebar);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
+</script>
