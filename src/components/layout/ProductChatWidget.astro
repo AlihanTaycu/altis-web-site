@@ -1228,11 +1228,11 @@ const apiUrl = import.meta.env.PUBLIC_AIKOS_API_URL || 'http://localhost:8000';
     position: absolute;
     right: 0;
     bottom: calc(100% + 12px);
-    width: min(470px, calc(100vw - 40px));
-    height: min(720px, calc(100vh - 104px));
+    width: min(380px, calc(100vw - 40px));
+    height: min(600px, calc(100vh - 104px));
     background: #fff;
-    border-radius: var(--radius-lg, 22px);
-    box-shadow: 0 18px 56px rgba(0, 10, 58, 0.22);
+    border-radius: var(--radius-lg, 20px);
+    box-shadow: 0 16px 44px rgba(0, 10, 58, 0.18);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1249,11 +1249,11 @@ const apiUrl = import.meta.env.PUBLIC_AIKOS_API_URL || 'http://localhost:8000';
       radial-gradient(circle at 16% 18%, rgba(24, 183, 214, 0.42), transparent 26%),
       linear-gradient(135deg, #07155f 0%, var(--primary, #00125C) 52%, #051044 100%);
     color: #fff;
-    padding: 12px 16px 14px;
+    padding: 11px 14px 12px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     overflow: hidden;
   }
 
@@ -1271,17 +1271,33 @@ const apiUrl = import.meta.env.PUBLIC_AIKOS_API_URL || 'http://localhost:8000';
   }
 
   .pcw-agent {
-    width: 58px;
-    height: 58px;
+    position: relative;
+    width: 48px;
+    height: 48px;
     flex: 0 0 auto;
     border: none;
-    border-radius: 18px;
+    border-radius: 16px;
     background: transparent;
     box-shadow: none;
     display: grid;
     place-items: center;
     overflow: hidden;
-    filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.22));
+    filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.2));
+  }
+
+  .pcw-agent::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 20px;
+    background: radial-gradient(circle, rgba(55, 226, 122, 0.32), transparent 72%);
+    animation: pcw-agent-glow 2.8s ease-in-out infinite;
+    z-index: -1;
+  }
+
+  @keyframes pcw-agent-glow {
+    0%, 100% { opacity: 0.3; transform: scale(0.94); }
+    50% { opacity: 0.65; transform: scale(1.06); }
   }
 
   .pcw-agent img {
@@ -1296,41 +1312,42 @@ const apiUrl = import.meta.env.PUBLIC_AIKOS_API_URL || 'http://localhost:8000';
 
   .pcw-header strong {
     display: block;
-    font-size: 17px;
+    font-size: 15.5px;
     line-height: 1.15;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   .pcw-header p {
     margin: 0;
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.35;
     color: rgba(255, 255, 255, 0.76);
-    max-width: 250px;
+    max-width: 210px;
   }
 
   .pcw-status {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    min-height: 22px;
-    margin-bottom: 5px;
-    padding: 3px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
+    gap: 6px;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.78);
     font-size: 11px;
-    font-weight: 800;
-    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.01em;
   }
 
   .pcw-status i {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 999px;
     background: #37E27A;
-    box-shadow: 0 0 0 4px rgba(55, 226, 122, 0.16);
+    box-shadow: 0 0 0 3px rgba(55, 226, 122, 0.2);
+    animation: pcw-status-pulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pcw-status-pulse {
+    0%, 100% { opacity: 0.65; box-shadow: 0 0 0 3px rgba(55, 226, 122, 0.16); }
+    50% { opacity: 1; box-shadow: 0 0 0 5px rgba(55, 226, 122, 0.3); }
   }
 
   .pcw-new-session {
@@ -1411,7 +1428,7 @@ const apiUrl = import.meta.env.PUBLIC_AIKOS_API_URL || 'http://localhost:8000';
     .pcw-toggle-label { display: none; }
     .pcw-panel {
       width: calc(100vw - 18px);
-      height: min(720px, calc(100vh - 92px));
+      height: min(600px, calc(100vh - 92px));
     }
   }
 </style>

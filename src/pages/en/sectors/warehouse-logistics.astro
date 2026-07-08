@@ -1,35 +1,913 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/sections/SectionHead.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "RFID Solutions for Warehouse and Logistics",
+  "provider": { "@type": "Organization", "name": "Altis Technology" },
+  "serviceType": "Warehouse and logistics automation",
+  "areaServed": "TR",
+  "description": "RFID, Auto-ID, WMS integration, warehouse visibility, and logistics operation optimization solutions"
+};
 ---
 
-<Base title="Warehouse & Logistics | Altis Technology" description="RFID, WMS visibility, counting, and dispatch workflows for warehouse and logistics teams." lang="en" alternateUrl="https://www.altis.com.tr/sektorler/depo-lojistik/">
-  <section class="sector-hero">
-    <div class="container sector-grid">
-      <div>
-        <p class="eyebrow">Sector</p>
-        <h1>Warehouse & Logistics</h1>
-        <p class="lead">RFID, WMS visibility, fast counting, dispatch verification, pallet tracking, and location workflows for warehouse and logistics teams.</p>
-        <a class="btn btn-primary btn-lg" href="/en/contact/">Talk to an Expert</a>
-      </div>
-      <img src="/images/pick-to-light/p2l-marketing.png" alt="Warehouse operation with guided picking" width="1844" height="921" loading="eager" />
+<Base
+  title="RFID Solutions for Warehouse & Logistics | Altis Technology"
+  description="RFID dock door reads, pallet verification, fast counting, WMS integration, and live operations dashboards for warehouse and logistics operations."
+  {schema}
+  lang="en"
+  alternateUrl="https://www.altis.com.tr/sektorler/depo-lojistik/"
+>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/sectors/warehouse-logistics/">Sectors</a>
+      <span class="sep">/</span>
+      <span style="color:var(--sector);font-weight:600">Warehouse &amp; Logistics</span>
     </div>
-  </section>
-  <section class="container content-grid">
-    <article><h2>Inbound and outbound</h2><p>Verify pallets, cases, and shipments with RFID gates, handhelds, barcode checks, or tunnel readers.</p></article>
-    <article><h2>WMS visibility</h2><p>Connect field reads to WMS or ERP systems so counts, exceptions, and movements become operational data.</p></article>
-    <article><h2>Fast counting</h2><p>Improve stock count speed, reduce manual errors, and keep warehouse teams aligned around live inventory status.</p></article>
-  </section>
+    <div class="hero-inner">
+      <div>
+        <div class="sector-pill">
+          <span class="pill-tag">Sector</span>
+          <span>Warehouse · Logistics · Dispatch · Stock Management</span>
+        </div>
+        <h1>Stock accuracy, dispatch speed, and warehouse visibility — <em>in real time.</em></h1>
+        <p class="hero-sub">RFID dock door reads, pallet-level verification, aisle counting, and WMS integration bring your warehouse operations down from hours to seconds. Our Tag&amp;Trace and Predictivo platforms connect field devices to your enterprise systems through a visible, traceable, and reliable bridge.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/en/contact/">Request a Warehouse Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="#use-cases">Explore Use Cases</a>
+        </div>
+        <div class="hero-platforms">
+          <span class="lbl">Platforms used:</span>
+          <a href="/en/platforms/tag-trace/" class="plat-chip tt">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/></svg>
+            Tag&amp;Trace
+          </a>
+          <a href="/en/platforms/predictivo/" class="plat-chip pr">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            Predictivo
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero visual: Live warehouse -->
+      <div class="warehouse">
+        <div class="wh-head">
+          <div class="ttl">Warehouse · Istanbul Hadimkoy</div>
+          <div class="meta">
+            <span class="live">live</span>
+            <span>12,047 SKUs</span>
+          </div>
+        </div>
+        <div class="wh-body">
+          <div class="wh-grid">
+            <!-- Row 1: Dispatch doors (top) -->
+            <div class="wh-door" style="grid-column:span 2">DOOR-A</div>
+            <div class="wh-aisle" style="grid-column:span 4"></div>
+            <div class="wh-door" style="grid-column:span 2">DOOR-B</div>
+
+            <!-- Row 2: rack rows + reader -->
+            <div class="wh-rack full">A1</div>
+            <div class="wh-rack full">A2</div>
+            <div class="wh-rack half">A3</div>
+            <div class="wh-rack empty">A4</div>
+            <div class="wh-rack full">A5</div>
+            <div class="wh-rack full">A6</div>
+            <div class="wh-rack alarm">A7</div>
+            <div class="wh-rack full">A8</div>
+
+            <!-- Row 3 -->
+            <div class="wh-rack full">B1</div>
+            <div class="wh-rack half">B2</div>
+            <div class="wh-rack full">B3</div>
+            <div class="wh-rack full">B4</div>
+            <div class="wh-rack empty">B5</div>
+            <div class="wh-rack full">B6</div>
+            <div class="wh-rack full">B7</div>
+            <div class="wh-rack half">B8</div>
+
+            <!-- Row 4: aisle -->
+            <div class="wh-aisle" style="grid-column:span 8"></div>
+
+            <!-- Row 5 -->
+            <div class="wh-rack full">C1</div>
+            <div class="wh-rack full">C2</div>
+            <div class="wh-rack full">C3</div>
+            <div class="wh-rack empty">C4</div>
+            <div class="wh-rack full">C5</div>
+            <div class="wh-rack full">C6</div>
+            <div class="wh-rack half">C7</div>
+            <div class="wh-rack full">C8</div>
+
+            <!-- Row 6: Picking -->
+            <div class="wh-rack" style="grid-column:span 3;background:#FAFBFE;color:var(--text-muted)">Picking Area</div>
+            <div class="wh-rack" style="grid-column:span 3;background:#FAFBFE;color:var(--text-muted)">Packing</div>
+            <div class="wh-rack" style="grid-column:span 2;background:#FAFBFE;color:var(--text-muted)">Counting</div>
+
+            <!-- RFID readers positioned at doors -->
+            <div class="rfid-reader" style="left:8%;top:8px">R</div>
+            <div class="rfid-reader b" style="right:8%;top:8px">R</div>
+          </div>
+
+          <div class="wh-feed">
+            <h6>Recent reads</h6>
+            <div class="row"><span class="tg">A2</span><span style="flex:1">Pallet IN</span></div>
+            <div class="row"><span class="tg">B7</span><span style="flex:1">Pallet OUT</span></div>
+            <div class="row"><span class="tg warn">A7</span><span style="flex:1">Missing case</span></div>
+            <div class="row"><span class="tg">DOOR-B</span><span style="flex:1">SHIP-04812</span></div>
+            <div class="row"><span class="tg">C5</span><span style="flex:1">Count OK</span></div>
+          </div>
+
+          <div class="wh-side">
+            <div class="wh-kpi"><div class="l">Utilization</div><div class="v ok">73%</div></div>
+            <div class="wh-kpi"><div class="l">Today IN</div><div class="v">1,482</div></div>
+            <div class="wh-kpi"><div class="l">Today OUT</div><div class="v">1,308</div></div>
+            <div class="wh-kpi"><div class="l">Active alarms</div><div class="v warn">2</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain points -->
+<section class="pains">
+  <div class="container">
+    <SectionHead
+      eyebrow="In Warehouse Operations"
+      heading="Sound familiar?"
+      description="In modern warehouse operations, small friction points create large costs. Most of this friction comes from the disconnect between field devices and enterprise systems."
+    />
+    <div class="pain-grid" data-reveal data-reveal-delay="100">
+      <div class="pain-card">
+        <div class="qty">↓ 92%</div>
+        <h3>Stock accuracy</h3>
+        <p>Inventory updates from manual counting and barcode scanning stay out of sync with actual warehouse status for hours.</p>
+      </div>
+      <div class="pain-card">
+        <div class="qty">∼ 2h</div>
+        <h3>Dispatch verification</h3>
+        <p>Wrong or missing products are only noticed once the customer returns them. Incorrect shipments mean return costs and lost customers.</p>
+      </div>
+      <div class="pain-card">
+        <div class="qty">× N</div>
+        <h3>Scattered devices</h3>
+        <p>Handhelds, door readers, printers, counting devices — each with a different interface, different usage, different support line.</p>
+      </div>
+      <div class="pain-card">
+        <div class="qty">~ 0</div>
+        <h3>Real-time visibility</h3>
+        <p>Managers learn warehouse status from overnight reports. By the time a problem is noticed, it's too late to act.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution mapping: Sector → Platform -->
+<section class="solution">
+  <div class="container">
+    <SectionHead
+      eyebrow="Solution Map"
+      heading="The right platform for every warehouse need"
+      description="Different parts of a warehouse operation call for different capabilities. Tag&amp;Trace handles device orchestration and labeling, while Predictivo takes care of visibility and operational intelligence."
+    />
+    <div class="sol-map">
+      <div class="sol-col">
+        <h4>Need</h4>
+        <div class="group">
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9 5 4h14l2 5"/></svg>Dispatch verification</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Pallet &amp; SKU counting</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4"/></svg>RFID label printing</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Location &amp; zone tracking</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg>Operations dashboard</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>Alarm &amp; threshold management</div>
+        </div>
+      </div>
+      <div class="sol-col sol-platform">
+        <div class="plat-card">
+          <div class="nm">Tag&amp;Trace</div>
+          <div class="role">Device orchestration &amp; data flow</div>
+          <ul>
+            <li>RFID reader, printer, barcode, and handheld management</li>
+            <li>ZPL label templates · dynamic printing from ERP</li>
+            <li>Visual rule engine · edge processing</li>
+            <li>Two-way WMS / ERP / SAP integration</li>
+          </ul>
+        </div>
+        <div class="plat-card pred">
+          <div class="nm">Predictivo</div>
+          <div class="role">Visibility, dashboards &amp; analytics</div>
+          <ul>
+            <li>Live warehouse dashboards · role-based</li>
+            <li>Alarm, notification, and threshold management</li>
+            <li>RTLS and zone-based location tracking</li>
+            <li>Automated daily / weekly PDF reports</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sol-col">
+        <h4>Result</h4>
+        <div class="group">
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Error-free dispatch</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>99%+ stock accuracy</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Lower manual workload</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Real-time operations view</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>WMS / ERP parity</div>
+          <div class="sol-tile"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 12 5 5 9-11"/></svg>Fast counting · hours to minutes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use cases (sector-specific) -->
+<section class="uc" id="use-cases">
+  <div class="container">
+    <SectionHead
+      eyebrow="Warehouse Scenarios"
+      heading="6 actionable solutions for warehouse operations"
+      description="These scenarios adapt to warehouse operations across different industries. Each one can start as a pilot in a scalable structure."
+    />
+    <div class="uc-grid" data-reveal data-reveal-delay="100">
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h3>RFID Dock Door Verification</h3>
+        <p>A fixed RFID antenna at the dispatch door reads all order items within seconds. Instant alerts for missing or incorrect items, automatic confirmation for correct shipments.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">99.5%</div><div class="l">read accuracy</div></div>
+          <div class="m"><div class="v">&lt;3s</div><div class="l">pallet read</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Pallet and Case-Level Traceability</h3>
+        <p>An RFID tag on every pallet and case gives instant location data anywhere in the warehouse. Manual tracking during dispatch, storage, and picking becomes unnecessary.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">RT</div><div class="l">live location</div></div>
+          <div class="m"><div class="v">×3</div><div class="l">picking speed</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h20v4H2zM2 13h20v4H2zM2 19h20"/></svg></div>
+        <h3>Fast Stock Counting</h3>
+        <p>Walking the aisles with an RFID handheld reads every shelf in seconds. Monthly counting drops from hours to minutes; store-to-warehouse transfers become easier.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">×20</div><div class="l">counting speed</div></div>
+          <div class="m"><div class="v">100%</div><div class="l">traceability</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M6 9V5h12v4M6 18v2h12v-2"/></svg></div>
+        <h3>Automated Labeling</h3>
+        <p>RFID and barcode labels print automatically from order data coming out of the WMS or ERP. EPC encoding, verification, print queueing — all handled by the platform.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">0</div><div class="l">manual data entry</div></div>
+          <div class="m"><div class="v">ZPL</div><div class="l">standard template</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>RTLS · Forklift &amp; Equipment Tracking</h3>
+        <p>Real-time location of forklifts, pallet jacks, and key equipment. Operating hours, zone violations, and idle equipment distribution become transparent.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">RT</div><div class="l">live tracking</div></div>
+          <div class="m"><div class="v">Geo</div><div class="l">zone alarms</div></div>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg></div>
+        <h3>Operations Dashboard</h3>
+        <p>Utilization, in/out volumes, door traffic, counting performance — a live control room for the warehouse manager. Same quality on mobile, tablet, and wall display.</p>
+        <div class="uc-impact">
+          <div class="m"><div class="v">Live</div><div class="l">live stream</div></div>
+          <div class="m"><div class="v">Role</div><div class="l">based views</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Operations flow -->
+<section class="opflow">
+  <div class="container">
+    <SectionHead
+      eyebrow="Typical Operations Flow"
+      heading="From goods receipt to dispatch, in five steps"
+      description="The typical journey of a case in an RFID-enabled warehouse. At every step, the right device, the right data, and the right system integration are at work."
+    />
+    <div class="op-steps">
+      <div class="op-step">
+        <div class="step-num">01</div>
+        <h4>Goods Receipt</h4>
+        <p>Incoming cases are read by the RFID antenna at the dispatch door and verified against order data.</p>
+        <span class="device">RFID Reader · WMS</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">02</div>
+        <h4>Labeling</h4>
+        <p>If a label is missing or relabeling is needed, an RFID label is printed automatically.</p>
+        <span class="device">RFID Printer · ZPL</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">03</div>
+        <h4>Putaway</h4>
+        <p>The handheld sends shelf placement data to the WMS; the location is updated.</p>
+        <span class="device">Mobile RFID · WMS</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">04</div>
+        <h4>Picking</h4>
+        <p>Order-based picking list; every read is matched against the order, wrong items trigger an alarm.</p>
+        <span class="device">Mobile RFID · Rule</span>
+      </div>
+      <div class="op-step">
+        <div class="step-num">05</div>
+        <h4>Dispatch</h4>
+        <p>Final verification on the way out the door; missing items trigger an automatic alert, correct orders get automatic ERP confirmation.</p>
+        <span class="device">RFID Reader · ERP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="roi">
+  <div class="container">
+    <SectionHead
+      eyebrow="Expected Impact"
+      heading="An RFID-enabled warehouse, measurable gains"
+      description="Typical operational improvements observed in pilot projects. Results vary based on field conditions, product characteristics, and existing operational maturity."
+    />
+    <div class="roi-grid" data-reveal data-reveal-delay="100">
+      <div class="roi-card">
+        <div class="b">×20<sup></sup></div>
+        <div class="lbl">Counting speed</div>
+        <div class="meta">Monthly inventory counts drop from hours to minutes; routine counting can shift to weekly or daily.</div>
+      </div>
+      <div class="roi-card">
+        <div class="b">99%<sup>+</sup></div>
+        <div class="lbl">Stock accuracy</div>
+        <div class="meta">Automated reads and continuous verification bring the gap between WMS and actual warehouse status to near zero.</div>
+      </div>
+      <div class="roi-card">
+        <div class="b">↓ 40<sup>%</sup></div>
+        <div class="lbl">Incorrect shipments</div>
+        <div class="meta">Automatic verification at the dispatch door catches wrong items and missing cases before they reach the customer.</div>
+      </div>
+      <div class="roi-card">
+        <div class="b">↓ 30<sup>%</sup></div>
+        <div class="lbl">Manual workload</div>
+        <div class="meta">Automating manual recording, counting, and verification steps frees field staff to focus on higher-value work.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WMS / ERP integration -->
+<section class="integ">
+  <div class="container">
+    <div class="integ-grid" data-reveal data-reveal-delay="100">
+      <div>
+        <div class="eyebrow">WMS &amp; ERP Integration</div>
+        <h2 style="margin-top:18px">Works with your existing systems</h2>
+        <p style="font-size:17px;margin-top:18px;line-height:1.6">Rather than replacing your existing WMS or ERP, Tag&amp;Trace steps in as an orchestration layer. Data flows both ways; the field side stays frictionless while the enterprise system side stays consistent.</p>
+        <div class="integ-list">
+          <div class="integ-row">
+            <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+            <div>
+              <strong>WMS adapters</strong>
+              <span>Ready-made connectors for SAP EWM, Manhattan, Blue Yonder, and custom WMS systems.</span>
+            </div>
+          </div>
+          <div class="integ-row">
+            <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></div>
+            <div>
+              <strong>ERP integration</strong>
+              <span>Two-way synchronization with SAP, Oracle, NetSuite, Logo, and custom ERPs.</span>
+            </div>
+          </div>
+          <div class="integ-row">
+            <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></svg></div>
+            <div>
+              <strong>Open API</strong>
+              <span>REST, MQTT, OPC UA — open integration points for building flows specific to your own systems.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="integ-visual">
+        <div class="integ-chain">
+          <div class="chain-step">
+            <div class="left">
+              <strong>RFID Reader</strong>
+              <div class="meta">DOOR-A · port 5</div>
+            </div>
+            <div class="center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/></svg>
+            </div>
+            <div class="right">
+              <strong>EPC read</strong>
+              <div class="meta">~3s / pallet</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>Tag&amp;Trace Edge</strong>
+              <div class="meta">rule eval · validate</div>
+            </div>
+            <div class="center" style="border-color:var(--cyan);color:var(--cyan)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </div>
+            <div class="right">
+              <strong>EPC → SKU mapping</strong>
+              <div class="meta">order check</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>WMS</strong>
+              <div class="meta">SAP EWM</div>
+            </div>
+            <div class="center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+            </div>
+            <div class="right">
+              <strong>Location update</strong>
+              <div class="meta">SHIP-04812 · OUT</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>ERP</strong>
+              <div class="meta">SAP / S4HANA</div>
+            </div>
+            <div class="center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg>
+            </div>
+            <div class="right">
+              <strong>Dispatch confirmation</strong>
+              <div class="meta">delivery note · invoice</div>
+            </div>
+          </div>
+          <div class="chain-link"></div>
+          <div class="chain-step">
+            <div class="left">
+              <strong>Predictivo</strong>
+              <div class="meta">dashboard · alarm</div>
+            </div>
+            <div class="center" style="border-color:#0F8FA8;color:#0F8FA8">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 14l3-3 3 3 4-5"/></svg>
+            </div>
+            <div class="right">
+              <strong>Manager view</strong>
+              <div class="meta">live KPI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Buyer-specific FAQ -->
+<section class="buyer">
+  <div class="container">
+    <SectionHead
+      eyebrow="Which questions do we answer?"
+      heading="By decision-maker profile"
+      description="Warehouse digitalization isn't a single person's decision — it's a team decision. Every role asks different questions; our answers speak clearly to each of them."
+    />
+    <div class="buyer-grid" data-reveal data-reveal-delay="100">
+      <div class="buyer-card">
+        <span class="role-tag">Warehouse Manager</span>
+        <h3>How does it simplify operations?</h3>
+        <p class="q">"Can field staff learn this? Will it disrupt our existing process?"</p>
+        <div class="ans">The field side works with familiar workflows; handheld, dispatch, and counting screens are designed around operational logic. Training is completed in 1-2 days; you can start with a single pilot door and scale from there.</div>
+      </div>
+      <div class="buyer-card">
+        <span class="role-tag">IT &amp; Digital Transformation</span>
+        <h3>How does it integrate with our existing systems?</h3>
+        <p class="q">"We don't want to replace our WMS / ERP / SAP. Does it meet our security standard?"</p>
+        <div class="ans">Tag&amp;Trace steps in as an orchestration layer, leaving existing systems in place. Two-way communication over REST, MQTT, and OPC UA, with token-based security, RBAC, and audit logs as standard.</div>
+      </div>
+      <div class="buyer-card">
+        <span class="role-tag">General Manager / CFO</span>
+        <h3>What's the return on investment?</h3>
+        <p class="q">"What's the investment size, how quickly does it pay back, and which metric do we measure against?"</p>
+        <div class="ans">Pilot scope starts with a single door or a single warehouse floor; counting speed, stock accuracy, and incorrect-shipment metrics are measured before and after the pilot. Typical payback falls within 12-24 months.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="eyebrow">Warehouse Demo &amp; Discovery</div>
+    <h2>Let's see how it works in your warehouse</h2>
+    <p>Let's go through your current warehouse layout, WMS/ERP infrastructure, and operational goals together. We'll come back with a pilot scope grounded in field reality and an actionable roadmap.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="/en/contact/">Request a Warehouse Demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/en/platforms/tag-trace/">Tag&amp;Trace Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- Related sectors -->
+<section class="related">
+  <div class="container">
+    <div class="ttl">— Other sector solutions —</div>
+    <div class="related-row">
+      <a class="related-tile" href="/en/products/rfid-retail/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><path d="M3 4h2l2.4 11.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 7H6"/></svg></div>
+        <span>E-Commerce Warehouses</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="related-tile" href="/en/sectors/manufacturing/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="m6 11 6-7 6 7"/></svg></div>
+        <span>Manufacturing</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="related-tile" href="/en/sectors/retail-textile/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/></svg></div>
+        <span>Retail &amp; Textile</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="related-tile" href="/en/sectors/warehouse-logistics/">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <span>All Sectors</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
 </Base>
 
 <style>
-  .sector-hero{padding:88px 0;background:linear-gradient(180deg,#fff,var(--bg-soft))}
-  .sector-grid{display:grid;grid-template-columns:1fr minmax(320px,.9fr);gap:40px;align-items:center}
-  .eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-  h1{color:var(--primary);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin:12px 0 16px}
-  .lead{max-width:760px;color:var(--text-muted);font-size:1.12rem;line-height:1.75;margin-bottom:28px}
-  img{width:100%;border-radius:12px;border:1px solid var(--border);background:#fff}
-  .content-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:64px 0 88px}
-  article{padding:24px;border:1px solid var(--border);border-radius:12px;background:#fff}
-  h2{color:var(--primary);font-size:1.15rem} article p{color:var(--text-muted);line-height:1.65}
-  @media(max-width:900px){.sector-grid,.content-grid{grid-template-columns:1fr}}
+:root{
+  --navy-900:#000A3A;--navy-800:#00125C;--navy-700:#0A1E75;--navy-600:#1E2F8C;
+  --bg:#FFFFFF;--bg-soft:#F6F8FC;--bg-blue:#EEF3FF;
+  --text:#111827;--text-muted:#5F6675;--text-faint:#8A93A5;
+  --border:#E3E8F2;--border-soft:#EEF1F7;
+  --cyan:#18B7D6;--cyan-soft:#E8FAFD;
+  --steel:#8B95A5;--slate:#334155;
+  --ok:#15a06b;--warn:#c47700;--crit:#d64545;
+  --primary:var(--navy-800);--accent:var(--cyan);
+  /* Sector accent — warmer industrial orange to distinguish from product pages */
+  --sector:#E07A2C;
+  --sector-soft:#FFF1E2;
+  --radius:14px;--radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(0,18,92,.04);
+  --shadow:0 8px 28px -12px rgba(0,18,92,.18),0 2px 6px rgba(0,18,92,.05);
+  --shadow-lg:0 30px 60px -25px rgba(0,18,92,.28),0 8px 20px -8px rgba(0,18,92,.12);
+  --container:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+.mono{font-family:"JetBrains Mono",monospace}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sector);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--sector)}
+h1,h2,h3,h4{font-family:inherit;color:var(--navy-800);margin:0;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(40px,5vw,68px);font-weight:700}
+h2{font-size:clamp(30px,3.2vw,44px);font-weight:700;letter-spacing:-.025em}
+h3{font-size:20px;font-weight:600}
+h4{font-size:16px;font-weight:600}
+p{margin:0;color:var(--text-muted);text-wrap:pretty}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:14.5px;color:var(--text);font-weight:500}
+.nav-links a:hover{color:var(--primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-weight:600;font-size:14.5px;border-radius:10px;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px -10px rgba(0,18,92,.6)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--bg-soft)}
+.btn-lg{padding:16px 28px;font-size:15.5px;border-radius:12px}
+
+/* Breadcrumb */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--text-faint);display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--primary)}
+.breadcrumb .sep{opacity:.5}
+
+/* Hero */
+.hero{
+  position:relative;padding:48px 0 120px;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 80% -100px, rgba(224,122,44,.10), transparent 60%),
+    linear-gradient(180deg,#fff 0%,#FAFBFE 100%);
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(0,18,92,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(0,18,92,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;margin-top:32px}
+.sector-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:6px;background:#fff;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+.sector-pill .pill-tag{background:var(--sector);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;text-transform:uppercase}
+.hero h1{margin-top:24px}
+.hero h1 em{color:var(--sector);font-style:normal}
+.hero-sub{font-size:18px;color:var(--text-muted);margin-top:22px;max-width:540px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-platforms{display:flex;gap:8px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-soft);align-items:center;max-width:540px;flex-wrap:wrap}
+.hero-platforms .lbl{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-right:6px}
+.plat-chip{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:7px;display:inline-flex;align-items:center;gap:6px}
+.plat-chip.tt{background:var(--bg-blue);color:var(--primary)}
+.plat-chip.pr{background:var(--cyan-soft);color:#0c7d94}
+
+/* Hero visual — warehouse isometric grid */
+.warehouse{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);overflow:hidden;position:relative;
+}
+.wh-head{padding:14px 18px;border-bottom:1px solid var(--border-soft);background:#FCFCFE;display:flex;justify-content:space-between;align-items:center}
+.wh-head .ttl{font-weight:600;font-size:13px;color:var(--navy-800)}
+.wh-head .meta{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--text-faint);display:flex;gap:10px;align-items:center}
+.wh-head .live{display:inline-flex;align-items:center;gap:5px;color:var(--ok);font-weight:600}
+.wh-head .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(21,160,107,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(21,160,107,.5)}70%{box-shadow:0 0 0 8px rgba(21,160,107,0)}100%{box-shadow:0 0 0 0 rgba(21,160,107,0)}}
+
+.wh-body{padding:22px;background:linear-gradient(180deg,#FAFBFE,#fff);position:relative;min-height:460px}
+.wh-grid{
+  position:relative;display:grid;
+  grid-template-columns:repeat(8,1fr);
+  grid-template-rows:repeat(6,38px);
+  gap:6px;
+}
+.wh-aisle{
+  background:repeating-linear-gradient(135deg,rgba(0,18,92,.04),rgba(0,18,92,.04) 4px,transparent 4px,transparent 8px);
+  border-radius:4px;
+}
+.wh-rack{
+  background:#fff;border:1px solid var(--border-soft);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--text-faint);font-weight:600;
+  position:relative;
+}
+.wh-rack.full{background:var(--bg-blue);border-color:var(--primary);color:var(--primary)}
+.wh-rack.half{background:linear-gradient(180deg,var(--bg-blue) 0,var(--bg-blue) 50%,#fff 50%,#fff 100%);border-color:var(--primary);color:var(--primary)}
+.wh-rack.empty{background:#FAFBFE;color:var(--text-faint)}
+.wh-rack.alarm{background:#FFE9E2;border-color:var(--sector);color:var(--sector)}
+.wh-door{
+  background:linear-gradient(180deg,var(--sector) 0,var(--sector) 4px,#fff 4px);
+  border:1px solid var(--sector);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--sector);font-weight:700;
+  position:relative;
+}
+.rfid-reader{
+  position:absolute;width:14px;height:14px;border-radius:3px;background:var(--primary);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:700;
+  box-shadow:0 0 0 3px rgba(0,18,92,.15);
+  z-index:2;
+}
+.rfid-reader::after{
+  content:"";position:absolute;width:34px;height:34px;border:1.5px solid var(--cyan);border-radius:50%;
+  opacity:.3;animation:ripple 2s ease-out infinite;
+}
+.rfid-reader.b::after{animation-delay:-1s}
+@keyframes ripple{0%{transform:scale(.4);opacity:.7}100%{transform:scale(1);opacity:0}}
+
+.wh-side{
+  margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+}
+.wh-kpi{background:#fff;border:1px solid var(--border-soft);border-radius:8px;padding:10px 12px}
+.wh-kpi .l{font-size:9.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.wh-kpi .v{font-family:"JetBrains Mono",monospace;font-size:17px;font-weight:700;color:var(--navy-800);margin-top:3px}
+.wh-kpi .v.warn{color:var(--sector)}
+.wh-kpi .v.ok{color:var(--ok)}
+
+.wh-feed{
+  position:absolute;right:22px;top:80px;width:200px;background:#fff;border:1px solid var(--border-soft);border-radius:10px;
+  box-shadow:0 8px 18px -8px rgba(0,18,92,.18);padding:10px 12px;
+}
+.wh-feed h6{font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin:0 0 8px}
+.wh-feed .row{display:flex;gap:8px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--border-soft);font-size:11px;color:var(--slate)}
+.wh-feed .row:last-child{border-bottom:none}
+.wh-feed .tg{font-family:"JetBrains Mono",monospace;font-size:9.5px;background:var(--bg-blue);color:var(--primary);padding:2px 6px;border-radius:4px;font-weight:600}
+.wh-feed .tg.warn{background:var(--sector-soft);color:var(--sector)}
+
+/* Sections */
+section{padding:110px 0}
+.section-head{max-width:780px;margin:0 auto 64px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2{margin-top:18px}
+.section-head p{font-size:18px;margin-top:18px}
+
+/* Pain points */
+.pains{background:var(--bg-soft)}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pain-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:30px 26px;transition:all .25s;position:relative;overflow:hidden}
+.pain-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.pain-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--sector);opacity:0;transition:opacity .25s;
+}
+.pain-card:hover::before{opacity:1}
+.pain-card .qty{
+  font-family:"JetBrains Mono",monospace;font-size:32px;font-weight:700;color:var(--sector);
+  line-height:1;margin-bottom:14px;
+}
+.pain-card h3{font-size:17px;margin-bottom:10px}
+.pain-card p{font-size:13.5px;line-height:1.6}
+
+/* Solution mapping */
+.solution{position:relative;background:#fff}
+.sol-map{
+  display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:40px;align-items:stretch;
+  background:linear-gradient(180deg,#FFF,#FAFBFE);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:48px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+}
+.sol-col h4{font-size:11px;font-family:"JetBrains Mono",monospace;color:var(--text-faint);letter-spacing:.1em;font-weight:600;margin-bottom:18px;text-transform:uppercase}
+.sol-col .group{display:flex;flex-direction:column;gap:10px}
+.sol-tile{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:12px 14px;font-size:13.5px;font-weight:500;color:var(--slate);display:flex;align-items:center;gap:10px}
+.sol-tile svg{color:var(--sector);flex-shrink:0}
+.sol-platform{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.plat-card{background:#fff;border:1.5px solid var(--primary);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)}
+.plat-card.pred{border-color:#0F8FA8}
+.plat-card .nm{font-size:20px;font-weight:700;color:var(--navy-800);letter-spacing:-.01em;margin-bottom:6px}
+.plat-card.pred .nm{color:#0F8FA8}
+.plat-card .role{font-size:12px;color:var(--text-muted);font-weight:500}
+.plat-card ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:6px}
+.plat-card li{font-size:12.5px;color:var(--slate);display:flex;align-items:center;gap:8px}
+.plat-card li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--primary)}
+.plat-card.pred li::before{background:#0F8FA8}
+
+/* Use cases — depo specific */
+.uc{background:var(--bg-soft)}
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.uc-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
+.uc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.uc-card .ic{width:44px;height:44px;border-radius:11px;background:var(--sector-soft);color:var(--sector);display:flex;align-items:center;justify-content:center}
+.uc-card h3{font-size:18px}
+.uc-card p{font-size:14px;line-height:1.55}
+.uc-impact{margin-top:auto;padding-top:18px;border-top:1px dashed var(--border-soft);display:flex;gap:18px}
+.uc-impact .m .v{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--sector)}
+.uc-impact .m .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px}
+
+/* Operations flow */
+.opflow{background:var(--navy-800);color:#fff;position:relative;overflow:hidden}
+.opflow::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+          mask-image:radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+.opflow .container{position:relative}
+.opflow h2{color:#fff}
+.opflow .section-head p{color:rgba(255,255,255,.7)}
+.opflow .eyebrow{color:var(--sector)}
+.opflow .eyebrow::before{background:var(--sector)}
+.op-steps{
+  margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;
+}
+.op-step{padding:0 18px;text-align:center;position:relative}
+.op-step:not(:last-child)::after{
+  content:"";position:absolute;top:30px;right:-12px;width:24px;height:24px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23E07A2C' stroke-width='2.4'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+  z-index:2;
+}
+.op-step .step-num{
+  width:60px;height:60px;border-radius:50%;background:rgba(224,122,44,.15);border:1.5px solid var(--sector);
+  color:var(--sector);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:18px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+}
+.op-step h4{font-size:15px;color:#fff;margin-bottom:8px}
+.op-step p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.op-step .device{
+  display:inline-block;margin-top:12px;font-family:"JetBrains Mono",monospace;font-size:10.5px;
+  color:var(--cyan);background:rgba(24,183,214,.1);padding:3px 8px;border-radius:5px;
+  letter-spacing:.04em;
+}
+
+/* ROI / Results */
+.roi{background:#fff;padding:110px 0}
+.roi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.roi-card{
+  background:linear-gradient(180deg,#fff,#FAFBFE);
+  border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;
+  position:relative;overflow:hidden;
+}
+.roi-card::before{
+  content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle, var(--sector-soft) 0%, transparent 70%);
+}
+.roi-card .b{position:relative;font-family:"JetBrains Mono",monospace;font-size:48px;font-weight:700;color:var(--navy-800);line-height:1;letter-spacing:-.04em}
+.roi-card .b sup{font-size:18px;color:var(--sector);font-weight:700;vertical-align:super;margin-left:2px}
+.roi-card .lbl{position:relative;font-size:14px;color:var(--slate);font-weight:600;margin-top:14px}
+.roi-card .meta{position:relative;font-size:12px;color:var(--text-muted);margin-top:6px;line-height:1.5}
+
+/* Integration / WMS */
+.integ{background:var(--bg-soft)}
+.integ-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.integ-list{display:grid;gap:14px;margin-top:32px}
+.integ-row{display:flex;gap:14px;align-items:flex-start;padding:18px;background:#fff;border:1px solid var(--border-soft);border-radius:12px}
+.integ-row .ic{width:38px;height:38px;border-radius:9px;background:var(--bg-blue);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.integ-row strong{color:var(--text);font-weight:600;font-size:14.5px;display:block}
+.integ-row span{color:var(--text-muted);font-size:13.5px;display:block;margin-top:2px;line-height:1.5}
+
+.integ-visual{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow)}
+.integ-chain{display:flex;flex-direction:column;gap:14px}
+.chain-step{display:flex;align-items:center;gap:18px}
+.chain-step .left{flex:1;text-align:right;font-size:13px;color:var(--slate)}
+.chain-step .left strong{color:var(--navy-800);font-size:14px;display:block;font-weight:600}
+.chain-step .left .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);margin-top:2px}
+.chain-step .center{
+  width:42px;height:42px;border-radius:11px;background:#fff;border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0;
+  position:relative;z-index:2;box-shadow:var(--shadow-sm);
+}
+.chain-step .right{flex:1;font-size:13px;color:var(--slate)}
+.chain-step .right strong{color:var(--navy-800);font-size:14px;display:block;font-weight:600}
+.chain-step .right .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--text-faint);margin-top:2px}
+.chain-link{
+  width:42px;height:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;
+}
+.chain-link::before{
+  content:"";width:2px;height:18px;background:repeating-linear-gradient(180deg,var(--sector),var(--sector) 3px,transparent 3px,transparent 6px);
+  border-radius:1px;
+}
+
+/* Buyer guide */
+.buyer{padding:110px 0}
+.buyer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.buyer-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,box-shadow .25s}
+.buyer-card:hover{border-color:var(--sector)}
+.buyer-card .role-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sector);background:var(--sector-soft);padding:5px 10px;border-radius:6px;align-self:flex-start}
+.buyer-card h3{font-size:18px}
+.buyer-card .q{font-size:14.5px;color:var(--slate);font-weight:500;line-height:1.55;margin-top:6px}
+.buyer-card .ans{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-top:auto;padding-top:14px;border-top:1px dashed var(--border-soft)}
+
+/* CTA */
+.cta-section{background:var(--navy-800);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.cta-section::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 400px at 80% 50%, rgba(224,122,44,.18), transparent 60%);
+}
+.cta-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.cta-inner .eyebrow{color:var(--sector)}
+.cta-inner .eyebrow::before{background:var(--sector)}
+.cta-inner h2{color:#fff;margin-top:18px}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:18px;margin-top:18px}
+.cta-inner .hero-cta{justify-content:center;margin-top:36px}
+.cta-section .btn-secondary{color:#fff;border-color:rgba(255,255,255,.25);background:transparent}
+.cta-section .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+/* Related sectors */
+.related{padding:80px 0;background:var(--bg-soft)}
+.related .ttl{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;font-weight:600;text-align:center;margin-bottom:24px}
+.related-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.related-tile{background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:18px;display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:500;color:var(--slate);transition:all .2s}
+.related-tile:hover{border-color:var(--sector);color:var(--navy-800);transform:translateX(2px)}
+.related-tile .ic{width:34px;height:34px;border-radius:8px;background:var(--bg-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.related-tile .arrow{margin-left:auto;color:var(--text-faint);font-size:14px}
+
+/* Footer */
+footer{background:#0A1438;color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.foot-inner img{height:24px;filter:brightness(0) invert(1);opacity:.85}
+.foot-links{display:flex;gap:24px}
+.foot-links a:hover{color:var(--cyan)}
+
+@media (max-width:1100px){
+  .hero-inner,.integ-grid{grid-template-columns:1fr;gap:48px}
+  .pain-grid,.uc-grid,.roi-grid,.buyer-grid{grid-template-columns:repeat(2,1fr)}
+  .op-steps{grid-template-columns:repeat(2,1fr);gap:24px}
+  .op-step::after{display:none}
+  .sol-map{grid-template-columns:1fr;gap:24px;padding:32px}
+  .related-row{grid-template-columns:repeat(2,1fr)}
+  .wh-feed{position:static;width:auto;margin-top:18px}
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+  section{padding:72px 0}
+  .pain-grid,.uc-grid,.roi-grid,.buyer-grid,.op-steps,.related-row{grid-template-columns:1fr}
+  .chain-step .left,.chain-step .right{font-size:12px}
+}
 </style>
